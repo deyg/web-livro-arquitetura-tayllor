@@ -1,25 +1,21 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>cap03-ptbr</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
+<meta charset="utf-8"/>
+<title>cap03-ptbr</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="styles.css" rel="stylesheet"/>
 </head>
 <body>
-
 <div class="navbar">
-  <div><a href="cap02-ptbr.htm">← Anterior</a></div>
-  <div><a href="index.html">Índice</a></div>
-  <div><a href="cap04-ptbr.htm">Próximo →</a></div>
+<div><a href="cap02-ptbr.htm">← Anterior</a></div>
+<div><a href="index.html">Índice</a></div>
+<div><a href="cap04-ptbr.htm">Próximo →</a></div>
 </div>
-
-
-<div class=WordSection1>
-
-<p class=MsoNormal>Capítulo 3.&nbsp;Conceitos Básicos</p>
-
-<p class=MsoNormal>Os capítulos anteriores discutiram informalmente várias
+<div class="WordSection1">
+<p>Capítulo 3. Conceitos Básicos</p>
+<p>Os capítulos anteriores discutiram informalmente várias
 noções arquitetônicas de software, como componentes e conectores de software;
 suas configurações em um dado sistema; relações entre os requisitos de um
 sistema, sua arquitetura e sua implementação; e linhas de produtos de software.
@@ -29,8 +25,7 @@ papel e importância únicos. De fato, geralmente evitamos definições de termo
 na esperança de que o leitor reconheça mais facilmente muitos dos conceitos
 discutidos em sua própria experiência, ou consiga relacionar os conceitos
 arquitetônicos com aqueles com os quais já está familiarizado.</p>
-
-<p class=MsoNormal>Embora termos informais tenham um papel útil na introdução
+<p>Embora termos informais tenham um papel útil na introdução
 de conceitos, as incertezas resultantes podem dificultar uma compreensão mais
 profunda. Portanto, o objetivo deste capítulo é definir os termos-chave e
 ideias-chave do campo da arquitetura de software, fornecendo uma base uniforme
@@ -39,195 +34,160 @@ arquitetura e suas inter-relações, técnicas e processos básicos para
 desenvolver a arquitetura de um sistema de software, e os stakeholders relevantes
 e seus papéis no desenvolvimento de software baseado em arquitetura são
 apresentados e ilustrados com exemplos simples.</p>
-
-<p class=MsoNormal><b>Resumo do </b><a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch03.html"
-title="Chapter&nbsp;3.&nbsp;Basic Concepts"><b>Capítulo 3</b></a></p>
-
-<ul style='margin-top:0cm' type=disc>
- <li class=MsoNormal style='mso-list:l35 level1 lfo58;tab-stops:list 36.0pt'>3
+<p><b>Resumo do </b><a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch03.html" title="Chapter 3. Basic Concepts"><b>Capítulo 3</b></a></p>
+<ul style="margin-top:0cm" type="disc">
+<li>3
      Conceitos Básicos</li>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <li class=MsoNormal style='mso-list:l35 level2 lfo59;tab-stops:list 72.0pt'>3.1
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>3.1
       Terminologia</li>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <ul style='margin-top:0cm' type=disc>
-   <li class=MsoNormal style='mso-list:l35 level3 lfo60;tab-stops:list 108.0pt'>3.1.1
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>3.1.1
        Arquitetura</li>
-  </ul>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <ul style='margin-top:0cm' type=disc>
-   <li class=MsoNormal style='mso-list:l35 level3 lfo61;tab-stops:list 108.0pt'>3.1.2
+</ul>
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>3.1.2
        Componente</li>
-  </ul>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <ul style='margin-top:0cm' type=disc>
-   <li class=MsoNormal style='mso-list:l35 level3 lfo62;tab-stops:list 108.0pt'>3.1.3
+</ul>
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>3.1.3
        Conector</li>
-  </ul>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <ul style='margin-top:0cm' type=disc>
-   <li class=MsoNormal style='mso-list:l35 level3 lfo63;tab-stops:list 108.0pt'>3.1.4
+</ul>
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>3.1.4
        Configuração</li>
-  </ul>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <ul style='margin-top:0cm' type=disc>
-   <li class=MsoNormal style='mso-list:l35 level3 lfo64;tab-stops:list 108.0pt'>3.1.5
+</ul>
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>3.1.5
        Estilo Arquitetônico</li>
-  </ul>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <ul style='margin-top:0cm' type=disc>
-   <li class=MsoNormal style='mso-list:l35 level3 lfo65;tab-stops:list 108.0pt'>3.1.6
+</ul>
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>3.1.6
        Padrão Arquitetônico</li>
-  </ul>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <li class=MsoNormal style='mso-list:l35 level2 lfo66;tab-stops:list 72.0pt'>3.2
+</ul>
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>3.2
       Modelos</li>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <li class=MsoNormal style='mso-list:l35 level2 lfo67;tab-stops:list 72.0pt'>3.3
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>3.3
       Processos</li>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <li class=MsoNormal style='mso-list:l35 level2 lfo68;tab-stops:list 72.0pt'>3.4
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>3.4
       Partes interessadas</li>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <li class=MsoNormal style='mso-list:l35 level2 lfo69;tab-stops:list 72.0pt'>3.5
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>3.5
       Fim da Matéria</li>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <li class=MsoNormal style='mso-list:l35 level2 lfo70;tab-stops:list 72.0pt'>3.6
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>3.6
       Perguntas de Revisão</li>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <li class=MsoNormal style='mso-list:l35 level2 lfo71;tab-stops:list 72.0pt'>3.7
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>3.7
       Exercícios</li>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <li class=MsoNormal style='mso-list:l35 level2 lfo72;tab-stops:list 72.0pt'>3.8
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>3.8
       Leitura adicional</li>
- </ul>
 </ul>
-
-<p class=MsoNormal>TERMINOLOGIA</p>
-
-<p class=MsoNormal>Começamos a apresentação dos termos-chave do campo com uma
+</ul>
+<p>TERMINOLOGIA</p>
+<p>Começamos a apresentação dos termos-chave do campo com uma
 exploração da própria arquitetura de software e de vários conceitos ligados a
 ela, como a degradação arquitetônica. Os principais elementos constituintes das
 arquiteturas são então explorados, incluindo componentes, conectores e
 configurações. Dois tipos importantes de conhecimento arquitetônico
 potencialmente profundo — padrões e estilos arquitetônicos — são então
 definidos e examinados.</p>
-
-<p class=MsoNormal><b>Arquitetura<o:p></o:p></b></p>
-
-<p class=MsoNormal>Em sua essência, a arquitetura de software é definida de
+<p><b>Arquitetura</b></p>
+<p>Em sua essência, a arquitetura de software é definida de
 forma bastante simples, da seguinte forma.</p>
-
-<p class=MsoNormal><i>Definição. A arquitetura de um sistema de software é o
-conjunto de decisões principais de design tomadas sobre o sistema.<o:p></o:p></i></p>
-
-<p class=MsoNormal>Em outras palavras, a arquitetura de software é o plano para
+<p><i>Definição. A arquitetura de um sistema de software é o
+conjunto de decisões principais de design tomadas sobre o sistema.</i></p>
+<p>Em outras palavras, a arquitetura de software é o plano para
 a construção e evolução de um sistema de software. A noção de <i>decisão de
 design</i> é central para a arquitetura de software e para todos os conceitos
-baseados nela. Por exemplo, a noção especial <span class=SpellE>de</span> <i>arquiteturas
-de famílias de produtos</i> foi brevemente introduzida <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch01.html"
-title="Chapter&nbsp;1.&nbsp;The Big Idea"><b>no Capítulo 1</b></a>.
+baseados nela. Por exemplo, a noção especial <span class="SpellE">de</span> <i>arquiteturas
+de famílias de produtos</i> foi brevemente introduzida <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch01.html" title="Chapter 1. The Big Idea"><b>no Capítulo 1</b></a>.
 Arquiteturas de famílias de produtos são ancoradas na ideia de arquitetura de
 referência, definida da seguinte forma.</p>
-
-<p class=MsoNormal><i>Definição. Uma arquitetura de referência é o conjunto de
+<p><i>Definição. Uma arquitetura de referência é o conjunto de
 decisões principais de projeto que são simultaneamente aplicáveis a múltiplos
 sistemas relacionados, tipicamente dentro de um domínio de aplicação, com
-pontos de variação explicitamente definidos.<o:p></o:p></i></p>
-
-<p class=MsoNormal>As decisões de projeto abrangem todos os aspectos do sistema
+pontos de variação explicitamente definidos.</i></p>
+<p>As decisões de projeto abrangem todos os aspectos do sistema
 em desenvolvimento, incluindo:</p>
-
-<ul style='margin-top:0cm' type=disc>
- <li class=MsoNormal style='mso-list:l1 level1 lfo73;tab-stops:list 36.0pt'>Decisões
-     de design relacionadas à estrutura do <span class=GramE>sistema<span
-     style='mso-spacerun:yes'>  </span>—</span> por exemplo, &quot;Os elementos
-     arquitetônicos devem ser organizados e compostos exatamente assim...&quot;</li>
- <li class=MsoNormal style='mso-list:l1 level1 lfo73;tab-stops:list 36.0pt'>Decisões
+<ul style="margin-top:0cm" type="disc">
+<li>Decisões
+     de design relacionadas à estrutura do <span class="GramE">sistema<span>  </span>—</span> por exemplo, "Os elementos
+     arquitetônicos devem ser organizados e compostos exatamente assim..."</li>
+<li>Decisões
      de design relacionadas ao <i>comportamento funcional</i> — por exemplo,
-     &quot;O processamento, armazenamento e visualização de dados serão
-     realizados em sequência estrita.&quot;</li>
- <li class=MsoNormal style='mso-list:l1 level1 lfo73;tab-stops:list 36.0pt'>Decisões
-     de design relacionadas à <i>interação</i> — por exemplo, &quot;A
+     "O processamento, armazenamento e visualização de dados serão
+     realizados em sequência estrita."</li>
+<li>Decisões
+     de design relacionadas à <i>interação</i> — por exemplo, "A
      comunicação entre todos os elementos do sistema ocorrerá apenas usando
-     notificações de eventos.&quot;</li>
- <li class=MsoNormal style='mso-list:l1 level1 lfo73;tab-stops:list 36.0pt'>Decisões
-     de projeto relacionadas às <i>propriedades não funcionais <span
-     class=GramE>do <span style='font-style:normal'><span
-     style='mso-spacerun:yes'> </span>sistema</span></span></i> — por exemplo,
-     &quot;A confiabilidade do sistema será garantida por módulos de
-     processamento replicados.&quot;</li>
- <li class=MsoNormal style='mso-list:l1 level1 lfo73;tab-stops:list 36.0pt'>Decisões
-     de design relacionadas à <i>implementação <span class=GramE>do <span
-     style='font-style:normal'><span style='mso-spacerun:yes'> </span>sistema</span></span></i>
-     — por exemplo, &quot;Os componentes da interface do usuário serão
-     construídos usando o conjunto de ferramentas Java Swing.&quot;</li>
+     notificações de eventos."</li>
+<li>Decisões
+     de projeto relacionadas às <i>propriedades não funcionais <span class="GramE">do <span style="font-style:normal"><span> </span>sistema</span></span></i> — por exemplo,
+     "A confiabilidade do sistema será garantida por módulos de
+     processamento replicados."</li>
+<li>Decisões
+     de design relacionadas à <i>implementação <span class="GramE">do <span style="font-style:normal"><span> </span>sistema</span></span></i>
+     — por exemplo, "Os componentes da interface do usuário serão
+     construídos usando o conjunto de ferramentas Java Swing."</li>
 </ul>
-
-<p class=MsoNormal>Note que, na discussão e nos exemplos anteriores, usamos
+<p>Note que, na discussão e nos exemplos anteriores, usamos
 termos como <i>elemento</i> e <i>módulo</i>, que ainda não definimos. Você pode
 pensar neles simplesmente como blocos de construção (semelhantes a tijolos na
 construção de estruturas físicas) dos quais a arquitetura é composta. Em breve
 os abordaremos de forma mais rigorosa.</p>
-
-<p class=MsoNormal>Outro termo importante que aparece nas definições acima é <i>principal</i>.
+<p>Outro termo importante que aparece nas definições acima é <i>principal</i>.
 Implica um grau de importância e atualidade que confere a uma decisão de
 projeto status arquitetônico, ou seja, que a torna uma <i>decisão de projeto
 arquitetônico</i>. Também implica que nem todas as decisões de design são
@@ -238,28 +198,24 @@ se define o principal dependerá dos objetivos do sistema. Em última análise, 
 partes interessadas do sistema (incluindo, mas não se restringindo apenas ao
 arquiteto) decidirão quais decisões de design são ou não importantes o
 suficiente para serem incluídas na arquitetura.</p>
-
-<p class=MsoNormal>Com base nisso, observe que a arquitetura é pelo menos em
+<p>Com base nisso, observe que a arquitetura é pelo menos em
 parte determinada pelo contexto, que considerações não técnicas podem acabar
 impulsionando-a, e que diferentes conjuntos de partes interessadas podem
 considerar diferentes conjuntos de decisões de projeto como primordiais (ou
 seja, arquitetônicas). Discutimos isso mais abaixo e em outros lugares do
 texto.</p>
-
-<p class=MsoNormal>Outra observação decorrente da definição de arquitetura de
+<p>Outra observação decorrente da definição de arquitetura de
 software é que cada conjunto de decisões principais de design pode ser pensado
 como uma arquitetura diferente. Ao longo da vida útil de um sistema, essas
-decisões de design serão tomadas e desfeitas; <span class=GramE>Eles</span> vão
-mudar, evoluir, &quot;bifurcar&quot;, convergir, e assim por diante. À medida
+decisões de design serão tomadas e desfeitas; <span class="GramE">Eles</span> vão
+mudar, evoluir, "bifurcar", convergir, e assim por diante. À medida
 que a arquitetura de um sistema grande, complexo e de longa duração é
 desenvolvida e evoluída, o conjunto correspondente de decisões de design
 arquitetônico será alterado centenas de vezes. O resultado será, na prática,
 centenas de arquiteturas diferentes (embora relacionadas), em vez de uma única
 arquitetura. Nesse sentido, a arquitetura tem um aspecto temporal.</p>
-
-<p class=MsoNormal><b>Arquitetura Prescritiva versus Arquitetura Descritiva<o:p></o:p></b></p>
-
-<p class=MsoNormal>A qualquer momento, <i>t</i>, durante o processo de
+<p><b>Arquitetura Prescritiva versus Arquitetura Descritiva</b></p>
+<p>A qualquer momento, <i>t</i>, durante o processo de
 engenharia de um sistema de software, os arquitetos desse sistema terão tomado
 um conjunto de decisões de design arquitetônico, <i>P</i>, que refletem sua
 intenção. Essas decisões de design compõem a <i>arquitetura prescritiva do
@@ -269,12 +225,9 @@ a arquitetura do sistema como pretendida ou concebida. A arquitetura
 prescritiva não precisa necessariamente existir em forma tangível. Por exemplo,
 pode estar inteiramente na mente dos arquitetos. Alternativamente, a
 arquitetura prescritiva pode ter sido capturada em uma notação, como uma
-linguagem de descrição de arquitetura (como as apresentadas no <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch06.html"
-title="Chapter&nbsp;6.&nbsp;Modeling"><b>Capítulo 6</b></a>) ou outra forma de
+linguagem de descrição de arquitetura (como as apresentadas no <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch06.html" title="Chapter 6. Modeling"><b>Capítulo 6</b></a>) ou outra forma de
 documentação.</p>
-
-<p class=MsoNormal>É importante notar que documentar a arquitetura prescritiva
+<p>É importante notar que documentar a arquitetura prescritiva
 não é suficiente. O leitor deve lembrar que a arquitetura não é apenas uma fase
 no processo de desenvolvimento de um sistema de software, mas forma a base
 crítica do sistema desde seu início até a aposentadoria. Assim, em qualquer
@@ -282,15 +235,14 @@ momento desse processo, as decisões de design arquitetônico que fazem parte da
 arquitetura prescritiva (isto é, do conjunto <i>P</i>) serão supostamente
 refinadas e <i>realizadas</i> com um conjunto de artefatos, <i>A</i>. Esses
 artefatos podem incluir refinamentos de decisões de design arquitetônico em uma
-notação como a <span class=SpellE>Unified</span> <span class=SpellE>Modeling</span>
-<span class=SpellE>Language</span> ou suas implementações em uma linguagem de
+notação como a <span class="SpellE">Unified</span> <span class="SpellE">Modeling</span>
+<span class="SpellE">Language</span> ou suas implementações em uma linguagem de
 programação. Os artefatos também podem incluir modelos de estilos
 arquitetônicos e padrões usados na arquitetura, componentes de software já
 existentes que serão usados no sistema desejado, frameworks de implementação e
 infraestruturas middleware que auxiliarão na construção do sistema,
 especificações de padrões aos quais a arquitetura precisa aderir, entre outros.</p>
-
-<p class=MsoNormal>Embora muitos dos artefatos em <i>A</i> possam ter existido
+<p>Embora muitos dos artefatos em <i>A</i> possam ter existido
 antes e independentemente da arquitetura em questão, cada um incorpora certas
 decisões de design que os arquitetos consideram desejáveis e relevantes para o
 sistema atual. O conjunto completo de decisões principais de projeto, <i>D</i>,
@@ -298,19 +250,16 @@ incorporado no conjunto de artefatos, <i>A</i>, é referido como arquitetura <i>
 do sistema. A arquitetura descritiva é chamada assim porque descreve como o
 sistema foi realizado. A arquitetura descritiva é, portanto, a arquitetura como
 realizada do sistema.</p>
-
-<p class=MsoNormal>O leitor deve notar que, nos estágios iniciais do ciclo de
+<p>O leitor deve notar que, nos estágios iniciais do ciclo de
 vida de um sistema, o número de artefatos que realizam a arquitetura
 normalmente será menor do que em estágios posteriores, quando mais parte da
 arquitetura do sistema já foi elaborada e possivelmente implementada.</p>
-
-<p class=MsoNormal>De fato, se considerarmos o tempo <i>t </i><b><sub>1</sub></b>
+<p>De fato, se considerarmos o tempo <i>t </i><b><sub>1</sub></b>
 para indicar o início do conjunto inicial <i>P </i><b><sub>1</sub></b> de
 decisões de design arquitetônico para um dado sistema, os conjuntos <i>A </i>1,
-<span class=GramE>e portanto</span> <i>D </i><b><sub>1</sub></b>, podem estar
-vazios. Isso normalmente ocorre no chamado desenvolvimento <span class=SpellE>greenfield</span>,
-onde o sistema é projetado e implementado do zero. No caso do desenvolvimento <span
-class=SpellE>brownfield</span>, muitos artefatos que realizam parcialmente a
+<span class="GramE">e portanto</span> <i>D </i><b><sub>1</sub></b>, podem estar
+vazios. Isso normalmente ocorre no chamado desenvolvimento <span class="SpellE">greenfield</span>,
+onde o sistema é projetado e implementado do zero. No caso do desenvolvimento <span class="SpellE">brownfield</span>, muitos artefatos que realizam parcialmente a
 arquitetura de um determinado sistema podem existir antes mesmo da arquitetura
 ser concebida; em outras palavras, no início de um projeto, <i>t </i><b><sub>0</sub></b>,
 o conjunto <i>D </i><b><sub>0</sub></b> é não vazio enquanto <i>P </i><b><sub>0</sub></b>
@@ -323,18 +272,13 @@ enquanto <i>D </i><b><sub>0</sub></b> é grande é o desenvolvimento envolvendo
 um sistema legado cuja intenção arquitetônica se perdeu ao longo do tempo. Tais
 discrepâncias entre os conjuntos <i>P</i> e <i>D</i> podem indicar problemas na
 arquitetura de software de um sistema, e serão discutidas mais adiante.</p>
-
-<p class=MsoNormal><b>Arquiteturas Prescritivas e Descritivas em Ação: Um
-Exemplo<o:p></o:p></b></p>
-
-<p class=MsoNormal>Vamos ilustrar a discussão acima com um exemplo simples.
+<p><b>Arquiteturas Prescritivas e Descritivas em Ação: Um
+Exemplo</b></p>
+<p>Vamos ilustrar a discussão acima com um exemplo simples.
 Neste ponto, não se espera que o leitor compreenda todas as nuances e
 implicações desse exemplo, mas apenas acompanhe o argumento no que diz respeito
 à arquitetura prescritiva e descritiva.</p>
-
-<p class=MsoNormal><a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch03.html#a_high-level_graphical_view_of_the_presc"
-title="Figure&nbsp;3-1.&nbsp;A high-level graphical view of the prescriptive (that is, as-designed or as-intended) architecture of the cargo routing application."><b>A
+<p><a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch03.html#a_high-level_graphical_view_of_the_presc" title="Figure 3-1. A high-level graphical view of the prescriptive (that is, as-designed or as-intended) architecture of the cargo routing application."><b>A
 Figura 3-1</b></a> mostra uma visão gráfica da arquitetura prescritiva de uma
 aplicação logística simples. Em outras palavras, o diagrama na figura é um
 modelo da arquitetura em uma linguagem gráfica de descrição de arquitetura. A
@@ -342,57 +286,45 @@ arquitetura é projetada usando um conjunto de componentes, que implementam a
 funcionalidade da aplicação, e conectores, que permitem que os componentes
 chamem as operações uns dos outros e troquem dados. (Componentes e conectores
 serão definidos de forma mais formal mais adiante neste capítulo.)</p>
-
-<p class=MsoNormal>Essa aplicação controla o roteamento da carga de um conjunto
+<p>Essa aplicação controla o roteamento da carga de um conjunto
 de Portos de Entrega de entrada para um conjunto de Armazéns por meio de um
 conjunto de Veículos. O componente Roteador de Carga tenta otimizar o uso dos
 veículos e entregar a carga ao seu destino correto (ou seja, armazém). O
-componente <span class=SpellE>Clock</span> fornece o tempo e ajuda os portos,
+componente <span class="SpellE">Clock</span> fornece o tempo e ajuda os portos,
 veículos e armazéns a se sincronizarem conforme necessário. Por fim, o
-componente <span class=SpellE>Binding</span> Gráfico fornece uma interface
+componente <span class="SpellE">Binding</span> Gráfico fornece uma interface
 gráfica que permite a um operador humano avaliar o estado do sistema durante
 sua execução. Os componentes do sistema interagem por meio de três conectores —
-<span class=SpellE>Clock</span> <span class=SpellE>Conn</span>, <span
-class=SpellE>Router</span> <span class=SpellE>Conn</span> e <span class=SpellE>Graphics</span>
-<span class=SpellE>Conn</span> — trocando requisições e respostas. As linhas
+<span class="SpellE">Clock</span> <span class="SpellE">Conn</span>, <span class="SpellE">Router</span> <span class="SpellE">Conn</span> e <span class="SpellE">Graphics</span>
+<span class="SpellE">Conn</span> — trocando requisições e respostas. As linhas
 que conectam os elementos componentes e conectores na arquitetura representam
 os caminhos de interação entre os elementos.</p>
-
-<p class=MsoNormal>A aplicação de roteamento de carga é útil nesta discussão
+<p>A aplicação de roteamento de carga é útil nesta discussão
 por três razões. Primeiro, sua simplicidade sugere que seus arquitetos deveriam
-ter sido capazes de avaliar todas as decisões arquitetônicas e seus trade-<span
-class=SpellE>offs</span> antes da implementação da aplicação. Segundo, a
+ter sido capazes de avaliar todas as decisões arquitetônicas e seus trade-<span class="SpellE">offs</span> antes da implementação da aplicação. Segundo, a
 arquitetura foi cuidadosamente implementada com a ajuda de um framework
-arquitetônico (veja <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch09.html"
-title="Chapter&nbsp;9.&nbsp;Implementation"><b>o Capítulo 9</b></a> para uma
+arquitetônico (veja <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch09.html" title="Chapter 9. Implementation"><b>o Capítulo 9</b></a> para uma
 discussão sobre frameworks arquitetônicos), o que permitiu aos desenvolvedores
 da aplicação realizar todas as decisões de design arquitetônico diretamente no
 código. Terceiro, além de uma biblioteca de interface gráfica (GUI), nenhuma
 outra funcionalidade pronta a usar foi usada na implementação, o que permitiu
 um mapeamento cuidadosamente controlado entre a arquitetura e sua implementação
 (ou seja, entre os conjuntos <i>P</i> e <i>D</i>).</p>
-
-<p class=MsoNormal>Uma visão gráfica da arquitetura descritiva (ou seja,
-conforme realizada) da aplicação de roteamento de carga é mostrada na <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch03.html#a_high-level_comma_graphical_view_of_the"
-title="Figure&nbsp;3-2.&nbsp;A high-level, graphical view of the descriptive (that is, as-implemented or as-realized) architecture of the cargo routing application."><b>Figura
+<p>Uma visão gráfica da arquitetura descritiva (ou seja,
+conforme realizada) da aplicação de roteamento de carga é mostrada na <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch03.html#a_high-level_comma_graphical_view_of_the" title="Figure 3-2. A high-level, graphical view of the descriptive (that is, as-implemented or as-realized) architecture of the cargo routing application."><b>Figura
 3-2</b></a>. Embora haja muitos artefatos no conjunto <i>A</i> desta aplicação
 (incluindo o estilo arquitetônico usado para realizar a arquitetura, o
 framework de implementação, o kit de ferramentas GUI pronto para uso e o
 próprio código de implementação), deliberadamente eliminamos muitos desses e
 extraímos a visão simplificada da arquitetura descritiva, <i>D</i>, a partir
 deles.</p>
-
-<p class=MsoNormal>Pode-se notar imediatamente que a visualização extraída da
+<p>Pode-se notar imediatamente que a visualização extraída da
 arquitetura descritiva não é idêntica à arquitetura prescritiva: o componente
-Veículo não está conectado ao conector <span class=SpellE>Clock</span> <span
-class=SpellE>Conn</span>, enquanto os conectores <span class=SpellE>Router</span>
-<span class=SpellE>Conn</span> e <span class=SpellE>Clock</span> <span
-class=SpellE>Conn</span> estão conectados, permitindo o roteamento de dois
+Veículo não está conectado ao conector <span class="SpellE">Clock</span> <span class="SpellE">Conn</span>, enquanto os conectores <span class="SpellE">Router</span>
+<span class="SpellE">Conn</span> e <span class="SpellE">Clock</span> <span class="SpellE">Conn</span> estão conectados, permitindo o roteamento de dois
 saltos de solicitações e respostas na arquitetura. Assim, é possível que o
-componente <span class=SpellE>Clock</span> interaja diretamente com o
-componente Cargo <span class=SpellE>Router</span> através dos dois conectores.
+componente <span class="SpellE">Clock</span> interaja diretamente com o
+componente Cargo <span class="SpellE">Router</span> através dos dois conectores.
 As razões específicas da aplicação por trás dessas mudanças não são importantes
 para esta discussão. O que importa é o fato de que programadores e arquitetos
 juntos descobriram que, mesmo no caso de uma aplicação tão simples, eles não
@@ -401,47 +333,38 @@ portanto, razoável esperar que tais questões só se agravem em sistemas maiore
 e mais complexos. Nesses sistemas, as arquiteturas prescritiva e descritiva
 podem não se parecer tão parecidas entre si. Essa é uma questão que será
 revisitada várias vezes ao longo do livro.</p>
-
-<p class=MsoNormal>Vamos levar essa discussão um passo adiante. Podemos fazer
+<p>Vamos levar essa discussão um passo adiante. Podemos fazer
 várias perguntas sobre as arquiteturas prescritiva e descritiva da aplicação de
 roteamento de cargas. Novamente, ainda não se espera que o leitor consiga
 fornecer respostas completas a essas perguntas. Em vez disso, o objetivo é
 ilustrar certas questões que serão revisitadas e sensibilizar o leitor para as
 dificuldades inerentes ao design arquitetônico mesmo de sistemas de software
 moderadamente complexos.</p>
-
-<ol style='margin-top:0cm' start=1 type=1>
- <li class=MsoNormal style='mso-list:l28 level1 lfo74;tab-stops:list 36.0pt'>Qual
-     arquitetura é &quot;correta&quot;? A arquitetura prescritiva reflete a
+<ol start="1" style="margin-top:0cm" type="1">
+<li>Qual
+     arquitetura é "correta"? A arquitetura prescritiva reflete a
      intenção dos arquitetos, mas a arquitetura descritiva reflete a
      experiência adicional de realmente implementar o sistema.</li>
- <li class=MsoNormal style='mso-list:l28 level1 lfo74;tab-stops:list 36.0pt'>As
+<li>As
      duas arquiteturas são consistentes entre si? Neste exemplo, as diferenças
      foram relativamente fáceis de perceber. No entanto, inconsistências
      arquitetônicas podem ser muito mais complexas e/ou insidiosas.</li>
- <li class=MsoNormal style='mso-list:l28 level1 lfo74;tab-stops:list 36.0pt'>Quais
+<li>Quais
      critérios são usados para estabelecer a consistência entre as duas
      arquiteturas? Novamente, neste exemplo, uma comparação estrutural simples
      foi suficiente, mas técnicas mais sofisticadas podem ser necessárias.</li>
- <li class=MsoNormal style='mso-list:l28 level1 lfo74;tab-stops:list 36.0pt'>Em
+<li>Em
      quais informações se baseia a resposta para as perguntas anteriores? Os
-     dois diagramas da <a
-     href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch03.html#a_high-level_graphical_view_of_the_presc"
-     title="Figure&nbsp;3-1.&nbsp;A high-level graphical view of the prescriptive (that is, as-designed or as-intended) architecture of the cargo routing application."><b>Figura
-     3-1</b></a> e <a
-     href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch03.html#a_high-level_comma_graphical_view_of_the"
-     title="Figure&nbsp;3-2.&nbsp;A high-level, graphical view of the descriptive (that is, as-implemented or as-realized) architecture of the cargo routing application."><b>da
+     dois diagramas da <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch03.html#a_high-level_graphical_view_of_the_presc" title="Figure 3-1. A high-level graphical view of the prescriptive (that is, as-designed or as-intended) architecture of the cargo routing application."><b>Figura
+     3-1</b></a> e <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch03.html#a_high-level_comma_graphical_view_of_the" title="Figure 3-2. A high-level, graphical view of the descriptive (that is, as-implemented or as-realized) architecture of the cargo routing application."><b>da
      Figura 3-2</b></a> representam subconjuntos muito pequenos de diferentes
      preocupações que podem ser capturados e/ou visualizados em um modelo
      arquitetônico. Mesmo que esses dois diagramas fossem idênticos, a
      quantidade de informações arquitetônicas que representam é insuficiente
      para garantir qualquer relação entre as duas arquiteturas.</li>
 </ol>
-
-<p class=MsoNormal><b>Degradação Arquitetônica<o:p></o:p></b></p>
-
-<p class=MsoNormal>Durante a vida útil de um sistema de software típico, <span
-class=GramE>um grande número de arquiteturas prescritivas</span> e descritivas
+<p><b>Degradação Arquitetônica</b></p>
+<p>Durante a vida útil de um sistema de software típico, <span class="GramE">um grande número de arquiteturas prescritivas</span> e descritivas
 será criado. Cada par correspondente dessas arquiteturas representa a
 arquitetura de software do sistema em um dado momento, <i>t</i>. À medida que o
 conjunto de decisões principais de projeto, <i>P</i>, o conjunto de artefatos, <i>A</i>,
@@ -450,8 +373,7 @@ artefatos, crescem, tornando-se a arquitetura de software do sistema mais
 completa. As partes interessadas do sistema decidirão o estado em que <i>P</i>
 e <i>A</i> (e, portanto<i>, D</i>) podem ser consideradas suficientemente
 completas e consistentes para que o sistema seja liberado em operação.</p>
-
-<p class=MsoNormal>Em um cenário ideal, os dois conjuntos de decisões de design
+<p>Em um cenário ideal, os dois conjuntos de decisões de design
 arquitetônico, <i>P</i> e <i>D</i>, seriam sempre idênticos; em outras
 palavras, <i>D</i> seria sempre uma realização perfeita de <i>P</i>. No
 entanto, isso não precisa ser o caso. Por exemplo, uma plataforma de
@@ -463,8 +385,7 @@ requisitos impostos pelos stakeholders do sistema, do ponto de vida útil do
 sistema, entre outros. No entanto, é fundamental que as partes interessadas, e
 especialmente os arquitetos, compreendam essa relação e sejam precisos sobre as
 diferenças permitidas entre <i>P</i> e <i>D</i>.</p>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shapetype
+<p><span><!--[if gte vml 1]><v:shapetype
  id="_x0000_t75" coordsize="21600,21600" o:spt="75" o:preferrelative="t"
  path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
  <v:stroke joinstyle="miter"/>
@@ -488,16 +409,11 @@ diferenças permitidas entre <i>P</i> e <i>D</i>.</p>
  alt="Uma visão gráfica de alto nível da arquitetura prescritiva (ou seja, conforme projetado ou pretendido) da aplicação de roteamento de cargas."
  style='width:411.6pt;height:475.8pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap03-ptbr_arquivos/image001.png" o:title="Uma visão gráfica de alto nível da arquitetura prescritiva (ou seja, conforme projetado ou pretendido) da aplicação de roteamento de cargas"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=549 height=634
-src="cap03-ptbr_arquivos/image001.png"
-alt="Uma visão gráfica de alto nível da arquitetura prescritiva (ou seja, conforme projetado ou pretendido) da aplicação de roteamento de cargas."
-v:shapes="Imagem_x0020_52"><![endif]></span></p>
-
-<p class=MsoNormal><b>Figura 3-1.&nbsp;Uma visão gráfica de alto nível da
+</v:shape><![endif]--><?if !vml?><img alt="Uma visão gráfica de alto nível da arquitetura prescritiva (ou seja, conforme projetado ou pretendido) da aplicação de roteamento de cargas." border="0" height="634" src="cap03-ptbr_arquivos/image001.png" v:shapes="Imagem_x0020_52" width="549"/><?endif?></span></p>
+<p><b>Figura 3-1. Uma visão gráfica de alto nível da
 arquitetura prescritiva (ou seja, conforme projetado ou pretendido) da
 aplicação de roteamento de cargas.</b></p>
-
-<p class=MsoNormal>Note que, dado conjuntos de decisões de projeto em <i>P</i>
+<p>Note que, dado conjuntos de decisões de projeto em <i>P</i>
 e <i>D</i> no tempo <i>t</i>, é possível que esses conjuntos permaneçam
 estáveis até o tempo <i>t + </i>n. Isso simplesmente significa que, embora o
 conjunto <i>A</i> possa ter se ampliado conforme a implementação avança, a
@@ -507,62 +423,51 @@ mude enquanto <i>D</i> permanece o mesmo (por exemplo, quando as preocupações
 de projeto arquitetônico são elaboradas, mas os artefatos que percebem o
 sistema ainda não foram atualizados); da mesma forma, <i>D</i> pode mudar
 enquanto <i>P</i> permanece o mesmo.</p>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+<p><span><!--[if gte vml 1]><v:shape
  id="Imagem_x0020_51" o:spid="_x0000_i1029" type="#_x0000_t75" alt="Uma visão gráfica de alto nível da arquitetura descritiva (ou seja, conforme implementada ou realizada) da aplicação de roteamento de cargas."
  style='width:411.6pt;height:580.8pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap03-ptbr_arquivos/image002.png" o:title="Uma visão gráfica de alto nível da arquitetura descritiva (ou seja, conforme implementada ou realizada) da aplicação de roteamento de cargas"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=549 height=774
-src="cap03-ptbr_arquivos/image002.png"
-alt="Uma visão gráfica de alto nível da arquitetura descritiva (ou seja, conforme implementada ou realizada) da aplicação de roteamento de cargas."
-v:shapes="Imagem_x0020_51"><![endif]></span></p>
-
-<p class=MsoNormal><b>Figura 3-2.&nbsp;Uma visão gráfica de alto nível da
+</v:shape><![endif]--><?if !vml?><img alt="Uma visão gráfica de alto nível da arquitetura descritiva (ou seja, conforme implementada ou realizada) da aplicação de roteamento de cargas." border="0" height="774" src="cap03-ptbr_arquivos/image002.png" v:shapes="Imagem_x0020_51" width="549"/><?endif?></span></p>
+<p><b>Figura 3-2. Uma visão gráfica de alto nível da
 arquitetura descritiva (ou seja, conforme implementada ou realizada) da
 aplicação de roteamento de cargas.</b></p>
-
-<p class=MsoNormal>Quando um sistema é inicialmente desenvolvido ou quando o
+<p>Quando um sistema é inicialmente desenvolvido ou quando o
 sistema já implementado é evoluído, idealmente sua arquitetura prescritiva é
 primeiro modificada adequadamente, e então as mudanças correspondentes à
 arquitetura descritiva seguem. Infelizmente, isso nem sempre acontece na
 prática. Em vez disso, o sistema (e, portanto, sua arquitetura descritiva) é
 frequentemente modificado diretamente, sem levar em conta o impacto relativo à
 arquitetura prescritiva.</p>
-
-<p class=MsoNormal>No exemplo do roteamento de cargas, os desenvolvedores podem
+<p>No exemplo do roteamento de cargas, os desenvolvedores podem
 nem ter se dado ao trabalho de informar aos arquitetos que decidiram mudar a
 arquitetura em vários lugares — mesmo que essas mudanças fossem justificadas.
 Essa falha em atualizar a arquitetura prescritiva ocorre por vários motivos:
 descuido dos desenvolvedores, percepção de prazos curtos que impedem de pensar
 e documentar o impacto na arquitetura prescritiva, falta de uma arquitetura
-prescritiva documentada, necessidade ou desejo de otimizar o sistema &quot;o
-que só pode ser feito no código&quot;, técnicas e suporte inadequados a
+prescritiva documentada, necessidade ou desejo de otimizar o sistema "o
+que só pode ser feito no código", técnicas e suporte inadequados a
 ferramentas, entre outros.</p>
-
-<p class=MsoNormal>Quaisquer que sejam os motivos, eles são falhos e
+<p>Quaisquer que sejam os motivos, eles são falhos e
 potencialmente perigosos, especialmente se considerarmos que sistemas de
-software são notórios por conter muitos erros (ou seja, por serem &quot;cheios
-de bugs&quot;). Será que realmente queremos que a arquitetura como realizada,
+software são notórios por conter muitos erros (ou seja, por serem "cheios
+de bugs"). Será que realmente queremos que a arquitetura como realizada,
 com todas as suas falhas potencialmente latentes, seja o árbitro final da <i>intenção</i>
-<span class=GramE>dos<span style='mso-spacerun:yes'>  </span>arquitetos</span>?
+<span class="GramE">dos<span>  </span>arquitetos</span>?
 A discrepância resultante entre a arquitetura prescritiva e descritiva de um
 sistema é chamada <i>de degradação arquitetônica</i>. A degradação arquitetônica
 compreende dois fenômenos relacionados: <i>deriva arquitetônica</i> e <i>erosão
 arquitetônica</i>.</p>
-
-<p class=MsoNormal><i>Definição. Deriva arquitetônica é a introdução de
+<p><i>Definição. Deriva arquitetônica é a introdução de
 decisões principais de projeto na arquitetura descritiva de um sistema que (a)
 não estão incluídas, não são incluídas ou implícitas pela arquitetura
 prescritiva, mas que (b) não violam nenhuma das decisões de design da
-arquitetura prescritiva.<o:p></o:p></i></p>
-
-<p class=MsoNormal>O desvio arquitetônico não necessariamente resulta em
+arquitetura prescritiva.</i></p>
+<p>O desvio arquitetônico não necessariamente resulta em
 violações diretas da arquitetura prescritiva. Em vez disso, ela contorna a
 arquitetura prescritiva e pode envolver decisões cujas implicações não são
 devidamente compreendidas e que podem afetar a adaptabilidade futura do sistema
 em questão.</p>
-
-<p class=MsoNormal>A deriva é resultado de mudanças diretas no conjunto, <i>A</i>,
+<p>A deriva é resultado de mudanças diretas no conjunto, <i>A</i>,
 de artefatos do sistema. Essas mudanças podem, por sua vez, resultar em
 alterações no conjunto, <i>D</i>, das decisões principais correspondentes de
 projeto. Note que todas as expansões do conjunto <i>D</i> não necessariamente
@@ -573,51 +478,42 @@ implícitas ou abrangidas por decisões em <i>P</i>. Por exemplo, <i>P</i> pode
 exigir o uso da criptografia em qualquer comunicação por meio de uma rede
 aberta; <i>D</i> pode afirmar que algoritmos de chave pública devem ser usados
 para suportar essa comunicação criptografada — uma decisão abrangida por <i>P</i>.</p>
-
-<p class=MsoNormal>Como exemplo de deriva arquitetônica, a arquitetura
-descritiva na aplicação de roteamento de carga (<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch03.html#a_high-level_comma_graphical_view_of_the"
-title="Figure&nbsp;3-2.&nbsp;A high-level, graphical view of the descriptive (that is, as-implemented or as-realized) architecture of the cargo routing application."><b>Figura
+<p>Como exemplo de deriva arquitetônica, a arquitetura
+descritiva na aplicação de roteamento de carga (<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch03.html#a_high-level_comma_graphical_view_of_the" title="Figure 3-2. A high-level, graphical view of the descriptive (that is, as-implemented or as-realized) architecture of the cargo routing application."><b>Figura
 3-2</b></a>) reflete a decisão de design arquitetônico de introduzir um enlace
 entre dois conectores, que não existia na arquitetura prescritiva. Assumindo
 que os arquitetos originais do sistema não proibiram explicitamente a ligação
 direta de dois conectores, adicionar o link não violaria nenhuma das decisões
 arquitetônicas tomadas na arquitetura prescritiva. No entanto, isso não
 significa que adicionar esse link seja algo inofensivo ou apropriado.</p>
-
-<p class=MsoNormal>O desvio arquitetônico também pode causar violações das
+<p>O desvio arquitetônico também pode causar violações das
 regras de estilo arquitetônico. Em outras palavras, o desvio arquitetônico
 reflete a insensibilidade dos engenheiros à arquitetura do sistema e pode levar
 à perda de clareza da forma e do entendimento do sistema (Perry e Wolf 1992).
 Se não for devidamente tratada, a deriva arquitetônica acabará resultando em
 erosão arquitetônica.</p>
-
-<p class=MsoNormal><i>Definição. Erosão arquitetônica é a introdução de
+<p><i>Definição. Erosão arquitetônica é a introdução de
 decisões de design arquitetônico na arquitetura descritiva de um sistema que
-violam sua arquitetura prescritiva.<o:p></o:p></i></p>
-
-<p class=MsoNormal>Em termos dos conjuntos de decisão de projeto arquitetônico,
+violam sua arquitetura prescritiva.</i></p>
+<p>Em termos dos conjuntos de decisão de projeto arquitetônico,
 <i>P</i> e <i>D</i>, a erosão arquitetônica pode ser vista como resultado de
 mudanças diretas no conjunto de artefatos do sistema, <i>A</i>, que introduzem
 uma decisão principal de projeto em <i>D</i> que invalida ou viola uma ou mais
 decisões de projeto que já existem em <i>P</i>. A erosão torna um sistema
-difícil de entender e adaptar, <span class=GramE>e também</span> frequentemente
+difícil de entender e adaptar, <span class="GramE">e também</span> frequentemente
 leva a falhas do sistema.</p>
-
-<p class=MsoNormal>A erosão arquitetônica pode ocorrer facilmente quando um
+<p>A erosão arquitetônica pode ocorrer facilmente quando um
 sistema se desvia demais, pois é fácil violar decisões arquitetônicas
 importantes se essas decisões forem obscurecidas por muitas pequenas mudanças
 intermediárias. Note que uma arquitetura certamente pode se deteriorar sem
 desvio prévio. No entanto, isso é menos provável de acontecer (já que ainda não
-houve desvio, as arquiteturas prescritiva e descritiva são consistentes <span
-class=GramE>no momento em que</span> as mudanças erradas são feitas) e é mais
+houve desvio, as arquiteturas prescritiva e descritiva são consistentes <span class="GramE">no momento em que</span> as mudanças erradas são feitas) e é mais
 fácil de se recuperar (já que menos decisões estão envolvidas). Note também que
 a erosão arquitetônica pode ser causada por decisões de projeto que são
 razoáveis quando consideradas isoladamente. No entanto, em combinação com
 outras decisões tomadas, mas talvez não devidamente documentadas, uma nova
 decisão de projeto pode ter consequências imprevistas e indesejadas.</p>
-
-<p class=MsoNormal>No exemplo da aplicação de roteamento de cargas, a remoção
+<p>No exemplo da aplicação de roteamento de cargas, a remoção
 do enlace entre o componente do Veículo e seu conector adjacente na arquitetura
 descritiva teria resultado em erosão arquitetônica se não fosse justificada e
 se a arquitetura prescritiva não tivesse sido devidamente atualizada. A remoção
@@ -628,36 +524,25 @@ perceberam que os veículos não precisam acompanhar o tempo internamente, desde
 que o componente Roteador de Carga lhes forneça instruções apropriadas. Eles
 discutiram essa observação com os arquitetos, que concordaram e atualizaram a
 arquitetura prescritiva de acordo.</p>
-
-<p class=MsoNormal>Tanto o desvio arquitetônico quanto a erosão podem ser
+<p>Tanto o desvio arquitetônico quanto a erosão podem ser
 perigosos e caros, e devem ser evitados. Isso exige certa disciplina por parte
 de arquitetos e incorporadores, mas a longo prazo economiza esforço e dinheiro,
 além de ajudar a preservar propriedades importantes do sistema.</p>
-
-<p class=MsoNormal><b>Perspectivas Arquitetônicas<o:p></o:p></b></p>
-
-<p class=MsoNormal>A noção de uma perspectiva arquitetônica é destacar alguns
+<p><b>Perspectivas Arquitetônicas</b></p>
+<p>A noção de uma perspectiva arquitetônica é destacar alguns
 aspectos de uma arquitetura enquanto se omitem outros.</p>
-
-<p class=MsoNormal><i>Definição. Uma perspectiva arquitetônica é um conjunto
-não vazio de tipos de decisões de design arquitetônico.<o:p></o:p></i></p>
-
-<p class=MsoNormal>Como a discussão anterior indicou, arquiteturas de software
+<p><i>Definição. Uma perspectiva arquitetônica é um conjunto
+não vazio de tipos de decisões de design arquitetônico.</i></p>
+<p>Como a discussão anterior indicou, arquiteturas de software
 abrangem decisões tomadas por uma variedade de partes interessadas em
 diferentes níveis de detalhe e abstração. O propósito de uma perspectiva
 arquitetônica é direcionar a atenção, por exemplo, para fins de análise, para
-um subconjunto das decisões.&nbsp;<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch03.html#a_high-level_graphical_view_of_the_presc"
-title="Figure&nbsp;3-1.&nbsp;A high-level graphical view of the prescriptive (that is, as-designed or as-intended) architecture of the cargo routing application."><b>As
-Figuras 3-1</b></a> e <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch03.html#a_high-level_comma_graphical_view_of_the"
-title="Figure&nbsp;3-2.&nbsp;A high-level, graphical view of the descriptive (that is, as-implemented or as-realized) architecture of the cargo routing application."><b>3-2</b></a>,
-por exemplo, fornecem apenas a <i><span
-style='mso-spacerun:yes'> </span>perspectiva estrutural da aplicação de
+um subconjunto das decisões. <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch03.html#a_high-level_graphical_view_of_the_presc" title="Figure 3-1. A high-level graphical view of the prescriptive (that is, as-designed or as-intended) architecture of the cargo routing application."><b>As
+Figuras 3-1</b></a> e <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch03.html#a_high-level_comma_graphical_view_of_the" title="Figure 3-2. A high-level, graphical view of the descriptive (that is, as-implemented or as-realized) architecture of the cargo routing application."><b>3-2</b></a>,
+por exemplo, fornecem apenas a <i><span> </span>perspectiva estrutural da aplicação de
 roteamento de cargas, sem mencionar seu comportamento, interações,
 justificativa e assim por diante.</i></p>
-
-<p class=MsoNormal>Outro exemplo de perspectiva é a <i>implantação</i>. Um
+<p>Outro exemplo de perspectiva é a <i>implantação</i>. Um
 sistema de software não pode cumprir seu propósito até ser implantado, ou seja,
 até que seus módulos executáveis sejam fisicamente colocados nos dispositivos
 de hardware nos quais devem rodar. A perspectiva de implantação de uma
@@ -667,34 +552,25 @@ dispositivo pequeno com memória e poder de CPU limitados, ou transferir grandes
 volumes de dados por um link de rede com baixa largura de banda impactará
 negativamente o sistema, assim como implementar incorretamente sua
 funcionalidade. Uma perspectiva de exemplo de implantação sobre a arquitetura
-da aplicação de roteamento de carga é mostrada na <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch03.html#a_deployment_view_of_the_cargo_routing_a"
-title="Figure&nbsp;3-3.&nbsp;A deployment view of the cargo routing application's architecture distributed across five devices. It is assumed that the Warehouse, Delivery Port, and Vehicle components interact with the corresponding physical objects in order to be able to "><b>Figura
+da aplicação de roteamento de carga é mostrada na <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch03.html#a_deployment_view_of_the_cargo_routing_a" title="Figure 3-3. A deployment view of the cargo routing application's architecture distributed across five devices. It is assumed that the Warehouse, Delivery Port, and Vehicle components interact with the corresponding physical objects in order to be able to "><b>Figura
 3-3</b></a>.</p>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+<p><span><!--[if gte vml 1]><v:shape
  id="Imagem_x0020_50" o:spid="_x0000_i1028" type="#_x0000_t75" alt="Uma visão de implantação da arquitetura da aplicação de roteamento de carga distribuída em cinco dispositivos. Presume-se que os componentes do Armazém, Porto de Entrega e Veículo interagem com os objetos físicos correspondentes para manter seu estado em tempo real. No entanto, essas interações não são retratadas aqui."
  style='width:411.6pt;height:601.8pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap03-ptbr_arquivos/image003.png" o:title="Uma visão de implantação da arquitetura da aplicação de roteamento de carga distribuída em cinco dispositivos"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=549 height=802
-src="cap03-ptbr_arquivos/image003.png"
-alt="Uma visão de implantação da arquitetura da aplicação de roteamento de carga distribuída em cinco dispositivos. Presume-se que os componentes do Armazém, Porto de Entrega e Veículo interagem com os objetos físicos correspondentes para manter seu estado em tempo real. No entanto, essas interações não são retratadas aqui."
-v:shapes="Imagem_x0020_50"><![endif]></span></p>
-
-<p class=MsoNormal><b>Figura 3-3.&nbsp;Uma visão de implantação da arquitetura
+</v:shape><![endif]--><?if !vml?><img alt="Uma visão de implantação da arquitetura da aplicação de roteamento de carga distribuída em cinco dispositivos. Presume-se que os componentes do Armazém, Porto de Entrega e Veículo interagem com os objetos físicos correspondentes para manter seu estado em tempo real. No entanto, essas interações não são retratadas aqui." border="0" height="802" src="cap03-ptbr_arquivos/image003.png" v:shapes="Imagem_x0020_50" width="549"/><?endif?></span></p>
+<p><b>Figura 3-3. Uma visão de implantação da arquitetura
 da aplicação de roteamento de carga distribuída em cinco dispositivos.
 Presume-se que os componentes do Armazém, Porto de Entrega e Veículo interagem
 com os objetos físicos correspondentes para manter seu estado em tempo real. No
 entanto, essas interações não são retratadas aqui.</b></p>
-
-<p class=MsoNormal>Para ilustrar ainda mais, lembre-se de que a arquitetura tem
+<p>Para ilustrar ainda mais, lembre-se de que a arquitetura tem
 uma dimensão temporal, ou seja, que a arquitetura de um sistema provavelmente
 mudará ao longo do tempo. No entanto, em qualquer momento, o sistema possui
 apenas <i>uma</i> arquitetura. Essa arquitetura pode ser pensada, modelada,
 visualizada e discutida sob diferentes perspectivas. Por exemplo, a perspectiva
 dos módulos do sistema e suas interconexões, que não está limitada a quaisquer
-aspectos do hardware sobre o qual o sistema irá rodar, pode ser chamada de <i><span
-style='mso-spacerun:yes'> </span>visão estrutural; se estivéssemos falando da
+aspectos do hardware sobre o qual o sistema irá rodar, pode ser chamada de <i><span> </span>visão estrutural; se estivéssemos falando da
 arquitetura prescritiva de um sistema, então diríamos que essa é a visão
 estrutural da arquitetura </i>prescritiva; Se, por outro lado, postulássemos a
 topologia de hardware sobre a qual essa arquitetura pode (ou deveria) rodar uma
@@ -702,73 +578,53 @@ vez implementada, estaríamos falando da <i>visão de implantação da arquitetu
 prescritiva</i>; se estivermos discutindo a distribuição dos módulos de sistema
 implementados nos diferentes hosts de hardware, diríamos que esta é a <i>visão
 de implantação da arquitetura </i>descritiva; e assim por diante.</p>
-
-<p class=MsoNormal>Perspectivas e pontos de vista arquitetônicos serão
-discutidos com mais detalhes nos <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch06.html"
-title="Chapter&nbsp;6.&nbsp;Modeling"><b>Capítulos 6</b></a> e <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch07.html"
-title="Chapter&nbsp;7.&nbsp;Visualization"><b>7</b></a>. Continuamos a
+<p>Perspectivas e pontos de vista arquitetônicos serão
+discutidos com mais detalhes nos <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch06.html" title="Chapter 6. Modeling"><b>Capítulos 6</b></a> e <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch07.html" title="Chapter 7. Visualization"><b>7</b></a>. Continuamos a
 discussão abaixo com definições dos principais blocos arquitetônicos e vários
 outros conceitos-chave derivados do conceito de arquitetura de software.</p>
-
-<p class=MsoNormal><b>Outras Definições de Arquitetura de Software<o:p></o:p></b></p>
-
-<p class=MsoNormal><span class=SpellE>Dewayne</span> Perry e Alexander Wolf
+<p><b>Outras Definições de Arquitetura de Software</b></p>
+<p><span class="SpellE">Dewayne</span> Perry e Alexander Wolf
 (Perry e Wolf 1992) fornecem uma caracterização útil da arquitetura de software
 como um triplo:</p>
-
-<p class=MsoNormal><i>Definição. Arquitetura = {elementos, forma,
-racionalidade}<o:p></o:p></i></p>
-
-<p class=MsoNormal>Em outras palavras, a arquitetura define os elementos-chave
+<p><i>Definição. Arquitetura = {elementos, forma,
+racionalidade}</i></p>
+<p>Em outras palavras, a arquitetura define os elementos-chave
 do sistema e suas relações entre si e com seu ambiente. Além disso, a
 arquitetura reflete a lógica por trás da estrutura, funcionalidade, interações
 e propriedades resultantes do sistema.</p>
-
-<p class=MsoNormal>Elementos capturam os blocos construtores do sistema e
-ajudam a responder às perguntas <span class=SpellE>What</span> sobre a
+<p>Elementos capturam os blocos construtores do sistema e
+ajudam a responder às perguntas <span class="SpellE">What</span> sobre a
 arquitetura. As perguntas que você pode fazer sobre os elementos da arquitetura
 incluem as seguintes: Quais são os blocos de construção do sistema? Qual é o
 propósito principal de um determinado elemento no sistema? Quais serviços de
 sistema cada elemento (ajuda a) fornecer?</p>
-
-<p class=MsoNormal>Perry e Wolf identificam três tipos de blocos de construção:</p>
-
-<ul style='margin-top:0cm' type=disc>
- <li class=MsoNormal style='mso-list:l17 level1 lfo75;tab-stops:list 36.0pt'>Elementos
+<p>Perry e Wolf identificam três tipos de blocos de construção:</p>
+<ul style="margin-top:0cm" type="disc">
+<li>Elementos
      de processamento</li>
- <li class=MsoNormal style='mso-list:l17 level1 lfo75;tab-stops:list 36.0pt'>Elementos
+<li>Elementos
      de dados</li>
- <li class=MsoNormal style='mso-list:l17 level1 lfo75;tab-stops:list 36.0pt'>Elementos
+<li>Elementos
      de conexão</li>
 </ul>
-
-<p class=MsoNormal>Esses três tipos geralmente são consolidados em dois grandes
+<p>Esses três tipos geralmente são consolidados em dois grandes
 conceitos arquitetônicos, componentes e conectores, que serão discutidos
-abaixo. A única exceção notável é o estilo arquitetônico REST (introduzido no <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch01.html"
-title="Chapter&nbsp;1.&nbsp;The Big Idea"><b>Capítulo 1</b></a> e discutido
-mais detalhadamente no <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch11.html"
-title="Chapter&nbsp;11.&nbsp;Applied Architectures and Styles"><b>Capítulo 11</b></a>).
+abaixo. A única exceção notável é o estilo arquitetônico REST (introduzido no <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch01.html" title="Chapter 1. The Big Idea"><b>Capítulo 1</b></a> e discutido
+mais detalhadamente no <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch11.html" title="Chapter 11. Applied Architectures and Styles"><b>Capítulo 11</b></a>).
 O REST não apenas confere aos elementos de dados status de primeira classe,
 como eles superam em importância tanto o processamento quanto a conexão dos
 elementos.</p>
-
-<p class=MsoNormal>A forma captura a forma como os elementos do sistema são
+<p>A forma captura a forma como os elementos do sistema são
 organizados na arquitetura. Forma representa a estrutura de elementos
-arquitetônicos individuais, <span class=GramE>a forma como eles são</span>
+arquitetônicos individuais, <span class="GramE">a forma como eles são</span>
 compostos no sistema (ou seja, a configuração ou topologia da arquitetura), as
 características de sua interação, bem como sua relação com seu ambiente
 operacional (por exemplo, implantação de elementos de software específicos em
-hosts de hardware específicos). O formulário ajuda a responder às perguntas do <span
-class=SpellE>How</span> sobre a arquitetura, que podem incluir o seguinte: Como
+hosts de hardware específicos). O formulário ajuda a responder às perguntas do <span class="SpellE">How</span> sobre a arquitetura, que podem incluir o seguinte: Como
 a arquitetura geral é organizada? Como os elementos são compostos para realizar
 as principais tarefas do sistema? Como os elementos são distribuídos em uma
 rede?</p>
-
-<p class=MsoNormal>Por fim, a racionalização representa a intenção dos
+<p>Por fim, a racionalização representa a intenção dos
 projetistas do sistema, suposições, escolhas sutis, restrições externas (talvez
 não técnicas), padrões e estilos de design selecionados, e qualquer outra
 informação que possa não ser óbvia ou facilmente derivável da arquitetura. A
@@ -776,36 +632,27 @@ justificativa ajuda a responder às perguntas do porquê sobre a arquitetura.
 Essas perguntas podem incluir o seguinte: Por que determinados elementos são
 usados? Por que eles são combinados de uma forma específica? Por que o sistema
 é distribuído da maneira dada?</p>
-
-<p class=MsoNormal>Embora em seu artigo seminal Perry e Wolf reconheçam o papel
+<p>Embora em seu artigo seminal Perry e Wolf reconheçam o papel
 fundamental da arquitetura de software na evolução de um sistema, observe que
 sua definição não captura explicitamente a evolução. No entanto, sua definição
 sugere que capturar a justificativa do projeto é pré-requisito para realizar
 com sucesso quaisquer mudanças subsequentes na arquitetura do sistema.</p>
-
-<p class=MsoNormal>Outra definição útil de arquitetura, que aborda
+<p>Outra definição útil de arquitetura, que aborda
 explicitamente a evolução do sistema, é a fornecida pelo <i>Padrão ANSI/IEEE
 1471-2000, Prática Recomendada para Descrição Arquitetônica de Sistemas
-Intensivos <span class=GramE>em <span style='font-style:normal'><span
-style='mso-spacerun:yes'> </span>Software</span></span></i>:</p>
-
-<p class=MsoNormal><i>Definição. Arquitetura é a organização fundamental de um
+Intensivos <span class="GramE">em <span style="font-style:normal"><span> </span>Software</span></span></i>:</p>
+<p><i>Definição. Arquitetura é a organização fundamental de um
 sistema, incorporada em seus componentes, em suas relações entre si e com o
-meio ambiente, e nos princípios que regem seu design e evolução.<o:p></o:p></i></p>
-
-<p class=MsoNormal>Note que essa definição não se refere especificamente a
+meio ambiente, e nos princípios que regem seu design e evolução.</i></p>
+<p>Note que essa definição não se refere especificamente a
 software, sugerindo que a arquitetura de um sistema de software é
 fundamentalmente semelhante às arquiteturas de outros tipos de sistemas
 complexos.</p>
-
-<p class=MsoNormal>Outra definição interessante e frequentemente citada de
-arquitetura de software é atribuída a Chris <span class=SpellE>Verhoef</span> (<span
-class=SpellE>Klusener</span> et al. 2005):</p>
-
-<p class=MsoNormal><i>Definição. A arquitetura de software do software
-implantado é determinada pelos aspectos que são mais difíceis de mudar.<o:p></o:p></i></p>
-
-<p class=MsoNormal>Esta é uma perspectiva diferente sobre como definir
+<p>Outra definição interessante e frequentemente citada de
+arquitetura de software é atribuída a Chris <span class="SpellE">Verhoef</span> (<span class="SpellE">Klusener</span> et al. 2005):</p>
+<p><i>Definição. A arquitetura de software do software
+implantado é determinada pelos aspectos que são mais difíceis de mudar.</i></p>
+<p>Esta é uma perspectiva diferente sobre como definir
 arquitetura de software: a definição nos diz qual <i>efeito</i> a arquitetura
 terá sobre um sistema de software em termos de estabilidade e modificabilidade
 desse sistema. No entanto, a definição não diz o que <i>é</i> arquitetura. Além
@@ -813,77 +660,62 @@ disso, é justo perguntar se só porque algo é fundamental deve ser o mais
 difícil de mudar. Na verdade, em muitos casos, decisões de design arquitetônico
 serão facilitadores explícitos da modificação do sistema. Exemplos disso serão
 fornecidos ao longo do livro, e em particular na discussão sobre adaptação de
-sistemas de software orientados por arquitetura discutida no <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch14.html"
-title="Chapter&nbsp;14.&nbsp;Architectural Adaptation"><b>Capítulo 14</b></a>.</p>
-
-<p class=MsoNormal><b>Componente<o:p></o:p></b></p>
-
-<p class=MsoNormal>As decisões que compõem a arquitetura de um sistema de
+sistemas de software orientados por arquitetura discutida no <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch14.html" title="Chapter 14. Architectural Adaptation"><b>Capítulo 14</b></a>.</p>
+<p><b>Componente</b></p>
+<p>As decisões que compõem a arquitetura de um sistema de
 software abrangem uma rica interação e composição de muitos elementos
 diferentes. Esses elementos abordam preocupações chave do sistema, incluindo:</p>
-
-<ul style='margin-top:0cm' type=disc>
- <li class=MsoNormal style='mso-list:l9 level1 lfo76;tab-stops:list 36.0pt'>Processamento,
+<ul style="margin-top:0cm" type="disc">
+<li>Processamento,
      que também pode ser chamado de funcionalidade ou comportamento.</li>
- <li class=MsoNormal style='mso-list:l9 level1 lfo76;tab-stops:list 36.0pt'>Estado,
+<li>Estado,
      que também pode ser referido como informação ou dados.</li>
- <li class=MsoNormal style='mso-list:l9 level1 lfo76;tab-stops:list 36.0pt'>Interação,
+<li>Interação,
      que também pode ser chamada de interconexão, comunicação, coordenação ou
      mediação.</li>
 </ul>
-
-<p class=MsoNormal>Nesta seção, abordaremos elementos arquitetônicos que tratam
+<p>Nesta seção, abordaremos elementos arquitetônicos que tratam
 das duas primeiras preocupações — processamento e dados; A interação é abordada
 na próxima seção.</p>
-
-<p class=MsoNormal>Elementos que encapsulam o processamento e os dados na
+<p>Elementos que encapsulam o processamento e os dados na
 arquitetura de um sistema são chamados de <i>componentes de software</i>.</p>
-
-<p class=MsoNormal><i>Definição. Um componente de software é uma entidade
+<p><i>Definição. Um componente de software é uma entidade
 arquitetônica que (1) encapsula um subconjunto da funcionalidade e/ou dados do
 sistema, (2) restringe o acesso a esse subconjunto por meio de uma interface
 explicitamente definida, e (3) possui dependências explicitamente definidas em
-seu contexto de execução requerido.<o:p></o:p></i></p>
-
-<p class=MsoNormal>Em outras palavras, um componente de software é um <span
-class=SpellE>locus</span> de computação e estado em um sistema (Shaw et al.
+seu contexto de execução requerido.</i></p>
+<p>Em outras palavras, um componente de software é um <span class="SpellE">locus</span> de computação e estado em um sistema (Shaw et al.
 1995). Um componente pode ser tão simples quanto uma única operação ou tão
 complexo quanto um sistema inteiro, dependendo da arquitetura, da perspectiva
 adotada pelos projetistas e das necessidades do sistema em questão. O aspecto
-chave de qualquer componente é que ele pode ser &quot;visto&quot; por seus
+chave de qualquer componente é que ele pode ser "visto" por seus
 usuários, sejam humanos ou software, apenas de fora e somente através da
 interface que ele (ou, melhor, seu desenvolvedor) escolheu tornar pública. Caso
-contrário, aparece como uma &quot;caixa preta&quot;. Os componentes de software
+contrário, aparece como uma "caixa preta". Os componentes de software
 são, portanto, a personificação dos princípios da engenharia de software de <i>encapsulamento,
 abstração</i> e <i>modularidade</i>. Isso, por sua vez, traz várias implicações
-positivas na <span class=SpellE>composabilidade</span>, reutilização e <span
-class=SpellE>evolutividade</span> de um componente.</p>
-
-<p class=MsoNormal>Outro aspecto crítico dos componentes de software que os
+positivas na <span class="SpellE">composabilidade</span>, reutilização e <span class="SpellE">evolutividade</span> de um componente.</p>
+<p>Outro aspecto crítico dos componentes de software que os
 torna utilizáveis e reutilizáveis entre aplicações é o tratamento explícito do
 contexto de execução que um componente assume e do qual ele depende. A extensão
 do contexto capturado por um componente pode incluir:</p>
-
-<ul style='margin-top:0cm' type=disc>
- <li class=MsoNormal style='mso-list:l25 level1 lfo77;tab-stops:list 36.0pt'>A
-     interface necessária<i> do <span class=GramE>componente <span
-     style='font-style:normal'><span style='mso-spacerun:yes'> </span>,</span></span></i>
+<ul style="margin-top:0cm" type="disc">
+<li>A
+     interface necessária<i> do <span class="GramE">componente <span style="font-style:normal"><span> </span>,</span></span></i>
      ou seja, a interface para serviços fornecidos por outros componentes em um
      sistema do qual esse componente depende para sua capacidade de realizar
      suas operações.</li>
- <li class=MsoNormal style='mso-list:l25 level1 lfo77;tab-stops:list 36.0pt'>A
+<li>A
      disponibilidade de recursos específicos, como arquivos de dados ou
      diretórios, dos quais o componente depende.</li>
- <li class=MsoNormal style='mso-list:l25 level1 lfo77;tab-stops:list 36.0pt'>O
+<li>O
      software de sistema necessário, como ambientes de execução de linguagens
      de programação, plataformas middleware, sistemas operacionais, protocolos
      de rede, drivers de dispositivo, entre outros.</li>
- <li class=MsoNormal style='mso-list:l25 level1 lfo77;tab-stops:list 36.0pt'>As
+<li>As
      configurações de hardware necessárias para executar o componente.</li>
 </ul>
-
-<p class=MsoNormal>Outro aspecto de um componente de software, e que ajuda a
+<p>Outro aspecto de um componente de software, e que ajuda a
 diferenciá-lo ainda mais dos conectores discutidos abaixo, é a relação de um
 componente com a aplicação específica à qual ele pertence. Os componentes são
 frequentemente direcionados às necessidades de processamento e captura de dados
@@ -892,24 +724,18 @@ aplicação</i>. Por exemplo, Veículo e Armazém no sistema de roteamento de ca
 são componentes específicos de aplicação: embora possam ser úteis em outros
 sistemas semelhantes, foram especificamente projetados e implementados para
 atender às necessidades daquela aplicação.</p>
-
-<p class=MsoNormal>No entanto, isso nem sempre é o caso. Às vezes, os
+<p>No entanto, isso nem sempre é o caso. Às vezes, os
 componentes são projetados para atender às necessidades de múltiplas aplicações
 dentro de uma determinada classe de aplicações ou domínio de problemas. Por
 exemplo, servidores Web são parte integrante de qualquer sistema baseado na
 Web; provavelmente você vai baixar, instalar e configurar um servidor Web
 existente em vez de desenvolver o próprio. Outro exemplo envolve componentes
-como <span class=SpellE>CTunerDriver</span>, <span class=SpellE>CFrontEnd</span>
-e <span class=SpellE>CBackEnd</span>, introduzidos na discussão sobre linhas de
-produtos no <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch01.html"
-title="Chapter&nbsp;1.&nbsp;The Big Idea"><b>Capítulo 1</b></a>, <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch01.html#an_example_software_architecture_for_a_t"
-title="Figure&nbsp;1-6.&nbsp;An example software architecture for a TV set. The architecture consists of five interacting components with various incoming and outgoing interfaces. (Figure courtesy Royal Phillips N.V.)"><b>Figura
+como <span class="SpellE">CTunerDriver</span>, <span class="SpellE">CFrontEnd</span>
+e <span class="SpellE">CBackEnd</span>, introduzidos na discussão sobre linhas de
+produtos no <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch01.html" title="Chapter 1. The Big Idea"><b>Capítulo 1</b></a>, <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch01.html#an_example_software_architecture_for_a_t" title="Figure 1-6. An example software architecture for a TV set. The architecture consists of five interacting components with various incoming and outgoing interfaces. (Figure courtesy Royal Phillips N.V.)"><b>Figura
 1-6</b></a>, que são destinados a serem reutilizados em diferentes sistemas
 dentro do domínio da eletrônica de consumo.</p>
-
-<p class=MsoNormal>Por fim, certos componentes de software são utilitários
+<p>Por fim, certos componentes de software são utilitários
 necessários e podem ser reutilizados em diversas aplicações, sem considerar as
 características específicas da aplicação ou o domínio. Exemplos comuns de
 componentes utilitários reutilizáveis são bibliotecas matemáticas e kits de
@@ -921,19 +747,15 @@ sistema, os arquitetos podem optar por integrá-los em vez de reimplementar
 exatamente a funcionalidade necessária. Como o leitor deve se lembrar, essa é
 justamente a razão pela qual as arquiteturas prescritiva e descritiva de um
 sistema não precisam ser idênticas.</p>
-
-<p class=MsoNormal><b>Outras definições de componente de software<o:p></o:p></b></p>
-
-<p class=MsoNormal>Clemens <span class=SpellE>Szyperski</span> fornece outra
-definição amplamente citada de componente de software (<span class=SpellE>Szyperski</span>
+<p><b>Outras definições de componente de software</b></p>
+<p>Clemens <span class="SpellE">Szyperski</span> fornece outra
+definição amplamente citada de componente de software (<span class="SpellE">Szyperski</span>
 1997). Ele aborda os componentes de uma perspectiva um pouco diferente:</p>
-
-<p class=MsoNormal><i>Definição. Um componente de software é uma unidade de
+<p><i>Definição. Um componente de software é uma unidade de
 composição com interfaces contratualmente especificadas e dependências
 explícitas apenas de contexto. Um componente de software pode ser implantado de
-forma independente e está sujeito à composição por terceiros.<o:p></o:p></i></p>
-
-<p class=MsoNormal>Essa definição não nos diz o que é um componente, mas sim
+forma independente e está sujeito à composição por terceiros.</i></p>
+<p>Essa definição não nos diz o que é um componente, mas sim
 como ele deve ser estruturado e utilizado, tanto por desenvolvedores de
 software (compondo o componente em um sistema e implantando-o) quanto por
 outros componentes (interagindo com ele por meio de interfaces explícitas).
@@ -943,11 +765,10 @@ definição não captura o papel que um componente desempenha em um sistema, de 
 que a mesma definição poderia, de fato, ser usada para definir um conector de
 software. A seguir, vamos definir o que é um conector de software e como ele
 difere fundamentalmente de um componente.</p>
-
-<p class=MsoNormal>A definição de <span class=SpellE>Szyperski</span> é
+<p>A definição de <span class="SpellE">Szyperski</span> é
 semelhante a várias outras definições de componentes de software [por exemplo,
-veja o livro de <span class=SpellE>Heineman</span> e <span class=SpellE>Councill</span>
-(<span class=SpellE>Heineman</span> e <span class=SpellE>Councill</span>
+veja o livro de <span class="SpellE">Heineman</span> e <span class="SpellE">Councill</span>
+(<span class="SpellE">Heineman</span> e <span class="SpellE">Councill</span>
 2001)], pois ela não separa o processamento dos componentes de dados, como
 sugerido por Perry e Wolf. É possível que essa falha em separar dados da
 computação nas arquiteturas de sistemas de software seja um efeito colateral da
@@ -963,27 +784,23 @@ abordados separadamente (o estilo arquitetônico REST sendo uma exceção
 notável); em vez disso, na maioria das vezes, um único componente executa uma
 parte da funcionalidade do sistema e mantém parte de seu estado. A distinção,
 então, será feita de acordo com o propósito principal do componente no sistema.</p>
-
-<p class=MsoNormal><b>Conector<o:p></o:p></b></p>
-
-<p class=MsoNormal>Os componentes são responsáveis pelo <i>processamento</i> ou
+<p><b>Conector</b></p>
+<p>Os componentes são responsáveis pelo <i>processamento</i> ou
 <i>dados</i>, ou ambos simultaneamente. Outro aspecto fundamental dos sistemas
-de software <span class=GramE>é <i><span style='mso-spacerun:yes'> </span>a</i></span><i>
+de software <span class="GramE">é <i><span> </span>a</i></span><i>
 interação</i> entre os blocos construtores do sistema. Muitos sistemas modernos
 são construídos a partir de grandes quantidades de componentes complexos,
 distribuídos por múltiplos hosts, possivelmente móveis, e atualizados
-dinamicamente ao longo de longos <span class=GramE>períodos de tempo</span>.
+dinamicamente ao longo de longos <span class="GramE">períodos de tempo</span>.
 Nesses sistemas, garantir interações adequadas entre os componentes pode se
 tornar ainda mais importante e desafiador para os desenvolvedores do que a
 funcionalidade dos componentes individuais. Em outras palavras, as interações
 em um sistema tornam-se uma preocupação principal (ou seja, arquitetônica).
 Conectores de software são a abstração arquitetônica responsável por gerenciar
 as interações de componentes.</p>
-
-<p class=MsoNormal><i>Definição. Um conector de software é um elemento
-arquitetônico encarregado de efetivar e regular interações entre componentes.<o:p></o:p></i></p>
-
-<p class=MsoNormal>Em sistemas tradicionais de software desktop, conectores
+<p><i>Definição. Um conector de software é um elemento
+arquitetônico encarregado de efetivar e regular interações entre componentes.</i></p>
+<p>Em sistemas tradicionais de software desktop, conectores
 geralmente se manifestaram como chamadas simples de procedimentos ou acessos
 compartilhados de dados, e geralmente foram tratados como efêmeros ou
 invisíveis em termos de arquitetura. Isso é emblemático dos diagramas de caixas
@@ -995,33 +812,26 @@ de pares de componentes. No entanto, à medida que os sistemas de software se
 tornaram mais complexos, também se tornaram os conectores, com suas próprias
 identidades, papéis e corpos de código em nível de implementação, além da
 capacidade de atender simultaneamente a muitos componentes diferentes.</p>
-
-<p class=MsoNormal>Os conectores são um elemento tão crítico, rico e, ainda
+<p>Os conectores são um elemento tão crítico, rico e, ainda
 assim, em grande parte subestimado das arquiteturas de software que decidimos
-dedicar <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch05.html"
-title="Chapter&nbsp;5.&nbsp;Connectors"><b><span
-style='mso-spacerun:yes'> </span>o Capítulo 5</b></a> a eles. Aqui, ilustramos
+dedicar <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch05.html" title="Chapter 5. Connectors"><b><span> </span>o Capítulo 5</b></a> a eles. Aqui, ilustramos
 brevemente alguns dos pontos com os quais o leitor pode estar familiarizado.</p>
-
-<p class=MsoNormal>O tipo de conector mais simples e amplamente utilizado é a <i>chamada
+<p>O tipo de conector mais simples e amplamente utilizado é a <i>chamada
 de procedimento</i>. Chamadas de procedimento são implementadas diretamente em
 linguagens de programação, onde normalmente permitem a troca síncrona de dados
 e o controle entre pares de componentes: o componente invocador (o chamador)
 passa o thread de controle, bem como dados na forma de parâmetros de invocação,
-para o componente invocado (o chamado); <span class=GramE>Após</span> concluir
+para o componente invocado (o chamado); <span class="GramE">Após</span> concluir
 a operação solicitada, o atento retorna o controle, bem como quaisquer
 resultados da operação, ao chamador.</p>
-
-<p class=MsoNormal>Outro tipo de conector muito comum é o <i>acesso
+<p>Outro tipo de conector muito comum é o <i>acesso
 compartilhado a dados</i>. Esse tipo de conector se manifesta em sistemas de
 software na forma de variáveis não locais ou memória compartilhada. Conectores
 desse tipo permitem que múltiplos componentes de software interajam lendo e
 escrevendo nas instalações compartilhadas. A interação é distribuída no tempo,
 ou seja, é assíncrona: os escritores não precisam ter dependências temporais
 nem impor restrições temporais aos leitores e vice-versa.</p>
-
-<p class=MsoNormal>Uma classe importante de conectores em sistemas modernos de
+<p>Uma classe importante de conectores em sistemas modernos de
 software são os <i>conectores de distribuição</i>. Esses conectores normalmente
 encapsulam interfaces de programação de aplicações (APIs) de bibliotecas de
 rede para permitir que componentes em um sistema distribuído interajam. Um
@@ -1029,94 +839,78 @@ conector de distribuição geralmente é acoplado a um conector mais básico par
 isolar os componentes interagindo dos detalhes de distribuição do sistema.
 Assim, por exemplo, conectores de chamadas remotas de procedimento (RPC) conectam
 suporte de distribuição com chamadas de procedimento.</p>
-
-<p class=MsoNormal>Muitos sistemas de software são construídos a partir de
+<p>Muitos sistemas de software são construídos a partir de
 componentes pré-existentes, que podem não ter sido feitos sob medida para o
 sistema em questão. Nesses casos, os componentes podem precisar de ajuda para
-se integrar e interagir entre si.&nbsp;<i> Conectores adaptadores</i> são
+se integrar e interagir entre si. <i> Conectores adaptadores</i> são
 empregados para esse fim. Dependendo de suas características e do contexto em
-que são usados, <span class=SpellE>wrappers</span> e código de cola são dois
+que são usados, <span class="SpellE">wrappers</span> e código de cola são dois
 tipos comuns de conectores adaptadores com os quais o leitor pode estar
 familiarizado.</p>
-
-<p class=MsoNormal>Note que, embora os componentes forneçam principalmente
+<p>Note que, embora os componentes forneçam principalmente
 serviços específicos de aplicação, os conectores são tipicamente independentes
 da aplicação. Podemos discutir as características de um procedimento,
 distribuidor, adaptador e assim por diante, independentemente dos componentes
 que eles atendem. Noções que entraram em nosso dialeto coletivo, como
-&quot;publicar-assinar&quot;, &quot;notificação de evento assíncrona&quot; e
-&quot;chamada remota de procedimento&quot;, têm significados e características
+"publicar-assinar", "notificação de evento assíncrona" e
+"chamada remota de procedimento", têm significados e características
 associadas que são em grande parte independentes do contexto em que são usadas.
 Esses conectores podem ser construídos sem um propósito específico em mente e
 depois usados repetidamente em aplicações (possivelmente após alguma
 customização).</p>
-
-<p class=MsoNormal><b>Configuração<o:p></o:p></b></p>
-
-<p class=MsoNormal>Componentes e conectores são compostos de maneira específica
+<p><b>Configuração</b></p>
+<p>Componentes e conectores são compostos de maneira específica
 na arquitetura de um determinado sistema para cumprir o objetivo desse sistema.
 Essa composição representa a configuração do sistema, também chamada de
 topologia. Definimos configurações da seguinte forma.</p>
-
-<p class=MsoNormal><i>Definição. Uma configuração arquitetônica é um conjunto
+<p><i>Definição. Uma configuração arquitetônica é um conjunto
 de associações específicas entre os componentes e conectores da arquitetura de
-um sistema de software.<o:p></o:p></i></p>
-
-<p class=MsoNormal>Uma configuração pode ser representada como um grafo no qual
-<span class=GramE>nós representam</span> componentes e conectores, e cujas
+um sistema de software.</i></p>
+<p>Uma configuração pode ser representada como um grafo no qual
+<span class="GramE">nós representam</span> componentes e conectores, e cujas
 arestas representam suas associações (topologia ou interconectividade).</p>
-
-<p class=MsoNormal>Como exemplo,<span style='mso-spacerun:yes'>  </span>a <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch03.html#a_high-level_graphical_view_of_the_presc"
-title="Figure&nbsp;3-1.&nbsp;A high-level graphical view of the prescriptive (that is, as-designed or as-intended) architecture of the cargo routing application."><b>Figura
+<p>Como exemplo,<span>  </span>a <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch03.html#a_high-level_graphical_view_of_the_presc" title="Figure 3-1. A high-level graphical view of the prescriptive (that is, as-designed or as-intended) architecture of the cargo routing application."><b>Figura
 3-1</b></a> mostra a configuração arquitetônica do sistema de roteamento de
 carga de exemplo. Na figura, Porto de Entrega e Roteador de Carga são exemplos
 de componentes, enquanto Conexão do Roteador é um conector entre eles. A
 configuração mostrada no diagrama implica que é possível que esses dois
-componentes interajam entre si; ou seja, que existe um caminho de interação <span
-class=GramE>possível<span style='mso-spacerun:yes'>  </span>entre</span> os
+componentes interajam entre si; ou seja, que existe um caminho de interação <span class="GramE">possível<span>  </span>entre</span> os
 componentes. No entanto, as informações exibidas não garantem sua capacidade
 real de interagir. Além da conectividade apropriada, os componentes devem ter
 interfaces compatíveis; observe que as interfaces não são mostradas no diagrama
-da <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch03.html#a_high-level_graphical_view_of_the_presc"
-title="Figure&nbsp;3-1.&nbsp;A high-level graphical view of the prescriptive (that is, as-designed or as-intended) architecture of the cargo routing application."><b>Figura
+da <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch03.html#a_high-level_graphical_view_of_the_presc" title="Figure 3-1. A high-level graphical view of the prescriptive (that is, as-designed or as-intended) architecture of the cargo routing application."><b>Figura
 3-1</b></a>. Interfaces incompatíveis são uma das fontes de <i>descompasso
 arquitetônico</i>, que discutimos mais a seguir.</p>
-
-<p class=MsoNormal><b>Estilo Arquitetônico<o:p></o:p></b></p>
-
-<p class=MsoNormal>Como engenheiros de software construíram muitos sistemas
+<p><b>Estilo Arquitetônico</b></p>
+<p>Como engenheiros de software construíram muitos sistemas
 diferentes em diversos domínios de aplicação, eles observaram que, em certas
 circunstâncias, certas escolhas de design frequentemente resultam em soluções
-com propriedades superiores. Comparadas a <span class=GramE>outras alternativas</span>
+com propriedades superiores. Comparadas a <span class="GramE">outras alternativas</span>
 possíveis, essas soluções são mais elegantes, eficazes, eficientes, confiáveis,
 evolutivas e escaláveis. Por exemplo, foi observado que o conjunto seguinte de
 escolhas de design garante a oferta eficaz de serviços para múltiplos usuários do
 sistema em um ambiente distribuído. Essas escolhas são intencionalmente
 declaradas aqui de forma informal, para ilustrar o ponto.</p>
-
-<ol style='margin-top:0cm' start=1 type=1>
- <li class=MsoNormal style='mso-list:l23 level1 lfo78;tab-stops:list 36.0pt'>Separe
+<ol start="1" style="margin-top:0cm" type="1">
+<li>Separe
      fisicamente os componentes de software usados para solicitar serviços dos
      componentes que fornecem os serviços necessários, para permitir a
      distribuição e ampliação adequadas, tanto no número de provedores de
      serviço quanto de solicitantes.</li>
- <li class=MsoNormal style='mso-list:l23 level1 lfo78;tab-stops:list 36.0pt'>Fazer
+<li>Fazer
      com que os provedores de serviço não saibam a identidade dos solicitantes
      para permitir que eles atendam de forma transparente a muitos
      solicitantes, possivelmente mudando.</li>
- <li class=MsoNormal style='mso-list:l23 level1 lfo78;tab-stops:list 36.0pt'>Isole
+<li>Isole
      os solicitantes uns dos outros para permitir sua adição, remoção e
      modificação independentes. Faça com que os solicitantes dependam apenas
      dos prestadores de serviço.</li>
- <li class=MsoNormal style='mso-list:l23 level1 lfo78;tab-stops:list 36.0pt'>Permitir
+<li>Permitir
      que múltiplos provedores de serviço surjam dinamicamente para descarregar
      os provedores existentes caso a demanda por serviços aumente acima de um
      determinado limite.</li>
 </ol>
-
-<p class=MsoNormal>Note que a lista acima não compreende decisões de design
+<p>Note que a lista acima não compreende decisões de design
 arquitetônico para um sistema específico (ou classe de sistemas). Na verdade,
 essas decisões arquitetônicas são aplicáveis a qualquer sistema que compartilhe
 o contexto de prestação de serviços distribuídos. Essas decisões não
@@ -1127,30 +921,20 @@ específicas para a aplicação ao projetar um sistema. Essas decisões
 arquitetônicas de nível superior, no entanto, expõem a justificativa que as
 sustenta, para que o arquiteto possa justificar a escolha delas para seu
 sistema.</p>
-
-<p class=MsoNormal><i>Definição. Um estilo arquitetônico é um conjunto nomeado
+<p><i>Definição. Um estilo arquitetônico é um conjunto nomeado
 de decisões de design arquitetônico que (1) são aplicáveis em um dado contexto
 de desenvolvimento, (2) restringem decisões de design arquitetônico específicas
 para um sistema específico dentro desse contexto, e (3) provocam qualidades
-benéficas em cada sistema resultante.<o:p></o:p></i></p>
-
-<p class=MsoNormal>O exemplo acima é uma especificação informal e parcial do
+benéficas em cada sistema resultante.</i></p>
+<p>O exemplo acima é uma especificação informal e parcial do
 popular estilo cliente-servidor. Muitos outros estilos são usados regularmente
-em sistemas de software, incluindo REST e estilos <span class=SpellE>pipe-and-filter</span>
-introduzidos no <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch01.html"
-title="Chapter&nbsp;1.&nbsp;The Big Idea"><b>Capítulo 1</b></a> e outros que
-serão revisitados ao longo do livro. <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch04.html"
-title="Chapter&nbsp;4.&nbsp;Designing Architectures"><b>Os capítulos 4</b></a>
-e <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch11.html"
-title="Chapter&nbsp;11.&nbsp;Applied Architectures and Styles"><b>11</b></a>
+em sistemas de software, incluindo REST e estilos <span class="SpellE">pipe-and-filter</span>
+introduzidos no <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch01.html" title="Chapter 1. The Big Idea"><b>Capítulo 1</b></a> e outros que
+serão revisitados ao longo do livro. <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch04.html" title="Chapter 4. Designing Architectures"><b>Os capítulos 4</b></a>
+e <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch11.html" title="Chapter 11. Applied Architectures and Styles"><b>11</b></a>
 fornecem discussões detalhadas sobre estilos arquitetônicos.</p>
-
-<p class=MsoNormal><b>Padrão Arquitetônico<o:p></o:p></b></p>
-
-<p class=MsoNormal>Estilos arquitetônicos fornecem decisões gerais de design
+<p><b>Padrão Arquitetônico</b></p>
+<p>Estilos arquitetônicos fornecem decisões gerais de design
 que tanto restringem quanto podem precisar ser refinadas em decisões de design
 adicionais, geralmente mais específicas, para serem aplicadas a um sistema. Em
 contraste, um padrão arquitetônico fornece um conjunto de decisões específicas
@@ -1159,32 +943,27 @@ de sistemas de software ou, mais tipicamente, subsistemas específicos. Essas
 decisões de projeto podem ser consideradas configuráveis, pois precisam ser
 instanciadas com os componentes e conectores específicos de uma aplicação. Em
 outras palavras:</p>
-
-<p class=MsoNormal><i>Definição. Um padrão arquitetônico é uma coleção nomeada
+<p><i>Definição. Um padrão arquitetônico é uma coleção nomeada
 de decisões de design arquitetônico aplicáveis a um problema recorrente de
 projeto, parametrizada para levar em conta diferentes contextos de
-desenvolvimento de software nos quais esse problema aparece.<o:p></o:p></i></p>
-
-<p class=MsoNormal>À primeira vista, essa definição lembra a definição de
+desenvolvimento de software nos quais esse problema aparece.</i></p>
+<p>À primeira vista, essa definição lembra a definição de
 estilo arquitetônico. Na verdade, as duas noções são semelhantes e nem sempre é
 possível identificar uma fronteira clara entre elas. No entanto, em geral,
 estilos e padrões diferem em pelo menos três aspectos importantes:</p>
-
-<ol style='margin-top:0cm' start=1 type=1>
- <li class=MsoNormal style='mso-list:l2 level1 lfo79;tab-stops:list 36.0pt'><i>Escopo</i>:
-     Um estilo arquitetônico se aplica a um contexto de <span class=GramE>desenvolvimento<span
-     style='mso-spacerun:yes'>  </span>(</span>por exemplo, &quot;sistemas
-     altamente distribuídos&quot; ou &quot;intensivo em interface
-     gráfica&quot;), enquanto um padrão arquitetônico se aplica a um problema
-     específico de <span class=GramE>projeto<span style='mso-spacerun:yes'> 
-     </span>(</span>por exemplo, &quot;O estado do sistema deve ser apresentado
-     de múltiplas maneiras&quot; ou &quot;A lógica de negócios do sistema deve
-     ser separada do gerenciamento de dados&quot;). Um problema é
+<ol start="1" style="margin-top:0cm" type="1">
+<li><i>Escopo</i>:
+     Um estilo arquitetônico se aplica a um contexto de <span class="GramE">desenvolvimento<span>  </span>(</span>por exemplo, "sistemas
+     altamente distribuídos" ou "intensivo em interface
+     gráfica"), enquanto um padrão arquitetônico se aplica a um problema
+     específico de <span class="GramE">projeto<span> 
+     </span>(</span>por exemplo, "O estado do sistema deve ser apresentado
+     de múltiplas maneiras" ou "A lógica de negócios do sistema deve
+     ser separada do gerenciamento de dados"). Um problema é
      significativamente mais concreto do que um contexto. Simplificando,
-     estilos arquitetônicos são <i>estratégicos</i> enquanto padrões <span
-     class=GramE>são <i><span style='mso-spacerun:yes'> </span>ferramentas</i></span><i>
+     estilos arquitetônicos são <i>estratégicos</i> enquanto padrões <span class="GramE">são <i><span> </span>ferramentas</i></span><i>
      táticas de design.</i></li>
- <li class=MsoNormal style='mso-list:l2 level1 lfo79;tab-stops:list 36.0pt'><i>Abstração</i>:
+<li><i>Abstração</i>:
      Um estilo ajuda a restringir as decisões de design arquitetônico que se
      tomam sobre um sistema. No entanto, os estilos requerem interpretação
      humana para relacionar diretrizes de design capturadas para refletir as
@@ -1193,51 +972,40 @@ estilos e padrões diferem em pelo menos três aspectos importantes:</p>
      são abstratos demais para gerar um design concreto de sistema. Em
      contraste, padrões são fragmentos arquitetônicos parametrizados que podem
      ser considerados peças concretas de um projeto.</li>
- <li class=MsoNormal style='mso-list:l2 level1 lfo79;tab-stops:list 36.0pt'><i>Relação</i>:
-     Padrões podem não ser utilizáveis &quot;como estão&quot;, pois são
+<li><i>Relação</i>:
+     Padrões podem não ser utilizáveis "como estão", pois são
      parametrizados para levar em conta os diferentes contextos em que um
      determinado problema aparece. Isso significa que um único padrão pode ser
      aplicado a sistemas projetados de acordo com as diretrizes de múltiplos
      estilos. Por outro lado, um sistema projetado segundo as regras de um
      único estilo pode envolver o uso de múltiplos padrões.</li>
 </ol>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+<p><span><!--[if gte vml 1]><v:shape
  id="Imagem_x0020_49" o:spid="_x0000_i1027" type="#_x0000_t75" alt="Vista gráfica do padrão arquitetônico do sistema de três níveis."
  style='width:411.6pt;height:73.2pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap03-ptbr_arquivos/image004.png" o:title="Vista gráfica do padrão arquitetônico do sistema de três níveis"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=549 height=98
-src="cap03-ptbr_arquivos/image004.png"
-alt="Vista gráfica do padrão arquitetônico do sistema de três níveis." v:shapes="Imagem_x0020_49"><![endif]></span></p>
-
-<p class=MsoNormal><b>Figura 3-4.&nbsp;Vista gráfica do padrão arquitetônico do
+</v:shape><![endif]--><?if !vml?><img alt="Vista gráfica do padrão arquitetônico do sistema de três níveis." border="0" height="98" src="cap03-ptbr_arquivos/image004.png" v:shapes="Imagem_x0020_49" width="549"/><?endif?></span></p>
+<p><b>Figura 3-4. Vista gráfica do padrão arquitetônico do
 sistema de três níveis.</b></p>
-
-<p class=MsoNormal>Um padrão de exemplo amplamente utilizado em sistemas
-distribuídos modernos é <span class=GramE>o<span style='mso-spacerun:yes'> 
+<p>Um padrão de exemplo amplamente utilizado em sistemas
+distribuídos modernos é <span class="GramE">o<span> 
 </span>padrão</span> <i>de sistema de três níveis</i>. O padrão de três níveis
 é aplicável a muitos tipos de sistemas nos quais usuários distribuídos precisam
 processar, armazenar e recuperar quantidades significativas de dados, como
 ciência (por exemplo, pesquisa do câncer, astronomia, geologia, meteorologia),
 bancos, comércio eletrônico e sistemas de reservas em domínios muito diferentes
-(por exemplo, viagens, entretenimento, cuidados médicos).&nbsp;<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch03.html#graphical_view_of_the_three-tier_system"
-title="Figure&nbsp;3-4.&nbsp;Graphical view of the three-tier system architectural pattern."><b>As
+(por exemplo, viagens, entretenimento, cuidados médicos). <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch03.html#graphical_view_of_the_three-tier_system" title="Figure 3-4. Graphical view of the three-tier system architectural pattern."><b>As
 figuras 3-4</b></a> mostram uma visão gráfica informal desse padrão.</p>
-
-<p class=MsoNormal>Nesse padrão, o primeiro nível, frequentemente chamado de <i>front</i>
-<span class=GramE>ou<span style='mso-spacerun:yes'>  </span>cliente</span> <span
-class=SpellE>tier</span>, contém a funcionalidade necessária para acessar os
+<p>Nesse padrão, o primeiro nível, frequentemente chamado de <i>front</i>
+<span class="GramE">ou<span>  </span>cliente</span> <span class="SpellE">tier</span>, contém a funcionalidade necessária para acessar os
 serviços do sistema, normalmente por um usuário humano. A camada frontal
 conteria assim a interface gráfica do sistema e possivelmente poderia armazenar
 em cache dados e realizar algum processamento local menor. Presume-se que a
 camada frontal seja implantada em um host padrão (por exemplo, um PC desktop),
 possivelmente com capacidade limitada de computação e armazenamento. Também se
-assume que o front <span class=SpellE>tier</span> será replicado para permitir
+assume que o front <span class="SpellE">tier</span> será replicado para permitir
 acesso independente e simultâneo a múltiplos usuários.</p>
-
-<p class=MsoNormal>O segundo nível, também chamado <span class=GramE>de<span
-style='mso-spacerun:yes'>  </span>nível</span> <i>intermediário, de lógica de
+<p>O segundo nível, também chamado <span class="GramE">de<span>  </span>nível</span> <i>intermediário, de lógica de
 aplicação</i> ou <i>de lógica de negócios</i>, contém a principal
 funcionalidade da aplicação. O nível intermediário é responsável por todo o
 processamento significativo, atender solicitações da primeira linha e acessar e
@@ -1245,37 +1013,30 @@ processar dados da linha de trás. Presume-se que o nível intermediário será 
 em um conjunto de servidores poderosos e espaçosos. No entanto, o número de
 anfitriões de nível médio geralmente é significativamente menor do que o número
 de anfitriões de primeira linha.</p>
-
-<p class=MsoNormal>Por fim, o terceiro nível, também chamado de <span
-class=SpellE><i>back-end</i></span><i>, <span class=SpellE>back-end</span></i>
+<p>Por fim, o terceiro nível, também chamado de <span class="SpellE"><i>back-end</i></span><i>, <span class="SpellE">back-end</span></i>
 ou <i>camada de dados</i>, contém a funcionalidade de acesso e armazenamento de
 dados da aplicação. Normalmente, esse nível hospeda um banco de dados poderoso
 capaz de atender a muitas solicitações de acesso a dados em paralelo.</p>
-
-<p class=MsoNormal>As interações entre os níveis, em princípio, obedecem ao
+<p>As interações entre os níveis, em princípio, obedecem ao
 paradigma de pedido-resposta. Ao mesmo tempo, o padrão não prescreve essas
 interações adicionais. Por exemplo, pode ser possível projetar e implementar um
 sistema compatível com três níveis para aderir estritamente à interação
-síncrona, acionada por requisição, de uma única solicitação–resposta; <span
-class=GramE>Alternativamente</span>, pode ser possível permitir que múltiplas
+síncrona, acionada por requisição, de uma única solicitação–resposta; <span class="GramE">Alternativamente</span>, pode ser possível permitir que múltiplas
 solicitações resultem em uma única resposta, múltiplas respostas sejam emitidas
 em resposta a uma única solicitação, atualizações periódicas das fases de trás
 e intermediário para a camada inicial, e assim por diante.</p>
-
-<p class=MsoNormal>O padrão arquitetônico de três níveis pode ser usado para
+<p>O padrão arquitetônico de três níveis pode ser usado para
 determinar a arquitetura de um sistema de software distribuído específico. As
 coisas que o arquiteto precisa especificar são:</p>
-
-<ol style='margin-top:0cm' start=1 type=1>
- <li class=MsoNormal style='mso-list:l10 level1 lfo80;tab-stops:list 36.0pt'>Quais
+<ol start="1" style="margin-top:0cm" type="1">
+<li>Quais
      interfaces de usuário específicas para cada aplicação, processamento,
      acesso e armazenamento de dados são necessárias e como elas devem ser
      organizadas dentro de cada nível.</li>
- <li class=MsoNormal style='mso-list:l10 level1 lfo80;tab-stops:list 36.0pt'>Quais
+<li>Quais
      mecanismos devem ser usados para permitir a interação entre os níveis.</li>
 </ol>
-
-<p class=MsoNormal>O uso de estilos arquitetônicos para resolver o mesmo
+<p>O uso de estilos arquitetônicos para resolver o mesmo
 problema exige, em contraste, mais atenção do arquiteto do sistema e oferece
 menos suporte direto. Na verdade, o padrão arquitetônico de três níveis pode
 ser pensado como duas arquiteturas específicas projetadas de acordo com o
@@ -1284,68 +1045,47 @@ camada intermediária, enquanto a camada central é a camada cliente para a
 camada traseira; o nível intermediário é, portanto, um servidor na primeira arquitetura
 cliente-servidor e um cliente na segunda. De fato, sistemas que seguem o estilo
 cliente-servidor às vezes são chamados de sistemas de dois níveis.</p>
-
-<p class=MsoNormal>Como exemplo, a <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch03.html#two_example_three-tier_system_architectu"
-title="Figure&nbsp;3-5.&nbsp;Two example three-tier system architectures. Simply &quot;Googling&quot; the phrase will yield many hits."><b>Figura
+<p>Como exemplo, a <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch03.html#two_example_three-tier_system_architectu" title='Figure 3-5. Two example three-tier system architectures. Simply "Googling" the phrase will yield many hits.'><b>Figura
 3-5</b></a> mostra arquiteturas de dois sistemas diferentes de três níveis.
 Neste ponto, o leitor deve ser capaz de identificar algumas características
 arquitetônicas que os dois sistemas têm em comum e aquelas que diferem.
 Discussões adicionais e exemplos adicionais de padrões arquitetônicos podem ser
-encontrados no <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch04.html"
-title="Chapter&nbsp;4.&nbsp;Designing Architectures"><b>Capítulo 4</b></a>, que
+encontrados no <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch04.html" title="Chapter 4. Designing Architectures"><b>Capítulo 4</b></a>, que
 também discute a fronteira difusa entre padrões e estilos. Embora as definições
-acima <span class=SpellE>distinguam</span> os conceitos, na prática as duas
+acima <span class="SpellE">distinguam</span> os conceitos, na prática as duas
 noções podem se tornar confusas.</p>
-
-<p class=MsoNormal>MODELOS</p>
-
-<p class=MsoNormal>A arquitetura de um sistema de software é capturada em um
-modelo <span class=GramE>arquitetônico<span style='mso-spacerun:yes'> 
+<p>MODELOS</p>
+<p>A arquitetura de um sistema de software é capturada em um
+modelo <span class="GramE">arquitetônico<span> 
 </span>usando</span> uma notação de modelagem específica.</p>
-
-<p class=MsoNormal><i>Definição. Um modelo arquitetônico é um artefato que
+<p><i>Definição. Um modelo arquitetônico é um artefato que
 captura algumas ou todas as decisões de design que compõem a arquitetura de um
 sistema. Modelagem arquitetônica é a reificação e documentação dessas decisões
-de design.<o:p></o:p></i></p>
-
-<p class=MsoNormal>Um modelo é resultado da atividade de modelagem, que
-constitui uma parte significativa das responsabilidades de um arquiteto de <span
-class=SpellE>software</span>. Um sistema pode ter muitos modelos distintos
+de design.</i></p>
+<p>Um modelo é resultado da atividade de modelagem, que
+constitui uma parte significativa das responsabilidades de um arquiteto de <span class="SpellE">software</span>. Um sistema pode ter muitos modelos distintos
 associados a ele. Os modelos podem variar na quantidade de detalhes que
 capturam, na perspectiva arquitetônica específica que capturam (por exemplo,
 estrutural versus comportamental, estática versus dinâmica, sistema inteiro
 versus um componente ou subsistema específico), no tipo de notação que
 utilizam, e assim por diante.</p>
-
-<p class=MsoNormal><i>Definição. Uma notação de modelagem arquitetônica é uma
-linguagem ou meio de capturar decisões de projeto.<o:p></o:p></i></p>
-
-<p class=MsoNormal>Por exemplo, os dois diagramas mostrados nas <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch03.html#two_example_three-tier_system_architectu"
-title="Figure&nbsp;3-5.&nbsp;Two example three-tier system architectures. Simply &quot;Googling&quot; the phrase will yield many hits."><b>Figuras
+<p><i>Definição. Uma notação de modelagem arquitetônica é uma
+linguagem ou meio de capturar decisões de projeto.</i></p>
+<p>Por exemplo, os dois diagramas mostrados nas <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch03.html#two_example_three-tier_system_architectu" title='Figure 3-5. Two example three-tier system architectures. Simply "Googling" the phrase will yield many hits.'><b>Figuras
 3-5</b></a> representam modelos capturados em duas notações visuais diferentes.
 As notações para modelagem de arquiteturas de software são frequentemente
-chamadas de linguagens de descrição de arquitetura (<span class=SpellE>ADLs</span>).
-As <span class=SpellE>ADLs</span> podem ser textuais ou gráficas, informais
-(como diagramas em PowerPoint), <span class=SpellE><span class=GramE>semi-formais</span></span>,
+chamadas de linguagens de descrição de arquitetura (<span class="SpellE">ADLs</span>).
+As <span class="SpellE">ADLs</span> podem ser textuais ou gráficas, informais
+(como diagramas em PowerPoint), <span class="SpellE"><span class="GramE">semi-formais</span></span>,
 formais, específicas de domínio ou de uso geral, proprietárias ou padronizadas,
 e assim por diante.</p>
-
-<p class=MsoNormal>Modelos arquitetônicos são usados como base para a maioria
+<p>Modelos arquitetônicos são usados como base para a maioria
 das outras atividades em processos de desenvolvimento de software baseados em
 arquitetura, como análise, implementação de sistemas, implantação e adaptação
 dinâmica. Modelos e modelagem são aspectos críticos da arquitetura de software
-e são discutidos em profundidade no <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch06.html"
-title="Chapter&nbsp;6.&nbsp;Modeling"><b>Capítulo 6</b></a>.</p>
-
-<p class=MsoNormal>PROCESSOS</p>
-
-<p class=MsoNormal>Como discutido detalhadamente no <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch02.html"
-title="Chapter&nbsp;2.&nbsp;Architectures in Context: The Reorientation of Software Engineering"><b>Capítulo
+e são discutidos em profundidade no <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch06.html" title="Chapter 6. Modeling"><b>Capítulo 6</b></a>.</p>
+<p>PROCESSOS</p>
+<p>Como discutido detalhadamente no <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch02.html" title="Chapter 2. Architectures in Context: The Reorientation of Software Engineering"><b>Capítulo
 2</b></a>, a arquitetura de software não é uma fase do ciclo de vida da
 engenharia de software que segue a elicitação de requisitos e antecede o design
 e implementação de sistemas de baixo nível. Em vez disso, ele permeia, é um
@@ -1355,72 +1095,38 @@ software ajuda a ancorar os processos associados a diferentes atividades de
 desenvolvimento. Cada uma dessas atividades é abordada separadamente neste
 livro; Com uma exceção, só vamos nomeá-los aqui e informar em qual capítulo são
 discutidos:</p>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+<p><span><!--[if gte vml 1]><v:shape
  id="Imagem_x0020_48" o:spid="_x0000_i1026" type="#_x0000_t75" alt="Dois exemplos de arquiteturas de sistema em três níveis. Simplesmente &quot;pesquisando na Google&quot; a frase já vai gerar muitos resultados."
  style='width:411.6pt;height:567.6pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap03-ptbr_arquivos/image005.png" o:title="Dois exemplos de arquiteturas de sistema em três níveis. Simplesmente &quot;pesquisando na Google&quot; a frase já vai gerar muitos resultados"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=549 height=757
-src="cap03-ptbr_arquivos/image005.png"
-alt="Dois exemplos de arquiteturas de sistema em três níveis. Simplesmente &quot;pesquisando na Google&quot; a frase já vai gerar muitos resultados."
-v:shapes="Imagem_x0020_48"><![endif]></span></p>
-
-<p class=MsoNormal><b>Figuras 3-5.&nbsp;Dois exemplos de arquiteturas de
-sistema em três níveis. Simplesmente &quot;pesquisando na Google&quot; a frase
+</v:shape><![endif]--><?if !vml?><img alt='Dois exemplos de arquiteturas de sistema em três níveis. Simplesmente "pesquisando na Google" a frase já vai gerar muitos resultados.' border="0" height="757" src="cap03-ptbr_arquivos/image005.png" v:shapes="Imagem_x0020_48" width="549"/><?endif?></span></p>
+<p><b>Figuras 3-5. Dois exemplos de arquiteturas de
+sistema em três níveis. Simplesmente "pesquisando na Google" a frase
 já vai gerar muitos resultados.</b></p>
-
-<ul style='margin-top:0cm' type=disc>
- <li class=MsoNormal style='mso-list:l5 level1 lfo81;tab-stops:list 36.0pt'>A
-     atividade do design arquitetônico<span style='mso-spacerun:yes'>  </span>(<a
-     href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch04.html"
-     title="Chapter&nbsp;4.&nbsp;Designing Architectures"><b>Capítulo 4</b></a>)</li>
- <li class=MsoNormal style='mso-list:l5 level1 lfo81;tab-stops:list 36.0pt'><span
-     style='mso-spacerun:yes'> </span><i>Modelagem de arquitetura </i><a
-     href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch06.html"
-     title="Chapter&nbsp;6.&nbsp;Modeling"><b><span
-     style='mso-spacerun:yes'> </span>(</b></a>Capítulo 6<i>) e </i>visualização<a
-     href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch07.html"
-     title="Chapter&nbsp;7.&nbsp;Visualization"><b> (</b></a>Capítulo 7)</li>
- <li class=MsoNormal style='mso-list:l5 level1 lfo81;tab-stops:list 36.0pt'>Análise
-     de sistemas orientada por arquitetura<span style='mso-spacerun:yes'> 
-     </span>(<a
-     href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch08.html"
-     title="Chapter&nbsp;8.&nbsp;Analysis"><b>Capítulo 8</b></a>)</li>
- <li class=MsoNormal style='mso-list:l5 level1 lfo81;tab-stops:list 36.0pt'>Implementação
-     de sistemas orientados pela arquitetura<span style='mso-spacerun:yes'> 
-     </span>(<a
-     href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch09.html"
-     title="Chapter&nbsp;9.&nbsp;Implementation"><b>Capítulo 9</b></a>)</li>
- <li class=MsoNormal style='mso-list:l5 level1 lfo81;tab-stops:list 36.0pt'><i>Implantação
-     de sistemas orientados por </i><span
-     style='mso-spacerun:yes'> </span>arquitetura, <i>realocação </i>em tempo <i>de
-     execução e </i><span style='mso-spacerun:yes'> </span>mobilidade<span
-     style='mso-spacerun:yes'>  </span>(<a
-     href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch10.html"
-     title="Chapter&nbsp;10.&nbsp;Deployment and Mobility"><b>Capítulo 10</b></a>)</li>
- <li class=MsoNormal style='mso-list:l5 level1 lfo81;tab-stops:list 36.0pt'>Projeto
-     baseado em arquitetura <i>para propriedades não funcionais</i> (<a
-     href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch12.html"
-     title="Chapter&nbsp;12.&nbsp;Designing for Non-Functional Properties"><b>Capítulo
-     12</b></a>), incluindo segurança e confiança (<a
-     href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch13.html"
-     title="Chapter&nbsp;13.&nbsp;Security and Trust"><b>Capítulo 13</b></a>)</li>
- <li class=MsoNormal style='mso-list:l5 level1 lfo81;tab-stops:list 36.0pt'>Adaptação
-     arquitetônica<span style='mso-spacerun:yes'>  </span>(<a
-     href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch14.html"
-     title="Chapter&nbsp;14.&nbsp;Architectural Adaptation"><b>Capítulo 14</b></a>)</li>
+<ul style="margin-top:0cm" type="disc">
+<li>A
+     atividade do design arquitetônico<span>  </span>(<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch04.html" title="Chapter 4. Designing Architectures"><b>Capítulo 4</b></a>)</li>
+<li><span> </span><i>Modelagem de arquitetura </i><a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch06.html" title="Chapter 6. Modeling"><b><span> </span>(</b></a>Capítulo 6<i>) e </i>visualização<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch07.html" title="Chapter 7. Visualization"><b> (</b></a>Capítulo 7)</li>
+<li>Análise
+     de sistemas orientada por arquitetura<span> 
+     </span>(<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch08.html" title="Chapter 8. Analysis"><b>Capítulo 8</b></a>)</li>
+<li>Implementação
+     de sistemas orientados pela arquitetura<span> 
+     </span>(<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch09.html" title="Chapter 9. Implementation"><b>Capítulo 9</b></a>)</li>
+<li><i>Implantação
+     de sistemas orientados por </i><span> </span>arquitetura, <i>realocação </i>em tempo <i>de
+     execução e </i><span> </span>mobilidade<span>  </span>(<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch10.html" title="Chapter 10. Deployment and Mobility"><b>Capítulo 10</b></a>)</li>
+<li>Projeto
+     baseado em arquitetura <i>para propriedades não funcionais</i> (<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch12.html" title="Chapter 12. Designing for Non-Functional Properties"><b>Capítulo
+     12</b></a>), incluindo segurança e confiança (<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch13.html" title="Chapter 13. Security and Trust"><b>Capítulo 13</b></a>)</li>
+<li>Adaptação
+     arquitetônica<span>  </span>(<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch14.html" title="Chapter 14. Architectural Adaptation"><b>Capítulo 14</b></a>)</li>
 </ul>
-
-<p class=MsoNormal>A única atividade na qual focaremos nesta seção é <i>a
-recuperação arquitetônica</i>, que é novamente revisitada no <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch04.html"
-title="Chapter&nbsp;4.&nbsp;Designing Architectures"><b>Capítulo 4</b></a>, no
-contexto dos processos de design arquitetônico, e no <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch08.html"
-title="Chapter&nbsp;8.&nbsp;Analysis"><b>Capítulo 8</b></a>, no contexto da
+<p>A única atividade na qual focaremos nesta seção é <i>a
+recuperação arquitetônica</i>, que é novamente revisitada no <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch04.html" title="Chapter 4. Designing Architectures"><b>Capítulo 4</b></a>, no
+contexto dos processos de design arquitetônico, e no <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch08.html" title="Chapter 8. Analysis"><b>Capítulo 8</b></a>, no contexto da
 análise arquitetônica.</p>
-
-<p class=MsoNormal>Lembre-se da discussão acima sobre degradação arquitetônica
+<p>Lembre-se da discussão acima sobre degradação arquitetônica
 (ou seja, deriva e/ou erosão arquitetônica). Se a degradação for permitida, uma
 organização de desenvolvimento de software provavelmente será forçada a <i>recuperar</i>
 a arquitetura do sistema mais cedo ou mais tarde. Isso acontece quando, no
@@ -1428,17 +1134,12 @@ momento <i>t</i> durante a vida de um sistema, as mudanças se tornam caras
 demais para implementar e seus efeitos imprevisíveis porque a arquitetura
 prescritiva documentada (isto é, como pretendido) é tão desatualizada que se
 torna inútil ou, às vezes pior, enganosa.</p>
-
-<p class=MsoNormal><i>Definição.&nbsp;A recuperação arquitetônica é o processo
+<p><i>Definição. A recuperação arquitetônica é o processo
 de determinar a arquitetura de um sistema de software a partir de seus
-artefatos de implementação.<o:p></o:p></i></p>
-
-<p class=MsoNormal>Artefatos de implementação podem ser código-fonte, arquivos
-executáveis, arquivos <span class=SpellE>Java.class</span> e assim por diante.
-Como ilustração, <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch03.html#implementation-level_view_of_the_cargo_r"
-title="Figure&nbsp;3-6.&nbsp;Implementation-level view of the cargo routing application."><b><span
-style='mso-spacerun:yes'> </span>as Figuras 3-6</b></a> mostram as dependências
+artefatos de implementação.</i></p>
+<p>Artefatos de implementação podem ser código-fonte, arquivos
+executáveis, arquivos <span class="SpellE">Java.class</span> e assim por diante.
+Como ilustração, <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch03.html#implementation-level_view_of_the_cargo_r" title="Figure 3-6. Implementation-level view of the cargo routing application."><b><span> </span>as Figuras 3-6</b></a> mostram as dependências
 entre os objetos Java que implementam o aplicativo de roteamento de carga
 introduzido anteriormente. Este diagrama foi gerado automaticamente a partir do
 código-fonte da aplicação usando uma ferramenta de análise de código-fonte pronta
@@ -1447,26 +1148,18 @@ esperamos que o leitor entenda seus detalhes, exceto que os retângulos, que
 estão principalmente à esquerda, representam objetos e as linhas, estendendo-se
 para a direita, representam dependências entre eles (por exemplo, chamadas de
 método Java).</p>
-
-<p class=MsoNormal><a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch03.html#implementation-level_view_of_the_cargo_r"
-title="Figure&nbsp;3-6.&nbsp;Implementation-level view of the cargo routing application."><b>As
+<p><a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch03.html#implementation-level_view_of_the_cargo_r" title="Figure 3-6. Implementation-level view of the cargo routing application."><b>As
 figuras 3-6</b></a> refletem muitos detalhes, incluindo decisões de design
 arquitetônico, decisões de design de baixo nível, decisões de nível de
 implementação, as bibliotecas Java usadas pelo sistema, o framework de
 implementação e assim por diante. A partir de artefatos derivados como este, a
 arquitetura do sistema é recuperada pelo processo de isolar e extrair apenas as
 decisões arquitetônicas — ou seja, principais — de projeto.</p>
-
-<p class=MsoNormal>Por sua própria natureza, o processo de recuperação
-arquitetônica extrai <span class=GramE>a<span style='mso-spacerun:yes'> 
-</span>arquitetura</span> <i>descritiva</i> de um <span class=GramE>sistema<span
-style='mso-spacerun:yes'>  </span>.</span> Essa arquitetura, se complementada
+<p>Por sua própria natureza, o processo de recuperação
+arquitetônica extrai <span class="GramE">a<span> 
+</span>arquitetura</span> <i>descritiva</i> de um <span class="GramE">sistema<span>  </span>.</span> Essa arquitetura, se complementada
 com uma declaração da intenção original dos arquitetos, pode, em princípio, ser
-usada para recuperar <span class=GramE>a <i><span
-style='mso-spacerun:yes'> </span>arquitetura</i></span><i> prescritiva do <span
-class=GramE>sistema <span style='font-style:normal'><span
-style='mso-spacerun:yes'> </span>.</span></span></i> No entanto, como os
+usada para recuperar <span class="GramE">a <i><span> </span>arquitetura</i></span><i> prescritiva do <span class="GramE">sistema <span style="font-style:normal"><span> </span>.</span></span></i> No entanto, como os
 arquitetos originais podem não estar disponíveis, e sua intenção original pode
 não ter sido registrada (ou, mesmo que tenha sido registrada originalmente,
 pode ter sido repetidamente violada ao longo do tempo), muitas vezes é
@@ -1474,20 +1167,14 @@ impossível recuperar a arquitetura prescritiva de um sistema. Em vez disso, a
 arquitetura descritiva recuperada é tratada como a aproximação mais próxima da
 arquitetura prescritiva do sistema, e assim o relógio de evolução arquitetônica
 do sistema é efetivamente resetado.</p>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+<p><span><!--[if gte vml 1]><v:shape
  id="Imagem_x0020_47" o:spid="_x0000_i1025" type="#_x0000_t75" alt="Visão em nível de implementação da aplicação de roteamento de carga."
  style='width:411.6pt;height:801pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap03-ptbr_arquivos/image006.png" o:title="Visão em nível de implementação da aplicação de roteamento de carga"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=549 height=1068
-src="cap03-ptbr_arquivos/image006.png"
-alt="Visão em nível de implementação da aplicação de roteamento de carga."
-v:shapes="Imagem_x0020_47"><![endif]></span></p>
-
-<p class=MsoNormal><b>Figuras 3-6.&nbsp;Visão em nível de implementação da
+</v:shape><![endif]--><?if !vml?><img alt="Visão em nível de implementação da aplicação de roteamento de carga." border="0" height="1068" src="cap03-ptbr_arquivos/image006.png" v:shapes="Imagem_x0020_47" width="549"/><?endif?></span></p>
+<p><b>Figuras 3-6. Visão em nível de implementação da
 aplicação de roteamento de carga.</b></p>
-
-<p class=MsoNormal>Embora os detalhes das ferramentas e técnicas de recuperação
+<p>Embora os detalhes das ferramentas e técnicas de recuperação
 arquitetônica utilizadas na prática estejam além do escopo deste capítulo, o
 leitor deve entender que a recuperação é um processo muito demorado e complexo.
 Além disso, a complexidade da maioria dos sistemas de software — com suas
@@ -1498,74 +1185,50 @@ e engenheiros de software mantenham a integridade arquitetônica em <i>todas</i>
 as etapas ao longo da vida útil do sistema. Uma vez que a arquitetura se
 degrada, todas as soluções subsequentes para conter essa degradação serão mais
 caras e mais propensas a erros em comparação.</p>
-
-<p class=MsoNormal>PARTES INTERESSADAS</p>
-
-<p class=MsoNormal>As seções anteriores apresentaram ao leitor o quê, o como e
+<p>PARTES INTERESSADAS</p>
+<p>As seções anteriores apresentaram ao leitor o quê, o como e
 o porquê da arquitetura de software. Esta seção encerra o capítulo apresentando
 brevemente quem — ou seja, vários principais interessados na arquitetura.</p>
-
-<p class=MsoNormal>O arquiteto <i>de <span class=SpellE><span class=GramE>software</span></span><span
-class=GramE> <span style='font-style:normal'><span
-style='mso-spacerun:yes'> </span>é</span></span></i> um dos interesses óbvios.
+<p>O arquiteto <i>de <span class="SpellE"><span class="GramE">software</span></span><span class="GramE"> <span style="font-style:normal"><span> </span>é</span></span></i> um dos interesses óbvios.
 O arquiteto concebe a arquitetura do sistema e, em seguida, modela, avalia,
 protótipo e evolui. Os arquitetos mantêm a integridade conceitual do sistema e,
 portanto, são os stakeholders críticos do sistema.</p>
-
-<p class=MsoNormal>Desenvolvedores<i> de <span class=GramE>software <span
-style='font-style:normal'><span style='mso-spacerun:yes'> </span>são</span></span></i>
+<p>Desenvolvedores<i> de <span class="GramE">software <span style="font-style:normal"><span> </span>são</span></span></i>
 os principais consumidores do produto de um arquiteto (ou seja, da
 arquitetura). Eles realizarão as principais decisões de design incorporadas na
 arquitetura ao produzir uma implementação do sistema.</p>
-
-<p class=MsoNormal>O papel dos <i>gerentes de <span class=GramE>software <span
-style='font-style:normal'><span style='mso-spacerun:yes'> </span>,</span></span></i>
+<p>O papel dos <i>gerentes de <span class="GramE">software <span style="font-style:normal"><span> </span>,</span></span></i>
 do ponto de vista arquitetônico, é fornecer supervisão e suporte de projetos
-para os arquitetos de software. Como será detalhado no <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch17.html"
-title="Chapter&nbsp;17.&nbsp;People, Roles, and Teams"><b>Capítulo 17</b></a>,
+para os arquitetos de software. Como será detalhado no <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch17.html" title="Chapter 17. People, Roles, and Teams"><b>Capítulo 17</b></a>,
 em uma organização, os arquitetos frequentemente carregam grande parte da
 responsabilidade pelo sucesso de um sistema sem a autoridade correspondente.
 Por isso, é fundamental que arquitetos e gestores trabalhem em estreita
 colaboração e que os gestores assumam as decisões arquitetônicas-chave e, se
 necessário, exerçam sua autoridade em nome dos arquitetos. Portanto, os
 gestores também são partes interessadas chave.</p>
-
-<p class=MsoNormal>O objetivo final para os clientes de um determinado <span
-class=GramE>sistema<span style='mso-spacerun:yes'>  </span>—</span> os
+<p>O objetivo final para os clientes de um determinado <span class="GramE">sistema<span>  </span>—</span> os
 stakeholders finais — é que um sistema de alta qualidade, que atenda às suas
 necessidades, seja entregue no prazo e dentro do orçamento. Um determinante
 significativo da capacidade de um projeto de atingir esse objetivo será a
 arquitetura do sistema. Simplificando, uma arquitetura eficaz resultará em um
 projeto bem-sucedido, enquanto uma ineficaz prejudicará seriamente o sucesso do
 projeto. Um tratamento mais completo dos interessados arquitetônicos será
-fornecido no <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch17.html"
-title="Chapter&nbsp;17.&nbsp;People, Roles, and Teams"><b>Capítulo 17</b></a>.</p>
-
-<p class=MsoNormal>ASSUNTO FINAL</p>
-
-<p class=MsoNormal>Qualquer campo de engenharia maduro deve ser acompanhado por
+fornecido no <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch17.html" title="Chapter 17. People, Roles, and Teams"><b>Capítulo 17</b></a>.</p>
+<p>ASSUNTO FINAL</p>
+<p>Qualquer campo de engenharia maduro deve ser acompanhado por
 uma compreensão compartilhada e precisa de seus conceitos básicos, modelos
 comumente usados e processos. Este capítulo definiu as noções que fundamentam o
 campo da arquitetura de software. Embora um leitor menos experiente ainda não
 consiga apreciar plenamente algumas das definições e discussões que acompanham,
 nos capítulos seguintes retornamos a esses conceitos à medida que os estudamos
 com mais profundidade. Esperamos que o leitor também ache útil retornar a esses
-conceitos e a este capítulo. Na verdade, imediatamente, <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch04.html"
-title="Chapter&nbsp;4.&nbsp;Designing Architectures"><b><span
-style='mso-spacerun:yes'> </span>o Capítulo 4</b></a> utiliza muitos dos
+conceitos e a este capítulo. Na verdade, imediatamente, <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch04.html" title="Chapter 4. Designing Architectures"><b><span> </span>o Capítulo 4</b></a> utiliza muitos dos
 conceitos introduzidos aqui na discussão sobre como as arquiteturas de software
 são projetadas e, em particular, ao fornecer uma visão geral de um grande
-número de estilos arquitetônicos comumente usados. Por sua vez, o <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch05.html"
-title="Chapter&nbsp;5.&nbsp;Connectors"><b>Capítulo 5</b></a> detalhará as
+número de estilos arquitetônicos comumente usados. Por sua vez, o <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch05.html" title="Chapter 5. Connectors"><b>Capítulo 5</b></a> detalhará as
 várias classes diferentes de conectores de software e suas propriedades.</p>
-
-<p class=MsoNormal><b>O Caso de Negócios<o:p></o:p></b></p>
-
-<p class=MsoNormal>Arquitetura de software é um campo de estudo caracterizado
+<p><b>O Caso de Negócios</b></p>
+<p>Arquitetura de software é um campo de estudo caracterizado
 por uma diversidade incomum de visões e compreensões sobre alguns conceitos
 fundamentais. Por exemplo, uma busca rápida na Internet gera muitas definições
 de arquitetura. Da mesma forma, há uma diversidade de opiniões sobre o papel e
@@ -1575,60 +1238,54 @@ explicitamente incorporados em modelos de componentes, como o modelo de componen
 do Microsoft DCOM) de que os componentes são entidades exclusivamente
 executáveis, o que iria contra muitas das motivações e fundamentos da
 arquitetura de software.</p>
-
-<p class=MsoNormal>Simplificando, o uso impreciso e inconsistente de termos mal
+<p>Simplificando, o uso impreciso e inconsistente de termos mal
 definidos — e às vezes indefinidos — vai contra o sucesso em um ambiente
 altamente competitivo, como o desenvolvimento de produtos de software. A
 capacidade de construir produtos de qualidade e reunir e treinar uma força de
 trabalho qualificada requer o uso preciso de terminologia concreta com
 significados específicos.</p>
-
-<p class=MsoNormal>Um exemplo específico desse problema seria uma organização
-que pretende contratar e/ou treinar um arquiteto de <span class=SpellE>software</span>.
+<p>Um exemplo específico desse problema seria uma organização
+que pretende contratar e/ou treinar um arquiteto de <span class="SpellE">software</span>.
 Sem uma linguagem técnica compartilhada, contratar tal indivíduo seria difícil
 e arriscado. Sem um entendimento preciso dos conceitos fundamentais no campo da
 arquitetura de software, treinar arquitetos de software seria caro e, em última
 análise, improdutivo.</p>
-
-<p class=MsoNormal>PERGUNTAS DE REVISÃO</p>
-
-<ol style='margin-top:0cm' start=1 type=1>
- <li class=MsoNormal style='mso-list:l20 level1 lfo82;tab-stops:list 36.0pt'>Arquitetos
+<p>PERGUNTAS DE REVISÃO</p>
+<ol start="1" style="margin-top:0cm" type="1">
+<li>Arquitetos
      de software frequentemente são questionados sobre qual é a diferença entre
      arquitetura e design. Dada a definição de arquitetura de software
      fornecida neste capítulo, você consegue distinguir entre os dois?</li>
- <li class=MsoNormal style='mso-list:l20 level1 lfo82;tab-stops:list 36.0pt'>Quais
+<li>Quais
      são as principais diferenças entre um componente de software e um conector
      de software?</li>
- <li class=MsoNormal style='mso-list:l20 level1 lfo82;tab-stops:list 36.0pt'>Conectores
+<li>Conectores
      podem simplesmente ser tratados como componentes de propósito especial?
      Deveriam?</li>
- <li class=MsoNormal style='mso-list:l20 level1 lfo82;tab-stops:list 36.0pt'>Espera-se
+<li>Espera-se
      que arquitetos e engenheiros aceitem a degradação arquitetônica como um
      fato da vida? Quais perigos, se houver, são inerentes a isso?</li>
- <li class=MsoNormal style='mso-list:l20 level1 lfo82;tab-stops:list 36.0pt'>Qual
+<li>Qual
      é a diferença entre um estilo arquitetônico e um padrão arquitetônico?</li>
- <li class=MsoNormal style='mso-list:l20 level1 lfo82;tab-stops:list 36.0pt'>Múltiplos
+<li>Múltiplos
      padrões podem ser usados para realizar um estilo?</li>
- <li class=MsoNormal style='mso-list:l20 level1 lfo82;tab-stops:list 36.0pt'>Por
+<li>Por
      que os arquitetos deveriam se preocupar com as necessidades dos clientes?</li>
 </ol>
-
-<p class=MsoNormal>EXERCÍCIOS</p>
-
-<ol style='margin-top:0cm' start=1 type=1>
- <li class=MsoNormal style='mso-list:l6 level1 lfo83;tab-stops:list 36.0pt'>Identifique
+<p>EXERCÍCIOS</p>
+<ol start="1" style="margin-top:0cm" type="1">
+<li>Identifique
      componentes, conectores e topologia na arquitetura de um sistema bem
      conhecido. Isso pode ser algo baseado na Web, algo descrito em uma
      publicação ou até mesmo um dos exemplos apresentados no livro até agora,
      mas para o qual essa pergunta não foi respondida como parte do capítulo.</li>
- <ol style='margin-top:0cm' start=1 type=1>
-  <li class=MsoNormal style='mso-list:l6 level2 lfo83;tab-stops:list 72.0pt'>Como
+<ol start="1" style="margin-top:0cm" type="1">
+<li>Como
       diferenciar componentes de conectores?</li>
-  <li class=MsoNormal style='mso-list:l6 level2 lfo83;tab-stops:list 72.0pt'>A
+<li>A
       arquitetura é descritiva ou prescritiva?</li>
- </ol>
- <li class=MsoNormal style='mso-list:l6 level1 lfo83;tab-stops:list 36.0pt'>A
+</ol>
+<li>A
      seção que definiu estilos arquitetônicos fornece um conjunto de diretrizes
      arquitetônicas correspondentes a sistemas cliente-servidor. Selecione um
      cenário de aplicação distribuída de sua escolha e mostre como você
@@ -1636,31 +1293,25 @@ análise, improdutivo.</p>
      fáceis são as diretrizes de aplicar corretamente? Quão fácil é violá-los?
      Tente violar a segunda diretriz e discuta o impacto imediato e potencial
      na sua arquitetura.</li>
- <li class=MsoNormal style='mso-list:l6 level1 lfo83;tab-stops:list 36.0pt'>Tente
+<li>Tente
      resolver o problema acima aplicando o padrão de sistema de três níveis.
      Compare essa solução com a anterior. Discuta qual abordagem foi mais fácil
      de aplicar e por quê.</li>
 </ol>
-
-<p class=MsoNormal>LEITURA ADICIONAL</p>
-
-<p class=MsoNormal>O primeiro tratamento explícito da arquitetura de software e
+<p>LEITURA ADICIONAL</p>
+<p>O primeiro tratamento explícito da arquitetura de software e
 dos conceitos que a sustentam foi fornecido por Perry e Wolf (Perry e Wolf
 1992). Este artigo seminal introduziu várias definições que inspiraram aqueles
-que apresentamos neste capítulo. Alguns anos depois, o livro de Shaw e <span
-class=SpellE>Garlan</span> (Shaw e <span class=SpellE>Garlan</span> 1996)
+que apresentamos neste capítulo. Alguns anos depois, o livro de Shaw e <span class="SpellE">Garlan</span> (Shaw e <span class="SpellE">Garlan</span> 1996)
 forneceu sua coleção de definições, resumos de vários projetos industriais e de
 pesquisa nos quais os autores participaram, além de insights arquitetônicos
 iniciais desses projetos. Vários livros subsequentes apresentaram as opiniões
 de seus respectivos autores sobre diferentes facetas da arquitetura de
-software: modelagem (<span class=SpellE>Hofmeister</span>, Nord e Soni 1999),
-avaliação (Clements, <span class=SpellE>Kazman</span> e Klein 2002), padrões
-arquitetônicos (<span class=SpellE>Buschmann</span> et al. 1996), linhas de
-produtos (Bosch 2000) e desenvolvimento de sistemas baseados em componentes (<span
-class=SpellE>Heineman</span> e <span class=SpellE>Council</span> 2001; <span
-class=SpellE>Szyperski</span> 2002).</p>
-
-<p class=MsoNormal><span class=GramE>Um grande número de artigos</span> em
+software: modelagem (<span class="SpellE">Hofmeister</span>, Nord e Soni 1999),
+avaliação (Clements, <span class="SpellE">Kazman</span> e Klein 2002), padrões
+arquitetônicos (<span class="SpellE">Buschmann</span> et al. 1996), linhas de
+produtos (Bosch 2000) e desenvolvimento de sistemas baseados em componentes (<span class="SpellE">Heineman</span> e <span class="SpellE">Council</span> 2001; <span class="SpellE">Szyperski</span> 2002).</p>
+<p><span class="GramE">Um grande número de artigos</span> em
 conferências e periódicos acompanhou esses livros, e vários espaços
 especializados surgiram. Inicialmente, o Workshop Internacional de Arquitetura
 de Software da SIGSOFT (ISAW) era o principal espaço para pesquisadores e
@@ -1670,26 +1321,22 @@ Papel da Arquitetura de Software para Testes e Análise (ROSATEA), foi seguida
 logo em seguida. O ISAW foi eventualmente substituído pela Conferência
 Operacional IEEE/IFIP sobre Arquitetura de Software (WICSA). Mais recentemente,
 surgiram a Conferência Europeia sobre Arquitetura de Software (ECSA) e a
-Conferência Internacional sobre a Qualidade das Arquiteturas de Software (<span
-class=SpellE>QoSA</span>). A série de conferências em andamento sobre
+Conferência Internacional sobre a Qualidade das Arquiteturas de Software (<span class="SpellE">QoSA</span>). A série de conferências em andamento sobre
 Engenharia de Software Baseada em Componentes (CBSE) naturalmente tem tido uma
-dimensão arquitetônica significativa. Por fim, o Elsevier <span class=SpellE>Journal</span>
-<span class=SpellE>on</span> Systems <span class=SpellE>and</span> Software
+dimensão arquitetônica significativa. Por fim, o Elsevier <span class="SpellE">Journal</span>
+<span class="SpellE">on</span> Systems <span class="SpellE">and</span> Software
 introduziu recentemente uma seção regular sobre arquitetura de software.</p>
-
-<p class=MsoNormal>Embora essa riqueza de livros, artigos, workshops,
+<p>Embora essa riqueza de livros, artigos, workshops,
 conferências e periódicos tenha ajudado o campo da arquitetura de software a
 amadurecer relativamente rápido, não resultou em uma convergência de
 compreensão dos principais conceitos arquitetônicos. Um exemplo dessa falta de
 convergência é o uso, pela comunidade de engenharia de software, de uma coleção
 muito grande e divergente de diferentes definições de arquitetura de software,
-reunida pelo Instituto de Engenharia de Software www.sei.cmu.edu/<span
-class=SpellE>architecture</span>/definitions.html. Embora coletar todas essas
+reunida pelo Instituto de Engenharia de Software www.sei.cmu.edu/<span class="SpellE">architecture</span>/definitions.html. Embora coletar todas essas
 definições possa ser útil como uma espécie de registro histórico, confiar em
-todas <span class=GramE>elas não é</span> uma marca registrada de um campo de
+todas <span class="GramE">elas não é</span> uma marca registrada de um campo de
 engenharia maduro. Essa percepção foi um dos principais motivadores deste
 livro, e deste capítulo em particular.</p>
-
 </div>
 </body>
 </html>

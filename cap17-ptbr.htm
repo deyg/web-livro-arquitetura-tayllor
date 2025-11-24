@@ -1,27 +1,23 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>cap17-ptbr</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
+<meta charset="utf-8"/>
+<title>cap17-ptbr</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="styles.css" rel="stylesheet"/>
 </head>
 <body>
-
 <div class="navbar">
-  <div><a href="cap16-ptbr.htm">← Anterior</a></div>
-  <div><a href="index.html">Índice</a></div>
-  <div><a href="bibliografia.htm">Próximo →</a></div>
+<div><a href="cap16-ptbr.htm">← Anterior</a></div>
+<div><a href="index.html">Índice</a></div>
+<div><a href="bibliografia.htm">Próximo →</a></div>
 </div>
-
-
-<div class=WordSection1>
-
-<p class=MsoNormal>Capítulo 17.&nbsp;Pessoas, Funções e Equipes</p>
-
-<p class=MsoNormal>Tornou-se bastante comum que um engenheiro de software
-receba títulos como &quot;arquiteto de software&quot;, &quot;arquiteto sênior
-de software&quot; ou &quot;arquiteto chefe de sistemas&quot; em uma organização
+<div class="WordSection1">
+<p>Capítulo 17. Pessoas, Funções e Equipes</p>
+<p>Tornou-se bastante comum que um engenheiro de software
+receba títulos como "arquiteto de software", "arquiteto sênior
+de software" ou "arquiteto chefe de sistemas" em uma organização
 de desenvolvimento de software. Tal título parece carregar consigo certo
 prestígio. A suposição usual é que o engenheiro em questão demonstrou
 habilidades excepcionais em design de sistemas de software, familiaridade com
@@ -31,27 +27,25 @@ liderar seus colegas engenheiros na conclusão bem-sucedida do projeto. Ao mesmo
 tempo, é provável que alguém que analise um pouco mais a fundo encontre muitas
 descrições diferentes do que os arquitetos de software realmente fazem de uma
 empresa para outra, e até mesmo de um projeto para outro dentro de uma única
-empresa. Em algumas empresas, os &quot;arquitetos-chefes&quot; são engenheiros
+empresa. Em algumas empresas, os "arquitetos-chefes" são engenheiros
 brilhantes que trabalharam na linha de frente por muitos anos e se destacaram
 como sábios tecnicamente habilidosos; em outros casos, são ex-CEOs que decidem
 se afastar e mudar seu foco para garantir a presença da empresa no mercado e
 definir a estratégia técnica de longo prazo da empresa. Isso significa que, na
 verdade, simplesmente ter o título não significa que alguém tenha as
 qualificações.</p>
-
-<p class=MsoNormal>Claramente, isso é muito diferente de, por exemplo, um
+<p>Claramente, isso é muito diferente de, por exemplo, um
 engenheiro elétrico ou até mesmo um engenheiro de software: para se tornar um,
 geralmente é necessário concluir no mínimo um diploma universitário apropriado
 de quatro anos e talvez mais alguns anos de experiência prática com treinamento
 adicional específico. Por outro lado, não é incomum que uma pessoa com
-&quot;arquiteto de <span class=SpellE>software</span>&quot; no título nem
+"arquiteto de <span class="SpellE">software</span>" no título nem
 sequer seja engenheiro de software de formação. Isso traz consigo um risco
-significativo: identificar, nutrir e promover um arquiteto de <span
-class=SpellE>software</span> torna-se semelhante a construir um sistema de
-software <span class=SpellE>subespecificado</span>. No desenvolvimento de
-software, isso às vezes é chamado de síndrome IKIWISI, ou &quot;Eu vou saber
-quando eu vir.&quot; Descobrir o sistema de software certo, assim como
-encontrar um bom arquiteto de <span class=SpellE>software</span>, nessas
+significativo: identificar, nutrir e promover um arquiteto de <span class="SpellE">software</span> torna-se semelhante a construir um sistema de
+software <span class="SpellE">subespecificado</span>. No desenvolvimento de
+software, isso às vezes é chamado de síndrome IKIWISI, ou "Eu vou saber
+quando eu vir." Descobrir o sistema de software certo, assim como
+encontrar um bom arquiteto de <span class="SpellE">software</span>, nessas
 condições pode ser demorado demais, arriscado demais, imprevisível demais e
 caro demais. Além disso, também não está claro como se pode se tornar
 arquiteto: o título tende a ser concedido, ou às vezes assumido por uma pessoa,
@@ -62,47 +56,42 @@ pode ter um título completamente diferente. Por fim, com pouquíssimas exceçõ
 não se encontra um programa de treinamento dentro de uma organização de
 desenvolvimento (futura) que ajude um indivíduo a conseguir esse emprego ou um
 título apropriado.</p>
-
-<p class=MsoNormal>Se nosso objetivo é estudar arquitetura de software como uma
+<p>Se nosso objetivo é estudar arquitetura de software como uma
 disciplina madura, com objetivos, princípios e práticas bem compreendidos e
 codificados, então devemos definir de forma mais clara os papéis e
 responsabilidades dos profissionais da disciplina, ou seja, arquitetos de
 software. Este capítulo vai fazer exatamente isso. Somos guiados pela
 observação de que a engenharia de software é uma disciplina multifacetada que
 combina:</p>
-
-<ul style='margin-top:0cm' type=disc>
- <li class=MsoNormal style='mso-list:l74 level1 lfo476;tab-stops:list 36.0pt'><i>Habilidades
+<ul style="margin-top:0cm" type="disc">
+<li><i>Habilidades
      essenciais de</i> engenharia — por exemplo, modelagem formal de sistemas,
      produção de código e testes e medição de produtos.</li>
- <li class=MsoNormal style='mso-list:l74 level1 lfo476;tab-stops:list 36.0pt'><i>Habilidades
+<li><i>Habilidades
      organizacionais</i> — por exemplo, gestão de projetos, estimativa de
      custos e conformidade com padrões industriais e governamentais.</li>
- <li class=MsoNormal style='mso-list:l74 level1 lfo476;tab-stops:list 36.0pt'><i>Habilidades
+<li><i>Habilidades
      interpessoais</i> — por exemplo, comunicação com muitos stakeholders,
      honrar os papéis e obrigações dentro da equipe e colocar o sucesso do
      projeto acima dos próprios objetivos pessoais.</li>
 </ul>
-
-<p class=MsoNormal>A arquitetura de software permeia todo o processo de
+<p>A arquitetura de software permeia todo o processo de
 engenharia de software e, de muitas maneiras, forma seu núcleo; Não é
 irrazoável exigir que arquitetos de software possuam uma grande variedade
 dessas habilidades. O objetivo deste capítulo é responder quatro
 perguntas-chave:</p>
-
-<ol style='margin-top:0cm' start=1 type=1>
- <li class=MsoNormal style='mso-list:l17 level1 lfo477;tab-stops:list 36.0pt'>Quem
+<ol start="1" style="margin-top:0cm" type="1">
+<li>Quem
      são arquitetos de software?</li>
- <li class=MsoNormal style='mso-list:l17 level1 lfo477;tab-stops:list 36.0pt'>O
+<li>O
      que os arquitetos de software fazem?</li>
- <li class=MsoNormal style='mso-list:l17 level1 lfo477;tab-stops:list 36.0pt'>Como
+<li>Como
      eles fazem o trabalho deles?</li>
- <li class=MsoNormal style='mso-list:l17 level1 lfo477;tab-stops:list 36.0pt'>Como
+<li>Como
      os arquitetos se relacionam e interagem com outros stakeholders no design,
      implementação e evolução da arquitetura de um sistema?</li>
 </ol>
-
-<p class=MsoNormal>A primeira questão trata do conjunto central de habilidades
+<p>A primeira questão trata do conjunto central de habilidades
 que um arquiteto de software deve possuir, incluindo habilidades técnicas e não
 técnicas. A segunda pergunta lança luz sobre o que realmente envolve o trabalho
 de um arquiteto de software. A terceira pergunta aborda como os arquitetos de
@@ -111,289 +100,251 @@ projeto para outro. Por fim, a última pergunta adota uma perspectiva mais ampla
 sobre a arquitetura de software na prática, como um exercício de construção de
 consenso para satisfazer todos os stakeholders do sistema. Abordaremos cada uma
 dessas questões com mais detalhes.</p>
-
-<p class=MsoNormal><b>Resumo <span class=SpellE>de<span style='font-weight:
-normal'><a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch17.html"
-title="Chapter&nbsp;17.&nbsp;People, Roles, and Teams"><b>Capítulo</b><b> 17</b></a></span></span></b></p>
-
-<ul style='margin-top:0cm' type=disc>
- <li class=MsoNormal style='mso-list:l112 level1 lfo478;tab-stops:list 36.0pt'>17
+<p><b>Resumo <span class="SpellE">de<span style="font-weight:
+normal"><a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch17.html" title="Chapter 17. People, Roles, and Teams"><b>Capítulo</b><b> 17</b></a></span></span></b></p>
+<ul style="margin-top:0cm" type="disc">
+<li>17
      Pessoas, Funções e Equipes</li>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <li class=MsoNormal style='mso-list:l112 level2 lfo479;tab-stops:list 72.0pt'>17.1
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>17.1
       Quem são os Arquitetos de Software?</li>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <ul style='margin-top:0cm' type=disc>
-   <li class=MsoNormal style='mso-list:l112 level3 lfo480;tab-stops:list 108.0pt'>17.1.1
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>17.1.1
        Arquiteto como Designer de Software</li>
-  </ul>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <ul style='margin-top:0cm' type=disc>
-   <li class=MsoNormal style='mso-list:l112 level3 lfo481;tab-stops:list 108.0pt'>17.1.2
+</ul>
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>17.1.2
        Arquiteto como Especialista em Domínio</li>
-  </ul>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <ul style='margin-top:0cm' type=disc>
-   <li class=MsoNormal style='mso-list:l112 level3 lfo482;tab-stops:list 108.0pt'>17.1.3
+</ul>
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>17.1.3
        Arquiteto como Tecnólogo de Software</li>
-  </ul>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <ul style='margin-top:0cm' type=disc>
-   <li class=MsoNormal style='mso-list:l112 level3 lfo483;tab-stops:list 108.0pt'>17.1.4
+</ul>
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>17.1.4
        Arquiteto como Especialista em Conformidade de Normas</li>
-  </ul>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <ul style='margin-top:0cm' type=disc>
-   <li class=MsoNormal style='mso-list:l112 level3 lfo484;tab-stops:list 108.0pt'>17.1.5
+</ul>
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>17.1.5
        Arquiteto como Economista em Engenharia de Software</li>
-  </ul>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <ul style='margin-top:0cm' type=disc>
-   <li class=MsoNormal style='mso-list:l112 level3 lfo485;tab-stops:list 108.0pt'>17.1.6
+</ul>
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>17.1.6
        Alguns Maus Hábitos</li>
-  </ul>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <li class=MsoNormal style='mso-list:l112 level2 lfo486;tab-stops:list 72.0pt'>17.2
+</ul>
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>17.2
       O que os arquitetos de software fazem?</li>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <ul style='margin-top:0cm' type=disc>
-   <li class=MsoNormal style='mso-list:l112 level3 lfo487;tab-stops:list 108.0pt'>17.2.1
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>17.2.1
        Desenvolver a Estratégia do Projeto</li>
-  </ul>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <ul style='margin-top:0cm' type=disc>
-   <li class=MsoNormal style='mso-list:l112 level3 lfo488;tab-stops:list 108.0pt'>17.2.2
+</ul>
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>17.2.2
        Sistemas de Design</li>
-  </ul>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <ul style='margin-top:0cm' type=disc>
-   <li class=MsoNormal style='mso-list:l112 level3 lfo489;tab-stops:list 108.0pt'>17.2.3
+</ul>
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>17.2.3
        Comunicação com as Partes Interessadas</li>
-  </ul>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <ul style='margin-top:0cm' type=disc>
-   <li class=MsoNormal style='mso-list:l112 level3 lfo490;tab-stops:list 108.0pt'>17.2.4
+</ul>
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>17.2.4
        Liderança</li>
-  </ul>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <li class=MsoNormal style='mso-list:l112 level2 lfo491;tab-stops:list 72.0pt'>17.3
+</ul>
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>17.3
       Como Trabalham Arquitetos de Software?</li>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <ul style='margin-top:0cm' type=disc>
-   <li class=MsoNormal style='mso-list:l112 level3 lfo492;tab-stops:list 108.0pt'>17.3.1
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>17.3.1
        Equilíbrio de Habilidades</li>
-  </ul>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <ul style='margin-top:0cm' type=disc>
-   <li class=MsoNormal style='mso-list:l112 level3 lfo493;tab-stops:list 108.0pt'>17.3.2
+</ul>
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>17.3.2
        Lealdade ao Projeto</li>
-  </ul>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <ul style='margin-top:0cm' type=disc>
-   <li class=MsoNormal style='mso-list:l112 level3 lfo494;tab-stops:list 108.0pt'>17.3.3
+</ul>
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>17.3.3
        Lealdade à Organização</li>
-  </ul>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <ul style='margin-top:0cm' type=disc>
-   <li class=MsoNormal style='mso-list:l112 level3 lfo495;tab-stops:list 108.0pt'>17.3.4
+</ul>
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>17.3.4
        Duração do Envolvimento</li>
-  </ul>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <ul style='margin-top:0cm' type=disc>
-   <li class=MsoNormal style='mso-list:l112 level3 lfo496;tab-stops:list 108.0pt'>17.3.5
+</ul>
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>17.3.5
        Estrutura da Equipe</li>
-  </ul>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <li class=MsoNormal style='mso-list:l112 level2 lfo497;tab-stops:list 72.0pt'>17.4
+</ul>
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>17.4
       Como os arquitetos de software se relacionam com outros stakeholders?</li>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <ul style='margin-top:0cm' type=disc>
-   <li class=MsoNormal style='mso-list:l112 level3 lfo498;tab-stops:list 108.0pt'>17.4.1
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>17.4.1
        Arquitetos e Engenheiros</li>
-  </ul>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <ul style='margin-top:0cm' type=disc>
-   <li class=MsoNormal style='mso-list:l112 level3 lfo499;tab-stops:list 108.0pt'>17.4.2
+</ul>
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>17.4.2
        Arquitetos e Gestores</li>
-  </ul>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <ul style='margin-top:0cm' type=disc>
-   <li class=MsoNormal style='mso-list:l112 level3 lfo500;tab-stops:list 108.0pt'>17.4.3
+</ul>
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>17.4.3
        Outros Stakeholders</li>
-  </ul>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <li class=MsoNormal style='mso-list:l112 level2 lfo501;tab-stops:list 72.0pt'>17.5
+</ul>
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>17.5
       Desafios Restantes</li>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <li class=MsoNormal style='mso-list:l112 level2 lfo502;tab-stops:list 72.0pt'>17.6
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>17.6
       Fim da Matéria</li>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <li class=MsoNormal style='mso-list:l112 level2 lfo503;tab-stops:list 72.0pt'>17.7
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>17.7
       Perguntas de Revisão</li>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <li class=MsoNormal style='mso-list:l112 level2 lfo504;tab-stops:list 72.0pt'>17.8
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>17.8
       Leitura adicional</li>
- </ul>
 </ul>
-
-<p class=MsoNormal>QUEM SÃO ARQUITETOS DE SOFTWARE?</p>
-
-<p class=MsoNormal>Diz-se que a arquitetura de software é resultado da
-aplicação de &quot;método, roubo e intuição&quot; (<span class=SpellE>Kruchten</span>
+</ul>
+<p>QUEM SÃO ARQUITETOS DE SOFTWARE?</p>
+<p>Diz-se que a arquitetura de software é resultado da
+aplicação de "método, roubo e intuição" (<span class="SpellE">Kruchten</span>
 1995).</p>
-
-<ul style='margin-top:0cm' type=disc>
- <li class=MsoNormal style='mso-list:l94 level1 lfo505;tab-stops:list 36.0pt'><i>Método
+<ul style="margin-top:0cm" type="disc">
+<li><i>Método
      </i>refere-se a um conjunto bem compreendido e codificado de etapas que
      podem ser repetidamente executadas para resolver um problema específico,
      ou categoria de problema.</li>
- <li class=MsoNormal style='mso-list:l94 level1 lfo505;tab-stops:list 36.0pt'><i>Roubo
+<li><i>Roubo
      </i>refere-se à reutilização de soluções que já foram comprovadas como
      sucessos no passado.</li>
- <li class=MsoNormal style='mso-list:l94 level1 lfo505;tab-stops:list 36.0pt'><i>Intuição
+<li><i>Intuição
      </i>é a capacidade de conceber, entender e aplicar ideias sem
      necessariamente ser capaz de comunicar ou explicar toda a razão por trás
      delas.</li>
 </ul>
-
-<p class=MsoNormal>Na verdade, o leitor já viu diferentes elementos de método e
-&quot;roubo&quot; — ou seja, reutilização — discutidos ao longo deste livro.
+<p>Na verdade, o leitor já viu diferentes elementos de método e
+"roubo" — ou seja, reutilização — discutidos ao longo deste livro.
 Essas incluem a dependência de técnicas, processos eficazes e soluções
-existentes, como estilos, padrões e <span class=SpellE>DSSAs</span> completos.</p>
-
-<p class=MsoNormal>De muitas maneiras, a essência do trabalho de um arquiteto
+existentes, como estilos, padrões e <span class="SpellE">DSSAs</span> completos.</p>
+<p>De muitas maneiras, a essência do trabalho de um arquiteto
 de software é ser capaz de aplicar e encontrar o equilíbrio certo entre essas
-três &quot;fontes&quot; de arquitetura. Além disso, por definição, um arquiteto
+três "fontes" de arquitetura. Além disso, por definição, um arquiteto
 recebe grande responsabilidade em um projeto; O projeto terá sucesso ou
 fracassará dependendo das soluções arquitetônicas empregadas. Em muitas
 organizações de desenvolvimento de software, essa responsabilidade não vem
 acompanhada de autoridade específica. Em vez disso, o arquiteto geralmente é
 considerado pela gestão como um dos engenheiros ou, na melhor das hipóteses,
-como &quot;primeiro entre iguais&quot;. Para realizar seu trabalho de forma
+como "primeiro entre iguais". Para realizar seu trabalho de forma
 eficaz, o arquiteto deve então encontrar outra forma de exercer influência e
 liderar. Ele deve possuir e depender de várias habilidades. Um arquiteto deve
 ser:</p>
-
-<ol style='margin-top:0cm' start=1 type=1>
- <li class=MsoNormal style='mso-list:l198 level1 lfo506;tab-stops:list 36.0pt'>Um
+<ol start="1" style="margin-top:0cm" type="1">
+<li>Um
      designer de software.</li>
- <li class=MsoNormal style='mso-list:l198 level1 lfo506;tab-stops:list 36.0pt'>Um
+<li>Um
      especialista em domínio.</li>
- <li class=MsoNormal style='mso-list:l198 level1 lfo506;tab-stops:list 36.0pt'>Uma
+<li>Uma
      tecnóloga.</li>
- <li class=MsoNormal style='mso-list:l198 level1 lfo506;tab-stops:list 36.0pt'>Especialista
+<li>Especialista
      em conformidade de normas.</li>
- <li class=MsoNormal style='mso-list:l198 level1 lfo506;tab-stops:list 36.0pt'>Economista
+<li>Economista
      de engenharia de software.</li>
 </ol>
-
-<p class=MsoNormal><b>Arquiteto como Designer de Software<o:p></o:p></b></p>
-
-<p class=MsoNormal>Antes de tudo, um arquiteto de <span class=SpellE>software</span>
+<p><b>Arquiteto como Designer de Software</b></p>
+<p>Antes de tudo, um arquiteto de <span class="SpellE">software</span>
 deve ser um excelente projetista de sistemas de software. Ele deve ser capaz de
 reconhecer, reutilizar ou inventar soluções de design eficazes e aplicá-las
 adequadamente. Ele deve estar familiarizado com os principais estilos
@@ -403,27 +354,23 @@ de seu arsenal privado de ferramentas de design, acumulados ao longo do tempo,
 possivelmente como resultado do trabalho dentro de um domínio ou família de
 aplicações específica. Por outro lado, um arquiteto também deve ser capaz de
 reconhecer projetos ineficazes ou subótimos, estilos e/ou padrões inadequados e
-decisões de design &quot;com condições&quot;.</p>
-
-<p class=MsoNormal>Em um mundo ideal, um bom arquiteto sempre seria capaz de
+decisões de design "com condições".</p>
+<p>Em um mundo ideal, um bom arquiteto sempre seria capaz de
 justificar todas as suas decisões. No entanto, também devemos reconhecer que
 arquitetos verdadeiramente grandes — software ou de outro tipo — frequentemente
 deixam sua marca quando se afastam da sabedoria convencional, por exemplo,
 quando enfrentam um problema sem precedentes ou quando percebem que um problema
 existente pode ser resolvido de forma melhor. A inspiração deles nesses casos
 pode ser difícil de racionalizar.</p>
-
-<p class=MsoNormal>Para ser um grande projetista de sistemas de software, um
-arquiteto de <span class=SpellE>software</span> deve ser um engenheiro de
+<p>Para ser um grande projetista de sistemas de software, um
+arquiteto de <span class="SpellE">software</span> deve ser um engenheiro de
 software ou sistemas habilidoso, com anos de experiência rica e variada, boas
-habilidades de comunicação e um apurado senso estético. Um arquiteto de <span
-class=SpellE>software</span> deve ser engenheiro porque, no fim das contas, ele
+habilidades de comunicação e um apurado senso estético. Um arquiteto de <span class="SpellE">software</span> deve ser engenheiro porque, no fim das contas, ele
 está resolvendo problemas de engenharia. Mais especificamente, ele deve ter
-treinamento como <i><span style='mso-spacerun:yes'> </span></i>engenheiro de
+treinamento como <i><span> </span></i>engenheiro de
 software, pois sistemas de software apresentam muitas propriedades que não são
 compartilhadas por outros tipos de sistemas projetados.</p>
-
-<p class=MsoNormal>Um bom arquiteto deve ter ampla experiência, pois deve
+<p>Um bom arquiteto deve ter ampla experiência, pois deve
 buscar o equilíbrio mais eficaz entre método, roubo e intuição para o problema
 em questão. Por exemplo, se ele está lidando com um sistema sem precedentes,
 pode precisar confiar na intuição aprimorada trabalhando em muitos tipos
@@ -431,51 +378,37 @@ diferentes de problemas ao longo dos anos e aplicar métodos genéricos, como
 orientação a objetos. Por outro lado, se ele estiver lidando com uma variação
 de um problema conhecido, poderá aproveitar diretamente sua experiência e aplicar
 métodos específicos e reutilizar soluções de sistemas anteriores.</p>
-
-<p class=MsoNormal>O arquiteto também deve ser um bom comunicador, pois deve
+<p>O arquiteto também deve ser um bom comunicador, pois deve
 convencer muitas outras pessoas de sua visão para o sistema. Isso inclui, por
 exemplo, outros engenheiros que realmente irão construir o sistema, mas também
 podem incluir os gerentes, colaboradores externos do projeto, clientes e
 usuários do projeto, capitalistas de risco e talvez até o conselho de
 administração da empresa.</p>
-
-<p class=MsoNormal>Por fim, o arquiteto deve ter uma boa apreciação pela
+<p>Por fim, o arquiteto deve ter uma boa apreciação pela
 estética. Aqueles que cultivam essa apreciação pelo design no mundo real fazem
 um trabalho melhor no design no mundo do software. Esse ponto é apenas
 brevemente enfatizado aqui, mas já foi discutido ao longo do livro (por
-exemplo, <span class=SpellE>veja<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch01.html"
-title="Chapter&nbsp;1.&nbsp;The Big Idea"><b>Capítulos</b><b> 1</b></a></span>,<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch04.html"
-title="Chapter&nbsp;4.&nbsp;Designing Architectures"><b>4</b></a>e<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch11.html"
-title="Chapter&nbsp;11.&nbsp;Applied Architectures and Styles"><b>11</b></a>).
+exemplo, <span class="SpellE">veja<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch01.html" title="Chapter 1. The Big Idea"><b>Capítulos</b><b> 1</b></a></span>,<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch04.html" title="Chapter 4. Designing Architectures"><b>4</b></a>e<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch11.html" title="Chapter 11. Applied Architectures and Styles"><b>11</b></a>).
 Designs elegantes promovem entusiasmo em relação ao projeto entre seus
 stakeholders, incluindo os desenvolvedores. Eles são lembrados, estudados e
 imitados. Em contraste, designs entediantes não são.</p>
-
-<p class=MsoNormal><b>Arquiteto como Especialista em Domínio<o:p></o:p></b></p>
-
-<p class=MsoNormal>Muitas organizações de desenvolvimento de software produzem
+<p><b>Arquiteto como Especialista em Domínio</b></p>
+<p>Muitas organizações de desenvolvimento de software produzem
 múltiplos sistemas dentro do mesmo domínio de aplicação. Por exemplo, a
 Microsoft trabalha principalmente no domínio de aplicativos desktop; O
 principal domínio de interesse do Google é a disseminação e o uso de
 informações pela Internet; empresas como Boeing e Lockheed Martin têm um foco
 extensivo em sistemas embarcados; A NASA produz sistemas baseados em terra,
 órbita terrestre e espaço.</p>
-
-<p class=MsoNormal>Em alguns casos, o domínio de foco será acompanhado por uma
-ou mais arquiteturas de software específicas de domínio (<span class=SpellE>DSSAs</span>)
-(<span class=SpellE>recordação<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch15.html"
-title="Chapter&nbsp;15.&nbsp;Domain-Specific Software Engineering"><b>Capítulo</b><b>
+<p>Em alguns casos, o domínio de foco será acompanhado por uma
+ou mais arquiteturas de software específicas de domínio (<span class="SpellE">DSSAs</span>)
+(<span class="SpellE">recordação<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch15.html" title="Chapter 15. Domain-Specific Software Engineering"><b>Capítulo</b><b>
 15</b></a></span>) que codificam as características do problema a ser
 enfrentado, bem como a solução desenvolvida em resposta. O ônus do conhecimento
 íntimo com o domínio da aplicação e os maiores riscos de soluções inadequadas e
 ineficazes são removidos dos arquitetos nesses sistemas; eles só precisam se
 familiarizar e seguir a prescrição contida na DSSA.</p>
-
-<p class=MsoNormal>No entanto, os sistemas desenvolvidos em algumas empresas
+<p>No entanto, os sistemas desenvolvidos em algumas empresas
 serão apenas vagamente relacionados, de modo que não podem ser consolidados em
 uma DSSA. Nesses casos, cada sistema cria seus próprios desafios. Os arquitetos
 de software que trabalham nesses sistemas precisarão ter um entendimento
@@ -486,31 +419,26 @@ bem para o tipo de tarefa em questão. Eles podem ter dificuldades para se
 comunicar com outros stakeholders, incluindo outros engenheiros. E eles podem
 não conseguir usar as propriedades do domínio a seu favor ao enfrentar um
 problema com sua arquitetura.</p>
-
-<p class=MsoNormal><b>Arquiteto como Tecnólogo de Software<o:p></o:p></b></p>
-
-<p class=MsoNormal>Um arquiteto de software deve saber que suas soluções
+<p><b>Arquiteto como Tecnólogo de Software</b></p>
+<p>Um arquiteto de software deve saber que suas soluções
 realmente funcionarão quando totalmente desenvolvidas. Assim como um arquiteto
 de edificações precisa garantir que seus projetos possam ser construídos, um
 arquiteto de software precisa garantir que a tecnologia de software exista para
 apoiar suas ideias. Um design bonito é inútil se não puder ser implementado.</p>
-
-<p class=MsoNormal>O papel principal de um arquiteto, e provavelmente até sua
+<p>O papel principal de um arquiteto, e provavelmente até sua
 principal força, não é como programador. De fato, a experiência mostrou que
 programadores excepcionais não necessariamente são arquitetos excepcionais. Ao
 mesmo tempo, o arquiteto não pode se separar completamente da programação. As
 razões por trás disso são análogas aos argumentos apresentados ao longo deste
 livro sobre por que é irrealista isolar completamente a arquitetura de um
 sistema de sua implementação. Os arquitetos devem elaborar progressivamente
-conceitos de design em elementos concretos. Para isso, eles podem precisar <span
-class=SpellE>prototipar</span> elementos específicos de suas soluções para
+conceitos de design em elementos concretos. Para isso, eles podem precisar <span class="SpellE">prototipar</span> elementos específicos de suas soluções para
 garantir que esses elementos se comportem na prática como previsto. Eles podem
 precisar testar ideias sobre a plataforma exata de execução em que o sistema
 irá rodar. Os arquitetos também podem precisar convencer gestores ou
 incorporadores de que uma ideia particularmente controversa vale a pena ser
 perseguida, mostrando seus benefícios na prática.</p>
-
-<p class=MsoNormal>Arquitetos também precisam ter uma compreensão das
+<p>Arquitetos também precisam ter uma compreensão das
 capacidades genéricas que os desenvolvedores de software terão à disposição ao
 implementar a arquitetura. Nos capítulos anteriores, abordamos muitas dessas
 tecnologias e mostramos que elas podem ter impacto direto na arquitetura de um
@@ -521,8 +449,7 @@ software, frameworks, plataformas middleware, soluções de rede e assim por
 diante. O trabalho do arquiteto não é apenas garantir que suas ideias possam
 ser implementadas; É para garantir que elas possam ser implementadas de forma
 eficaz e que o processo de criação dessa implementação seja eficiente.</p>
-
-<p class=MsoNormal>Além disso, o arquiteto pode precisar jogar a carta do
+<p>Além disso, o arquiteto pode precisar jogar a carta do
 tecnólogo por causa das percepções. Devido à natureza do trabalho, o arquiteto
 deve projetar autoridade com diferentes partes interessadas. Como um arquiteto
 muitas vezes não é um gestor a quem a autoridade é explicitamente concedida,
@@ -536,18 +463,15 @@ de qualificações genuínas em software. Poder, ocasionalmente, demonstrar
 habilidade técnica ajudará o arquiteto a lembrar os engenheiros de que ele é um
 deles, das razões pelas quais ocupa o cargo e que ele não vive na proverbial
 torre de marfim.</p>
-
-<p class=MsoNormal><b>Arquiteto como Especialista em Conformidade de Normas<o:p></o:p></b></p>
-
-<p class=MsoNormal>Muitos órgãos governamentais, jurídicos e técnicos produzem
+<p><b>Arquiteto como Especialista em Conformidade de Normas</b></p>
+<p>Muitos órgãos governamentais, jurídicos e técnicos produzem
 padrões aos quais uma organização de desenvolvimento deve aderir. Alguns desses
 padrões são obrigatórios externamente e são pré-condição para a licitação de
 contratos. Por exemplo, muitos projetos financiados pelo Departamento de Defesa
 dos EUA precisam aderir à estrutura arquitetônica C4ISR. Outros padrões podem
 ser exigidos pela gestão da empresa. Por exemplo, uma empresa pode decidir usar
 UML 2 como ferramenta de documentação de arquitetura.</p>
-
-<p class=MsoNormal>Em ambos os casos, um arquiteto de software deve estar
+<p>Em ambos os casos, um arquiteto de software deve estar
 intimamente familiarizado com os padrões relevantes. Eles devem ser capazes de
 avaliar e comunicar com precisão o valor de padrões específicos, ou a falta de
 padrões adequados. Eles precisam entender o impacto esperado de um determinado
@@ -555,37 +479,29 @@ padrão na arquitetura e no produto final — tanto positivo quanto negativo —
 ser capazes de explicar esse impacto para outros stakeholders. Por fim, eles
 devem ser capazes de demonstrar que suas soluções arquitetônicas seguem
 quaisquer padrões escolhidos, por exemplo, no caso de uma auditoria de projeto.</p>
-
-<p class=MsoNormal>O arquiteto também deve seguir os esforços de padrões
+<p>O arquiteto também deve seguir os esforços de padrões
 recém-iniciados. Um órgão de padronização pode produzir uma tecnologia que
 simplifique significativamente o desenvolvimento de produtos futuros, melhore
 as capacidades de modelagem e análise para arquiteturas existentes ou garanta
 fácil interoperabilidade com softwares importantes de terceiros. Por exemplo, a
 emergente Linguagem de Análise e Design Arquitetônico (AADL), que foi discutida
-<span class=SpellE>em<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch06.html"
-title="Chapter&nbsp;6.&nbsp;Modeling"><b>Capítulo</b><b> 6</b></a></span>, pode
+<span class="SpellE">em<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch06.html" title="Chapter 6. Modeling"><b>Capítulo</b><b> 6</b></a></span>, pode
 fornecer capacidades de modelagem que o UML não possui; uma dada extensão do
 padrão CORBA pode facilitar a implementação do sistema; e assim por diante.
 Além disso, a participação real nos esforços de padronização pode ajudar a
 evitar que padrões mal concebidos e que desperdiçam recursos sejam impostos a
 projetos futuros e arquitetos de software.</p>
-
-<p class=MsoNormal><b>Obstáculos de Conformidade de Normas<o:p></o:p></b></p>
-
-<p class=MsoNormal>Apesar de seus melhores esforços, um arquiteto de <span
-class=SpellE>software</span> pode, às vezes, não conseguir garantir a
+<p><b>Obstáculos de Conformidade de Normas</b></p>
+<p>Apesar de seus melhores esforços, um arquiteto de <span class="SpellE">software</span> pode, às vezes, não conseguir garantir a
 conformidade total de uma determinada arquitetura com um determinado padrão.
 Existem pelo menos duas possíveis razões para isso.</p>
-
-<p class=MsoNormal>Primeiro, o padrão pode ser definido de forma vaga. Ele pode
+<p>Primeiro, o padrão pode ser definido de forma vaga. Ele pode
 fornecer um conjunto de diretrizes gerais, em vez de uma notação, técnica ou
 processo rigorosamente especificado que uma organização pode seguir e utilizar.
-Um exemplo de padrão vagamente definido é o <span class=SpellE>DoDAF</span>,
+Um exemplo de padrão vagamente definido é o <span class="SpellE">DoDAF</span>,
 que foi discutido no capítulo anterior. Outro exemplo é o próprio UML: embora
 sua sintaxe seja precisamente definida, sua semântica não é.</p>
-
-<p class=MsoNormal>A segunda razão pela qual um padrão pode ser difícil de
+<p>A segunda razão pela qual um padrão pode ser difícil de
 cumprir é que as ferramentas construídas para suportar o padrão podem, de fato,
 se desviar dele. Por exemplo, um dos principais ambientes de modelagem de
 software baseados em UML é a IBM/Rational Rose. No entanto, ao longo da
@@ -593,14 +509,11 @@ existência e evolução do UML desde o final dos anos 1990, Rose tende a se
 desviar do padrão Object Management Group (OMG), mesmo que apenas de maneiras
 sutis. Nessa situação, uma organização que comprasse a Rose para modelar seus sistemas
 de software seria induzida a se desviar do UML padrão.</p>
-
-<p class=MsoNormal>Claro, o oposto desse argumento também se aplica: essas
+<p>Claro, o oposto desse argumento também se aplica: essas
 mesmas razões dificultam argumentar que uma arquitetura <i>não </i>cumpre um
 padrão.</p>
-
-<p class=MsoNormal><b>Arquiteto como Economista de Engenharia de Software<o:p></o:p></b></p>
-
-<p class=MsoNormal>Um grande designer de software não é necessariamente um
+<p><b>Arquiteto como Economista de Engenharia de Software</b></p>
+<p>Um grande designer de software não é necessariamente um
 grande arquiteto de software. Seus projetos podem realmente ser superiores
 quando analisados isoladamente, mas no contexto de uma organização ou projeto
 específico, esses projetos podem ser irreais, muito caros, tecnologicamente
@@ -611,8 +524,7 @@ deve produzir uma arquitetura que aborde efetivamente o problema em questão,
 respeitando simultaneamente as restrições impostas ao projeto. Se falhar em
 qualquer um dos casos, essa arquitetura provavelmente resultará em um projeto
 fracassado.</p>
-
-<p class=MsoNormal>Uma das restrições frequentes em projetos do mundo real é o
+<p>Uma das restrições frequentes em projetos do mundo real é o
 dinheiro. Algumas empresas concorrem a licitação por contratos cujo tamanho
 limita o que pode ser feito no decorrer do projeto. Exemplos dessas empresas
 são grandes empresas que trabalham em projetos financiados pelo governo nos
@@ -623,28 +535,24 @@ startups dot.com. Outras empresas ainda recorrem a seus próprios cofres para
 financiar um projeto que se espera que eventualmente dê lucro. Essas empresas
 incluem grandes empresas comerciais de software, como Microsoft, Yahoo e
 Google.</p>
-
-<p class=MsoNormal>Em cada caso, ao produzir uma arquitetura para um sistema em
+<p>Em cada caso, ao produzir uma arquitetura para um sistema em
 desenvolvimento, o arquiteto deve não apenas estar ciente da restrição
 financeira, mas também ser capaz de determinar se sua solução pode ser
 implementada de forma eficaz dentro do orçamento do projeto. Isso significa que
 o arquiteto deve ter algum entendimento, pelo menos básico, da economia do
 desenvolvimento de software, e deve acompanhar suas decisões de design com
-cálculos rápidos e simples de &quot;parte de trás do envelope&quot; sobre quanto
+cálculos rápidos e simples de "parte de trás do envelope" sobre quanto
 sua implementação provavelmente vai custar. Considerações orçamentárias também
 podem levar o arquiteto a optar por adotar ou adaptar arquiteturas existentes e
 optar por funcionalidades prontas a usar. Ser capaz de fornecer justificativa
 econômica adequada para todas essas decisões é parte integrante do trabalho do
 arquiteto. No fim das contas, o arquiteto deve estar constantemente ciente de
 que a solução que produz pode muito bem ser tecnicamente subótima.</p>
-
-<p class=MsoNormal><b>Alguns Maus Hábitos<o:p></o:p></b></p>
-
-<p class=MsoNormal>Também existem certas tendências que um arquiteto deve
+<p><b>Alguns Maus Hábitos</b></p>
+<p>Também existem certas tendências que um arquiteto deve
 evitar. Alguns maus hábitos óbvios são discutidos aqui; O leitor pode
 identificar outros também.</p>
-
-<p class=MsoNormal>Perfeccionismo As restrições inerentes ao trabalho do
+<p>Perfeccionismo As restrições inerentes ao trabalho do
 arquiteto frequentemente tornam impossível produzir a arquitetura perfeita para
 o problema em questão. Entre as muitas razões discutidas ao longo deste texto,
 em qualquer momento o arquiteto provavelmente possui apenas informações
@@ -653,10 +561,9 @@ que o arquiteto descobre novos detalhes sobre o sistema em que está
 trabalhando, crenças anteriormente mantidas se tornam inválidas. Buscar a perfeição
 em um ambiente tão fluido é impraticável. Na verdade, a capacidade de
 reconhecer, responder e até mesmo abraçar mudanças será um sinal do sucesso
-como arquiteto de <span class=SpellE>software</span>. Isso leva ao segundo mau
+como arquiteto de <span class="SpellE">software</span>. Isso leva ao segundo mau
 hábito.</p>
-
-<p class=MsoNormal>Inflexibilidade Um arquiteto deve evitar insistir em uma
+<p>Inflexibilidade Um arquiteto deve evitar insistir em uma
 única forma correta ou melhor de construir um sistema. Uma tendência básica e
 positiva de um designer deve ser produzir um design limpo e simples. Ao
 construir um edifício, ponte ou represa, isso pode significar limpar o local de
@@ -664,20 +571,17 @@ construção para que ele reflita totalmente a visão dos arquitetos e
 engenheiros. Infelizmente, nem sempre funciona assim com software. Pouquíssimos
 sistemas grandes são construídos do zero, usando um único estilo arquitetônico,
 o conjunto favorito de padrões, middleware padrão, linguagem de programação,
-sistema operacional e plataforma de hardware. Em vez disso, um arquiteto de <span
-class=SpellE>software</span> tem muito mais chance de ter que misturar e até
+sistema operacional e plataforma de hardware. Em vez disso, um arquiteto de <span class="SpellE">software</span> tem muito mais chance de ter que misturar e até
 inventar estilos e padrões, buscar novas plataformas de middleware que resolvam
 o novo problema de forma mais eficaz, lidar com o desenvolvimento multilíngue
 em múltiplas plataformas, e assim por diante. As razões para isso podem ser
 considerações técnicas legítimas. As razões também podem ser os muitos
 requisitos conflitantes e mutáveis impostos à arquitetura e ao arquiteto pelos
 outros stakeholders do sistema. De muitas formas, um grande elemento do
-trabalho de um arquiteto de <span class=SpellE>software</span> é decidir quais
+trabalho de um arquiteto de <span class="SpellE">software</span> é decidir quais
 partes interessadas decepcionar.</p>
-
-<p class=MsoNormal><span class=SpellE>Micromanagement</span> Outro mau hábito
-para um arquiteto de <span class=SpellE>software</span> é o impulso de <span
-class=SpellE>microgerenciar</span>. Um arquiteto produz projetos que podem
+<p><span class="SpellE">Micromanagement</span> Outro mau hábito
+para um arquiteto de <span class="SpellE">software</span> é o impulso de <span class="SpellE">microgerenciar</span>. Um arquiteto produz projetos que podem
 resultar em grandes sistemas desenvolvidos por muitas equipes, possivelmente de
 várias organizações, ao longo de um período significativo. Garantir que tudo
 corra perfeitamente e que todos sigam a visão do arquiteto em todos os momentos
@@ -686,45 +590,40 @@ arquiteto reconhecerá que está cercado de engenheiros altamente qualificados e
 que muitos, ou até a maioria, deles conseguirão fazer seu próprio trabalho
 muito melhor do que ele. Além disso, tentar interferir em seus trabalhos pode
 gerar ressentimento e minar o objetivo do arquiteto de liderar pelo exemplo.</p>
-
-<p class=MsoNormal>Isolacionismo Por fim, o arquiteto não deve se isolar. Mesmo
+<p>Isolacionismo Por fim, o arquiteto não deve se isolar. Mesmo
 que o arquiteto sinta que o peso do projeto está sobre seus ombros e que, pelo
 menos no início do projeto, ele carrega o maior fardo, o arquiteto deve lembrar
 que faz parte de uma equipe muito maior, e que uma parte fundamental do seu
-trabalho é perguntar, observar, ouvir,<span style='mso-spacerun:yes'>  </span>e
+trabalho é perguntar, observar, ouvir,<span>  </span>e
 se comunicar. O arquiteto pode obter soluções para seus problemas específicos
 no processo. Ele também terá o apoio inicial das partes interessadas, um senso
 de propriedade conjunta da arquitetura e a chance de preparar o terreno para a
-implementação final da arquitetura. Se trancar em um quarto porque se é &quot;o
-arquiteto&quot; provavelmente terá exatamente o efeito oposto.</p>
-
-<p class=MsoNormal>Outro aspecto de se isolar é insistir em sempre criar e usar
+implementação final da arquitetura. Se trancar em um quarto porque se é "o
+arquiteto" provavelmente terá exatamente o efeito oposto.</p>
+<p>Outro aspecto de se isolar é insistir em sempre criar e usar
 suas próprias soluções. Mesmo que às vezes haja uma necessidade legítima de um
 arquiteto inventar novas técnicas de design, notações, padrões ou estilos, o
 risco associado é fazer isso mesmo quando não é necessário. Isso é
-frequentemente chamado de síndrome do &quot;Não inventado aqui&quot;:
+frequentemente chamado de síndrome do "Não inventado aqui":
 arquitetos e, de forma mais ampla, organizações às vezes desconhecem ou até
 ignoram deliberadamente soluções eficazes conhecidas e insistem em desenvolver
-suas próprias. Intimamente relacionado a isso está a síndrome do &quot;Sempre
-fizemos assim&quot;, onde soluções subótimas ou até ineficazes são aplicadas
+suas próprias. Intimamente relacionado a isso está a síndrome do "Sempre
+fizemos assim", onde soluções subótimas ou até ineficazes são aplicadas
 repetidamente porque podem ter sido demonstradas funcionar nominalmente no
 passado (possivelmente em contextos muito diferentes e em problemas muito
 distintos). Ambas as situações são arriscadas, caras e frequentemente resultam
 em duplicar o trabalho que outra pessoa já fez ou, pior, em produzir soluções
 inferiores.</p>
-
-<p class=MsoNormal><b>O Mau Hábito Supremo<o:p></o:p></b></p>
-
-<p class=MsoNormal>Em muitas organizações de desenvolvimento de software,
+<p><b>O Mau Hábito Supremo</b></p>
+<p>Em muitas organizações de desenvolvimento de software,
 especialmente startups, o arquiteto-chefe é a pessoa que teve a ideia original
 sobre a qual a empresa foi fundada. Essa pessoa pode ocupar outros títulos e
-responsabilidades em tal organização, como &quot;Diretor Técnico&quot; ou até
-mesmo &quot;Diretor Executivo&quot;. Alternativamente, um novo proprietário de
+responsabilidades em tal organização, como "Diretor Técnico" ou até
+mesmo "Diretor Executivo". Alternativamente, um novo proprietário de
 uma empresa existente pode assumir o papel de arquiteto-chefe do produto
 principal da empresa ou de toda a sua linha de produtos.</p>
-
-<p class=MsoNormal>A responsabilidade colocada sobre esses indivíduos
-claramente é maior do que sobre &quot;meros&quot; arquitetos: eles são
+<p>A responsabilidade colocada sobre esses indivíduos
+claramente é maior do que sobre "meros" arquitetos: eles são
 responsáveis por muito mais do que apenas o sucesso técnico de um produto. Ao
 mesmo tempo, os sucessos anteriores desses indivíduos, especialmente se foram
 grandes sucessos — pense, por exemplo, no Netscape — podem se tornar um
@@ -732,8 +631,7 @@ obstáculo para fazer negócios inteligentes (e arquitetura inteligente). A
 história relativamente breve do mercado de software nos ensina que a sorte de
 um produto, e de uma empresa, pode mudar rapidamente. Portanto, ilusões de
 grandeza são o má e maior das vezes para arquitetos de software.</p>
-
-<p class=MsoNormal>Em seu livro divertido, perspicaz e sóbrio, <i>Em Busca da
+<p>Em seu livro divertido, perspicaz e sóbrio, <i>Em Busca da
 Estupidez</i> (Chapman 2003), Merrill R. (Rick) Chapman relata vários exemplos
 desse mau hábito supremo dos arquitetos de software das últimas décadas. Ele
 explica como e por que certas empresas — incluindo a já mencionada Netscape —
@@ -742,10 +640,8 @@ frequentemente rápida de erros, tanto gerenciais quanto arquitetônicos. O livr
 de Chapman serve como um lembrete útil da necessidade de planejamento
 cuidadoso, boa arquitetura de software, práticas sólidas de engenharia e, acima
 de tudo, humildade.</p>
-
-<p class=MsoNormal>O QUE OS ARQUITETOS DE SOFTWARE FAZEM?</p>
-
-<p class=MsoNormal>O trabalho de um arquiteto de software exigirá demonstrar
+<p>O QUE OS ARQUITETOS DE SOFTWARE FAZEM?</p>
+<p>O trabalho de um arquiteto de software exigirá demonstrar
 diversas habilidades. Ser um designer eficaz é uma dessas habilidades, mas um
 arquiteto vai passar grande parte do tempo fazendo outras coisas. Existem
 quatro tarefas que um arquiteto provavelmente terá que desempenhar,
@@ -755,20 +651,17 @@ Essas tarefas são desenvolver estratégias de projetos, projetar sistemas,
 comunicar-se com as partes interessadas e ser líder. Ao realizar essas tarefas,
 o arquiteto terá que aplicar, combinar e ampliar repetidamente o conjunto de
 habilidades descrito na seção anterior.</p>
-
-<p class=MsoNormal><b>Desenvolver a Estratégia do Projeto<o:p></o:p></b></p>
-
-<p class=MsoNormal>Um designer de software talentoso geralmente será capaz de
+<p><b>Desenvolver a Estratégia do Projeto</b></p>
+<p>Um designer de software talentoso geralmente será capaz de
 produzir uma excelente solução técnica para o problema em questão. Essa
 solução, no entanto, pode não ser a melhor para o <i>projeto </i>ou para a <i>organização
-</i>que está resolvendo o problema. Um arquiteto de <span class=SpellE>software</span>
+</i>que está resolvendo o problema. Um arquiteto de <span class="SpellE">software</span>
 talentoso terá que reconhecer a diferença entre os dois e sempre se certificar
 de abordar o último. O principal trabalho do arquiteto é ajudar a desenvolver
 uma estratégia abrangente para o projeto. Essa estratégia, se implementada
 adequadamente, não só resultará em um sistema que seja uma boa solução técnica,
 mas também um produto valioso para a organização.</p>
-
-<p class=MsoNormal>Isso exige compreensão do contexto econômico do projeto e da
+<p>Isso exige compreensão do contexto econômico do projeto e da
 organização, da concorrência no mercado e de quaisquer padrões e regulamentos
 aos quais a organização deva obedecer. Talvez o mais importante, o arquiteto
 deve estar intimamente familiarizado com os recursos humanos e técnicos à
@@ -776,37 +669,32 @@ disposição do projeto. Um projeto que, de outra forma, é excelente terá alta
 probabilidade de falha se exigir a compra de muita tecnologia nova e cara,
 requalificação dos engenheiros existentes ou contratação de muitos novos
 funcionários.</p>
-
-<p class=MsoNormal><b>Sistemas de projeto<o:p></o:p></b></p>
-
-<p class=MsoNormal>Uma parte central da estratégia geral do projeto é o design
+<p><b>Sistemas de projeto</b></p>
+<p>Uma parte central da estratégia geral do projeto é o design
 da arquitetura do sistema. Uma vez que o arquiteto está ciente das restrições
 relevantes enfrentadas, ele está pronto para prosseguir com a resolução do
 problema. Essa provavelmente é a parte mais agradável do trabalho de arquiteto;
 Paradoxalmente, pode ser também o mais estressante.</p>
-
-<p class=MsoNormal>Um arquiteto provavelmente vai gostar de projetar sistemas
+<p>Um arquiteto provavelmente vai gostar de projetar sistemas
 porque terá a oportunidade de projetar, usar sua imaginação e criatividade,
 marcar seus sistemas do futuro e, quem sabe, até pensar fora da caixa. No
 entanto, o arquiteto ainda precisará estar em contato frequente com outras
 partes interessadas, coletar informações delas e responder a possíveis
 solicitações conflitantes. Ele terá que lidar com a possibilidade de não ter o
 quadro completo à disposição e que o quadro muda constantemente. Diz-se que o trabalho
-de um arquiteto de <span class=SpellE>software</span> é uma sucessão de
+de um arquiteto de <span class="SpellE">software</span> é uma sucessão de
 decisões subótimas tomadas na penumbra. O arquiteto também terá que evitar que
 objetivos pessoais, como produzir um projeto limpo em tempo recorde, sobrepujam
 as preocupações dos outros stakeholders.</p>
-
-<p class=MsoNormal><b>Comunique-se com as Partes Interessadas<o:p></o:p></b></p>
-
-<p class=MsoNormal>Durante todo o processo de desenvolvimento da estratégia do
+<p><b>Comunique-se com as Partes Interessadas</b></p>
+<p>Durante todo o processo de desenvolvimento da estratégia do
 projeto e produção do projeto arquitetônico, o arquiteto estará em contato
 frequente com os diversos stakeholders do sistema, que podem incluir
 desenvolvedores, testadores, líderes técnicos, gestores de todos os níveis,
 clientes e usuários. Um dos principais fatores para o sucesso do projeto é se o
 arquiteto consegue projetar e garantir uma visão contínua e coerente para o
 sistema resultante. Nesse sentido, seu trabalho tem algo em comum com o de vendedor,
-com a reviravolta de que ele está negociando e &quot;vendendo&quot; o projeto
+com a reviravolta de que ele está negociando e "vendendo" o projeto
 para muitos tipos diferentes de clientes de várias maneiras. O arquiteto pode
 precisar interagir repetidamente com as diversas partes interessadas,
 especialmente em um projeto de longa duração, onde a visão geral pode se perder
@@ -815,18 +703,15 @@ precisar assumir o papel de incentivador do projeto, mantendo o moral dos
 diferentes envolvidos. Ele também pode precisar demonstrar grande consciência e
 perspicácia política sobre os interesses concorrentes dos diversos atores para
 realizar essa tarefa de forma eficaz.</p>
-
-<p class=MsoNormal>Embora o arquiteto possa usar diferentes linguagens para se
+<p>Embora o arquiteto possa usar diferentes linguagens para se
 comunicar com diferentes partes interessadas e focar em aspectos distintos do
 projeto dependendo da situação, durante todo esse processo ele deve garantir a
 integridade arquitetônica do projeto. Os compromissos que o arquiteto
 inevitavelmente deve fazer não podem ser permitidos que minem o objetivo geral
 ou entrem em conflito com decisões anteriores tomadas por razões igualmente
 válidas. A degradação arquitetônica deve ser evitada durante toda essa tarefa.</p>
-
-<p class=MsoNormal><b>Chumbo<o:p></o:p></b></p>
-
-<p class=MsoNormal>Um arquiteto toma muitas decisões cruciais para o sucesso do
+<p><b>Chumbo</b></p>
+<p>Um arquiteto toma muitas decisões cruciais para o sucesso do
 projeto e precisa convencer um público amplo — parte do qual pode ser cético —
 de que essas decisões estão corretas. Algumas decisões podem ser impopulares,
 mas o arquiteto precisa obter o apoio de todas as principais partes
@@ -835,59 +720,50 @@ Em algumas situações, só conseguir o engajamento pode não ser suficiente; O
 arquiteto pode precisar despertar entusiasmo pelo projeto. Ele frequentemente
 terá que assumir essa responsabilidade sem qualquer autoridade explícita sobre
 as partes interessadas.</p>
-
-<p class=MsoNormal>Para isso, o arquiteto deve ser um líder. Embora possa ser
+<p>Para isso, o arquiteto deve ser um líder. Embora possa ser
 difícil ensinar, liderança é uma habilidade que pode ser cultivada e refinada.
 Para ser um líder eficaz, um arquiteto deve:</p>
-
-<ol style='margin-top:0cm' start=1 type=1>
- <li class=MsoNormal style='mso-list:l100 level1 lfo507;tab-stops:list 36.0pt'>Demonstre
+<ol start="1" style="margin-top:0cm" type="1">
+<li>Demonstre
      confiança no sucesso do projeto.</li>
- <li class=MsoNormal style='mso-list:l100 level1 lfo507;tab-stops:list 36.0pt'>Projeta
+<li>Projeta
      convicção em suas ideias.</li>
- <li class=MsoNormal style='mso-list:l100 level1 lfo507;tab-stops:list 36.0pt'>Demonstre
+<li>Demonstre
      prontidão para assumir total responsabilidade por quaisquer problemas
      técnicos.</li>
- <li class=MsoNormal style='mso-list:l100 level1 lfo507;tab-stops:list 36.0pt'>Esteja
+<li>Esteja
      pronto para articular a justificativa técnica das decisões de design.</li>
- <li class=MsoNormal style='mso-list:l100 level1 lfo507;tab-stops:list 36.0pt'>Ser
+<li>Ser
      capaz de desenvolver ainda mais a arquitetura detalhada do projeto.</li>
- <li class=MsoNormal style='mso-list:l100 level1 lfo507;tab-stops:list 36.0pt'>Reconheça
+<li>Reconheça
      as contribuições dos outros.</li>
- <li class=MsoNormal style='mso-list:l100 level1 lfo507;tab-stops:list 36.0pt'>Evite
+<li>Evite
      o engrandecimento pessoal.</li>
 </ol>
-
-<p class=MsoNormal>Em todos os momentos, o arquiteto deve colocar os interesses
+<p>Em todos os momentos, o arquiteto deve colocar os interesses
 do projeto acima dos seus próprios e liderar pelo exemplo. Desenvolver um
 sistema complexo e com muita intensidade de software pode exigir sacrifícios
 dos engenheiros, incluindo longas jornadas, trabalho nos fins de semana e
 feriados, além de tempo longe das famílias. Um arquiteto que é um verdadeiro
 líder estará sempre disposto a fazer sua parte dos sacrifícios. Ele também deve
-saber quando fazer tais sacrifícios é <i><span
-style='mso-spacerun:yes'> </span></i>apropriado e deve garantir que o pessoal
+saber quando fazer tais sacrifícios é <i><span> </span></i>apropriado e deve garantir que o pessoal
 do projeto seja tratado com respeito e consideração.</p>
-
-<p class=MsoNormal>COMO FUNCIONAM ARQUITETOS DE SOFTWARE?</p>
-
-<p class=MsoNormal>Um arquiteto pode trabalhar sozinho ou, mais provavelmente,
+<p>COMO FUNCIONAM ARQUITETOS DE SOFTWARE?</p>
+<p>Um arquiteto pode trabalhar sozinho ou, mais provavelmente,
 como parte de uma equipe. A composição exata de uma equipe de arquitetura e seu
 papel exato durante as várias etapas do projeto podem variar de uma organização
 para outra, e até mesmo de um projeto para outro. No entanto, as equipes devem
 ser montadas com certas diretrizes e observações geralmente aplicáveis em
 mente, incluindo equilíbrio de habilidades, lealdade ao projeto e à
 organização, e capacidade de atuar durante toda a duração do projeto.</p>
-
-<p class=MsoNormal><b>Equilíbrio de Habilidades<o:p></o:p></b></p>
-
-<p class=MsoNormal>A equipe de arquitetura de software deve ser composta por
+<p><b>Equilíbrio de Habilidades</b></p>
+<p>A equipe de arquitetura de software deve ser composta por
 pessoas cujas forças sejam complementares e abrangam a gama de habilidades
 discutidas acima. É improvável que uma única pessoa seja um designer
 excepcional, especialista em área, tecnólogo, comunicador <i>e </i>líder. Mais
 provavelmente, os principais pontos fortes de cada arquiteto estarão em um
 pequeno número — talvez apenas um — dessas áreas.</p>
-
-<p class=MsoNormal>Compondo a equipe de arquitetura com pessoas com habilidades
+<p>Compondo a equipe de arquitetura com pessoas com habilidades
 semelhantes, portanto, não é útil. Por um lado, se certas necessidades do
 projeto, como o design, estiverem sobrecarregadas, há o risco de que os
 arquitetos atrapalhem uns aos outros, enquanto outros aspectos da arquitetura,
@@ -896,69 +772,61 @@ arquitetos cujas habilidades não se sobrepõem suficientemente traz o risco de
 que as informações coletadas e as decisões arquitetônicas tomadas não sejam
 devidamente compreendidas por diferentes membros da equipe nem integradas em um
 todo coerente.</p>
-
-<p class=MsoNormal>A equipe de arquitetura carrega grande responsabilidade e
+<p>A equipe de arquitetura carrega grande responsabilidade e
 exerce influência dominante sobre um projeto. Portanto, deve ser composta por
 pessoas qualificadas. Phillippe Kruchten, praticante e pesquisador de
 arquitetura de software de longa data, faz a observação interessante de que a
-equipe de arquitetura não deveria se tornar um &quot;asilo de aposentados&quot;
+equipe de arquitetura não deveria se tornar um "asilo de aposentados"
 para engenheiros de software envelhecidos (Kruchten 1999). Isso pode parecer
 uma advertência desnecessária. No entanto, não é incomum que engenheiros com
 habilidades técnicas ultrapassadas em grandes organizações sejam
-&quot;promovidos&quot; a arquitetos de software. Isso pode ser visto como a
+"promovidos" a arquitetos de software. Isso pode ser visto como a
 maneira mais fácil de minimizar o impacto negativo das habilidades deterioradas
 desses engenheiros, mas pode ser muito perigoso e, simplificando, é
 manifestamente estúpido.</p>
-
-<p class=MsoNormal><b>O Princípio de Peter<o:p></o:p></b></p>
-
-<p class=MsoNormal>Uma falha de uma organização em equipar sua equipe de
+<p><b>O Princípio de Peter</b></p>
+<p>Uma falha de uma organização em equipar sua equipe de
 arquitetura de software com pessoas competentes pode ser vista sob o prisma do <i>Princípio
 de Peter</i>. Esse princípio foi formulado por Laurence J. Peter em seu livro
-homônimo de 1969 (Peter e Hull 1969), e afirma que, &quot;Em uma hierarquia,
-todo funcionário tende a atingir seu nível de incompetência.&quot; Em outras
+homônimo de 1969 (Peter e Hull 1969), e afirma que, "Em uma hierarquia,
+todo funcionário tende a atingir seu nível de incompetência." Em outras
 palavras, um membro de uma organização hierárquica eventualmente é promovido ao
 seu mais alto nível de competência; Qualquer promoção subsequente elevará o
 funcionário a uma posição para a qual ele não é mais competente, ou seja, ao
-seu &quot;nível de incompetência&quot;. Quando ele atinge seu nível de
+seu "nível de incompetência". Quando ele atinge seu nível de
 incompetência, as chances de promoção do funcionário são baixas. No entanto, do
 ponto de vista prático, até então o dano à organização pode já estar feito.</p>
-
-<p class=MsoNormal>Por exemplo, um excelente programador C dentro de uma
+<p>Por exemplo, um excelente programador C dentro de uma
 organização pode receber muitos aumentos salariais e pode progredir na
-hierarquia de cargos de engenharia de software da empresa: &quot;programador de
-software&quot;, &quot;engenheiro de software&quot;, &quot;engenheiro sênior de
-software&quot;, &quot;cientista principal&quot; e assim por diante. Em algum
+hierarquia de cargos de engenharia de software da empresa: "programador de
+software", "engenheiro de software", "engenheiro sênior de
+software", "cientista principal" e assim por diante. Em algum
 momento, pelos motivos discutidos neste capítulo, o funcionário pode ser
-promovido a uma posição de &quot;arquiteto de software&quot;, para a qual pode
+promovido a uma posição de "arquiteto de software", para a qual pode
 estar mal qualificado. Essa posição provavelmente é importante demais e envolve
 responsabilidade demais para a organização não permitir que esse funcionário
 tire um tempo para aprender seu novo trabalho. No entanto, a organização pode
 não ter outra escolha, a menos que queira rebaixar seu excelente engenheiro.
 Enquanto isso, a probabilidade de projetos fracassados será aumentada.</p>
-
-<p class=MsoNormal>A grave implicação do Princípio de Peter é que uma
+<p>A grave implicação do Princípio de Peter é que uma
 organização tende a colapsar se um número suficiente de seus funcionários
 atingir seus níveis de incompetência.</p>
-
-<p class=MsoNormal><b>Lealdade ao Projeto<o:p></o:p></b></p>
-
-<p class=MsoNormal>A equipe de arquitetura de software deve ser parte
+<p><b>Lealdade ao Projeto</b></p>
+<p>A equipe de arquitetura de software deve ser parte
 integrante do projeto e deve estar associada ao projeto durante todo o seu
 ciclo de vida. Tanto a equipe de arquitetura quanto os demais interessados
 devem entender que a equipe de arquitetura está investida no sucesso do
 projeto. Para os arquitetos, isso é importante devido à necessidade da equipe
 de arquitetura de exercer influência sobre todas as decisões principais de
 projeto sempre que necessário. Para os programadores, isso é importante porque
-eles devem sentir que os arquitetos de software são &quot;um de nós.&quot; Para
+eles devem sentir que os arquitetos de software são "um de nós." Para
 os gerentes e clientes, isso é importante porque eles podem ver claramente a
 responsabilidade pelas decisões arquitetônicas tomadas.</p>
-
-<p class=MsoNormal>Uma alternativa a essa visão é tratar a equipe de
+<p>Uma alternativa a essa visão é tratar a equipe de
 arquitetura de software como uma entidade de consultoria que entra em ação
 dependendo das necessidades de diferentes projetos. Isso pode ser perigoso por
 vários motivos. Se um projeto enfrentar dificuldades, pode surgir uma divisão
-&quot;nós contra eles&quot;. Além disso, a implícita falta de responsabilidade
+"nós contra eles". Além disso, a implícita falta de responsabilidade
 e supervisão por parte da gestão nesse caso torna menos provável o engajamento
 das partes interessadas. Por exemplo, se os desenvolvedores acreditam que é
 responsabilidade deles construir um sistema bem-sucedido e que a equipe de
@@ -968,8 +836,7 @@ podendo assim violar decisões arquitetônicas críticas. Mais importante ainda,
 altamente improvável que uma equipe de arquitetura de software em meio período
 possa simplesmente aparecer sempre que necessário, entender todas as nuances do
 sistema, tomar decisões adequadas e seguir em frente.</p>
-
-<p class=MsoNormal>Devemos reconhecer a tensão que inevitavelmente surgirá
+<p>Devemos reconhecer a tensão que inevitavelmente surgirá
 entre a necessidade do projeto de ter uma equipe de arquitetura de software
 prontamente disponível e a necessidade da organização de mobilizar os
 arquitetos mais experientes, talentosos e eficazes em múltiplos projetos que
@@ -979,12 +846,10 @@ distintas. Por exemplo, arquitetos seniores mais experientes podem migrar para
 outro projeto quando a arquitetura de um sistema estiver razoavelmente estável,
 enquanto os arquitetos juniores permaneceriam no projeto, assumiriam
 responsabilidades adicionais e aprimorariam ainda mais suas habilidades.</p>
-
-<p class=MsoNormal><b>Lealdade à Organização<o:p></o:p></b></p>
-
-<p class=MsoNormal>Pesquise a expressão &quot;arquiteto de software&quot; no
+<p><b>Lealdade à Organização</b></p>
+<p>Pesquise a expressão "arquiteto de software" no
 Google, e vários sites pertencentes a empresas de consultoria aparecerão. Essas
-empresas são especializadas em fornecer &quot;serviços&quot; de arquitetura de
+empresas são especializadas em fornecer "serviços" de arquitetura de
 software para outras empresas de desenvolvimento de software. O modo de
 operação deles é entrar em uma organização, familiarizar-se com o projeto e,
 possivelmente, com o domínio do problema, e ajudar a desenvolver a arquitetura
@@ -992,8 +857,7 @@ adequada para o sistema em desenvolvimento. À primeira vista, isso pode parecer
 a armadilha da equipe de arquitetura de software em meio período mencionada
 acima. No entanto, essas equipes podem ser contratadas para operar o projeto
 durante toda a sua duração, aliviando essa preocupação específica.</p>
-
-<p class=MsoNormal>A verdadeira questão neste caso é se é preferível empregar
+<p>A verdadeira questão neste caso é se é preferível empregar
 uma equipe permanente de arquitetura de software que faça parte da organização
 de desenvolvimento de software e, portanto, seja totalmente responsável perante
 ela, ou terceirizar essa capacidade importante, mas possivelmente escassa e
@@ -1003,8 +867,7 @@ pela visão tradicional do desenvolvimento de software, na qual uma organizaçã
 é dona de um projeto e o desenvolve completamente internamente. Tais
 organizações e projetos ainda existem em alguns casos, sendo um exemplo óbvio a
 Microsoft, e essa visão pode ser adequada para eles.</p>
-
-<p class=MsoNormal>A resposta para a questão de contratar ou empregar uma
+<p>A resposta para a questão de contratar ou empregar uma
 equipe de arquitetura de software torna-se mais complexa no caso de muitas
 outras organizações de desenvolvimento. As razões são duas. Primeiro, um
 projeto típico de software utilizará várias tecnologias prontas para uso e até
@@ -1018,22 +881,19 @@ pode realmente acontecer em certas situações. Mas cuidado: o perigo é que, ao
 permitir que a tecnologia de um terceiro escolhido controle a arquitetura, a
 organização está, na verdade, abrindo mão de uma parte crítica do controle
 sobre o projeto. E esse controle é dado a pessoas que:</p>
-
-<ul style='margin-top:0cm' type=disc>
- <li class=MsoNormal style='mso-list:l15 level1 lfo508;tab-stops:list 36.0pt'>Não
+<ul style="margin-top:0cm" type="disc">
+<li>Não
      tinha esse projeto em mente quando desenvolveram a tecnologia.</li>
- <li class=MsoNormal style='mso-list:l15 level1 lfo508;tab-stops:list 36.0pt'>Pode
+<li>Pode
      não ter levado em conta, ou sequer estar familiarizado, com nenhum aspecto
      do domínio problemático.</li>
- <li class=MsoNormal style='mso-list:l15 level1 lfo508;tab-stops:list 36.0pt'>Não
+<li>Não
      conhece a organização, as habilidades de seus engenheiros, o contexto
      técnico e econômico do projeto em andamento, e assim por diante.</li>
 </ul>
-
-<p class=MsoNormal>Na prática, fazer isso é como deixar o rabo abanar o
+<p>Na prática, fazer isso é como deixar o rabo abanar o
 cachorro.</p>
-
-<p class=MsoNormal>A segunda consideração ao decidir se manter uma equipe
+<p>A segunda consideração ao decidir se manter uma equipe
 interna de arquitetura está relacionada ao modelo de desenvolvimento de
 software que ganhou popularidade crescente: a terceirização. Normalmente, uma
 organização de desenvolvimento achará economicamente vantajoso contratar
@@ -1048,32 +908,28 @@ evolução da arquitetura. Simplesmente comprar uma arquitetura presumida para u
 projeto de um terceiro geralmente não é viável, a menos que a organização
 esteja expandindo para uma nova área de negócios com uma arquitetura já bem
 estabelecida.</p>
-
-<p class=MsoNormal>Um aspecto potencialmente positivo de contratar uma equipe
+<p>Um aspecto potencialmente positivo de contratar uma equipe
 externa de arquitetura de software ou da terceirização total da arquitetura é
-que pode ser uma forma eficaz de evitar tanto os problemas do &quot;Não
-inventado aqui&quot; quanto do &quot;Sempre fizemos assim&quot;. Mesmo aqui,
-porém, esse risco nunca pode ser completamente eliminado: o &quot;aqui&quot; e
-o &quot;nós&quot; podem simplesmente ser transferidos para a equipe externa.</p>
-
-<p class=MsoNormal><b>Duração do Envolvimento<o:p></o:p></b></p>
-
-<p class=MsoNormal>A equipe de arquitetura de software não se dissolve, nem se
+que pode ser uma forma eficaz de evitar tanto os problemas do "Não
+inventado aqui" quanto do "Sempre fizemos assim". Mesmo aqui,
+porém, esse risco nunca pode ser completamente eliminado: o "aqui" e
+o "nós" podem simplesmente ser transferidos para a equipe externa.</p>
+<p><b>Duração do Envolvimento</b></p>
+<p>A equipe de arquitetura de software não se dissolve, nem se
 dissocia do projeto após o término da atividade de design arquitetônico. Pode
 haver um impulso para isso, já que a tarefa da equipe é considerada concluída e
 outros projetos podem precisar de ajuda arquitetônica. No entanto, mover a
 equipe para outros projetos terá um efeito semelhante ao de tratar a equipe
 como uma entidade de consultoria. Mais importante ainda, enfatizamos várias
 vezes ao longo deste livro que é inadequado pensar na arquitetura de software
-como uma &quot;fase&quot; que é concluída no início de um projeto. Embora a
+como uma "fase" que é concluída no início de um projeto. Embora a
 maioria das grandes decisões arquitetônicas possa ser tomada nas fases iniciais
 do projeto, a arquitetura permanece como uma base ativa, quase orgânica, para o
 projeto, que muda e evolui constantemente. Afastar a equipe de arquitetura do
 projeto pode resultar em muitas decisões críticas de arquitetura sendo tomadas
 de forma desordenada, compreendidas parcialmente no melhor dos casos e mal
 documentadas, se é que são documentadas.</p>
-
-<p class=MsoNormal>Em vez disso, a equipe de arquitetura deve estar envolvida
+<p>Em vez disso, a equipe de arquitetura deve estar envolvida
 de perto com o projeto durante todo o ciclo de vida do projeto. Quando a
 arquitetura se torne razoavelmente estável, pode ser possível, e até
 aconselhável, realocar alguns membros da equipe de arquitetura para outros
@@ -1086,19 +942,15 @@ do projeto, quaisquer dificuldades encontradas e a adesão à arquitetura e a
 quaisquer mudanças necessárias nela. Também reforça o fato de que a principal
 lealdade da equipe de arquitetura é ao projeto, ajudando assim a melhorar o
 moral.</p>
-
-<p class=MsoNormal><b>Estrutura da equipe<o:p></o:p></b></p>
-
-<p class=MsoNormal>As equipes de arquitetura de software podem ser estruturadas
+<p><b>Estrutura da equipe</b></p>
+<p>As equipes de arquitetura de software podem ser estruturadas
 de diferentes maneiras, dependendo do tamanho da organização de desenvolvimento
 de software, do número e dos tipos de projetos nos quais a organização trabalha
 simultaneamente, e da própria estrutura de gestão da organização. Discutimos
 brevemente três formas principais de estruturar uma equipe de arquitetura.
 Variações desses modelos são possíveis.</p>
-
-<p class=MsoNormal><b>Modelo Plano<o:p></o:p></b></p>
-
-<p class=MsoNormal>O modelo flat geralmente funciona bem em organizações
+<p><b>Modelo Plano</b></p>
+<p>O modelo flat geralmente funciona bem em organizações
 pequenas. Os arquitetos nela não são estratificados de forma alguma e têm
 influência e responsabilidade comparáveis. É uma organização igualitária que se
 adequa bem a profissionais experientes. Por outro lado, com indivíduos menos
@@ -1107,15 +959,10 @@ desentendimentos, seja dentro da equipe de arquitetura ou com outros
 stakeholders. Também pode sobrecarregar os arquitetos devido à divisão não
 especificada ou inadequada das responsabilidades. Esse modelo pode não escalar
 bem para equipes grandes e projetos grandes. Um caso extremo de modelo de
-equipe com arquitetura plana é o de um projeto com um único arquiteto de <span
-class=SpellE>software</span>.</p>
-
-<p class=MsoNormal><b>Modelo Hierárquico<o:p></o:p></b></p>
-
-<p class=MsoNormal>Um modelo mais prático, especialmente em organizações
-maiores, é o modelo hierárquico. Esse modelo foi identificado já no<span
-style='mso-spacerun:yes'>  </span>livro <i>The Mythical Man-Month, </i><span
-style='mso-spacerun:yes'> </span>de Fred Brooks (Brooks 1995). Neste modelo, a
+equipe com arquitetura plana é o de um projeto com um único arquiteto de <span class="SpellE">software</span>.</p>
+<p><b>Modelo Hierárquico</b></p>
+<p>Um modelo mais prático, especialmente em organizações
+maiores, é o modelo hierárquico. Esse modelo foi identificado já no<span>  </span>livro <i>The Mythical Man-Month, </i><span> </span>de Fred Brooks (Brooks 1995). Neste modelo, a
 equipe de arquitetura é tipicamente liderada por um arquiteto-chefe ou
 arquiteto sênior, e composta por arquitetos juniores. Em algumas organizações,
 geralmente grandes, a equipe de arquitetura pode ser ainda mais estratificada.
@@ -1125,10 +972,8 @@ responsabilidades e autoridade no modelo hierárquico é claramente definida.
 Isso torna a escalabilidade mais fácil para equipes grandes. A desvantagem
 potencial é que a equipe de arquitetura deve, na prática, assumir uma estrutura
 interna de gestão, além e separada daquela do restante da organização.</p>
-
-<p class=MsoNormal><b>Modelo Matricial<o:p></o:p></b></p>
-
-<p class=MsoNormal>No modelo matricial, os arquitetos trabalham simultaneamente
+<p><b>Modelo Matricial</b></p>
+<p>No modelo matricial, os arquitetos trabalham simultaneamente
 em múltiplos projetos. Uma amostra transversal de habilidades é aplicada a uma
 amostra de projetos. Um único projeto pode ter múltiplas equipes de arquitetura
 em constante mudança ao longo de sua vida, dependendo da expertise necessária.
@@ -1141,11 +986,9 @@ No entanto, isso deve ser visto como uma solução temporária. Ele traz o risco
 que os arquitetos estejam sobrecarregados e constantemente distraídos pelos
 muitos problemas simultâneos nos quais trabalham; Eles podem não conseguir
 dedicar a atenção adequada a nenhum dos projetos.</p>
-
-<p class=MsoNormal>COMO OS ARQUITETOS DE SOFTWARE SE RELACIONAM COM OUTROS
+<p>COMO OS ARQUITETOS DE SOFTWARE SE RELACIONAM COM OUTROS
 STAKEHOLDERS?</p>
-
-<p class=MsoNormal>Já deveria estar claro que um arquiteto de software não
+<p>Já deveria estar claro que um arquiteto de software não
 existe nem fora nem acima de sua organização. Em vez disso, um arquiteto é
 parte integrante de uma equipe de desenvolvimento de software, projeto <i>e </i>organização.
 O trabalho de um arquiteto traz muitas responsabilidades e, para cumpri-las, o
@@ -1153,22 +996,18 @@ arquiteto é obrigado a delegar e confiar nos colegas; comunicar-se e buscar
 apoio dos gerentes; e manter clientes e usuários informados conforme
 necessário. Agora descrevemos a natureza desses relacionamentos e os prováveis
 desafios que um arquiteto enfrentará para mantê-los.</p>
-
-<p class=MsoNormal><b>Arquitetos e Engenheiros<o:p></o:p></b></p>
-
-<p class=MsoNormal>Um projeto grande normalmente terá várias equipes de
+<p><b>Arquitetos e Engenheiros</b></p>
+<p>Um projeto grande normalmente terá várias equipes de
 engenharia trabalhando nele. Diferentes equipes podem ser encarregadas de
 diferentes aspectos do sistema e podem incluir especialistas em subdisciplinas
 específicas de engenharia de software, como requisitos, garantia de qualidade,
 implementação e middleware entre aplicações.</p>
-
-<p class=MsoNormal>O arquiteto deve ter uma relação próxima e bem funcional com
+<p>O arquiteto deve ter uma relação próxima e bem funcional com
 todos os engenheiros. No caso de alguns, como engenheiros de requisitos, a
 relação pode ser mais natural e os objetivos mais alinhados entre si do que no
 caso de outros, como testadores de software. Em qualquer dos casos, porém, a
 preocupação orientadora deve ser o sucesso geral do projeto.</p>
-
-<p class=MsoNormal>Talvez a base de apoio mais importante dentro da organização
+<p>Talvez a base de apoio mais importante dentro da organização
 para o arquiteto sejam os programadores. Os programadores vão realizar e
 refinar a visão do arquiteto. Eles também servem como validadores da
 arquitetura: se uma decisão de design arquitetônico tiver consequências
@@ -1176,13 +1015,12 @@ imprevistas, provavelmente será o primeiro programador a notar. Especialmente
 nesses casos, uma relação próxima e cooperativa entre arquitetos e
 programadores é fundamental; se estiver em falta, a degradação arquitetônica
 ocorrerá rapidamente.</p>
-
-<p class=MsoNormal>Em muitas empresas, os arquitetos também precisam trabalhar
+<p>Em muitas empresas, os arquitetos também precisam trabalhar
 em estreita colaboração com engenheiros de sistemas e, em alguns projetos, como
 projetos de sistemas embarcados, com engenheiros de hardware. A relação de um
 arquiteto com esses engenheiros provavelmente será diferente da que tem com
 engenheiros de software. Uma razão é que um arquiteto de software cria a visão
-geral e o design para a <i><span style='mso-spacerun:yes'> </span>parte de
+geral e o design para a <i><span> </span>parte de
 software </i>do sistema em questão, mas não tem controle análogo sobre o
 restante do sistema. Outro motivo é que, como engenheiros de sistemas e
 hardware não têm treinamento em engenharia de software, eles podem não ter a
@@ -1193,8 +1031,7 @@ componentes do sistema. A essa altura, já deveria estar claro que mudanças
 frequentes em um sistema, especialmente se feitas às pressas, tendem a
 invalidar as decisões arquitetônicas-chave de design e resultar em degradação
 arquitetônica.</p>
-
-<p class=MsoNormal>Um problema relacionado, e ainda maior, que pode ocorrer na
+<p>Um problema relacionado, e ainda maior, que pode ocorrer na
 relação entre um arquiteto de software e engenheiros não especializados é a
 falta de respeito pela importância do arquiteto para o projeto. Isso pode,
 claro, acontecer também com engenheiros de software. Todos os engenheiros que
@@ -1205,23 +1042,19 @@ da tarefa muito melhor do que o arquiteto de software. Além disso, podem não
 ver o benefício direto de seguir estritamente a arquitetura: frequentemente
 estão mais interessados em alcançar ótimos locais devido à visão limitada de
 todo o projeto. Em algumas organizações de desenvolvimento, arquitetura de
-software — e <i>arquitetos</i> de software<span style='mso-spacerun:yes'> 
+software — e <i>arquitetos</i> de software<span> 
 </span>— ainda não são muito valorizados. Somado a uma aversão a ser mandado,
 isso pode resultar em resistência significativa ao arquiteto de software e
 contribuir para um projeto fracassado. Evitar, identificar e remediar tais
-situações é um dos principais desafios e funções primárias de um arquiteto de <span
-class=SpellE>software</span>.</p>
-
-<p class=MsoNormal><b>Arquitetos e Gestores<o:p></o:p></b></p>
-
-<p class=MsoNormal>Às vezes, um arquiteto deve alcançar seus objetivos diante
+situações é um dos principais desafios e funções primárias de um arquiteto de <span class="SpellE">software</span>.</p>
+<p><b>Arquitetos e Gestores</b></p>
+<p>Às vezes, um arquiteto deve alcançar seus objetivos diante
 de engenheiros céticos e até mesmo pouco cooperativos, e muitas vezes deve
 fazê-lo sem qualquer autoridade formal sobre esses engenheiros. O arquiteto
 pode ter que recorrer a conquistá-los com competência pessoal e liderança.
 Claramente, as coisas provavelmente vão correr melhor se ele também tiver o
 apoio da gestão da organização.</p>
-
-<p class=MsoNormal>Organizações de desenvolvimento de software estão começando
+<p>Organizações de desenvolvimento de software estão começando
 cada vez mais a entender a importância das arquiteturas e arquitetos de
 software. A gestão deve trabalhar para garantir o sucesso do projeto e, em um
 mundo ideal, isso significaria garantir que a arquitetura do sistema, ou seja,
@@ -1233,8 +1066,7 @@ dos arquitetos, e também pode exigir que os arquitetos ajustem suas
 expectativas, e a própria arquitetura, com base nas realidades da organização.
 Restrições de cronograma e orçamento, considerações de mercado, rotatividade de
 pessoal e outras questões semelhantes devem ser consideradas.</p>
-
-<p class=MsoNormal>No entanto, gerentes e arquitetos nem sempre trabalham bem
+<p>No entanto, gerentes e arquitetos nem sempre trabalham bem
 juntos. Podem haver muitos motivos para isso, mas do ponto de vista de um
 arquiteto de software um pode ser particularmente prejudicial: entender a
 importância do papel do arquiteto em um projeto não garante a competência
@@ -1243,8 +1075,7 @@ muitas formas e por diversos motivos. Os gestores também podem simplesmente nã
 ter o conhecimento técnico para compreender a importância das decisões de design
 do arquiteto. Como resultado, embora um gerente possa, em princípio, apoiar o <i>arquiteto</i>,
 ele pode, sem querer, minar a <i>arquitetura</i>.</p>
-
-<p class=MsoNormal>Os gestores podem não pensar em todas as consequências de
+<p>Os gestores podem não pensar em todas as consequências de
 suas ações, o que pode impactar negativamente a arquitetura do sistema. Eles
 podem se comprometer a comprar e usar componentes, frameworks ou middleware de
 terceiros que não sejam adequados à arquitetura. Eles podem decidir cumprir
@@ -1253,8 +1084,7 @@ empresa. Eles também podem se comprometer a entregar demais, rápido demais, de
 forma muito barata, sem entender as implicações arquitetônicas dessas
 promessas. Um arquiteto deve estar sempre atento e pode ser forçado a responder
 a esses desafios.</p>
-
-<p class=MsoNormal>Claro, um desafio ainda maior enfrentado pelos arquitetos é
+<p>Claro, um desafio ainda maior enfrentado pelos arquitetos é
 em oficinas de desenvolvimento de software mais tradicionais, nas quais certas
 técnicas, ferramentas e processos podem ter se ossificado ao longo do tempo. Em
 algumas partes dessas organizações, o desenvolvimento centrado na arquitetura
@@ -1267,10 +1097,8 @@ uma forma de iniciativa individual confiante. Nessas situações, os arquitetos
 precisam lutar simultaneamente duas batalhas: chegar a uma arquitetura eficaz
 para o sistema em construção e, ao mesmo tempo, tentar superar a resistência
 institucional, a ignorância e a arrogância.</p>
-
-<p class=MsoNormal><b>Outros Stakeholders<o:p></o:p></b></p>
-
-<p class=MsoNormal>Arquitetos de software também devem interagir com outros
+<p><b>Outros Stakeholders</b></p>
+<p>Arquitetos de software também devem interagir com outros
 stakeholders, tanto dentro quanto fora da organização. De particular
 importância é o relacionamento deles com o departamento de marketing. Em muitas
 organizações, a inovação é frequentemente impulsionada por necessidades e
@@ -1285,8 +1113,7 @@ o marketing conduza o desenvolvimento de um produto e, consequentemente, sua
 arquitetura: ele pode determinar os sistemas que precisam ser construídos, suas
 características exatas, prioridades de desenvolvimento, datas de lançamento e
 assim por diante.</p>
-
-<p class=MsoNormal>Ao mesmo tempo, existem certas armadilhas nesse
+<p>Ao mesmo tempo, existem certas armadilhas nesse
 relacionamento. Tanto os arquitetos quanto a equipe de marketing podem não
 entender adequadamente as motivações, habilidades e expertise um do outro. Os
 arquitetos podem resistir a ser orientados, especialmente se não perceberem que
@@ -1299,8 +1126,7 @@ clientes do sistema em construção está migrando para uma plataforma de
 computação diferente, ou se a base de clientes prevista se expande ou diminui
 significativamente. Os arquitetos não têm escolha a não ser acomodar tais
 realidades não técnicas.</p>
-
-<p class=MsoNormal>Por outro lado, o departamento de marketing pode causar
+<p>Por outro lado, o departamento de marketing pode causar
 problemas se não entender que a arquitetura de um sistema não pode ser
 modificada arbitrária ou abruptamente para incorporar necessidades
 recém-identificadas. O marketing também pode buscar metas irreais e prazos
@@ -1308,22 +1134,19 @@ irrazoáveis, e pode tentar conduzir o processo de engenharia sem compreensão
 adequada dos desafios e realidades técnicas. No caso mais extremo, o marketing
 pode prometer um produto que simplesmente não pode ser construído pelos
 engenheiros da empresa no momento dado.</p>
-
-<p class=MsoNormal>Em ambos os casos, mal-entendidos e falta de comunicação
+<p>Em ambos os casos, mal-entendidos e falta de comunicação
 adequada entre as equipes de arquitetura e marketing podem resultar em uma
 relação adversarial e contraproducente. Manter esse relacionamento saudável
 deve ser um objetivo importante e constante.</p>
-
-<p class=MsoNormal>De forma semelhante à relação do arquiteto com a equipe de
+<p>De forma semelhante à relação do arquiteto com a equipe de
 marketing, será sua relação com os clientes e usuários do sistema, com quem o
 arquiteto pode precisar interagir diretamente. Na verdade, ele pode muito bem
 ser o rosto do projeto para clientes e usuários: o arquiteto pode apresentar a
 visão do projeto a eles, garantir que seus requisitos sejam devidamente
-refletidos no <span class=SpellE>blueprint</span> do sistema e, eventualmente,
+refletidos no <span class="SpellE">blueprint</span> do sistema e, eventualmente,
 no próprio sistema, responder às suas dúvidas e resolver suas preocupações e
 dúvidas.</p>
-
-<p class=MsoNormal>Se bem estabelecida e cultivada, essa pode ser uma relação
+<p>Se bem estabelecida e cultivada, essa pode ser uma relação
 muito produtiva, ajudando a garantir a aceitação final do sistema, com todas as
 questões principais sendo abordadas conforme surgiram durante a construção. Por
 outro lado, os clientes e usuários podem ser muito exigentes em seus pedidos,
@@ -1333,10 +1156,8 @@ justificativa por trás da arquitetura aos stakeholders dentro da organização
 (desenvolvedores, testadores, gerentes), o arquiteto também pode precisar
 adaptar essa justificativa para beneficiar os clientes e usuários menos
 experientes em termos técnicos.</p>
-
-<p class=MsoNormal>DESAFIOS RESTANTES</p>
-
-<p class=MsoNormal>O arquiteto deve possuir muitas habilidades, desde manter a
+<p>DESAFIOS RESTANTES</p>
+<p>O arquiteto deve possuir muitas habilidades, desde manter a
 integridade conceitual do sistema até atuar como o incentivador do projeto,
 liderando pela força do conhecimento técnico e do caráter, e interagindo
 efetivamente com uma ampla gama de partes interessadas com objetivos
@@ -1344,8 +1165,7 @@ frequentemente concorrentes. Embora algumas dessas habilidades não possam ser
 ensinadas, certamente podem ser cultivadas. Ao mesmo tempo, há vários outros
 aspectos do trabalho de um arquiteto para os quais ele pode ser treinado de maneira
 convencional — uma observação que também motivou este livro didático.</p>
-
-<p class=MsoNormal>O principal desafio para as organizações de desenvolvimento
+<p>O principal desafio para as organizações de desenvolvimento
 de software — incluindo, mas não se restringindo a, as oficinas tradicionais de
 software que querem introduzir arquitetos de software e desenvolvimento de
 software baseado em arquitetura explícita pela primeira vez — é identificar os
@@ -1355,10 +1175,8 @@ Existem vários exemplos na indústria desses programas de treinamento. Um
 exemplo é o Programa de Arquitetos de Software do Laboratório de Propulsão a
 Jato da NASA (Vickers 2004). Esses programas são relativamente recentes, e sua
 eficácia e ajustes necessários precisarão ser monitorados ao longo do tempo.</p>
-
-<p class=MsoNormal>ASSUNTO FINAL</p>
-
-<p class=MsoNormal>Um arquiteto de software tem um trabalho multifacetado,
+<p>ASSUNTO FINAL</p>
+<p>Um arquiteto de software tem um trabalho multifacetado,
 repleto de desafios únicos e responsabilidades substanciais. Um arquiteto pode
 trabalhar sozinho ou, mais provavelmente, como parte de uma equipe. Sua
 descrição de trabalho pode ser um pouco imprecisa, mas envolverá muitas
@@ -1375,57 +1193,48 @@ regulamentos e normas relevantes; liderar; para garantir a viabilidade econômic
 da arquitetura. Como arquiteto, é preciso ser realmente um faz-tudo. Esse é
 mais um aspecto da nossa disciplina que a diferencia de outros empreendimentos
 de engenharia.</p>
-
-<p class=MsoNormal><b>O Caso de Negócios<o:p></o:p></b></p>
-
-<p class=MsoNormal>Um fator crítico de sucesso para um sistema de software é a
+<p><b>O Caso de Negócios</b></p>
+<p>Um fator crítico de sucesso para um sistema de software é a
 arquitetura desse sistema. As habilidades dos arquitetos e a composição das
 equipes de arquitetura, portanto, terão um impacto direto e significativo no
 sucesso de um projeto e de uma organização. Cada arquiteto individual deve
 possuir um grande número de habilidades diversas, enquanto as equipes de
 arquitetura devem ter um equilíbrio abrangente dessas habilidades.</p>
-
-<p class=MsoNormal>Fred Brooks disse que grandes estilistas precisam ser
+<p>Fred Brooks disse que grandes estilistas precisam ser
 identificados, selecionados e cultivados. No entanto, como vimos, o trabalho de
 um arquiteto não se restringe ao design. Ele deve possuir uma ampla variedade
 de habilidades. Muitas dessas habilidades podem ser aprendidas; tudo pode ser
 melhorado com estudo e prática. Portanto, é do interesse da empresa oferecer a
 formação adequada para seus arquitetos. Também é importante buscar um
 equilíbrio cuidadoso nas equipes de arquitetura.</p>
-
-<p class=MsoNormal>O ponto principal é que uma empresa com arquitetos
+<p>O ponto principal é que uma empresa com arquitetos
 qualificados e equipes de arquitetura cuidadosamente compostas terá uma
 oportunidade melhor de sucesso no mercado.</p>
-
-<p class=MsoNormal>PERGUNTAS DE REVISÃO</p>
-
-<ol style='margin-top:0cm' start=1 type=1>
- <li class=MsoNormal style='mso-list:l92 level1 lfo509;tab-stops:list 36.0pt'>Quais
-     são as habilidades necessárias que um arquiteto de <span class=SpellE>software</span>
+<p>PERGUNTAS DE REVISÃO</p>
+<ol start="1" style="margin-top:0cm" type="1">
+<li>Quais
+     são as habilidades necessárias que um arquiteto de <span class="SpellE">software</span>
      deve possuir?</li>
- <li class=MsoNormal style='mso-list:l92 level1 lfo509;tab-stops:list 36.0pt'>Quais
+<li>Quais
      são algumas habilidades úteis adicionais?</li>
- <li class=MsoNormal style='mso-list:l92 level1 lfo509;tab-stops:list 36.0pt'>Este
-     capítulo discutiu vários maus hábitos que um arquiteto de <span
-     class=SpellE>software</span> pode demonstrar. Você consegue identificar
+<li>Este
+     capítulo discutiu vários maus hábitos que um arquiteto de <span class="SpellE">software</span> pode demonstrar. Você consegue identificar
      mais alguém? Certifique-se de justificar suas respostas.</li>
- <li class=MsoNormal style='mso-list:l92 level1 lfo509;tab-stops:list 36.0pt'>Sua
+<li>Sua
      empresa identificou um jovem designer de software excepcional e gostaria
-     de promovê-lo a arquiteto de <span class=SpellE>software</span>. Que
+     de promovê-lo a arquiteto de <span class="SpellE">software</span>. Que
      treinamento, se houver, seria necessário para isso? Como você sugeriria
      que sua organização prosseguisse?</li>
- <li class=MsoNormal style='mso-list:l92 level1 lfo509;tab-stops:list 36.0pt'>Com
+<li>Com
      base na discussão apresentada neste capítulo, apresente um argumento sobre
      por que comprar uma arquitetura pode ser uma receita para o fracasso.</li>
- <li class=MsoNormal style='mso-list:l92 level1 lfo509;tab-stops:list 36.0pt'>Terceirizar
+<li>Terceirizar
      o desenvolvimento de software provou ser uma estratégia bem-sucedida para
      muitas organizações. As organizações também deveriam terceirizar o design
      arquitetônico? Certifique-se de expor cuidadosamente seu argumento.</li>
 </ol>
-
-<p class=MsoNormal>LEITURA ADICIONAL</p>
-
-<p class=MsoNormal>Brooks foi um dos primeiros a reconhecer a importância de um
+<p>LEITURA ADICIONAL</p>
+<p>Brooks foi um dos primeiros a reconhecer a importância de um
 projetista-chefe em um projeto de software em seu livro seminal, <i>The
 Mythical Man-Month</i> (Brooks 1995). Muitas de suas observações, baseadas na
 experiência de construir o sistema operacional IBM 360 na década de 1960, ainda
@@ -1436,8 +1245,7 @@ essenciais da engenharia de software (Brooks 1987). Os perigos do Princípio de
 Peter — que, como este capítulo argumentou, tem relevância direta para
 organizações de software e arquitetos — são descritos no livro de Peter de
 mesmo nome (Peter e Hull 1969).</p>
-
-<p class=MsoNormal>Mais recentemente, vários autores tentaram responder às
+<p>Mais recentemente, vários autores tentaram responder às
 perguntas de quem são os arquitetos de software, quais habilidades eles devem
 possuir e como desenvolvem a arquitetura de um sistema. Várias dessas questões
 foram consideradas, ao menos indiretamente, por Curtis, Krasner e Iscoe
@@ -1447,24 +1255,20 @@ O artigo de Kruchten de 1999, em particular, oferece uma excelente elaboração
 das habilidades e responsabilidades desejadas pelos arquitetos de software.
 Vários insights desse artigo foram incorporados neste capítulo. Várias
 observações semelhantes também foram feitas por outros autores, como Kari
-Smolander (Smolander 2002) e Tero <span class=SpellE>Päivärinta</span> (<span
-class=SpellE>Smolander</span> e <span class=SpellE>Päivärinta</span> 2002).</p>
-
-<p class=MsoNormal>Elisabetta DiNitto e David Rosenblum (Di Nitto e Rosenblum
+Smolander (Smolander 2002) e Tero <span class="SpellE">Päivärinta</span> (<span class="SpellE">Smolander</span> e <span class="SpellE">Päivärinta</span> 2002).</p>
+<p>Elisabetta DiNitto e David Rosenblum (Di Nitto e Rosenblum
 1999) fornecem um dos muitos exemplos de como as soluções tecnológicas (no
 caso, middleware) impactam a arquitetura de um sistema de software e,
 consequentemente, os arquitetos do sistema. O trabalho de Will Tracz em
 arquiteturas de software específicas de domínio (Tracz, 1994; Tracz, 1995;
 Taylor, Tracz e Coglianese 1995) defende outro aspecto crítico do trabalho de
 um arquiteto — a expertise em domínio.</p>
-
-<p class=MsoNormal>Na prática, como argumentado neste capítulo, um arquiteto de
+<p>Na prática, como argumentado neste capítulo, um arquiteto de
 software eficaz deve possuir muitas habilidades adicionais. Diversas
 organizações estabeleceram programas de treinamento para arquitetos de software
 com o objetivo de moldar seus arquitetos em funcionários completos e
 multifacetados. Um exemplo representativo é o Programa de Arquitetos de
 Software do Laboratório de Propulsão a Jato da NASA (Vickers 2004)</p>
-
 </div>
 </body>
 </html>

@@ -1,31 +1,25 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>cap16-ptbr</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
+<meta charset="utf-8"/>
+<title>cap16-ptbr</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="styles.css" rel="stylesheet"/>
 </head>
 <body>
-
 <div class="navbar">
-  <div><a href="cap15-ptbr.htm">← Anterior</a></div>
-  <div><a href="index.html">Índice</a></div>
-  <div><a href="cap17-ptbr.htm">Próximo →</a></div>
+<div><a href="cap15-ptbr.htm">← Anterior</a></div>
+<div><a href="index.html">Índice</a></div>
+<div><a href="cap17-ptbr.htm">Próximo →</a></div>
 </div>
-
-
-<div class=WordSection1>
-
-<p class=MsoNormal>Capítulo 16.&nbsp;Padrões</p>
-
-<p class=MsoNormal>Ao longo dos anos, diversas organizações tentaram criar
+<div class="WordSection1">
+<p>Capítulo 16. Padrões</p>
+<p>Ao longo dos anos, diversas organizações tentaram criar
 abordagens arquitetônicas padrão, técnicas e ferramentas para sistemas de
 software. Outros padrões simplesmente surgiram como resultado do uso comum
-entre muitas organizações, como a <span class=SpellE>Unified</span> <span
-class=SpellE>Modeling</span> <span class=SpellE>Language</span> (UML).</p>
-
-<p class=MsoNormal>Alguns desses padrões alcançaram ampla adoção e apoio
+entre muitas organizações, como a <span class="SpellE">Unified</span> <span class="SpellE">Modeling</span> <span class="SpellE">Language</span> (UML).</p>
+<p>Alguns desses padrões alcançaram ampla adoção e apoio
 significativo na indústria e no governo, e frequentemente são obrigatórios para
 uso em diferentes projetos. De modo geral, esses padrões abrangem uma
 quantidade significativa de conhecimento e orientação em engenharia. No
@@ -35,206 +29,176 @@ eles servem, para que podem fornecer e para que não fornecem. Frequentemente, o
 impulso por trás de um padrão cria uma percepção (enormemente) exagerada de seu
 valor e impacto reais. Este capítulo contextualiza alguns dos padrões mais
 influentes e identifica seus pontos fortes e fracos.</p>
-
-<p class=MsoNormal><b>Resumo <span class=SpellE>de<span style='font-weight:
-normal'><a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch16.html"
-title="Chapter&nbsp;16.&nbsp;Standards"><b>Capítulo</b><b> 16</b></a></span></span></b></p>
-
-<ul style='margin-top:0cm' type=disc>
- <li class=MsoNormal style='mso-list:l65 level1 lfo444;tab-stops:list 36.0pt'>16
+<p><b>Resumo <span class="SpellE">de<span style="font-weight:
+normal"><a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch16.html" title="Chapter 16. Standards"><b>Capítulo</b><b> 16</b></a></span></span></b></p>
+<ul style="margin-top:0cm" type="disc">
+<li>16
      Padrões</li>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <li class=MsoNormal style='mso-list:l65 level2 lfo445;tab-stops:list 72.0pt'>16.1
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>16.1
       O que são padrões?</li>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <ul style='margin-top:0cm' type=disc>
-   <li class=MsoNormal style='mso-list:l65 level3 lfo446;tab-stops:list 108.0pt'>16.1.1
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>16.1.1
        Por que usar padrões?</li>
-  </ul>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <ul style='margin-top:0cm' type=disc>
-   <li class=MsoNormal style='mso-list:l65 level3 lfo447;tab-stops:list 108.0pt'>16.1.2
+</ul>
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>16.1.2
        Desvantagens dos Padrões</li>
-  </ul>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <ul style='margin-top:0cm' type=disc>
-   <li class=MsoNormal style='mso-list:l65 level3 lfo448;tab-stops:list 108.0pt'>16.1.3
+</ul>
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>16.1.3
        Quando Adotar</li>
-  </ul>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <li class=MsoNormal style='mso-list:l65 level2 lfo449;tab-stops:list 72.0pt'>16.2
+</ul>
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>16.2
       Padrões Específicos</li>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <ul style='margin-top:0cm' type=disc>
-   <li class=MsoNormal style='mso-list:l65 level3 lfo450;tab-stops:list 108.0pt'>16.2.1
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>16.2.1
        Padrões Conceituais</li>
-  </ul>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <ul style='margin-top:0cm' type=disc>
-   <li class=MsoNormal style='mso-list:l65 level3 lfo451;tab-stops:list 108.0pt'>16.2.2
+</ul>
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>16.2.2
        Padrões Notacionais</li>
-  </ul>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <ul style='margin-top:0cm' type=disc>
-   <li class=MsoNormal style='mso-list:l65 level3 lfo452;tab-stops:list 108.0pt'>16.2.3
-       <span class=SpellE>SysML</span></li>
-  </ul>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <ul style='margin-top:0cm' type=disc>
-   <li class=MsoNormal style='mso-list:l65 level3 lfo453;tab-stops:list 108.0pt'>16.2.4
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>16.2.3
+       <span class="SpellE">SysML</span></li>
+</ul>
+</ul>
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>16.2.4
        Ferramentas Padrão</li>
-  </ul>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <ul style='margin-top:0cm' type=disc>
-   <li class=MsoNormal style='mso-list:l65 level3 lfo454;tab-stops:list 108.0pt'>16.2.5
-       Arquiteto de Sistemas <span class=SpellE>Telelógicos</span></li>
-  </ul>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <li class=MsoNormal style='mso-list:l65 level2 lfo455;tab-stops:list 72.0pt'>16.3
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>16.2.5
+       Arquiteto de Sistemas <span class="SpellE">Telelógicos</span></li>
+</ul>
+</ul>
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>16.3
       Padrões de Processo</li>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <ul style='margin-top:0cm' type=disc>
-   <li class=MsoNormal style='mso-list:l65 level3 lfo456;tab-stops:list 108.0pt'>16.3.1
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>16.3.1
        Processo Racional Unificado</li>
-  </ul>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <ul style='margin-top:0cm' type=disc>
-   <li class=MsoNormal style='mso-list:l65 level3 lfo457;tab-stops:list 108.0pt'>16.3.2
+</ul>
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>16.3.2
        Arquitetura Orientada por Modelos</li>
-  </ul>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <li class=MsoNormal style='mso-list:l65 level2 lfo458;tab-stops:list 72.0pt'>16.4
+</ul>
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>16.4
       Fim da Matéria</li>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <li class=MsoNormal style='mso-list:l65 level2 lfo459;tab-stops:list 72.0pt'>16.5
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>16.5
       Perguntas de Revisão</li>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <li class=MsoNormal style='mso-list:l65 level2 lfo460;tab-stops:list 72.0pt'>16.6
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>16.6
       Exercícios</li>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <li class=MsoNormal style='mso-list:l65 level2 lfo461;tab-stops:list 72.0pt'>16.7
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>16.7
       Leitura adicional</li>
- </ul>
 </ul>
-
-<p class=MsoNormal>O QUE SÃO PADRÕES?</p>
-
-<p class=MsoNormal><i>Definição. Um padrão é uma forma de acordo entre as
-partes.<o:p></o:p></i></p>
-
-<p class=MsoNormal>Do ponto de vista da arquitetura de software, existem muitos
+</ul>
+<p>O QUE SÃO PADRÕES?</p>
+<p><i>Definição. Um padrão é uma forma de acordo entre as
+partes.</i></p>
+<p>Do ponto de vista da arquitetura de software, existem muitos
 tipos diferentes de padrões relevantes: padrões para notações, ferramentas,
 processos, interfaces, organizações, e assim por diante. Os padrões podem vir
 de diferentes fontes: indivíduos, equipes, organizações de um único
 profissional, coalizões dessas organizações, governos ou organizações cujo
-objetivo específico é criar e codificar padrões, como o American <span
-class=SpellE>National</span> Standards <span class=SpellE>Institute</span>
-(ANSI), <span class=SpellE>Ecma</span> <span class=SpellE>International</span>,
-a <span class=SpellE>International</span> <span class=SpellE>Organization</span>
-for <span class=SpellE>Standardization</span> (ISO) e o World <span
-class=SpellE>Wide</span> Web Consortium (W3C). Quando um padrão é controlado
+objetivo específico é criar e codificar padrões, como o American <span class="SpellE">National</span> Standards <span class="SpellE">Institute</span>
+(ANSI), <span class="SpellE">Ecma</span> <span class="SpellE">International</span>,
+a <span class="SpellE">International</span> <span class="SpellE">Organization</span>
+for <span class="SpellE">Standardization</span> (ISO) e o World <span class="SpellE">Wide</span> Web Consortium (W3C). Quando um padrão é controlado
 por um órgão considerado autoritativo, o padrão é frequentemente chamado de
-padrão de jure (significando &quot;do direito&quot;). Padrões de jure
+padrão de jure (significando "do direito"). Padrões de jure
 frequentemente:</p>
-
-<ul style='margin-top:0cm' type=disc>
- <li class=MsoNormal style='mso-list:l127 level1 lfo462;tab-stops:list 36.0pt'>São
+<ul style="margin-top:0cm" type="disc">
+<li>São
      formalmente definidos e documentados.</li>
- <li class=MsoNormal style='mso-list:l127 level1 lfo462;tab-stops:list 36.0pt'>Evoluir
+<li>Evoluir
      por meio de um processo rigoroso e bem conhecido.</li>
- <li class=MsoNormal style='mso-list:l127 level1 lfo462;tab-stops:list 36.0pt'>São
+<li>São
      gerenciados por um órgão independente, agência governamental ou coalizão
      multiorganizacional, em vez de um único indivíduo ou empresa.</li>
 </ul>
-
-<p class=MsoNormal>Por causa dessas características, padrões de jure tendem a
+<p>Por causa dessas características, padrões de jure tendem a
 ser os que são obrigatórios externamente para uso em projetos específicos. O
-outro tipo de padrão é o padrão de fato (significando &quot;de fato&quot; ou
-&quot;na prática&quot;). Padrões de fato frequentemente:</p>
-
-<ul style='margin-top:0cm' type=disc>
- <li class=MsoNormal style='mso-list:l105 level1 lfo463;tab-stops:list 36.0pt'>São
+outro tipo de padrão é o padrão de fato (significando "de fato" ou
+"na prática"). Padrões de fato frequentemente:</p>
+<ul style="margin-top:0cm" type="disc">
+<li>São
      criados por uma única organização individual para atender a uma
      necessidade específica.</li>
- <li class=MsoNormal style='mso-list:l105 level1 lfo463;tab-stops:list 36.0pt'>São
+<li>São
      adotados devido à superioridade técnica ou ao domínio de mercado da
      organização criadora.</li>
- <li class=MsoNormal style='mso-list:l105 level1 lfo463;tab-stops:list 36.0pt'>Evoluir
+<li>Evoluir
      por meio de um processo emergente e orientado pelo mercado.</li>
- <li class=MsoNormal style='mso-list:l105 level1 lfo463;tab-stops:list 36.0pt'>São
+<li>São
      gerenciados pela organização criadora ou pelos próprios usuários, em vez
      de por meio de um órgão formal de custódia.</li>
 </ul>
-
-<p class=MsoNormal>A linha entre um padrão de jure e um padrão de fato nem
+<p>A linha entre um padrão de jure e um padrão de fato nem
 sempre é clara. Por exemplo, HTML é uma notação padrão para codificação de
 páginas Web e possui todas as características acima de um padrão de jure, mas o
 W3C não tem autoridade para obrigar editoras individuais da Web a seguir o
@@ -248,9 +212,8 @@ linguagem de script JavaScript Web por conta própria e incluiu suporte em seu
 navegador. A Microsoft criou uma linguagem semelhante para seu navegador
 Internet Explorer chamada JScript. À medida que mais e mais pessoas passaram a
 depender dessa tecnologia, a Netscape a submeteu a um órgão de normalização
-(Ecma International), onde foi padronizada como <span class=SpellE>ECMAScript</span>.</p>
-
-<p class=MsoNormal>Tanto os padrões de jure quanto de fato podem ser <i>abertos,
+(Ecma International), onde foi padronizada como <span class="SpellE">ECMAScript</span>.</p>
+<p>Tanto os padrões de jure quanto de fato podem ser <i>abertos,
 proprietários/fechados</i>, ou algo intermediário. Padrões totalmente abertos
 permitem a participação pública em seu desenvolvimento; Qualquer pessoa pode
 vir e sugerir melhorias ou mudanças. Padrões totalmente proprietários ou
@@ -259,16 +222,13 @@ sua evolução. Órgãos de padronização como ANSI, ISO e Ecma International t
 a ficar em algum lugar intermediário; Alguns deles permitem a associação
 praticamente aberta, enquanto outros têm uma barreira de entrada maior (votação
 dos membros existentes ou uma taxa de associação elevada, por exemplo).</p>
-
-<p class=MsoNormal>Stakeholders e arquitetos devem estar bem familiarizados com
+<p>Stakeholders e arquitetos devem estar bem familiarizados com
 o estado de um determinado padrão antes de adotá-lo, fazendo perguntas-chave:
 Quem apoia o padrão? Como ela evolui? Depende de uma empresa específica — que
 pode ser uma concorrente? Quais são suas histórias de sucesso e fracasso? Como
 o feedback pode ser incorporado ao desenvolvimento futuro do padrão?</p>
-
-<p class=MsoNormal><b>Por que usar padrões?<o:p></o:p></b></p>
-
-<p class=MsoNormal>Padrões podem proporcionar muitos benefícios tangíveis
+<p><b>Por que usar padrões?</b></p>
+<p>Padrões podem proporcionar muitos benefícios tangíveis
 diferentes aos seus usuários. Muitos desses benefícios derivam da capacidade
 dos padrões de criar <i>efeitos de rede</i>. Um efeito de rede ocorre quando o
 valor de um determinado serviço ou produto aumenta à medida que mais usuários o
@@ -277,15 +237,13 @@ mais e mais usuários publicam conteúdo na Web por meio dos padrões HTTP
 (Fielding et al. 1999) e HTML (Raggett, Le Hors e Jacobs 1999), o valor da Web
 como um todo aumenta para cada um de seus usuários, já que cada um desses
 usuários pode acessar o novo conteúdo sem qualquer investimento adicional.</p>
-
-<p class=MsoNormal>Padrões podem garantir consistência entre projetos ou
+<p>Padrões podem garantir consistência entre projetos ou
 organizações. A consistência é frequentemente o principal motor de um efeito de
 rede. Considere o valor do uso de simbologia consistente em uma notação como
 UML: à medida que mais partes interessadas descrevem sistemas usando UML, mais
 pessoas podem desenvolver uma compreensão desses sistemas sem investir em
 aprender uma nova notação.</p>
-
-<p class=MsoNormal>Certos tipos de padrões, como padrões de interface ou
+<p>Certos tipos de padrões, como padrões de interface ou
 comportamento aplicados a produtos, podem ser usados para garantir
 interoperabilidade ou intercambiabilidade. Por exemplo, o protocolo HTTP pode
 ser visto como um padrão de interface; Ele dita como interagir com um
@@ -298,14 +256,12 @@ esforço. No mundo do software, peças intercambiáveis frequentemente apresenta
 características de qualidade diferentes: uma pode ser otimizada para uso em um
 sistema de processador único enquanto outra pode ser otimizada para uso em um
 sistema distribuído.</p>
-
-<p class=MsoNormal>Os padrões são portadores do conhecimento de engenharia e
+<p>Os padrões são portadores do conhecimento de engenharia e
 podem levá-lo de projeto em projeto. Frequentemente, padrões são desenvolvidos
 porque as organizações continuam reinventando as mesmas técnicas ou ferramentas
 básicas repetidas vezes, a grande custo. Os padrões reduzem custos para todo o
 mercado ao coletar e disponibilizar o conhecimento de engenharia para todos.</p>
-
-<p class=MsoNormal>Os padrões também servem como alvos para os fornecedores de
+<p>Os padrões também servem como alvos para os fornecedores de
 ferramentas. Organizações que adotam padrões amplamente aceitos geralmente
 terão a possibilidade de comprar ferramentas prontas para uso que implementam o
 padrão junto com suplementos de treinamento como livros, vídeos e assim por
@@ -313,8 +269,7 @@ diante, em vez de investir tempo e dinheiro para desenvolver seus próprios.
 Para os padrões mais populares, organizações que adotam frequentemente terão a
 opção de várias ferramentas concorrentes, e a concorrência no mercado pode
 impulsionar melhorias adicionais nessas ferramentas.</p>
-
-<p class=MsoNormal>Padrões também podem reduzir o custo de ferramentas de
+<p>Padrões também podem reduzir o custo de ferramentas de
 software poderosas. Embora o software inicialmente seja caro de produzir, uma
 vez criado ele pode ser replicado infinitamente com pouco ou nenhum custo
 adicional por unidade. Em termos econômicos, o software faz excelente uso das <i>economias
@@ -329,209 +284,181 @@ para recuperar o custo de desenvolvimento. No entanto, se a ferramenta vender
 100.000 cópias, o preço pode cair para apenas $10 por unidade. Uma ferramenta
 que segue um padrão amplamente aceito tem muito mais chances de vender muitas
 cópias do que uma ferramenta que não vende.</p>
-
-<p class=MsoNormal>Com o tempo, os padrões evoluem. O procedimento para
+<p>Com o tempo, os padrões evoluem. O procedimento para
 elaborar um padrão é geralmente regido e gerenciado pela organização de
 custódia do padrão. À medida que os padrões são adotados e utilizados, várias
 fraquezas ou desvantagens serão identificadas, e versões futuras do padrão
 poderão ser desenvolvidas para corrigir algumas delas. Organizações que
 adotarem o padrão podem aproveitar essas lições e as melhorias resultantes no
 padrão sem arcar com todo o peso dos custos de desenvolvimento.</p>
-
-<p class=MsoNormal>Ter controle substancial sobre um padrão amplamente aceito
+<p>Ter controle substancial sobre um padrão amplamente aceito
 pode conceder um enorme poder de mercado a uma organização custodial. Se uma
 única organização, como uma empresa comercial, desenvolve um padrão que se
 torna amplamente adotado, então essa empresa tem grande controle sobre como o
 padrão é usado e como ele evolui. Ele pode orientar a evolução do padrão em
 direções que correspondem aos seus próprios interesses comerciais — ou
 afastá-lo dos interesses de um concorrente.</p>
-
-<p class=MsoNormal>No geral, o uso de padrões pode trazer muitos benefícios. No
+<p>No geral, o uso de padrões pode trazer muitos benefícios. No
 entanto, padrões não são uma panaceia e devem sempre ser avaliados com um olhar
 crítico.</p>
-
-<p class=MsoNormal><b>Desvantagens dos Padrões<o:p></o:p></b></p>
-
-<p class=MsoNormal>Uma série de benefícios pode ser concedida a organizações
+<p><b>Desvantagens dos Padrões</b></p>
+<p>Uma série de benefícios pode ser concedida a organizações
 que adotam e desenvolvem padrões. Ao fazer isso, as organizações devem
 trabalhar para mitigar ou evitar algumas de suas desvantagens.</p>
-
-<p class=MsoNormal>A própria natureza dos padrões é um tanto contrária às
+<p>A própria natureza dos padrões é um tanto contrária às
 realidades da arquitetura de software. Uma mensagem que este livro transmitiu é
 que as necessidades e qualidades desejadas dos softwares dos stakeholders
 variam amplamente de projeto para projeto e de domínio para domínio. Em
 contraste, os padrões frequentemente tentam aplicar os mesmos conceitos e
 processos a esforços de desenvolvimento muito diferentes. Essa é provavelmente
 a principal fraqueza da maioria dos padrões relacionados à arquitetura usados atualmente.</p>
-
-<p class=MsoNormal>Uma desvantagem relacionada é que os padrões mais amplamente
+<p>Uma desvantagem relacionada é que os padrões mais amplamente
 adotados (e, portanto, mais bem suportados) são aqueles que são os mais gerais.
 Isso não deveria ser surpreendente — o potencial de adoção de um determinado
 padrão é proporcional à sua aplicabilidade. No entanto, isso significa que
 padrões específicos de domínio que podem transmitir muita orientação e valor
 específicos a projetos dentro de um domínio geralmente são os que têm menos
 suporte — de ferramentas, pesquisadores e assim por diante.</p>
-
-<p class=MsoNormal>A tensão principal no desenvolvimento de normas existe entre
+<p>A tensão principal no desenvolvimento de normas existe entre
 a superespecificação — prescrever demais e limitar a utilidade do padrão — e a
 subespecificação — prescrever pouco e limitar os benefícios do padrão. Como era
 de se esperar, os padrões mais amplamente aceitos tendem a ser aqueles que são
 pouco especificados, deixando de fora detalhes semânticos significativos. Sem
 uma semântica bem definida, é difícil fazer julgamentos de qualidade sobre um
 produto simplesmente porque ele está em conformidade com um padrão.</p>
-
-<p class=MsoNormal>Um problema relacionado é o <i>problema do denominador comum
+<p>Um problema relacionado é o <i>problema do denominador comum
 menor</i>. Como os padrões são frequentemente desenvolvidos por um comitê de
 organizações diversas e frequentemente concorrentes, os objetivos individuais
 das organizações tendem a divergir em muitas dimensões. Quando muitas
 organizações estão envolvidas, pontos de vista divergentes muitas vezes são
 simplesmente deixados de fora do padrão, incluindo apenas elementos agradáveis.
 Quando isso acontece, os padrões que surgem tendem a ser pequenos e pouco especificados.</p>
-
-<p class=MsoNormal>O problema oposto também pode ocorrer: quando opiniões
+<p>O problema oposto também pode ocorrer: quando opiniões
 divergentes ocorrem entre os desenvolvedores de um padrão, as soluções de todos
 são incluídas, geralmente deixando a escolha da abordagem para o usuário do
 padrão. Esses padrões são subespecificados de forma diferente: embora não
 faltem opções para os usuários, também há pouca orientação sobre qual abordagem
 escolher; Os benefícios fundamentais de usar um padrão, como interoperabilidade
 e consistência, são reduzidos.</p>
-
-<p class=MsoNormal><b>Padrões De Jure: As Torres de Marfim da Indústria?<o:p></o:p></b></p>
-
-<p class=MsoNormal>Um elemento crítico que distingue os padrões de jure dos
+<p><b>Padrões De Jure: As Torres de Marfim da Indústria?</b></p>
+<p>Um elemento crítico que distingue os padrões de jure dos
 padrões de fato é a adoção no mercado. Um padrão de fato se tornou um padrão
 porque atende a uma certa necessidade para um número significativo de usuários.
 Para esses padrões, forças de mercado e efeitos de rede são os principais
 motores da adoção.</p>
-
-<p class=MsoNormal>Padrões de jure (pelo menos, aqueles que não emergiram de
+<p>Padrões de jure (pelo menos, aqueles que não emergiram de
 padrões de fato) não têm motivações semelhantes. Elas são frequentemente
 desenvolvidas e codificadas sem adoção prévia no mercado. A qualidade desses
 padrões é assim questionada — eles não competiram em um mercado aberto de
 ideias e, portanto, podem ser soluções inadequadas mesmo para os problemas que
 se pretendem abordar. Isso reflete uma crítica comum feita às soluções
-acadêmicas para problemas: que elas vêm da &quot;torre de marfim&quot;, pois
+acadêmicas para problemas: que elas vêm da "torre de marfim", pois
 podem ser bem fundamentadas na teoria, mas não são testadas na prática. Isso é
 especialmente preocupante quando esses padrões são obrigatórios para uso em
 projetos. Aqui, existe um perigo significativo de que estar <i>em conformidade
 com os padrões </i>seja mais importante do que ser <i>bom</i>.</p>
-
-<p class=MsoNormal>Padrões de jure geralmente surgem de boas intenções.
+<p>Padrões de jure geralmente surgem de boas intenções.
 Frequentemente, especialistas reconhecidos em um determinado domínio são
 contratados para ajudar a produzir o novo padrão. Às vezes, esses padrões
 resultam da composição de padrões de fato já existentes também.</p>
-
-<p class=MsoNormal>Padrões de fato também não são uma solução — há muitos
+<p>Padrões de fato também não são uma solução — há muitos
 exemplos de padrões de fato que apresentam problemas diferentes — por exemplo,
 apoio pobre à evolução do padrão ou adoção generalizada que inibem a inovação.</p>
-
-<p class=MsoNormal>As perguntas-chave a se fazer sobre <i>qualquer</i> padrão
+<p>As perguntas-chave a se fazer sobre <i>qualquer</i> padrão
 são:</p>
-
-<ul style='margin-top:0cm' type=disc>
- <li class=MsoNormal style='mso-list:l25 level1 lfo464;tab-stops:list 36.0pt'>Qual
+<ul style="margin-top:0cm" type="disc">
+<li>Qual
      problema esse padrão resolve?</li>
- <li class=MsoNormal style='mso-list:l25 level1 lfo464;tab-stops:list 36.0pt'>Quais
+<li>Quais
      são as limitações desse padrão? (Ou seja, quais problemas essa norma <i>não
      </i>é endereço?)</li>
- <li class=MsoNormal style='mso-list:l25 level1 lfo464;tab-stops:list 36.0pt'>O
+<li>O
      padrão foi aplicado com sucesso?</li>
- <li class=MsoNormal style='mso-list:l25 level1 lfo464;tab-stops:list 36.0pt'>Independentemente
+<li>Independentemente
      de ter sido aplicado ou não, o padrão é teoricamente correto?</li>
- <li class=MsoNormal style='mso-list:l25 level1 lfo464;tab-stops:list 36.0pt'>As
+<li>As
      razões práticas para adotar esse padrão são convincentes?</li>
- <li class=MsoNormal style='mso-list:l25 level1 lfo464;tab-stops:list 36.0pt'>Quais
+<li>Quais
      benefícios podem ser esperados ao usar esse padrão? Alternativamente, que
      trabalho pode ser evitado adotando o padrão?</li>
- <li class=MsoNormal style='mso-list:l25 level1 lfo464;tab-stops:list 36.0pt'>Existem
+<li>Existem
      alternativas à adoção do padrão? Quais são os custos e benefícios das
      alternativas?</li>
- <li class=MsoNormal style='mso-list:l25 level1 lfo464;tab-stops:list 36.0pt'>Qual
+<li>Qual
      estratégia está em andamento para lidar com a evolução do padrão?</li>
- <li class=MsoNormal style='mso-list:l25 level1 lfo464;tab-stops:list 36.0pt'>Quais
+<li>Quais
      planos de contingência estão em vigor caso o padrão não evolua?</li>
 </ul>
-
-<p class=MsoNormal><b>Quando adotar<o:p></o:p></b></p>
-
-<p class=MsoNormal>Uma das questões críticas que toda organização de
+<p><b>Quando adotar</b></p>
+<p>Uma das questões críticas que toda organização de
 desenvolvimento deve responder diante de um novo padrão é quando considerar a
 adoção. Como uma organização afeta e é afetada por um padrão depende em grande
 parte de como e quando ela escolhe adotá-lo. Tanto a adoção precoce quanto a
 tardia têm vantagens e desvantagens.</p>
-
-<p class=MsoNormal>Alguns dos benefícios da adoção precoce incluem:</p>
-
-<ul style='margin-top:0cm' type=disc>
- <li class=MsoNormal style='mso-list:l122 level1 lfo465;tab-stops:list 36.0pt'>Capacidade
+<p>Alguns dos benefícios da adoção precoce incluem:</p>
+<ul style="margin-top:0cm" type="disc">
+<li>Capacidade
      de influenciar o padrão: Os primeiros adotantes frequentemente podem se
      tornar participantes significativos no corpo responsável por criar o
      padrão. Eles podem então ser capazes de avançar ou evoluir o padrão de
      forma vantajosa para eles, ou trabalhar para excluir concorrentes de
      participação semelhante.</li>
- <li class=MsoNormal style='mso-list:l122 level1 lfo465;tab-stops:list 36.0pt'>Lançamento
+<li>Lançamento
      precoce no mercado: Se o padrão se tornar bem-sucedido, as organizações
      que adotam precocemente são as primeiras a se beneficiar. Se o padrão
      puder ser aproveitado no mercado de produtos, então os produtos da
      organização estarão entre os primeiros a apoiar o padrão.</li>
- <li class=MsoNormal style='mso-list:l122 level1 lfo465;tab-stops:list 36.0pt'>Experiência
+<li>Experiência
      inicial: Se o padrão for bem-sucedido ou útil, os primeiros adotantes
      terão mais experiência do que outros no uso do padrão e poderão aproveitar
      essa experiência a seu favor.</li>
 </ul>
-
-<p class=MsoNormal>Algumas das desvantagens incluem:</p>
-
-<ul style='margin-top:0cm' type=disc>
- <li class=MsoNormal style='mso-list:l158 level1 lfo466;tab-stops:list 36.0pt'>Risco
+<p>Algumas das desvantagens incluem:</p>
+<ul style="margin-top:0cm" type="disc">
+<li>Risco
      de fracasso: Se o padrão não for bem-sucedido, os primeiros adotantes
      podem ficar com a responsabilidade. Investir no padrão não vai valer a
      pena porque o padrão não será suportado.</li>
- <li class=MsoNormal style='mso-list:l158 level1 lfo466;tab-stops:list 36.0pt'>Alvo
+<li>Alvo
      móvel: À medida que os padrões são inicialmente desenvolvidos, eles passam
      por inúmeras mudanças. Os primeiros adotantes terão que se adaptar a essas
-     mudanças conforme ocorrem; <span class=GramE>Se</span> eles desenvolvem
+     mudanças conforme ocorrem; <span class="GramE">Se</span> eles desenvolvem
      produtos baseados em uma versão inicial de um padrão, podem não estar
      totalmente em conformidade com os padrões quando o padrão for finalmente
      lançado.</li>
- <li class=MsoNormal style='mso-list:l158 level1 lfo466;tab-stops:list 36.0pt'>Falta
+<li>Falta
      de suporte: No início do desenvolvimento, os padrões não terão suporte
      extenso. Certos problemas podem não ter sido resolvidos. Sem suporte, as
      organizações podem acabar desenvolvendo suporte próprio, anulando assim
      alguns dos benefícios de custo de adotar um padrão.</li>
 </ul>
-
-<p class=MsoNormal>Alguns dos benefícios da adoção tardia incluem:</p>
-
-<ul style='margin-top:0cm' type=disc>
- <li class=MsoNormal style='mso-list:l32 level1 lfo467;tab-stops:list 36.0pt'>Maturidade
+<p>Alguns dos benefícios da adoção tardia incluem:</p>
+<ul style="margin-top:0cm" type="disc">
+<li>Maturidade
      do padrão: Padrões mais antigos tendem a ser mais maduros. Eles são mais
      estáveis e sofrem menos mudanças; As mudanças feitas são feitas por meio
      de um processo mais fundamentado. Bugs no padrão provavelmente foram
      corrigidos, ou pelo menos documentados e contornados.</li>
- <li class=MsoNormal style='mso-list:l32 level1 lfo467;tab-stops:list 36.0pt'>Melhor
+<li>Melhor
      suporte: Padrões mais antigos tendem a ser mais bem suportados em termos
      de ferramentas, documentação, materiais de treinamento e assim por diante.
      Esse suporte pode ser desenvolvido por outras organizações e pode ser
      comprado em vez de desenvolvido.</li>
 </ul>
-
-<p class=MsoNormal>Algumas das desvantagens da adoção tardia incluem:</p>
-
-<ul style='margin-top:0cm' type=disc>
- <li class=MsoNormal style='mso-list:l187 level1 lfo468;tab-stops:list 36.0pt'>Incapacidade
+<p>Algumas das desvantagens da adoção tardia incluem:</p>
+<ul style="margin-top:0cm" type="disc">
+<li>Incapacidade
      de influenciar o padrão: Em geral, é mais difícil influenciar um padrão
      depois que ele foi desenvolvido e suportado por muito tempo. As
      organizações existentes no órgão de padrões terão formado uma comunidade
      com sua própria cultura, e a barreira de entrada nessa comunidade irá
      crescendo gradualmente com o tempo.</li>
- <li class=MsoNormal style='mso-list:l187 level1 lfo468;tab-stops:list 36.0pt'>Restrição
+<li>Restrição
      da inovação: Padrões mais antigos podem não acompanhar os avanços
      tecnológicos ou metodológicos. Apegar-se a um padrão mais antigo pode
      limitar a visão de uma organização sobre a inovação.</li>
 </ul>
-
-<p class=MsoNormal>Então, quando uma organização deve adotar um padrão? A
+<p>Então, quando uma organização deve adotar um padrão? A
 resposta depende dos objetivos da organização. Se o padrão influenciar
 substancialmente o negócio principal de uma organização, provavelmente é mais
 útil para ela assumir o risco e absorver os custos de se envolver cedo. Se o
@@ -542,27 +469,21 @@ Alternativamente, se o padrão for apenas uma ferramenta que a organização usa
 para melhorar seus próprios produtos, mas não fará parte do seu negócio
 principal, então esperar que outros paguem por amadurecer o padrão é uma
 decisão mais inteligente.</p>
-
-<p class=MsoNormal>PADRÕES ESPECÍFICOS</p>
-
-<p class=MsoNormal>Existem muitos padrões relacionados à arquitetura de
+<p>PADRÕES ESPECÍFICOS</p>
+<p>Existem muitos padrões relacionados à arquitetura de
 software que são amplamente aceitos e em uso atualmente. Tentaremos categorizar
 cada padrão com base em seu propósito principal, mas reconheceremos que muitos
 desses padrões são difíceis de encaixar em uma única categoria.</p>
-
-<p class=MsoNormal><b>Padrões Conceituais<o:p></o:p></b></p>
-
-<p class=MsoNormal>Padrões conceituais tendem a abordar a variedade de
+<p><b>Padrões Conceituais</b></p>
+<p>Padrões conceituais tendem a abordar a variedade de
 atividades envolvidas na criação e uso da arquitetura. Por causa de seu amplo
 escopo, eles tendem a fornecer orientações de alto nível. Por exemplo, muitos
 focam no que deve ser documentado, mas não em como (ou seja, em qual notação)
 isso deve ser documentado. Padrões conceituais frequentemente se encaixam com
 outros padrões mais específicos para métodos ou notações, formando abordagens
 mais completas e detalhadas para o desenvolvimento de software e sistemas.</p>
-
-<p class=MsoNormal><b>IEEE 1471<o:p></o:p></b></p>
-
-<p class=MsoNormal>A IEEE 1471 (IEEE-SA Standards Board 2000) é uma prática
+<p><b>IEEE 1471</b></p>
+<p>A IEEE 1471 (IEEE-SA Standards Board 2000) é uma prática
 recomendada pelo IEEE para descrição arquitetônica que frequentemente é
 obrigatória para uso por empreiteiros governamentais e outras organizações.
 Reconhece a importância da arquitetura para ajudar a garantir o desenvolvimento
@@ -574,15 +495,13 @@ usados para documentar uma arquitetura: Neste livro, nos referimos a esses
 artefatos como modelos arquitetônicos. No entanto, o próprio padrão não
 descreve uma notação específica para esses modelos. Em vez disso, especifica
 apenas uma quantidade mínima de conteúdo exigido nos modelos.</p>
-
-<p class=MsoNormal>O IEEE 1471 adota uma visão orientada pelos stakeholders
+<p>O IEEE 1471 adota uma visão orientada pelos stakeholders
 sobre arquiteturas, assim como fizemos neste livro. Descrições de arquitetura
 no IEEE 1471 identificam especificamente os stakeholders do sistema e suas
 preocupações. Uma descrição arquitetônica completa abordará todas as
 preocupações de todos os interessados, embora, na prática, isso seja mais um
 ideal do que uma realidade.</p>
-
-<p class=MsoNormal>Descrições de arquitetura IEEE 1471 também são compostas por
+<p>Descrições de arquitetura IEEE 1471 também são compostas por
 vistas que são instâncias de pontos de vista. A noção IEEE 1471 de pontos de
 vista e pontos de vista é consistente com a utilizada neste livro. Como
 discutimos, opiniões e pontos de vista organizam a arquitetura de acordo com as
@@ -594,19 +513,17 @@ incentiva os implementadores a manterem consistência entre as visões e a
 documentarem quaisquer inconsistências conhecidas na descrição da arquitetura.
 Não explica como a consistência deve ser alcançada ou medida, nem os métodos
 que devem ser empregados para isso.</p>
-
-<p class=MsoNormal>Como padrão, o IEEE 1471 é propositalmente leve em
+<p>Como padrão, o IEEE 1471 é propositalmente leve em
 especificações (é difícil chamá-lo de subespecificado porque os limites de seu
 escopo são óbvios e deliberados). O padrão oferece um bom ponto de partida para
 pensar em capturar arquiteturas e não tenta defender uma única abordagem para
 cada domínio. As definições e conceitos que ele utiliza são mais ou menos
 consistentes com os encontrados neste livro.</p>
-
-<p class=MsoNormal>No entanto, os usuários devem ter cuidado para não atribuir
+<p>No entanto, os usuários devem ter cuidado para não atribuir
 muita capacidade ao padrão. Nossa experiência é que muitas organizações
-acreditam que estar em conformidade com a IEEE 1471 equivale a &quot;fazer uma
-boa arquitetura&quot;. Na verdade, estar em conformidade com a IEEE 1471 indica
-que um conjunto de produtos de &quot;descrição de arquitetura&quot; foi
+acreditam que estar em conformidade com a IEEE 1471 equivale a "fazer uma
+boa arquitetura". Na verdade, estar em conformidade com a IEEE 1471 indica
+que um conjunto de produtos de "descrição de arquitetura" foi
 desenvolvido e designado pelos engenheiros do sistema, mas não garante que
 esses produtos sejam de alta qualidade, que capturem os aspectos críticos do
 sistema, que sejam expressos em notações apropriadas ou que qualquer
@@ -614,23 +531,18 @@ metodologia razoável tenha sido usada para desenvolver e verificar a
 consistência desses produtos. Assim, as contribuições do IEEE 1471 estão, em
 grande parte, na definição de um vocabulário de conceitos e suas relações entre
 si.</p>
-
-<p class=MsoNormal><span class=SpellE><b>DoDAF</b></span><b>: A Estrutura de
-Arquitetura do Departamento de Defesa<o:p></o:p></b></p>
-
-<p class=MsoNormal><span class=SpellE>DoDAF</span> (Grupo de Trabalho do Marco
-de Arquitetura <span class=SpellE>DoD</span> 2004) é um padrão do Departamento
+<p><span class="SpellE"><b>DoDAF</b></span><b>: A Estrutura de
+Arquitetura do Departamento de Defesa</b></p>
+<p><span class="SpellE">DoDAF</span> (Grupo de Trabalho do Marco
+de Arquitetura <span class="SpellE">DoD</span> 2004) é um padrão do Departamento
 de Defesa dos EUA para documentar arquiteturas de sistemas. É o sucessor do
-framework anterior da arquitetura C4ISR e o substitui. <span class=SpellE>DoDAF</span>
+framework anterior da arquitetura C4ISR e o substitui. <span class="SpellE">DoDAF</span>
 (e padrões semelhantes) são frequentemente chamados de frameworks de
-arquitetura. Aqui, &quot;estrutura&quot; geralmente designa um processo ou
+arquitetura. Aqui, "estrutura" geralmente designa um processo ou
 conjunto de pontos de vista que devem ser usados na captura de uma arquitetura.
 Essa sensação de framework é diferente dos frameworks de implementação de arquitetura
-que discutimos <span class=SpellE>em<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch09.html"
-title="Chapter&nbsp;9.&nbsp;Implementation"><b>Capítulo</b><b> 9</b></a></span>.</p>
-
-<p class=MsoNormal>Assim como o IEEE 1471, as contribuições do DoDAF são
+que discutimos <span class="SpellE">em<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch09.html" title="Chapter 9. Implementation"><b>Capítulo</b><b> 9</b></a></span>.</p>
+<p>Assim como o IEEE 1471, as contribuições do DoDAF são
 principalmente no nível conceitual. O DoDAF prescreve mais profundamente os
 tipos de coisas que devem ser capturadas em uma descrição de arquitetura. Ao
 contrário do IEEE 1471, ele defende uma abordagem específica, mais distante das
@@ -639,149 +551,129 @@ específicos e os tipos de informações que devem ser capturadas em cada um
 deles. Assim como o IEEE 1471, o DoDAF deixa muitas escolhas para o usuário: por
 exemplo, o tipo de notação a usar para documentar as visualizações de
 arquitetura e como garantir consistência entre elas.</p>
-
-<p class=MsoNormal>A terminologia <span class=SpellE>DoDAF</span> entra em
+<p>A terminologia <span class="SpellE">DoDAF</span> entra em
 conflito com a usada neste livro em relação a pontos de vista e pontos de
-vista. A correspondência é aproximadamente como mostrada <span class=SpellE>em<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch16.html#terminology_differences"
-title="Table&nbsp;16-1.&nbsp;Terminology Differences"><b>Tabela</b><b> 16-1</b></a></span>.
+vista. A correspondência é aproximadamente como mostrada <span class="SpellE">em<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch16.html#terminology_differences" title="Table 16-1. Terminology Differences"><b>Tabela</b><b> 16-1</b></a></span>.
 Ao longo do restante desta discussão, usaremos nossa terminologia (conjunto de
 pontos de vista, ponto de vista e ponto de vista). No entanto, o próprio padrão
 DoDAF utiliza os termos alternativos (visualização e produto).</p>
-
-<p class=MsoNormal><b>Tabela 16-1.&nbsp;Diferenças de Terminologia</b></p>
-
-<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
- summary="Diferenças de Terminologia" style='background:white;border-collapse:
- collapse;border:none;mso-border-alt:solid windowtext .5pt;mso-yfti-tbllook:
- 1184;mso-padding-alt:10.5pt 10.5pt 10.5pt 10.5pt'>
- <thead>
-  <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
-   <td style='border:none;background:#EEF2F6;padding:10.5pt 10.5pt 10.5pt 10.5pt'>
-   <p class=MsoNormal><span style='color:black;mso-color-alt:windowtext'>Conceito</span></p>
-   </td>
-   <td style='border:none;background:#EEF2F6;padding:10.5pt 10.5pt 10.5pt 10.5pt'>
-   <p class=MsoNormal><span style='color:black;mso-color-alt:windowtext'>Nosso
+<p><b>Tabela 16-1. Diferenças de Terminologia</b></p>
+<table border="1" cellpadding="0" cellspacing="0" summary="Diferenças de Terminologia">
+<thead>
+<tr>
+<td style="border:none;background:#EEF2F6;padding:10.5pt 10.5pt 10.5pt 10.5pt">
+<p><span>Conceito</span></p>
+</td>
+<td style="border:none;background:#EEF2F6;padding:10.5pt 10.5pt 10.5pt 10.5pt">
+<p><span>Nosso
    Mandato</span></p>
-   </td>
-   <td style='border:none;background:#EEF2F6;padding:10.5pt 10.5pt 10.5pt 10.5pt'>
-   <p class=MsoNormal><span style='color:black;mso-color-alt:windowtext'>Termo <span
-   class=SpellE>DoDAF</span></span></p>
-   </td>
-  </tr>
- </thead>
- <tr style='mso-yfti-irow:1'>
-  <td valign=top style='border:none;padding:10.5pt 10.5pt 10.5pt 10.5pt'>
-  <p class=MsoNormal><span style='color:black;mso-color-alt:windowtext'>Um
+</td>
+<td style="border:none;background:#EEF2F6;padding:10.5pt 10.5pt 10.5pt 10.5pt">
+<p><span>Termo <span class="SpellE">DoDAF</span></span></p>
+</td>
+</tr>
+</thead>
+<tr>
+<td style="border:none;padding:10.5pt 10.5pt 10.5pt 10.5pt" valign="top">
+<p><span>Um
   conjunto de perspectivas a partir das quais as descrições são desenvolvidas</span></p>
-  </td>
-  <td valign=top style='border:none;padding:10.5pt 10.5pt 10.5pt 10.5pt'>
-  <p class=MsoNormal><span style='color:black;mso-color-alt:windowtext'>Conjunto
+</td>
+<td style="border:none;padding:10.5pt 10.5pt 10.5pt 10.5pt" valign="top">
+<p><span>Conjunto
   de pontos de vista</span></p>
-  </td>
-  <td valign=top style='border:none;padding:10.5pt 10.5pt 10.5pt 10.5pt'>
-  <p class=MsoNormal><span style='color:black;mso-color-alt:windowtext'>Vista</span></p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:2'>
-  <td valign=top style='border:none;background:#EEF2F6;padding:10.5pt 10.5pt 10.5pt 10.5pt'>
-  <p class=MsoNormal><span style='color:black;mso-color-alt:windowtext'>Uma
+</td>
+<td style="border:none;padding:10.5pt 10.5pt 10.5pt 10.5pt" valign="top">
+<p><span>Vista</span></p>
+</td>
+</tr>
+<tr>
+<td style="border:none;background:#EEF2F6;padding:10.5pt 10.5pt 10.5pt 10.5pt" valign="top">
+<p><span>Uma
   perspectiva a partir da qual as descrições são desenvolvidas</span></p>
-  </td>
-  <td valign=top style='border:none;background:#EEF2F6;padding:10.5pt 10.5pt 10.5pt 10.5pt'>
-  <p class=MsoNormal><span style='color:black;mso-color-alt:windowtext'>Ponto
+</td>
+<td style="border:none;background:#EEF2F6;padding:10.5pt 10.5pt 10.5pt 10.5pt" valign="top">
+<p><span>Ponto
   de vista</span></p>
-  </td>
-  <td valign=top style='border:none;background:#EEF2F6;padding:10.5pt 10.5pt 10.5pt 10.5pt'>
-  <p class=MsoNormal><span style='color:black;mso-color-alt:windowtext'>(Mais
+</td>
+<td style="border:none;background:#EEF2F6;padding:10.5pt 10.5pt 10.5pt 10.5pt" valign="top">
+<p><span>(Mais
   ou menos) produto</span></p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:3;mso-yfti-lastrow:yes'>
-  <td valign=top style='border:none;padding:10.5pt 10.5pt 10.5pt 10.5pt'>
-  <p class=MsoNormal><span style='color:black;mso-color-alt:windowtext'>Um
+</td>
+</tr>
+<tr>
+<td style="border:none;padding:10.5pt 10.5pt 10.5pt 10.5pt" valign="top">
+<p><span>Um
   artefato que descreve um sistema sob uma perspectiva particular</span></p>
-  </td>
-  <td valign=top style='border:none;padding:10.5pt 10.5pt 10.5pt 10.5pt'>
-  <p class=MsoNormal><span style='color:black;mso-color-alt:windowtext'>Vista</span></p>
-  </td>
-  <td valign=top style='border:none;padding:10.5pt 10.5pt 10.5pt 10.5pt'>
-  <p class=MsoNormal><span style='color:black;mso-color-alt:windowtext'>Produto</span></p>
-  </td>
- </tr>
+</td>
+<td style="border:none;padding:10.5pt 10.5pt 10.5pt 10.5pt" valign="top">
+<p><span>Vista</span></p>
+</td>
+<td style="border:none;padding:10.5pt 10.5pt 10.5pt 10.5pt" valign="top">
+<p><span>Produto</span></p>
+</td>
+</tr>
 </table>
-
-<p class=MsoNormal>O <span class=SpellE>DoDAF</span> é uma abordagem <span
-class=SpellE>multi-ponto</span> de vista. Os diversos pontos de vista abordam
+<p>O <span class="SpellE">DoDAF</span> é uma abordagem <span class="SpellE">multi-ponto</span> de vista. Os diversos pontos de vista abordam
 decisões de design arquitetônico em muitos níveis, desde os mais abstratos
 (conceitos, missões) até os razoavelmente detalhados (topologias individuais de
-componentes e conectores). Os pontos de vista do <span class=SpellE>DoDAF</span>
+componentes e conectores). Os pontos de vista do <span class="SpellE">DoDAF</span>
 são agrupados em quatro conjuntos.</p>
-
-<ul style='margin-top:0cm' type=disc>
- <li class=MsoNormal style='mso-list:l159 level1 lfo469;tab-stops:list 36.0pt'>A
+<ul style="margin-top:0cm" type="disc">
+<li>A
      visão operacional (OV): As visões no conjunto de pontos de vista OV
-     identificam &quot;o que precisa ser realizado e quem faz isso.&quot; Eles
+     identificam "o que precisa ser realizado e quem faz isso." Eles
      definem processos e atividades, os elementos operacionais que fazem parte
      dessas atividades e as trocas de informações que ocorrem entre eles.</li>
- <li class=MsoNormal style='mso-list:l159 level1 lfo469;tab-stops:list 36.0pt'>A
+<li>A
      visão de sistemas (SV): As vistas no conjunto de pontos de vista SV
      descrevem os sistemas que fornecem ou suportam funções operacionais e as
      interconexões entre eles. Os sistemas no SV estão associados a elementos
      no OV.</li>
- <li class=MsoNormal style='mso-list:l159 level1 lfo469;tab-stops:list 36.0pt'>A
+<li>A
      visão de padrões técnicos (TV): As visões no conjunto de pontos de visão
      TV identificam padrões, diretrizes (de engenharia), regras, convenções e
      outros documentos destinados a garantir que os sistemas implementados
      atendam aos seus requisitos e sejam consistentes quanto ao fato de que são
      implementados de acordo com um conjunto comum de regras.</li>
- <li class=MsoNormal style='mso-list:l159 level1 lfo469;tab-stops:list 36.0pt'>Todas
-     as visões (AV): O <span class=SpellE>DoDAF</span> também reconhece algumas
+<li>Todas
+     as visões (AV): O <span class="SpellE">DoDAF</span> também reconhece algumas
      preocupações transversais que afetam todas as visões (AV). As vistas AV
      incluem visões gerais de alto nível do sistema e do ambiente em que o
      sistema será implantado, além de um dicionário unificado que define os
      termos usados em todas as outras vistas.</li>
 </ul>
-
-<p class=MsoNormal>Os pontos de vista DoDAF são otimizados para documentar
+<p>Os pontos de vista DoDAF são otimizados para documentar
 arquiteturas complexas compostas por muitos nós interconectados e comunicantes.
 Essas arquiteturas são frequentemente chamadas de sistema-de-sistemas porque o
 sistema como um todo é composto por partes constituintes que são sistemas
 complexos com suas próprias arquiteturas.</p>
-
-<p class=MsoNormal>Para ilustrar como o <span class=SpellE>DoDAF</span> é usado
+<p>Para ilustrar como o <span class="SpellE">DoDAF</span> é usado
 para modelar um sistema de sistemas, apresentamos uma aplicação Lunar Lander
-modelada em um subconjunto dos pontos de vista do <span class=SpellE>DoDAF</span>.
+modelada em um subconjunto dos pontos de vista do <span class="SpellE">DoDAF</span>.
 Uma visualização OV-1 é uma representação gráfica estilizada da operação do
 sistema. É uma visão geral livre da aplicação e dos elementos importantes nela.
-As visualizações <span class=SpellE>DoDAF</span> não são otimizadas para
+As visualizações <span class="SpellE">DoDAF</span> não são otimizadas para
 sistemas simples de um nó como a aplicação básica Lunar Lander que abordamos
 neste livro até agora. No entanto, em um sistema de módulo lunar mais complexo,
 nós comunicantes como estações terrestres, satélites, sensores e assim por
-diante poderiam ser representados nessa visão.&nbsp;<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch16.html#dodaf_ov-1_view_of_lunar_lander"
-title="Figure&nbsp;16-1.&nbsp;DoDAF OV-1 view of Lunar Lander."><b>A Figura
+diante poderiam ser representados nessa visão. <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch16.html#dodaf_ov-1_view_of_lunar_lander" title="Figure 16-1. DoDAF OV-1 view of Lunar Lander."><b>A Figura
 16-1</b></a> mostra uma visão OV-1 de um exemplo de módulo lunar de sistema de
 sistemas. Aqui, o próprio módulo lunar se comunica com o solo utilizando um
 satélite para retransmitir dados a uma estação de comunicação via satélite, que
 por sua vez está conectada a uma estação terrestre. Esse é o ponto de vista
 DoDAF mais conceitual e menos rigoroso; outros produtos OV são menos
 conceituais e mais concretos.</p>
-
-<p class=MsoNormal><a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch16.html#dodaf_ov-4_diagram_of_lunar_lander"
-title="Figure&nbsp;16-2.&nbsp;DoDAF OV-4 diagram of Lunar Lander."><b>A Figura
-16-2</b></a> mostra outra visão OV do DoDAF, uma visão &quot;Relações
-Organizacionais&quot; do OV-4. Este diagrama mostra as relações entre várias
+<p><a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch16.html#dodaf_ov-4_diagram_of_lunar_lander" title="Figure 16-2. DoDAF OV-4 diagram of Lunar Lander."><b>A Figura
+16-2</b></a> mostra outra visão OV do DoDAF, uma visão "Relações
+Organizacionais" do OV-4. Este diagrama mostra as relações entre várias
 organizações e suborganizações envolvidas em um projeto. Aqui, a principal
 agência espacial supervisiona várias subagências, com assistência de uma
 organização de supervisão. Uma subagência, a <i>Equipe de Poissagem</i>, é
 expandida para mostrar os papéis individuais atribuídos ao pessoal dentro dessa
 subagência. Note que o diagrama OV-4 representa principalmente as relações
 entre pessoas e não artefatos tecnológicos. A combinação de organizações,
-pessoal e tecnologia é tipica dos diagramas de OV no <span class=SpellE>DoDAF</span>.</p>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shapetype
+pessoal e tecnologia é tipica dos diagramas de OV no <span class="SpellE">DoDAF</span>.</p>
+<p><span><!--[if gte vml 1]><v:shapetype
  id="_x0000_t75" coordsize="21600,21600" o:spt="75" o:preferrelative="t"
  path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
  <v:stroke joinstyle="miter"/>
@@ -805,46 +697,31 @@ pessoal e tecnologia é tipica dos diagramas de OV no <span class=SpellE>DoDAF</
  alt="Vista do DoDAF OV-1 do módulo lunar." style='width:411.6pt;height:349.8pt;
  visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap16-ptbr_arquivos/image001.png" o:title="Vista do DoDAF OV-1 do módulo lunar"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=549 height=466
-src="cap16-ptbr_arquivos/image001.png"
-alt="Vista do DoDAF OV-1 do módulo lunar." v:shapes="Imagem_x0020_404"><![endif]></span></p>
-
-<p class=MsoNormal><b>Figura 16-1.&nbsp;Vista do DoDAF OV-1 do módulo lunar.</b></p>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+</v:shape><![endif]--><?if !vml?><img alt="Vista do DoDAF OV-1 do módulo lunar." border="0" height="466" src="cap16-ptbr_arquivos/image001.png" v:shapes="Imagem_x0020_404" width="549"/><?endif?></span></p>
+<p><b>Figura 16-1. Vista do DoDAF OV-1 do módulo lunar.</b></p>
+<p><span><!--[if gte vml 1]><v:shape
  id="Imagem_x0020_403" o:spid="_x0000_i1039" type="#_x0000_t75" alt="Diagrama DoDAF OV-4 do módulo lunar."
  style='width:411.6pt;height:295.2pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap16-ptbr_arquivos/image002.png" o:title="Diagrama DoDAF OV-4 do módulo lunar"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=549 height=394
-src="cap16-ptbr_arquivos/image002.png"
-alt="Diagrama DoDAF OV-4 do módulo lunar." v:shapes="Imagem_x0020_403"><![endif]></span></p>
-
-<p class=MsoNormal><b>Figura 16-2.&nbsp;Diagrama DoDAF OV-4 do módulo lunar.</b></p>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+</v:shape><![endif]--><?if !vml?><img alt="Diagrama DoDAF OV-4 do módulo lunar." border="0" height="394" src="cap16-ptbr_arquivos/image002.png" v:shapes="Imagem_x0020_403" width="549"/><?endif?></span></p>
+<p><b>Figura 16-2. Diagrama DoDAF OV-4 do módulo lunar.</b></p>
+<p><span><!--[if gte vml 1]><v:shape
  id="Imagem_x0020_402" o:spid="_x0000_i1038" type="#_x0000_t75" alt="Diagrama DoDAF SV-1 do módulo lunar."
  style='width:411.6pt;height:357.6pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap16-ptbr_arquivos/image003.png" o:title="Diagrama DoDAF SV-1 do módulo lunar"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=549 height=477
-src="cap16-ptbr_arquivos/image003.png"
-alt="Diagrama DoDAF SV-1 do módulo lunar." v:shapes="Imagem_x0020_402"><![endif]></span></p>
-
-<p class=MsoNormal><b>Figura 16-3.&nbsp;Diagrama DoDAF SV-1 do módulo lunar.</b></p>
-
-<p class=MsoNormal>As visualizações do <span class=SpellE>DoDAF</span> SV
-tendem a ser mais técnicas. <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch16.html#dodaf_sv-1_diagram_of_lunar_lander"
-title="Figure&nbsp;16-3.&nbsp;DoDAF SV-1 diagram of Lunar Lander."><b>A Figura
-16-3</b></a> mostra uma visão SV-1 &quot;Descrição da Interface do
-Sistema&quot;. Os nós são destinados a corresponder aos nós mostrados nos
+</v:shape><![endif]--><?if !vml?><img alt="Diagrama DoDAF SV-1 do módulo lunar." border="0" height="477" src="cap16-ptbr_arquivos/image003.png" v:shapes="Imagem_x0020_402" width="549"/><?endif?></span></p>
+<p><b>Figura 16-3. Diagrama DoDAF SV-1 do módulo lunar.</b></p>
+<p>As visualizações do <span class="SpellE">DoDAF</span> SV
+tendem a ser mais técnicas. <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch16.html#dodaf_sv-1_diagram_of_lunar_lander" title="Figure 16-3. DoDAF SV-1 diagram of Lunar Lander."><b>A Figura
+16-3</b></a> mostra uma visão SV-1 "Descrição da Interface do
+Sistema". Os nós são destinados a corresponder aos nós mostrados nos
 diagramas OV. Isso mostra uma divisão inicial das responsabilidades funcionais
 entre os nós, bem como as interconexões entre eles. Muitas dessas visões SV-1
 podem ser criadas para o mesmo sistema, representando o sistema em diferentes
 níveis de abstração ou mostrando interconexões entre funções individuais nos
 nós, em vez de apenas os nós em si.</p>
-
-<p class=MsoNormal>O <span class=SpellE>DoDAF</span> faz uso extensivo do que
-chama de visualizações matriciais, também conhecidas como &quot;diagramas N<b><sup>2</sup></b>&quot;.
+<p>O <span class="SpellE">DoDAF</span> faz uso extensivo do que
+chama de visualizações matriciais, também conhecidas como "diagramas N<b><sup>2</sup></b>".
 Essas vistas geralmente são representadas como tabelas. Ambos os eixos da
 tabela são preenchidos por um conjunto idêntico de nós. Esses nós geralmente
 representam elementos concretos como sistemas, subsistemas, hosts ou
@@ -853,57 +730,41 @@ interconexão entre dois dos nós. Se os dois nós estiverem conectados, detalhe
 sobre a conexão são listados na célula de interseção; caso contrário, a célula
 fica em branco. Uma visualização matricial contém todas as conexões possíveis
 entre elementos.</p>
-
-<p class=MsoNormal>Visualizações matriciais frequentemente estão diretamente
+<p>Visualizações matriciais frequentemente estão diretamente
 correlacionadas com visões de grafo (ou seja, caixas e setas) de um sistema.
 Cada nó do grafo é listado nos eixos da tabela, e cada linha do grafo
 corresponde a uma célula preenchida no corpo da tabela.</p>
-
-<p class=MsoNormal><a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch16.html#dodaf_sv-3_diagram_of_lunar_lander"
-title="Figure&nbsp;16-4.&nbsp;DoDAF SV-3 diagram of Lunar Lander."><b>A Figura
-16-4</b></a> mostra um desses diagramas, um diagrama SV-3 &quot;Systems-Systems
-Matrix&quot;. Neste diagrama, os nós nos eixos são desenhados a partir do
-diagrama SV-1 anterior mostrado na <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch16.html#dodaf_sv-1_diagram_of_lunar_lander"
-title="Figure&nbsp;16-3.&nbsp;DoDAF SV-1 diagram of Lunar Lander."><b>Figura
+<p><a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch16.html#dodaf_sv-3_diagram_of_lunar_lander" title="Figure 16-4. DoDAF SV-3 diagram of Lunar Lander."><b>A Figura
+16-4</b></a> mostra um desses diagramas, um diagrama SV-3 "Systems-Systems
+Matrix". Neste diagrama, os nós nos eixos são desenhados a partir do
+diagrama SV-1 anterior mostrado na <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch16.html#dodaf_sv-1_diagram_of_lunar_lander" title="Figure 16-3. DoDAF SV-1 diagram of Lunar Lander."><b>Figura
 16-3</b></a>. Os nós na diagonal são acinzentados; A comunicação entre um nó e
 ele mesmo não é considerada. Cada nó restante descreve a troca de informações
 do nó nomeado no eixo vertical para o nó nomeado no eixo horizontal. Nós onde
 nenhuma informação é comunicada, ou onde não existe ligação (por exemplo, da <i>Estação
 Terrestre </i>diretamente para o <i>módulo lunar</i>) ficam em branco. Aqui,
 assim como em outros diagramas DoDAF, a quantidade de detalhes presentes é
-determinada pelo usuário. O diagrama na <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch16.html#dodaf_sv-3_diagram_of_lunar_lander"
-title="Figure&nbsp;16-4.&nbsp;DoDAF SV-3 diagram of Lunar Lander."><b>Figura
+determinada pelo usuário. O diagrama na <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch16.html#dodaf_sv-3_diagram_of_lunar_lander" title="Figure 16-4. DoDAF SV-3 diagram of Lunar Lander."><b>Figura
 16-4</b></a> é relativamente simples, mostrando apenas o tipo de dados
 transmitidos e o protocolo utilizado. No entanto, o padrão DoDAF lista muitos
 tipos de informações que podem ser inseridas em cada nó: status, propósito,
 nível de classificação (como não classificado ou secreto), meios (como o tipo
 de rede ou protocolo utilizado), padrão de interface, e assim por diante.</p>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+<p><span><!--[if gte vml 1]><v:shape
  id="Imagem_x0020_401" o:spid="_x0000_i1037" type="#_x0000_t75" alt="Diagrama DoDAF SV-3 do módulo lunar."
  style='width:411.6pt;height:265.2pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap16-ptbr_arquivos/image004.png" o:title="Diagrama DoDAF SV-3 do módulo lunar"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=549 height=354
-src="cap16-ptbr_arquivos/image004.png"
-alt="Diagrama DoDAF SV-3 do módulo lunar." v:shapes="Imagem_x0020_401"><![endif]></span></p>
-
-<p class=MsoNormal><b>Figura 16-4.&nbsp;Diagrama DoDAF SV-3 do módulo lunar.</b></p>
-
-<p class=MsoNormal>Os produtos de TV <span class=SpellE>DoDAF</span> focam em
+</v:shape><![endif]--><?if !vml?><img alt="Diagrama DoDAF SV-3 do módulo lunar." border="0" height="354" src="cap16-ptbr_arquivos/image004.png" v:shapes="Imagem_x0020_401" width="549"/><?endif?></span></p>
+<p><b>Figura 16-4. Diagrama DoDAF SV-3 do módulo lunar.</b></p>
+<p>Os produtos de TV <span class="SpellE">DoDAF</span> focam em
 identificar e acompanhar os padrões técnicos que serão usados para implementar
-o sistema de sistemas descrito. O <span class=SpellE>DoDAF</span> assume que
+o sistema de sistemas descrito. O <span class="SpellE">DoDAF</span> assume que
 muitos aspectos desses sistemas serão implementados usando componentes
 reutilizáveis prontos a usar que estejam em conformidade com vários padrões
 publicados. Produtos de TV oferecem formas de identificar quais são esses
 padrões.</p>
-
-<p class=MsoNormal>Uma parte de um diagrama TV-1 para o módulo lunar é mostrada
-na <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch16.html#dodaf_tv-1_diagram_for_lunar_lander"
-title="Figure&nbsp;16-5.&nbsp;DoDAF TV-1 diagram for Lunar Lander."><b>Figura
+<p>Uma parte de um diagrama TV-1 para o módulo lunar é mostrada
+na <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch16.html#dodaf_tv-1_diagram_for_lunar_lander" title="Figure 16-5. DoDAF TV-1 diagram for Lunar Lander."><b>Figura
 16-5</b></a>. A coluna mais à esquerda da tabela mostra várias áreas em que os
 padrões se aplicam. A segunda coluna mostra subáreas. O DoDAF e uma
 especificação parceira chamada Joint Technical Architecture (JTA) enumeram
@@ -915,57 +776,47 @@ a Estação de Satélites</i> e <i>o Módulo de Aterragem Lunar</i> estão todos
 rodando sistemas operacionais que seguem o padrão POSIX (IEEE 2004). Nem todos
 os subsistemas devem usar todos os padrões selecionados, é claro. Aqui, a <i>Estação
 Terrestre </i>se comunica com a <i>Estação Satélite </i>usando XML, enviado por
-uma rede física de Fibra <span class=SpellE>Distributed</span> Data Interface
+uma rede física de Fibra <span class="SpellE">Distributed</span> Data Interface
 (FDDI). Diferentes padrões (não mostrados aqui) facilitariam a comunicação
 entre os <i>subsistemas </i>da Estação de Satélites <i>e </i>do Módulo de
 Aterragem Lunar.</p>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+<p><span><!--[if gte vml 1]><v:shape
  id="Imagem_x0020_400" o:spid="_x0000_i1036" type="#_x0000_t75" alt="Diagrama DoDAF TV-1 para módulo lunar."
  style='width:411.6pt;height:384.6pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap16-ptbr_arquivos/image005.png" o:title="Diagrama DoDAF TV-1 para módulo lunar"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=549 height=513
-src="cap16-ptbr_arquivos/image005.png"
-alt="Diagrama DoDAF TV-1 para módulo lunar." v:shapes="Imagem_x0020_400"><![endif]></span></p>
-
-<p class=MsoNormal><b>Figura 16-5.&nbsp;Diagrama DoDAF TV-1 para módulo lunar.</b></p>
-
-<p class=MsoNormal>O <span class=SpellE>DoDAF</span> descreve, em grande
+</v:shape><![endif]--><?if !vml?><img alt="Diagrama DoDAF TV-1 para módulo lunar." border="0" height="513" src="cap16-ptbr_arquivos/image005.png" v:shapes="Imagem_x0020_400" width="549"/><?endif?></span></p>
+<p><b>Figura 16-5. Diagrama DoDAF TV-1 para módulo lunar.</b></p>
+<p>O <span class="SpellE">DoDAF</span> descreve, em grande
 detalhe, a amplitude de informações que podem ser capturadas em uma descrição
 de arquitetura. Também categoriza essas informações em pontos de vista e,
 quando apropriado, descreve possíveis pontos de correspondência entre os pontos
 de vista. Embora introduza uma complexidade substancial, essa amplitude é a
-principal força do <span class=SpellE>DoDAF</span>. De certa forma, o <span
-class=SpellE>DoDAF</span> pode ser visto como uma enorme lista de itens que
+principal força do <span class="SpellE">DoDAF</span>. De certa forma, o <span class="SpellE">DoDAF</span> pode ser visto como uma enorme lista de itens que
 podem ser úteis para capturar ou pensar no desenvolvimento e modelagem da arquitetura
 de um sistema. Como em qualquer notação de modelagem, os usuários devem decidir
 por si mesmos os tipos de modelos a criar, o nível de detalhe e assim por
-diante. O <span class=SpellE>DoDAF</span> oferece alguns conselhos nesse
+diante. O <span class="SpellE">DoDAF</span> oferece alguns conselhos nesse
 sentido, discutindo diferentes usos para modelos de arquitetura e os pontos de
 vista que são (total ou parcialmente) aplicáveis a esse uso. No entanto, mesmo
-com esse conselho, os usuários ainda precisam decidir como querem usar o <span
-class=SpellE>DoDAF</span> caso a caso.</p>
-
-<p class=MsoNormal>O <span class=SpellE>DoDAF</span>, em geral, não exige
+com esse conselho, os usuários ainda precisam decidir como querem usar o <span class="SpellE">DoDAF</span> caso a caso.</p>
+<p>O <span class="SpellE">DoDAF</span>, em geral, não exige
 nenhum método ou notação específica para documentar os vários pontos de vista.
 Portanto, seus usuários podem escolher qualquer subconjunto dos pontos de vista
 que desejam e documentá-los usando qualquer notação ou ferramenta que desejarem.
-Para seu crédito, a especificação <span class=SpellE>DoDAF</span> fornece
+Para seu crédito, a especificação <span class="SpellE">DoDAF</span> fornece
 exemplos para cada ponto de vista, incluindo exemplos UML. No entanto, esses
 exemplos raramente exercem todos os detalhes possíveis que podem ser capturados
 em uma visão. Seguir os exemplos de perto resultaria em um conjunto de opiniões
-que deixaria de fora detalhes importantes. Para fortalecer a conexão entre o <span
-class=SpellE>DoDAF</span> e o UML, o OMG apresentou um pedido de propostas para
-perfis UML do <span class=SpellE>DoDAF</span> (<span class=SpellE>Object</span>
-Management <span class=SpellE>Group</span> 2005). No entanto, UML não é ideal
-para todos os pontos de vista <span class=SpellE>DoDAF</span> (UML não possui
+que deixaria de fora detalhes importantes. Para fortalecer a conexão entre o <span class="SpellE">DoDAF</span> e o UML, o OMG apresentou um pedido de propostas para
+perfis UML do <span class="SpellE">DoDAF</span> (<span class="SpellE">Object</span>
+Management <span class="SpellE">Group</span> 2005). No entanto, UML não é ideal
+para todos os pontos de vista <span class="SpellE">DoDAF</span> (UML não possui
 um diagrama tabular que funcione para os pontos de vista matriciais, por
 exemplo). Os usuários devem selecionar as notações e então pesar as vantagens e
 desvantagens de sua escolha. Escolher várias anotações aumentará a dificuldade
 de coordena-las. Selecionar uma única notação pode deixar de fora detalhes
 importantes ou tornar alguns pontos de vista complicados.</p>
-
-<p class=MsoNormal><i>Mensagem de conclusão</i>. Comparado à simplificação do
+<p><i>Mensagem de conclusão</i>. Comparado à simplificação do
 IEEE 1471, o DoDAF adota a mesma abordagem de alto nível, mas entra em muito
 mais detalhes. Ele é otimizado para capturar os relacionamentos entre pessoas,
 organizações, decisões de design de sistemas e padrões técnicos para sistemas
@@ -973,23 +824,20 @@ complexos e compostos. Ele fornece aos usuários uma quantidade extensa de
 informações sobre <i>que </i>tipos de coisas capturar ao desenvolver uma
 arquitetura, mas muito menos sobre <i>como </i>capturar essas informações ou
 avaliar os resultados. Extensões adicionais ao padrão, como o já mencionado
-mapeamento das vistas <span class=SpellE>DoDAF</span> para UML, podem preencher
+mapeamento das vistas <span class="SpellE">DoDAF</span> para UML, podem preencher
 essa lacuna. Devido ao amplo escopo do padrão, pode ser difícil para os
 usuários identificar as visualizações importantes a serem capturadas para um
 sistema específico. Por causa de sua especificidade, pode dar aos usuários uma
 falsa sensação de segurança — que tudo foi coberto quando, na verdade, há
 algumas preocupações com as partes interessadas que estão sendo prejudicadas.
 Uma solução para isso é focar primeiro nas partes interessadas e preocupações
-(como sugere o IEEE 1471) e então identificar quais visões <span class=SpellE>DoDAF</span>
+(como sugere o IEEE 1471) e então identificar quais visões <span class="SpellE">DoDAF</span>
 correspondem a essas preocupações.</p>
-
-<p class=MsoNormal><b>TOGAF: O Framework de Arquitetura de Grupos Abertos<o:p></o:p></b></p>
-
-<p class=MsoNormal>O Open Group Architecture Framework (TOGAF)<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch16.html#ftn.CHP-16-FN-1"><b><sup>[23]</sup></b></a>
+<p><b>TOGAF: O Framework de Arquitetura de Grupos Abertos</b></p>
+<p>O Open Group Architecture Framework (TOGAF)<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch16.html#ftn.CHP-16-FN-1"><b><sup>[23]</sup></b></a>
 (The Open Group 2003) é o produto de um esforço colaborativo iterativo dos
 membros do The Open Group, um conjunto de mais de 200 empresas e outras
-organizações. TOGAF é um &quot;framework de arquitetura empresarial&quot;. Ele
+organizações. TOGAF é um "framework de arquitetura empresarial". Ele
 leva em conta preocupações além de hardware e software, como fatores humanos e
 considerações de negócios. Arquiteturas empresariais tendem a focar em soluções
 organizacionais para implementar objetivos de negócios. Elementos em uma
@@ -1001,30 +849,27 @@ por diante são consistentes com as discutidas acima no contexto do IEEE 1471.
 Várias versões do TOGAF foram desenvolvidas ao longo dos anos; Cada versão
 cresceu para abranger mais aspectos da arquitetura. A versão 8 do TOGAF
 engloba:</p>
-
-<ul style='margin-top:0cm' type=disc>
- <li class=MsoNormal style='mso-list:l18 level1 lfo470;tab-stops:list 36.0pt'><b>Preocupações
+<ul style="margin-top:0cm" type="disc">
+<li><b>Preocupações
      de negócios</b>, que abordam estratégias de negócios, organizações e
      processos.</li>
- <li class=MsoNormal style='mso-list:l18 level1 lfo470;tab-stops:list 36.0pt'><b>Preocupações
+<li><b>Preocupações
      com aplicações</b>, que abordam aplicações a serem implantadas, suas
      interações e suas relações com processos de negócios.</li>
- <li class=MsoNormal style='mso-list:l18 level1 lfo470;tab-stops:list 36.0pt'><b>Preocupações
+<li><b>Preocupações
      com dados</b>, que abordam a estrutura dos ativos físicos e lógicos de uma
      organização e os recursos que gerenciam esses ativos.</li>
- <li class=MsoNormal style='mso-list:l18 level1 lfo470;tab-stops:list 36.0pt'><b>Preocupações
+<li><b>Preocupações
      tecnológicas</b>, que abordam questões de infraestrutura e middleware.</li>
 </ul>
-
-<p class=MsoNormal>O TOGAF consiste em três elementos principais: um processo
+<p>O TOGAF consiste em três elementos principais: um processo
 de desenvolvimento de arquitetura chamado ADM (método de desenvolvimento de
-arquitetura); um &quot;repositório virtual&quot; de ativos de arquitetura (como
+arquitetura); um "repositório virtual" de ativos de arquitetura (como
 modelos, padrões e descrições de arquitetura) extraídos de arquiteturas
 desenvolvidas na prática, chamado de Continuum Empresarial; e uma base de
 recursos composta por diretrizes, modelos, informações de contexto e assim por
 diante para auxiliar as empresas a seguirem o ADM.</p>
-
-<p class=MsoNormal>O centro do TOGAF é o ADM, um processo para desenvolver
+<p>O centro do TOGAF é o ADM, um processo para desenvolver
 arquiteturas empresariais. Como muitos outros processos modernos de software,
 como processos baseados em modelos espiralados (Boehm 1988) e RUP (Kruchten
 2003), o ADM é iterativo, ou seja, as atividades são visitadas e revisitadas,
@@ -1032,9 +877,7 @@ com cada iteração subsequente refinando decisões tomadas em versões anterior
 Ele recomenda uma sequência de etapas e atividades que devem ser tomadas, mas
 deixa muito para a organização implementadora — como definir o escopo do
 projeto, como tomar decisões dentro dessas fases, e assim por diante. Como
-mostrado na <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch16.html#togaf_adm_process_main_steps_open_parent"
-title="Figure&nbsp;16-6.&nbsp;TOGAF ADM process main steps (redrawn based on TOGAF specification)."><b>Figura
+mostrado na <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch16.html#togaf_adm_process_main_steps_open_parent" title="Figure 16-6. TOGAF ADM process main steps (redrawn based on TOGAF specification)."><b>Figura
 16-6</b></a>, existem oito fases principais do ADM, começando com a Visão de
 Arquitetura (que é um esforço para definir o que será feito e alinhar a
 organização a esses objetivos). Fases subsequentes prosseguem com a elaboração
@@ -1050,39 +893,26 @@ implementação são gerenciados, tudo isso no contexto dos ativos, pessoal e
 capacidades da organização. A fase final, Gestão de Mudanças de Arquitetura,
 aborda a avaliação dos esforços anteriores e a decisão de como e se prosseguir
 por outra iteração do processo.</p>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+<p><span><!--[if gte vml 1]><v:shape
  id="Imagem_x0020_399" o:spid="_x0000_i1035" type="#_x0000_t75" alt="Etapas principais do processo ADM do TOGAF (redesenhadas com base na especificação TOGAF)."
  style='width:411.6pt;height:408.6pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap16-ptbr_arquivos/image006.png" o:title="Etapas principais do processo ADM do TOGAF (redesenhadas com base na especificação TOGAF)"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=549 height=545
-src="cap16-ptbr_arquivos/image006.png"
-alt="Etapas principais do processo ADM do TOGAF (redesenhadas com base na especificação TOGAF)."
-v:shapes="Imagem_x0020_399"><![endif]></span></p>
-
-<p class=MsoNormal><b>Figura 16-6.&nbsp;Etapas principais do processo ADM do
+</v:shape><![endif]--><?if !vml?><img alt="Etapas principais do processo ADM do TOGAF (redesenhadas com base na especificação TOGAF)." border="0" height="545" src="cap16-ptbr_arquivos/image006.png" v:shapes="Imagem_x0020_399" width="549"/><?endif?></span></p>
+<p><b>Figura 16-6. Etapas principais do processo ADM do
 TOGAF (redesenhadas com base na especificação TOGAF).</b></p>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+<p><span><!--[if gte vml 1]><v:shape
  id="Imagem_x0020_398" o:spid="_x0000_i1034" type="#_x0000_t75" alt="Continuum Empresarial TOGAF, consistindo no Continuum de Arquitetura e no Continuum de Soluções (redesenhado com base na especificação TOGAF)."
  style='width:411.6pt;height:168pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap16-ptbr_arquivos/image007.png" o:title="Continuum Empresarial TOGAF, consistindo no Continuum de Arquitetura e no Continuum de Soluções (redesenhado com base na especificação TOGAF)"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=549 height=224
-src="cap16-ptbr_arquivos/image007.png"
-alt="Continuum Empresarial TOGAF, consistindo no Continuum de Arquitetura e no Continuum de Soluções (redesenhado com base na especificação TOGAF)."
-v:shapes="Imagem_x0020_398"><![endif]></span></p>
-
-<p class=MsoNormal><b>Figura 16-7.&nbsp;Continuum Empresarial TOGAF,
+</v:shape><![endif]--><?if !vml?><img alt="Continuum Empresarial TOGAF, consistindo no Continuum de Arquitetura e no Continuum de Soluções (redesenhado com base na especificação TOGAF)." border="0" height="224" src="cap16-ptbr_arquivos/image007.png" v:shapes="Imagem_x0020_398" width="549"/><?endif?></span></p>
+<p><b>Figura 16-7. Continuum Empresarial TOGAF,
 consistindo no Continuum de Arquitetura e no Continuum de Soluções (redesenhado
 com base na especificação TOGAF).</b></p>
-
-<p class=MsoNormal>A segunda grande parte do TOGAF é o &quot;Continuum
-Empresarial&quot;. O Continuum Empresarial atua como um repositório de ativos —
+<p>A segunda grande parte do TOGAF é o "Continuum
+Empresarial". O Continuum Empresarial atua como um repositório de ativos —
 recursos arquitetônicos e soluções conhecidas. Como tal, consiste em duas
 partes: o Continuum de Arquitetura e o Continuum de Soluções, conforme mostrado
-na <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch16.html#togaf_enterprise_continuum_comma_consist"
-title="Figure&nbsp;16-7.&nbsp;TOGAF Enterprise Continuum, consisting of the Architecture Continuum and the Solutions Continuum (redrawn based on TOGAF specification)."><b>Figura
+na <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch16.html#togaf_enterprise_continuum_comma_consist" title="Figure 16-7. TOGAF Enterprise Continuum, consisting of the Architecture Continuum and the Solutions Continuum (redrawn based on TOGAF specification)."><b>Figura
 16-7</b></a>. De forma geral, os elementos do lado esquerdo do contínuo são
 mais tecnológicos e concretos; Os elementos do lado direito abordam questões
 empresariais e organizacionais. Por meio do Modelo de Referência Técnica e da
@@ -1091,18 +921,16 @@ tipos de componentes, serviços e padrões que podem ser encontrados ao longo do
 continuum empresarial. Esses incluem desde interpretadores de linha de comando
 até linguagens de programação, e-mail eletrônico e sistemas de gerenciamento de
 configuração.</p>
-
-<p class=MsoNormal>A terceira grande parte do TOGAF é a base de recursos do
+<p>A terceira grande parte do TOGAF é a base de recursos do
 TOGAF, que é um conjunto de informações e recursos úteis que podem ser
 utilizados no acompanhamento do processo ADM. Inclui conselhos sobre como
 configurar conselhos e contratos para gerenciar arquitetura, checklists para
 várias fases do processo ADM, um catálogo de diferentes modelos existentes para
 avaliar arquiteturas, informações sobre como identificar e priorizar diferentes
 habilidades necessárias para desenvolver arquiteturas, e muito mais.</p>
-
-<p class=MsoNormal>O TOGAF se distingue de outras abordagens por seu grande
+<p>O TOGAF se distingue de outras abordagens por seu grande
 tamanho e amplo escopo; o resumo nesta seção cobre apenas os principais
-elementos do padrão. O TOGAF foca em<span style='mso-spacerun:yes'> 
+elementos do padrão. O TOGAF foca em<span> 
 </span>arquitetura <i>empresarial</i>, que é diferente em caráter do tipo de
 arquitetura de software discutido neste livro. A arquitetura empresarial é
 tanto sobre a arquitetura de uma organização quanto sobre a arquitetura de seus
@@ -1113,8 +941,7 @@ diversificado de melhores práticas para arquitetura. Ele prescreve não apenas
 um processo de desenvolvimento de arquitetura, mas define uma grande variedade
 de visões e preocupações, bem como elementos de solução que podem ser usados
 para satisfazer essas preocupações.</p>
-
-<p class=MsoNormal><i>Mensagem de conclusão</i>. O TOGAF complementa outras
+<p><i>Mensagem de conclusão</i>. O TOGAF complementa outras
 abordagens arquitetônicas ao levar em conta mais preocupações empresariais e
 organizacionais. Sua abordagem de alto nível, focada em arquitetura
 empresarial, significa que é melhor usada para lidar com elementos e ativos
@@ -1123,10 +950,8 @@ aplicações de software. Assim como o DoDAF, o TOGAF oferece um conjunto
 substancial de melhores práticas a serem seguidas e listas de verificação para
 avaliação, mas os usuários individuais são responsáveis pelos detalhes. Seguir
 o TOGAF ajuda a garantir a minuciosidade, mas não necessariamente a qualidade.</p>
-
-<p class=MsoNormal><b>RM-ODP<o:p></o:p></b></p>
-
-<p class=MsoNormal>RM-ODP (ISO/IEC 1998) é uma norma ISO para descrever
+<p><b>RM-ODP</b></p>
+<p>RM-ODP (ISO/IEC 1998) é uma norma ISO para descrever
 sistemas de processamento distribuído aberto (ODP). Embora as características
 dos sistemas ODP sejam descritas em várias páginas do padrão RM-ODP, geralmente
 podem ser descritos como sistemas de informação desenvolvidos para rodar em um
@@ -1134,52 +959,40 @@ ambiente de nós de processamento independentes e heterogêneos conectados por
 uma rede. Principalmente, o padrão RM-ODP define cinco pontos de vista e
 descreve linguagens de pontos de vista associadas para documentar a arquitetura
 de um sistema ODP. Esses pontos de vista são:</p>
-
-<ul style='margin-top:0cm' type=disc>
- <li class=MsoNormal style='mso-list:l95 level1 lfo471;tab-stops:list 36.0pt'>Enterprise:
+<ul style="margin-top:0cm" type="disc">
+<li>Enterprise:
      Um ponto de vista focado no sistema, seu ambiente e seu contexto ao redor.</li>
- <li class=MsoNormal style='mso-list:l95 level1 lfo471;tab-stops:list 36.0pt'>Informação:
+<li>Informação:
      Um ponto de vista focado em informação e processamento de informações.</li>
- <li class=MsoNormal style='mso-list:l95 level1 lfo471;tab-stops:list 36.0pt'>Computacional:
+<li>Computacional:
      Um ponto de vista focado na estrutura arquitetônica do sistema e em como
      diferentes componentes ou objetos são distribuídos entre os hosts.</li>
- <li class=MsoNormal style='mso-list:l95 level1 lfo471;tab-stops:list 36.0pt'>Engenharia:
+<li>Engenharia:
      Um ponto de vista focado na infraestrutura necessária para apoiar a
      distribuição.</li>
- <li class=MsoNormal style='mso-list:l95 level1 lfo471;tab-stops:list 36.0pt'>Tecnologia:
+<li>Tecnologia:
      Um ponto de vista focado nas escolhas tecnológicas para o sistema.</li>
 </ul>
-
-<p class=MsoNormal>Esses pontos de vista (e suas línguas associadas) possuem
+<p>Esses pontos de vista (e suas línguas associadas) possuem
 vários níveis de concretização. Os pontos de vista computacionais e de
 engenharia são mais concretos e, portanto, mais restritos, pois têm como
 objetivo ajudar a garantir a interoperabilidade e portabilidade dos
 componentes. Os pontos de vista empresarial e de informação são mais gerais e,
 portanto, suas linguagens são menos restritas.</p>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+<p><span><!--[if gte vml 1]><v:shape
  id="Imagem_x0020_397" o:spid="_x0000_i1033" type="#_x0000_t75" alt="Exemplo de visão empresarial RM-ODP."
  style='width:411.6pt;height:205.2pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap16-ptbr_arquivos/image008.png" o:title="Exemplo de visão empresarial RM-ODP"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=549 height=274
-src="cap16-ptbr_arquivos/image008.png"
-alt="Exemplo de visão empresarial RM-ODP." v:shapes="Imagem_x0020_397"><![endif]></span></p>
-
-<p class=MsoNormal><b>Figura 16-8.&nbsp;Exemplo de visão empresarial RM-ODP.</b></p>
-
-<p class=MsoNormal><a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch16.html#sample_rm-odp_enterprise_view"
-title="Figure&nbsp;16-8.&nbsp;Sample RM-ODP enterprise view."><b>As figuras
+</v:shape><![endif]--><?if !vml?><img alt="Exemplo de visão empresarial RM-ODP." border="0" height="274" src="cap16-ptbr_arquivos/image008.png" v:shapes="Imagem_x0020_397" width="549"/><?endif?></span></p>
+<p><b>Figura 16-8. Exemplo de visão empresarial RM-ODP.</b></p>
+<p><a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch16.html#sample_rm-odp_enterprise_view" title="Figure 16-8. Sample RM-ODP enterprise view."><b>As figuras
 16-8</b></a> mostram uma visão empresarial RM-ODP de exemplo. Os elementos de
 visão empresarial incluem pessoal e componentes de aplicação de alto nível,
 remetendo aos tipos de elementos abordados pelo TOGAF. A visão empresarial
 analisa o sistema de forma holística, em termos de escopo geral e de seu lugar
 dentro da organização maior. Visões empresariais também podem descrever limites
 de agência—limites de responsabilidade ou controle.</p>
-
-<p class=MsoNormal>Em contraste, <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch16.html#sample_rm-odp_engineering_view"
-title="Figure&nbsp;16-9.&nbsp;Sample RM-ODP engineering view."><b>a Figura 16-9</b></a>
+<p>Em contraste, <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch16.html#sample_rm-odp_engineering_view" title="Figure 16-9. Sample RM-ODP engineering view."><b>a Figura 16-9</b></a>
 mostra um exemplo de visão de engenharia RM-ODP. Essa visão mostra como um
 sistema terrestre pode se comunicar com um módulo lunar por meio de um canal de
 comunicação complexo implementado por duas pilhas de rede comunicantes. Aqui,
@@ -1189,8 +1002,7 @@ diagramas, os diversos elementos e suas interconexões. A notação usada acima,
 com ovais e interconexões, é usada na especificação RM-ODP, mas não é canônica:
 Muitas notações diferentes (incluindo, por exemplo, UML) poderiam ser usadas
 para desenhar esses diagramas.</p>
-
-<p class=MsoNormal>Assim como o DoDAF e o TOGAF, RM-ODP foca em <i>que </i>tipos
+<p>Assim como o DoDAF e o TOGAF, RM-ODP foca em <i>que </i>tipos
 de coisas devem ser modeladas em uma arquitetura, mas não <i>especificamente
 como </i>essas coisas devem ser modeladas. No entanto, o RM-ODP vai um passo
 além desses dois padrões: em vez de prescrever uma notação específica para cada
@@ -1199,27 +1011,21 @@ que uma notação que descreve o ponto de vista deve ter. Portanto, linguagens d
 ponto de vista RM-ODP não são linguagens no sentido tradicional, mas sim
 conjuntos de requisitos para as línguas. O RM-ODP inclui uma especificação
 separada que descreve, em um nível muito alto, como várias linguagens formais
-de especificação [por exemplo, LOTOS (ISO 1989), Z (<span class=SpellE>Spivey</span>
-1988) ou SDL-92 (<span class=SpellE>Telecommunication</span> <span
-class=SpellE>Standardization</span> Sector <span class=SpellE>of</span> ITU
+de especificação [por exemplo, LOTOS (ISO 1989), Z (<span class="SpellE">Spivey</span>
+1988) ou SDL-92 (<span class="SpellE">Telecommunication</span> <span class="SpellE">Standardization</span> Sector <span class="SpellE">of</span> ITU
 2002)] podem ser usadas para descrever a semântica arquitetônica para
 arquiteturas RM-ODP. Aqui, ele lista um conceito RM-ODP e, em seguida,
 identifica um conceito formal de linguagem de especificação que poderia ser
 usado para implementar esse conceito. Esse nível de correspondência não é
 suficiente para dar aos usuários orientações sérias sobre como aproveitar essas
 linguagens formais de especificação para implementar o RM-ODP.</p>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+<p><span><!--[if gte vml 1]><v:shape
  id="Imagem_x0020_396" o:spid="_x0000_i1032" type="#_x0000_t75" alt="Exemplo de visão de engenharia RM-ODP."
  style='width:411.6pt;height:316.2pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap16-ptbr_arquivos/image009.png" o:title="Exemplo de visão de engenharia RM-ODP"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=549 height=422
-src="cap16-ptbr_arquivos/image009.png"
-alt="Exemplo de visão de engenharia RM-ODP." v:shapes="Imagem_x0020_396"><![endif]></span></p>
-
-<p class=MsoNormal><b>Figura 16-9.&nbsp;Exemplo de visão de engenharia RM-ODP.</b></p>
-
-<p class=MsoNormal><i>Mensagem de conclusão</i> Como padrão, o RM-ODP é muito
+</v:shape><![endif]--><?if !vml?><img alt="Exemplo de visão de engenharia RM-ODP." border="0" height="422" src="cap16-ptbr_arquivos/image009.png" v:shapes="Imagem_x0020_396" width="549"/><?endif?></span></p>
+<p><b>Figura 16-9. Exemplo de visão de engenharia RM-ODP.</b></p>
+<p><i>Mensagem de conclusão</i> Como padrão, o RM-ODP é muito
 semelhante ao DoDAF, embora o número de pontos de vista seja mais limitado e
 focado. Assim como o DoDAF, uma arquitetura especificada de acordo com o padrão
 RM-ODP pode ou não alcançar certas qualidades; o principal valor agregado pelo
@@ -1230,80 +1036,57 @@ garantir essas qualidades. Embora alguns mapeamentos entre os conceitos RM-ODP
 e métodos formais sejam especificados, existe uma grande lacuna entre eles que
 deve ser preenchida por usuários individuais. Essa lacuna é grande demais para
 afirmar que o RM-ODP apoia particularmente as atividades de análise formal.</p>
-
-<p class=MsoNormal><b>Padrões Notacionais<o:p></o:p></b></p>
-
-<p class=MsoNormal>Padrões notacionais definem notações padrão para anotar
+<p><b>Padrões Notacionais</b></p>
+<p>Padrões notacionais definem notações padrão para anotar
 decisões de projeto. Padrões notacionais podem ser usados para
 realizar/implementar certos elementos de padrões conceituais; por exemplo, uma
-notação como UML pode ser usada como uma forma de documentar as várias visões <span
-class=SpellE>DoDAF</span>. De certa forma, qualquer linguagem codificada de
-descrição arquitetônica, como aquelas pesquisadas <span class=SpellE>em<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch06.html"
-title="Chapter&nbsp;6.&nbsp;Modeling"><b>Capítulo</b><b> 6</b></a></span>, pode
+notação como UML pode ser usada como uma forma de documentar as várias visões <span class="SpellE">DoDAF</span>. De certa forma, qualquer linguagem codificada de
+descrição arquitetônica, como aquelas pesquisadas <span class="SpellE">em<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch06.html" title="Chapter 6. Modeling"><b>Capítulo</b><b> 6</b></a></span>, pode
 ser visto como um padrão notacional de fato. Nesta seção, examinamos anotações
 que realmente passaram por um processo ou comitê de padronização e que ganharam
 notoriedade ou uso por serem padrões.</p>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+<p><span><!--[if gte vml 1]><v:shape
  id="Imagem_x0020_395" o:spid="_x0000_i1031" type="#_x0000_t75" alt="Diagrama UML sem perfil."
  style='width:411.6pt;height:229.8pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap16-ptbr_arquivos/image010.png" o:title="Diagrama UML sem perfil"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=549 height=306
-src="cap16-ptbr_arquivos/image010.png" alt="Diagrama UML sem perfil." v:shapes="Imagem_x0020_395"><![endif]></span></p>
-
-<p class=MsoNormal><b>Figuras 16-10.&nbsp;Diagrama UML sem perfil.</b></p>
-
-<p class=MsoNormal><b>UML — A Linguagem Unificada de Modelagem<o:p></o:p></b></p>
-
-<p class=MsoNormal>Abordamos vários aspectos do UML (<span class=SpellE>Booch</span>,
-<span class=SpellE>Rumbaugh</span> e Jacobson 2005) ao longo dos capítulos
-anteriores deste livro: sua notação, suas visualizações, seu metamodelo (<span
-class=SpellE>Object</span> Management <span class=SpellE>Group</span> 2002) e
+</v:shape><![endif]--><?if !vml?><img alt="Diagrama UML sem perfil." border="0" height="306" src="cap16-ptbr_arquivos/image010.png" v:shapes="Imagem_x0020_395" width="549"/><?endif?></span></p>
+<p><b>Figuras 16-10. Diagrama UML sem perfil.</b></p>
+<p><b>UML — A Linguagem Unificada de Modelagem</b></p>
+<p>Abordamos vários aspectos do UML (<span class="SpellE">Booch</span>,
+<span class="SpellE">Rumbaugh</span> e Jacobson 2005) ao longo dos capítulos
+anteriores deste livro: sua notação, suas visualizações, seu metamodelo (<span class="SpellE">Object</span> Management <span class="SpellE">Group</span> 2002) e
 assim por diante. Esta seção focará no UML como padrão e descreverá suas
 vantagens e desvantagens sob essa perspectiva.</p>
-
-<p class=MsoNormal>UML fornece uma <i>sintaxe padrão </i><span
-style='mso-spacerun:yes'> </span>para descrever uma grande variedade de
+<p>UML fornece uma <i>sintaxe padrão </i><span> </span>para descrever uma grande variedade de
 aspectos de sistemas de software. O UML básico (sem extensões) prescreve
 pouquíssima semântica para acompanhar essa sintaxe. É possível que o mesmo
 elemento ou diagrama signifique coisas totalmente diferentes. Por exemplo, o
 conector de seta tracejada em UML indica uma dependência entre dois elementos
-vinculados. Essa dependência pode significar &quot;necessário para
-construir&quot;, &quot;plugs-em&quot; ou &quot;chamadas&quot;. Não há como, sem
+vinculados. Essa dependência pode significar "necessário para
+construir", "plugs-em" ou "chamadas". Não há como, sem
 contexto ou informação adicional, de um stakeholder olhar para uma seta de
 dependência no UML e ter uma ideia clara do que isso significa. Essa situação é
-retratada na <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch16.html#uml_diagram_without_profile"
-title="Figure&nbsp;16-10.&nbsp;UML diagram without profile."><b>Figura 16-10 </b></a>—
+retratada na <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch16.html#uml_diagram_without_profile" title="Figure 16-10. UML diagram without profile."><b>Figura 16-10 </b></a>—
 todas as dependências são especificadas, mas o leitor sabe pouco sobre elas.</p>
-
-<p class=MsoNormal>UML que segue apenas o padrão básico estabelece uma
+<p>UML que segue apenas o padrão básico estabelece uma
 representação simbólica comum dos elementos e suas relações. O fato de um
 sistema ser descrito em UML implica pouco sobre a qualidade desse sistema —
 bons projetos podem ser documentados em UML tão facilmente quanto maus.</p>
-
-<p class=MsoNormal>O valor do UML pode ser substancialmente aumentado por meio
+<p>O valor do UML pode ser substancialmente aumentado por meio
 do uso de extensões e perfis UML. Lembre-se de que um perfil UML é um conjunto
 coordenado de extensões para UML. De certa forma, perfis UML são padrões que
 especializam o padrão base UML para diferentes domínios. A OMG, a organização
 que gerencia o padrão UML, também gerencia diversos perfis UML de jure padrão,
 incluindo perfis para sistemas CORBA, integração de aplicações empresariais e
-engenharia de sistemas. Este último, chamado <span class=SpellE>SysML</span>, é
+engenharia de sistemas. Este último, chamado <span class="SpellE">SysML</span>, é
 discutido abaixo.</p>
-
-<p class=MsoNormal>Perfis podem incluir estereótipos, valores marcados e
+<p>Perfis podem incluir estereótipos, valores marcados e
 restrições. Estereótipos UML permitem que os usuários especializem símbolos UML
 existentes para adicionar semântica específica de projeto ou domínio.
 Estereótipos podem especializar a seta de dependência para significar
 &lt;&lt;chamadas&gt;&gt; ou &lt;&lt;necessário-de-construir&gt;&gt; ou
-&lt;&lt;conecta-se&gt;&gt;. Por exemplo, <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch16.html#uml_diagram_with_profile"
-title="Figure&nbsp;16-11.&nbsp;UML diagram with profile."><b><span
-style='mso-spacerun:yes'> </span>as Figuras 16-11</b></a> mostram o mesmo
-diagrama UML das <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch16.html#uml_diagram_without_profile"
-title="Figure&nbsp;16-10.&nbsp;UML diagram without profile."><b>Figuras 16-10</b></a>,
+&lt;&lt;conecta-se&gt;&gt;. Por exemplo, <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch16.html#uml_diagram_with_profile" title="Figure 16-11. UML diagram with profile."><b><span> </span>as Figuras 16-11</b></a> mostram o mesmo
+diagrama UML das <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch16.html#uml_diagram_without_profile" title="Figure 16-10. UML diagram without profile."><b>Figuras 16-10</b></a>,
 exceto que as dependências são estereotipadas. Esse diagrama é muito mais
 legível e fornece substancialmente mais informações. Para ser totalmente útil,
 no entanto, um perfil UML para um projeto <i>deve </i>ser acompanhado de
@@ -1312,25 +1095,20 @@ valores marcados e restrições, bem como seu significado. Com o uso adequado de
 perfis, uma descrição UML torna-se uma ferramenta valiosa para comunicação com
 stakeholders e compreensão do sistema, além de ter impactos positivos na
 rastreabilidade e análise.</p>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+<p><span><!--[if gte vml 1]><v:shape
  id="Imagem_x0020_394" o:spid="_x0000_i1030" type="#_x0000_t75" alt="Diagrama UML com perfil."
  style='width:411.6pt;height:219.6pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap16-ptbr_arquivos/image011.png" o:title="Diagrama UML com perfil"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=549 height=293
-src="cap16-ptbr_arquivos/image011.png" alt="Diagrama UML com perfil." v:shapes="Imagem_x0020_394"><![endif]></span></p>
-
-<p class=MsoNormal><b>Figuras 16-11.&nbsp;Diagrama UML com perfil.</b></p>
-
-<p class=MsoNormal>Mesmo com perfis, porém, o UML e suas ferramentas associadas
+</v:shape><![endif]--><?if !vml?><img alt="Diagrama UML com perfil." border="0" height="293" src="cap16-ptbr_arquivos/image011.png" v:shapes="Imagem_x0020_394" width="549"/><?endif?></span></p>
+<p><b>Figuras 16-11. Diagrama UML com perfil.</b></p>
+<p>Mesmo com perfis, porém, o UML e suas ferramentas associadas
 (atualmente) não são adequados para a verificação de propriedades de qualidade
 específicas. O sistema descrito vai atender aos seus requisitos? Ser eficiente?
 Ser econômico? Ficar livre do impasse? Para determinar respostas a perguntas
 como essas, métodos adicionais além do UML, que vão desde inspeções até testes
 e verificação formal, devem ser integrados separadamente ao processo de
 desenvolvimento.</p>
-
-<p class=MsoNormal><i>Mensagem de conclusão</i>. UML não é uma panaceia para
+<p><i>Mensagem de conclusão</i>. UML não é uma panaceia para
 desenvolvimento de software baseado em arquitetura. O UML fornece um conjunto
 de notações simbólicas comuns para que arquitetos anotem e comuniquem certos
 tipos de decisões de design. Os tipos de diagramas fornecidos no UML permitem
@@ -1342,59 +1120,43 @@ podem decorar diagramas existentes, mas não podem criar diagramas totalmente
 novos. Modelar um sistema em UML oferece poucas garantias sobre esse sistema —
 o UML pode ser usado para documentar tanto arquiteturas boas quanto ruins
 (embora o UML facilite a compreensão, comunicação e avaliação de arquiteturas).</p>
-
-<p class=MsoNormal><span class=SpellE><b>SysML</b></span><b><o:p></o:p></b></p>
-
-<p class=MsoNormal>Apesar da grande variedade de conceitos de modelagem
+<p><span class="SpellE"><b>SysML</b></span><b></b></p>
+<p>Apesar da grande variedade de conceitos de modelagem
 suportados no UML, diferentes esforços de engenharia exigem ainda mais
-amplitude de modelagem. Um bom exemplo disso é o <span class=SpellE>SysML</span>
-(<span class=SpellE>SysML</span> <span class=SpellE>Partners</span> 2005). O <span
-class=SpellE>SysML</span> é um esforço de uma coalizão de mais de vinte
+amplitude de modelagem. Um bom exemplo disso é o <span class="SpellE">SysML</span>
+(<span class="SpellE">SysML</span> <span class="SpellE">Partners</span> 2005). O <span class="SpellE">SysML</span> é um esforço de uma coalizão de mais de vinte
 organizações de engenharia (principalmente corporações, mas também
 universidades e outras organizações) (SysML.org 2007) para personalizar UML
-para engenharia de sistemas. Com relação à padronização, a comunidade <span
-class=SpellE>SysML</span> adotou uma abordagem interessante de duas frentes. Um
-grupo está desenvolvendo e divulgando uma versão de código aberto do padrão <span
-class=SpellE>SysML</span> sob uma licença que permite aos usuários redistribuir
-e modificar o <span class=SpellE>SysML</span> por conta própria. A partir dessa
-versão de código aberto, foi criada uma versão oficial padrão OMG do <span
-class=SpellE>SysML</span>. &quot;OMG <span class=SpellE>SysML</span>&quot; é
+para engenharia de sistemas. Com relação à padronização, a comunidade <span class="SpellE">SysML</span> adotou uma abordagem interessante de duas frentes. Um
+grupo está desenvolvendo e divulgando uma versão de código aberto do padrão <span class="SpellE">SysML</span> sob uma licença que permite aos usuários redistribuir
+e modificar o <span class="SpellE">SysML</span> por conta própria. A partir dessa
+versão de código aberto, foi criada uma versão oficial padrão OMG do <span class="SpellE">SysML</span>. "OMG <span class="SpellE">SysML</span>" é
 uma marca registrada e evolui, assim como o UML, através dos comitês e
 processos de normas do OMG.</p>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+<p><span><!--[if gte vml 1]><v:shape
  id="Imagem_x0020_393" o:spid="_x0000_i1029" type="#_x0000_t75" alt="Diagrama de requisitos do SysML para módulo lunar."
  style='width:411.6pt;height:468.6pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap16-ptbr_arquivos/image012.png" o:title="Diagrama de requisitos do SysML para módulo lunar"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=549 height=625
-src="cap16-ptbr_arquivos/image012.png"
-alt="Diagrama de requisitos do SysML para módulo lunar." v:shapes="Imagem_x0020_393"><![endif]></span></p>
-
-<p class=MsoNormal><b>Figuras 16-12.&nbsp;Diagrama de requisitos do <span
-class=SpellE>SysML</span> para módulo lunar.</b></p>
-
-<p class=MsoNormal>Muitas pessoas e organizações percebem o UML como
+</v:shape><![endif]--><?if !vml?><img alt="Diagrama de requisitos do SysML para módulo lunar." border="0" height="625" src="cap16-ptbr_arquivos/image012.png" v:shapes="Imagem_x0020_393" width="549"/><?endif?></span></p>
+<p><b>Figuras 16-12. Diagrama de requisitos do <span class="SpellE">SysML</span> para módulo lunar.</b></p>
+<p>Muitas pessoas e organizações percebem o UML como
 tendencioso demais para software para modelar preocupações de engenharia de
 sistemas que incluem elementos como hardware, redes, organizações de
 desenvolvimento e assim por diante. Claro, muitos diagramas UML podem ser
 interpretados de maneiras que capturam essas preocupações (por exemplo, um
 diagrama de blocos tradicional de engenharia de sistemas se assemelha muito a
-um diagrama de classes em muitos aspectos). O <span class=SpellE>SysML</span>
+um diagrama de classes em muitos aspectos). O <span class="SpellE">SysML</span>
 inclui um subconjunto de UML, mas também o estende. Diagramas reutilizados do
 UML são os diagramas de atividade, classe, estrutura composta, pacote,
 sequência, máquina de estados e casos de uso. Dois desses diagramas são
-renomeados para <span class=SpellE>SysML</span>: diagramas de classes são
-chamados de diagramas de &quot;definição de blocos&quot; e diagramas de
-estrutura composta são chamados de diagramas de &quot;bloco interno&quot;. O <span
-class=SpellE>SysML</span> também adiciona estereótipos ao UML, além de dois
+renomeados para <span class="SpellE">SysML</span>: diagramas de classes são
+chamados de diagramas de "definição de blocos" e diagramas de
+estrutura composta são chamados de diagramas de "bloco interno". O <span class="SpellE">SysML</span> também adiciona estereótipos ao UML, além de dois
 novos tipos de diagramas: diagramas de requisitos e diagramas paramétricos.
 Diagramas de requisitos mostram os requisitos do sistema e suas relações com
 outros elementos. Diagramas paramétricos mostram restrições paramétricas entre
 elementos estruturais, que são úteis para análise de desempenho e quantitativa.</p>
-
-<p class=MsoNormal><a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch16.html#sysml_requirement_diagram_for_lunar_land"
-title="Figure&nbsp;16-12.&nbsp;SysML requirement diagram for Lunar Lander."><b>As
+<p><a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch16.html#sysml_requirement_diagram_for_lunar_land" title="Figure 16-12. SysML requirement diagram for Lunar Lander."><b>As
 figuras 16-12</b></a> mostram um diagrama de requisitos do SysML para a
 aplicação do módulo lunar. Este diagrama mostra apenas os requisitos e suas
 relações; um diagrama de requisitos mais complexo pode, na verdade, incluir
@@ -1405,10 +1167,7 @@ casos de uso. Sintaticamente, diagramas de requisitos reutilizam e especializam
 principalmente elementos dos diagramas de classes, usando estereótipos sobre
 classes e relacionamentos para tornar esses elementos específicos dos diagramas
 de requisitos.</p>
-
-<p class=MsoNormal><a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch16.html#sysml_parametric_diagram_for_lunar_lande"
-title="Figure&nbsp;16-13.&nbsp;SysML parametric diagram for Lunar Lander."><b>As
+<p><a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch16.html#sysml_parametric_diagram_for_lunar_lande" title="Figure 16-13. SysML parametric diagram for Lunar Lander."><b>As
 figuras 16-13</b></a> mostram um diagrama paramétrico SysML. Diagramas
 paramétricos são especializações dos diagramas de blocos internos do SysML —
 diagramas de estrutura composta em UML. Esses diagramas permitem que arquitetos
@@ -1419,19 +1178,13 @@ sistema quantitativamente. Por exemplo, vários elementos de armazenamento de
 estados (o <i>Relógio</i>, <i>o Estado do Módulo de Aterrissado</i>) fornecem
 valores para a equação do próximo estado, que é usada para calcular o próximo
 estado da simulação do módulo lunar.</p>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+<p><span><!--[if gte vml 1]><v:shape
  id="Imagem_x0020_392" o:spid="_x0000_i1028" type="#_x0000_t75" alt="Diagrama paramétrico SysML para módulo lunar."
  style='width:411.6pt;height:303.6pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap16-ptbr_arquivos/image013.png" o:title="Diagrama paramétrico SysML para módulo lunar"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=549 height=405
-src="cap16-ptbr_arquivos/image013.png"
-alt="Diagrama paramétrico SysML para módulo lunar." v:shapes="Imagem_x0020_392"><![endif]></span></p>
-
-<p class=MsoNormal><b>Figuras 16-13.&nbsp;Diagrama paramétrico <span
-class=SpellE>SysML</span> para módulo lunar.</b></p>
-
-<p class=MsoNormal>O desenvolvimento do SysML é consistente com nossa afirmação
+</v:shape><![endif]--><?if !vml?><img alt="Diagrama paramétrico SysML para módulo lunar." border="0" height="405" src="cap16-ptbr_arquivos/image013.png" v:shapes="Imagem_x0020_392" width="549"/><?endif?></span></p>
+<p><b>Figuras 16-13. Diagrama paramétrico <span class="SpellE">SysML</span> para módulo lunar.</b></p>
+<p>O desenvolvimento do SysML é consistente com nossa afirmação
 anterior de que UML não é necessariamente uma solução completa para modelagem
 arquitetônica. Os desenvolvedores do SysML deixaram de fora certos diagramas
 UML que acreditavam serem supérfluos ou desnecessários, e adicionaram novos
@@ -1444,9 +1197,8 @@ têm. Isso indica que mesmo um grande grupo de organizações influentes não po
 necessariamente forçar a adoção de qualquer padrão específico. Note também que
 até mesmo os novos diagramas SysML reutilizam e sobrecarregam símbolos UML
 existentes, provavelmente um compromisso para fornecer algum grau de suporte à
-modelagem em ferramentas que não são conscientes do <span class=SpellE>SysML</span>.</p>
-
-<p class=MsoNormal><i>Mensagem de conclusão</i>. SysML é um exemplo de como os
+modelagem em ferramentas que não são conscientes do <span class="SpellE">SysML</span>.</p>
+<p><i>Mensagem de conclusão</i>. SysML é um exemplo de como os
 padrões podem evoluir, mudar e se desmembrar. Ao reutilizar partes substanciais
 do padrão UML, os parceiros do SysML conseguiram economizar um enorme esforço,
 além de permitir que os usuários aplicassem seu conhecimento existente em UML
@@ -1457,12 +1209,8 @@ Por outro lado, eles reduziram a quantidade de suporte de ferramentas existente
 para os usuários. Mesmo padrões apoiados por uma quantidade substancial de
 organizações influentes ainda precisam conquistar muitos corações e mentes em
 méritos técnicos e comerciais para alcançar sucesso amplo.</p>
-
-<p class=MsoNormal><b>Um Conto de Dois Padrões<o:p></o:p></b></p>
-
-<p class=MsoNormal><a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch06.html"
-title="Chapter&nbsp;6.&nbsp;Modeling"><b>O capítulo 6</b></a> descreveu duas
+<p><b>Um Conto de Dois Padrões</b></p>
+<p><a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch06.html" title="Chapter 6. Modeling"><b>O capítulo 6</b></a> descreveu duas
 linguagens de modelagem, AADL (Feiler, Lewis e Vestal 2003) e ADML (Spencer
 2000), sob uma perspectiva técnica. No entanto, essas duas linguagens de
 modelagem também são padronizadas — AADL é padronizada pela Society of
@@ -1470,10 +1218,9 @@ Automotive Engineers (SAE) e ADML é padronizada pelo The Open Group. Ambos os
 padrões descrevem novas notações independentes que podem ser usadas para
 modelar arquiteturas. A AADL está se tornando cada vez mais bem-sucedida,
 enquanto a ADML efetivamente fracassou. Por que? A resposta não é
-necessariamente clara ou simples; <span class=GramE>Muitos</span> fatores
+necessariamente clara ou simples; <span class="GramE">Muitos</span> fatores
 relacionados estão interagindo aqui.</p>
-
-<p class=MsoNormal>AADL é uma linguagem complexa. Possui uma sintaxe rica e,
+<p>AADL é uma linguagem complexa. Possui uma sintaxe rica e,
 até certo ponto, visualizações gráficas ainda estão sendo desenvolvidas. No
 entanto, a principal motivação para adotar a AADL é que ela oferece capacidades
 e ferramentas de análise atraentes que não são fáceis de obter com outras
@@ -1489,14 +1236,12 @@ parece estar conquistando corações e mentes. Oferecer capacidades inovadoras,
 fazer uso criterioso de outros padrões e direcionar uma comunidade específica
 de usuários com necessidades que correspondem às capacidades únicas da AADL
 estão influenciando o crescimento da AADL.</p>
-
-<p class=MsoNormal>O ADML, comparado ao AADL, é relativamente simples. Do ponto
+<p>O ADML, comparado ao AADL, é relativamente simples. Do ponto
 de vista técnico, ele combina os conceitos centrais do Acme com algumas
 inovações em tipos e meta-propriedades e os benefícios de usar XML como
 meta-linguagem. Como padrão, o ADML não conseguiu adoção ampla, e o suporte e
 interoperabilidade de ferramentas previstos nunca surgiram.</p>
-
-<p class=MsoNormal>É difícil dizer o motivo. Ao contrário da AADL, as melhorias
+<p>É difícil dizer o motivo. Ao contrário da AADL, as melhorias
 do ADML em relação às tecnologias anteriores são incrementais. O ADML não era
 direcionado a um domínio ou comunidade de usuários específico, embora alguma
 documentação do ADML note sua utilidade na modelagem de arquitetura empresarial
@@ -1504,8 +1249,7 @@ e aponte deficiências no UML nesse aspecto. O ADML também pode ter sofrido
 devido à disponibilidade de alternativas contemporâneas como Acme, Darwin e
 xADL 1.0, falta de ferramentas iniciais para ajudar a motivar o crescimento da
 comunidade, entre outros.</p>
-
-<p class=MsoNormal>Em uma nota positiva, porém, muitos dos conceitos de ADML
+<p>Em uma nota positiva, porém, muitos dos conceitos de ADML
 acabaram surgindo no UML 2 (e, portanto, também no XMI). O UML já tinha uma
 enorme base de usuários, e essas contribuições reforçaram o suporte para
 modelagem estrutural que era considerado uma deficiência do UML 1.x. As ideias
@@ -1516,32 +1260,27 @@ as contribuições do ADML foram um encaixe natural, abordando desvantagens bem
 conhecidas do UML. Incorporar um padrão complexo com muitas ideias novas e
 conflitantes como AADL no UML provavelmente causaria muito mais atritos na
 comunidade UML e pode ser inviável.</p>
-
-<p class=MsoNormal>Há várias lições a serem aprendidas com a experiência da
+<p>Há várias lições a serem aprendidas com a experiência da
 AADL e da ADML. A padronização sozinha não garante o sucesso de uma abordagem.
 O sucesso depende em grande parte do tamanho e da paixão da comunidade de
 usuários em torno da abordagem, e a padronização é apenas uma forma de
 catalisar o desenvolvimento de uma comunidade. Outro elemento importante é
-&quot;preparar a bomba&quot; com suporte ao padrão: desenvolver ferramentas
+"preparar a bomba" com suporte ao padrão: desenvolver ferramentas
 iniciais, documentação e treinamento para um padrão, mesmo que não sejam perfeitos,
 pode atrair os primeiros adotantes muito mais do que uma simples especificação.
 Para melhorias incrementais, ou para melhorar deficiências em um padrão
 existente, geralmente é melhor focar esforços em melhorar ou evoluir o padrão
 existente, em vez de tentar desenvolver um novo padrão paralelo.</p>
-
-<p class=MsoNormal><b>Ferramentas Padrão<o:p></o:p></b></p>
-
-<p class=MsoNormal>Muitas culturas organizacionais padronizam uma ferramenta
+<p><b>Ferramentas Padrão</b></p>
+<p>Muitas culturas organizacionais padronizam uma ferramenta
 específica tanto quanto (ou mais que) abordagens mais abstratas. As corporações
 frequentemente avaliam um espectro de ferramentas e depois compram uma (ou
 poucas quantidades) delas em grande quantidade, e essa ferramenta se torna
 obrigatória para uso dentro da empresa. Ferramentas padrão tendem a ser padrões
 de fato, pois geralmente são desenvolvidas e controladas por uma única
 organização.</p>
-
-<p class=MsoNormal><b>Ferramentas UML padrão<o:p></o:p></b></p>
-
-<p class=MsoNormal>A ampla adoção do padrão UML geralmente induz as
+<p><b>Ferramentas UML padrão</b></p>
+<p>A ampla adoção do padrão UML geralmente induz as
 organizações a adotar uma ou mais ferramentas padrão para trabalhar com UML.
 Isso geralmente é motivado pelo desejo de consistência e interoperabilidade
 entre as organizações, além de pressões de mercado: organizações que compram
@@ -1550,36 +1289,31 @@ volume e negociar acordos de suporte aprimorados. O UML, no entanto, não está
 vinculado a nenhuma ferramenta específica. Ferramentas que se tornaram padrões de
 fato para edição UML incluem Rational Rose da IBM (Rational Software
 Corporation 2003), Microsoft Visio (Microsoft Corporation 2007), Telelogic
-System Architect (<span class=SpellE>Telelogic</span> AB 2007), <span
-class=SpellE>ArgoUML</span> (Argo/UML) e outras.</p>
-
-<p class=MsoNormal>Essas ferramentas variam em exclusividade no suporte ao UML.
-Ferramentas como <span class=SpellE>ArgoUML</span> e Rose focam seu suporte
+System Architect (<span class="SpellE">Telelogic</span> AB 2007), <span class="SpellE">ArgoUML</span> (Argo/UML) e outras.</p>
+<p>Essas ferramentas variam em exclusividade no suporte ao UML.
+Ferramentas como <span class="SpellE">ArgoUML</span> e Rose focam seu suporte
 quase exclusivamente em UML, enquanto ferramentas como Visio e System Architect
 suportam diagramas em muitas notações. Todas as ferramentas suportam a criação
 e manipulação de diagramas UML, geralmente por meio de uma interface gráfica
-point-<span class=SpellE>and</span>-click. A forma dessa interface — quais
+point-<span class="SpellE">and</span>-click. A forma dessa interface — quais
 opções de menu estão disponíveis e assim por diante — depende da ferramenta
 individual. O UML não padroniza como os usuários devem interagir com esses
 diagramas. Por exemplo, o Rose usa uma visão baseada em árvores para organizar
 diagramas dentro do modelo e das folhas de propriedades para decorar vários
 elementos do modelo.</p>
-
-<p class=MsoNormal>As ferramentas diferem amplamente em seu suporte a
+<p>As ferramentas diferem amplamente em seu suporte a
 capacidades adicionais além da modelagem UML simples: auxílios de projeto,
 geração de artefatos, análise de restrições, entre outros. Às vezes, terceiros
 criam plug-ins para as ferramentas que adicionam recursos adicionais.</p>
-
-<p class=MsoNormal>Uma ferramenta genérica de diagramação, como o PowerPoint,
+<p>Uma ferramenta genérica de diagramação, como o PowerPoint,
 pode ser (e frequentemente é) usada para criar diagramas UML, mesmo que não
 tenha um entendimento específico da sintaxe e semântica (gráfica) do UML. Essas
 ferramentas, portanto, não podem fornecer nenhuma orientação aos usuários de
 UML para ajudar a criar documentos consistentes ou completos. Por outro lado,
 ferramentas conscientes de UML fornecem orientações de design à medida que os
 usuários criam e editam UML. Essas características incluem:</p>
-
-<ul style='margin-top:0cm' type=disc>
- <li class=MsoNormal style='mso-list:l45 level1 lfo472;tab-stops:list 36.0pt'>Suporte
+<ul style="margin-top:0cm" type="disc">
+<li>Suporte
      aos mecanismos de extensão embutidos do UML: Lembre-se de que os perfis
      UML permitem que os usuários especializem elementos e introduzam pontos
      comuns adicionais entre eles. Ferramentas UML podem permitir que o usuário
@@ -1588,9 +1322,8 @@ usuários criam e editam UML. Essas características incluem:</p>
      estereótipo. A interface do usuário também pode oferecer novas opções
      quando estereótipos são aplicados: a aparência visual de um elemento pode
      mudar (adicionando um ícone, por exemplo) e novas opções podem ser
-     apresentadas ao usuário para manipular as propriedades associadas a <span
-     class=SpellE>esse</span> estereótipo.</li>
- <li class=MsoNormal style='mso-list:l45 level1 lfo472;tab-stops:list 36.0pt'>Suporte
+     apresentadas ao usuário para manipular as propriedades associadas a <span class="SpellE">esse</span> estereótipo.</li>
+<li>Suporte
      para verificações de consistência: A capacidade de especificar e checar
      automaticamente restrições pode aumentar a confiança das partes
      interessadas na qualidade da arquitetura. A maioria das ferramentas UML
@@ -1599,8 +1332,7 @@ usuários criam e editam UML. Essas características incluem:</p>
      bem-formação — que links têm extremidades válidas, ou que dois elementos
      não têm o mesmo nome, por exemplo.</li>
 </ul>
-
-<p class=MsoNormal>Muitas ferramentas vão além e permitem ao usuário verificar
+<p>Muitas ferramentas vão além e permitem ao usuário verificar
 restrições semânticas e de consistência entre diagramas cruzados. Por exemplo,
 uma ferramenta pode avisar um usuário quando um diagrama de sequência indica
 uma invocação em um objeto cuja classe não implementa um método com o mesmo
@@ -1610,18 +1342,16 @@ específicos em UML e ajudam a aumentar a consistência interna dos modelos UML.
 Um perigo nesse sentido é que os usuários de uma ferramenta específica podem
 não conseguir distinguir facilmente quais restrições fazem parte do próprio UML
 e quais estão sendo apenas aplicadas pela ferramenta local.</p>
-
-<p class=MsoNormal>Além dessas verificações sintáticas e semânticas genéricas,
-o UML inclui uma linguagem de restrições, OCL (<span class=SpellE>Warmer</span>
-e <span class=SpellE>Kleppe</span> 1998), que permite aos usuários especificar
+<p>Além dessas verificações sintáticas e semânticas genéricas,
+o UML inclui uma linguagem de restrições, OCL (<span class="SpellE">Warmer</span>
+e <span class="SpellE">Kleppe</span> 1998), que permite aos usuários especificar
 restrições sobre elementos UML e relações entre elementos. Existem ferramentas
 disponíveis que podem ajudar os usuários a especificar restrições OCL e depois
 verificá-las automaticamente. No entanto, o UML não exige o uso do OCL como sua
 única linguagem de restrição, então é possível que ferramentas UML incorporem
 linguagens adicionais de restrição.</p>
-
-<ul style='margin-top:0cm' type=disc>
- <li class=MsoNormal style='mso-list:l45 level1 lfo472;tab-stops:list 36.0pt'>Geração
+<ul style="margin-top:0cm" type="disc">
+<li>Geração
      de outros artefatos: Modelos UML podem ser usados como base para gerar
      artefatos úteis em outras atividades do ciclo de vida, como implementação
      ou testes. Algumas ferramentas UML incluem recursos para gerar esses
@@ -1637,7 +1367,7 @@ linguagens adicionais de restrição.</p>
      software (como artefatos de código para a fase de implementação) é
      especialmente útil para prevenir desvios arquitetônicos e erosão
      arquitetônica.</li>
- <li class=MsoNormal style='mso-list:l45 level1 lfo472;tab-stops:list 36.0pt'>Geração
+<li>Geração
      de UML: Algumas ferramentas UML podem pegar outros artefatos (geralmente
      sistemas implementados) e gerar automaticamente modelos UML parciais para
      eles. Por exemplo, algumas ferramentas podem iterar sobre uma série de
@@ -1648,14 +1378,14 @@ linguagens adicionais de restrição.</p>
      utilizado. Eles também podem gerar todas as dependências de classes,
      quando apenas algumas delas são arquitetonicamente importantes. Por esse
      motivo, o UML gerado automaticamente precisa ser revisado e
-     &quot;ajustado&quot; manualmente.</li>
- <li class=MsoNormal style='mso-list:l45 level1 lfo472;tab-stops:list 36.0pt'>Rastreabilidade
+     "ajustado" manualmente.</li>
+<li>Rastreabilidade
      para outros sistemas: A geração não é a única conexão que as ferramentas
      UML podem usar para interoperar com outros artefatos; rastreabilidade e
      links também podem ser usados. Mecanismos de ligação podem ser fornecidos
      para conectar elementos UML com requisitos do sistema em um ambiente de
-     gerenciamento de requisitos, como <span class=SpellE>Telelogic</span>
-     DOORS (<span class=SpellE>Telelogic</span> DOORS), com repositórios de
+     gerenciamento de requisitos, como <span class="SpellE">Telelogic</span>
+     DOORS (<span class="SpellE">Telelogic</span> DOORS), com repositórios de
      gerenciamento de configuração, com ambientes de desenvolvimento integrados
      baseados em código, com ambientes de simulação, entre outros. Quando tais
      links estão disponíveis, restrições adicionais de consistência também
@@ -1663,13 +1393,12 @@ linguagens adicionais de restrição.</p>
      modelagem UML além do próprio UML e incorporar outras preocupações
      arquitetônicas (e não arquitetônicas) no processo de modelagem.</li>
 </ul>
-
-<p class=MsoNormal><i>Mensagem de conclusão</i>. As ferramentas UML têm um
+<p><i>Mensagem de conclusão</i>. As ferramentas UML têm um
 efeito profundo em como os usuários vivenciam a modelagem em UML. Embora todas
 as ferramentas forneçam suporte básico para desenhar diagramas UML, o
 verdadeiro valor das ferramentas geralmente vem dos recursos oferecidos além do
-desenho básico: verificação de restrições adicionais além do &quot;UML
-simples&quot;, personalização, geração de outros artefatos, engenharia reversa
+desenho básico: verificação de restrições adicionais além do "UML
+simples", personalização, geração de outros artefatos, engenharia reversa
 do código, rastreabilidade para outros artefatos gerenciados em diferentes
 ambientes, e assim por diante. Esses recursos geralmente automatizam processos
 que, de outra forma, seriam tediosos, manuais e propensos a erros. É importante
@@ -1677,31 +1406,26 @@ estar ciente de quaisquer diferenças entre a linguagem UML padrão e das
 peculiaridades ou limitações introduzidas por ferramentas específicas de UML.
 Além disso, as ferramentas UML podem ficar atrás dos desenvolvimentos mais
 recentes no próprio padrão UML.</p>
-
-<p class=MsoNormal><b>Arquiteto de Sistemas Teleológicos<o:p></o:p></b></p>
-
-<p class=MsoNormal><span class=SpellE>Telelogic</span> System Architect
-(anteriormente <span class=SpellE>Popkin</span> System Architect) (<span
-class=SpellE>Telelogic</span> AB 2007) é uma ferramenta popular entre
+<p><b>Arquiteto de Sistemas Teleológicos</b></p>
+<p><span class="SpellE">Telelogic</span> System Architect
+(anteriormente <span class="SpellE">Popkin</span> System Architect) (<span class="SpellE">Telelogic</span> AB 2007) é uma ferramenta popular entre
 engenheiros de sistemas. É usado para gerenciar diagramas de várias visões
 diferentes de um sistema em múltiplos estilos diagramáticos. Ele suporta mais
 de cinquenta tipos diferentes de diagramas desenhados a partir de diferentes
 metodologias de modelagem — todos os diagramas UML, IDEF, OMT, fluxogramas
 genéricos e mais. Além da ferramenta básica de Arquiteto de Sistemas, várias
-variantes também são comercializadas: para <span class=SpellE>DoDAF</span>,
+variantes também são comercializadas: para <span class="SpellE">DoDAF</span>,
 para Arquiteturas Orientadas a Serviços, para projetar sistemas de planejamento
 de recursos empresariais (ERP), entre outros.</p>
-
-<p class=MsoNormal>O System Architect pode suportar essa ampla variedade de
+<p>O System Architect pode suportar essa ampla variedade de
 tipos de diagramas devido à sua construção interna. Internamente, os dados dos
 diagramas são armazenados em um banco de dados relacional que é atualizado à
 medida que o usuário cria e manipula diagramas. Cada tipo de diagrama está
 associado a um vocabulário particular de símbolos e interconexões, bem como a
 restrições que auxiliam o usuário na criação de diagramas sintaticamente
 corretos.</p>
-
-<p class=MsoNormal>System Architect é um exemplo de ferramenta
-&quot;padrão&quot; que troca força semântica por amplitude. Pode ser visto como
+<p>System Architect é um exemplo de ferramenta
+"padrão" que troca força semântica por amplitude. Pode ser visto como
 um editor de diagramas muito bom específico para domínio. Ou seja, possui
 suporte específico para desenhar diagramas com a sintaxe de UML, IDEF, OMT ou
 qualquer outro tipo de diagrama. No entanto, ele tem pouco entendimento da
@@ -1709,8 +1433,7 @@ semântica desses diagramas. As versões especializadas do produto (por exemplo,
 System Architect for DoDAF) possuem algum conhecimento semântico adicional incorporado,
 como a capacidade de gerar ou verificar a consistência de diferentes tipos de
 diagramas.</p>
-
-<p class=MsoNormal><i>Mensagem de conclusão</i>. Telelogic System Architect é
+<p><i>Mensagem de conclusão</i>. Telelogic System Architect é
 uma ferramenta de desenho padrão e flexível de fato que oferece aos usuários
 uma infinidade de tipos de diagramas para expressar decisões arquitetônicas.
 Por um lado, a construção da ferramenta facilita muito para a Telelogic
@@ -1721,19 +1444,15 @@ certamente é mais fácil desenhar diagramas com vocabulários sintáticos
 complexos do que em uma ferramenta completamente genérica como o PowerPoint,
 mas ele oferece pouca orientação aos usuários sobre a qualidade, correção ou
 consistência de suas arquiteturas.</p>
-
-<p class=MsoNormal>PADRÕES DE PROCESSO</p>
-
-<p class=MsoNormal>Os padrões que abordamos até agora estão principalmente
+<p>PADRÕES DE PROCESSO</p>
+<p>Os padrões que abordamos até agora estão principalmente
 relacionados a como capturar uma arquitetura, seja conceitualmente, em uma
 notação específica ou usando uma ferramenta específica. Os padrões de processo
 ditam o processo — ou seja, as etapas — que são usadas para desenvolver
 software. Esses padrões focam menos em artefatos e mais nos métodos usados para
 criá-los.</p>
-
-<p class=MsoNormal><b>Processo Unificado Racional<o:p></o:p></b></p>
-
-<p class=MsoNormal>O Rational Unified Process (RUP) (Kruchten 2003) é um padrão
+<p><b>Processo Unificado Racional</b></p>
+<p>O Rational Unified Process (RUP) (Kruchten 2003) é um padrão
 criado pela Rational Software Corporation, atualmente IBM. Fundamentalmente, o
 RUP é um processo iterativo e é inspirado no modelo espiral de Barry Boehm
 (Boehm 1988). Em vez de prescrever uma sequência única e concreta de etapas a
@@ -1742,34 +1461,31 @@ adaptável, destinada a abranger muitos processos iterativos diferentes e ser
 adaptada a cada um deles. RUP descreve a construção de software como um todo e
 não é focado principalmente no desenvolvimento arquitetônico (como o ADM do
 TOGAF).</p>
-
-<p class=MsoNormal>Um projeto RUP é feito em <i>fases</i>. O RUP identifica
+<p>Um projeto RUP é feito em <i>fases</i>. O RUP identifica
 quatro fases específicas:</p>
-
-<ul style='margin-top:0cm' type=disc>
- <li class=MsoNormal style='mso-list:l27 level1 lfo473;tab-stops:list 36.0pt'>Fase
+<ul style="margin-top:0cm" type="disc">
+<li>Fase
      de Início: A fase de início inclui atividades iniciais que determinam os
      objetivos e critérios de sucesso para uma iteração; Inclui apresentar um
      caso de negócio, descrever casos de uso básicos, avaliar riscos,
      estabelecer orçamentos e assim por diante.</li>
- <li class=MsoNormal style='mso-list:l27 level1 lfo473;tab-stops:list 36.0pt'>Fase
+<li>Fase
      de elaboração: Aqui, os casos de uso são mais detalhados e decisões de
      design arquitetônico são tomadas para atendê-los. Planos de negócios e
      avaliações de risco feitos na fase inicial são refinados e revisados.
      Protótipos podem ser desenvolvidos.</li>
- <li class=MsoNormal style='mso-list:l27 level1 lfo473;tab-stops:list 36.0pt'>Fase
+<li>Fase
      de construção: Esta fase abrange em grande parte a implementação e
      construção dos elementos projetados e especificados na fase de elaboração.</li>
- <li class=MsoNormal style='mso-list:l27 level1 lfo473;tab-stops:list 36.0pt'>Fase
+<li>Fase
      de transição: Nesta fase, o produto desenvolvido é transferido para os
      usuários finais. Ele é validado e testado, e sua funcionalidade e
      qualidade são avaliadas em relação às metas estabelecidas na fase de
      início. Implantação, instalação e treinamento são realizados nesta fase.</li>
 </ul>
-
-<p class=MsoNormal>O objetivo de cada fase é alcançar um <i>marco</i>. Por
-exemplo, a fase de início termina com o &quot;Marco do Objetivo do Ciclo de
-Vida&quot;, que exige concordância das partes interessadas sobre escopo, custo
+<p>O objetivo de cada fase é alcançar um <i>marco</i>. Por
+exemplo, a fase de início termina com o "Marco do Objetivo do Ciclo de
+Vida", que exige concordância das partes interessadas sobre escopo, custo
 e cronograma, elaboração de casos de uso de alto nível, concordância com
 avaliações de risco credíveis, entre outros. Internamente, cada fase consiste
 em atividades menores distribuídas a diferentes membros. Essas atividades são
@@ -1778,10 +1494,7 @@ e assim por diante. Iterações dessas atividades podem ocorrer dentro de cada
 fase. Embora a fase de início seja esperada para ser curta e geralmente
 realizada em uma única iteração, as outras fases frequentemente envolvem
 múltiplas iterações.</p>
-
-<p class=MsoNormal><a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch16.html#rational_unified_process_phases_comma_it"
-title="Figure&nbsp;16-14.&nbsp;Rational Unified Process phases, iterations, and disciplines (adapted from Kroll and Kruchten, The Rational Unified Process Made Easy: A Practitioner's Guide to the RUP)."><b>As
+<p><a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch16.html#rational_unified_process_phases_comma_it" title="Figure 16-14. Rational Unified Process phases, iterations, and disciplines (adapted from Kroll and Kruchten, The Rational Unified Process Made Easy: A Practitioner's Guide to the RUP)."><b>As
 figuras 16-14</b></a> mostram a relação entre fases, iterações e disciplinas em
 uma instância hipotética de RUP. O tempo avança da esquerda para a direita.
 Note como o esforço de desenvolvimento é dividido pelas fases e as iterações
@@ -1793,21 +1506,15 @@ na fase de início (talvez provas de conceito ou protótipos iniciais), enquanto
 uma grande quantidade ocorre durante a fase de construção. Da mesma forma, os
 requisitos são um foco intenso durante o início, mas só são revisados e
 refinados durante a fase de construção.</p>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+<p><span><!--[if gte vml 1]><v:shape
  id="Imagem_x0020_391" o:spid="_x0000_i1027" type="#_x0000_t75" alt="Fases, iterações e disciplinas do Processo Racional Unificado (adaptado de Kroll e Kruchten, O Processo Unificado Racional Facilitado: Um Guia do Praticante para o RUP)."
  style='width:411.6pt;height:315pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap16-ptbr_arquivos/image014.png" o:title=" Um Guia do Praticante para o RUP)"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=549 height=420
-src="cap16-ptbr_arquivos/image014.png"
-alt="Fases, iterações e disciplinas do Processo Racional Unificado (adaptado de Kroll e Kruchten, O Processo Unificado Racional Facilitado: Um Guia do Praticante para o RUP)."
-v:shapes="Imagem_x0020_391"><![endif]></span></p>
-
-<p class=MsoNormal><b>Figuras 16-14.&nbsp;Fases, iterações e disciplinas do
+</v:shape><![endif]--><?if !vml?><img alt="Fases, iterações e disciplinas do Processo Racional Unificado (adaptado de Kroll e Kruchten, O Processo Unificado Racional Facilitado: Um Guia do Praticante para o RUP)." border="0" height="420" src="cap16-ptbr_arquivos/image014.png" v:shapes="Imagem_x0020_391" width="549"/><?endif?></span></p>
+<p><b>Figuras 16-14. Fases, iterações e disciplinas do
 Processo Racional Unificado (adaptado de Kroll e Kruchten, O Processo Unificado
 Racional Facilitado: Um Guia do Praticante para o RUP).</b></p>
-
-<p class=MsoNormal><i>Mensagem de conclusão</i>. Desde o desenvolvimento do
+<p><i>Mensagem de conclusão</i>. Desde o desenvolvimento do
 modelo em espiral, engenheiros de software reconhecem amplamente que o uso de
 iteração e análise de risco é importante. RUP é um meta-processo ou estrutura
 de processos em que muitos processos iterativos (e lineares) são instâncias.
@@ -1819,24 +1526,19 @@ um meta-processo universal; certas estratégias de desenvolvimento, como
 Programação Extrema ou Engenharia de Software Específica de Domínio, podem ter
 processos mais leves e fluidos que não se encaixam naturalmente em um modelo
 RUP estruturado e iterativo.</p>
-
-<p class=MsoNormal><b>Arquitetura Orientada por Modelos<o:p></o:p></b></p>
-
-<p class=MsoNormal>Arquitetura Orientada por Modelos (MDA) (Mukerji e Miller
+<p><b>Arquitetura Orientada por Modelos</b></p>
+<p>Arquitetura Orientada por Modelos (MDA) (Mukerji e Miller
 2003) é uma metodologia padronizada pelo Object Management Group (OMG), o mesmo
 órgão que gerencia o padrão UML. O MDA tem como objetivo reconceituar o
 desenvolvimento de sistemas aproveitando o desenvolvimento de modelos que são
 refinados, por meio de uma série de transformações, em sistemas implementados.
-De forma confusa, a palavra &quot;arquitetura&quot; em Arquitetura Orientada
+De forma confusa, a palavra "arquitetura" em Arquitetura Orientada
 por Modelos não se refere à arquitetura do sistema em desenvolvimento, mas sim
 à arquitetura dos diversos padrões e linguagens usados para implementar a
 abordagem MDA. Sinônimos para MDA incluem Desenvolvimento Orientado por Modelos
-(MDD) e Engenharia Orientada por Modelos (MDE); &quot;MDA&quot; é geralmente
+(MDD) e Engenharia Orientada por Modelos (MDE); "MDA" é geralmente
 usado para se referir especificamente à abordagem OMG.</p>
-
-<p class=MsoNormal><a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch16.html#high-level_overview_of_mda"
-title="Figure&nbsp;16-15.&nbsp;High-level overview of MDA."><b>As figuras 16-15</b></a>
+<p><a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch16.html#high-level_overview_of_mda" title="Figure 16-15. High-level overview of MDA."><b>As figuras 16-15</b></a>
 apresentam uma visão geral em alto nível da MDA. Na MDA, os sistemas começam
 sendo descritos em modelos independentes de plataforma (PIMs). Esses PIMs
 descrevem a aplicação sem vinculá-la a tecnologias específicas de
@@ -1850,31 +1552,22 @@ com o conhecimento da plataforma no PDM, são criados um ou mais modelos
 específicos da plataforma (PSMs). Esses PSMs fazem parte de uma implementação
 de sistema em uma linguagem de implementação específica de domínio ou em uma
 linguagem de programação de uso geral, como C ou Java.</p>
-
-<p class=MsoNormal>Idealmente, uma vez definidos os <span class=SpellE>PIMs</span>
-e <span class=SpellE>PDMs</span>, o restante das traduções pode ocorrer usando
+<p>Idealmente, uma vez definidos os <span class="SpellE">PIMs</span>
+e <span class="SpellE">PDMs</span>, o restante das traduções pode ocorrer usando
 (ou pelo menos aproveitando) ferramentas automatizadas de tradução. O padrão
-separado OMG Queries/<span class=SpellE>Views</span>/<span class=SpellE>Transformations</span>
+separado OMG Queries/<span class="SpellE">Views</span>/<span class="SpellE">Transformations</span>
 (QVT) é uma forma de definir transformações de modelo. Assumindo que as
 translações estejam corretas e preservem propriedades salientes, o resultado da
 MDA deve ser um sistema fiel aos modelos originais.</p>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+<p><span><!--[if gte vml 1]><v:shape
  id="Imagem_x0020_390" o:spid="_x0000_i1026" type="#_x0000_t75" alt="Visão geral de alto nível da MDA."
  style='width:411.6pt;height:373.8pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap16-ptbr_arquivos/image015.png" o:title="Visão geral de alto nível da MDA"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=549 height=498
-src="cap16-ptbr_arquivos/image015.png" alt="Visão geral de alto nível da MDA."
-v:shapes="Imagem_x0020_390"><![endif]></span></p>
-
-<p class=MsoNormal><b>Figuras 16-15.&nbsp;Visão geral de alto nível da MDA.</b></p>
-
-<p class=MsoNormal><i>Mensagem de conclusão</i>. Como abordagem geral, a MDA é
-compatível com muitos dos mecanismos e ideias defendidos neste livro. Por <span
-class=SpellE>exemplo<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch09.html"
-title="Chapter&nbsp;9.&nbsp;Implementation"><b>Capítulo</b><b> 9</b></a></span>On
-<span class=SpellE>Implementation</span> discute como tecnologias generativas
+</v:shape><![endif]--><?if !vml?><img alt="Visão geral de alto nível da MDA." border="0" height="498" src="cap16-ptbr_arquivos/image015.png" v:shapes="Imagem_x0020_390" width="549"/><?endif?></span></p>
+<p><b>Figuras 16-15. Visão geral de alto nível da MDA.</b></p>
+<p><i>Mensagem de conclusão</i>. Como abordagem geral, a MDA é
+compatível com muitos dos mecanismos e ideias defendidos neste livro. Por <span class="SpellE">exemplo<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch09.html" title="Chapter 9. Implementation"><b>Capítulo</b><b> 9</b></a></span>On
+<span class="SpellE">Implementation</span> discute como tecnologias generativas
 podem ser usadas para gerar automaticamente implementações (parciais) a partir
 de modelos arquitetônicos, especialmente quando um framework de implementação
 de arquitetura é utilizado. A ideia por trás do MDA é fácil de entender, mas os
@@ -1884,34 +1577,28 @@ modelos totalmente independentes da plataforma de uma aplicação também é
 difícil, já que o conhecimento das tecnologias de implementação disponíveis
 sempre informa e limita as arquiteturas. A MDA é muito mais fácil de empregar
 no contexto da DSSE, onde um domínio bem compreendido e restrito, arquiteturas
-de referência e frameworks existentes fornecem uma base muito <span
-class=GramE>melhor</span> elaborada.</p>
-
-<p class=MsoNormal>ASSUNTO FINAL</p>
-
-<p class=MsoNormal>Este capítulo tentou fornecer visões gerais de alto nível de
+de referência e frameworks existentes fornecem uma base muito <span class="GramE">melhor</span> elaborada.</p>
+<p>ASSUNTO FINAL</p>
+<p>Este capítulo tentou fornecer visões gerais de alto nível de
 alguns dos padrões mais populares e conhecidos usados na prática. Uma coisa que
 não fica evidente neste capítulo é o nível de detalhe com que muitos desses
 padrões são especificados. As especificações de alguns dos padrões excedem o
 tamanho deste livro, e livros suplementares (e, em alguns casos, séries de
 livros) foram escritos para ajudar as pessoas a entender e aplicar esses
 padrões.</p>
-
-<p class=MsoNormal>No entanto, o tamanho raramente é uma boa forma de avaliar o
+<p>No entanto, o tamanho raramente é uma boa forma de avaliar o
 valor de um padrão. Por exemplo, faz sentido que padrões grandes e detalhados
 forneçam uma imensa quantidade de orientação, e de fato isso é frequentemente
 verdade. No entanto, que tipo de orientação eles oferecem? Frequentemente,
 padrões grandes permanecem pouco especificados: eles dão ao usuário liberdade
 demais ou opções demais, muitas vezes na tentativa de ampliar seu apelo ou
-aplicabilidade. Muitos dos maiores e mais amplos padrões (por exemplo, <span
-class=SpellE>DoDAF</span>, TOGAF) prescrevem processos e listas de verificação
+aplicabilidade. Muitos dos maiores e mais amplos padrões (por exemplo, <span class="SpellE">DoDAF</span>, TOGAF) prescrevem processos e listas de verificação
 extensos. Essas regras geralmente são impossivelmente detalhadas — um projeto
 que tentasse atender a todos os requisitos ou conselhos desses padrões nunca
 chegaria a realmente construir um sistema. Além disso, decidir correção e
 consistência é um exercício geralmente deixado para os desenvolvedores do
 sistema, com pouca orientação dos padrões.</p>
-
-<p class=MsoNormal>Ao usar um padrão, um desenvolvedor ou organização deve
+<p>Ao usar um padrão, um desenvolvedor ou organização deve
 sempre levar em consideração os custos e benefícios do padrão. Buscar e
 explorar efeitos de rede deve ser uma prioridade para quem emprega um padrão.
 Alguns padrões exploram efeitos de rede melhor do que outros. Por exemplo, um
@@ -1923,8 +1610,7 @@ pode ter menos efeito de rede: o valor do processo não necessariamente aumenta
 simplesmente porque mais organizações o utilizam, a menos que o suporte
 melhorado às ferramentas ou refinamentos de processos sejam efeitos colaterais
 desse uso.</p>
-
-<p class=MsoNormal>Os padrões deste capítulo documentam muitas das melhores
+<p>Os padrões deste capítulo documentam muitas das melhores
 práticas — técnicas já usadas com sucesso em projetos no passado. Seguir
 qualquer uma dessas práticas é, sem dúvida, melhor do que um desenvolvimento
 totalmente ad hoc, e os padrões ao menos fornecem um parâmetro para medir a
@@ -1935,37 +1621,31 @@ mais específicas e detalhadas não serão encontradas nos padrões mais genéri
 (e, infelizmente, bem conhecidos e bem fundamentados). Desenvolvedores podem
 ter mais sorte combinando a amplitude de padrões genéricos com padrões mais
 específicos de domínio — se tais padrões existirem.</p>
-
-<p class=MsoNormal>Padrões são uma parte fundamental do uso da arquitetura de
+<p>Padrões são uma parte fundamental do uso da arquitetura de
 software na prática: sua criação, desenvolvimento e uso são motivados tanto por
 objetivos de negócios e organizacionais quanto técnicos. No próximo capítulo,
 continuamos o tema da arquitetura de software na prática, focando nas
 preocupações organizacionais: pessoas, funções e equipes.</p>
-
-<p class=MsoNormal><b>O Caso de Negócios<o:p></o:p></b></p>
-
-<p class=MsoNormal>Do ponto de vista empresarial, padrões podem ser vistos como
+<p><b>O Caso de Negócios</b></p>
+<p>Do ponto de vista empresarial, padrões podem ser vistos como
 uma decisão de fazer ou comprar. Adotar um padrão confere muitos benefícios: os
 adotantes basicamente compram a experiência e o tempo de esforços de engenharia
 anteriores, fornecedores e assim por diante. À medida que essas organizações
 evoluem o padrão, a qualidade do padrão é aprimorada, efetivamente de graça, e
 as organizações podem decidir quando e se devem migrar para a versão mais
 recente do padrão.</p>
-
-<p class=MsoNormal>Os padrões oferecem um valor tremendo ao criar efeitos de
+<p>Os padrões oferecem um valor tremendo ao criar efeitos de
 rede: quanto mais organizações utilizam o padrão, mais valioso ele se torna. Se
 múltiplas organizações estiverem envolvidas em um único esforço de
 desenvolvimento, os padrões costumam ser a melhor forma de minimizar falhas de
 comunicação e dificuldades de integração que podem prejudicar um projeto que,
 de outra forma, é bem-sucedido.</p>
-
-<p class=MsoNormal>Ao lidar com padrões, as empresas devem ter em mente duas
+<p>Ao lidar com padrões, as empresas devem ter em mente duas
 ameaças principais. A primeira é se envolver demais ou fiel a uma abordagem
 específica quando isso não é justificado. A abordagem mais razoável é adotar os
 padrões que fazem sentido, mas prepare-se para um investimento moderado em
 descobrir como adaptá-los para seus propósitos.</p>
-
-<p class=MsoNormal>Muitas empresas e organizações adotam padrões com a
+<p>Muitas empresas e organizações adotam padrões com a
 suposição equivocada de que todos os seus problemas empresariais serão
 resolvidos se simplesmente seguirem o padrão à risca. Como tentamos transmitir
 neste capítulo, muitos dos padrões mais conhecidos, bem fundamentados e
@@ -1975,8 +1655,7 @@ organização de desenvolvimento. As organizações devem definir seus objetivos
 negócio e as estratégias para alcançá-los independentemente de qualquer padrão
 específico, e então escolher e adaptar padrões que as ajudem a alcançar seus
 objetivos com base nessas estratégias.</p>
-
-<p class=MsoNormal>A segunda ameaça é ignorar um padrão que eventualmente se
+<p>A segunda ameaça é ignorar um padrão que eventualmente se
 torna popular e encontrar esse padrão manipulado pelos concorrentes. Por essa
 razão, muitas grandes empresas simplesmente participam de todos os processos de
 padronização relacionados ao seu negócio. Para organizações que não têm
@@ -1984,126 +1663,108 @@ recursos para isso, uma abordagem mais criteriosa e ágil é apropriada. Essas
 organizações devem acompanhar no mínimo o desenvolvimento de todos os padrões
 relevantes, mas internamente evitar se apegar demais a qualquer padrão
 específico.</p>
-
-<p class=MsoNormal>PERGUNTAS DE REVISÃO</p>
-
-<ol style='margin-top:0cm' start=1 type=1>
- <li class=MsoNormal style='mso-list:l7 level1 lfo474;tab-stops:list 36.0pt'>O
+<p>PERGUNTAS DE REVISÃO</p>
+<ol start="1" style="margin-top:0cm" type="1">
+<li>O
      que é um padrão?</li>
- <li class=MsoNormal style='mso-list:l7 level1 lfo474;tab-stops:list 36.0pt'>Qual
+<li>Qual
      é a diferença entre um padrão de fato e um padrão de jure?</li>
- <li class=MsoNormal style='mso-list:l7 level1 lfo474;tab-stops:list 36.0pt'>O
+<li>O
      que é um efeito de rede? Como os padrões ajudam a criar um efeito de rede?</li>
- <li class=MsoNormal style='mso-list:l7 level1 lfo474;tab-stops:list 36.0pt'>Quais
+<li>Quais
      são algumas desvantagens dos padrões?</li>
- <li class=MsoNormal style='mso-list:l7 level1 lfo474;tab-stops:list 36.0pt'>Quais
+<li>Quais
      são as vantagens e desvantagens de adotar um padrão precocemente? Quais
      são as vantagens e desvantagens de adotar um padrão tardiamente?</li>
- <li class=MsoNormal style='mso-list:l7 level1 lfo474;tab-stops:list 36.0pt'>Qual
+<li>Qual
      é o escopo do IEEE 1471? Como ele aconselha e orienta os usuários?</li>
- <li class=MsoNormal style='mso-list:l7 level1 lfo474;tab-stops:list 36.0pt'>Descreva
-     o <span class=SpellE>DoDAF</span>. Como o <span class=SpellE>DoDAF</span>
-     ajuda seus usuários? O que o <span class=SpellE>DoDAF</span> não oferece?</li>
- <li class=MsoNormal style='mso-list:l7 level1 lfo474;tab-stops:list 36.0pt'>O
-     que é TOGAF e como ele difere do <span class=SpellE>DoDAF</span>? Qual é a
+<li>Descreva
+     o <span class="SpellE">DoDAF</span>. Como o <span class="SpellE">DoDAF</span>
+     ajuda seus usuários? O que o <span class="SpellE">DoDAF</span> não oferece?</li>
+<li>O
+     que é TOGAF e como ele difere do <span class="SpellE">DoDAF</span>? Qual é a
      diferença entre arquiteturas empresariais e arquiteturas de software, como
      foram descritas neste livro?</li>
- <li class=MsoNormal style='mso-list:l7 level1 lfo474;tab-stops:list 36.0pt'>Quais
+<li>Quais
      são os cinco pontos de vista do RM-ODP? Para que tipos de sistemas o
      RM-ODP é direcionado?</li>
- <li class=MsoNormal style='mso-list:l7 level1 lfo474;tab-stops:list 36.0pt'>O
+<li>O
      que são perfis UML e como eles ajudam os usuários a aplicar o padrão UML?</li>
- <li class=MsoNormal style='mso-list:l7 level1 lfo474;tab-stops:list 36.0pt'>O
-     que é <span class=SpellE>SysML</span> e como ele difere do UML?</li>
- <li class=MsoNormal style='mso-list:l7 level1 lfo474;tab-stops:list 36.0pt'>Quais
+<li>O
+     que é <span class="SpellE">SysML</span> e como ele difere do UML?</li>
+<li>Quais
      lições podem ser aprendidas com os esforços de padronização por trás do
      ADML e do AADL?</li>
- <li class=MsoNormal style='mso-list:l7 level1 lfo474;tab-stops:list 36.0pt'>Enumere
+<li>Enumere
      algumas ferramentas padrão de arquitetura. Como as ferramentas padrão
      complementam as notações padrão? Como eles podem dificultar o uso de uma
      notação padrão?</li>
- <li class=MsoNormal style='mso-list:l7 level1 lfo474;tab-stops:list 36.0pt'>Enumere
+<li>Enumere
      alguns padrões de processo. Como os padrões de processo complementam e
      interagem com outros padrões?</li>
 </ol>
-
-<p class=MsoNormal>EXERCÍCIOS</p>
-
-<ol style='margin-top:0cm' start=1 type=1>
- <li class=MsoNormal style='mso-list:l152 level1 lfo475;tab-stops:list 36.0pt'>Obtenha
+<p>EXERCÍCIOS</p>
+<ol start="1" style="margin-top:0cm" type="1">
+<li>Obtenha
      e leia um dos padrões listados neste capítulo. Escolha um sistema com o
      qual você esteja familiarizado (ou um dos usados como exemplo neste livro,
-     como Lunar Lander ou a World <span class=SpellE>Wide</span> Web) e
+     como Lunar Lander ou a World <span class="SpellE">Wide</span> Web) e
      descreva como ele seria descrito ou implementado usando esse padrão.
      Identifique os pontos fortes e fracos do padrão no contexto da sua
      experiência.</li>
- <li class=MsoNormal style='mso-list:l152 level1 lfo475;tab-stops:list 36.0pt'>Extraia
+<li>Extraia
      e discuta as relações entre os padrões discutidos neste capítulo. Eles são
      mutuamente exclusivos? Eles se encaixam entre si? Eles são sequenciais?
      Identifique alguns padrões de desenvolvimento de software que não foram
      discutidos neste capítulo e adicione-os ao seu diagrama.</li>
- <li class=MsoNormal style='mso-list:l152 level1 lfo475;tab-stops:list 36.0pt'>Encontre
+<li>Encontre
      um modelo arquitetônico que afirme estar em conformidade com um dos
      padrões deste capítulo. Verifique se está em conformidade com o próprio
      padrão.</li>
- <li class=MsoNormal style='mso-list:l152 level1 lfo475;tab-stops:list 36.0pt'>Escolha
+<li>Escolha
      um padrão e investigue como ele é descrito e divulgado por seus criadores
      e outros. Avalie se os benefícios (e desvantagens) reivindicados pelo
      padrão são corretos ou não.</li>
- <li class=MsoNormal style='mso-list:l152 level1 lfo475;tab-stops:list 36.0pt'>Entre
+<li>Entre
      em contato com um ou mais profissionais de desenvolvimento de software e
      descubra sobre o uso de padrões por eles. Pergunte quais benefícios eles
      acreditam estar obtendo com o uso do padrão e avalie se suas experiências
      de desenvolvimento confirmaram isso.</li>
- <li class=MsoNormal style='mso-list:l152 level1 lfo475;tab-stops:list 36.0pt'>Encontre
+<li>Encontre
      um conjunto de ferramentas que prometa apoiar um padrão específico.
      Selecione vários elementos do padrão e determine como eles são suportados
      pelo conjunto de ferramentas. Identifique como as ferramentas ajudam ou
      dificultam o uso do padrão.</li>
 </ol>
-
-<p class=MsoNormal>LEITURA ADICIONAL</p>
-
-<p class=MsoNormal>Este capítulo tenta destilar e extrair a essência de alguns
+<p>LEITURA ADICIONAL</p>
+<p>Este capítulo tenta destilar e extrair a essência de alguns
 dos padrões mais conhecidos e influentes da engenharia de software atualmente.
 Ainda assim, as poucas páginas dedicadas a cada padrão não conseguem capturar o
 alcance da maioria deles. Como mencionado acima, o tamanho de vários desses
 padrões excede o tamanho deste livro.</p>
-
-<p class=MsoNormal>A melhor forma de aprender sobre um padrão geralmente é ir
+<p>A melhor forma de aprender sobre um padrão geralmente é ir
 até a fonte. Referências estão incluídas no IEEE 1471 (IEEE-SA Standards Board
 2000), DoDAF (DoD Architecture Framework Working Group 2004), TOGAF (The Open
 Group 2003), RM-ODP (ISO/IEC 1998), UML (Booch, Rumbaugh e Jacobson 2005) e seu
 meta-modelo MOF (Object Management Group 2002), SysML (SysML Partners 2005),
-AADL (Feiler, Lewis e Corporation 2003), ADML (Spencer 2000),<span
-style='mso-spacerun:yes'>  </span>Rational Rose (Rational Software Corporation
+AADL (Feiler, Lewis e Corporation 2003), ADML (Spencer 2000),<span>  </span>Rational Rose (Rational Software Corporation
 2003), Telelogic System Architect (Telelogic AB 2007), RUP (Kruchten 2003), MDA
-(Mukerji e Miller 2003), entre outros. Cuidado com os &quot;resumos
-executivos&quot; contidos em algumas dessas normas ou documentação relacionada;
+(Mukerji e Miller 2003), entre outros. Cuidado com os "resumos
+executivos" contidos em algumas dessas normas ou documentação relacionada;
 Essas descrições costumam estar cheias de hype e é difícil obter uma avaliação
 clara de um padrão com elas. Para fins comparativos, pode ser útil examinar
 padrões não relacionados à arquitetura, como POSIX (IEEE 2004) e HTTP (Fielding
 et al. 1999), ou padrões específicos de domínio, como a Software Communications
 Architecture (SCA) (Modular Software-programmable Radio Consortium 2001),
-introduzida <span class=SpellE>em<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch15.html"
-title="Chapter&nbsp;15.&nbsp;Domain-Specific Software Engineering"><b>Capítulo</b><b>
+introduzida <span class="SpellE">em<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch15.html" title="Chapter 15. Domain-Specific Software Engineering"><b>Capítulo</b><b>
 15</b></a></span>.</p>
-
-<p class=MsoNormal><o:p>&nbsp;</o:p></p>
-
-<div class=MsoNormal align=center style='text-align:center'>
-
-<hr size=2 width=626 style='width:469.6pt' align=center>
-
+<p></p>
+<div align="center" style="text-align:center">
+<hr align="center" size="2" style="width:469.6pt" width="626"/>
 </div>
-
-<p class=MsoNormal><a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch16.html#CHP-16-FN-1"><b><sup>[23]
-</sup></b></a>TOGAF é uma marca registrada do The Open <span class=SpellE>Group</span>.</p>
-
-<p class=MsoNormal><o:p>&nbsp;</o:p></p>
-
+<p><a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch16.html#CHP-16-FN-1"><b><sup>[23]
+</sup></b></a>TOGAF é uma marca registrada do The Open <span class="SpellE">Group</span>.</p>
+<p></p>
 </div>
 </body>
 </html>

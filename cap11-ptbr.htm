@@ -1,25 +1,21 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>cap11-ptbr</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
+<meta charset="utf-8"/>
+<title>cap11-ptbr</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="styles.css" rel="stylesheet"/>
 </head>
 <body>
-
 <div class="navbar">
-  <div><a href="cap10-ptbr.htm">← Anterior</a></div>
-  <div><a href="index.html">Índice</a></div>
-  <div><a href="cap12-ptbr.htm">Próximo →</a></div>
+<div><a href="cap10-ptbr.htm">← Anterior</a></div>
+<div><a href="index.html">Índice</a></div>
+<div><a href="cap12-ptbr.htm">Próximo →</a></div>
 </div>
-
-
-<div class=WordSection1>
-
-<p class=MsoNormal>Capítulo 11.&nbsp;Arquiteturas e estilos aplicados</p>
-
-<p class=MsoNormal>Os capítulos anteriores descreveram o núcleo da arquitetura
+<div class="WordSection1">
+<p>Capítulo 11. Arquiteturas e estilos aplicados</p>
+<p>Os capítulos anteriores descreveram o núcleo da arquitetura
 de software, fornecendo as notações, ferramentas e técnicas que permitem ao
 projetista especificar uma arquitetura, implementá-la e implantá-la. Com base
 nesses capítulos, deve-se ser capaz de abordar qualquer problema de projeto e
@@ -31,193 +27,165 @@ benefício das lições da experiência. Continuamos esse tema neste capítulo,
 discutindo como uma grande variedade de problemas arquitetônicos importantes e
 desafiadores foi resolvida, ampliando assim o repertório de insights e estilos
 que um designer possui para aplicar em seu próprio problema.</p>
-
-<p class=MsoNormal>Nossa motivação é o reconhecimento de que a maioria das
+<p>Nossa motivação é o reconhecimento de que a maioria das
 novas aplicações é complexa e precisa lidar com uma variedade de questões.
 Notavelmente, muitas aplicações precisam lidar com questões que surgem do fato
 de estarem em uma rede de computadores, onde a aplicação interage com outros
 sistemas de software localizados remotamente. Aplicações baseadas em rede podem
 envolver a Web, focar em computação paralela ou focar em interação entre
 empresas. Descrevemos estilos arquitetônicos para essas e outras aplicações.</p>
-
-<p class=MsoNormal>Neste capítulo, também usamos a lente da arquitetura de
+<p>Neste capítulo, também usamos a lente da arquitetura de
 software para explicar uma variedade de noções de design que são pelo menos em
 parte fundamentalmente arquitetônicas, mas que foram amplamente descritas em
-termos idiossincráticos, como &quot;computação em grade&quot; e aplicações
+termos idiossincráticos, como "computação em grade" e aplicações
 peer-to-peer (P2P) — terminologia pertencente a outras subcomunidades de
 ciência da computação, e não à engenharia de software. Essa descrição permite
 uma comparação mais direta de seus méritos com abordagens alternativas para
 problemas semelhantes.</p>
-
-<p class=MsoNormal>Os objetivos deste capítulo são:</p>
-
-<ul style='margin-top:0cm' type=disc>
- <li class=MsoNormal style='mso-list:l94 level1 lfo297;tab-stops:list 36.0pt'>Descreva
+<p>Os objetivos deste capítulo são:</p>
+<ul style="margin-top:0cm" type="disc">
+<li>Descreva
      como os conceitos dos capítulos anteriores podem ser usados, às vezes em
      combinação, para resolver problemas de design desafiadores.</li>
- <li class=MsoNormal style='mso-list:l94 level1 lfo297;tab-stops:list 36.0pt'>Destaque
+<li>Destaque
      questões-chave em domínios de aplicação emergentes que tenham implicações
      arquitetônicas, ou onde uma perspectiva arquitetônica seja essencial para
      o desenvolvimento de sistemas dentro desse domínio.</li>
- <li class=MsoNormal style='mso-list:l94 level1 lfo297;tab-stops:list 36.0pt'>Mostre
+<li>Mostre
      como arquiteturas emergentes, como o P2P, podem ser caracterizadas e
      compreendidas sob a ótica da arquitetura de software.</li>
 </ul>
-
-<p class=MsoNormal>As seções deste capítulo tratam primeiro de questões
+<p>As seções deste capítulo tratam primeiro de questões
 relacionadas à distribuição e à rede; O tema cada vez mais importante das
 arquiteturas descentralizadas é então considerado. O capítulo conclui com uma
 seção sobre arquiteturas de alguns domínios específicos.</p>
-
-<p class=MsoNormal><b>Resumo <span class=SpellE>de<span style='font-weight:
-normal'><a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch11.html"
-title="Chapter&nbsp;11.&nbsp;Applied Architectures and Styles"><b>Capítulo</b><b>
+<p><b>Resumo <span class="SpellE">de<span style="font-weight:
+normal"><a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch11.html" title="Chapter 11. Applied Architectures and Styles"><b>Capítulo</b><b>
 11</b></a></span></span></b></p>
-
-<ul style='margin-top:0cm' type=disc>
- <li class=MsoNormal style='mso-list:l112 level1 lfo298;tab-stops:list 36.0pt'>11
+<ul style="margin-top:0cm" type="disc">
+<li>11
      Arquiteturas e Estilos Aplicados</li>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <li class=MsoNormal style='mso-list:l112 level2 lfo299;tab-stops:list 72.0pt'>11.1
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>11.1
       Arquiteturas Distribuídas e em Rede</li>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <ul style='margin-top:0cm' type=disc>
-   <li class=MsoNormal style='mso-list:l112 level3 lfo300;tab-stops:list 108.0pt'>11.1.1
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>11.1.1
        Limitações do ponto de vista dos sistemas distribuídos</li>
-  </ul>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <li class=MsoNormal style='mso-list:l112 level2 lfo301;tab-stops:list 72.0pt'>11.2
+</ul>
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>11.2
       Arquiteturas para Aplicações Baseadas em Rede</li>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <ul style='margin-top:0cm' type=disc>
-   <li class=MsoNormal style='mso-list:l112 level3 lfo302;tab-stops:list 108.0pt'>11.2.1
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>11.2.1
        O Estilo de Transferência de Estado REapresentacional (REST)</li>
-  </ul>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <ul style='margin-top:0cm' type=disc>
-   <li class=MsoNormal style='mso-list:l112 level3 lfo303;tab-stops:list 108.0pt'>11.2.2
+</ul>
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>11.2.2
        Aplicações Comerciais em Escala da Internet</li>
-  </ul>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <li class=MsoNormal style='mso-list:l112 level2 lfo304;tab-stops:list 72.0pt'>11.3
+</ul>
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>11.3
       Arquiteturas Descentralizadas</li>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <ul style='margin-top:0cm' type=disc>
-   <li class=MsoNormal style='mso-list:l112 level3 lfo305;tab-stops:list 108.0pt'>11.3.1
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>11.3.1
        Computação de Recursos Compartilhados: o Mundo da Grade</li>
-  </ul>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <ul style='margin-top:0cm' type=disc>
-   <li class=MsoNormal style='mso-list:l112 level3 lfo306;tab-stops:list 108.0pt'>11.3.2
+</ul>
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>11.3.2
        Estilos entre pares</li>
-  </ul>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <ul style='margin-top:0cm' type=disc>
-   <li class=MsoNormal style='mso-list:l112 level3 lfo307;tab-stops:list 108.0pt'>11.3.3
+</ul>
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>11.3.3
        Notas Resumidas sobre Latência e Agência</li>
-  </ul>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <li class=MsoNormal style='mso-list:l112 level2 lfo308;tab-stops:list 72.0pt'>11.4
+</ul>
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>11.4
       Arquiteturas Orientadas a Serviços e Web Services</li>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <li class=MsoNormal style='mso-list:l112 level2 lfo309;tab-stops:list 72.0pt'>11.5
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>11.5
       Arquiteturas de Domínios Específicos</li>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <ul style='margin-top:0cm' type=disc>
-   <li class=MsoNormal style='mso-list:l112 level3 lfo310;tab-stops:list 108.0pt'>11.5.1
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>11.5.1
        Robótica</li>
-  </ul>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <ul style='margin-top:0cm' type=disc>
-   <li class=MsoNormal style='mso-list:l112 level3 lfo311;tab-stops:list 108.0pt'>11.5.2
+</ul>
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>11.5.2
        Redes de Sensores Sem Fio</li>
-  </ul>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <li class=MsoNormal style='mso-list:l112 level2 lfo312;tab-stops:list 72.0pt'>11.6
+</ul>
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>11.6
       Fim da Matéria</li>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <li class=MsoNormal style='mso-list:l112 level2 lfo313;tab-stops:list 72.0pt'>11.7
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>11.7
       Perguntas de Revisão</li>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <li class=MsoNormal style='mso-list:l112 level2 lfo314;tab-stops:list 72.0pt'>11.8
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>11.8
       Exercícios</li>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <li class=MsoNormal style='mso-list:l112 level2 lfo315;tab-stops:list 72.0pt'>11.9
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>11.9
       Leitura adicional</li>
- </ul>
 </ul>
-
-<p class=MsoNormal>ARQUITETURAS DISTRIBUÍDAS E EM REDE</p>
-
-<p class=MsoNormal>A expressão &quot;aplicação distribuída&quot; é usada para
+</ul>
+<p>ARQUITETURAS DISTRIBUÍDAS E EM REDE</p>
+<p>A expressão "aplicação distribuída" é usada para
 designar desde uma aplicação simplesmente distribuída entre múltiplos processos
 do sistema operacional todos rodando no mesmo monoprocessador físico, até
 aplicações integradas que rodam em múltiplos computadores conectados pela
@@ -229,24 +197,19 @@ computacional barato nas bordas da rede. Consequentemente, não pretendemos
 oferecer algo remotamente próximo de um tratamento detalhado dessas aplicações
 aqui. Uma variedade de excelentes textos está disponível que trata o tema em
 profundidade [ver, por exemplo, (Emmerich 2000; Tanenbaum e van Steen 2002)].</p>
-
-<p class=MsoNormal><span class=SpellE>Em<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch04.html"
-title="Chapter&nbsp;4.&nbsp;Designing Architectures"><b>Capítulo</b><b> 4</b></a></span>discutimos
+<p><span class="SpellE">Em<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch04.html" title="Chapter 4. Designing Architectures"><b>Capítulo</b><b> 4</b></a></span>discutimos
 uma abordagem popular para construir aplicações distribuídas, a CORBA, como
 representante de uma variedade de abordagens semelhantes, como o Distributed
 Computing Environment (DCE) do The Open Group (The Open Group 2005). Essa
 apresentação omitiu a consideração das questões mais amplas associadas às
 aplicações distribuídas, por isso começamos com essa discussão aqui.</p>
-
-<p class=MsoNormal><b>Limitações do ponto de vista dos sistemas distribuídos<o:p></o:p></b></p>
-
-<p class=MsoNormal>Uma das principais motivações para o desenvolvimento da
+<p><b>Limitações do ponto de vista dos sistemas distribuídos</b></p>
+<p>Uma das principais motivações para o desenvolvimento da
 tecnologia CORBA, e de fato de grande parte da tecnologia de computação
 distribuída, foi permitir o uso do estilo de desenvolvimento orientado a
 objetos em um contexto de computação distribuída. Uma escolha de design
 particular feita pelos designers foi tentar criar a ilusão de
-&quot;transparência da localização&quot;. Ou seja, que um desenvolvedor não
+"transparência da localização". Ou seja, que um desenvolvedor não
 deveria precisar saber onde um determinado objeto está localizado para
 interagir com ele. (Várias outras formas de transparência também são
 suportadas, como a transparência de implementação, na qual o desenvolvedor não
@@ -255,45 +218,41 @@ um objeto específico é implementado.) Se tal transparência for fornecida ao
 desenvolvedor, todas as preocupações e questões associadas ao trabalho em uma
 rede podem ser ignoradas, pois essas questões serão resolvidas pelo suporte
 CORBA subjacente.</p>
-
-<p class=MsoNormal>Infelizmente, uma rápida olhada nos detalhes da API da
+<p>Infelizmente, uma rápida olhada nos detalhes da API da
 CORBA, ou seja, na interface com a qual os programadores precisam trabalhar,
 revela que alcançar tal transparência não se mostrou totalmente possível. O
 CORBA possui uma variedade de mecanismos especiais, visíveis para o
 programador, que revelam a presença de uma rede por baixo e a possibilidade de
 vários problemas de rede impactarem o modelo de programação, como falha de rede
 ou tempo de resposta expirado.</p>
-
-<p class=MsoNormal>As múltiplas dificuldades de tentar mascarar a presença de
+<p>As múltiplas dificuldades de tentar mascarar a presença de
 redes e suas propriedades para os desenvolvedores de aplicações foram
 reconhecidas cedo e foram canonizadas por Peter Deutsch em sua lista curta
-&quot;Falácias da Computação Distribuída&quot; (Deutsch e Gosling 1994). Como
-Deutsch e seu colega James Gosling dizem: &quot;Essencialmente todo mundo,
+"Falácias da Computação Distribuída" (Deutsch e Gosling 1994). Como
+Deutsch e seu colega James Gosling dizem: "Essencialmente todo mundo,
 quando constrói uma aplicação distribuída pela primeira vez, faz as seguintes
 oito suposições. Tudo isso se mostra falso a longo prazo e tudo causa grandes
-problemas e experiências de aprendizado dolorosas.&quot; As falácias são,
+problemas e experiências de aprendizado dolorosas." As falácias são,
 conforme declarado por Gosling:</p>
-
-<ol style='margin-top:0cm' start=1 type=1>
- <li class=MsoNormal style='mso-list:l78 level1 lfo316;tab-stops:list 36.0pt'>A
+<ol start="1" style="margin-top:0cm" type="1">
+<li>A
      rede é confiável.</li>
- <li class=MsoNormal style='mso-list:l78 level1 lfo316;tab-stops:list 36.0pt'>Latência
+<li>Latência
      é zero.</li>
- <li class=MsoNormal style='mso-list:l78 level1 lfo316;tab-stops:list 36.0pt'>A
+<li>A
      largura de banda é infinita.</li>
- <li class=MsoNormal style='mso-list:l78 level1 lfo316;tab-stops:list 36.0pt'>A
+<li>A
      rede é segura.</li>
- <li class=MsoNormal style='mso-list:l78 level1 lfo316;tab-stops:list 36.0pt'>A
+<li>A
      topologia não muda.</li>
- <li class=MsoNormal style='mso-list:l78 level1 lfo316;tab-stops:list 36.0pt'>Há
+<li>Há
      um administrador.</li>
- <li class=MsoNormal style='mso-list:l78 level1 lfo316;tab-stops:list 36.0pt'>O
+<li>O
      custo de transporte é zero.</li>
- <li class=MsoNormal style='mso-list:l78 level1 lfo316;tab-stops:list 36.0pt'>A
+<li>A
      rede é homogênea.</li>
 </ol>
-
-<p class=MsoNormal>Abordar diretamente qualquer uma dessas questões pode levar
+<p>Abordar diretamente qualquer uma dessas questões pode levar
 a escolhas e preocupações arquitetônicas específicas. Por exemplo, se a rede
 for não confiável, então a arquitetura de um sistema pode precisar ser
 dinamicamente adaptável. A presença de latência (atraso no recebimento ou
@@ -305,30 +264,20 @@ locais. A existência de mais de um domínio administrativo pode exigir que
 mecanismos explícitos de confiança sejam incorporados. Acomodar a
 heterogeneidade da rede pode envolver a imposição de camadas de abstração ou o
 foco em padrões de intercâmbio.</p>
-
-<p class=MsoNormal>Lidar <i>explicitamente </i>com essas questões que surgem
+<p>Lidar <i>explicitamente </i>com essas questões que surgem
 devido à presença de redes leva à nossa consideração de arquiteturas baseadas
 em rede e descentralizadas. Em vez de tentar ser abrangentes em nossa
 cobertura, selecionamos vários exemplos profundos que revelam como arquiteturas
 podem ser projetadas para atender necessidades e objetivos específicos.</p>
-
-<p class=MsoNormal>ARQUITETURAS PARA APLICAÇÕES BASEADAS EM REDE</p>
-
-<p class=MsoNormal>Começamos com uma discussão extensa sobre o estilo <span
-class=SpellE>REpresentational</span> <span class=SpellE>State</span> <span
-class=SpellE>Transfer</span> (REST), que foi introduzido pela primeira vez <span
-class=SpellE>em<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch01.html"
-title="Chapter&nbsp;1.&nbsp;The Big Idea"><b>Capítulo</b><b> 1</b></a></span>.
+<p>ARQUITETURAS PARA APLICAÇÕES BASEADAS EM REDE</p>
+<p>Começamos com uma discussão extensa sobre o estilo <span class="SpellE">REpresentational</span> <span class="SpellE">State</span> <span class="SpellE">Transfer</span> (REST), que foi introduzido pela primeira vez <span class="SpellE">em<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch01.html" title="Chapter 1. The Big Idea"><b>Capítulo</b><b> 1</b></a></span>.
 O REST foi criado como parte do esforço para levar a Web de sua forma mais
 primitiva ao sistema robusto e onipresente do qual confiamos hoje. A derivação
 do REST é instrutiva, pois a interação entre os requisitos do domínio da
 aplicação (ou seja, hipertexto descentralizado distribuído) e as partes
 constituintes do estilo pode ser claramente mostrada.</p>
-
-<p class=MsoNormal><b>Visibilidade do Usuário da Rede<o:p></o:p></b></p>
-
-<p class=MsoNormal>&quot;Tanenbaum e van Renesse ... faça uma distinção entre
+<p><b>Visibilidade do Usuário da Rede</b></p>
+<p>"Tanenbaum e van Renesse ... faça uma distinção entre
 sistemas distribuídos e sistemas baseados em rede: um sistema distribuído é
 aquele que para seus usuários se parece com um sistema centralizado comum, mas
 roda em múltiplas CPUs independentes. Em contraste, sistemas baseados em rede
@@ -336,14 +285,10 @@ são aqueles capazes de operar em toda uma rede, mas não necessariamente de
 forma transparente para o usuário. Em alguns casos, é desejável que o usuário
 esteja ciente da diferença entre uma ação que requer uma requisição de rede e
 uma que é satisfatível em seu sistema local, especialmente quando o uso da rede
-implica um custo extra de transação....&quot; —Roy T. Fielding (Fielding 2000)</p>
-
-<p class=MsoNormal><b>O Estilo de Transferência de Estado Reapresentacional
-(REST)<o:p></o:p></b></p>
-
-<p class=MsoNormal><a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch01.html"
-title="Chapter&nbsp;1.&nbsp;The Big Idea"><b>O capítulo 1</b></a> deste livro
+implica um custo extra de transação...." —Roy T. Fielding (Fielding 2000)</p>
+<p><b>O Estilo de Transferência de Estado Reapresentacional
+(REST)</b></p>
+<p><a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch01.html" title="Chapter 1. The Big Idea"><b>O capítulo 1</b></a> deste livro
 didático começou com uma breve exposição do estilo arquitetônico REST,
 descrevendo como ele foi usado para projetar a World Wide Web pós-1994 (que
 inclui o protocolo HTTP/1.1, a especificação Uniform Resource Identifier e
@@ -355,27 +300,21 @@ de código-fonte (por exemplo, o servidor Web Apache), pois a arquitetura da Web
 representa um conjunto de decisões de design que transcende muitos programas
 independentes. É a forma como esses programas precisam funcionar juntos que o
 estilo REST determina.</p>
-
-<p class=MsoNormal>A apresentação <span class=SpellE>em<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch01.html"
-title="Chapter&nbsp;1.&nbsp;The Big Idea"><b>Capítulo</b><b> 1</b></a></span>não
+<p>A apresentação <span class="SpellE">em<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch01.html" title="Chapter 1. The Big Idea"><b>Capítulo</b><b> 1</b></a></span>não
 descreveu como o estilo REST foi desenvolvido: o que motivou sua criação e
 quais influências arquitetônicas anteriores foram combinadas para gerar esse
 estilo influente. A apresentação abaixo aborda esses temas. Além de apenas
-entender o &quot;porquê&quot; da Web, o leitor deve ver como estilos simples
+entender o "porquê" da Web, o leitor deve ver como estilos simples
 selecionados podem ser combinados de maneiras criteriosas para atender a um
 conjunto complexo e conflitante de necessidades.</p>
-
-<p class=MsoNormal><b>Drivers de Aplicação<o:p></o:p></b></p>
-
-<p class=MsoNormal>A necessidade de uma Web de próxima geração surgiu do
+<p><b>Drivers de Aplicação</b></p>
+<p>A necessidade de uma Web de próxima geração surgiu do
 sucesso excepcional da primeira geração — e da incapacidade da arquitetura
 dessa primeira geração de funcionar adequadamente diante do enorme crescimento
 na extensão e uso da Web. As características da Web como aplicação e as
 propriedades de sua implantação e uso fornecem o contexto crítico para o
 desenvolvimento do REST.</p>
-
-<p class=MsoNormal>O WWW é fundamentalmente um<span style='mso-spacerun:yes'> 
+<p>O WWW é fundamentalmente um<span> 
 </span>aplicativo <i>de hipermídia distribuído</i>. A noção conceitual é de um
 vasto espaço de informações inter-relacionadas. A navegação desse espaço está
 sob o controle do usuário; quando apresentado a uma informação, o usuário pode
@@ -384,10 +323,9 @@ na primeira. A informação é distribuída pela Internet, portanto, um aspecto 
 aplicação é que as informações selecionadas para visualização — que podem ser
 bastante grandes — devem ser levadas pela rede até a máquina do usuário para
 apresentação. (Note que alguns usos atuais da Web, como para transações
-business-<span class=SpellE>to</span>-business, não se encaixam nesse modelo e
-são discutidos posteriormente em Web <span class=SpellE>services</span>.)</p>
-
-<p class=MsoNormal>Como as informações devem ser levadas ao usuário através da
+business-<span class="SpellE">to</span>-business, não se encaixam nesse modelo e
+são discutidos posteriormente em Web <span class="SpellE">services</span>.)</p>
+<p>Como as informações devem ser levadas ao usuário através da
 rede, todas as questões de rede listadas na seção anterior são motivo de
 preocupação. A latência, por exemplo, pode determinar a satisfação do usuário
 com a experiência de navegação: As ações no cliente/agente de usuário (ou seja,
@@ -395,53 +333,42 @@ o navegador) devem ser mantidas rápidas. Como grandes conjuntos de dados são
 transferidos, é preferível que parte das informações possa ser apresentada ao
 usuário enquanto o restante da transferência de dados ocorre, para que o
 usuário não fique esperando. Como a Web não é apenas uma aplicação hipermídia
-distribuída, mas uma <i><span style='mso-spacerun:yes'> </span>aplicação
+distribuída, mas uma <i><span> </span>aplicação
 multiusuário</i>, também deve haver provisão para circunstâncias em que muitos
 usuários solicitam as mesmas informações ao mesmo tempo. A latência intrínseca
 na transferência da informação é agravada pela possível disputa pelo acesso ao
 recurso em sua fonte.</p>
-
-<p class=MsoNormal>A Web também é uma aplicação heterogênea, com múltiplos
+<p>A Web também é uma aplicação heterogênea, com múltiplos
 proprietários. Um dos objetivos da Web era permitir que muitas partes
 contribuíssem para o espaço de informação distribuído, permitindo que espaços
 de informação administrados localmente fossem conectados ao da comunidade em
 geral, e isso fosse feito com facilidade. Isso implica que o espaço de
-informação não está sob uma única autoridade — é uma <i><span
-style='mso-spacerun:yes'> </span>aplicação descentralizada</i>. A abertura da
+informação não está sob uma única autoridade — é uma <i><span> </span>aplicação descentralizada</i>. A abertura da
 Web implica que nem a uniformidade das implementações de suporte nem as
 qualidades dessas implementações podem ser presumidas. Além disso, as
 informações assim vinculadas podem não estar disponíveis de forma confiável.
 Informações anteriormente disponíveis podem se tornar indisponíveis, exigindo
 provisão para lidar com links quebrados.</p>
-
-<p class=MsoNormal>A heterogeneidade da Web também tem uma visão prospectiva:
+<p>A heterogeneidade da Web também tem uma visão prospectiva:
 Diversos contribuintes para o espaço da informação podem identificar novos
 tipos de informação a serem vinculados (como um novo tipo de mídia) ou novos
 tipos de processamento a serem realizados em resposta a uma solicitação de
 recuperação de informação. Portanto, é necessário prever a prorrogação.</p>
-
-<p class=MsoNormal>Por fim, a questão da escala domina as preocupações.
+<p>Por fim, a questão da escala domina as preocupações.
 Qualquer estilo arquitetônico proposto deve ser capaz de manter os serviços da
 Web diante do crescimento rápido e contínuo tanto de usuários quanto de
 provedores de informação. Lembre-se de que o REST foi desenvolvido durante um
 período em que o número de sites dobrava a cada três a seis meses! A escala da
 aplicação hoje — em termos de usuários e sites — está muito além do que se
 imaginava em 1994: 50 milhões de sites ativos / 100 milhões de nomes de host.</p>
-
-<p class=MsoNormal><b>Derivação de REST<o:p></o:p></b></p>
-
-<p class=MsoNormal>O estilo REST foi criado para responder diretamente a essas
+<p><b>Derivação de REST</b></p>
+<p>O estilo REST foi criado para responder diretamente a essas
 necessidades de aplicações e desafios de design. O REST, como conjunto de
 escolhas de design, baseou-se em uma rica herança de princípios e estilos
-arquitetônicos, como os apresentados <span class=SpellE>em<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch04.html"
-title="Chapter&nbsp;4.&nbsp;Designing Architectures"><b>Capítulo</b><b> 4</b></a></span>.<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch11.html#notional_derivation_of_the_rest_style_fr"
-title="Figure&nbsp;11-1.&nbsp;Notional derivation of the REST style from simpler styles."><b>Figura
+arquitetônicos, como os apresentados <span class="SpellE">em<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch04.html" title="Chapter 4. Designing Architectures"><b>Capítulo</b><b> 4</b></a></span>.<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch11.html#notional_derivation_of_the_rest_style_fr" title="Figure 11-1. Notional derivation of the REST style from simpler styles."><b>Figura
 11-1</b></a>resume o patrimônio arquitetônico do REST. Escolhas-chave nessa
 derivação, explicadas em detalhes abaixo, incluem:</p>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shapetype
+<p><span><!--[if gte vml 1]><v:shapetype
  id="_x0000_t75" coordsize="21600,21600" o:spt="75" o:preferrelative="t"
  path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
  <v:stroke joinstyle="miter"/>
@@ -465,63 +392,51 @@ derivação, explicadas em detalhes abaixo, incluem:</p>
  alt="Derivação nocional do estilo REST a partir de estilos mais simples."
  style='width:411.6pt;height:235.2pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap11-ptbr_arquivos/image001.png" o:title="Derivação nocional do estilo REST a partir de estilos mais simples"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=549 height=314
-src="cap11-ptbr_arquivos/image001.png"
-alt="Derivação nocional do estilo REST a partir de estilos mais simples."
-v:shapes="Imagem_x0020_242"><![endif]></span></p>
-
-<p class=MsoNormal><b>Figura 11-1.&nbsp;Derivação nocional do estilo REST a
+</v:shape><![endif]--><?if !vml?><img alt="Derivação nocional do estilo REST a partir de estilos mais simples." border="0" height="314" src="cap11-ptbr_arquivos/image001.png" v:shapes="Imagem_x0020_242" width="549"/><?endif?></span></p>
+<p><b>Figura 11-1. Derivação nocional do estilo REST a
 partir de estilos mais simples.</b></p>
-
-<ul style='margin-top:0cm' type=disc>
- <li class=MsoNormal style='mso-list:l90 level1 lfo317;tab-stops:list 36.0pt'><i>Separação
+<ul style="margin-top:0cm" type="disc">
+<li><i>Separação
      em camadas</i> (um tema na parte central do diagrama) para aumentar a
      eficiência, permitir a evolução independente dos elementos do sistema e
      proporcionar robustez.</li>
- <li class=MsoNormal style='mso-list:l90 level1 lfo317;tab-stops:list 36.0pt'><i>Replicação</i>
+<li><i>Replicação</i>
      (lado esquerdo do diagrama), para lidar com latência e contenção
      permitindo o reuso de informações.</li>
- <li class=MsoNormal style='mso-list:l90 level1 lfo317;tab-stops:list 36.0pt'><i>Comunalidade</i>
+<li><i>Comunalidade</i>
      limitada (lado direito) para atender às necessidades concorrentes de
      operações universalmente compreendidas com extensibilidade.</li>
 </ul>
-
-<p class=MsoNormal>Também foi fundamental na derivação a decisão de exigir que
-as requisições no servidor fossem independentemente servíveis ou &quot;livres
-de contexto&quot;; ou seja, o servidor pode entender e processar qualquer
+<p>Também foi fundamental na derivação a decisão de exigir que
+as requisições no servidor fossem independentemente servíveis ou "livres
+de contexto"; ou seja, o servidor pode entender e processar qualquer
 solicitação recebida com base apenas nas informações contidas na solicitação.
 Isso apoia escalabilidade e robustez. Por fim, a extensão dinâmica por meio de
 código móvel aborda extensibilidade independente. Os parágrafos a seguir
 detalham essas questões e opções. Exposições mais detalhadas podem ser
 encontradas em (Fielding 2000; Fielding e Taylor 2002).</p>
-
-<p class=MsoNormal>Separação em Camadas. A decisão central de design para o
-REST foi o uso de sistemas em camadas. Como descrito <span class=SpellE>em<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch04.html"
-title="Chapter&nbsp;4.&nbsp;Designing Architectures"><b>Capítulo</b><b> 4</b></a></span>Sistemas
+<p>Separação em Camadas. A decisão central de design para o
+REST foi o uso de sistemas em camadas. Como descrito <span class="SpellE">em<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch04.html" title="Chapter 4. Designing Architectures"><b>Capítulo</b><b> 4</b></a></span>Sistemas
 em camadas podem assumir várias formas, incluindo cliente-servidor e máquinas
 virtuais. As separações baseadas em princípios de camadas podem ser encontradas
 em vários lugares no REST.</p>
-
-<p class=MsoNormal>O uso de uma arquitetura cliente-servidor (CS) era
+<p>O uso de uma arquitetura cliente-servidor (CS) era
 intrínseco à Web original. Navegadores rodando na máquina do usuário têm a
 responsabilidade pela apresentação das informações ao usuário e são o local de
 determinação das próximas interações do usuário com o espaço de informação.</p>
-
-<p class=MsoNormal>Os servidores têm a responsabilidade de manter as
+<p>Os servidores têm a responsabilidade de manter as
 informações que compõem a Web e entregar representações dessas informações aos
 clientes. Softwares que abordam a interface do usuário podem, portanto, evoluir
 independentemente do software que precisa gerenciar grandes quantidades de
 dados e responder a solicitações de diversas fontes. Essa separação de
 responsabilidades simplifica ambos os componentes e possibilita sua otimização.</p>
-
-<p class=MsoNormal>O estilo cliente-servidor é então refinado ainda mais pela
+<p>O estilo cliente-servidor é então refinado ainda mais pela
 imposição da exigência de que as requisições para um servidor sejam
 processáveis de forma independente; ou seja, o servidor é capaz de entender e
 processar qualquer requisição com base apenas nas informações daquela única
 requisição. Essa restrição de projeto é frequentemente chamada de
-&quot;servidor sem estado&quot;, e o protocolo HTTP/1.1 correspondente é
-frequentemente chamado de &quot;protocolo sem estado&quot;. Essa terminologia é
+"servidor sem estado", e o protocolo HTTP/1.1 correspondente é
+frequentemente chamado de "protocolo sem estado". Essa terminologia é
 lamentável, pois <i>sugere </i>que o servidor não mantém <i>nenhum </i>estado.
 O servidor certamente pode manter estados de vários tipos: solicitações
 anteriores de clientes podem ter causado o armazenamento de novas informações
@@ -532,20 +447,18 @@ quaisquer recursos que tenha usado para responder a uma solicitação do cliente
 incluindo memória, após a solicitação ter sido tratada. Na ausência desse
 requisito, o servidor poderia ser obrigado a manter esses recursos até que o
 cliente indicasse que não emitiria mais nenhuma solicitação naquela sessão. No
-diagrama, rotulamos essa especialização do estilo CS como &quot;livre de
-contexto&quot;, já que uma requisição de servidor pode ser compreendida e
+diagrama, rotulamos essa especialização do estilo CS como "livre de
+contexto", já que uma requisição de servidor pode ser compreendida e
 processada independentemente de qualquer contexto de requisições ao redor.</p>
-
-<p class=MsoNormal>A imposição dessa exigência nas interações entre clientes e
+<p>A imposição dessa exigência nas interações entre clientes e
 servidores apoia fortemente a escalabilidade, já que os servidores podem
 gerenciar eficientemente seus próprios recursos — sem deixá-los presos na
 expectativa de uma próxima solicitação. Além disso, todos os servidores com
-acesso aos mesmos bancos de dados <span class=SpellE>back-end</span> tornam-se
+acesso aos mesmos bancos de dados <span class="SpellE">back-end</span> tornam-se
 iguais — qualquer um de vários servidores pode ser usado para lidar com uma
 solicitação de cliente, permitindo o compartilhamento de carga entre os
 servidores.</p>
-
-<p class=MsoNormal>A possibilidade de balanceamento de carga barato é resultado
+<p>A possibilidade de balanceamento de carga barato é resultado
 de outra aplicação da camada no design do REST. Intermediários podem ser
 impostos no caminho do processamento de uma solicitação do cliente. Um
 intermediário (como um proxy) fornece a interface necessária para um serviço
@@ -557,19 +470,17 @@ parcial das solicitações, e podem fazê-lo porque todas as solicitações são
 autônomas. Por fim, podem abordar algumas preocupações de segurança, como impor
 limites além dos quais informações especificadas não deveriam ser permitidas
 fluir.</p>
-
-<p class=MsoNormal>Replicação. A replicação de informações em um conjunto de
+<p>Replicação. A replicação de informações em um conjunto de
 servidores oferece a oportunidade de aumentar o desempenho e a robustez do
 sistema. A existência de replicação é oculta dos clientes, é claro, como
 resultado das camadas intermediárias.</p>
-
-<p class=MsoNormal>Uma forma particular de replicação é o armazenamento em
+<p>Uma forma particular de replicação é o armazenamento em
 cache das informações. Em vez de duplicar fontes de informação
 independentemente das informações específicas realmente solicitadas, os caches
 podem manter cópias de informações que já foram solicitadas ou que se espera
 que sejam solicitadas. Caches podem estar localizados próximos a clientes (onde
-podem ser chamados de &quot;proxies&quot;), ou próximos a servidores (onde
-podem ser chamados de &quot;gateways&quot;). A característica crítica é que, como
+podem ser chamados de "proxies"), ou próximos a servidores (onde
+podem ser chamados de "gateways"). A característica crítica é que, como
 as requisições são sempre autônomas, um único cache pode ser utilizado por
 muitos clientes diferentes. Se o cache determinar, com base na inspeção da
 mensagem de solicitação, que possui as informações necessárias, essas
@@ -578,13 +489,11 @@ processamento por parte do servidor. O desempenho do sistema é assim melhorado,
 pois o usuário obtém as informações desejadas sem incorrer em todos os custos
 que normalmente seriam esperados. Para que isso funcione, as respostas dos
 servidores devem ser determinadas se podem ser cacheadas ou não. Por exemplo,
-se uma solicitação for para &quot;a temperatura atual em Denver&quot;, a
-resposta não é <span class=SpellE>cacheável</span>, pois a temperatura está
-continuamente variando. Se a solicitação, no entanto, for para &quot;a
-temperatura em Denver às 24:00 do 01/01/2001&quot;, esse valor é <span
-class=SpellE>cacheável</span> porque é constante.</p>
-
-<p class=MsoNormal>Comunhão limitada. As partes de uma aplicação distribuída
+se uma solicitação for para "a temperatura atual em Denver", a
+resposta não é <span class="SpellE">cacheável</span>, pois a temperatura está
+continuamente variando. Se a solicitação, no entanto, for para "a
+temperatura em Denver às 24:00 do 01/01/2001", esse valor é <span class="SpellE">cacheável</span> porque é constante.</p>
+<p>Comunhão limitada. As partes de uma aplicação distribuída
 podem ser adaptadas para funcionar juntas, seja exigindo que um corpo comum de
 código seja usado para gerenciar todas as comunicações, seja pela imposição de
 padrões que regem essa comunicação. Neste último caso, múltiplas implementações
@@ -594,8 +503,7 @@ superior ao código comum em uma aplicação aberta e heterogênea. A inovação
 fomentada, especializações locais podem ser suportadas, diferentes plataformas
 de hardware são usadas, e assim por diante. A questão, porém, é que tipo de
 padrões de comunicação deveriam ser impostos?</p>
-
-<p class=MsoNormal>Uma opção é o estilo rico em recursos. Nessa abordagem, todo
+<p>Uma opção é o estilo rico em recursos. Nessa abordagem, todo
 tipo possível de interação é antecipado e suportado diretamente no padrão. Essa
 abordagem tem a desvantagem de que, sempre que qualquer alteração em qualquer
 parte do protocolo é necessária, todas as implementações devem ser atualizadas
@@ -608,8 +516,7 @@ como dados), em uma forma padronizada para transmissão. Isso é projetado para
 ser eficiente para transferência de dados hipermídia de grande granulação,
 otimizando para a aplicação alvo da Web, mas resultando em uma interface que
 não é ideal para outras formas de interação.</p>
-
-<p class=MsoNormal>Extensão dinâmica. Permitir que os clientes recebam dados
+<p>Extensão dinâmica. Permitir que os clientes recebam dados
 arbitrários, descritos por metadados, em resposta a uma solicitação a um
 servidor permite que a funcionalidade do cliente seja estendida dinamicamente.
 Os dados obtidos por um cliente podem ser, por exemplo, um script ou um applet
@@ -617,110 +524,86 @@ que o cliente pode escolher executar. Com essa execução, o cliente é capaz de
 executar novas funções e ser essencialmente personalizado para as necessidades
 específicas do usuário. Assim, o REST incorpora o estilo variante de código sob
 demanda do código móvel.</p>
-
-<p class=MsoNormal><b>Resumo<o:p></o:p></b></p>
-
-<p class=MsoNormal>O REST é um exemplo de estilo arquitetônico movido por um
+<p><b>Resumo</b></p>
+<p>O REST é um exemplo de estilo arquitetônico movido por um
 profundo entendimento tanto do domínio de aplicação específico suportado
 (hipermídia distribuída por rede aberta) quanto dos benefícios que podem ser
 obtidos com vários estilos arquitetônicos simples. Restrições de vários estilos
 são combinadas de forma criteriosa para produzir uma abordagem arquitetônica
 coerente, que é resumida na caixa abaixo. O sucesso da Web se deve a essa
-engenharia cuidadosa.<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch11.html#ftn.CHP-11-FN-1"><b><sup>[13]</sup></b></a></p>
-
-<p class=MsoNormal><b>Estilo: Transferência de Estado <span class=SpellE>REapresentacional</span>
-(REST)<o:p></o:p></b></p>
-
-<p class=MsoNormal><b>Resumo: </b>Cliente-servidor restrito com foco nos
+engenharia cuidadosa.<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch11.html#ftn.CHP-11-FN-1"><b><sup>[13]</sup></b></a></p>
+<p><b>Estilo: Transferência de Estado <span class="SpellE">REapresentacional</span>
+(REST)</b></p>
+<p><b>Resumo: </b>Cliente-servidor restrito com foco nos
 elementos de dados comunicados.</p>
-
-<p class=MsoNormal><b>Componentes: </b>servidor <span class=SpellE>Origin</span>
-(<span class=GramE>como Apache</span> <span class=SpellE>httpd</span>,
-Microsoft IIS); gateway (como <span class=SpellE>Squid</span>, CGI); proxy;
-agente de usuário (como Safari, Internet Explorer, <span class=SpellE>bots</span>
+<p><b>Componentes: </b>servidor <span class="SpellE">Origin</span>
+(<span class="GramE">como Apache</span> <span class="SpellE">httpd</span>,
+Microsoft IIS); gateway (como <span class="SpellE">Squid</span>, CGI); proxy;
+agente de usuário (como Safari, Internet Explorer, <span class="SpellE">bots</span>
 de busca)</p>
-
-<p class=MsoNormal><b>Conectores: </b>Interface do lado do cliente (como <span
-class=SpellE>libwww</span>); interface do lado do servidor (como a API Apache);
+<p><b>Conectores: </b>Interface do lado do cliente (como <span class="SpellE">libwww</span>); interface do lado do servidor (como a API Apache);
 túnel (como SOCKS, SSL após HTTP CONNECT)</p>
-
-<p class=MsoNormal><b>Elementos de Dados: </b>Recurso (o alvo conceitual
+<p><b>Elementos de Dados: </b>Recurso (o alvo conceitual
 pretendido de uma referência de hipertexto); identificador de recurso (URL);
 representação (como documento HTML, imagem JPEG); metadados de representação
 (como tipo de mídia, tempo da última modificação); metadados de recursos (como
-link fonte, alternativas); dados de controle (como <span class=SpellE>if-modified-since</span>,
+link fonte, alternativas); dados de controle (como <span class="SpellE">if-modified-since</span>,
 controle de cache)</p>
-
-<p class=MsoNormal><b>Topologia: </b><span class=SpellE><span class=GramE>Multi-cliente</span></span>/<span
-class=SpellE>multi-servidor</span> com proxies intermediários.</p>
-
-<p class=MsoNormal><b>Restrições impostas:</b> Seis Princípios REST, ou <span
-class=SpellE>RPs</span>:</p>
-
-<ul style='margin-top:0cm' type=disc>
- <li class=MsoNormal style='mso-list:l102 level1 lfo318;tab-stops:list 36.0pt'><i>RP1</i>:
+<p><b>Topologia: </b><span class="SpellE"><span class="GramE">Multi-cliente</span></span>/<span class="SpellE">multi-servidor</span> com proxies intermediários.</p>
+<p><b>Restrições impostas:</b> Seis Princípios REST, ou <span class="SpellE">RPs</span>:</p>
+<ul style="margin-top:0cm" type="disc">
+<li><i>RP1</i>:
      A abstração chave da informação é um recurso, nomeado por uma URL.
      Qualquer informação que possa ser citada pode ser um recurso.</li>
- <li class=MsoNormal style='mso-list:l102 level1 lfo318;tab-stops:list 36.0pt'><i>RP2</i>:
+<li><i>RP2</i>:
      A representação de um recurso é uma sequência de bytes, mais metadados de
      representação para descrever esses bytes. A forma particular da
      representação pode ser negociada entre componentes REST.</li>
- <li class=MsoNormal style='mso-list:l102 level1 lfo318;tab-stops:list 36.0pt'><i>RP3</i>:
+<li><i>RP3</i>:
      Todas as interações são sem contexto — cada interação contém todas as
      informações necessárias para entender o pedido, independentemente de
      quaisquer solicitações que possam ter precedido.</li>
- <li class=MsoNormal style='mso-list:l102 level1 lfo318;tab-stops:list 36.0pt'><i>RP4</i>:
+<li><i>RP4</i>:
      Os componentes executam apenas um pequeno conjunto de métodos bem
      definidos em um recurso, produzindo uma representação para capturar o
      estado atual ou pretendido desse recurso e transferir essa representação
      entre componentes. Esses métodos são globais para a instanciação
      arquitetônica específica do REST; por exemplo, todos os recursos expostos
      via HTTP devem suportar cada operação de forma idêntica.</li>
- <li class=MsoNormal style='mso-list:l102 level1 lfo318;tab-stops:list 36.0pt'><i>RP5</i>:
+<li><i>RP5</i>:
      Operações idempotentes e metadados de representação são incentivados para
      apoiar cache e reutilização de representações.</li>
- <li class=MsoNormal style='mso-list:l102 level1 lfo318;tab-stops:list 36.0pt'><i>RP6</i>:
+<li><i>RP6</i>:
      A presença de intermediários é promovida. Intermediários de filtragem ou
      redirecionamento também podem usar tanto os metadados quanto as
      representações dentro de requisições ou respostas para aumentar,
      restringir ou modificar solicitações e respostas de forma transparente
      tanto para o agente de usuário quanto para o servidor de origem.</li>
 </ul>
-
-<p class=MsoNormal><b>Qualidades geradas:</b> aplicações de rede abertas,
+<p><b>Qualidades geradas:</b> aplicações de rede abertas,
 extensíveis e altamente escaláveis. Reduz a latência de rede em aplicações
 distribuídas enquanto facilita implementações de componentes independentes e
 eficientes.</p>
-
-<p class=MsoNormal><b>Usos Típicos:</b> A World <span class=SpellE>Wide</span>
+<p><b>Usos Típicos:</b> A World <span class="SpellE">Wide</span>
 Web (hipermídia distribuída).</p>
-
-<p class=MsoNormal><b>Avisos: </b>Diversos sites e livros afirmam caracterizar
+<p><b>Avisos: </b>Diversos sites e livros afirmam caracterizar
 ou exemplificar os princípios do REST. O leitor deve ser muito cauteloso, pois
 muitas fontes deturpam ou deturpam o REST.</p>
-
-<p class=MsoNormal><b>Relações com Linguagens de Programação ou Ambientes:</b>
-Os aspectos de código sob demanda e dinâmicos da Web favorecem linguagens como <span
-class=SpellE>JavaScript</span>, Java, <span class=SpellE>Scheme</span>, Ruby e
+<p><b>Relações com Linguagens de Programação ou Ambientes:</b>
+Os aspectos de código sob demanda e dinâmicos da Web favorecem linguagens como <span class="SpellE">JavaScript</span>, Java, <span class="SpellE">Scheme</span>, Ruby e
 Python.</p>
-
-<p class=MsoNormal>O estilo REST é certamente uma ferramenta poderosa para uso
+<p>O estilo REST é certamente uma ferramenta poderosa para uso
 em aplicações baseadas em rede, onde questões de latência e agência (limites de
-autoridade)<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch11.html#ftn.CHP-11-FN-2"><b><sup>[14]</sup></b></a>
+autoridade)<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch11.html#ftn.CHP-11-FN-2"><b><sup>[14]</sup></b></a>
 são proeminentes. Também é instrutivo para orientar arquitetos na criação de
 outros estilos especializados. Os trade-offs feitos no desenvolvimento do REST,
 como quantas operações incluir na especificação limitada da interface, destacam
 que a criação desse estilo não é simples. No entanto, a combinação de
 restrições de vários estilos mais simples pode resultar em uma ferramenta
 poderosa e personalizada.</p>
-
-<p class=MsoNormal><b>Aplicações Comerciais em Escala da Internet<o:p></o:p></b></p>
-
-<p class=MsoNormal><span class=SpellE><b>Akamai</b></span><b><o:p></o:p></b></p>
-
-<p class=MsoNormal>A arquitetura REST tem sido bem-sucedida em permitir que a
+<p><b>Aplicações Comerciais em Escala da Internet</b></p>
+<p><span class="SpellE"><b>Akamai</b></span><b></b></p>
+<p>A arquitetura REST tem sido bem-sucedida em permitir que a
 Web escalasse em um período em que o uso da Web crescia exponencialmente. Uma
 das principais características do REST que possibilitou essa escala foi o
 cache. Embora o cache possa ser realizado por qualquer componente em uma
@@ -740,19 +623,18 @@ frequência — a disputa será pelo acesso ao servidor de origem. Essas demanda
 multidões de flash por acesso ao servidor de origem podem induzi-lo a falhar
 ou, pelo menos, induzir uma latência inaceitável enquanto cada requisição é
 processada por turno.</p>
-
-<p class=MsoNormal>A solução da <span class=SpellE>Akamai</span> para o
+<p>A solução da <span class="SpellE">Akamai</span> para o
 problema, essencialmente, é replicar o servidor de origem em muitos locais da
 rede e direcionar as solicitações de um agente de usuário para o servidor de
-origem &quot;replicante&quot;, chamado de servidor de borda, mais próximo desse
+origem "replicante", chamado de servidor de borda, mais próximo desse
 usuário. Esse redirecionamento, chamado de mapeamento, é realizado quando o
 endereço da Internet (endereço IP) para o recurso solicitado (como
-www.example.com/<span class=SpellE>bicycle-race</span>/) é determinado pelo
-Internet Domain <span class=SpellE>Name</span> Server (DNS) — uma das primeiras
-etapas no processamento de uma solicitação HTTP GET. A <span class=SpellE>Akamai</span>
+www.example.com/<span class="SpellE">bicycle-race</span>/) é determinado pelo
+Internet Domain <span class="SpellE">Name</span> Server (DNS) — uma das primeiras
+etapas no processamento de uma solicitação HTTP GET. A <span class="SpellE">Akamai</span>
 localizou milhares de seus servidores de borda espalhados pela Internet, como
-nos locais onde Provedores de Serviços de Internet (<span class=SpellE>ISPs</span>)
-conectam suas redes à Internet. Uma das forças do <span class=SpellE>Akamai</span>
+nos locais onde Provedores de Serviços de Internet (<span class="SpellE">ISPs</span>)
+conectam suas redes à Internet. Uma das forças do <span class="SpellE">Akamai</span>
 está na forma como o servidor de borda mais próximo é identificado. Esse
 cálculo pode envolver os resultados do monitoramento do status de partes da
 Internet e locais de computação cujo acesso será menos impedido pela demanda em
@@ -760,20 +642,16 @@ outras partes da rede. Os servidores de borda, claro, terão que acessar o
 servidor de origem para atualizar seu conteúdo, mas ao direcionar as
 requisições do agente de usuário final para os servidores de borda, a demanda
 sobre o servidor de origem é mantida gerenciável.</p>
-
-<p class=MsoNormal>Visto arquitetonicamente, <span class=SpellE>Akamai</span>
+<p>Visto arquitetonicamente, <span class="SpellE">Akamai</span>
 explora ainda mais a noção de repositórios replicados. A separação de recursos
 do REST em relação às representações permite que muitos servidores de borda
 forneçam representações do recurso localizado no servidor de origem. Além
 disso, o protocolo de interação livre de contexto do REST permite que muitas
 solicitações de um único agente de usuário sejam atendidas por vários
-servidores de borda diferentes. O esquema de redirecionamento da <span
-class=SpellE>Akamai</span> tem sucesso devido às fortes separações de
+servidores de borda diferentes. O esquema de redirecionamento da <span class="SpellE">Akamai</span> tem sucesso devido às fortes separações de
 preocupações presentes nos protocolos da Internet.</p>
-
-<p class=MsoNormal><b>Google<o:p></o:p></b></p>
-
-<p class=MsoNormal>O Google, como empresa, cresceu de oferecer um único produto
+<p><b>Google</b></p>
+<p>O Google, como empresa, cresceu de oferecer um único produto
 — um mecanismo de busca — para uma ampla gama de aplicações. Como o mecanismo
 de busca e tantos produtos do Google estão tão ligados à Web, pode-se esperar
 que a(s) arquitetura(s) do sistema sejam baseadas em REST. Eles não são. Os
@@ -782,8 +660,7 @@ abordam questões de escala semelhantes à Web, mas a natureza das aplicações 
 estratégia de negócios da empresa exigem uma arquitetura muito diferente. O
 Google também é interessante por causa da quantidade de produtos diferentes que
 compartilham elementos comuns.</p>
-
-<p class=MsoNormal>A característica fundamental de muitos dos aplicativos do
+<p>A característica fundamental de muitos dos aplicativos do
 Google é que eles se baseiam na capacidade de manipular grandes quantidades de
 informação. Terabytes de dados da Web e de outras fontes são armazenados,
 estudados e manipulados de várias maneiras para gerar os produtos de informação
@@ -809,8 +686,7 @@ tipicamente muito grandes (vários gigabytes), a falha dos componentes de
 armazenamento é esperada e controlada, os arquivos são tipicamente adicionados
 (em vez de modificados aleatoriamente), e as regras de consistência para
 gerenciar acessos concorrentes são relaxadas.</p>
-
-<p class=MsoNormal>Funcionando sobre o GFS estão outras aplicações, sendo
+<p>Funcionando sobre o GFS estão outras aplicações, sendo
 notável o MapReduce. Ele oferece um modelo de programação no qual os usuários
 concentram sua atenção em especificar operações de seleção e redução de dados.
 A implementação de suporte do MapReduce é responsável por executar essas
@@ -820,57 +696,49 @@ operação, para que os milhares de processadores disponíveis possam ser efetiv
 aplicados ao problema sem que o desenvolvedor precise lidar explicitamente com
 essas questões. Mais uma vez, o sistema foi projetado para acomodar de forma
 elegante a falha esperada dos processadores envolvidos na execução paralela.</p>
-
-<p class=MsoNormal>As lições de arquitetura do Google são várias:</p>
-
-<ul style='margin-top:0cm' type=disc>
- <li class=MsoNormal style='mso-list:l106 level1 lfo319;tab-stops:list 36.0pt'>Camadas
+<p>As lições de arquitetura do Google são várias:</p>
+<ul style="margin-top:0cm" type="disc">
+<li>Camadas
      de abstração são abundantes: o GFS esconde detalhes de distribuição e
-     falha de dados, por exemplo; <span class=SpellE>MapReduce</span> esconde
+     falha de dados, por exemplo; <span class="SpellE">MapReduce</span> esconde
      as complexidades das operações de paralelização.</li>
- <li class=MsoNormal style='mso-list:l106 level1 lfo319;tab-stops:list 36.0pt'>Projetar,
+<li>Projetar,
      desde o início, para conviver com falhas de processamento, armazenamento e
      elementos de rede, permite a criação de um sistema altamente robusto.</li>
- <li class=MsoNormal style='mso-list:l106 level1 lfo319;tab-stops:list 36.0pt'>Escala
+<li>Escala
      é tudo. O negócio do Google exige que tudo seja construído pensando em
      questões de escalabilidade.</li>
- <li class=MsoNormal style='mso-list:l106 level1 lfo319;tab-stops:list 36.0pt'>Especializar
+<li>Especializar
      o projeto no domínio do problema, em vez de adotar a abordagem genérica do
-     &quot;padrão da indústria&quot;, permite o desenvolvimento de soluções de
+     "padrão da indústria", permite o desenvolvimento de soluções de
      alto desempenho e muito econômicas.</li>
- <li class=MsoNormal style='mso-list:l106 level1 lfo319;tab-stops:list 36.0pt'>Desenvolver
-     uma abordagem geral (<span class=SpellE>MapReduce</span>) para o problema
+<li>Desenvolver
+     uma abordagem geral (<span class="SpellE">MapReduce</span>) para o problema
      de extração/redução de dados permitiu a criação de um serviço altamente
      reutilizável.</li>
 </ul>
-
-<p class=MsoNormal>O contraste entre os dois últimos pontos é instrutivo: por
-um lado, uma<span style='mso-spacerun:yes'>  </span>estratégia <i>de solução
+<p>O contraste entre os dois últimos pontos é instrutivo: por
+um lado, uma<span>  </span>estratégia <i>de solução
 menos geral </i>foi adotada (um sistema de arquivos especializado em vez de um
-banco de dados geral), e por outro, foi criado um <i><span
-style='mso-spacerun:yes'> </span></i>modelo e implementação geral de
+banco de dados geral), e por outro, foi criado um <i><span> </span></i>modelo e implementação geral de
 programação (abstraindo as necessidades de muitas aplicações do Google). Ambas
 as decisões, embora superficialmente contradigas, surgem de um conhecimento
 profundo do que são as aplicações do Google — o que exigem e quais aspectos-chave
 de comunhão estão presentes.</p>
-
-<p class=MsoNormal>ARQUITETAS DESCENTRALIZADAS</p>
-
-<p class=MsoNormal>Na discussão anterior sobre o REST, nos referimos à World
+<p>ARQUITETAS DESCENTRALIZADAS</p>
+<p>Na discussão anterior sobre o REST, nos referimos à World
 Wide Web como uma aplicação distribuída, <i>descentralizada </i>e hipermídia.
 Descentralização refere-se aos múltiplos domínios de autoridade, ou <i>agência</i>,
 que participam de uma aplicação. A ideia é que as várias partes de uma
 aplicação são de propriedade e controladas por diferentes partes, e essas
-partes se comunicam por uma rede (portanto, descentralização implica<span
-style='mso-spacerun:yes'>  </span>essencialmente distribuição também) para
+partes se comunicam por uma rede (portanto, descentralização implica<span>  </span>essencialmente distribuição também) para
 alcançar os objetivos da aplicação. A Web é um bom exemplo dessa cooperação
 entre agências independentes. Milhões de sites ao redor do mundo são de
 propriedade e controlados por tantas pessoas e organizações. Ao concordar com
 os padrões básicos da Web, como o HTTP, qualquer usuário pode atravessar a Web
 para obter informações e, ao fazer isso, pode ultrapassar muitas fronteiras de
 agência.</p>
-
-<p class=MsoNormal>Projetar arquiteturas de software descentralizadas apresenta
+<p>Projetar arquiteturas de software descentralizadas apresenta
 desafios além do design de sistemas distribuídos. No entanto, projetar
 aplicações descentralizadas não é uma ideia nova: a sociedade cotidiana é cheia
 de aplicações descentralizadas projetadas. O correio postal internacional é um
@@ -881,8 +749,7 @@ envolvidas, incluindo padrões para governar como a correspondência é
 endereçada, como o envio é marcado e os acordos estabelecidos para reger o
 roteamento físico e a entrega da correspondência. O comércio internacional é um
 exemplo ainda mais extenso e rico.</p>
-
-<p class=MsoNormal>Arquiteturas descentralizadas são criadas sempre que as
+<p>Arquiteturas descentralizadas são criadas sempre que as
 partes que desejam participar de uma aplicação desejam manter controle autônomo
 sobre aspectos de sua participação. Os proprietários de sites, por exemplo,
 normalmente querem manter a capacidade de tirar seus sites do ar em horários
@@ -892,11 +759,10 @@ não há garantia, por exemplo, de que um participante de um sistema estará
 sempre participando com as melhores intenções. Sistemas descentralizados também
 são distribuídos, então lidar com os novos desafios de múltiplas agências se
 soma aos desafios de lidar com a latência e outras questões de distribuição.</p>
-
-<p class=MsoNormal>Desenvolvedores de aplicações de computador trabalham há
+<p>Desenvolvedores de aplicações de computador trabalham há
 tanto tempo em um mundo onde as aplicações eram fundamentalmente centralizadas
-em termos de autoridade (mesmo que sob a bandeira de &quot;sistemas
-distribuídos&quot;) que, ao começarmos a construir novas aplicações, precisamos
+em termos de autoridade (mesmo que sob a bandeira de "sistemas
+distribuídos") que, ao começarmos a construir novas aplicações, precisamos
 questionar essas suposições e nos adaptar a novas realidades. Esta seção
 explora vários sistemas e abordagens que foram projetados tanto para explorar
 as vantagens de sistemas abertos e descentralizados, quanto para mitigar alguns
@@ -905,31 +771,24 @@ computação em grade, depois focamos em vários sistemas peer-to-peer, pois ele
 ilustram de forma simples e clara alguns dos desafios e soluções de design
 possíveis. A discussão então se volta para os serviços Web, uma abordagem de
 design voltada para apoiar interações entre empresas.</p>
-
-<p class=MsoNormal><b>Computação de Recursos Compartilhados: O Mundo da Grade<o:p></o:p></b></p>
-
-<p class=MsoNormal>Computação em grade é o compartilhamento coordenado de
+<p><b>Computação de Recursos Compartilhados: O Mundo da Grade</b></p>
+<p>Computação em grade é o compartilhamento coordenado de
 recursos e computação em um ambiente descentralizado. A ideia é permitir, por
 exemplo, que uma equipe de pesquisadores use temporariamente diversos recursos
 diversos de hardware e software para um problema computacional. Os recursos
 podem estar sob a autoridade de vários proprietários, mas no momento em que a
 grade está logicamente instalada, o sistema se comporta como se fosse uma
 aplicação distribuída sob uma única autoridade.</p>
-
-<p class=MsoNormal>A tecnologia de suporte em grade foi projetada para tornar
+<p>A tecnologia de suporte em grade foi projetada para tornar
 transparentes todos os detalhes do gerenciamento dos recursos diversos e
 distribuídos. Incluído nesse objetivo de transparência está a gestão dos
 detalhes para cruzar fronteiras de autoridade. Um <i>único registro </i>é,
 portanto, um objetivo específico. Aplicações em grade têm sido usadas para
 suportar a visualização de dados de simulação de terremotos, simular o fluxo de
 sangue, suportar simulações de física e assim por diante.</p>
-
-<p class=MsoNormal>Embora muitos sistemas de grade diferentes tenham sido
-construídos, uma arquitetura comum para eles foi proposta (Foster, <span
-class=SpellE>Kesselman</span> e <span class=SpellE>Tuecke</span> 2001), como
-mostrado na <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch11.html#architecture_of_the_grid_comma_according"
-title="Figure&nbsp;11-2.&nbsp;Architecture of the Grid, according to Foster, Kesselman, and Tuecke. Adapted from (Foster, Kesselman, and Tuecke 2001)."><b>Figura
+<p>Embora muitos sistemas de grade diferentes tenham sido
+construídos, uma arquitetura comum para eles foi proposta (Foster, <span class="SpellE">Kesselman</span> e <span class="SpellE">Tuecke</span> 2001), como
+mostrado na <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch11.html#architecture_of_the_grid_comma_according" title="Figure 11-2. Architecture of the Grid, according to Foster, Kesselman, and Tuecke. Adapted from (Foster, Kesselman, and Tuecke 2001)."><b>Figura
 11-2</b></a>. A arquitetura é em camadas, com a capacidade de componentes
 dentro de qualquer camada de construir sobre os serviços fornecidos por
 qualquer camada inferior. A camada de Aplicação contém os componentes que
@@ -943,99 +802,68 @@ conjunto de recursos. O diagrama destaca especialmente a noção de que a camada
 de aplicação chama as três primeiras camadas abaixo dela, mas não a camada
 Fabric. Presumivelmente, isso indica que a gestão dos recursos de nível mais
 baixo é melhor deixada para a infraestrutura da rede.</p>
-
-<p class=MsoNormal>Infelizmente, a elegância e o design limpo dessa arquitetura
+<p>Infelizmente, a elegância e o design limpo dessa arquitetura
 não são totalmente mantidos por várias tecnologias de grade populares e
 conhecidas. Ao realizar a recuperação arquitetônica baseada no código-fonte dos
-sistemas de grade, uma arquitetura as-<span class=SpellE>built</span> pode ser
-comparada à arquitetura prescritiva da <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch11.html#architecture_of_the_grid_comma_according"
-title="Figure&nbsp;11-2.&nbsp;Architecture of the Grid, according to Foster, Kesselman, and Tuecke. Adapted from (Foster, Kesselman, and Tuecke 2001)."><b>Figura
-11-2</b></a>. Por exemplo,<span style='mso-spacerun:yes'>  </span>a <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch11.html#architecture_of_globus_grid_technology_o"
-title="Figure&nbsp;11-3.&nbsp;Architecture of Globus Grid technology (recovered). (Mattmann, Medvidovi&#263; et al. 2005)."><b>Figura
+sistemas de grade, uma arquitetura as-<span class="SpellE">built</span> pode ser
+comparada à arquitetura prescritiva da <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch11.html#architecture_of_the_grid_comma_according" title="Figure 11-2. Architecture of the Grid, according to Foster, Kesselman, and Tuecke. Adapted from (Foster, Kesselman, and Tuecke 2001)."><b>Figura
+11-2</b></a>. Por exemplo,<span>  </span>a <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch11.html#architecture_of_globus_grid_technology_o" title="Figure 11-3. Architecture of Globus Grid technology (recovered). (Mattmann, Medvidović et al. 2005)."><b>Figura
 11-3</b></a> retrata a arquitetura recuperada do sistema de grade Globus
-(Mattmann, Medvidovi&#263; et al. 2005). Neste caso, por exemplo, várias
+(Mattmann, Medvidović et al. 2005). Neste caso, por exemplo, várias
 chamadas de up-call na arquitetura estão presentes, violando o princípio dos
 sistemas em camadas. Violações arquitetônicas semelhantes foram descobertas em
 outras tecnologias de grade também.</p>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+<p><span><!--[if gte vml 1]><v:shape
  id="Imagem_x0020_241" o:spid="_x0000_i1036" type="#_x0000_t75" alt="Arquitetura da Grade, segundo Foster, Kesselman e Tuecke. Adaptado de (Foster, Kesselman e Tuecke 2001)."
  style='width:340.8pt;height:328.8pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap11-ptbr_arquivos/image002.png" o:title="Arquitetura da Grade, segundo Foster, Kesselman e Tuecke. Adaptado de (Foster, Kesselman e Tuecke 2001)"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=454 height=438
-src="cap11-ptbr_arquivos/image002.png"
-alt="Arquitetura da Grade, segundo Foster, Kesselman e Tuecke. Adaptado de (Foster, Kesselman e Tuecke 2001)."
-v:shapes="Imagem_x0020_241"><![endif]></span></p>
-
-<p class=MsoNormal><b>Figura 11-2.&nbsp;Arquitetura da Grade, segundo Foster,
-Kesselman e Tuecke. Adaptado de (Foster, <span class=SpellE>Kesselman</span> e <span
-class=SpellE>Tuecke</span> 2001).</b></p>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+</v:shape><![endif]--><?if !vml?><img alt="Arquitetura da Grade, segundo Foster, Kesselman e Tuecke. Adaptado de (Foster, Kesselman e Tuecke 2001)." border="0" height="438" src="cap11-ptbr_arquivos/image002.png" v:shapes="Imagem_x0020_241" width="454"/><?endif?></span></p>
+<p><b>Figura 11-2. Arquitetura da Grade, segundo Foster,
+Kesselman e Tuecke. Adaptado de (Foster, <span class="SpellE">Kesselman</span> e <span class="SpellE">Tuecke</span> 2001).</b></p>
+<p><span><!--[if gte vml 1]><v:shape
  id="Imagem_x0020_240" o:spid="_x0000_i1035" type="#_x0000_t75" alt="Arquitetura da tecnologia Globus Grid (recuperada). (Mattmann, Medvidovi&#263; et al. 2005)."
  style='width:411.6pt;height:244.8pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap11-ptbr_arquivos/image003.png" o:title="Arquitetura da tecnologia Globus Grid (recuperada). (Mattmann, Medvidovi&#263; et al. 2005)"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=549 height=326
-src="cap11-ptbr_arquivos/image003.png"
-alt="Arquitetura da tecnologia Globus Grid (recuperada). (Mattmann, Medvidovi&#263; et al. 2005)."
-v:shapes="Imagem_x0020_240"><![endif]></span></p>
-
-<p class=MsoNormal><b>Figura 11-3.&nbsp;Arquitetura da tecnologia Globus Grid
-(recuperada). (Mattmann, Medvidovi&#263; et al. 2005).</b></p>
-
-<p class=MsoNormal><b>Estilos <span class=SpellE>Peer-to-Peer</span><o:p></o:p></b></p>
-
-<p class=MsoNormal><a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch04.html"
-title="Chapter&nbsp;4.&nbsp;Designing Architectures"><b>O capítulo 4</b></a>
+</v:shape><![endif]--><?if !vml?><img alt="Arquitetura da tecnologia Globus Grid (recuperada). (Mattmann, Medvidović et al. 2005)." border="0" height="326" src="cap11-ptbr_arquivos/image003.png" v:shapes="Imagem_x0020_240" width="549"/><?endif?></span></p>
+<p><b>Figura 11-3. Arquitetura da tecnologia Globus Grid
+(recuperada). (Mattmann, Medvidović et al. 2005).</b></p>
+<p><b>Estilos <span class="SpellE">Peer-to-Peer</span></b></p>
+<p><a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch04.html" title="Chapter 4. Designing Architectures"><b>O capítulo 4</b></a>
 introduziu a ideia de arquiteturas peer-to-peer. A discussão ali se concentrou
 nas características fundamentais das arquiteturas P2P, mas não apresentou
 muitos detalhes ou justificativas sobre quando o estilo é apropriado. Os
 exemplos abaixo, Napster, Gnutella e Skype, fornecem alguns desses detalhes.</p>
-
-<p class=MsoNormal><b>Híbrido Cliente-Servidor/<span class=SpellE>Peer-to-Peer</span>:
-Napster<o:p></o:p></b></p>
-
-<p class=MsoNormal>Os sistemas P2P tornaram-se parte do jargão técnico popular
+<p><b>Híbrido Cliente-Servidor/<span class="SpellE">Peer-to-Peer</span>:
+Napster</b></p>
+<p>Os sistemas P2P tornaram-se parte do jargão técnico popular
 devido em grande parte à popularidade do sistema Napster original que surgiu em
 1999. O Napster foi projetado para facilitar o compartilhamento de gravações
 digitais na forma de arquivos MP3. No entanto, o Napster não era um verdadeiro
 sistema P2P. Suas escolhas de design, no entanto, são instrutivas.</p>
-
-<p class=MsoNormal><a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch11.html#notional_view_of_the_operation_of_napste"
-title="Figure&nbsp;11-4.&nbsp;Notional view of the operation of Napster. In steps 1 and 2, Peers A and B log in with the server. In step 3, Peer A queries the server where it can find Rondo Veneziano's &quot;Masquerade.&quot; The location of Peer B is returned to A (step 4). In ste"><b>A
+<p><a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch11.html#notional_view_of_the_operation_of_napste" title="Figure 11-4. Notional view of the operation of Napster. In steps 1 and 2, Peers A and B log in with the server. In step 3, Peer A queries the server where it can find Rondo Veneziano's &quot;Masquerade.&quot; The location of Peer B is returned to A (step 4). In ste"><b>A
 Figura 11-4</b></a> ilustra as principais entidades e atividades do Napster.
 Cada um dos pares mostrados é um programa independente que reside nos
 computadores dos usuários finais. A operação começa com os vários pares se
 registrando no servidor central Napster, rotulado na figura como Diretório de
 Pares e Conteúdo. Ao se registrar, ou depois fazer login, um par informa o
 servidor sobre o endereço de Internet do par e os arquivos de música residentes
-nesse par que o par está disposto a &quot;compartilhar&quot;. O servidor mantém
+nesse par que o par está disposto a "compartilhar". O servidor mantém
 um registro da música disponível e em quais pares. Depois, um par pode
 consultar o servidor para saber onde na Internet uma determinada música pode
 ser obtida. O servidor responde com as localizações disponíveis; O par então
 escolhe um desses locais, faz uma ligação direta para esse par e baixa a
 música.</p>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+<p><span><!--[if gte vml 1]><v:shape
  id="Imagem_x0020_239" o:spid="_x0000_i1034" type="#_x0000_t75" alt="Visão teórica da operação do Napster. Nos passos 1 e 2, os Pares A e B fazem login com o servidor. No passo 3, o Peer A consulta o servidor onde ele pode encontrar a &quot;Masquerade&quot; de Rondo Veneziano. A localização do Par B é retornada para A (passo 4). No passo 5, A pede a música para B, que então é transferida para A (passo 6)."
  style='width:411.6pt;height:336.6pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap11-ptbr_arquivos/image004.png" o:title="Visão teórica da operação do Napster. Nos passos 1 e 2, os Pares A e B fazem login com o servidor. No passo 3, o Peer A consulta o servidor onde ele pode encontrar a &quot;Masquerade&quot; de Rondo Veneziano. A localização do Par B é retornada para A (passo 4)"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=549 height=449
-src="cap11-ptbr_arquivos/image004.png"
-alt="Visão teórica da operação do Napster. Nos passos 1 e 2, os Pares A e B fazem login com o servidor. No passo 3, o Peer A consulta o servidor onde ele pode encontrar a &quot;Masquerade&quot; de Rondo Veneziano. A localização do Par B é retornada para A (passo 4). No passo 5, A pede a música para B, que então é transferida para A (passo 6)."
-v:shapes="Imagem_x0020_239"><![endif]></span></p>
-
-<p class=MsoNormal><b>Figura 11-4.&nbsp;Visão teórica da operação do Napster.
+</v:shape><![endif]--><?if !vml?><img alt='Visão teórica da operação do Napster. Nos passos 1 e 2, os Pares A e B fazem login com o servidor. No passo 3, o Peer A consulta o servidor onde ele pode encontrar a "Masquerade" de Rondo Veneziano. A localização do Par B é retornada para A (passo 4). No passo 5, A pede a música para B, que então é transferida para A (passo 6).' border="0" height="449" src="cap11-ptbr_arquivos/image004.png" v:shapes="Imagem_x0020_239" width="549"/><?endif?></span></p>
+<p><b>Figura 11-4. Visão teórica da operação do Napster.
 Nos passos 1 e 2, os Pares A e B fazem login com o servidor. No passo 3, o Peer
-A consulta o servidor onde ele pode encontrar a &quot;Masquerade&quot; de Rondo
+A consulta o servidor onde ele pode encontrar a "Masquerade" de Rondo
 Veneziano. A localização do Par B é retornada para A (passo 4). No passo 5, A
 pede a música para B, que então é transferida para A (passo 6).</b></p>
-
-<p class=MsoNormal>Arquitetonicamente, esse sistema pode ser visto como um
+<p>Arquitetonicamente, esse sistema pode ser visto como um
 híbrido entre cliente-servidor e puro P2P. Os pares atuam como clientes ao se
 registrarem no Diretório de Pares e Conteúdo e ao enviá-lo. Uma vez que um par
 sabe onde pedir uma música, uma troca P2P é iniciada; Assim, qualquer par pode,
@@ -1045,22 +873,17 @@ Napster optou por usar um protocolo proprietário para interações entre os par
 e o diretório de conteúdo; HTTP era usado para buscar o conteúdo de um par. (A
 decisão de usar um protocolo proprietário trouxe benefícios duvidosos,
 incluindo limitar o compartilhamento de arquivos a arquivos MP3.)</p>
-
-<p class=MsoNormal>A limpeza arquitetônica desse projeto também é sua queda.
+<p>A limpeza arquitetônica desse projeto também é sua queda.
 Se, por exemplo, uma música altamente desejada ficar disponível, o servidor
 ficará sobrecarregado com solicitações buscando sua(s) localização(ões). E,
 claro, se o servidor cair ou for derrubado por ordem judicial, todos os pares
 perdem a capacidade de encontrar outros pares.</p>
-
-<p class=MsoNormal><b>P2P Descentralizado Puro: <span class=SpellE>Gnutella</span><o:p></o:p></b></p>
-
-<p class=MsoNormal>Aliviar as limitações de design do Napster foi um dos
-objetivos de projeto do <span class=SpellE>Gnutella</span> (Kan 2001). A versão
-mais antiga da <span class=SpellE>Gnutelle</span> era um sistema puro P2P; Não
+<p><b>P2P Descentralizado Puro: <span class="SpellE">Gnutella</span></b></p>
+<p>Aliviar as limitações de design do Napster foi um dos
+objetivos de projeto do <span class="SpellE">Gnutella</span> (Kan 2001). A versão
+mais antiga da <span class="SpellE">Gnutelle</span> era um sistema puro P2P; Não
 existe um servidor central — todos os pares são iguais em capacidade e
-responsabilidade.&nbsp;<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch11.html#notional_interactions_between_peers_usin"
-title="Figure&nbsp;11-5.&nbsp;Notional interactions between peers using the original Gnutella protocol."><b>As
+responsabilidade. <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch11.html#notional_interactions_between_peers_usin" title="Figure 11-5. Notional interactions between peers using the original Gnutella protocol."><b>As
 figuras 11-5</b></a> ajudam a ilustrar o protocolo básico. Semelhante ao
 Napster, cada um dos pares é um usuário que executa um software que implementa
 o protocolo Gnutella em um computador independente na Internet. Se o Par A, por
@@ -1069,32 +892,25 @@ uma consulta aos pares Gnutella na rede que conhece, os Pares B e H, na etapa
 1. Assumindo que não possuem a canção, eles repassam a consulta para os pares
 que conhecem: um ao outro, e os Pares C e G, no passo 2. A propagação da
 consulta continua se espalhando por toda a rede até que algum limiar de
-retransmissão seja ultrapassado (chamado de &quot;contagem de saltos&quot;) ou
+retransmissão seja ultrapassado (chamado de "contagem de saltos") ou
 até que um par seja alcançado com a música desejada. Se assumirmos que o Par F
 tem a música, ele responde ao Par que a perguntou (Peer C no passo 3), dizendo
 ao Par C que ele tem a música. O Peer C então retransmite essas informações,
 incluindo o endereço de rede do Peer F, para os pares que solicitaram as
 informações dele.</p>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+<p><span><!--[if gte vml 1]><v:shape
  id="Imagem_x0020_238" o:spid="_x0000_i1033" type="#_x0000_t75" alt="Interações notionais entre pares usando o protocolo original Gnutella."
  style='width:411.6pt;height:325.8pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap11-ptbr_arquivos/image005.png" o:title="Interações notionais entre pares usando o protocolo original Gnutella"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=549 height=434
-src="cap11-ptbr_arquivos/image005.png"
-alt="Interações notionais entre pares usando o protocolo original Gnutella."
-v:shapes="Imagem_x0020_238"><![endif]></span></p>
-
-<p class=MsoNormal><b>Figura 11-5.&nbsp;Interações notionais entre pares usando
-o protocolo original <span class=SpellE>Gnutella</span>.</b></p>
-
-<p class=MsoNormal>Eventualmente, o Par A obterá o endereço do Par F e poderá
+</v:shape><![endif]--><?if !vml?><img alt="Interações notionais entre pares usando o protocolo original Gnutella." border="0" height="434" src="cap11-ptbr_arquivos/image005.png" v:shapes="Imagem_x0020_238" width="549"/><?endif?></span></p>
+<p><b>Figura 11-5. Interações notionais entre pares usando
+o protocolo original <span class="SpellE">Gnutella</span>.</b></p>
+<p>Eventualmente, o Par A obterá o endereço do Par F e poderá
 então iniciar um pedido direto para F na etapa 4 para baixar a música. A música
-é baixada no passo 5. Assim como no Napster, o protocolo <span class=SpellE>Gnutella</span>
+é baixada no passo 5. Assim como no Napster, o protocolo <span class="SpellE">Gnutella</span>
 foi projetado sob medida, mas o download direto da música era feito usando uma
 requisição HTTP GET.</p>
-
-<p class=MsoNormal>Vários problemas enfrentados pelos sistemas P2P são
+<p>Vários problemas enfrentados pelos sistemas P2P são
 evidentes neste exemplo. Quando um novo par entra na rede, como ele encontra
 outros pares para os quais suas consultas possam ser enviadas? Quando uma
 consulta é emitida, quantos pares acabarão sendo solicitados pelo recurso
@@ -1103,52 +919,41 @@ Lembre-se de que todos os colegas só conhecem os pedidos que receberam e os
 pedidos que emitiram ou repassaram; Eles não têm conhecimento global. Quanto
 tempo deve esperar o colega solicitante para obter uma resposta? Quão eficiente
 é todo o processo?</p>
-
-<p class=MsoNormal>Talvez o mais interessante seja que, quando um <span
-class=SpellE>peer</span> responde que possui o recurso solicitado e o
+<p>Talvez o mais interessante seja que, quando um <span class="SpellE">peer</span> responde que possui o recurso solicitado e o
 solicitante o baixa, que garantia o solicitante tem de que a informação baixada
-é a que foi buscada? A experiência com <span class=SpellE>Gnutella</span>
+é a que foi buscada? A experiência com <span class="SpellE">Gnutella</span>
 revela o que se poderia esperar: frequentemente, a maioria das respostas a uma
 solicitação de recurso eram vírus ou outros malwares, apresentados para
 aparecerem superficialmente como o recurso solicitado.</p>
-
-<p class=MsoNormal>Deixando essas fraquezas significativas de lado, uma
-observação crítica sobre a <span class=SpellE>Gnutella</span> é que ela é
+<p>Deixando essas fraquezas significativas de lado, uma
+observação crítica sobre a <span class="SpellE">Gnutella</span> é que ela é
 altamente robusta. A remoção de qualquer par da rede, ou de qualquer conjunto
 de pares, não diminui a capacidade dos pares restantes de continuarem a atuar.
 A remoção de um par pode tornar um recurso específico indisponível se esse par
 fosse a fonte única para esse recurso, mas se um recurso estivesse disponível
 de várias fontes, ele ainda poderia ser encontrado e obtido mesmo que muitos
-pares fossem removidos da rede. Nesse sentido, a <span class=SpellE>Gnutella</span>
-reflete o design básico da Internet: roteadores e <span class=SpellE>sub-redes</span>
+pares fossem removidos da rede. Nesse sentido, a <span class="SpellE">Gnutella</span>
+reflete o design básico da Internet: roteadores e <span class="SpellE">sub-redes</span>
 intermediários podem ir e vir, mas o protocolo de Internet oferece uma entrega
 altamente robusta de pacotes das fontes para os destinos.</p>
-
-<p class=MsoNormal>Apesar do benefício de ser altamente robusto, as limitações
-intrínsecas da abordagem <span class=SpellE>Gnutella</span> levaram à busca por
-mecanismos aprimorados. Versões recentes do <span class=SpellE>Gnutella</span>
-adotaram parte do uso Napster de &quot;pares especiais&quot; para melhorar, por
+<p>Apesar do benefício de ser altamente robusto, as limitações
+intrínsecas da abordagem <span class="SpellE">Gnutella</span> levaram à busca por
+mecanismos aprimorados. Versões recentes do <span class="SpellE">Gnutella</span>
+adotaram parte do uso Napster de "pares especiais" para melhorar, por
 exemplo, o processo de localização de pares.</p>
-
-<p class=MsoNormal>Napster e Gnutella são interessantes principalmente por seu
+<p>Napster e Gnutella são interessantes principalmente por seu
 papel histórico e pela facilidade em explicar os benefícios e limitações das
 arquiteturas P2P. Um uso maduro e comercial do P2P é encontrado no Skype, que
 consideramos a seguir.</p>
-
-<p class=MsoNormal><b>P2P sobreposto: Skype<o:p></o:p></b></p>
-
-<p class=MsoNormal>O Skype é um aplicativo popular de comunicação na Internet
-construído sobre uma arquitetura P2P.<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch11.html#ftn.CHP-11-FN-3"><b><sup>[15]</sup></b></a>
+<p><b>P2P sobreposto: Skype</b></p>
+<p>O Skype é um aplicativo popular de comunicação na Internet
+construído sobre uma arquitetura P2P.<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch11.html#ftn.CHP-11-FN-3"><b><sup>[15]</sup></b></a>
 Para usar o Skype, o usuário deve baixar o aplicativo Skype apenas do Skype. Em
 contraste com o Gnutella, não existem implementações de código aberto, e o
 protocolo Skype é proprietário e secreto. Quando o aplicativo é executado, o
 usuário deve primeiro se registrar no servidor de login Skype. Após essa
 interação, o sistema opera de forma P2P.</p>
-
-<p class=MsoNormal><a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch11.html#notional_instance_of_the_skype_architect"
-title="Figure&nbsp;11-6.&nbsp;Notional instance of the Skype architecture."><b>As
+<p><a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch11.html#notional_instance_of_the_skype_architect" title="Figure 11-6. Notional instance of the Skype architecture."><b>As
 figuras 11-6</b></a> ilustram como a aplicação funciona com mais detalhes. A
 figura mostra o Peer 1 fazendo login no servidor Skype. Esse servidor então
 informa ao par Skype o endereço do Supernó A, que o par então entra em contato.
@@ -1159,15 +964,13 @@ supernó, e depois para o par receptor diretamente (como para o Par 2) ou para o
 supernós e depois para o par receptor. Se ambos os pares estiverem em redes
 públicas, não atrás de firewalls, então a interação entre os pares pode ser
 configurada diretamente, como mostrado na figura entre o Pares 2 e o Par-3.</p>
-
-<p class=MsoNormal>Os <span class=SpellE>supernós</span> fornecem, pelo menos,
+<p>Os <span class="SpellE">supernós</span> fornecem, pelo menos,
 serviços de diretório e roteamento de chamadas. Suas localizações são
 escolhidas com base nas características da rede e na capacidade de
 processamento da máquina em que rodam, bem como na carga dessa máquina.
-Enquanto o servidor de login está sob a autoridade de Skype.com, as máquinas <span
-class=SpellE>supernós</span> não estão. Em particular, <i>qualquer</i> par do
+Enquanto o servidor de login está sob a autoridade de Skype.com, as máquinas <span class="SpellE">supernós</span> não estão. Em particular, <i>qualquer</i> par do
 Skype tem potencial para se tornar um supernó. Os pares do Skype são
-&quot;promovidos&quot; ao status de supernós com base em seu histórico de
+"promovidos" ao status de supernós com base em seu histórico de
 desempenho de rede e máquina. O usuário que baixou e instalou o par não tem a
 capacidade de impedir que o par se torne um supernó. Note as possíveis
 consequências disso para alguns usuários. Suponha que o dono de uma máquina
@@ -1176,74 +979,60 @@ quantidade de tráfego que entra e sai da máquina onde o par está instalado. S
 esse par se tornar um supernó, o proprietário então arcará com o custo real de
 rotear um número potencialmente grande de chamadas — chamadas das quais o
 proprietário não participa e nem sequer sabe que estão ocorrendo.</p>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+<p><span><!--[if gte vml 1]><v:shape
  id="Imagem_x0020_237" o:spid="_x0000_i1032" type="#_x0000_t75" alt="Instância nocional da arquitetura Skype."
  style='width:411.6pt;height:358.8pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap11-ptbr_arquivos/image006.png" o:title="Instância nocional da arquitetura Skype"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=549 height=478
-src="cap11-ptbr_arquivos/image006.png"
-alt="Instância nocional da arquitetura Skype." v:shapes="Imagem_x0020_237"><![endif]></span></p>
-
-<p class=MsoNormal><b>Figuras 11-6.&nbsp;Instância nocional da arquitetura
+</v:shape><![endif]--><?if !vml?><img alt="Instância nocional da arquitetura Skype." border="0" height="478" src="cap11-ptbr_arquivos/image006.png" v:shapes="Imagem_x0020_237" width="549"/><?endif?></span></p>
+<p><b>Figuras 11-6. Instância nocional da arquitetura
 Skype.</b></p>
-
-<p class=MsoNormal>Vários aspectos dessa arquitetura são notáveis:</p>
-
-<ul style='margin-top:0cm' type=disc>
- <li class=MsoNormal style='mso-list:l66 level1 lfo320;tab-stops:list 36.0pt'>Uma
+<p>Vários aspectos dessa arquitetura são notáveis:</p>
+<ul style="margin-top:0cm" type="disc">
+<li>Uma
      arquitetura mista cliente-servidor e peer-to-peer resolve o problema de
      descoberta. A rede não é inundada de solicitações tentando localizar um
-     parceiro, como aconteceria com a <span class=SpellE>Gnutella</span>
+     parceiro, como aconteceria com a <span class="SpellE">Gnutella</span>
      original.</li>
- <li class=MsoNormal style='mso-list:l66 level1 lfo320;tab-stops:list 36.0pt'>A
-     replicação e distribuição dos diretórios, na forma de <span class=SpellE>supernós</span>,
+<li>A
+     replicação e distribuição dos diretórios, na forma de <span class="SpellE">supernós</span>,
      abordam os problemas de escalabilidade e robustez encontrados no Napster.</li>
- <li class=MsoNormal style='mso-list:l66 level1 lfo320;tab-stops:list 36.0pt'>A
-     promoção de pares comuns para <span class=SpellE>supernós</span> com base
+<li>A
+     promoção de pares comuns para <span class="SpellE">supernós</span> com base
      nas capacidades de rede e processamento aborda outro aspecto do desempenho
-     do sistema: &quot;Não qualquer par&quot; é usado para serviços
+     do sistema: "Não qualquer par" é usado para serviços
      importantes. Além disso, tantos nós quanto a necessidade dinâmica podem se
-     tornar <span class=SpellE>supernós</span>.</li>
- <li class=MsoNormal style='mso-list:l66 level1 lfo320;tab-stops:list 36.0pt'>Um
+     tornar <span class="SpellE">supernós</span>.</li>
+<li>Um
      protocolo proprietário que emprega criptografia oferece privacidade para
-     chamadas retransmitidas por meio de intermediários de <span class=SpellE>supernós</span>.</li>
- <li class=MsoNormal style='mso-list:l66 level1 lfo320;tab-stops:list 36.0pt'>A
+     chamadas retransmitidas por meio de intermediários de <span class="SpellE">supernós</span>.</li>
+<li>A
      restrição dos participantes a clientes emitidos apenas pelo Skype, e
      tornando esses clientes altamente resistentes a inspeção ou modificação,
-     impede que clientes maliciosos entrem na rede, evitando o problema <span
-     class=SpellE>Gnutella</span>.</li>
+     impede que clientes maliciosos entrem na rede, evitando o problema <span class="SpellE">Gnutella</span>.</li>
 </ul>
-
-<p class=MsoNormal>Esse último ponto nos impede de afirmar com muita força como
+<p>Esse último ponto nos impede de afirmar com muita força como
 o Skype funciona. Os detalhes aqui fornecidos resultaram de um estudo extensivo
 do Skype por cientistas terceiros, cujas citações são fornecidas ao final do
 capítulo. A descrição lateral do Skype que acompanha é baseada em material
 fornecido no site Skype.com.</p>
-
-<p class=MsoNormal><b>Skype via Skype a partir de www.skype.com<o:p></o:p></b></p>
-
-<p class=MsoNormal>&quot;A seguir estão algumas das técnicas que o Skype
+<p><b>Skype via Skype a partir de www.skype.com</b></p>
+<p>"A seguir estão algumas das técnicas que o Skype
 emprega para oferecer telefonia baseada em IP de última geração.</p>
-
-<p class=MsoNormal><b>Travessia de firewall e NAT (Tradução de Endereços de
+<p><b>Travessia de firewall e NAT (Tradução de Endereços de
 Rede):</b> Clientes e clientes não protegidos por firewall em endereços IP
 publicamente roteáveis podem ajudar nós com NAT a se comunicar por meio de
 roteamento de chamadas. Isso permite que dois clientes que, de outra forma, não
 conseguiriam se comunicar, conversem entre si. Como as chamadas são
 criptografadas de ponta a ponta, proxies limitam o risco de segurança ou
 privacidade.</p>
-
-<p class=MsoNormal>Da mesma forma, apenas proxies com recursos disponíveis são
+<p>Da mesma forma, apenas proxies com recursos disponíveis são
 escolhidos para que o desempenho desses usuários não seja afetado.</p>
-
-<p class=MsoNormal>Várias novas técnicas também foram desenvolvidas para evitar
+<p>Várias novas técnicas também foram desenvolvidas para evitar
 a configuração de gateways e firewalls pelo usuário final, cujas configurações
 não intuitivas normalmente impedem a maioria dos usuários de se comunicar com
 sucesso. Em resumo, o Skype funciona atrás da maioria dos firewalls e gateways
 sem nenhuma configuração especial.</p>
-
-<p class=MsoNormal><b>Diretório global descentralizado de usuários:</b> A
+<p><b>Diretório global descentralizado de usuários:</b> A
 maioria dos softwares de mensagens instantâneas ou comunicação requer algum
 tipo de diretório centralizado para estabelecer uma conexão entre usuários
 finais, a fim de associar um nome de usuário estático e uma identidade a um
@@ -1255,69 +1044,61 @@ monitora se os usuários estão ou não online. Diretórios centrais são
 extremamente caros quando a base de usuários chega a milhões. Ao descentralizar
 essa infraestrutura que consome muitos recursos, o Skype consegue concentrar
 todos os nossos recursos no desenvolvimento de funcionalidades de ponta.</p>
-
-<p class=MsoNormal>... A tecnologia Global Index é uma rede em múltiplos níveis
+<p>... A tecnologia Global Index é uma rede em múltiplos níveis
 onde os supernós se comunicam de forma que cada nó da rede tenha pleno
 conhecimento de todos os usuários e recursos disponíveis com latência mínima.</p>
-
-<p class=MsoNormal><b>Roteamento inteligente: </b>Utilizando todos os recursos
+<p><b>Roteamento inteligente: </b>Utilizando todos os recursos
 possíveis, o Skype consegue rotear chamadas criptografadas de forma inteligente
 pelo caminho mais eficaz possível. O Skype até mantém múltiplos caminhos de
 conexão abertos e escolhe dinamicamente aquele que é mais adequado no momento.
 Isso tem o efeito perceptível de reduzir a latência e aumentar a qualidade das
-chamadas em toda a rede.&quot; &#8722;2008 © &quot;Skype Limitado&quot;.</p>
-
-<p class=MsoNormal><b>Troca de Recursos P2P: BitTorrent<o:p></o:p></b></p>
-
-<p class=MsoNormal>O BitTorrent é outra aplicação peer-to-peer cuja arquitetura
+chamadas em toda a rede." −2008 © "Skype Limitado".</p>
+<p><b>Troca de Recursos P2P: BitTorrent</b></p>
+<p>O BitTorrent é outra aplicação peer-to-peer cuja arquitetura
 foi especializada para atingir objetivos específicos. O objetivo principal é
 suportar a rápida replicação de arquivos grandes em pares individuais, conforme
 a demanda. A abordagem distinta do BitTorrent é tentar maximizar o uso de todos
 os recursos disponíveis na rede de pares interessados para minimizar o peso
 sobre qualquer participante, promovendo assim a escalabilidade.</p>
-
-<p class=MsoNormal>O problema que o BitTorrent resolve pode ser visto
+<p>O problema que o BitTorrent resolve pode ser visto
 considerando o que acontece no Napster ou no Gnutella, como descrito acima,
 quando um par na rede tem um item popular. Qualquer par que anuncie a
 disponibilidade de um recurso (seja registrando o recurso no servidor Napster,
 seja respondendo a uma consulta de rede, no caso do Gnutella) pode rapidamente
 se tornar o destinatário de um número muito grande de solicitações para esse
 recurso — possivelmente mais do que a máquina pode suportar. Essas multidões
-flash sobrecarregam o servidor peer-<span class=GramE>server</span> que possui
+flash sobrecarregam o servidor peer-<span class="GramE">server</span> que possui
 o recurso e, assim, podem desencorajar o proprietário do servidor de participar
 ainda mais da rede P2P.</p>
-
-<p class=MsoNormal>A abordagem do BitTorrent é distribuir partes de um arquivo
+<p>A abordagem do BitTorrent é distribuir partes de um arquivo
 para vários pares e, assim, distribuir tanto as cargas de processamento quanto
-de rede em várias partes da rede <span class=SpellE>peer</span>. Um par não
+de rede em várias partes da rede <span class="SpellE">peer</span>. Um par não
 obtém o arquivo grande solicitado de um único recurso; em vez disso, as partes
 do arquivo são obtidas de vários pares e depois remontadas. Além disso, o par
 solicitante não apenas baixa as peças, mas também é responsável por enviar as
 partes do arquivo que possui para outros pares interessados — lembre-se de que
 o contexto operacional é aquele em que muitos pares estão simultaneamente
 interessados em obter uma cópia do arquivo.</p>
-
-<p class=MsoNormal>Do ponto de vista <span class=SpellE>arquitetonológico</span>,
+<p>Do ponto de vista <span class="SpellE">arquitetonológico</span>,
 a BitTorrent tomou as seguintes decisões-chave:</p>
-
-<ul style='margin-top:0cm' type=disc>
- <li class=MsoNormal style='mso-list:l3 level1 lfo321;tab-stops:list 36.0pt'>A
+<ul style="margin-top:0cm" type="disc">
+<li>A
      responsabilidade pela descoberta de conteúdo está fora do escopo do
      BitTorrent. Usuários potenciais utilizam outros meios, como buscas na Web,
      para localizar conteúdo na Web.</li>
- <li class=MsoNormal style='mso-list:l3 level1 lfo321;tab-stops:list 36.0pt'>Uma
+<li>Uma
      máquina designada (centralizada) chamada tracker é usada para
      supervisionar o processo pelo qual um arquivo é distribuído para um
      conjunto interessado de peers, mas o tracker não realiza nenhuma das
      transferências de arquivos. Os pares usam a interação com essa máquina
      para identificar os outros pares com quem se comunicam para efetuar o
      download.</li>
- <li class=MsoNormal style='mso-list:l3 level1 lfo321;tab-stops:list 36.0pt'>Metadados
+<li>Metadados
      estão associados ao arquivo e são usados durante todo o processo de
      download. Os metadados descrevem como o arquivo grande é
-     &quot;fragmentado&quot;, os atributos dessas peças e a localização do
+     "fragmentado", os atributos dessas peças e a localização do
      rastreador.</li>
- <li class=MsoNormal style='mso-list:l3 level1 lfo321;tab-stops:list 36.0pt'>Cada
+<li>Cada
      par que participa da replicação de um arquivo executa um aplicativo
      BitTorrent que determina (a) qual parte do arquivo baixar em seguida, e
      (b) de qual par obter essa parte. Todos os colegas participantes mantêm o
@@ -1325,38 +1106,30 @@ a BitTorrent tomou as seguintes decisões-chave:</p>
      projetados para alcançar os objetivos de distribuição rápida maximizando o
      uso dos recursos disponíveis em todos os pares. (Se um par é manipulado
      para não participar do upload das peças, mas apenas do download, ele é penalizado
-     pelos outros pares com a <span class=SpellE>despriorização</span> do
+     pelos outros pares com a <span class="SpellE">despriorização</span> do
      acesso às peças que precisa.)</li>
 </ul>
-
-<p class=MsoNormal>Como em todas as aplicações P2P bem projetadas, o BitTorrent
+<p>Como em todas as aplicações P2P bem projetadas, o BitTorrent
 leva em conta a possibilidade de qualquer par sair do processo a qualquer
 momento.</p>
-
-<p class=MsoNormal><b>Notas Resumidas sobre Latência e Agência<o:p></o:p></b></p>
-
-<p class=MsoNormal>As seções anteriores abordaram aplicações e arquiteturas que
+<p><b>Notas Resumidas sobre Latência e Agência</b></p>
+<p>As seções anteriores abordaram aplicações e arquiteturas que
 apresentam complexidade substancial decorrente da necessidade de lidar com duas
 questões principais em sistemas descentralizados: latência e agência. A
 latência é entendida como um problema há muito tempo, e estratégias para lidar
 com ela são bem conhecidas. O cache dos resultados, estratégias inteligentes de
 busca e o uso criterioso de servidores centralizados podem desempenhar papéis
 na redução da latência.</p>
-
-<p class=MsoNormal>A agência é uma questão mais rica e de preocupação mais
+<p>A agência é uma questão mais rica e de preocupação mais
 recente. Agência implica preocupações com heterogeneidade (como a das
 plataformas de linguagens de programação), confiabilidade, incerteza, confiança
 e segurança. Lidar efetivamente com todas as preocupações causadas por
 múltiplas agências exige um pensamento cuidadoso. O estilo REST, e os estilos
 derivados dele, oferecem orientações comprovadas para lidar com vários aspectos
 tanto da agência quanto da latência. Outras questões permanecem, porém, como confiança
-e segurança, conforme discutido <span class=SpellE>em<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch13.html"
-title="Chapter&nbsp;13.&nbsp;Security and Trust"><b>Capítulo</b><b> 13</b></a></span>.</p>
-
-<p class=MsoNormal>ARQUITETURAS ORIENTADAS A SERVIÇOS E SERVIÇOS WEB</p>
-
-<p class=MsoNormal>Arquiteturas orientadas a serviços (SOA) são direcionadas
+e segurança, conforme discutido <span class="SpellE">em<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch13.html" title="Chapter 13. Security and Trust"><b>Capítulo</b><b> 13</b></a></span>.</p>
+<p>ARQUITETURAS ORIENTADAS A SERVIÇOS E SERVIÇOS WEB</p>
+<p>Arquiteturas orientadas a serviços (SOA) são direcionadas
 para apoiar empresas na Internet. A ideia é que o negócio A poderia obter algum
 serviço de processamento b do fornecedor B, serviço c do fornecedor C, serviço
 d do fornecedor C, e assim por diante. O serviço que A obtém de C pode ser
@@ -1368,8 +1141,7 @@ serviços específicos. Esses serviços podem incluir a venda de bilhetes de voo
 aéreos, obtenção de uma verificação de crédito e emissão de pagamentos
 eletrônicos para um fornecedor. Todas essas interações seriam suportadas por
 mecanismos SOA.</p>
-
-<p class=MsoNormal>A independência das diversas organizações interagintas, ou
+<p>A independência das diversas organizações interagintas, ou
 pelo menos dos serviços que compõem uma SOA, é fundamental para a visão da SOA.
 Assim, arquiteturas orientadas a serviços são conceitualmente parte do espaço
 de design descentralizado. As SOAs devem lidar com todas as questões de rede
@@ -1381,21 +1153,15 @@ pessoa: empresas e clientes interagem entre si de maneiras inúmeras e
 complexas. Os clientes precisam encontrar empresas que ofereçam os serviços de
 que precisam, determinar se uma empresa que presta um serviço é confiável,
 contratar subcontratados, lidar com inadimplências, entre outros.</p>
-
-<p class=MsoNormal>Do ponto de vista arquitetônico, organizações participantes
+<p>Do ponto de vista arquitetônico, organizações participantes
 na Internet apresentam uma camada de máquinas virtuais de serviços da qual os
-usuários (programas clientes) podem se beneficiar. Essa visão é retratada <span
-class=SpellE>em<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch11.html#web_services_as_a_layered_comma_virtual"
-title="Figure&nbsp;11-7.&nbsp;Web services as a layered, virtual machine."><b>Figuras</b><b>
+usuários (programas clientes) podem se beneficiar. Essa visão é retratada <span class="SpellE">em<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch11.html#web_services_as_a_layered_comma_virtual" title="Figure 11-7. Web services as a layered, virtual machine."><b>Figuras</b><b>
 11-7</b></a></span>, quando o cliente tem um objetivo (como obter todas as
 reservas, passagens e adiantamentos de viagem associados a um itinerário) e
 recorre a diversos serviços pela Internet para alcançar esse objetivo. Vários
 desses serviços podem recorrer a outros serviços da rede para alcançar seus
 subobjetivos. A máquina virtual da rede de serviços é bastante diferente das
-arquiteturas de máquinas virtuais discutidas <span class=SpellE>em<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch04.html"
-title="Chapter&nbsp;4.&nbsp;Designing Architectures"><b>Capítulo</b><b> 4</b></a></span>contudo.
+arquiteturas de máquinas virtuais discutidas <span class="SpellE">em<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch04.html" title="Chapter 4. Designing Architectures"><b>Capítulo</b><b> 4</b></a></span>contudo.
 Os diversos serviços SOA, correspondentes a funções em uma arquitetura clássica
 de máquina virtual, são oferecidos por diferentes agências de controle; Eles
 podem ser implementados de maneiras muito variadas, apresentar riscos variados
@@ -1405,38 +1171,30 @@ fornecer o suporte necessário a um cliente que deseja usar a rede de serviços
 para alcançar seus objetivos.<i>Serviços web</i>, uma forma particular de
 fornecer uma SOA, responde a esse desafio oferecendo uma infinidade de
 abordagens, padrões e tecnologias.</p>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+<p><span><!--[if gte vml 1]><v:shape
  id="Imagem_x0020_236" o:spid="_x0000_i1031" type="#_x0000_t75" alt="Serviços web como uma máquina virtual em camadas."
  style='width:411.6pt;height:369pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap11-ptbr_arquivos/image007.png" o:title="Serviços web como uma máquina virtual em camadas"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=549 height=492
-src="cap11-ptbr_arquivos/image007.png"
-alt="Serviços web como uma máquina virtual em camadas." v:shapes="Imagem_x0020_236"><![endif]></span></p>
-
-<p class=MsoNormal><b>Figuras 11-7.&nbsp;Serviços web como uma máquina virtual
+</v:shape><![endif]--><?if !vml?><img alt="Serviços web como uma máquina virtual em camadas." border="0" height="492" src="cap11-ptbr_arquivos/image007.png" v:shapes="Imagem_x0020_236" width="549"/><?endif?></span></p>
+<p><b>Figuras 11-7. Serviços web como uma máquina virtual
 em camadas.</b></p>
-
-<p class=MsoNormal>O problema central é: como, arquitetonicamente, a noção de
+<p>O problema central é: como, arquitetonicamente, a noção de
 aplicações de negócios criadas usando a máquina virtual da rede de serviços
 deve ser concretizada? A resposta, não surpreendentemente, envolve:</p>
-
-<ul style='margin-top:0cm' type=disc>
- <li class=MsoNormal style='mso-list:l28 level1 lfo322;tab-stops:list 36.0pt'>Descrevendo
+<ul style="margin-top:0cm" type="disc">
+<li>Descrevendo
      os componentes — ou seja, os serviços.</li>
- <li class=MsoNormal style='mso-list:l28 level1 lfo322;tab-stops:list 36.0pt'>Determinar
+<li>Determinar
      os tipos de conectores a serem usados — como os serviços irão se comunicar
      e interagir.</li>
- <li class=MsoNormal style='mso-list:l28 level1 lfo322;tab-stops:list 36.0pt'>Descrevendo
+<li>Descrevendo
      a aplicação como um todo — como os diversos serviços são orquestrados para
      alcançar os objetivos de negócio.</li>
 </ul>
-
-<p class=MsoNormal>Além disso, pode-se considerar como novos serviços são
+<p>Além disso, pode-se considerar como novos serviços são
 descobertos, já que o contexto é um em que agências independentes podem criar
 novos serviços que as empresas podem querer integrar em seus processos atuais.</p>
-
-<p class=MsoNormal>Os serviços dos SOAs são simplesmente componentes
+<p>Os serviços dos SOAs são simplesmente componentes
 independentes, como discutimos e ilustramos ao longo do texto. Eles têm uma
 interface que descreve quais operações fornecem. Eles têm seu próprio fio de
 controle. Os serviços podem ser descritos no mundo dos Web Services usando WSDL
@@ -1445,23 +1203,15 @@ uma coleção de operações que podem ser realizadas sobre dados tipados enviad
 para/do serviço. Em um contexto SOA mais geral, suas interfaces podem ser
 descritas por APIs escritas em alguma linguagem de programação específica, como
 Java ou Ruby.</p>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+<p><span><!--[if gte vml 1]><v:shape
  id="Imagem_x0020_235" o:spid="_x0000_i1030" type="#_x0000_t75" alt="Dois modelos de interação com serviços Web."
  style='width:411.6pt;height:134.4pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap11-ptbr_arquivos/image008.png" o:title="Dois modelos de interação com serviços Web"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=549 height=179
-src="cap11-ptbr_arquivos/image008.png"
-alt="Dois modelos de interação com serviços Web." v:shapes="Imagem_x0020_235"><![endif]></span></p>
-
-<p class=MsoNormal><b>Figuras 11-8.&nbsp;Dois modelos de interação com serviços
+</v:shape><![endif]--><?if !vml?><img alt="Dois modelos de interação com serviços Web." border="0" height="179" src="cap11-ptbr_arquivos/image008.png" v:shapes="Imagem_x0020_235" width="549"/><?endif?></span></p>
+<p><b>Figuras 11-8. Dois modelos de interação com serviços
 Web.</b></p>
-
-<p class=MsoNormal>Conectores são a parte mais interessante dos <span
-class=SpellE>SOAs</span>. O mecanismo mais simples usado pela SOA é a
-notificação assíncrona de eventos. A metade superior da <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch11.html#two_models_of_web_service_interaction"
-title="Figure&nbsp;11-8.&nbsp;Two models of Web service interaction."><b>Figura
+<p>Conectores são a parte mais interessante dos <span class="SpellE">SOAs</span>. O mecanismo mais simples usado pela SOA é a
+notificação assíncrona de eventos. A metade superior da <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch11.html#two_models_of_web_service_interaction" title="Figure 11-8. Two models of Web service interaction."><b>Figura
 11-8</b></a> ilustra isso. O modelo básico neste exemplo é que um solicitante
 de serviço envia um documento XML para um provedor de serviço através da rede
 por meio de uma variedade de protocolos, desde e-mail até HTTP. A obrigação de
@@ -1470,25 +1220,19 @@ compreendam. Nesse modelo mais simples, o provedor de serviço pode tomar alguma
 ação ao receber e ler o documento, mas não há obrigação de devolver nada ao
 solicitante. Naturalmente, há muitas situações em que a interação desejada é
 realmente que o provedor devolva informações ao solicitante; isso também é
-apoiado, e é mostrado nas linhas pontilhadas na metade inferior da <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch11.html#two_models_of_web_service_interaction"
-title="Figure&nbsp;11-8.&nbsp;Two models of Web service interaction."><b>Figura
+apoiado, e é mostrado nas linhas pontilhadas na metade inferior da <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch11.html#two_models_of_web_service_interaction" title="Figure 11-8. Two models of Web service interaction."><b>Figura
 11-8</b></a>. Note que, neste segundo exemplo, o modelo de conexão mudou de
 eventos unilaterais e assíncronos para um modelo assíncrono de
 solicitação-resposta, assemelhando-se a uma chamada de procedimento remoto ou
 talvez a uma invocação de método de objeto distribuído.</p>
-
-<p class=MsoNormal>Um ponto chave aqui, claro, é que tais interações não
+<p>Um ponto chave aqui, claro, é que tais interações não
 possuem a mesma semântica que uma chamada de procedimento remoto ou a semântica
 de uma invocação distribuída de objetos. A presença de questões de agência, a
 interação baseada na troca de documentos XML e a ausência de várias semânticas
 de programação, como persistência de objetos, são a base para essas diferenças.</p>
-
-<p class=MsoNormal>Com relação à aplicação como um todo, essencialmente o que é
+<p>Com relação à aplicação como um todo, essencialmente o que é
 necessário é uma linguagem de descrição de arquitetura, como considerada
-detalhadamente <span class=SpellE>em<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch06.html"
-title="Chapter&nbsp;6.&nbsp;Modeling"><b>Capítulo</b><b> 6</b></a></span>. As
+detalhadamente <span class="SpellE">em<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch06.html" title="Chapter 6. Modeling"><b>Capítulo</b><b> 6</b></a></span>. As
 SOAs exigem, no entanto, que a ADL usada seja executável; formalidade e
 semântica completa são portanto exigidas. Basicamente, uma aplicação SOA
 poderia ser descrita em uma linguagem de script genérica, mas isso
@@ -1499,29 +1243,23 @@ de Execução de Processos de Negócios de Serviços Web. BPEL é uma linguagem 
 script composicional; ou seja, um programa BPEL pode aparecer como um serviço
 (componente) em outro fluxo de trabalho. A linguagem é tipada e expressa em XML
 estaticamente, embora editores gráficos proprietários estejam disponíveis.</p>
-
-<p class=MsoNormal>Outros estilos e conceitos arquitetônicos aparecem em SOAs.
+<p>Outros estilos e conceitos arquitetônicos aparecem em SOAs.
 Destaca-se o uso de mecanismos de publicação-assinatura para descobrir serviços
 ou provedores de serviços recém-disponíveis. Outros desenvolvedores criaram
 modelos declarativos para utilizar serviços Web, semelhantes ao estilo de
-interpretador discutido <span class=SpellE>em<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch04.html"
-title="Chapter&nbsp;4.&nbsp;Designing Architectures"><b>Capítulo</b><b> 4</b></a></span>.
-A maioria—senão todos—dos estilos discutidos <span class=SpellE>em<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch04.html"
-title="Chapter&nbsp;4.&nbsp;Designing Architectures"><b>Capítulo</b><b> 4</b></a></span>foram
+interpretador discutido <span class="SpellE">em<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch04.html" title="Chapter 4. Designing Architectures"><b>Capítulo</b><b> 4</b></a></span>.
+A maioria—senão todos—dos estilos discutidos <span class="SpellE">em<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch04.html" title="Chapter 4. Designing Architectures"><b>Capítulo</b><b> 4</b></a></span>foram
 usados em algum lugar do mundo dos serviços Web. (Note, porém, que embora a
-literatura sobre Web Services às vezes fale de um &quot;conjunto em camadas de
-protocolos&quot;, isso não implica uma arquitetura em camadas, já que
+literatura sobre Web Services às vezes fale de um "conjunto em camadas de
+protocolos", isso não implica uma arquitetura em camadas, já que
 descrições de protocolos frequentemente não correspondem a componentes.)</p>
-
-<p class=MsoNormal>Apesar do modelo central simples da SOA, na prática há muita
+<p>Apesar do modelo central simples da SOA, na prática há muita
 complexidade. Essa complexidade surge da tentativa de satisfazer
 simultaneamente muitos objetivos, como a interoperabilidade entre plataformas
 heterogêneas, enquanto lida com as dificuldades inerentes a sistemas abertos e
 descentralizados. Toda essa complexidade não necessariamente resulta em uma
 abordagem eficaz. Por exemplo, a decisão de fazer com que os provedores de
-serviço anunciem e apoiem serviços específicos que outros podem &quot;invocar&quot;
+serviço anunciem e apoiem serviços específicos que outros podem "invocar"
 — a decisão das máquinas virtuais — induz um tipo particular de fragilidade e
 rigidez. Caso um provedor de serviço mude a interface de um serviço, todos os
 usuários desse serviço devem tomar conhecimento da mudança e modificar suas
@@ -1530,55 +1268,44 @@ em uma linguagem como Java e de ter uma assinatura pública de método modificad
 — todo o código dependente dessa interface precisa mudar. Por esse e outros
 motivos, muitos desenvolvedores de aplicações empresariais descentralizadas
 optaram por basear seus projetos no REST (focando assim na troca de
-representações/dados), em vez de SOAP/Web <span class=SpellE>services</span>
-(focando assim na invocação de funções com argumentos).<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch11.html#ftn.CHP-11-FN-4"><b><sup>[16]</sup></b></a>
+representações/dados), em vez de SOAP/Web <span class="SpellE">services</span>
+(focando assim na invocação de funções com argumentos).<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch11.html#ftn.CHP-11-FN-4"><b><sup>[16]</sup></b></a>
 Amazon.com, por exemplo, oferece seus serviços Web aos desenvolvedores, seja em
 forma REST ou como interfaces SOAP/Web Services. Na prática, as interfaces
 baseadas em REST têm se mostrado populares entre os desenvolvedores.</p>
-
-<p class=MsoNormal>Essa decisão de design SOA de focar na invocação de
+<p>Essa decisão de design SOA de focar na invocação de
 interfaces funcionais não foi a única opção. Assim como nem todos os programas
 dependem de chamadas para interfaces públicas, poderia ter sido definido um SOA
-em que <i>solicitantes de serviço </i><span
-style='mso-spacerun:yes'> </span>apresentam descrições dos <i>cálculos </i>que
+em que <i>solicitantes de serviço </i><span> </span>apresentam descrições dos <i>cálculos </i>que
 desejam realizar e deixam para os provedores de serviço determinar se conseguem
 realizar esse cálculo e, em caso afirmativo, como.</p>
-
-<p class=MsoNormal><b>Palavras sobre Palavras em Serviços Web<o:p></o:p></b></p>
-
-<p class=MsoNormal>A literatura popular sobre serviços Web está repleta de
+<p><b>Palavras sobre Palavras em Serviços Web</b></p>
+<p>A literatura popular sobre serviços Web está repleta de
 siglas e jargões; Um pouco de cautela para os leitores é necessário. O padrão
 de serviços Web que regula como os documentos XML trocados devem ser
-estruturados e trocados é o SOAP. SOAP costumava significar &quot;Simple Object
-Access Protocol&quot;, mas, claro, &quot;objects&quot; não estão sendo
+estruturados e trocados é o SOAP. SOAP costumava significar "Simple Object
+Access Protocol", mas, claro, "objects" não estão sendo
 acessados, então SOAP agora é apenas um nome — mas um onde todas as letras
 estão sempre em maiúsculas.</p>
-
-<p class=MsoNormal>De forma semelhante, serviços Web às vezes são descritos
-como &quot;RPC sobre HTTP&quot;, quando HTTP é usado como protocolo de
+<p>De forma semelhante, serviços Web às vezes são descritos
+como "RPC sobre HTTP", quando HTTP é usado como protocolo de
 transporte para mensagens SOAP. Claro que as ações não são as mesmas de uma
 chamada remota de procedimento, então isso também é impreciso.</p>
-
-<p class=MsoNormal>O uso do termo &quot;serviços Web&quot; sugeriria que a
+<p>O uso do termo "serviços Web" sugeriria que a
 tecnologia Web está necessariamente envolvida em serviços Web — como um
 servidor Web ou navegador. Servidores web como o Apache não são necessários
-para responder a uma mensagem SOAP, então &quot;Web services&quot; também é um
+para responder a uma mensagem SOAP, então "Web services" também é um
 termo equivocado.</p>
-
-<p class=MsoNormal>A diversão começa quando você chega aos acrônimos. Eles
+<p>A diversão começa quando você chega aos acrônimos. Eles
 cobrem padrões e abordagens para construir vários modelos
-&quot;arquitetônicos&quot; sobre uma rede de serviços, para governar a troca de
+"arquitetônicos" sobre uma rede de serviços, para governar a troca de
 informações na rede, para lidar com as muitas complexidades de um mundo
 multiagências e em rede, entre outros. O agregado das especificações de
 serviços Web (como WS-Security, WS-MessageData, WS-Events, WS-Coordination,
 WS-Policy, WS-Reliability e muitos outros) é às vezes chamado de WS-*, também
-conhecido como &quot;a Estrela da Morte dos serviços Web.&quot; <span
-class=SpellE><i>Caveat</i></span><i> <span class=SpellE>emptor</span></i>.</p>
-
-<p class=MsoNormal>ARQUITETURAS DE DOMÍNIOS ESPECÍFICOS</p>
-
-<p class=MsoNormal>Esta seção examina as arquiteturas de aplicações de alguns
+conhecido como "a Estrela da Morte dos serviços Web." <span class="SpellE"><i>Caveat</i></span><i> <span class="SpellE">emptor</span></i>.</p>
+<p>ARQUITETURAS DE DOMÍNIOS ESPECÍFICOS</p>
+<p>Esta seção examina as arquiteturas de aplicações de alguns
 domínios específicos. Por meio deste exame, mostramos, por exemplo, como vários
 estilos e padrões arquitetônicos foram refinados e explorados para fornecer o
 núcleo fundamental de soluções eficazes. Embora as arquiteturas sejam extraídas
@@ -1586,59 +1313,50 @@ de domínios de aplicação específicos, as técnicas usadas no desenvolvimento
 arquiteturas de solução, as análises que acompanharam o projeto e até mesmo os
 estilos resultantes são amplamente úteis, indo além dos limites desses domínios
 de origem.</p>
-
-<p class=MsoNormal><b>Robótica<o:p></o:p></b></p>
-
-<p class=MsoNormal>O campo da robótica consiste em uma classe de sistemas que
+<p><b>Robótica</b></p>
+<p>O campo da robótica consiste em uma classe de sistemas que
 revela grande diversidade baseada nas diferenças no grau de autonomia e
 mobilidade que os diversos sistemas robóticos exibem. Exemplos dessa variedade
 são:</p>
-
-<ul style='margin-top:0cm' type=disc>
- <li class=MsoNormal style='mso-list:l113 level1 lfo323;tab-stops:list 36.0pt'>Sistemas
+<ul style="margin-top:0cm" type="disc">
+<li>Sistemas
      móveis teleoperados, como robôs de desativação de bombas, onde o controle
      total ou parcial do movimento e das ações do sistema robótico está nas
      mãos de um operador humano que pode estar localizado a centenas de
      quilômetros de distância.</li>
- <li class=MsoNormal style='mso-list:l113 level1 lfo323;tab-stops:list 36.0pt'>Sistemas
+<li>Sistemas
      industriais de automação, como braços robóticos de montagem automotiva,
      que executam tarefas pré-definidas de forma autônoma, sem a necessidade de
      se mover ou ajustar ao ambiente, já que se assume que o ambiente, por
      design, está em conformidade com a tarefa e os movimentos do robô.</li>
- <li class=MsoNormal style='mso-list:l113 level1 lfo323;tab-stops:list 36.0pt'>Robôs
+<li>Robôs
      autônomos móveis, como os veículos DARPA Grand Challenge, que não apenas
      são responsáveis pelo controle autônomo sem intervenção humana, mas também
      precisam atravessar e lidar com ambientes imprevisíveis.</li>
 </ul>
-
-<p class=MsoNormal><b>Desafios<o:p></o:p></b></p>
-
-<p class=MsoNormal>Do ponto de vista arquitetônico e geral da engenharia de
+<p><b>Desafios</b></p>
+<p>Do ponto de vista arquitetônico e geral da engenharia de
 software, dois fatores são os principais responsáveis por tornar o
 desenvolvimento de software desafiador no domínio da robótica: as plataformas
 físicas e dispositivos que compõem os robôs e a natureza imprevisível dos
 ambientes em que operam.</p>
-
-<p class=MsoNormal>Plataformas robóticas são integrações de um grande número de
+<p>Plataformas robóticas são integrações de um grande número de
 dispositivos sensíveis propensos a falhas, como comunicações de rádio sem fio e
 sensores de visão, complicando a necessidade de integrar os dispositivos de
 forma coerente. Os sistemas de software que operam plataformas robóticas devem
 ser capazes de continuar operando diante da diminuição da capacidade de
 hardware e da perda de funções essenciais. As informações fornecidas por
-dispositivos de hardware, como sensores, também podem apresentar <span
-class=GramE>um alto grau de</span> falta de confiabilidade e picos
+dispositivos de hardware, como sensores, também podem apresentar <span class="GramE">um alto grau de</span> falta de confiabilidade e picos
 intermitentes de leituras erradas nos sensores, exigindo a capacidade não
 apenas de continuar operando, mas também de compensar perfeitamente tais erros.</p>
-
-<p class=MsoNormal>O segundo elemento desafiador é a necessidade de operar em
+<p>O segundo elemento desafiador é a necessidade de operar em
 ambientes que podem ser dinâmicos e imprevisíveis. Desenvolver um robô móvel
 capaz de atravessar terrenos desconhecidos sob condições climáticas variadas e
 com obstáculos potencialmente móveis, por exemplo, aumenta muito a dificuldade
 de projetar seus sistemas de controle por software de forma a considerar e
 continuar operando sob condições não totalmente previstas durante o projeto e
 desenvolvimento do sistema.</p>
-
-<p class=MsoNormal>Diante desses desafios e da natureza do domínio, várias
+<p>Diante desses desafios e da natureza do domínio, várias
 qualidades de software são de especial interesse em arquiteturas robóticas:
 robustez, desempenho, reutilização e adaptabilidade. A falta de confiabilidade
 de muitos ambientes robóticos motiva a necessidade de robustez; As exigências
@@ -1653,73 +1371,55 @@ interfaces para esses dispositivos. Por fim, a adaptabilidade é particularmente
 importante, já que a mesma plataforma de hardware pode ser usada com um sistema
 de controle de software modificado para realizar uma tarefa diferente com
 dispositivos inalterados.</p>
-
-<p class=MsoNormal><b>Arquiteturas Robóticas<o:p></o:p></b></p>
-
-<p class=MsoNormal>Arquiteturas robóticas têm suas origens em técnicas de
+<p><b>Arquiteturas Robóticas</b></p>
+<p>Arquiteturas robóticas têm suas origens em técnicas de
 inteligência artificial para representação e raciocínio do conhecimento.
 Posteriormente, foram aprimorados em resposta a deficiências na aplicação
 desses conceitos, bem como a avanços gerais no campo. As seções seguintes
 apresentam uma breve visão geral dessa evolução, discutida no contexto de
 exemplos arquitetônicos específicos, as tendências que elas incorporam e suas
 principais decisões e objetivos arquitetônicos.</p>
-
-<p class=MsoNormal>Sentido-Plano-Ação. Reconhecendo a incapacidade de construir
+<p>Sentido-Plano-Ação. Reconhecendo a incapacidade de construir
 sistemas robóticos usando apenas algoritmos de busca por inteligência
-artificial sobre um modelo mundial, <span class=SpellE>o<i>Sentido</i></span><i>-plano-agir</i>(SPA)
+artificial sobre um modelo mundial, <span class="SpellE">o<i>Sentido</i></span><i>-plano-agir</i>(SPA)
 (Nilsson 1980) identifica a necessidade de usar feedback contínuo do ambiente
 de um robô como uma entrada explícita para o planejamento das ações.
 Arquiteturas SPA contêm três componentes de grão grosso com um fluxo
-unidirecional de comunicação entre eles, como ilustrado em<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch11.html#an_illustration_of_spa_architectures._th"
-title="Figure&nbsp;11-9.&nbsp;An illustration of SPA architectures. The emphasis is on planning actions based on its internal world model subarchitecture."><b>Figuras
+unidirecional de comunicação entre eles, como ilustrado em<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch11.html#an_illustration_of_spa_architectures._th" title="Figure 11-9. An illustration of SPA architectures. The emphasis is on planning actions based on its internal world model subarchitecture."><b>Figuras
 11-9</b></a>:O<i>sentido</i>O componente é responsável por coletar informações
 dos sensores do ambiente e é a interface principal e o driver dos sensores de
-um robô. Essas informações do sensor são fornecidas como entrada para <span
-class=SpellE>o<i>plano</i>que</span> utiliza essa entrada para determinar quais
-ações o robô deve realizar, que são então comunicadas <span class=SpellE>ao<i>agir</i>componente</span>
+um robô. Essas informações do sensor são fornecidas como entrada para <span class="SpellE">o<i>plano</i>que</span> utiliza essa entrada para determinar quais
+ações o robô deve realizar, que são então comunicadas <span class="SpellE">ao<i>agir</i>componente</span>
 — a interface e o driver para os motores e atuadores do robô — para execução.
 Nesse nível de detalhe, a arquitetura se assemelha ao padrão
-senso-computação-controle (SCC) <span class=SpellE>de<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch04.html"
-title="Chapter&nbsp;4.&nbsp;Designing Architectures"><b>Capítulo</b><b> 4</b></a></span>.
+senso-computação-controle (SCC) <span class="SpellE">de<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch04.html" title="Chapter 4. Designing Architectures"><b>Capítulo</b><b> 4</b></a></span>.
 Uma análise mais detalhada revela, no entanto, uma distinção importante.</p>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+<p><span><!--[if gte vml 1]><v:shape
  id="Imagem_x0020_234" o:spid="_x0000_i1029" type="#_x0000_t75" alt="Uma ilustração das arquiteturas SPA. A ênfase está no planejamento de ações baseadas em sua subarquitetura de modelo de mundo interno."
  style='width:411.6pt;height:148.8pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap11-ptbr_arquivos/image009.png" o:title="Uma ilustração das arquiteturas SPA. A ênfase está no planejamento de ações baseadas em sua subarquitetura de modelo de mundo interno"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=549 height=198
-src="cap11-ptbr_arquivos/image009.png"
-alt="Uma ilustração das arquiteturas SPA. A ênfase está no planejamento de ações baseadas em sua subarquitetura de modelo de mundo interno."
-v:shapes="Imagem_x0020_234"><![endif]></span></p>
-
-<p class=MsoNormal><b>Figura 11-9.&nbsp;Uma ilustração das arquiteturas SPA. A
+</v:shape><![endif]--><?if !vml?><img alt="Uma ilustração das arquiteturas SPA. A ênfase está no planejamento de ações baseadas em sua subarquitetura de modelo de mundo interno." border="0" height="198" src="cap11-ptbr_arquivos/image009.png" v:shapes="Imagem_x0020_234" width="549"/><?endif?></span></p>
+<p><b>Figura 11-9. Uma ilustração das arquiteturas SPA. A
 ênfase está no planejamento de ações baseadas em sua subarquitetura de modelo
 de mundo interno.</b></p>
-
-<p class=MsoNormal>O<span style='mso-spacerun:yes'>  </span>componente <i>plano
+<p>O<span>  </span>componente <i>plano
 </i>é o principal motor do comportamento dos robôs nas arquiteturas SPA.
 Inspirando-se em técnicas de inteligência artificial, o planejamento envolve o
 uso de dados sensoriais para conciliar o estado real do robô — deduzido por
 esses dados sensoriais — com um <i>modelo interno do estado do robô no ambiente</i>.
 Esse modelo interno é então usado em conjunto com uma especificação de tarefa
-para determinar quais ações devem ser realizadas em seguida pelo <i><span
-style='mso-spacerun:yes'> </span>componente de ação </i>para completar a
+para determinar quais ações devem ser realizadas em seguida pelo <i><span> </span>componente de ação </i>para completar a
 atividade pretendida do robô. O modelo interno é atualizado repetidamente em
 resposta a novos estímulos sensoriais adquiridos, indicando o progresso que o
 robô está fazendo (se houver), com o objetivo de manter o modelo consistente
 com as condições ambientais reais. O padrão SCC, em contraste, não mantém tal
 modelo nem realiza planejamento sofisticado.</p>
-
-<p class=MsoNormal>Do ponto de vista arquitetônico, a arquitetura SPA captura
+<p>Do ponto de vista arquitetônico, a arquitetura SPA captura
 um fluxo iterativo unidirecional de dados entre os três componentes, semelhante
-a uma arquitetura <span class=SpellE>pipe-and-filter</span>, com uma <span
-class=SpellE>subarquitetura</span> para o <i>componente do plano </i>variando e
+a uma arquitetura <span class="SpellE">pipe-and-filter</span>, com uma <span class="SpellE">subarquitetura</span> para o <i>componente do plano </i>variando e
 dependendo do tipo de planejamento e modelo de estado robótico usado por uma
 arquitetura SPA específica.</p>
-
-<p class=MsoNormal>Sistemas que seguem a arquitetura SPA enfrentam uma série de
+<p>Sistemas que seguem a arquitetura SPA enfrentam uma série de
 questões, principalmente relacionadas ao desempenho e escalabilidade. A
 principal desvantagem é que as informações dos sensores precisam ser integradas
 — chamadas de fusão de sensores — e incorporadas nos modelos de planejamento do
@@ -1730,16 +1430,13 @@ iterativa do modelo não escala bem à medida que as capacidades e objetivos do
 sistema robótico se expandem. Esse baixo desempenho é uma desvantagem quando o
 ambiente muda rápida ou imprevisível, e é o principal motor para o
 desenvolvimento de arquiteturas robóticas alternativas.</p>
-
-<p class=MsoNormal>Subsunção. Tentando abordar as desvantagens das arquiteturas
+<p>Subsunção. Tentando abordar as desvantagens das arquiteturas
 SPA, a arquitetura de subsunção (Brooks 1986) toma uma decisão arquitetônica
 fundamental: o abandono de modelos e planos de mundos completos como elemento
 central dos sistemas robóticos. Embora o fluxo de informação se origine em
 sensores e eventualmente termine em atuadores que efetuam a ação (como nas
 arquiteturas SPA e SCC), não há uma etapa explícita de planejamento interposta
-entre esse fluxo. As arquiteturas de subsunção — como pode ser visto nas <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch11.html#an_illustration_of_an_example_subsumptio"
-title="Figure&nbsp;11-10.&nbsp;An illustration of an example subsumption architecture, showing the inhibition and suppression operations between levels of components."><b>Figuras
+entre esse fluxo. As arquiteturas de subsunção — como pode ser visto nas <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch11.html#an_illustration_of_an_example_subsumptio" title="Figure 11-10. An illustration of an example subsumption architecture, showing the inhibition and suppression operations between levels of components."><b>Figuras
 11-10</b></a> — são compostas por vários componentes independentes, cada um
 encapsulando um comportamento específico ou habilidade robótica. Esses
 componentes são organizados em camadas sucessivamente mais complexas que se
@@ -1749,21 +1446,15 @@ e para substituir a saída de um componente. Na figura, a saída da Habilidade C
 pode causar um atraso na entrada da Habilidade A para a Habilidade B no tempo <i>t;
 </i>da mesma forma, a saída da Habilidade C pode sobrescrever a saída da
 Habilidade B para o Atuador 1 pelo tempo <i>t</i>.</p>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+<p><span><!--[if gte vml 1]><v:shape
  id="Imagem_x0020_233" o:spid="_x0000_i1028" type="#_x0000_t75" alt="Uma ilustração de uma arquitetura de subsunção de exemplo, mostrando as operações de inibição e supressão entre os níveis dos componentes."
  style='width:411.6pt;height:141.6pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap11-ptbr_arquivos/image010.png" o:title="Uma ilustração de uma arquitetura de subsunção de exemplo, mostrando as operações de inibição e supressão entre os níveis dos componentes"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=549 height=189
-src="cap11-ptbr_arquivos/image010.png"
-alt="Uma ilustração de uma arquitetura de subsunção de exemplo, mostrando as operações de inibição e supressão entre os níveis dos componentes."
-v:shapes="Imagem_x0020_233"><![endif]></span></p>
-
-<p class=MsoNormal><b>Figuras 11-10.&nbsp;Uma ilustração de uma arquitetura de
+</v:shape><![endif]--><?if !vml?><img alt="Uma ilustração de uma arquitetura de subsunção de exemplo, mostrando as operações de inibição e supressão entre os níveis dos componentes." border="0" height="189" src="cap11-ptbr_arquivos/image010.png" v:shapes="Imagem_x0020_233" width="549"/><?endif?></span></p>
+<p><b>Figuras 11-10. Uma ilustração de uma arquitetura de
 subsunção de exemplo, mostrando as operações de inibição e supressão entre os
 níveis dos componentes.</b></p>
-
-<p class=MsoNormal>A característica arquitetônica fundamental das arquiteturas
+<p>A característica arquitetônica fundamental das arquiteturas
 de subsunção é a modularização do comportamento e funcionalidade dos robôs: em
 vez de o comportamento ser representado em um único modelo, componentes
 independentes organizados em camadas capturam cada um um aspecto do
@@ -1775,16 +1466,14 @@ de subsunção, portanto, são de natureza mais reativa. Essa característica
 aborda explicitamente as limitações de desempenho das arquiteturas SPA, e as
 arquiteturas de subsunção ganharam popularidade por seu desempenho rápido e
 ágil.</p>
-
-<p class=MsoNormal>Arquitetonicamente, a subsunção adota uma abordagem baseada
+<p>Arquitetonicamente, a subsunção adota uma abordagem baseada
 em componentes para o fluxo básico de dados entre sensores e atuadores,
 permitindo ciclos de fluxo de dados, embora as interfaces desses componentes
 sejam simples e capturem o valor de um único sinal. Em contraste com a SPA, o
 comportamento geral de um robô de subsunção depende da topologia geral do
 sistema e de como os componentes são conectados, em vez de um único modelo
 abstrato.</p>
-
-<p class=MsoNormal>Arquiteturas de subsunção não são isentas de desvantagens,
+<p>Arquiteturas de subsunção não são isentas de desvantagens,
 apesar de suas melhores características de desempenho em comparação com robôs
 SPA. A principal desvantagem da subsunção na prática é a falta de um plano
 arquitetônico coerente para camadas e suporte consequente. Embora a
@@ -1795,25 +1484,20 @@ fluxo de dados dependendo de sua tarefa específica, sem que sua posição
 necessariamente esteja relacionada à camada dentro da qual estão posicionados,
 e sem que componentes pertencentes à mesma camada sejam inseridos de maneiras e
 posições semelhantes.</p>
-
-<p class=MsoNormal>Três camadas. Após o desenvolvimento da subsunção, várias
+<p>Três camadas. Após o desenvolvimento da subsunção, várias
 alternativas foram desenvolvidas que tentaram fazer a ponte entre os planos da
 SPA e a natureza reativa da subsunção; essas arquiteturas híbridas podem ser
-agrupadas sob o rubrico de<span style='mso-spacerun:yes'>  </span>arquiteturas <i>de
+agrupadas sob o rubrico de<span>  </span>arquiteturas <i>de
 três camadas</i> (3L). [Um dos primeiros exemplos é encontrado em (Firby
-1989).] As arquiteturas 3L amplamente adotadas — ilustradas nas <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch11.html#an_illustration_of_3l_architectures_comm"
-title="Figure&nbsp;11-11.&nbsp;An illustration of 3L architectures, showing the relationship between each layer and the basic sensors and actuators."><b>Figuras
+1989).] As arquiteturas 3L amplamente adotadas — ilustradas nas <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch11.html#an_illustration_of_3l_architectures_comm" title="Figure 11-11. An illustration of 3L architectures, showing the relationship between each layer and the basic sensors and actuators."><b>Figuras
 11-11</b></a> — são caracterizadas pela separação da funcionalidade do robô em
-três camadas (cujos nomes podem variar de sistema para sistema): a<span
-style='mso-spacerun:yes'>  </span>camada <i>reativa</i>, que reage rapidamente
-a eventos no ambiente com ação rápida; a<span style='mso-spacerun:yes'> 
+três camadas (cujos nomes podem variar de sistema para sistema): a<span>  </span>camada <i>reativa</i>, que reage rapidamente
+a eventos no ambiente com ação rápida; a<span> 
 </span>camada <i>de sequenciamento</i>, responsável por vincular
 funcionalidades presentes na camada reativa a comportamentos mais complexos; e
-o <i>planejamento&nbsp;</i>camada, que realiza um planejamento de longo prazo
+o <i>planejamento </i>camada, que realiza um planejamento de longo prazo
 mais lento.</p>
-
-<p class=MsoNormal>Com a adoção de três camadas separadas, cada uma preocupada
+<p>Com a adoção de três camadas separadas, cada uma preocupada
 com um aspecto diferente da operação do robô, as arquiteturas 3L tentam
 combinar tanto operação reativa quanto planejamento de longo prazo. A camada de
 planejamento, então, executa tarefas de maneira semelhante às arquiteturas SPA,
@@ -1824,32 +1508,25 @@ captura comportamentos reativos que devem ser executados rápida e imediatamente
 em resposta às informações ambientais. A camada de sequenciamento que liga as
 duas é responsável por ligar os comportamentos reativos da camada em cadeias de
 ações, bem como por traduzir direções de alto nível da camada de planejamento
-para essas camadas de <span class=SpellE>loencing</span> da arquitetura. A
+para essas camadas de <span class="SpellE">loencing</span> da arquitetura. A
 camada de sequenciamento, então, geralmente é simplesmente uma máquina virtual
-que executa programas escritos nessas ações em nível de <span class=SpellE>swer</span>.
+que executa programas escritos nessas ações em nível de <span class="SpellE">swer</span>.
 A maioria das arquiteturas 3L adota algum tipo de linguagem de script de
-propósito especial para a implementação das linguagens de <span class=SpellE>sequcripting</span>.</p>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+propósito especial para a implementação das linguagens de <span class="SpellE">sequcripting</span>.</p>
+<p><span><!--[if gte vml 1]><v:shape
  id="Imagem_x0020_232" o:spid="_x0000_i1027" type="#_x0000_t75" alt="Uma ilustração das arquiteturas 3L, mostrando a relação entre cada camada e os sensores e atuadores básicos."
  style='width:411.6pt;height:298.8pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap11-ptbr_arquivos/image011.png" o:title="Uma ilustração das arquiteturas 3L, mostrando a relação entre cada camada e os sensores e atuadores básicos"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=549 height=398
-src="cap11-ptbr_arquivos/image011.png"
-alt="Uma ilustração das arquiteturas 3L, mostrando a relação entre cada camada e os sensores e atuadores básicos."
-v:shapes="Imagem_x0020_232"><![endif]></span></p>
-
-<p class=MsoNormal><b>Figuras 11-11.&nbsp;Uma ilustração das arquiteturas 3L,
+</v:shape><![endif]--><?if !vml?><img alt="Uma ilustração das arquiteturas 3L, mostrando a relação entre cada camada e os sensores e atuadores básicos." border="0" height="398" src="cap11-ptbr_arquivos/image011.png" v:shapes="Imagem_x0020_232" width="549"/><?endif?></span></p>
+<p><b>Figuras 11-11. Uma ilustração das arquiteturas 3L,
 mostrando a relação entre cada camada e os sensores e atuadores básicos.</b></p>
-
-<p class=MsoNormal>Do ponto de vista arquitetônico, o 3L é um exemplo de
+<p>Do ponto de vista arquitetônico, o 3L é um exemplo de
 arquitetura em camadas com um fluxo bidirecional de informações e diretivas de
 ação entre as camadas, enquanto utiliza componentes independentes para formar
 cada camada. O comportamento das arquiteturas 3L depende não apenas da
-disposição de seus componentes, mas também da operação da <span class=SpellE>subarquitetura</span>
+disposição de seus componentes, mas também da operação da <span class="SpellE">subarquitetura</span>
 interna da camada de sequenciamento.</p>
-
-<p class=MsoNormal>Um dos desafios associados ao desenvolvimento de
+<p>Um dos desafios associados ao desenvolvimento de
 arquiteturas 3L é entender como separar funcionalidades em três camadas. Essa
 separação depende das tarefas e objetivos específicos do robô e há pouca
 orientação arquitetônica para ajudar nessa tarefa; A separação depende em
@@ -1862,8 +1539,7 @@ superior para execuções em níveis inferiores. Essa tradução exige a manuten
 e reconciliação dos modelos de mundo e comportamento potencialmente díspares
 mantidos pelas camadas de planejamento e sequenciamento, podendo causar
 sobrecarga desnecessária de desempenho.</p>
-
-<p class=MsoNormal>Orientado à Reutilização. Após o desenvolvimento e uso
+<p>Orientado à Reutilização. Após o desenvolvimento e uso
 generalizado de arquiteturas híbridas 3L, o foco dos esforços recentes em
 arquitetura robótica mudou para a aplicação de tecnologias modernas de
 engenharia de software, com o objetivo principal de aumentar o nível de
@@ -1873,76 +1549,68 @@ ideias e princípios das arquiteturas discutidas anteriormente e exibam
 diferentes graus de camadas e subarquiteturas baseados em planejamento ou
 modelagem de tarefas, seu foco principal é uma definição clara de interfaces e
 a promoção do reuso.</p>
-
-<p class=MsoNormal>As principais técnicas e tecnologias que essas arquiteturas
+<p>As principais técnicas e tecnologias que essas arquiteturas
 orientadas ao reuso adotam são definições explícitas de interface orientadas a
 objetos para componentes e o uso de frameworks middleware para o
 desenvolvimento de componentes que podem ser reutilizados entre projetos. A
 arquitetura do projeto de veículo aéreo não tripulado WITAS (Doherty et al.
 2004), por exemplo, adota o CORBA como mecanismo de troca de informações e
 impõe interfaces claramente definidas para cada componente usando o CORBA IDL.
-Também adota uma abordagem híbrida que utiliza uma<span
-style='mso-spacerun:yes'>  </span>subarquitetura de linguagem de <i>especificação
-de procedimentos<span style='mso-spacerun:yes'>  </span>de tarefas de propósito
+Também adota uma abordagem híbrida que utiliza uma<span>  </span>subarquitetura de linguagem de <i>especificação
+de procedimentos<span>  </span>de tarefas de propósito
 </i>especial para tomada de decisão e planejamento. Além de possibilitar o
 reutilizo, essa abordagem também possibilita a operação distribuída dos
 componentes robóticos para melhor utilização dos recursos. Outro exemplo dessa
 classe de sistemas pode ser encontrado na arquitetura de software robótico
-reutilizável <span class=SpellE>CLARATy</span> (<span class=SpellE>Nesnas</span>
+reutilizável <span class="SpellE">CLARATy</span> (<span class="SpellE">Nesnas</span>
 et al. 2006): Essa arquitetura de duas camadas adota uma abordagem de rede
 objetivo para planejamento, focando na definição de interfaces genéricas de
 dispositivos que identificam claramente as funções primárias de uma classe de
 dispositivos de forma desacoplada do dispositivo específico usado em qualquer
-instância particular de uma arquitetura <span class=SpellE>CLARATy</span>. Ao
+instância particular de uma arquitetura <span class="SpellE">CLARATy</span>. Ao
 fazer isso, diferentes dispositivos do mesmo tipo (como telêmetros, por
 exemplo) podem ser integrados perfeitamente à arquitetura, sem a necessidade de
 redefinir a interface desse dispositivo.</p>
-
-<p class=MsoNormal><b>Estruturas de Desenvolvimento para Sistemas Robóticos<o:p></o:p></b></p>
-
-<p class=MsoNormal>Embora muitos sistemas robóticos sejam projetados e
+<p><b>Estruturas de Desenvolvimento para Sistemas Robóticos</b></p>
+<p>Embora muitos sistemas robóticos sejam projetados e
 construídos de forma independente, diversos frameworks e ferramentas foram
 desenvolvidos para facilitar e acelerar o processo de desenvolvimento. Cada uma
 dessas estruturas geralmente é direcionada a um aspecto específico do
 desenvolvimento robótico e inclui suporte especial para esse fim. Embora
 certamente não seja uma pesquisa completa, o seguinte apresenta brevemente
 alguns dos mais populares.</p>
-
-<ul style='margin-top:0cm' type=disc>
- <li class=MsoNormal style='mso-list:l108 level1 lfo324;tab-stops:list 36.0pt'>Player
+<ul style="margin-top:0cm" type="disc">
+<li>Player
      (http://playerstage.sourceforge.net) — O projeto open-source Player é
      voltado principalmente para ambientes baseados em Unix e fornece
      interfaces acessíveis em rede para uma grande variedade de dispositivos,
      com suporte à operação distribuída de componentes robóticos. A estrutura
      também suporta integrações com os sistemas tridimensionais Stage e Gazebo
      para capacidades de simulação rapidamente acessíveis.</li>
- <li class=MsoNormal style='mso-list:l108 level1 lfo324;tab-stops:list 36.0pt'>Orca
+<li>Orca
      (http://orca-robotics.sourceforge.net)—Orca é um framework de código
      aberto e multiplataforma (apenas o núcleo do projeto é suportado no
      Windows) focado no desenvolvimento de sistemas robóticos baseados em
-     componentes. O projeto Orca utiliza o framework <span class=GramE>middleware
+     componentes. O projeto Orca utiliza o framework <span class="GramE">middleware
      Ice</span> para comunicação entre componentes, e o Orca oferece
      bibliotecas que facilitam o uso do middleware.</li>
- <li class=MsoNormal style='mso-list:l108 level1 lfo324;tab-stops:list 36.0pt'>Microsoft
+<li>Microsoft
      Robotics Studio (http://msdn.microsoft.com/robotics) — O Microsoft
      Robotics Studio (MRS) é um ambiente integrado gratuito para
      desenvolvimento de sistemas robóticos. O MRS suporta uma arquitetura
      orientada a serviços baseada em NET com suporte principal para as
      linguagens C# e VB.NET, e o ambiente inclui suporte à simulação por meio
-     do motor de simulação <span class=SpellE>PhysX</span>.</li>
- <li class=MsoNormal style='mso-list:l108 level1 lfo324;tab-stops:list 36.0pt'>Lego
+     do motor de simulação <span class="SpellE">PhysX</span>.</li>
+<li>Lego
      Mindstorms (http://mindstorms.lego.com/)—Este pacote que combina hardware
      e software ganhou grande popularidade, principalmente por seu baixo custo
      e facilidade de aplicação para necessidades educacionais. O pacote
      Mindstorms combina uma coleção de servos e sensores, juntamente com um
      sistema operacional de propósito especial e o ambiente de desenvolvimento
-     gráfico <span class=SpellE>LabVIEW</span> (desenvolvido pela <span
-     class=SpellE>National</span> <span class=SpellE>Instruments</span>).</li>
+     gráfico <span class="SpellE">LabVIEW</span> (desenvolvido pela <span class="SpellE">National</span> <span class="SpellE">Instruments</span>).</li>
 </ul>
-
-<p class=MsoNormal><b>Redes de Sensores Sem Fio<o:p></o:p></b></p>
-
-<p class=MsoNormal>Sistemas robóticos representam um tipo de aplicação muito
+<p><b>Redes de Sensores Sem Fio</b></p>
+<p>Sistemas robóticos representam um tipo de aplicação muito
 ativo: o software deve fazer com que um sistema físico execute um conjunto de
 tarefas. Redes de sensores são, por assim dizer, uma aplicação em grande parte
 reativa: sua primeira tarefa é monitorar o ambiente e relatar seu estado.
@@ -1950,28 +1618,24 @@ Sistemas de redes de sensores sem fio (WSN) são atualmente usados em diversos
 domínios, incluindo sistemas médicos, navegação, automação industrial e
 engenharia civil para tarefas como monitoramento e rastreamento. Esses sistemas
 desfrutam dos benefícios de baixo custo de instalação, manutenção barata, fácil
-reconfiguração e assim por diante. No entanto, as <span class=SpellE>WSNs</span>
+reconfiguração e assim por diante. No entanto, as <span class="SpellE">WSNs</span>
 podem ser muito desafiadoras de implementar, pois podem precisar ser integradas
 a redes cabeadas legadas, outros dispositivos embarcados e redes móveis que
 incluem PDAs e celulares para notificação ao usuário. Os próprios dispositivos
 sem fio geralmente são altamente limitados em relação ao consumo de energia,
 largura de banda e alcance de comunicação, além da capacidade de processamento.
-Sistemas de sensores sem fio <i><span style='mso-spacerun:yes'> </span></i>impõem
+Sistemas de sensores sem fio <i><span> </span></i>impõem
 restrições adicionais em relação à tolerância a falhas, desempenho,
 disponibilidade e escalabilidade.</p>
-
-<p class=MsoNormal>O Centro de Pesquisa e Tecnologia Bosch, em conjunto com
+<p>O Centro de Pesquisa e Tecnologia Bosch, em conjunto com
 pesquisadores da Universidade do Sul da Califórnia, explorou como as WSNs devem
 ser projetadas para enfrentar a multiplicidade de desafios presentes (Malek et
 al. 2007). O design centrado na arquitetura que surgiu para as aplicações da
 Bosch é interessante, pois combina explicitamente três estilos arquitetônicos
 distintos para alcançar todos os objetivos do sistema. O desenho está esboçado
-nas <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch11.html#the_midas_wireless_sensor_network_archit"
-title="Figure&nbsp;11-12.&nbsp;The MIDAS wireless sensor network architecture. Diagram adapted from (Malek et al. 2007) © IEEE 2007."><b>Figuras
+nas <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch11.html#the_midas_wireless_sensor_network_archit" title="Figure 11-12. The MIDAS wireless sensor network architecture. Diagram adapted from (Malek et al. 2007) © IEEE 2007."><b>Figuras
 11-12</b></a>.</p>
-
-<p class=MsoNormal>Como retratado, a arquitetura de referência do MIDAS aplica
+<p>Como retratado, a arquitetura de referência do MIDAS aplica
 três estilos arquitetônicos diferentes. A parte peer-to-peer da arquitetura é
 mostrada na parte inferior do diagrama. É responsável pelas atividades de
 implantação, incluindo a troca de componentes em nível de aplicação. A parte de
@@ -1981,74 +1645,51 @@ diversas plataformas. A parte orientada a serviços do MIDAS é representada no
 topo do diagrama. Esses serviços representam instalações genéricas, mas menos
 usadas de monitoramento e adaptação de sistemas. Esses serviços são
 distribuídos entre as plataformas.</p>
-
-<p class=MsoNormal>ASSUNTO FINAL</p>
-
-<p class=MsoNormal>O tema central deste capítulo tem sido que arquiteturas para
+<p>ASSUNTO FINAL</p>
+<p>O tema central deste capítulo tem sido que arquiteturas para
 aplicações complexas resultam de um entendimento profundo do domínio de
 aplicação, escolha cuidadosa dos elementos constituintes e estilos baseados na
 experiência e suas propriedades conhecidas, e hibridização desses elementos em
 uma solução coerente. REST é o exemplo por excelência disso. A Web não seria o
 sucesso que é hoje sem essa arquitetura cuidadosa.</p>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+<p><span><!--[if gte vml 1]><v:shape
  id="Imagem_x0020_231" o:spid="_x0000_i1026" type="#_x0000_t75" alt="A arquitetura da rede de sensores sem fio MIDAS. Diagrama adaptado de (Malek et al. 2007) © IEEE 2007."
  style='width:411.6pt;height:307.8pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap11-ptbr_arquivos/image012.png" o:title="A arquitetura da rede de sensores sem fio MIDAS. Diagrama adaptado de (Malek et al. 2007) © IEEE 2007"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=549 height=410
-src="cap11-ptbr_arquivos/image012.png"
-alt="A arquitetura da rede de sensores sem fio MIDAS. Diagrama adaptado de (Malek et al. 2007) © IEEE 2007."
-v:shapes="Imagem_x0020_231"><![endif]></span></p>
-
-<p class=MsoNormal><b>Figuras 11-12.&nbsp;A arquitetura da rede de sensores sem
+</v:shape><![endif]--><?if !vml?><img alt="A arquitetura da rede de sensores sem fio MIDAS. Diagrama adaptado de (Malek et al. 2007) © IEEE 2007." border="0" height="410" src="cap11-ptbr_arquivos/image012.png" v:shapes="Imagem_x0020_231" width="549"/><?endif?></span></p>
+<p><b>Figuras 11-12. A arquitetura da rede de sensores sem
 fio MIDAS. Diagrama adaptado de (Malek et al. 2007) © IEEE 2007.</b></p>
-
-<p class=MsoNormal>Mais do que apenas exemplificar como um estilo complexo
+<p>Mais do que apenas exemplificar como um estilo complexo
 surge da combinação de elementos de estilos mais simples, o REST ilustra meios
 importantes para lidar com problemas que surgem devido à presença de problemas
 de rede, notadamente latência e agência. Assim, o REST serve como um modelo do
 qual soluções para problemas relacionados podem ser derivadas.</p>
-
-<p class=MsoNormal>Questões de rede — especialmente latência e agência — foram
+<p>Questões de rede — especialmente latência e agência — foram
 enfatizadas no capítulo, já que uma proporção cada vez maior das aplicações
 agora é baseada em rede. A discussão sobre sistemas peer-to-peer destacou
 preocupações com a descoberta de outros pares, busca por recursos e riscos
 devido a potenciais problemas de desempenho e entidades maliciosas. As questões
-específicas de segurança e confiança serão abordadas em detalhes <span
-class=SpellE>em<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch13.html"
-title="Chapter&nbsp;13.&nbsp;Security and Trust"><b>Capítulo</b><b> 13</b></a></span>.</p>
-
-<p class=MsoNormal>Note que, só porque uma aplicação cresce em escopo, a
+específicas de segurança e confiança serão abordadas em detalhes <span class="SpellE">em<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch13.html" title="Chapter 13. Security and Trust"><b>Capítulo</b><b> 13</b></a></span>.</p>
+<p>Note que, só porque uma aplicação cresce em escopo, a
 arquitetura da solução não necessariamente se torna mais complexa. A
 compreensão da essência de um problema, aliada à exploração eficaz de algumas
 ideias simples, pode gerar uma aplicação altamente eficaz. Isso é claramente o
 caso, por exemplo, com Google, Akamai e Skype. Grandes soluções para problemas
 comerciais difíceis não acontecem do nada: elas resultam de grandes
 arquiteturas que refletem experiência, escolha e gosto exigente.</p>
-
-<p class=MsoNormal>A preocupação com propriedades não funcionais, como escala,
+<p>A preocupação com propriedades não funcionais, como escala,
 desempenho e segurança, tem dominado os projetos considerados neste capítulo.
 Nos próximos três capítulos, examinamos especificamente como projetar para
 alcançar tais propriedades. As técnicas de design apresentadas em cada um
 desses três capítulos surgiram da experiência na criação de aplicações como as
-mencionadas <span class=SpellE>acima.<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch12.html"
-title="Chapter&nbsp;12.&nbsp;Designing for Non-Functional Properties"><b>Capítulo</b><b>
-12</b></a></span>considera propriedades como eficiência e confiabilidade, <span
-class=SpellE>enquanto<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch13.html"
-title="Chapter&nbsp;13.&nbsp;Security and Trust"><b>Capítulo</b><b> 13</b></a></span>é
+mencionadas <span class="SpellE">acima.<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch12.html" title="Chapter 12. Designing for Non-Functional Properties"><b>Capítulo</b><b>
+12</b></a></span>considera propriedades como eficiência e confiabilidade, <span class="SpellE">enquanto<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch13.html" title="Chapter 13. Security and Trust"><b>Capítulo</b><b> 13</b></a></span>é
 dedicado a projetar aplicações para alcançar certas propriedades de segurança e
-confiança. A propriedade não funcional <span class=SpellE>de<i>adaptabilidade</i>Vista</span>
-na discussão anterior, por exemplo, sobre sistemas <span class=SpellE>peer-to-peer</span>
-recebe tratamento adicional aprofundado <span class=SpellE>em<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch14.html"
-title="Chapter&nbsp;14.&nbsp;Architectural Adaptation"><b>Capítulo</b><b> 14</b></a></span>.</p>
-
-<p class=MsoNormal><b>O Caso de Negócios<o:p></o:p></b></p>
-
-<p class=MsoNormal>O desenvolvimento de uma ótima arquitetura de software é um
+confiança. A propriedade não funcional <span class="SpellE">de<i>adaptabilidade</i>Vista</span>
+na discussão anterior, por exemplo, sobre sistemas <span class="SpellE">peer-to-peer</span>
+recebe tratamento adicional aprofundado <span class="SpellE">em<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch14.html" title="Chapter 14. Architectural Adaptation"><b>Capítulo</b><b> 14</b></a></span>.</p>
+<p><b>O Caso de Negócios</b></p>
+<p>O desenvolvimento de uma ótima arquitetura de software é um
 passo fundamental para garantir o sucesso financeiro de longo prazo de uma
 linha de produtos de software. A gestão de produto e dificuldades financeiras
 surgem quando uma arquitetura inicial não consegue acomodar mudanças e novas
@@ -2060,42 +1701,35 @@ levantados, a rede oferece os desafios e oportunidades de trabalhar em um mundo
 aberto e dinâmico. O potencial é para aplicações que se adaptam mais
 rapidamente às circunstâncias em mudança, seja do lado do consumidor individual
 ou em termos de alianças comerciais.</p>
-
-<p class=MsoNormal>Esse novo cenário apresenta desafios particulares para o
+<p>Esse novo cenário apresenta desafios particulares para o
 desenvolvimento interno de sistemas. Se uma organização tradicionalmente
 trabalhou apenas em um contexto fechado, baseado em LAN, migrando para uma rede
 aberta (ou até mesmo uma intranet distribuída globalmente), é provável que a
 transição seja difícil. Novas tecnologias, e notadamente arquiteturas novas e
 distintamente diferentes, são necessárias.</p>
-
-<p class=MsoNormal>PERGUNTAS DE REVISÃO</p>
-
-<ol style='margin-top:0cm' start=1 type=1>
- <li class=MsoNormal style='mso-list:l99 level1 lfo325;tab-stops:list 36.0pt'>As
+<p>PERGUNTAS DE REVISÃO</p>
+<ol start="1" style="margin-top:0cm" type="1">
+<li>As
      oito falácias da computação distribuída, conforme apresentadas no
-     capítulo, são apresentadas como mentiras. Por exemplo, &quot;A rede é
-     confiável.&quot; Quais são as consequências para a arquitetura de uma
-     aplicação distribuída ao perceber que a rede não é <i><span
-     style='mso-spacerun:yes'> </span></i>confiável?</li>
- <li class=MsoNormal style='mso-list:l99 level1 lfo325;tab-stops:list 36.0pt'>Quais
+     capítulo, são apresentadas como mentiras. Por exemplo, "A rede é
+     confiável." Quais são as consequências para a arquitetura de uma
+     aplicação distribuída ao perceber que a rede não é <i><span> </span></i>confiável?</li>
+<li>Quais
      são as consequências para a arquitetura de uma aplicação distribuída em
      relação às outras sete falácias?</li>
- <li class=MsoNormal style='mso-list:l99 level1 lfo325;tab-stops:list 36.0pt'>Quais
+<li>Quais
      são os três principais elementos estilísticos dos quais REST foi derivado?</li>
- <li class=MsoNormal style='mso-list:l99 level1 lfo325;tab-stops:list 36.0pt'>Como
-     sistemas puramente <span class=SpellE>peer-to-peer</span>, como o <span
-     class=SpellE>Gnutella</span> original, descobrem a presença de recursos
+<li>Como
+     sistemas puramente <span class="SpellE">peer-to-peer</span>, como o <span class="SpellE">Gnutella</span> original, descobrem a presença de recursos
      (como an.mp3 arquivo) na rede? Como os sistemas híbridos P2P melhoram
      isso?</li>
- <li class=MsoNormal style='mso-list:l99 level1 lfo325;tab-stops:list 36.0pt'>Quais
+<li>Quais
      são os principais estilos para arquiteturas robóticas e quais problemas
      foram observados com os estilos iniciais?</li>
 </ol>
-
-<p class=MsoNormal>EXERCÍCIOS</p>
-
-<ol style='margin-top:0cm' start=1 type=1>
- <li class=MsoNormal style='mso-list:l19 level1 lfo326;tab-stops:list 36.0pt'>Quaisquer
+<p>EXERCÍCIOS</p>
+<ol start="1" style="margin-top:0cm" type="1">
+<li>Quaisquer
      dois estilos arquitetônicos podem ser combinados simplesmente encapsulando
      completamente o uso de um estilo dentro de um único componente presente no
      uso do outro estilo. REST, no entanto, mostra como alguns estilos podem
@@ -2103,150 +1737,119 @@ distintamente diferentes, são necessárias.</p>
      todas as seis combinações de pares dos estilos a seguir, descreva como os
      estilos podem ser usados juntos no mesmo nível de abstração, ou explique
      por que não podem.</li>
- <ol style='margin-top:0cm' start=1 type=1>
-  <li class=MsoNormal style='mso-list:l19 level2 lfo326;tab-stops:list 72.0pt'>Máquinas
+<ol start="1" style="margin-top:0cm" type="1">
+<li>Máquinas
       em camadas/virtuais</li>
-  <li class=MsoNormal style='mso-list:l19 level2 lfo326;tab-stops:list 72.0pt'>Baseado
+<li>Baseado
       em eventos</li>
-  <li class=MsoNormal style='mso-list:l19 level2 lfo326;tab-stops:list 72.0pt'>Tubo
+<li>Tubo
       e filtro</li>
-  <li class=MsoNormal style='mso-list:l19 level2 lfo326;tab-stops:list 72.0pt'>Baseado
+<li>Baseado
       em regras</li>
- </ol>
- <li class=MsoNormal style='mso-list:l19 level1 lfo326;tab-stops:list 36.0pt'>Desenvolva
+</ol>
+<li>Desenvolva
      uma arquitetura para um exemplo de videogame lunar que mostre o resultado
      de (efetivamente) usar dois ou mais estilos arquitetônicos em combinação.</li>
- <li class=MsoNormal style='mso-list:l19 level1 lfo326;tab-stops:list 36.0pt'>Crie
-     um diagrama como o <span class=SpellE>de<a
-     href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch11.html#notional_derivation_of_the_rest_style_fr"
-     title="Figure&nbsp;11-1.&nbsp;Notional derivation of the REST style from simpler styles."><b>Figura</b><b>
+<li>Crie
+     um diagrama como o <span class="SpellE">de<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch11.html#notional_derivation_of_the_rest_style_fr" title="Figure 11-1. Notional derivation of the REST style from simpler styles."><b>Figura</b><b>
      11-1</b></a></span>isso indica a herança intelectual do estilo C2,
-     conforme descrito <span class=SpellE>em<a
-     href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch05.html"
-     title="Chapter&nbsp;5.&nbsp;Connectors"><b>Capítulo</b><b> 5</b></a></span>.</li>
- <li class=MsoNormal style='mso-list:l19 level1 lfo326;tab-stops:list 36.0pt'>Pesquise
+     conforme descrito <span class="SpellE">em<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch05.html" title="Chapter 5. Connectors"><b>Capítulo</b><b> 5</b></a></span>.</li>
+<li>Pesquise
      na Web e identifique outras aplicações (além da própria Web) às quais o
      REST foi aplicado.</li>
- <li class=MsoNormal style='mso-list:l19 level1 lfo326;tab-stops:list 36.0pt'>Qual
+<li>Qual
      é a arquitetura do Instant Messenger da AOL? Como isso se compara à
      arquitetura dos recursos de chat do ICQ? Como eles se comparam à
      arquitetura do IRC (Internet Relay Chat)?</li>
- <li class=MsoNormal style='mso-list:l19 level1 lfo326;tab-stops:list 36.0pt'>Quais
+<li>Quais
      são as suposições de confiança da arquitetura Napster? Desenvolver uma
      modificação na arquitetura do Napster que diminua o risco de baixar
      conteúdo malicioso de outro par.</li>
- <li class=MsoNormal style='mso-list:l19 level1 lfo326;tab-stops:list 36.0pt'>Arquiteturas
+<li>Arquiteturas
      orientadas a serviços são sistemas peer-to-peer? Descreva por que isso
      acontece e por que não é uma descrição válida.</li>
- <li class=MsoNormal style='mso-list:l19 level1 lfo326;tab-stops:list 36.0pt'>Vários
+<li>Vários
      estilos de arquitetura de software se inspiram, e às vezes seu nome, em
      interações na vida real e física. Interações entre pares é um exemplo.
      Essa relação também pode ir na direção oposta: arquiteturas de software
      também podem ser usadas para descrever interações na sociedade cotidiana.
      Descreva a arquitetura de serviço de um restaurante fast-food (como
-     In-N-Out Burger ou McDonald's) usando os estilos <span class=SpellE>de<a
-     href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch04.html"
-     title="Chapter&nbsp;4.&nbsp;Designing Architectures"><b>Capítulo</b><b> 4</b></a></span>,
+     In-N-Out Burger ou McDonald's) usando os estilos <span class="SpellE">de<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch04.html" title="Chapter 4. Designing Architectures"><b>Capítulo</b><b> 4</b></a></span>,
      em combinação conforme necessário.</li>
- <li class=MsoNormal style='mso-list:l19 level1 lfo326;tab-stops:list 36.0pt'>O
+<li>O
      estilo de grade descrito no capítulo é de nível muito alto, e descrito de
      forma ampla para muitas aplicações de grade. Identifique uma aplicação
      real de grade e descreva sua arquitetura. Como essa arquitetura se compara
-     à arquitetura nominal da <a
-     href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch11.html#architecture_of_the_grid_comma_according"
-     title="Figure&nbsp;11-2.&nbsp;Architecture of the Grid, according to Foster, Kesselman, and Tuecke. Adapted from (Foster, Kesselman, and Tuecke 2001)."><b>Figura
+     à arquitetura nominal da <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch11.html#architecture_of_the_grid_comma_according" title="Figure 11-2. Architecture of the Grid, according to Foster, Kesselman, and Tuecke. Adapted from (Foster, Kesselman, and Tuecke 2001)."><b>Figura
      11-2</b></a>?</li>
- <li class=MsoNormal style='mso-list:l19 level1 lfo326;tab-stops:list 36.0pt'>A
-     <span class=SpellE>Koala</span> tem sido usada para desenvolver
+<li>A
+     <span class="SpellE">Koala</span> tem sido usada para desenvolver
      arquiteturas para eletrônicos de consumo, como televisores. Se um sistema
      de mídia distribuído fosse desenvolvido (com fontes de mídia localizadas
      em um único lugar da rede, e vários dispositivos de processamento, exibição
-     e softwares localizados em outras partes da rede), o <span class=SpellE>Koala</span>
+     e softwares localizados em outras partes da rede), o <span class="SpellE">Koala</span>
      ainda seria uma boa escolha para descrever a arquitetura? Por que ou por
      que não? O que seria essencial em uma situação dessas?</li>
 </ol>
-
-<p class=MsoNormal>LEITURA ADICIONAL</p>
-
-<p class=MsoNormal>Referências para estudos adicionais de arquiteturas
+<p>LEITURA ADICIONAL</p>
+<p>Referências para estudos adicionais de arquiteturas
 distribuídas e do estilo REST foram fornecidas no texto. Centrais são o texto
-de <span class=SpellE>Tanenbaum</span> sobre sistemas distribuídos (<span
-class=SpellE>Tanenbaum</span> e van Steen 2002), a dissertação de Fielding
+de <span class="SpellE">Tanenbaum</span> sobre sistemas distribuídos (<span class="SpellE">Tanenbaum</span> e van Steen 2002), a dissertação de Fielding
 (Fielding 2000) e a publicação subsequente em periódicos (Fielding e Taylor
 2002).</p>
-
-<p class=MsoNormal>A arquitetura do Google está se tornando cada vez mais
+<p>A arquitetura do Google está se tornando cada vez mais
 pública, com muitas de suas tecnologias descritas em artigos disponíveis na
 labs.google.com/papers.html. O Sistema de Arquivos do Google, por exemplo, é
-explicado em (<span class=SpellE>Ghemawat</span>, <span class=SpellE>Gobioff</span>
-e Leung 2003) e o <span class=SpellE>MapReduce</span> é apresentado em (Dean e <span
-class=SpellE>Ghernwat</span> 2004). Mais informações sobre <span class=SpellE>Akamai</span>
-estão disponíveis em (<span class=SpellE>Dilley</span> et al. 2002); outros
+explicado em (<span class="SpellE">Ghemawat</span>, <span class="SpellE">Gobioff</span>
+e Leung 2003) e o <span class="SpellE">MapReduce</span> é apresentado em (Dean e <span class="SpellE">Ghernwat</span> 2004). Mais informações sobre <span class="SpellE">Akamai</span>
+estão disponíveis em (<span class="SpellE">Dilley</span> et al. 2002); outros
 recursos estão disponíveis no site da empresa.</p>
-
-<p class=MsoNormal>Como mencionou o texto principal do capítulo, conhecer
+<p>Como mencionou o texto principal do capítulo, conhecer
 exatamente a arquitetura do Skype é um pouco difícil de determinar porque o
 software cliente foi obscurecido usando várias técnicas sofisticadas. A
 arquitetura descrita no texto reflete uma análise forense. Uma publicação chave
 nesse sentido é (Baset e Schulzrinne 2004), que reflete a observação do cliente
 Skype em ação. Outro projeto trabalhou na análise do código oculto do cliente.
-Os resultados podem ser encontrados em recon.cx/<span class=SpellE>en</span>/f/vskype-part1.pdf
-e recon.cx/<span class=SpellE>en</span>/f/vskype-part2.pdf.</p>
-
-<p class=MsoNormal>Boas referências para serviços Web são um pouco difíceis de
+Os resultados podem ser encontrados em recon.cx/<span class="SpellE">en</span>/f/vskype-part1.pdf
+e recon.cx/<span class="SpellE">en</span>/f/vskype-part2.pdf.</p>
+<p>Boas referências para serviços Web são um pouco difíceis de
 encontrar. Muitas publicações e sites são superficiais em sua apresentação
 técnica, imprecisos ou focados apenas em uma faceta restrita. Uma boa
-introdução, no entanto, é encontrada em (<span class=SpellE>Vogels</span>
-2003). Um artigo tecnicamente mais rico é (<span class=SpellE>Manolescu</span>
+introdução, no entanto, é encontrada em (<span class="SpellE">Vogels</span>
+2003). Um artigo tecnicamente mais rico é (<span class="SpellE">Manolescu</span>
 et al. 2005). O WS-BPEL-PEL é descrito em (OASIS 2007).</p>
-
-<p class=MsoNormal>Uma arquitetura de computação de alto desempenho que forma
+<p>Uma arquitetura de computação de alto desempenho que forma
 um contraste interessante com arquiteturas de grade é a MeDICi (Gorton 2008;
 Gorton et al. 2008).</p>
-
-<p class=MsoNormal>A arquitetura do Linux foi recuperada e descrita (Bowman,
+<p>A arquitetura do Linux foi recuperada e descrita (Bowman,
 Holt e Brewster 1999), mostrando as diferenças entre as arquiteturas
 prescritiva e descritiva da aplicação. Como mencionado em outro lugar neste
 texto, a arquitetura do servidor Web Apache também foi recuperada e descrita
 (Gröne, Knöpfel e Kugel 2002; Gröne et al. 2004). Ambos os projetos são estudos
-interessantes em recuperação arquitetônica; <span class=GramE>Eles</span>
+interessantes em recuperação arquitetônica; <span class="GramE">Eles</span>
 também são úteis para observar retrospectivamente como múltiplos estilos são
 combinados para resolver problemas desafiadores.</p>
-
-<p class=MsoNormal><o:p>&nbsp;</o:p></p>
-
-<div class=MsoNormal align=center style='text-align:center'>
-
-<hr size=2 width=507 style='width:380.0pt' align=center>
-
+<p></p>
+<div align="center" style="text-align:center">
+<hr align="center" size="2" style="width:380.0pt" width="507"/>
 </div>
-
-<p class=MsoNormal><a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch11.html#CHP-11-FN-1"><b><sup>[13]
+<p><a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch11.html#CHP-11-FN-1"><b><sup>[13]
 </sup></b></a>A Web como existe hoje, na forma da união do HTTP/1.1, URI e
 outros padrões, juntamente com várias implementações de servidores, não deve
 ser equiparada ao REST. Vários elementos da Web atualmente em uso entram em
 conflito com o RESTO; as origens dessa deriva arquitetônica são exploradas na
 dissertação de Fielding, citada anteriormente.</p>
-
-<p class=MsoNormal><a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch11.html#CHP-11-FN-2"><b><sup>[14]
+<p><a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch11.html#CHP-11-FN-2"><b><sup>[14]
 </sup></b></a>Um limite de agência denota o conjunto de componentes que operam
 em nome de uma autoridade comum (humana), com o poder de estabelecer acordo
-dentro desse conjunto (<span class=SpellE>Khare</span> e Taylor 2004).</p>
-
-<p class=MsoNormal><a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch11.html#CHP-11-FN-3"><b><sup>[15]
+dentro desse conjunto (<span class="SpellE">Khare</span> e Taylor 2004).</p>
+<p><a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch11.html#CHP-11-FN-3"><b><sup>[15]
 </sup></b></a>Skype é uma marca registrada da Skype Limited ou de outras
 empresas relacionadas.</p>
-
-<p class=MsoNormal><a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch11.html#CHP-11-FN-4"><b><sup>[16]
-</sup></b></a>Veja o recurso &quot;Palavras sobre Palavras em Serviços
-Web&quot; para saber mais sobre o termo SOAP.</p>
-
-<p class=MsoNormal><o:p>&nbsp;</o:p></p>
-
+<p><a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch11.html#CHP-11-FN-4"><b><sup>[16]
+</sup></b></a>Veja o recurso "Palavras sobre Palavras em Serviços
+Web" para saber mais sobre o termo SOAP.</p>
+<p></p>
 </div>
 </body>
 </html>

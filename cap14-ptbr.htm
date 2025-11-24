@@ -1,25 +1,21 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>cap14-ptbr</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
+<meta charset="utf-8"/>
+<title>cap14-ptbr</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="styles.css" rel="stylesheet"/>
 </head>
 <body>
-
 <div class="navbar">
-  <div><a href="cap13-ptbr.htm">← Anterior</a></div>
-  <div><a href="index.html">Índice</a></div>
-  <div><a href="cap15-ptbr.htm">Próximo →</a></div>
+<div><a href="cap13-ptbr.htm">← Anterior</a></div>
+<div><a href="index.html">Índice</a></div>
+<div><a href="cap15-ptbr.htm">Próximo →</a></div>
 </div>
-
-
-<div class=WordSection1>
-
-<p class=MsoNormal>Capítulo 14.&nbsp;Adaptação arquitetônica</p>
-
-<p class=MsoNormal>Poucas aplicações são projetadas, construídas, usadas e, por
+<div class="WordSection1">
+<p>Capítulo 14. Adaptação arquitetônica</p>
+<p>Poucas aplicações são projetadas, construídas, usadas e, por
 fim, descartadas sem passar por mudanças. A mudança é endêmica ao software:
 tanto a maleabilidade percebida quanto a real do meio, aliada à facilidade de
 alterar código, induz todos os envolvidos com um aplicativo a iniciar mudanças.
@@ -30,15 +26,10 @@ mudar. Seja qual for o motivo, os desenvolvedores de software enfrentam os
 desafios de lidar com a necessidade de modificar um aplicativo. Agrupamos todos
 esses tipos de mudanças sob o termo <i>adaptação</i>: modificação de um sistema
 de software para atender a novos requisitos e circunstâncias em mudança.</p>
-
-<p class=MsoNormal>A adaptabilidade foi introduzida em<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch12.html"
-title="Chapter&nbsp;12.&nbsp;Designing for Non-Functional Properties"><b>Capítulo
+<p>A adaptabilidade foi introduzida em<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch12.html" title="Chapter 12. Designing for Non-Functional Properties"><b>Capítulo
 12</b></a>como uma das várias propriedades não funcionais para as quais
 arquitetos frequentemente precisam projetar. Foram apresentadas várias técnicas
-arquitetônicas básicas que apoiam a adaptação. Assim como<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch13.html"
-title="Chapter&nbsp;13.&nbsp;Security and Trust"><b>Capítulo 13</b></a>foi
+arquitetônicas básicas que apoiam a adaptação. Assim como<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch13.html" title="Chapter 13. Security and Trust"><b>Capítulo 13</b></a>foi
 dedicado à exploração aprofundada das propriedades não funcionais da segurança
 e da confiança, então este capítulo aprofunda a adaptabilidade. No entanto,
 este capítulo não aspira a apresentar técnicas para lidar com todos os tipos
@@ -53,132 +44,111 @@ dos modelos arquitetônicos explícitos no suporte e efetivo da adaptação. Tam
 consideramos um dos tipos de mudança mais difíceis: modificar aplicações em
 tempo real, mostrando como isso pode ser alcançado usando uma abordagem
 centrada em arquitetura e conectores.</p>
-
-<p class=MsoNormal>Os objetivos do capítulo são:</p>
-
-<ul style='margin-top:0cm' type=disc>
- <li class=MsoNormal style='mso-list:l43 level1 lfo381;tab-stops:list 36.0pt'>Caracterize
+<p>Os objetivos do capítulo são:</p>
+<ul style="margin-top:0cm" type="disc">
+<li>Caracterize
      a adaptação, mostrando o que mudou, por quê e quem são os jogadores.</li>
- <li class=MsoNormal style='mso-list:l43 level1 lfo381;tab-stops:list 36.0pt'>Caracterize
+<li>Caracterize
      o papel central que a arquitetura de software desempenha na adaptação do
      sistema.</li>
- <li class=MsoNormal style='mso-list:l43 level1 lfo381;tab-stops:list 36.0pt'>Apresente
+<li>Apresente
      técnicas para apoiar efetivamente a adaptação, baseadas em uma perspectiva
      centrada na arquitetura.</li>
 </ul>
-
-<p class=MsoNormal>Este capítulo revela o poder particular dos conectores em
+<p>Este capítulo revela o poder particular dos conectores em
 apoiar a adaptação, especialmente em situações em que os conectores permanecem
 entidades de primeira classe na implementação e onde a comunicação é baseada em
 eventos. Aplicações altamente dinâmicas são possíveis nessas situações e
 oferecem a oportunidade de criar aplicações novas, flexíveis e altamente
 adaptáveis.</p>
-
-<p class=MsoNormal><b>Resumo de</b><a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch14.html"
-title="Chapter&nbsp;14.&nbsp;Architectural Adaptation"><b>Capítulo 14</b></a></p>
-
-<ul style='margin-top:0cm' type=disc>
- <li class=MsoNormal style='mso-list:l100 level1 lfo382;tab-stops:list 36.0pt'>14
+<p><b>Resumo de</b><a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch14.html" title="Chapter 14. Architectural Adaptation"><b>Capítulo 14</b></a></p>
+<ul style="margin-top:0cm" type="disc">
+<li>14
      Adaptação Arquitetônica</li>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <li class=MsoNormal style='mso-list:l100 level2 lfo383;tab-stops:list 72.0pt'>14.1
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>14.1
       Conceitos de Adaptação Centrada na Arquitetura</li>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <ul style='margin-top:0cm' type=disc>
-   <li class=MsoNormal style='mso-list:l100 level3 lfo384;tab-stops:list 108.0pt'>14.1.1
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>14.1.1
        Fontes e Motivações para a Mudança</li>
-  </ul>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <ul style='margin-top:0cm' type=disc>
-   <li class=MsoNormal style='mso-list:l100 level3 lfo385;tab-stops:list 108.0pt'>14.1.2
+</ul>
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>14.1.2
        Camadas de Cisalhamento</li>
-  </ul>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <ul style='margin-top:0cm' type=disc>
-   <li class=MsoNormal style='mso-list:l100 level3 lfo386;tab-stops:list 108.0pt'>14.1.3
+</ul>
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>14.1.3
        Elementos Estruturais Sujeitos a Alterações</li>
-  </ul>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <ul style='margin-top:0cm' type=disc>
-   <li class=MsoNormal style='mso-list:l100 level3 lfo387;tab-stops:list 108.0pt'>14.1.4
+</ul>
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>14.1.4
        Agentes de Mudança e Contexto</li>
-  </ul>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <ul style='margin-top:0cm' type=disc>
-   <li class=MsoNormal style='mso-list:l100 level3 lfo388;tab-stops:list 108.0pt'>14.1.5
+</ul>
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>14.1.5
        Arquitetura: A Abstração Central</li>
-  </ul>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <li class=MsoNormal style='mso-list:l100 level1 lfo382;tab-stops:list 36.0pt'>14.2
+</ul>
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<li>14.2
      Um Arcabouço Conceitual para a Adaptação Arquitetônica</li>
- <li class=MsoNormal style='mso-list:l100 level1 lfo382;tab-stops:list 36.0pt'>14.3
+<li>14.3
      Técnicas para Apoiar Mudanças Centradas na Arquitetura</li>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <li class=MsoNormal style='mso-list:l100 level2 lfo389;tab-stops:list 72.0pt'>14.3.1
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>14.3.1
       Técnicas Básicas Correspondentes às Atividades do Arcabouço Conceitual</li>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <li class=MsoNormal style='mso-list:l100 level2 lfo390;tab-stops:list 72.0pt'>14.3.2
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>14.3.2
       Arquiteturas/Estilos que Suportam a Adaptação</li>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <li class=MsoNormal style='mso-list:l100 level2 lfo391;tab-stops:list 72.0pt'>14.3.3
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>14.3.3
       Os Problemas Especiais da Adaptação Em Tempo Real e Autônoma</li>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <li class=MsoNormal style='mso-list:l100 level1 lfo382;tab-stops:list 36.0pt'>14.4
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<li>14.4
      Fim da Matéria</li>
- <li class=MsoNormal style='mso-list:l100 level1 lfo382;tab-stops:list 36.0pt'>14.5
+<li>14.5
      Perguntas de Revisão</li>
- <li class=MsoNormal style='mso-list:l100 level1 lfo382;tab-stops:list 36.0pt'>14.6
+<li>14.6
      Exercícios</li>
- <li class=MsoNormal style='mso-list:l100 level1 lfo382;tab-stops:list 36.0pt'>14.7
+<li>14.7
      Leitura adicional</li>
 </ul>
-
-<p class=MsoNormal>CONCEITOS DE ADAPTAÇÃO CENTRADA NA ARQUITETURA</p>
-
-<p class=MsoNormal><b>Fontes e Motivações para a Mudança<o:p></o:p></b></p>
-
-<p class=MsoNormal>Várias motivações para a mudança são familiares aos
+<p>CONCEITOS DE ADAPTAÇÃO CENTRADA NA ARQUITETURA</p>
+<p><b>Fontes e Motivações para a Mudança</b></p>
+<p>Várias motivações para a mudança são familiares aos
 desenvolvedores. Talvez a mais comum seja a <i>mudança corretiva</i>, quando a
 aplicação é adaptada para atender aos requisitos existentes. Em outras
 palavras, mudança corretiva significa alinhar a arquitetura descritiva com a
@@ -189,8 +159,7 @@ localizado no código, ou resultou de um erro profundo cometido no mais alto
 nível da estrutura do sistema? Compreender a causa raiz é essencial para
 determinar como efetuar a correção; Tentar corrigir um problema profundo com
 mudanças localizadas geralmente não é eficaz.</p>
-
-<p class=MsoNormal>Uma segunda motivação comum para a mudança é <i>a
+<p>Uma segunda motivação comum para a mudança é <i>a
 modificação dos requisitos funcionais</i> de um sistema — novas funcionalidades
 são necessárias, as existentes modificadas, talvez algumas precisem ser
 removidas. Em vez de pensar que a existência de tais necessidades de mudança
@@ -202,16 +171,11 @@ ser realizado. Aplicações em uso podem alterar o contexto de uso, ou o context
 de uso pode mudar por razões extrínsecas. Qualquer que seja a fonte, as
 solicitações de alteração de recursos normalmente representam mudanças na
 arquitetura da aplicação.</p>
-
-<p class=MsoNormal>Uma terceira motivação para a mudança é a exigência de
+<p>Uma terceira motivação para a mudança é a exigência de
 satisfazer<i>Novas ou alteradas propriedades do sistema não funcional</i>. Tais
 propriedades incluem segurança, desempenho, escala e assim por diante, conforme
-discutido em<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch12.html"
-title="Chapter&nbsp;12.&nbsp;Designing for Non-Functional Properties"><b>Capítulos
-12</b></a>e<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch13.html"
-title="Chapter&nbsp;13.&nbsp;Security and Trust"><b>13</b></a>. Novas
+discutido em<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch12.html" title="Chapter 12. Designing for Non-Functional Properties"><b>Capítulos
+12</b></a>e<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch13.html" title="Chapter 13. Security and Trust"><b>13</b></a>. Novas
 propriedades não funcionais podem induzir mudanças profundas na arquitetura de
 um sistema. Um exemplo é a World Wide Web. Antes de 1994, o protocolo que
 governava a Web era HTTP/1.0, um protocolo ponto a ponto sem providência para
@@ -221,25 +185,22 @@ escalasse de milhares de servidores e dezenas de milhares de clientes para
 muitos milhões de cada. Da mesma forma, à medida que os ataques de segurança ao
 servidor web IIS da Microsoft aumentavam, uma reformulação significativa foi
 necessária para enfrentar as novas ameaças. Outra propriedade não funcional que
-pode causar mudanças arquitetônicas significativas é a &quot;melhor
-organização&quot; — reestruturar uma aplicação em<i>antecipação</i>de pedidos
+pode causar mudanças arquitetônicas significativas é a "melhor
+organização" — reestruturar uma aplicação em<i>antecipação</i>de pedidos
 de mudança futura. Por exemplo, uma nova plataforma de middleware (ou seja,
 tecnologia de conectores) pode ser implementada como um passo proativo para
 apoiar possíveis modificações futuras.</p>
-
-<p class=MsoNormal>Uma quarta motivação comum para a adaptação do sistema é a
+<p>Uma quarta motivação comum para a adaptação do sistema é a
 necessidade de se conformar a um <i>ambiente operacional transformado</i>.
 Nessa situação, nem as funções da aplicação nem suas propriedades não
 funcionais são alteradas, mas a estrutura da aplicação deve ser adaptada para
 rodar, por exemplo, em hardware novo ou para acomodar mudanças nas interfaces
 com sistemas externos.</p>
-
-<p class=MsoNormal>Mais obviamente pertinentes para o arquiteto de software são
+<p>Mais obviamente pertinentes para o arquiteto de software são
 as motivações para mudanças que <i>surgem das forças da linha de produto</i>.
 Estritamente falando, tais mudanças podem ser classificadas em um dos tipos
 anteriores, mas tal classificação obscureceria os insights.</p>
-
-<p class=MsoNormal>A primeira dessas motivações da linha de produtos é o desejo
+<p>A primeira dessas motivações da linha de produtos é o desejo
 de <i>criar uma nova variante </i>dentro de uma linha de produtos. A noção aqui
 é que os arquitetos já identificaram previamente um ponto de ramificação dentro
 de uma arquitetura de linha de produto e, nesse ponto de ramificação, uma nova
@@ -252,8 +213,7 @@ nova variante nesse ponto de ramificação é criada. No nosso exemplo de longa
 data do jogo Lunar Lander, uma nova variante pode ser baseada no desejo de
 utilizar um novo joystick sem fio para controlar o módulo de pouso ou de
 incorporar um novo motor gráfico tridimensional com desempenho melhorado.</p>
-
-<p class=MsoNormal>Outra das motivações da linha de produtos é <i>a criação de
+<p>Outra das motivações da linha de produtos é <i>a criação de
 um novo ponto de ramificação</i>, identificando assim uma nova oportunidade
 para segmentação no mercado de produtos. Por exemplo, um fabricante de
 eletrônicos pode decidir adaptar o design de seus produtos de televisão para
@@ -266,14 +226,12 @@ formas de integrar informações de vigilância ao ambiente de exibição de
 televisão. Novos pontos de desvio no design do Lunar Lander podem focar em
 ambientes multiplayer ou na extensibilidade para permitir missões a outros
 objetos do sistema solar.</p>
-
-<p class=MsoNormal>Outra motivação de linha de produto vem do desejo de <i>fundir
+<p>Outra motivação de linha de produto vem do desejo de <i>fundir
 (sub)linhas de produto</i>, racionalizando assim suas arquiteturas. Um esforço
 bem-sucedido desse tipo gerará uma arquitetura de linha de produto comum sem
 exigir a criação completa de uma nova arquitetura. O objetivo, aparentemente, é
 preservar o máximo possível das arquiteturas contribuintes.</p>
-
-<p class=MsoNormal>Um tipo de adaptação que será discutida mais adiante neste
+<p>Um tipo de adaptação que será discutida mais adiante neste
 capítulo é a adaptação improvisada. A dificuldade de apoiar essa mudança é
 tipicamente maior do que para adaptações não em tempo real, então algumas
 palavras são necessárias aqui para incentivá-la a considerar. Um exemplo
@@ -282,19 +240,17 @@ planetária. As espaçonaves Cassini/Huygens foram lançadas de Cabo Canaveral e
 outubro de 1997; eles só chegaram ao destino pretendido, Saturno, em julho de
 2004. Durante o trânsito para Saturno, os sistemas de software a bordo foram
 atualizados várias vezes. Como diz o site da Cassini (Laboratório de Propulsão
-a Jato da NASA), &quot;Esta fase de desenvolvimento nunca será realmente
+a Jato da NASA), "Esta fase de desenvolvimento nunca será realmente
 concluída, já que novas sequências de comando estão sendo continuamente criadas
 durante toda a operação da Cassini. Novos softwares de voo também serão
 desenvolvidos e carregados periodicamente a bordo da espaçonave, para operar no
 Subsistema de Dados de Comando, Subsistema de Controle de Atitude e
-Articulação, bem como nos instrumentos de ciência física a bordo.&quot; Como <i>sistema</i>,
+Articulação, bem como nos instrumentos de ciência física a bordo." Como <i>sistema</i>,
 fica claro que o Cassini não podia ser parado e recarregado com o novo
 software; em sua vez, as atualizações precisavam ocorrer enquanto o sistema
 estivesse em operação contínua.</p>
-
-<p class=MsoNormal><b>Atualizações de Software de Espaçonaves<o:p></o:p></b></p>
-
-<p class=MsoNormal>A atualização do software da espaçonave enquanto estão em
+<p><b>Atualizações de Software de Espaçonaves</b></p>
+<p>A atualização do software da espaçonave enquanto estão em
 luz espacial é um caso extremo de adaptação em tempo real. As necessidades de
 atualização refletem muitas fontes, desde novas direções ou prioridades para
 uma missão baseadas em fenômenos recentemente descobertos até correções de
@@ -304,14 +260,12 @@ período relativamente restrito. Se o software da missão não estiver pronto no
 momento do lançamento, uma estratégia viável é lançar com um sistema
 esquelético e depois atualizar enquanto a nave está a caminho do destino da
 missão.</p>
-
-<p class=MsoNormal>Todos esses fatores surgiram na missão Cassini a Saturno.
+<p>Todos esses fatores surgiram na missão Cassini a Saturno.
 Nem é preciso dizer que as apostas são altas nas atualizações de software em
 voo, portanto uma estratégia de atualização muito conservadora e orientada a
 patches é aplicada. Alguns documentos estão disponíveis online que descrevem os
 processos envolvidos [como (Paczkowski e Roy 2004)].</p>
-
-<p class=MsoNormal>Um exemplo mais prosaico é a extensão da funcionalidade do
+<p>Um exemplo mais prosaico é a extensão da funcionalidade do
 navegador web. Se, ao navegar na Web, encontrar um recurso que exige um novo
 tipo de software de exibição (como para um novo tipo de codificação de áudio,
 talvez), o navegador deve ser estendido. Se o navegador exigir que o usuário
@@ -321,37 +275,31 @@ está em incômodo. Após reiniciar, o usuário terá que renavegar até o recur
 que exigiu a extensão inicialmente. Uma estratégia mais agradável, do ponto de
 vista do usuário, é apoiar o download e a instalação do novo software (ou seja,
 a adaptação do navegador) dinamicamente, para que o usuário possa continuar o
-uso de forma ininterrupta.<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch14.html#ftn.CHP-14-FN-1"><b><sup>[18]</sup></b></a></p>
-
-<p class=MsoNormal>As motivações para apoiar mudanças online (dinâmicas)
+uso de forma ininterrupta.<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch14.html#ftn.CHP-14-FN-1"><b><sup>[18]</sup></b></a></p>
+<p>As motivações para apoiar mudanças online (dinâmicas)
 incluem, portanto:</p>
-
-<ul style='margin-top:0cm' type=disc>
- <li class=MsoNormal style='mso-list:l116 level1 lfo392;tab-stops:list 36.0pt'>Aplicações
+<ul style="margin-top:0cm" type="disc">
+<li>Aplicações
      contínuas: Aquelas em que o software não pode ser parado porque a
      aplicação não pode ser parada — os serviços do software são continuamente
      necessários ou críticos para a segurança.</li>
- <li class=MsoNormal style='mso-list:l116 level1 lfo392;tab-stops:list 36.0pt'>Manutenção
+<li>Manutenção
      do estado do usuário ou da aplicação: Parar o software faria com que o
      usuário perdesse o contexto mental ou porque salvar e/ou recriar o estado
      da aplicação do software seria difícil ou custoso.</li>
- <li class=MsoNormal style='mso-list:l116 level1 lfo392;tab-stops:list 36.0pt'>Dificuldade
+<li>Dificuldade
      de reinstalação: Aplicações com propriedades complexas de instalação, como
      software embutido em um automóvel.</li>
 </ul>
-
-<p class=MsoNormal>Por fim, toda adaptação de software é motivada pela <i>observação
+<p>Por fim, toda adaptação de software é motivada pela <i>observação
 e análise</i>. Embora talvez esse seja um ponto óbvio, o papel da observação e
 análise é fundamental no processo de apoio à adaptação de software, e será
 discutido mais adiante no capítulo. O comportamento e as propriedades do
 sistema existente são observados e comparados, por exemplo, com metas e
 objetivos do sistema, e na medida em que a análise revela uma discrepância,
 atividades de adaptação são iniciadas.</p>
-
-<p class=MsoNormal><b>Camadas de cisalhamento<o:p></o:p></b></p>
-
-<p class=MsoNormal>Antes de avançar na consideração da adaptação dos sistemas
+<p><b>Camadas de cisalhamento</b></p>
+<p>Antes de avançar na consideração da adaptação dos sistemas
 de software, vale a pena refletir sobre mudanças na arquitetura física e de
 edifícios. O livro perspicaz de Stewart Brand, <i>Como Os Edifícios Aprendem —
 O Que Acontece Depois de Serem Construídos</i> (Brand 1994), examina como, e
@@ -363,36 +311,31 @@ de energia. Em ocasiões raras, reformamos nossas casas, adicionando novos
 espaços ou reconfigurando espaços existentes. Em ocasiões muito raras, podemos
 até ver uma casa fisicamente movida — por exemplo, se for de importância
 histórica, mas estiver no caminho de um novo desenvolvimento cívico.</p>
-
-<p class=MsoNormal>A marca categoriza os tipos de mudanças que podem ser feitas
-em um edifício em termos de &quot;camadas de cisalhamento&quot;. Baseando-se em
+<p>A marca categoriza os tipos de mudanças que podem ser feitas
+em um edifício em termos de "camadas de cisalhamento". Baseando-se em
 trabalhos anteriores de Frank Duffy, Brand cita seis camadas.</p>
-
-<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
- summary="Citação em bloco" style='margin-left:18.0pt;background:white;
- border-collapse:collapse;mso-yfti-tbllook:1184;mso-padding-alt:10.5pt 10.5pt 10.5pt 10.5pt'>
- <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
-  <td valign=top style='padding:10.5pt 10.5pt 10.5pt 10.5pt'>
-  <p class=MsoNormal><span style='color:black;mso-color-alt:windowtext'>&nbsp;</span></p>
-  </td>
-  <td valign=top style='padding:10.5pt 10.5pt 10.5pt 10.5pt'>
-  <p class=MsoNormal><span style='color:black;mso-color-alt:windowtext'>Local.
+<table border="0" cellpadding="0" cellspacing="0" summary="Citação em bloco">
+<tr>
+<td style="padding:10.5pt 10.5pt 10.5pt 10.5pt" valign="top">
+<p><span> </span></p>
+</td>
+<td style="padding:10.5pt 10.5pt 10.5pt 10.5pt" valign="top">
+<p><span>Local.
   Esse é o cenário geográfico, a localização urbana e o terreno legalmente
   definido, cujos limites e contexto sobrevivem a gerações de edifícios
   efêmeros.</span></p>
-  <p class=MsoNormal><span style='color:black;mso-color-alt:windowtext'>Estrutura.
+<p><span>Estrutura.
   A fundação e os elementos de suporte são perigosos e caros de trocar, então
   as pessoas não mudam. Esses <i>são </i>os prédios.</span></p>
-  <p class=MsoNormal><span style='color:black;mso-color-alt:windowtext'>Pele.
+<p><span>Pele.
   As superfícies externas agora mudam a cada vinte anos, mais ou menos, para
   acompanhar a moda ou a tecnologia, ou para reparos em grande escala.</span></p>
-  <p class=MsoNormal><span style='color:black;mso-color-alt:windowtext'>Serviços.
+<p><span>Serviços.
   Estes são os órgãos de funcionamento de um prédio: fiação de comunicação,
   fiação elétrica, encanamento, sistemas de sprinklers, ...</span></p>
-  <p class=MsoNormal><span style='color:black;mso-color-alt:windowtext'>Plano
+<p><span>Plano
   Espacial. O layout interno — onde vão paredes, tetos, pisos e portas.</span></p>
-  <p class=MsoNormal><span style='color:black;mso-color-alt:windowtext;
-  mso-no-proof:yes'><!--[if gte vml 1]><v:shapetype id="_x0000_t75"
+<p><span><!--[if gte vml 1]><v:shapetype id="_x0000_t75"
    coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
    filled="f" stroked="f">
    <v:stroke joinstyle="miter"/>
@@ -416,53 +359,44 @@ trabalhos anteriores de Frank Duffy, Brand cita seis camadas.</p>
    alt="Cortando camadas de mudança [de How Buildings Learn, de Stewart Brand (Brand 1994)]"
    style='width:411.6pt;height:289.2pt;visibility:visible;mso-wrap-style:square'>
    <v:imagedata src="cap14-ptbr_arquivos/image001.png" o:title="Cortando camadas de mudança [de How Buildings Learn, de Stewart Brand (Brand 1994)]"/>
-  </v:shape><![endif]--><![if !vml]><img border=0 width=549 height=386
-  src="cap14-ptbr_arquivos/image001.png"
-  alt="Cortando camadas de mudança [de How Buildings Learn, de Stewart Brand (Brand 1994)]"
-  v:shapes="Imagem_x0020_304"><![endif]></span></p>
-  <p class=MsoNormal><b><span style='color:black;mso-color-alt:windowtext'>Figura
+  </v:shape><![endif]--><?if !vml?><img alt="Cortando camadas de mudança [de How Buildings Learn, de Stewart Brand (Brand 1994)]" border="0" height="386" src="cap14-ptbr_arquivos/image001.png" v:shapes="Imagem_x0020_304" width="549"/><?endif?></span></p>
+<p><b><span>Figura
   14-1. <i>Cortando camadas de mudança [de </i>How Buildings Learn, de <i>Stewart
   Brand (Brand 1994)]</i></span></b></p>
-  <p class=MsoNormal><span style='color:black;mso-color-alt:windowtext'>Rechear.
+<p><span>Rechear.
   Cadeiras, mesas, telefones, quadros, eletrodomésticos, luminárias, escovas de
   cabelo; Todas aquelas coisas que oscilam diariamente ou mensalmente.</span></p>
-  </td>
-  <td valign=top style='padding:10.5pt 10.5pt 10.5pt 10.5pt'>
-  <p class=MsoNormal><span style='color:black;mso-color-alt:windowtext'>&nbsp;</span></p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
-  <td valign=top style='background:#EEF2F6;padding:10.5pt 10.5pt 10.5pt 10.5pt'>
-  <p class=MsoNormal><span style='color:black;mso-color-alt:windowtext'>&nbsp;</span></p>
-  </td>
-  <td colspan=2 valign=top style='background:#EEF2F6;padding:10.5pt 10.5pt 10.5pt 10.5pt'>
-  <p class=MsoNormal><span style='color:black;mso-color-alt:windowtext'>--(Brand
+</td>
+<td style="padding:10.5pt 10.5pt 10.5pt 10.5pt" valign="top">
+<p><span> </span></p>
+</td>
+</tr>
+<tr>
+<td style="background:#EEF2F6;padding:10.5pt 10.5pt 10.5pt 10.5pt" valign="top">
+<p><span> </span></p>
+</td>
+<td colspan="2" style="background:#EEF2F6;padding:10.5pt 10.5pt 10.5pt 10.5pt" valign="top">
+<p><span>--(Brand
   1994)</span></p>
-  </td>
- </tr>
+</td>
+</tr>
 </table>
-
-<p class=MsoNormal>Essas seis camadas de cisalhamento estão ilustradas na <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch14.html#shearing_layers_of_change_open_square_fr"
-title="Figure&nbsp;14-1.&nbsp;Shearing layers of change [from Stewart Brand's How Buildings Learn (Brand 1994)]"><b>Figura
+<p>Essas seis camadas de cisalhamento estão ilustradas na <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch14.html#shearing_layers_of_change_open_square_fr" title="Figure 14-1. Shearing layers of change [from Stewart Brand's How Buildings Learn (Brand 1994)]"><b>Figura
 14-1</b></a>, com a disposição das camadas no diagrama correspondendo a onde,
-aproximadamente, as camadas aparecem em uma estrutura física.<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch14.html#ftn.CHP-14-FN-2"><b><sup>[19]</sup></b></a></p>
-
-<p class=MsoNormal>O software também é assim. Embora o software seja
+aproximadamente, as camadas aparecem em uma estrutura física.<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch14.html#ftn.CHP-14-FN-2"><b><sup>[19]</sup></b></a></p>
+<p>O software também é assim. Embora o software seja
 intrinsecamente mais maleável, as restrições e dependências que impomos durante
 o processo de design e implementação fazem com que ele se comporte de forma
 semelhante a um edifício. Como vimos, qualquer sistema de software possui uma
 arquitetura que determina seus elementos de suporte. Possui um local em sua
 instalação, ou seja, o contexto de uso, seja um negócio em casa, um laboratório
-de pesquisa ou um banco. Da mesma forma, o software tem uma &quot;skin&quot; em
+de pesquisa ou um banco. Da mesma forma, o software tem uma "skin" em
 suas interfaces de usuário; Outras analogias podem ser encontradas para as
 outras camadas. O difícil sobre software, no entanto, é que não podemos
 examinar um sistema de software apenas olhando para o código-fonte e distinguir
 facilmente um dos elementos portadores do sistema de um mero incidental — um
 item tão incidental quanto a colocação de uma escova de cabelo em uma casa.</p>
-
-<p class=MsoNormal>Um dos valores das observações de Brand é a categorização
+<p>Um dos valores das observações de Brand é a categorização
 dos tipos de mudança de acordo com a natureza e o custo de fazer uma mudança
 dentro dessas dimensões. Em outras palavras, nosso entendimento das camadas de
 construção, seja como incorporadores sofisticados ou simplesmente como
@@ -481,44 +415,34 @@ longa experiência com edifícios e sua natureza visível e material.
 Infelizmente, normalmente não temos esse tipo de intuição com software, pois
 muitas vezes não conseguimos associar um pedido de alteração a um tipo
 específico de camada no software.</p>
-
-<p class=MsoNormal>Um dos objetivos da Brand ao identificar camadas de
+<p>Um dos objetivos da Brand ao identificar camadas de
 cisalhamento com suas diferentes propriedades é fornecer orientações de design.
 Reconhecendo que as camadas mudam em taxas diferentes, a mudança é facilitada
 limitando o acoplamento entre as partes de um edifício que correspondem a
 diferentes camadas de cisalhamento. (Um exemplo simples de advertência que vem
-disso é: &quot;Não associe inextricavelmente a aparência de um edifício aos
-seus serviços&quot; — uma advertência notoriamente contrariada pelo Centro
-Pompidou de Paris, como ilustrado em <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch14.html#the_pompidou_center_colon_a_good_lesson"
-title="Figure&nbsp;14-2.&nbsp;The Pompidou Center: A good lesson in why appearance should not be inextricably linked with services."><b>Figura
+disso é: "Não associe inextricavelmente a aparência de um edifício aos
+seus serviços" — uma advertência notoriamente contrariada pelo Centro
+Pompidou de Paris, como ilustrado em <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch14.html#the_pompidou_center_colon_a_good_lesson" title="Figure 14-2. The Pompidou Center: A good lesson in why appearance should not be inextricably linked with services."><b>Figura
 14-2</b></a>. Ao tornar os serviços — como escadas rolantes — parte da pele,
 trocar um exige trocar o outro. Os custos de manutenção dos serviços agora
 também devem incluir custos para manter sua aparência pública.)</p>
-
-<p class=MsoNormal>Essas noções de camada podem ser aplicadas a softwares. Em
+<p>Essas noções de camada podem ser aplicadas a softwares. Em
 particular, a observação das camadas e a advertência para desacoplá-las é
 consistente com o ditado de David Parnas de que engenheiros de software devem
-&quot;projetar para a mudança.&quot; O conceito de camada vai além dessa
+"projetar para a mudança." O conceito de camada vai além dessa
 simples platitude, no entanto, para sugerir maneiras específicas de avaliar se
 uma conexão proposta entre dois elementos de um sistema é apropriada ou não. Os
 elementos propostos para conexão são em camadas separadas? Em camadas que estão
 amplamente separadas? A conexão proposta é algo que mantém os aspectos
 essenciais da independência para essas camadas?</p>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+<p><span><!--[if gte vml 1]><v:shape
  id="Imagem_x0020_303" o:spid="_x0000_i1041" type="#_x0000_t75" alt="The Pompidou Center: Uma boa lição sobre por que a aparência não deve estar intrinsecamente ligada aos serviços."
  style='width:411.6pt;height:232.2pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap14-ptbr_arquivos/image002.png" o:title=" Uma boa lição sobre por que a aparência não deve estar intrinsecamente ligada aos serviços"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=549 height=310
-src="cap14-ptbr_arquivos/image002.png"
-alt="The Pompidou Center: Uma boa lição sobre por que a aparência não deve estar intrinsecamente ligada aos serviços."
-v:shapes="Imagem_x0020_303"><![endif]></span></p>
-
-<p class=MsoNormal><b>Figura 14-2.&nbsp;The Pompidou Center: Uma boa lição
+</v:shape><![endif]--><?if !vml?><img alt="The Pompidou Center: Uma boa lição sobre por que a aparência não deve estar intrinsecamente ligada aos serviços." border="0" height="310" src="cap14-ptbr_arquivos/image002.png" v:shapes="Imagem_x0020_303" width="549"/><?endif?></span></p>
+<p><b>Figura 14-2. The Pompidou Center: Uma boa lição
 sobre por que a aparência não deve estar intrinsecamente ligada aos serviços.</b></p>
-
-<p class=MsoNormal>Na análise de Brand, a estrutura desempenha um papel um
+<p>Na análise de Brand, a estrutura desempenha um papel um
 tanto distinto. Sua relativa imutabilidade na arquitetura de edifícios
 significa que deve ser bem compreendida, pois fornece os limites para os tipos
 de mudanças que podem ser aplicadas. No caso do software, com sua relativa
@@ -528,13 +452,10 @@ tornarmos explícita a estrutura do software (isto é, a configuração arquitet
 do sistema de componentes e conectores) e fornecer formas de manipular essa
 estrutura. No mínimo, entender a arquitetura de um sistema de software nos
 permite avaliar o potencial para mudanças futuras.</p>
-
-<p class=MsoNormal>Por fim, Brand faz uma observação contundente sobre
+<p>Por fim, Brand faz uma observação contundente sobre
 arquiteturas de edifícios que fornece uma visão fundamental sobre a adaptação
-de software: &quot;Devido às diferentes taxas de mudança de seus componentes,
-um edifício está sempre se destruindo.&quot; Como introduzido em<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch03.html"
-title="Chapter&nbsp;3.&nbsp;Basic Concepts"><b>Capítulo 3</b></a>, uma
+de software: "Devido às diferentes taxas de mudança de seus componentes,
+um edifício está sempre se destruindo." Como introduzido em<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch03.html" title="Chapter 3. Basic Concepts"><b>Capítulo 3</b></a>, uma
 preocupação com mudanças de software é a erosão arquitetônica, o desvio
 regressivo de uma aplicação em relação à arquitetura original decorrente de
 mudanças sucessivas. Se um programador modifica uma aplicação apenas com base
@@ -546,30 +467,24 @@ as alterações, a estrutura é degradada. A estratégia preventiva para evitar
 erosão arquitetônica desse tipo é basear as decisões de mudança não na análise
 local do código, mas na compreensão e modificação da arquitetura, e então fluir
 essas mudanças para o código relevante, um tema que exploramos a seguir.</p>
-
-<p class=MsoNormal><b>Elementos estruturais sujeitos a mudanças<o:p></o:p></b></p>
-
-<p class=MsoNormal>Qualquer elemento estrutural de um sistema, seus
+<p><b>Elementos estruturais sujeitos a mudanças</b></p>
+<p>Qualquer elemento estrutural de um sistema, seus
 componentes, conectores e sua configuração, pode ser o foco da adaptação. As
 características particulares desses elementos, encontradas em um sistema
 específico, determinarão significativamente a dificuldade de acomodar mudanças
 e as técnicas úteis para alcançá-la.</p>
-
-<p class=MsoNormal><b>Componentes<o:p></o:p></b></p>
-
-<p class=MsoNormal>Algumas mudanças podem estar confinadas ao interior de um
+<p><b>Componentes</b></p>
+<p>Algumas mudanças podem estar confinadas ao interior de um
 componente: sua interface com o mundo exterior permanece fixa, mas, talvez para
 alcançar uma propriedade não funcional particular, o interior do componente
 deve ser alterado. O desempenho de um componente pode ser melhorado, por
 exemplo, por uma mudança no algoritmo que ele utiliza internamente. Em muitos
 casos, entretanto, a adaptação para atender a propriedades funcionais
 modificadas envolve alterar a interface de um componente.</p>
-
-<p class=MsoNormal>Além dessa dicotomia simples, um componente pode possuir
+<p>Além dessa dicotomia simples, um componente pode possuir
 capacidades que facilitam sua adaptação, ou seu papel na adaptação da
 arquitetura maior dentro da qual reside.</p>
-
-<p class=MsoNormal>A primeira dessas capacidades é o conhecimento de si mesmo e
+<p>A primeira dessas capacidades é o conhecimento de si mesmo e
 a exposição desse conhecimento a entidades externas. Um componente pode ser
 construído de modo que suas próprias especificações sejam explícitas e
 incluídas dentro do componente. Uma forma direta e o uso dessas especificações
@@ -589,8 +504,7 @@ externas. Tal capacidade permite a seleção dinâmica dos componentes para alca
 os objetivos do sistema e, portanto, apoia fortemente a adaptação. Embora não
 seja suportado em todas as linguagens de programação, a reflexão de componentes
 é suportada em Java.</p>
-
-<p class=MsoNormal>O segundo é o (auto)conhecimento do papel do componente na
+<p>O segundo é o (auto)conhecimento do papel do componente na
 arquitetura maior. Por exemplo, um componente pode ser construído para
 monitorar o comportamento de outros componentes em uma arquitetura e alterar
 seu comportamento dependendo da falha de um componente externo. Um componente
@@ -600,8 +514,7 @@ componente monitora seu próprio comportamento e percebe, por exemplo, que não
 está tendo desempenho rápido o suficiente para satisfazer seus componentes
 clientes, ele pode solicitar que um agente externo realize algum nivelamento de
 carga ou outra atividade corretiva.</p>
-
-<p class=MsoNormal>O terceiro é a capacidade de engajar proativamente outros
+<p>O terceiro é a capacidade de engajar proativamente outros
 elementos de um sistema para se adaptar. Continuando o exemplo anterior, em vez
 de pedir a um agente externo que reduza a carga, um componente pode questionar
 se existem componentes externos (sub-) disponíveis que possam ser usados dentro
@@ -610,55 +523,43 @@ cenário atualmente seja bastante improvável, tal capacidade é apenas uma
 progressão natural de componentes que não são autoconscientes e não refletivos,
 para componentes que são reflexivos mas passivos, para componentes que não só
 são reflexivos, mas (pro)ativos em apoiar a adaptação do sistema.</p>
-
-<p class=MsoNormal>As capacidades listadas acima antecipam as técnicas gerais
+<p>As capacidades listadas acima antecipam as técnicas gerais
 de adaptação discutidas mais adiante neste capítulo. O tema comum é o
 conhecimento explícito e a representação das especificações de um componente e
 o conhecimento de seu papel dentro da arquitetura mais ampla.</p>
-
-<p class=MsoNormal><i>Interfaces de Componentes </i>Mudanças nas interfaces de
+<p><i>Interfaces de Componentes </i>Mudanças nas interfaces de
 componentes são frequentemente inevitáveis ao modificar funcionalidades.
 Alterar a interface de um componente, no entanto, também requer alterações nos
 clientes da interface: os parâmetros de entrada e saída devem coincidir em ambas
 as extremidades da interação. Muitos componentes do cliente podem não estar
-&quot;interessados&quot; na nova funcionalidade representada pela nova
+"interessados" na nova funcionalidade representada pela nova
 interface, mas ainda assim precisam ser modificados.</p>
-
-<p class=MsoNormal>Esse efeito cascata indesejável da mudança motivou a criação
+<p>Esse efeito cascata indesejável da mudança motivou a criação
 de técnicas para mitigar tais impactos. Uma técnica popular é a criação de
 adaptadores, em que os componentes que desejam usar a interface original
 invocam um componente adaptador, que então repassa a chamada para a nova
-interface, conforme ilustrado na <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch14.html#use_of_adaptor_components_to_preserve_in"
-title="Figure&nbsp;14-3.&nbsp;Use of adaptor components to preserve interfaces."><b>Figura
+interface, conforme ilustrado na <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch14.html#use_of_adaptor_components_to_preserve_in" title="Figure 14-3. Use of adaptor components to preserve interfaces."><b>Figura
 14-3</b></a>. Um cliente que precisa da nova interface chama diretamente o
 componente modificado.</p>
-
-<p class=MsoNormal>O uso de uma técnica como essa claramente tem implicações
+<p>O uso de uma técnica como essa claramente tem implicações
 arquitetônicas: novos componentes são introduzidos e o rastreamento das
 interações para entender o funcionamento do sistema torna-se mais complexo.
 Mudanças subsequentes em um dos métodos anteriormente não modificados tornam-se
 ainda mais complexas: Deveria ser introduzido mais um adaptador? O método deve
 ser alterado no componente raiz e em todos os adaptadores criados
-anteriormente? Basta dizer por enquanto que &quot;correções locais&quot; que tentam
+anteriormente? Basta dizer por enquanto que "correções locais" que tentam
 mitigar mudanças nas interfaces dos componentes podem ter sérias repercussões;
 O arquiteto é sensato em considerar, antecipadamente, uma série de técnicas
 para acomodar a mudança, conforme discutido mais adiante neste capítulo.</p>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+<p><span><!--[if gte vml 1]><v:shape
  id="Imagem_x0020_302" o:spid="_x0000_i1040" type="#_x0000_t75" alt="Uso de componentes adaptadores para preservar interfaces."
  style='width:411.6pt;height:376.2pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap14-ptbr_arquivos/image003.png" o:title="Uso de componentes adaptadores para preservar interfaces"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=549 height=502
-src="cap14-ptbr_arquivos/image003.png"
-alt="Uso de componentes adaptadores para preservar interfaces." v:shapes="Imagem_x0020_302"><![endif]></span></p>
-
-<p class=MsoNormal><b>Figura 14-3.&nbsp;Uso de componentes adaptadores para
+</v:shape><![endif]--><?if !vml?><img alt="Uso de componentes adaptadores para preservar interfaces." border="0" height="502" src="cap14-ptbr_arquivos/image003.png" v:shapes="Imagem_x0020_302" width="549"/><?endif?></span></p>
+<p><b>Figura 14-3. Uso de componentes adaptadores para
 preservar interfaces.</b></p>
-
-<p class=MsoNormal><b>Conectores<o:p></o:p></b></p>
-
-<p class=MsoNormal>Assim como componentes podem ser necessários para mudar,
+<p><b>Conectores</b></p>
+<p>Assim como componentes podem ser necessários para mudar,
 também os conectores podem ser necessários, e dependendo do tipo de mudança, as
 implicações arquitetônicas podem ser profundas ou desprezíveis, de forma
 semelhante para as mudanças resultantes na implementação. Tipicamente, a
@@ -666,11 +567,8 @@ motivação para mudanças nos conectores é o desejo de alcançar propriedades 
 funcionais alteradas, como distribuição de componentes, maior independência das
 subarquiteturas diante de falhas potenciais, aumento do desempenho, entre
 outros.</p>
-
-<p class=MsoNormal>Mudanças nos conectores podem ocorrer em qualquer uma das
-dimensões do projeto de conectores discutidas em detalhes em<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch05.html"
-title="Chapter&nbsp;5.&nbsp;Connectors"><b>Capítulo 5</b></a>. Como a parte
+<p>Mudanças nos conectores podem ocorrer em qualquer uma das
+dimensões do projeto de conectores discutidas em detalhes em<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch05.html" title="Chapter 5. Connectors"><b>Capítulo 5</b></a>. Como a parte
 final deste capítulo mostrará, a escolha do tipo de conector é um dos
 principais determinantes do esforço envolvido em apoiar a evolução
 arquitetônica. De forma geral, quanto mais potente o conector, mais fácil será
@@ -678,10 +576,8 @@ a mudança arquitetônica. Conectores que permanecem explícitos no código de
 implementação e que suportam desacoplamento muito forte entre componentes (como
 aqueles conectores que suportam comunicação baseada em eventos) são superiores
 para suportar adaptação.</p>
-
-<p class=MsoNormal><b>Configurações<o:p></o:p></b></p>
-
-<p class=MsoNormal>Mudanças na configuração dos componentes e conectores — ou
+<p><b>Configurações</b></p>
+<p>Mudanças na configuração dos componentes e conectores — ou
 seja, como eles são organizados e conectados entre si — representam mudanças
 fundamentais na arquitetura de um sistema. Tais mudanças podem ocorrer em
 qualquer nível de abstração de projeto e podem ser motivadas pela necessidade
@@ -695,8 +591,7 @@ que cada parte adicione novas funcionalidades com mais facilidade ou suporte
 interações com outros parceiros de negócios. Muitos dos componentes centrais
 podem permanecer inalterados, mas a forma como eles interagem entre si e os
 conectores pelos quais se comunicam podem ser profundamente alterados.</p>
-
-<p class=MsoNormal>Suportar efetivamente tal modificação requer trabalhar a
+<p>Suportar efetivamente tal modificação requer trabalhar a
 partir de um modelo explícito da arquitetura. Muitas dependências entre
 componentes existirão, e o modelo arquitetônico é a base para gerenciar e
 preservar tais relações. Mais importante ainda, as restrições que governaram a
@@ -707,48 +602,37 @@ um estilo apropriado para a nova aplicação. A transição de aplicações
 personalizadas e fortemente integradas de negócios para arquiteturas orientadas
 a serviços é justamente essa mudança: o estilo arquitetônico fundamental da
 aplicação foi alterado.</p>
-
-<p class=MsoNormal>O modelo arquitetônico precisará gerenciar também
+<p>O modelo arquitetônico precisará gerenciar também
 características de implantação, como relações básicas componente-conector, em
-consonância com a discussão de<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch10.html"
-title="Chapter&nbsp;10.&nbsp;Deployment and Mobility"><b>Capítulo 10</b></a>.</p>
-
-<p class=MsoNormal><b>Agentes de Mudança e Contexto<o:p></o:p></b></p>
-
-<p class=MsoNormal>As técnicas para promover mudanças são determinadas não
+consonância com a discussão de<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch10.html" title="Chapter 10. Deployment and Mobility"><b>Capítulo 10</b></a>.</p>
+<p><b>Agentes de Mudança e Contexto</b></p>
+<p>As técnicas para promover mudanças são determinadas não
 apenas pelo que é finalmente alterado, mas também pelo <i>contexto</i> da
 mudança e pelo caráter do<i>(s) agente(s) que </i>a realizam. Aspectos
 importantes do contexto para a mudança incluem:</p>
-
-<ul style='margin-top:0cm' type=disc>
- <li class=MsoNormal style='mso-list:l16 level1 lfo393;tab-stops:list 36.0pt'>Os
+<ul style="margin-top:0cm" type="disc">
+<li>Os
      fatores por trás da motivação para a mudança: como um sistema é observado
      e qual análise pode ser realizada com base nessas observações.</li>
- <li class=MsoNormal style='mso-list:l16 level1 lfo393;tab-stops:list 36.0pt'>O
+<li>O
      momento da mudança: quando ocorre na linha de tempo de
      desenvolvimento/implantação/uso.</li>
 </ul>
-
-<p class=MsoNormal>Os agentes para promover mudanças incluem tanto pessoas
+<p>Os agentes para promover mudanças incluem tanto pessoas
 quanto softwares. Atributos importantes dos agentes de mudança incluem:</p>
-
-<ul style='margin-top:0cm' type=disc>
- <li class=MsoNormal style='mso-list:l10 level1 lfo394;tab-stops:list 36.0pt'>A
+<ul style="margin-top:0cm" type="disc">
+<li>A
      localização do agente em relação ao sistema que está sendo alterado.</li>
- <li class=MsoNormal style='mso-list:l10 level1 lfo394;tab-stops:list 36.0pt'>O
+<li>O
      conhecimento que o agente de mudança possui sobre o sistema, seja completo
      ou parcial.</li>
- <li class=MsoNormal style='mso-list:l10 level1 lfo394;tab-stops:list 36.0pt'>O
+<li>O
      grau de liberdade possuído pelo agente de mudança.</li>
 </ul>
-
-<p class=MsoNormal>Cada um dos itens acima é considerado nos parágrafos
+<p>Cada um dos itens acima é considerado nos parágrafos
 seguintes.</p>
-
-<p class=MsoNormal><b>Motivações, Observações e Análise<o:p></o:p></b></p>
-
-<p class=MsoNormal>Vários tipos de motivação para a mudança foram discutidos
+<p><b>Motivações, Observações e Análise</b></p>
+<p>Vários tipos de motivação para a mudança foram discutidos
 anteriormente. Dependendo da motivação específica em ação, surgem diferentes
 problemas e oportunidades para lidar com a mudança. Todas as motivações surgem
 de uma combinação de observações sobre um sistema e análise dessas observações.
@@ -757,8 +641,7 @@ Por exemplo, um sistema pode não executar alguma função recém-desejada
 recém-buscado), ou pode precisar ser corrigido (conforme determinado comparando
 seu comportamento atual com a especificação original). A questão chave é de
 onde vêm as observações sobre um sistema.</p>
-
-<p class=MsoNormal>Algumas observações podem ser retiradas da revisão do
+<p>Algumas observações podem ser retiradas da revisão do
 engenheiro sobre a arquitetura do sistema. Mais provável é a situação em que um
 usuário, ou algum agente externo, observa o comportamento em tempo de execução
 da aplicação. Na medida em que essas observações estão ligadas ou relacionadas
@@ -774,8 +657,7 @@ iniciante está familiarizado com essa técnica em sua forma mais simples: a
 inclusão de dezenas de funções println, para indicar repetidamente onde o
 programa está sendo executado e os valores que as variáveis específicas
 possuem.</p>
-
-<p class=MsoNormal>À medida que as arquiteturas se tornam mais complexas, a
+<p>À medida que as arquiteturas se tornam mais complexas, a
 técnica de linha de impressão do programador iniciante torna-se inadequada. O
 conceito, porém, ainda é valioso. Monitores da arquitetura podem ser incluídos
 em um sistema (tipicamente nos conectores) para permitir um monitoramento de
@@ -785,68 +667,47 @@ gerenciada. Em casos extremos, a ausência de uma boa técnica para identificar
 os componentes responsáveis por um determinado comportamento pode fazer com que
 o engenheiro substitua um subsistema inteiro. Com boas informações, porém, uma
 mudança muito mais localizada pode ser suficiente. Voltamos ao tema das sondas
-embutidas em<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch14.html#basic_techniques_corresponding_to_activi"
-title="Basic Techniques Corresponding to Activities of the Conceptual Framework"><b>Seção
+embutidas em<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch14.html#basic_techniques_corresponding_to_activi" title="Basic Techniques Corresponding to Activities of the Conceptual Framework"><b>Seção
 14.3.1</b></a>abaixo.</p>
-
-<p class=MsoNormal><b>Timing<o:p></o:p></b></p>
-
-<p class=MsoNormal>O posicionamento da mudança dentro do cronograma de um
+<p><b>Timing</b></p>
+<p>O posicionamento da mudança dentro do cronograma de um
 projeto afeta muito as técnicas disponíveis para acomodar a mudança. Resumindo,
 quanto antes, melhor. Em vez de apenas repetir o velho ditado de que corrigir
 problemas em requisitos é substancialmente mais barato do que corrigi-los no
 código, expandimos o prazo para incluir a implantação e o uso do sistema, pois
 de fato algumas aplicações podem precisar ser alteradas no local, em tempo
 real. Um gráfico nocional mostrando a relação entre custo e tempo é encontrado
-na <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch14.html#notional_relationship_between_the_timing"
-title="Figure&nbsp;14-4.&nbsp;Notional relationship between the timing of the identification of a change and the difficulty of and mechanism required for supporting that change."><b>Figura
+na <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch14.html#notional_relationship_between_the_timing" title="Figure 14-4. Notional relationship between the timing of the identification of a change and the difficulty of and mechanism required for supporting that change."><b>Figura
 14-4</b></a>.</p>
-
-<p class=MsoNormal>Em<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch14.html#notional_relationship_between_the_timing"
-title="Figure&nbsp;14-4.&nbsp;Notional relationship between the timing of the identification of a change and the difficulty of and mechanism required for supporting that change."><b>Figura
+<p>Em<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch14.html#notional_relationship_between_the_timing" title="Figure 14-4. Notional relationship between the timing of the identification of a change and the difficulty of and mechanism required for supporting that change."><b>Figura
 14-4</b></a>, o aumento acentuado no custo está associado à acomodação de
 mudanças uma vez que um sistema é implantado; Os custos atingem o máximo quando
 um sistema implantado precisa ser alterado rapidamente. A implantação adiciona
 os custos de lidar com cada instalação individual de um sistema — possivelmente
 atrás de firewalls e personalizados no momento da instalação. Adaptação
 improvisada requer mecanismos e circunstâncias especiais, um tema que tratamos
-sozinho em<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch14.html#the_special_problems_of_on-the-fly_and_a"
-title="The Special Problems of On-the-Fly and Autonomous Adaptation"><b>Seção
+sozinho em<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch14.html#the_special_problems_of_on-the-fly_and_a" title="The Special Problems of On-the-Fly and Autonomous Adaptation"><b>Seção
 14.3.3</b></a>.</p>
-
-<p class=MsoNormal>No entanto, acomodar mudanças no início da vida de um
+<p>No entanto, acomodar mudanças no início da vida de um
 projeto não é a mesma coisa que corrigir problemas nos requisitos. A
 identificação, no início do projeto de um sistema, dos tipos de mudanças
 potenciais permite a inserção de mecanismos especificamente destinados a
 facilitar essas mudanças quando ocorrem posteriormente. Muito além de um banal
-&quot;design interfaces para serem resilientes diante de possíveis e
-identificáveis mudanças no interior de um módulo&quot;, inúmeras técnicas
+"design interfaces para serem resilientes diante de possíveis e
+identificáveis mudanças no interior de um módulo", inúmeras técnicas
 sofisticadas projetadas para permitir ampla adaptação foram criadas. Esses
 incluem arquiteturas de plug-ins, linguagens de script e interfaces de eventos.
-Esses e outros serão descritos em<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch14.html#architectures_solidus_styles_that_suppor"
-title="Architectures/Styles that Support Adaptation"><b>Seção 14.3.2</b></a>.</p>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+Esses e outros serão descritos em<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch14.html#architectures_solidus_styles_that_suppor" title="Architectures/Styles that Support Adaptation"><b>Seção 14.3.2</b></a>.</p>
+<p><span><!--[if gte vml 1]><v:shape
  id="Imagem_x0020_301" o:spid="_x0000_i1039" type="#_x0000_t75" alt="Relação nocional entre o momento da identificação de uma mudança e a dificuldade e mecanismo necessários para apoiar essa mudança."
  style='width:411.6pt;height:378.6pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap14-ptbr_arquivos/image004.png" o:title="Relação nocional entre o momento da identificação de uma mudança e a dificuldade e mecanismo necessários para apoiar essa mudança"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=549 height=505
-src="cap14-ptbr_arquivos/image004.png"
-alt="Relação nocional entre o momento da identificação de uma mudança e a dificuldade e mecanismo necessários para apoiar essa mudança."
-v:shapes="Imagem_x0020_301"><![endif]></span></p>
-
-<p class=MsoNormal><b>Figura 14-4.&nbsp;Relação nocional entre o momento da
+</v:shape><![endif]--><?if !vml?><img alt="Relação nocional entre o momento da identificação de uma mudança e a dificuldade e mecanismo necessários para apoiar essa mudança." border="0" height="505" src="cap14-ptbr_arquivos/image004.png" v:shapes="Imagem_x0020_301" width="549"/><?endif?></span></p>
+<p><b>Figura 14-4. Relação nocional entre o momento da
 identificação de uma mudança e a dificuldade e mecanismo necessários para
 apoiar essa mudança.</b></p>
-
-<p class=MsoNormal><b>Agentes de Mudança: Sua Identidade e Localização<o:p></o:p></b></p>
-
-<p class=MsoNormal>Os processos que realizam a adaptação podem ser realizados
+<p><b>Agentes de Mudança: Sua Identidade e Localização</b></p>
+<p>Os processos que realizam a adaptação podem ser realizados
 por agentes humanos ou automatizados, ou uma combinação deles. Algumas
 compensações entre esses dois tipos de agentes são óbvias, como observar que os
 humanos podem lidar com uma gama muito maior de problemas e tipos de mudança ou
@@ -865,17 +726,14 @@ sistema operacional ou de um aplicativo está disponível. Se o agente for
 minimamente sofisticado, as orientações dadas sobre as atualizações a serem
 realizadas serão baseadas no conhecimento de quaisquer otimizações locais.
 (Frequentemente, a atualização baixada realiza uma análise repetida ou
-suplementar, apresentando mensagens como &quot;Localizando componentes
-instalados.&quot;)</p>
-
-<p class=MsoNormal>No caso da adaptação dinâmica, a presença local de um agente
+suplementar, apresentando mensagens como "Localizando componentes
+instalados.")</p>
+<p>No caso da adaptação dinâmica, a presença local de um agente
 de mudança automatizado é essencial. Gerenciar o estado da aplicação durante a
 atualização pode ser uma questão complicada, e é discutida especificamente mais
 adiante neste capítulo.</p>
-
-<p class=MsoNormal><b>Conhecimento<o:p></o:p></b></p>
-
-<p class=MsoNormal>O conhecimento possuído — ou não — pelo agente de mudança
+<p><b>Conhecimento</b></p>
+<p>O conhecimento possuído — ou não — pelo agente de mudança
 pode ser um determinante importante da estratégia de adaptação seguida. Por
 exemplo, pode haver incerteza em torno do novo comportamento ou em relação às
 novas propriedades que se acredita serem necessárias. Nesse caso, é necessária
@@ -884,8 +742,7 @@ Isso pode envolver processos que permitem ao engenheiro recuar facilmente de
 uma mudança caso a mudança não seja satisfatória. Protótipos ou storyboards de
 possíveis mudanças são outras estratégias que podem ser empregadas quando
 houver incerteza.</p>
-
-<p class=MsoNormal>Outro aspecto fundamental do conhecimento que governa a
+<p>Outro aspecto fundamental do conhecimento que governa a
 estratégia de adaptação é conhecer as restrições que devem ser mantidas no
 sistema modificado. Mais especificamente, uma adaptação deve ser realizada com
 pleno conhecimento do estilo arquitetônico da aplicação. Como o estilo é
@@ -897,21 +754,18 @@ pode não ter repercussões imediatas, mas ao longo das mudanças sucessivas as
 qualidades do sistema vão se degradar e a dificuldade de realizar novas
 mudanças aumenta, às vezes chegando ao ponto em que outras mudanças não podem
 ser feitas.</p>
-
-<p class=MsoNormal>Outros aspectos importantes do conhecimento do sistema
+<p>Outros aspectos importantes do conhecimento do sistema
 incluem algumas coisas óbvias. Se a arquitetura do sistema não for mantida,
 será necessária a recuperação arquitetônica. Se um componente do sistema for um
 binário adquirido, para o qual não há informações disponíveis sobre suas
 propriedades de adaptação (se houver), então serão necessárias grandes mudanças
-de granularidade (&quot;transplantes de componentes&quot;). Se não houver
+de granularidade ("transplantes de componentes"). Se não houver
 ferramentas de análise disponíveis para ajudar a avaliar as propriedades de uma
 mudança proposta, talvez uma abordagem mais iterativa para a adaptação devesse
 ser seguida. Quando se trata de adaptação, quanto mais conhecimento do sistema
 e da mudança, melhor.</p>
-
-<p class=MsoNormal><b>Grau de Liberdade<o:p></o:p></b></p>
-
-<p class=MsoNormal>O aspecto final do contexto da mudança é o grau de liberdade
+<p><b>Grau de Liberdade</b></p>
+<p>O aspecto final do contexto da mudança é o grau de liberdade
 que o engenheiro tem ao projetar as mudanças. Pode-se pensar que maior
 liberdade é sempre melhor. Infelizmente, maior liberdade tem um custo
 significativo: o espaço de busca por soluções é maior, há menos orientação
@@ -927,10 +781,8 @@ abordagem alternativa é conhecer ou aprender as restrições da aplicação e
 trabalhar dentro dessas restrições para satisfazer as necessidades. Com essa
 abordagem, a coerência é mantida e as energias do engenheiro são direcionadas
 para soluções dentro do estilo arquitetônico atual.</p>
-
-<p class=MsoNormal><b>Arquitetura: A Abstração Central<o:p></o:p></b></p>
-
-<p class=MsoNormal>O conceito final de adaptação centrada na arquitetura é o
+<p><b>Arquitetura: A Abstração Central</b></p>
+<p>O conceito final de adaptação centrada na arquitetura é o
 central: o modelo arquitetônico. Uma arquitetura explícita é assumida em grande
 parte da discussão anterior. Na ausência de uma arquitetura explícita, o
 engenheiro fica para raciocinar sobre adaptação a partir da memória e do
@@ -940,78 +792,58 @@ planejamento e execução da adaptação do sistema. Como a arquitetura <i>é </
 conjunto das principais decisões de design que regem o sistema, a adaptação
 baseada na arquitetura procede do conhecimento das coisas que são mais
 intrínsecas ao projeto do sistema.</p>
-
-<p class=MsoNormal>A necessidade crítica, claro, é manter a integridade da
+<p>A necessidade crítica, claro, é manter a integridade da
 arquitetura e sua representação explícita durante todo o processo de adaptação.
-Como discutido anteriormente, em<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch02.html"
-title="Chapter&nbsp;2.&nbsp;Architectures in Context: The Reorientation of Software Engineering"><b>Capítulos
-2</b></a>e<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch09.html"
-title="Chapter&nbsp;9.&nbsp;Implementation"><b>9</b></a>, o aspecto mais
+Como discutido anteriormente, em<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch02.html" title="Chapter 2. Architectures in Context: The Reorientation of Software Engineering"><b>Capítulos
+2</b></a>e<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch09.html" title="Chapter 9. Implementation"><b>9</b></a>, o aspecto mais
 importante e mais difícil dessa tarefa é manter a consistência entre a
 arquitetura e a implementação. Desde que a implementação seja fiel à
 arquitetura, a arquitetura pode servir como o foco principal do raciocínio
 sobre possíveis adaptações. Assim que o modelo arquitetônico deixa de ser um
 guia confiável para o código, ele perde seu valor para orientar mudanças; O
-engenheiro fica apenas com o código—a &quot;engenharia de software&quot; dos
+engenheiro fica apenas com o código—a "engenharia de software" dos
 anos 1970.</p>
-
-<p class=MsoNormal>Note que, a propósito da discussão acima sobre a localização
+<p>Note que, a propósito da discussão acima sobre a localização
 dos agentes de mudança, se o agente for uma parte automatizada de um sistema
 implantado, então, para que a arquitetura seja a abstração central que governa
 a adaptação, o modelo arquitetônico deve ser implantado com a aplicação ou a
 comunicação com uma referência externa deve ser possível. Se o modelo não
 estiver disponível, o agente não tem base para adaptação baseada em
 arquitetura.</p>
-
-<p class=MsoNormal>A próxima seção coloca todos os conceitos discutidos acima
+<p>A próxima seção coloca todos os conceitos discutidos acima
 em um arcabouço abrangente para adaptação baseada em arquitetura.</p>
-
-<p class=MsoNormal>UM ARCABOUÇO CONCEITUAL PARA ADAPTAÇÃO ARQUITETÔNICA</p>
-
-<p class=MsoNormal>O primeiro arcabouço conceitual abrangente para adaptação
+<p>UM ARCABOUÇO CONCEITUAL PARA ADAPTAÇÃO ARQUITETÔNICA</p>
+<p>O primeiro arcabouço conceitual abrangente para adaptação
 baseada na arquitetura foi apresentado em 1999 (Oreizy et al. 1999). O
-framework, mostrado na <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch14.html#conceptual_architecture_for_adaptation"
-title="Figure&nbsp;14-5.&nbsp;Conceptual architecture for adaptation. From (Oreizy et al. 1999). © IEEE 1999."><b>Figura
+framework, mostrado na <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch14.html#conceptual_architecture_for_adaptation" title="Figure 14-5. Conceptual architecture for adaptation. From (Oreizy et al. 1999). © IEEE 1999."><b>Figura
 14-5</b></a>, mostra as principais atividades e entidades e as principais
 relações entre elas. O diagrama é simples o suficiente para explicar como um
 processo de adaptação muito estático e baseado em requisitos procede, mas
 sofisticado o bastante para indicar como um processo de adaptação altamente
 dinâmico e automatizado pode funcionar. Citando o artigo de Peyman Oreizy e
 seus colegas,</p>
-
-<p class=MsoNormal><i>A metade superior do diagrama, rotulada como &quot;gestão
-de adaptação&quot;, descreve o ciclo de vida dos sistemas de software
+<p><i>A metade superior do diagrama, rotulada como "gestão
+de adaptação", descreve o ciclo de vida dos sistemas de software
 adaptativo. O ciclo de vida pode ter humanos no ciclo ou ser totalmente
-autônomos. &quot;Avaliar e monitorar observações&quot; refere-se a todas as
+autônomos. "Avaliar e monitorar observações" refere-se a todas as
 formas de avaliar e observar a execução de uma aplicação, incluindo, no mínimo,
 monitoramento de desempenho, inspeções de segurança e verificação de
-restrições. &quot;Mudanças de plano&quot; refere-se à tarefa de aceitar as
+restrições. "Mudanças de plano" refere-se à tarefa de aceitar as
 avaliações, definir uma adaptação apropriada e construir um plano para executar
-essa adaptação. &quot;Deploy change descriptions&quot; é a transmissão
+essa adaptação. "Deploy change descriptions" é a transmissão
 coordenada de descrições de mudança, componentes e possivelmente novos
 observadores ou avaliadores para a plataforma de implementação no campo. Por
 outro lado, a implantação também pode extrair dados, e possivelmente
 componentes, da aplicação em execução e levá-los para outro ponto para análise
-e otimização.<o:p></o:p></i></p>
-
-<p class=MsoNormal><i style='mso-bidi-font-style:normal'><span
-style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Imagem_x0020_300"
+e otimização.</i></p>
+<p><i><span><!--[if gte vml 1]><v:shape id="Imagem_x0020_300"
  o:spid="_x0000_i1038" type="#_x0000_t75" alt="Arquitetura conceitual para adaptação. De (Oreizy et al. 1999). © IEEE 1999."
  style='width:371.4pt;height:617.4pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap14-ptbr_arquivos/image005.png" o:title="Arquitetura conceitual para adaptação. De (Oreizy et al. 1999). © IEEE 1999"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=495 height=823
-src="cap14-ptbr_arquivos/image005.png"
-alt="Arquitetura conceitual para adaptação. De (Oreizy et al. 1999). © IEEE 1999."
-v:shapes="Imagem_x0020_300"><![endif]></span><span style='mso-bidi-font-style:
-italic'><o:p></o:p></span></i></p>
-
-<p class=MsoNormal><b>Figura 14-5.&nbsp;Arquitetura conceitual para adaptação.
-De (Oreizy et al. 1999). © IEEE 1999.</b><i><o:p></o:p></i></p>
-
-<p class=MsoNormal><i>A gestão da adaptação e a manutenção da consistência
+</v:shape><![endif]--><?if !vml?><img alt="Arquitetura conceitual para adaptação. De (Oreizy et al. 1999). © IEEE 1999." border="0" height="823" src="cap14-ptbr_arquivos/image005.png" v:shapes="Imagem_x0020_300" width="495"/><?endif?></span><span></span></i></p>
+<p><b>Figura 14-5. Arquitetura conceitual para adaptação.
+De (Oreizy et al. 1999). © IEEE 1999.</b><i></i></p>
+<p><i>A gestão da adaptação e a manutenção da consistência
 desempenham papéis fundamentais em nossa abordagem. Embora mecanismos para
 alteração de software em tempo de execução estejam disponíveis em sistemas
 operacionais (por exemplo, bibliotecas de enlace dinâmico em Unix e Microsoft
@@ -1023,55 +855,41 @@ tempo de execução que identifica o que precisa ser alterado; fornece o context
 para raciocinar, especificar e implementar mudanças; e os controles mudam para
 preservar a integridade do sistema. Sem a gestão de mudanças, os riscos gerados
 por modificações em tempo de execução podem superar aqueles associados ao
-desligamento e reinício de um sistema. ...<o:p></o:p></i></p>
-
-<p class=MsoNormal><i>A metade inferior do [diagrama], rotulada como
-&quot;gestão de evolução&quot;, foca nos mecanismos empregados para alterar o
+desligamento e reinício de um sistema. ...</i></p>
+<p><i>A metade inferior do [diagrama], rotulada como
+"gestão de evolução", foca nos mecanismos empregados para alterar o
 software da aplicação. Nossa abordagem é baseada em arquitetura: as mudanças
 são formuladas e raciocinadas sobre um modelo arquitetônico explícito que
 reside na plataforma de implementação. Mudanças no modelo arquitetônico se
 refletem em modificações na implementação da aplicação, garantindo que o modelo
 e a implementação sejam consistentes entre si. Os serviços de monitoramento e
 avaliação observam a aplicação e seu ambiente operacional, enviando informações
-de volta para a metade superior do diagrama.<o:p></o:p></i></p>
-
-<p class=MsoNormal><a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch14.html#activities_comma_agents_comma_and_entiti"
-title="Figure&nbsp;14-6.&nbsp;Activities, agents, and entities in architecture-based adaptation."><b>As
+de volta para a metade superior do diagrama.</i></p>
+<p><a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch14.html#activities_comma_agents_comma_and_entiti" title="Figure 14-6. Activities, agents, and entities in architecture-based adaptation."><b>As
 figuras 14-6</b></a> apresentam uma estrutura ainda mais refinada. Em vez do
-rotulado arbitrariamente &quot;gestão de adaptação&quot; e &quot;gestão da
-evolução&quot; da <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch14.html#conceptual_architecture_for_adaptation"
-title="Figure&nbsp;14-5.&nbsp;Conceptual architecture for adaptation. From (Oreizy et al. 1999). © IEEE 1999."><b>Figura
+rotulado arbitrariamente "gestão de adaptação" e "gestão da
+evolução" da <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch14.html#conceptual_architecture_for_adaptation" title="Figure 14-5. Conceptual architecture for adaptation. From (Oreizy et al. 1999). © IEEE 1999."><b>Figura
 14-5</b></a>, essa figura separa as atividades em três tipos e mostra as
 entidades e agentes envolvidos na realização das atividades. Os insights
 essenciais do arcabouço anterior estão presentes, mas agora com detalhes e
 precisão adicionais.</p>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+<p><span><!--[if gte vml 1]><v:shape
  id="Imagem_x0020_299" o:spid="_x0000_i1037" type="#_x0000_t75" alt="Atividades, agentes e entidades na adaptação baseada em arquitetura."
  style='width:411.6pt;height:402.6pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap14-ptbr_arquivos/image006.png" o:title="Atividades, agentes e entidades na adaptação baseada em arquitetura"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=549 height=537
-src="cap14-ptbr_arquivos/image006.png"
-alt="Atividades, agentes e entidades na adaptação baseada em arquitetura."
-v:shapes="Imagem_x0020_299"><![endif]></span></p>
-
-<p class=MsoNormal><b>Figura 14-6.&nbsp;Atividades, agentes e entidades na
+</v:shape><![endif]--><?if !vml?><img alt="Atividades, agentes e entidades na adaptação baseada em arquitetura." border="0" height="537" src="cap14-ptbr_arquivos/image006.png" v:shapes="Imagem_x0020_299" width="549"/><?endif?></span></p>
+<p><b>Figura 14-6. Atividades, agentes e entidades na
 adaptação baseada em arquitetura.</b></p>
-
-<p class=MsoNormal>As três atividades são caracterizadas como estratégicas,
+<p>As três atividades são caracterizadas como estratégicas,
 táticas e operacionais. Estratégia refere-se a determinar o que fazer, táticas
 para desenvolver planos detalhados para alcançar as metas estratégicas, e
 operações aos detalhes práticos da execução desses planos.</p>
-
-<p class=MsoNormal>Dentro da camada de atividade Estratégia estão agentes para
+<p>Dentro da camada de atividade Estratégia estão agentes para
 analisar informações sobre o sistema e a arquitetura, e depois planejar
 adaptações com base nessa análise. Esses agentes podem simplesmente ser tarefas
 realizadas por um usuário humano, ou podem ser programas automatizados que
 realizam tais tarefas.</p>
-
-<p class=MsoNormal>Dentro da camada de atividade Táticas existem agentes para
+<p>Dentro da camada de atividade Táticas existem agentes para
 realizar modificações arquitetônicas específicas baseadas nos planos recebidos
 da camada de estratégia e agentes de implantação para garantir que essas
 modificações sejam transmitidas a todas as instâncias implantadas da
@@ -1079,14 +897,12 @@ arquitetura a ser modificada. Também são encontrados aqui agentes para
 determinar como correlacionar informações brutas de monitoramento recebidas de
 instâncias implantadas do sistema, de modo que os dados coletados sejam adequados
 para análise no nível da estratégia.</p>
-
-<p class=MsoNormal>Dentro da camada de atividade de Operações estão os
+<p>Dentro da camada de atividade de Operações estão os
 mecanismos específicos para modificar os modelos de arquitetura (como os que
 podem residir em instâncias implantadas) e modificar a implementação, mantendo
 a consistência entre eles, além dos mecanismos para coleta de dados de uma
 instância em execução.</p>
-
-<p class=MsoNormal>Lembre-se de que um dos propósitos de um framework como esse
+<p>Lembre-se de que um dos propósitos de um framework como esse
 é fornecer ao engenheiro uma lista de verificação dos problemas. Nem todas as
 partes do framework serão igualmente úteis em todos os contextos de adaptação.
 Da mesma forma, a localização das várias entidades envolvidas (tanto os agentes
@@ -1099,37 +915,30 @@ Se, por outro lado, o sistema puder ser parado, recarregado e reiniciado, todos
 os agentes e modelos de adaptação podem ser encontrados (apenas) na estação de
 trabalho do engenheiro de desenvolvimento. A atividade de implantação pode
 envolver apenas o código objeto.</p>
-
-<p class=MsoNormal>TÉCNICAS PARA APOIAR MUDANÇAS CENTRADAS NA ARQUITETURA</p>
-
-<p class=MsoNormal>Nesta seção, apresentamos primeiro uma seleção de técnicas
+<p>TÉCNICAS PARA APOIAR MUDANÇAS CENTRADAS NA ARQUITETURA</p>
+<p>Nesta seção, apresentamos primeiro uma seleção de técnicas
 que podem ser usadas para apoiar as atividades do arcabouço conceitual
 apresentado acima, como observar o estado da aplicação e modificar a
 arquitetura. Como nem todas as arquiteturas ou estilos arquitetônicos são
 igualmente aptos a apoiar a adaptação, apresentamos então uma visão geral dos
 estilos — alguns mais arquitetônicos do que outros — que facilitam a mudança. A
 seção conclui com a discussão dos problemas especiais da mudança autônoma.</p>
-
-<p class=MsoNormal><b>Técnicas Básicas Correspondentes às Atividades do
-Arcabouço Conceitual<o:p></o:p></b></p>
-
-<p class=MsoNormal>A adaptação é acionada quando alguém — usuário,
+<p><b>Técnicas Básicas Correspondentes às Atividades do
+Arcabouço Conceitual</b></p>
+<p>A adaptação é acionada quando alguém — usuário,
 desenvolvedor, auditor — determina que o comportamento atual de um sistema não
 é o desejado. Essa determinação é baseada na observação, a atividade
 fundamental.</p>
-
-<p class=MsoNormal><b>Técnicas para Observar e Coletar o Estado<o:p></o:p></b></p>
-
-<p class=MsoNormal>Determinar as técnicas mais úteis para observar e coletar
-informações de estado pressupõe saber o que é &quot;estado&quot;. Em sua forma
+<p><b>Técnicas para Observar e Coletar o Estado</b></p>
+<p>Determinar as técnicas mais úteis para observar e coletar
+informações de estado pressupõe saber o que é "estado". Em sua forma
 mais óbvia, estado consiste nos valores de tempo de execução dos objetos de um
 programa. Como os valores estão continuamente mudando, o estado é relativo ao
 tempo, e como apenas um pequeno subconjunto do estado de um programa
 provavelmente será útil na adaptação, o estado observado é utilmente uma
 sequência com carimbo temporal de um subconjunto dos valores de tempo de
 execução dos objetos do programa.</p>
-
-<p class=MsoNormal>Outras informações além dos valores das variáveis de um
+<p>Outras informações além dos valores das variáveis de um
 programa também podem ser partes importantes do estado usadas para fins de
 adaptação. Por exemplo, propriedades do ambiente do programa que não são
 representadas podem ser essenciais para determinar como uma aplicação deve ser
@@ -1140,18 +949,16 @@ sem fio sempre que o caixa eletrônico for submetido a forças G em qualquer
 direção (como pode ser causado por um terremoto — ou por alguém tentando fugir
 com a máquina). Adquirir essa noção aprimorada do estado de um programa
 exigiria monitorar mais do que apenas o próprio programa.</p>
-
-<p class=MsoNormal>Um exemplo mais prosaico de informação externa que pode ser
+<p>Um exemplo mais prosaico de informação externa que pode ser
 crítica para determinar uma estratégia de adaptação é a informação de
 implantação. O comportamento de um sistema pode ser impactado pela presença de
 certas opções específicas da plataforma — a presença de certos drivers de
 dispositivo, a quantidade de memória disponível ou a versão do sistema
 operacional, por exemplo. Essas informações geralmente são fáceis de coletar
-(por exemplo, de &quot;registros&quot; como o banco de dados de registros do MS
+(por exemplo, de "registros" como o banco de dados de registros do MS
 Windows ou arquivos de biblioteca do Mac OS X) e podem ser essenciais na fase
 de análise.</p>
-
-<p class=MsoNormal>As especificações do sistema e o modelo arquitetônico do
+<p>As especificações do sistema e o modelo arquitetônico do
 sistema também podem ser aspectos do estado que precisam ser observados no
 sistema-alvo e levados ao contexto de análise. Pode-se esperar que essa
 informação seja estática e já conhecida pelo analista/planejador de adaptação,
@@ -1168,19 +975,17 @@ algumas situações mais esotéricas, como a adaptação autônoma, o sistema em
 campo também pode conter especificações de objetivo explícitas e dinamicamente
 mutáveis para a aplicação. Esses também constituiriam parte do estado, sujeita
 a observação e relatório ao analista de adaptação.</p>
-
-<p class=MsoNormal>Reunindo o Estado Existem diversas técnicas para reunir o
+<p>Reunindo o Estado Existem diversas técnicas para reunir o
 estado dos objetivos de um programa; As inúmeras técnicas desenvolvidas para
 suportar a depuração de programas se aplicam todas. De forma mais primitiva, o
 analista pode observar manualmente a interface do usuário do programa. Mais
 útilmente, o código de observação pode fazer parte de um sistema especial de
 tempo de execução que permite o monitoramento de um programa sem exigir
 qualquer modificação. Em alguns contextos, como sistemas embarcados especializados,
-analisadores de hardware &quot;bolt-on&quot; podem permitir a inspeção do
+analisadores de hardware "bolt-on" podem permitir a inspeção do
 estado do programa sem qualquer perturbação no ambiente de software de
 execução.</p>
-
-<p class=MsoNormal>Se a modificação do sistema de software em questão for
+<p>Se a modificação do sistema de software em questão for
 viável, uma variedade de abordagens mais especializadas e direcionadas é
 possível. Novamente, no nível mais primitivo, a técnica do programador
 iniciante de semear um programa com instruções de impressão pode ser
@@ -1195,8 +1000,7 @@ semântica da linguagem: se a satisfação da condição do assert necessariamen
 interrompe o fluxo de controle do programa após a afirmação, então o uso dessa
 característica da linguagem não seria apropriado. O monitoramento deve permitir
 que a execução ocorra sem impedimentos.</p>
-
-<p class=MsoNormal>Na medida em que a criação de monitores personalizados é um
+<p>Na medida em que a criação de monitores personalizados é um
 processo manual, é um processo caro. Além disso, o uso de monitores
 personalizados, como descrito acima, só é viável quando o código-fonte está
 disponível e a aplicação pode ser recompilada. Uma alternativa é focar em
@@ -1204,26 +1008,20 @@ capturar informações apenas nas fronteiras dos componentes, e fazer isso
 capturando informações que passam pelos conectores da aplicação. Essa técnica
 pode ser baseada em middleware comercial quando usada para conectores, ou pode assumir
 outras formas. Se a coleta de informações for automática e não filtrar dados
-&quot;desinteressantes&quot;, então ela deve ser combinada com outras
+"desinteressantes", então ela deve ser combinada com outras
 ferramentas para suportar a filtragem após a coleta dos dados brutos.</p>
-
-<p class=MsoNormal>O conceito é ilustrado pelo sistema MTAT (Hendrickson,
+<p>O conceito é ilustrado pelo sistema MTAT (Hendrickson,
 Dashofy e Taylor 2005), que cria um registro de todas as mensagens enviadas
 entre componentes em uma arquitetura durante sua execução. Esse log é criado
-implantando automaticamente conectores trace em uma arquitetura (veja <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch14.html#a_trace_connector"
-title="Figure&nbsp;14-7.&nbsp;A trace connector."><b>a Figura 14-7</b></a>).
+implantando automaticamente conectores trace em uma arquitetura (veja <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch14.html#a_trace_connector" title="Figure 14-7. A trace connector."><b>a Figura 14-7</b></a>).
 Conectores de rastreamento interceptam todas as mensagens que passam por eles,
 fazem uma cópia de cada mensagem e enviam cada cópia para um componente
 distinto que registra as mensagens em um banco de dados relacional. As
 mensagens originais são passadas sem modificações. Os conectores de trilha são
-conectores de primeira classe.&nbsp;<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch14.html#instrumented_architecture_and_original_a"
-title="Figure&nbsp;14-8.&nbsp;Instrumented architecture and original architecture."><b>As
+conectores de primeira classe. <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch14.html#instrumented_architecture_and_original_a" title="Figure 14-8. Instrumented architecture and original architecture."><b>As
 figuras 14-8</b></a> mostram uma arquitetura antes da modificação, assim como a
 arquitetura após a inserção de conectores de trilha.</p>
-
-<p class=MsoNormal>O sistema de análise MTAT inclui uma ferramenta que examina
+<p>O sistema de análise MTAT inclui uma ferramenta que examina
 uma descrição xADL da estrutura de um sistema e insere automaticamente
 conectores de traço nessa descrição. A estrutura do sistema é modificada para
 que cada link na arquitetura original seja dividido em dois links, com um
@@ -1238,36 +1036,26 @@ conectores que fazem a ponte entre os limites dos processos são divididos em
 duas metades — uma em cada processo que conectam. Em termos de instrumentação,
 conectores distribuídos são tratados da mesma forma que conectores de processo
 único; Um conector de traço é colocado em cada elo em cada processo.</p>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+<p><span><!--[if gte vml 1]><v:shape
  id="Imagem_x0020_298" o:spid="_x0000_i1036" type="#_x0000_t75" alt="Um conector de traços."
  style='width:411.6pt;height:156pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap14-ptbr_arquivos/image007.png" o:title="Um conector de traços"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=549 height=208
-src="cap14-ptbr_arquivos/image007.png" alt="Um conector de traços." v:shapes="Imagem_x0020_298"><![endif]></span></p>
-
-<p class=MsoNormal><b>Figura 14-7.&nbsp;Um conector de traços.</b></p>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+</v:shape><![endif]--><?if !vml?><img alt="Um conector de traços." border="0" height="208" src="cap14-ptbr_arquivos/image007.png" v:shapes="Imagem_x0020_298" width="549"/><?endif?></span></p>
+<p><b>Figura 14-7. Um conector de traços.</b></p>
+<p><span><!--[if gte vml 1]><v:shape
  id="Imagem_x0020_297" o:spid="_x0000_i1035" type="#_x0000_t75" alt="Arquitetura instrumentada e arquitetura original."
  style='width:411.6pt;height:466.8pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap14-ptbr_arquivos/image008.png" o:title="Arquitetura instrumentada e arquitetura original"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=549 height=622
-src="cap14-ptbr_arquivos/image008.png"
-alt="Arquitetura instrumentada e arquitetura original." v:shapes="Imagem_x0020_297"><![endif]></span></p>
-
-<p class=MsoNormal><b>Figura 14-8.&nbsp;Arquitetura instrumentada e arquitetura
+</v:shape><![endif]--><?if !vml?><img alt="Arquitetura instrumentada e arquitetura original." border="0" height="622" src="cap14-ptbr_arquivos/image008.png" v:shapes="Imagem_x0020_297" width="549"/><?endif?></span></p>
+<p><b>Figura 14-8. Arquitetura instrumentada e arquitetura
 original.</b></p>
-
-<p class=MsoNormal>Por fim, dependendo do contexto de adaptação, a técnica
+<p>Por fim, dependendo do contexto de adaptação, a técnica
 usada para coletar as observações também pode precisar ser responsável por
 transmiti-las da plataforma onde a aplicação alvo está rodando para o host onde
 a análise de adaptação será realizada. Na medida em que o alvo é um sistema
 embarcado, essa transmissão externa provavelmente será necessária.</p>
-
-<p class=MsoNormal><b>Técnicas para Análise dos Dados e Planejamento de Mudança<o:p></o:p></b></p>
-
-<p class=MsoNormal>Analisando os Dados Analisar os dados coletados ao observar
+<p><b>Técnicas para Análise dos Dados e Planejamento de Mudança</b></p>
+<p>Analisando os Dados Analisar os dados coletados ao observar
 um sistema e, consequentemente, determinar as adaptações a serem realizadas é
 um problema aberto. A variedade de tipos de mudanças que podem ser necessárias
 impede a prescrição de um pequeno conjunto de técnicas padrão. De fato, o
@@ -1275,8 +1063,7 @@ problema é essencialmente o mesmo que o entendimento de programas e a depuraç�
 de programas. Para algumas situações, uma técnica simples e canônica pode ser
 suficiente; Para a maioria das situações, será necessário muito pensamento
 humano.</p>
-
-<p class=MsoNormal>Na medida em que tipos de mudanças possam ser previstas
+<p>Na medida em que tipos de mudanças possam ser previstas
 enquanto um sistema está sendo projetado, técnicas podem ser implementadas para
 monitorar situações específicas, desencadeando estratégias pré-planejadas para
 lidar com a mudança quando os monitores detectam os valores-chave. A análise de
@@ -1288,11 +1075,10 @@ devem ser colocados online para evitar a degradação da experiência do usuári
 Como grande parte do processamento de transações nessas aplicações de comércio
 eletrônico pode ser realizada por servidores independentes, um design simples
 de compartilhamento de carga pode ser usado, no qual servidores adicionais são
-ativados automaticamente, tornando-se parte da &quot;fazenda de
-servidores&quot; como resultado do monitoramento de um valor limite e do
+ativados automaticamente, tornando-se parte da "fazenda de
+servidores" como resultado do monitoramento de um valor limite e do
 acionamento da resposta pré-planejada.</p>
-
-<p class=MsoNormal>Um passo fácil a superar essa situação é usar um conjunto de
+<p>Um passo fácil a superar essa situação é usar um conjunto de
 regras para monitorar um conjunto de valores observados. A condição de defesa
 nas regras pode ser complexa; O mesmo pode ser possível para as ações
 correspondentes. Em essência, porém, a abordagem é a mesma: o design do sistema
@@ -1304,17 +1090,12 @@ simulação pode mostrar que um sistema aborta corretamente uma transação se
 qualquer uma de suas subtransações falhar; mas o monitoramento da implementação
 pode mostrar que a transação foi (inadequadamente) concluída nesse caso,
 exigindo correção.</p>
-
-<p class=MsoNormal>Além dessas abordagens simples, há poucas técnicas gerais
+<p>Além dessas abordagens simples, há poucas técnicas gerais
 focadas na análise de dados observacionais para orientar a adaptação. Um
 exemplo é ilustrativo, no entanto. O sistema MTAT tem como objetivo ajudar
 engenheiros a entender o comportamento de aplicações que possuem uma
-arquitetura baseada em eventos. (O sistema Rapide de<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch06.html"
-title="Chapter&nbsp;6.&nbsp;Modeling"><b>Capítulo 6</b></a>é semelhante.) Os
-conectores de traço mostrados em<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch14.html#a_trace_connector"
-title="Figure&nbsp;14-7.&nbsp;A trace connector."><b>Figura 14-7</b></a>Alimente
+arquitetura baseada em eventos. (O sistema Rapide de<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch06.html" title="Chapter 6. Modeling"><b>Capítulo 6</b></a>é semelhante.) Os
+conectores de traço mostrados em<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch14.html#a_trace_connector" title="Figure 14-7. A trace connector."><b>Figura 14-7</b></a>Alimente
 cópias de todas as mensagens enviadas na arquitetura para um banco de dados
 relacional. Esse banco de dados pode então ser examinado de várias maneiras
 para determinar, por exemplo, padrões de comunicação nas cadeias de aplicação
@@ -1326,19 +1107,17 @@ elementos da arquitetura de um sistema. Note que, em essência, essa abordagem �
 semelhante às técnicas empregadas na depuração do código-fonte; A diferença
 está em aplicar a abordagem analítica ao nível dos conceitos arquitetônicos e
 focar no tipo particular de comunicação usado no nível arquitetônico.</p>
-
-<p class=MsoNormal>Analisando a arquitetura e propondo uma mudança. Assumindo
+<p>Analisando a arquitetura e propondo uma mudança. Assumindo
 que observações de um sistema tenham sido obtidas e analisadas, resta
 desenvolver uma modificação na arquitetura para atender às necessidades que o
 arquiteto está preocupado. Novamente, o desafio pode ser muito simples ou muito
 complexo.</p>
-
-<p class=MsoNormal>Se a arquitetura foi originalmente projetada para acomodar
+<p>Se a arquitetura foi originalmente projetada para acomodar
 certos tipos de mudança, e a análise dos dados mostra que a mudança necessária
 está dentro do escopo esperado, então propor uma mudança responsiva é simples.
 Por exemplo, se um componente for demonstrado como um gargalo de desempenho, e
 um componente substituto mais rápido com as mesmas interfaces pode ser
-produzido (ou seja, a mudança fica confinada aos &quot;segredos&quot; internos
+produzido (ou seja, a mudança fica confinada aos "segredos" internos
 do componente), basta trocar o componente original pelo melhorado. Se a arquitetura
 de um sistema estiver no estilo cliente-servidor e um novo cliente for
 necessário, a modificação é simples. Se a arquitetura de um sistema for no
@@ -1346,19 +1125,12 @@ estilo publicar-assinar e um novo editor estiver disponível, então novamente o
 caminho para a mudança é simples. O padrão aqui é claro: se a mudança
 necessária se encaixa no tipo de mudança prevista e acomodada pelo estilo
 arquitetônico da aplicação, então a abordagem a ser adotada é clara.</p>
-
-<p class=MsoNormal>Se a análise mostrar que a mudança necessária não se encaixa
+<p>Se a análise mostrar que a mudança necessária não se encaixa
 em um padrão previsto, então o arquiteto deve recorrer às técnicas gerais de
-análise e design discutidas anteriormente em<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch04.html"
-title="Chapter&nbsp;4.&nbsp;Designing Architectures"><b>Capítulos 4</b></a>e<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch08.html"
-title="Chapter&nbsp;8.&nbsp;Analysis"><b>8</b></a>.</p>
-
-<p class=MsoNormal><b>Patches, Pacotes de Serviço, Upgrades e Lançamentos<o:p></o:p></b></p>
-
-<p class=MsoNormal>Sistemas comerciais utilizam uma variedade de técnicas e
-terminologia para apoiar &quot;atualizações&quot; de produtos de software
+análise e design discutidas anteriormente em<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch04.html" title="Chapter 4. Designing Architectures"><b>Capítulos 4</b></a>e<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch08.html" title="Chapter 8. Analysis"><b>8</b></a>.</p>
+<p><b>Patches, Pacotes de Serviço, Upgrades e Lançamentos</b></p>
+<p>Sistemas comerciais utilizam uma variedade de técnicas e
+terminologia para apoiar "atualizações" de produtos de software
 implantados. Os termos <i>upgrades, releases, service packs, patches </i>e
 outros são todos usados. Há pouco significado técnico consistente para esses
 termos. Patches eram inicialmente usados para se referir a pequenas alterações
@@ -1367,8 +1139,7 @@ total do arquivo original. Patches podem ser aplicados tanto a arquivos
 binários quanto a arquivos textuais. O termo <i>service pack </i>geralmente é
 usado para designar um conjunto de mudanças em uma aplicação, mas também não há
 consistência nisso.</p>
-
-<p class=MsoNormal>Os meios de implantação e instalação dos patches (qualquer
+<p>Os meios de implantação e instalação dos patches (qualquer
 que seja o termo usado) podem variar significativamente. Algumas implantações
 são iniciadas pelo próprio software implantado — ou seja, uma instância de um
 sistema verifica com o site de origem as atualizações disponíveis e, se
@@ -1376,64 +1147,55 @@ encontradas, inicia um download. Em outras ocasiões, o fornecedor inicia a
 implantação, tentando notificar todos os sites de usuários sobre a necessidade
 da atualização. Uma vez implantado, o patch pode ser instalado automaticamente
 ou pode exigir envolvimento ativo do usuário.</p>
-
-<p class=MsoNormal>A atividade de instalação pode ser simples ou envolver a
+<p>A atividade de instalação pode ser simples ou envolver a
 verificação do contexto — determinando os outros componentes ou aplicações que
 são instalados que podem determinar a mudança específica a ser feita.</p>
-
-<p class=MsoNormal>Todas essas atividades ecoam ou incorporam algumas das
+<p>Todas essas atividades ecoam ou incorporam algumas das
 técnicas envolvidas em um processo robusto de adaptação baseado em arquitetura,
 como descrito neste capítulo.</p>
-
-<p class=MsoNormal>Analisando a mudança proposta. Após o desenvolvimento de uma
+<p>Analisando a mudança proposta. Após o desenvolvimento de uma
 proposta de mudança em uma arquitetura, ela deve ser verificada para determinar
 se ela está completa e apropriada para implantação em suas plataformas-alvo.
 Checar uma mudança proposta parece tão óbvio que nem precisa ser dito, mas
 considere alguns dos possíveis itens que podem precisar ser verificados:</p>
-
-<ul style='margin-top:0cm' type=disc>
- <li class=MsoNormal style='mso-list:l154 level1 lfo395;tab-stops:list 36.0pt'>Existem
-     links soltos (&quot;quebrados&quot;) na nova arquitetura?</li>
- <li class=MsoNormal style='mso-list:l154 level1 lfo395;tab-stops:list 36.0pt'>Todos
+<ul style="margin-top:0cm" type="disc">
+<li>Existem
+     links soltos ("quebrados") na nova arquitetura?</li>
+<li>Todos
      os links de interface foram verificados para verificar consistência?</li>
- <li class=MsoNormal style='mso-list:l154 level1 lfo395;tab-stops:list 36.0pt'>Todos
+<li>Todos
      os componentes são devidamente licenciados para uso nos ambientes-alvo?
      (Por exemplo, se o ambiente alvo for um produto comercial, algum dos novos
      componentes possui licenças GPL associadas?)</li>
- <li class=MsoNormal style='mso-list:l154 level1 lfo395;tab-stops:list 36.0pt'>As
+<li>As
      comunicações entre os componentes são realizadas de acordo com os
      requisitos de segurança da aplicação? (Por exemplo, se dois componentes se
      comunicam por uma rede aberta, as mensagens são criptografadas?)</li>
- <li class=MsoNormal style='mso-list:l154 level1 lfo395;tab-stops:list 36.0pt'>Cada
+<li>Cada
      componente e conector na arquitetura revisada é mapeado para uma
      implementação?</li>
- <li class=MsoNormal style='mso-list:l154 level1 lfo395;tab-stops:list 36.0pt'>Tudo
+<li>Tudo
      no pacote de implantação é que o agente de mudança na plataforma de
      destino exige? (Por exemplo, chaves de licença e parâmetros de
      configuração.)</li>
 </ul>
-
-<p class=MsoNormal>O número de questões que podem precisar ser verificadas é
+<p>O número de questões que podem precisar ser verificadas é
 grande, e por isso geralmente é necessário um passo explícito para
 verificá-las.</p>
-
-<p class=MsoNormal>Uma situação que exige atenção especial é quando cada
+<p>Uma situação que exige atenção especial é quando cada
 sistema-alvo para o qual a arquitetura revisada será implantada pode ser único.
 Ou seja, devido à possibilidade de modificações locais, cada alvo precisa,
 essencialmente, ser verificado individualmente. Se o número de alvos for
 significativo, a análise terá que ser automatizada.</p>
-
-<p class=MsoNormal><b>Técnicas para implantar descrições de mudanças e
-modificar a arquitetura<o:p></o:p></b></p>
-
-<p class=MsoNormal>Descrevendo Mudanças em uma Arquitetura Para efetuar um
+<p><b>Técnicas para implantar descrições de mudanças e
+modificar a arquitetura</b></p>
+<p>Descrevendo Mudanças em uma Arquitetura Para efetuar um
 reparo em um sistema de software em execução, as mudanças no sistema que
 ocorrerão devido ao reparo devem ser especificadas e legíveis pela máquina.
 Existem três maneiras principais pelas quais mudanças arquitetônicas concretas
 podem ser expressas, conforme segue.</p>
-
-<ul style='margin-top:0cm' type=disc>
- <li class=MsoNormal style='mso-list:l124 level1 lfo396;tab-stops:list 36.0pt'><i>Scripts
+<ul style="margin-top:0cm" type="disc">
+<li><i>Scripts
      de mudança: </i>Scripts de mudança são programas executáveis que operam em
      um sistema para fazer alterações. Em geral, esses scripts aproveitam APIs
      de adaptação subjacentes fornecidas pelo sistema implementado (ou seu
@@ -1443,11 +1205,11 @@ podem ser expressas, conforme segue.</p>
      serviços fornecidos, entre outros. Às vezes, scripts de alteração vêm
      acompanhados de artefatos de implementação (por exemplo, novos arquivos
      fonte ou binários) que são mesclados com o sistema implementado.</li>
- <li class=MsoNormal style='mso-list:l124 level1 lfo396;tab-stops:list 36.0pt'><i>Diferenças
+<li><i>Diferenças
      arquitetônicas:</i> Em vez de programas ou scripts executáveis, as
      mudanças arquitetônicas podem ser expressas como um conjunto de diferenças
      entre uma arquitetura e outra. Em geral, essas diferenças, também
-     conhecidas como &quot;diffs&quot;, contêm uma lista de adições, remoções e
+     conhecidas como "diffs", contêm uma lista de adições, remoções e
      (opcionalmente) modificações em elementos arquitetônicos. Por exemplo, um
      diferencial pode indicar a adição de dois componentes, novas interfaces
      nesses componentes e novos links arquitetônicos para conectá-los à
@@ -1455,7 +1217,7 @@ podem ser expressas, conforme segue.</p>
      Dado dois modelos arquitetônicos concretos do sistema — como ele é e o
      sistema como deve ser — ferramentas podem criar um diferencial
      automaticamente.</li>
- <li class=MsoNormal style='mso-list:l124 level1 lfo396;tab-stops:list 36.0pt'><i>Novos
+<li><i>Novos
      modelos arquitetônicos:</i> Em alguns casos, especialmente em que o estado
      atual do sistema a ser adaptado é desconhecido, um modelo arquitetônico
      completo é usado para descrever a arquitetura de adaptação alvo. Nesse
@@ -1466,19 +1228,15 @@ podem ser expressas, conforme segue.</p>
      artefato ou é simplesmente um efeito colateral da determinação das
      mudanças depende da abordagem.</li>
 </ul>
-
-<p class=MsoNormal>Aplicando Mudanças a uma Arquitetura Em qualquer um desses
+<p>Aplicando Mudanças a uma Arquitetura Em qualquer um desses
 três casos, dois mundos estão envolvidos — o mundo da arquitetura e o mundo da
 implementação. Em geral, para que qualquer um desses artefatos de mudança seja
 eficaz na adaptação de um sistema real e implementado, deve haver uma
 correspondência estreita entre elementos no modelo arquitetônico e elementos na
 implementação. O uso de frameworks de implementação de arquitetura ou
-middleware flexível (veja<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch09.html"
-title="Chapter&nbsp;9.&nbsp;Implementation"><b>Capítulo 9</b></a>) pode ser
+middleware flexível (veja<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch09.html" title="Chapter 9. Implementation"><b>Capítulo 9</b></a>) pode ser
 usado para facilitar isso.</p>
-
-<p class=MsoNormal>Na ausência de ligações estritas entre arquitetura e
+<p>Na ausência de ligações estritas entre arquitetura e
 implementação, é concebível empregar um humano como agente de mudança no
 sistema de destino. Ou seja, o artefato de mudança é revisado por uma pessoa, e
 essa pessoa é responsável por fazer as alterações correspondentes ao sistema.
@@ -1490,8 +1248,7 @@ consultores ou especialistas em produtos para implantar, instalar e configurar
 o software para sua própria organização. Nesse caso, mudanças arquitetônicas
 podem ser implantadas do fornecedor para a equipe de consultoria, que então
 pode fazer as alterações de configuração no sistema manualmente.</p>
-
-<p class=MsoNormal>Uma vez que as mudanças na arquitetura de um sistema são
+<p>Uma vez que as mudanças na arquitetura de um sistema são
 descritas concretamente em uma das formas acima, elas devem ser realmente
 aplicadas a esse sistema. No caso dos scripts de mudança, o script de mudança é
 executado em algum ambiente de execução co-localizado com a aplicação de
@@ -1503,88 +1260,70 @@ e fazer as alterações nele especificadas, um processo conhecido como fusão. N
 caso de novas especificações de arquitetura, um agente de mudança deve
 determinar a diferença entre a configuração atual e a pretendida da aplicação e
 fazer alterações conforme necessário.</p>
-
-<p class=MsoNormal>Problemas com a implantação. Não importa qual tipo de
+<p>Problemas com a implantação. Não importa qual tipo de
 artefato de mudança seja usado — scripts de mudança, diferenciais
 arquitetônicos ou novas especificações arquitetônicas — esse artefato precisa
 ser implantado no sistema alvo (ou em seu agente de mudança associado). As
 questões envolvidas na implantação desses artefatos de mudança são semelhantes
 às encontradas na implantação de software em geral, e por isso a maior parte
-dos conselhos em<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch10.html"
-title="Chapter&nbsp;10.&nbsp;Deployment and Mobility"><b>Capítulo 10</b></a>O
+dos conselhos em<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch10.html" title="Chapter 10. Deployment and Mobility"><b>Capítulo 10</b></a>O
 desdobramento também se aplica aqui. Se o sistema de destino estiver rodando em
 um único host remoto, a implantação geralmente é simples: o artefato de mudança
 pode ser enviado por qualquer número de protocolos de rede, como HTTP ou FTP,
 para o agente de mudança, que então executa as alterações. Sistemas
 distribuídos e descentralizados podem usar abordagens baseadas em push ou pull
 para distribuir artefatos de mudança.</p>
-
-<p class=MsoNormal>Em qualquer uma dessas abordagens, um agente de mudança deve
+<p>Em qualquer uma dessas abordagens, um agente de mudança deve
 estar localizado na máquina de destino para realmente efetuar as mudanças na
 arquitetura — executar o script de mudança, analisar o diferencial
 arquitetônico, e assim por diante. Esse agente pode ser implantado com o
 sistema original ou pode ser enviado junto com o artefato de mudança. Por
 exemplo, um script de mudança poderia ser compilado em forma executável (como
-um &quot;instalador&quot; ou &quot;patcher&quot;) e então enviado pela rede para
+um "instalador" ou "patcher") e então enviado pela rede para
 o sistema de destino, onde é executado diretamente pelo sistema operacional.
 Isso é conveniente, pois evita o problema de ter que atualizar os agentes de
 mudança por conta própria. Essa estratégia envolve algum risco de segurança —
 executar executáveis arbitrários nas plataformas-alvo é uma forma fácil de
 espalhar software malicioso caso o código não seja confiável. Assinatura de
 código e outras estratégias podem ser usadas para mitigar esse risco.</p>
-
-<p class=MsoNormal>Problemas com a aplicação de mudanças. Fazer mudanças
-arquitetônicas em tempo real (veja<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch14.html#the_special_problems_of_on-the-fly_and_a"
-title="The Special Problems of On-the-Fly and Autonomous Adaptation"><b>Seção
+<p>Problemas com a aplicação de mudanças. Fazer mudanças
+arquitetônicas em tempo real (veja<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch14.html#the_special_problems_of_on-the-fly_and_a" title="The Special Problems of On-the-Fly and Autonomous Adaptation"><b>Seção
 14.3.3</b></a>abaixo) é mais difícil. Todas as questões identificadas abaixo
 relacionadas a garantir que a aplicação esteja em estado de repaciência
 adequada para ser adaptada se aplicam a essas estratégias.</p>
-
-<p class=MsoNormal>Fazer alterações em tempo real em um sistema distribuído é
+<p>Fazer alterações em tempo real em um sistema distribuído é
 ainda mais difícil, pois a mudança deve primeiro ser implantada em todas as
 partes apropriadas de um sistema distribuído, e então o sistema como um todo
 deve ser colocado em estado de repouso para atualização. Isso envolve riscos
 adicionais, já que falhas na rede e no host durante o processo de atualização
 podem dificultar o sistema para um estado consistente.</p>
-
-<p class=MsoNormal><b>Um exemplo: ArchStudio<o:p></o:p></b></p>
-
-<p class=MsoNormal>O ambiente ArchStudio suporta adaptação baseada em
+<p><b>Um exemplo: ArchStudio</b></p>
+<p>O ambiente ArchStudio suporta adaptação baseada em
 arquitetura com uma combinação das técnicas listadas acima. Especificamente,
 utiliza uma estrutura de arquitetura-implementação para garantir um mapeamento
 entre arquitetura e implementação. Depois, diferenciais arquitetônicos são
 usados como descrições de mudança para evoluir um sistema em tempo de execução.
 O processo para evoluir um sistema ocorre em quatro etapas.</p>
-
-<p class=MsoNormal>A etapa 1 do processo é mostrada em<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch14.html#archstudio_adaptation_step_1_colon_insta"
-title="Figure&nbsp;14-9.&nbsp;ArchStudio adaptation step 1: instantiation."><b>Figura
+<p>A etapa 1 do processo é mostrada em<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch14.html#archstudio_adaptation_step_1_colon_insta" title="Figure 14-9. ArchStudio adaptation step 1: instantiation."><b>Figura
 14-9</b></a>. Uma descrição da arquitetura em xADL é fornecida a uma ferramenta
 no ArchStudio, o Gerenciador de Evolução da Arquitetura (AEM). O AEM lê o
-modelo e utiliza o Flexible C2 Framework, descrito em<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch09.html"
-title="Chapter&nbsp;9.&nbsp;Implementation"><b>Capítulo 9</b></a>, para
+modelo e utiliza o Flexible C2 Framework, descrito em<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch09.html" title="Chapter 9. Implementation"><b>Capítulo 9</b></a>, para
 instanciar o sistema. Os bindings de implementação no modelo xADL facilitam o
 mapeamento dos componentes arquitetônicos e conectores para os componentes
 Java.</p>
-
-<p class=MsoNormal>A etapa 2 do processo é mostrada na Figura 10. Um novo
+<p>A etapa 2 do processo é mostrada na Figura 10. Um novo
 modelo arquitetônico é criado no ambiente, possivelmente fazendo uma cópia e
 modificando o modelo antigo. Depois, o modelo antigo e o novo são fornecidos
 como entrada para outra ferramenta do ArchStudio, o Mecanismo de Diferenciação,
-&quot;ArchDiff.&quot; A ArchDiff cria um terceiro documento, um diferencial
+"ArchDiff." A ArchDiff cria um terceiro documento, um diferencial
 arquitetônico, que descreve as diferenças entre os dois.</p>
-
-<p class=MsoNormal>O passo 3 do processo é mostrado na Figura 11. Aqui, o novo
+<p>O passo 3 do processo é mostrado na Figura 11. Aqui, o novo
 modelo não é mais necessário. O modelo original, que ainda descreve o sistema
 de execução, e o diferencial são fornecidos como entrada para outra ferramenta
-do ArchStudio, o Merging Engine, &quot;ArchMerge.&quot; O motor de fusão,
+do ArchStudio, o Merging Engine, "ArchMerge." O motor de fusão,
 atuando como agente de mudança, modifica o modelo original com as mudanças no
 diferencial.</p>
-
-<p class=MsoNormal>A Etapa 4 do processo é mostrada na Figura 12. Aqui, o AEM
+<p>A Etapa 4 do processo é mostrada na Figura 12. Aqui, o AEM
 percebe que mudanças foram feitas no modelo original (por meio de eventos
 emitidos pelo repositório de modelos dentro do ArchStudio). O AEM então faz as
 alterações correspondentes na arquitetura em execução, fazendo mais chamadas
@@ -1592,93 +1331,63 @@ para o Flexible C2 Framework subjacente, instanciando novos elementos e
 alterando a aplicação conforme necessário. Embora apenas adições sejam
 mostradas nesses diagramas simples, o ArchStudio suporta adições, modificações
 e remoções de elementos.</p>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+<p><span><!--[if gte vml 1]><v:shape
  id="Imagem_x0020_296" o:spid="_x0000_i1034" type="#_x0000_t75" alt="Adaptação do ArchStudio passo 1: instanciação."
  style='width:411.6pt;height:207pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap14-ptbr_arquivos/image009.png" o:title=" instanciação"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=549 height=276
-src="cap14-ptbr_arquivos/image009.png"
-alt="Adaptação do ArchStudio passo 1: instanciação." v:shapes="Imagem_x0020_296"><![endif]></span></p>
-
-<p class=MsoNormal><b>Figuras 14-9.&nbsp;Adaptação do ArchStudio passo 1:
+</v:shape><![endif]--><?if !vml?><img alt="Adaptação do ArchStudio passo 1: instanciação." border="0" height="276" src="cap14-ptbr_arquivos/image009.png" v:shapes="Imagem_x0020_296" width="549"/><?endif?></span></p>
+<p><b>Figuras 14-9. Adaptação do ArchStudio passo 1:
 instanciação.</b></p>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+<p><span><!--[if gte vml 1]><v:shape
  id="Imagem_x0020_295" o:spid="_x0000_i1033" type="#_x0000_t75" alt="Adaptação 2 da ArchStudio: diferenciação."
  style='width:411.6pt;height:209.4pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap14-ptbr_arquivos/image010.png" o:title=" diferenciação"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=549 height=279
-src="cap14-ptbr_arquivos/image010.png"
-alt="Adaptação 2 da ArchStudio: diferenciação." v:shapes="Imagem_x0020_295"><![endif]></span></p>
-
-<p class=MsoNormal><b>Figuras 14-10.&nbsp;Adaptação 2 da ArchStudio:
+</v:shape><![endif]--><?if !vml?><img alt="Adaptação 2 da ArchStudio: diferenciação." border="0" height="279" src="cap14-ptbr_arquivos/image010.png" v:shapes="Imagem_x0020_295" width="549"/><?endif?></span></p>
+<p><b>Figuras 14-10. Adaptação 2 da ArchStudio:
 diferenciação.</b></p>
-
-<p class=MsoNormal><b>Arquiteturas/Estilos que Suportam a Adaptação<o:p></o:p></b></p>
-
-<p class=MsoNormal>As seções anteriores focaram em técnicas genéricas que
+<p><b>Arquiteturas/Estilos que Suportam a Adaptação</b></p>
+<p>As seções anteriores focaram em técnicas genéricas que
 suportam partes do arcabouço conceitual para adaptação baseada em arquitetura
-apresentado em<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch14.html#activities_comma_agents_comma_and_entiti"
-title="Figure&nbsp;14-6.&nbsp;Activities, agents, and entities in architecture-based adaptation."><b>Figuras
+apresentado em<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch14.html#activities_comma_agents_comma_and_entiti" title="Figure 14-6. Activities, agents, and entities in architecture-based adaptation."><b>Figuras
 14-6</b></a>. A dificuldade de fazer mudanças — mesmo usando essas técnicas —
 varia enormemente de uma aplicação para outra, dependendo do tipo de mudança
 necessária e da natureza da arquitetura a ser alterada. A discussão sobre
 camadas de cisalhamento no início deste capítulo indicou, em termos genéricos,
 por que algumas mudanças são mais difíceis de ser implementadas do que outras.
-A discussão dos muitos estilos arquitetônicos em<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch04.html"
-title="Chapter&nbsp;4.&nbsp;Designing Architectures"><b>Capítulo 4</b></a>mostrou
+A discussão dos muitos estilos arquitetônicos em<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch04.html" title="Chapter 4. Designing Architectures"><b>Capítulo 4</b></a>mostrou
 em particular como alguns estilos são mais aptos a lidar com certos tipos de
 mudança do que outros. Arquiteturas cliente-servidor, por exemplo, são
 projetadas para acomodar facilmente a adição ou exclusão de clientes.</p>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+<p><span><!--[if gte vml 1]><v:shape
  id="Imagem_x0020_294" o:spid="_x0000_i1032" type="#_x0000_t75" alt="Adaptação 3 da ArchStudio: fusão."
  style='width:411.6pt;height:211.2pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap14-ptbr_arquivos/image011.png" o:title=" fusão"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=549 height=282
-src="cap14-ptbr_arquivos/image011.png" alt="Adaptação 3 da ArchStudio: fusão."
-v:shapes="Imagem_x0020_294"><![endif]></span></p>
-
-<p class=MsoNormal><b>Figuras 14-11.&nbsp;Adaptação 3 da ArchStudio: fusão.</b></p>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+</v:shape><![endif]--><?if !vml?><img alt="Adaptação 3 da ArchStudio: fusão." border="0" height="282" src="cap14-ptbr_arquivos/image011.png" v:shapes="Imagem_x0020_294" width="549"/><?endif?></span></p>
+<p><b>Figuras 14-11. Adaptação 3 da ArchStudio: fusão.</b></p>
+<p><span><!--[if gte vml 1]><v:shape
  id="Imagem_x0020_293" o:spid="_x0000_i1031" type="#_x0000_t75" alt="Adaptação do ArchStudio passo 4: aplicar mudanças."
  style='width:411.6pt;height:199.8pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap14-ptbr_arquivos/image012.png" o:title=" aplicar mudanças"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=549 height=266
-src="cap14-ptbr_arquivos/image012.png"
-alt="Adaptação do ArchStudio passo 4: aplicar mudanças." v:shapes="Imagem_x0020_293"><![endif]></span></p>
-
-<p class=MsoNormal><b>Figuras 14-12.&nbsp;Adaptação do ArchStudio passo 4:
+</v:shape><![endif]--><?if !vml?><img alt="Adaptação do ArchStudio passo 4: aplicar mudanças." border="0" height="266" src="cap14-ptbr_arquivos/image012.png" v:shapes="Imagem_x0020_293" width="549"/><?endif?></span></p>
+<p><b>Figuras 14-12. Adaptação do ArchStudio passo 4:
 aplicar mudanças.</b></p>
-
-<p class=MsoNormal>Nas subseções abaixo, revisitamos o tema dos estilos,
+<p>Nas subseções abaixo, revisitamos o tema dos estilos,
 introduzindo algumas abordagens arquitetônicas específicas focadas em
 interfaces para facilitar mudanças, e depois reconsideramos brevemente alguns
-conceitos de<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch04.html"
-title="Chapter&nbsp;4.&nbsp;Designing Architectures"><b>Capítulo 4</b></a>que
+conceitos de<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch04.html" title="Chapter 4. Designing Architectures"><b>Capítulo 4</b></a>que
 são particularmente eficazes em apoiar mudanças.</p>
-
-<p class=MsoNormal><b>Soluções Arquitetônicas Focadas em Interface<o:p></o:p></b></p>
-
-<p class=MsoNormal>Como os desenvolvedores têm sido encarregados de mudar
+<p><b>Soluções Arquitetônicas Focadas em Interface</b></p>
+<p>Como os desenvolvedores têm sido encarregados de mudar
 softwares desde o surgimento da computação, não é surpresa que diversas
 técnicas tenham surgido para ajudar nesse processo. As técnicas apresentadas
-aqui refletem a aplicação do ditado &quot;projetar para a mudança&quot;.
+aqui refletem a aplicação do ditado "projetar para a mudança".
 Categorizamos essas técnicas como focadas em interfaces, pois se baseiam em
 interfaces de programação de aplicações ou interfaces de interpretação
 apresentadas pela aplicação original.</p>
-
-<p class=MsoNormal>Essas técnicas não pretendem apoiar todos os tipos de
-mudança. De fato, o foco principal dessas técnicas é apenas adicionar <i><span
-style='mso-spacerun:yes'> </span></i>funcionalidades na forma de um novo
+<p>Essas técnicas não pretendem apoiar todos os tipos de
+mudança. De fato, o foco principal dessas técnicas é apenas adicionar <i><span> </span></i>funcionalidades na forma de um novo
 módulo.</p>
-
-<p class=MsoNormal>Interfaces de Programação de Aplicações (APIs). APIs são
+<p>Interfaces de Programação de Aplicações (APIs). APIs são
 talvez a técnica mais comum para permitir que desenvolvedores adaptem uma
 aplicação ao estendê-la. Com essa técnica, a aplicação expõe uma interface — um
 conjunto de funções, tipos e variáveis — para os desenvolvedores. Os
@@ -1688,21 +1397,14 @@ inter-relações entre os novos módulos não são restritas pela API.) O tipo d
 alteração na aplicação original que pode ser suportada é limitado à
 funcionalidade que a API oferece. Muitos sistemas operacionais e pacotes
 comerciais usam APIs.</p>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+<p><span><!--[if gte vml 1]><v:shape
  id="Imagem_x0020_292" o:spid="_x0000_i1030" type="#_x0000_t75" alt="Usando uma API para estender uma aplicação com um novo módulo."
  style='width:411.6pt;height:188.4pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap14-ptbr_arquivos/image013.png" o:title="Usando uma API para estender uma aplicação com um novo módulo"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=549 height=251
-src="cap14-ptbr_arquivos/image013.png"
-alt="Usando uma API para estender uma aplicação com um novo módulo." v:shapes="Imagem_x0020_292"><![endif]></span></p>
-
-<p class=MsoNormal><b>Figuras 14-13.&nbsp;Usando uma API para estender uma
+</v:shape><![endif]--><?if !vml?><img alt="Usando uma API para estender uma aplicação com um novo módulo." border="0" height="251" src="cap14-ptbr_arquivos/image013.png" v:shapes="Imagem_x0020_292" width="549"/><?endif?></span></p>
+<p><b>Figuras 14-13. Usando uma API para estender uma
 aplicação com um novo módulo.</b></p>
-
-<p class=MsoNormal>Essa abordagem é ilustrada na <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch14.html#using_an_api_to_extend_an_application_wi"
-title="Figure&nbsp;14-13.&nbsp;Using an API to extend an application with a new module."><b>Figura
+<p>Essa abordagem é ilustrada na <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch14.html#using_an_api_to_extend_an_application_wi" title="Figure 14-13. Using an API to extend an application with a new module."><b>Figura
 14-13</b></a>, que apresenta uma imagem nocional de uma aplicação à qual um
 novo componente foi adicionado. O componente adicionado pode utilizar qualquer
 um dos recursos da aplicação original expostos pela API, mas não pode acessar
@@ -1710,8 +1412,7 @@ as interfaces de nenhum dos componentes internos da aplicação, nem modificar
 nenhuma das conexões internas da aplicação. O componente adicionado faz
 chamadas para a aplicação original; nada na aplicação original pode fazer
 chamadas para o componente adicionado.</p>
-
-<p class=MsoNormal>Plug-ins. Plug-ins são uma espécie de imagem espelhada das
+<p>Plug-ins. Plug-ins são uma espécie de imagem espelhada das
 APIs: em vez do componente adicionado chamar o aplicativo original, o
 aplicativo chama o componente adicionado. Para alcançar isso, o aplicativo
 original predefine uma interface que complementos ou plug-ins de terceiros
@@ -1721,17 +1422,13 @@ original deve estar ciente da existência dos plug-ins; Eles devem se registrar
 com a solicitação. Normalmente, o registro ocorre no início da aplicação,
 quando a aplicação inspeciona diretórios de arquivos pré-definidos. Componentes
 encontrados nesses diretórios que atendem à especificação de interface são
-registrados e podem então ser chamados. A técnica está ilustrada nas <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch14.html#using_a_plug-in_interface_to_extend_an_a"
-title="Figure&nbsp;14-14.&nbsp;Using a plug-in interface to extend an application."><b>Figuras
+registrados e podem então ser chamados. A técnica está ilustrada nas <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch14.html#using_a_plug-in_interface_to_extend_an_a" title="Figure 14-14. Using a plug-in interface to extend an application."><b>Figuras
 14-14</b></a>.</p>
-
-<p class=MsoNormal>Adobe Acrobat e Adobe Photoshop são aplicativos que
+<p>Adobe Acrobat e Adobe Photoshop são aplicativos que
 historicamente fizeram uso significativo do mecanismo de plug-in. Interações
 diretas entre múltiplos plug-ins são possíveis, mas tal interação não faz parte
 da arquitetura do plug-in propriamente dita.</p>
-
-<p class=MsoNormal>&quot;Arquiteturas de Componentes/Objetos&quot;. Com essa
+<p>"Arquiteturas de Componentes/Objetos". Com essa
 técnica, o aplicativo host expõe suas entidades internas e suas interfaces a
 desenvolvedores terceiros para que possam ser usadas durante o processo de
 adaptação. Isso contrasta, por exemplo, com as abordagens API e plug-ins que
@@ -1740,67 +1437,45 @@ opaca e imutável. Aqui, os add-ons alteram o comportamento da aplicação
 hospedeira ao adicionar novos componentes que interagem com componentes
 existentes. Expor as entidades internas também permite que um componente seja
 substituído por um que expõe uma interface compatível. Essa abordagem é
-ilustrada nas <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch14.html#application_modification_via_the_compone"
-title="Figure&nbsp;14-15.&nbsp;Application modification via the component/object architecture approach."><b>Figuras
+ilustrada nas <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch14.html#application_modification_via_the_compone" title="Figure 14-15. Application modification via the component/object architecture approach."><b>Figuras
 14-15</b></a>.</p>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+<p><span><!--[if gte vml 1]><v:shape
  id="Imagem_x0020_291" o:spid="_x0000_i1029" type="#_x0000_t75" alt="Uso de uma interface plug-in para estender uma aplicação."
  style='width:411.6pt;height:202.8pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap14-ptbr_arquivos/image014.png" o:title="Uso de uma interface plug-in para estender uma aplicação"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=549 height=270
-src="cap14-ptbr_arquivos/image014.png"
-alt="Uso de uma interface plug-in para estender uma aplicação." v:shapes="Imagem_x0020_291"><![endif]></span></p>
-
-<p class=MsoNormal><b>Figuras 14-14.&nbsp;Uso de uma interface plug-in para
+</v:shape><![endif]--><?if !vml?><img alt="Uso de uma interface plug-in para estender uma aplicação." border="0" height="270" src="cap14-ptbr_arquivos/image014.png" v:shapes="Imagem_x0020_291" width="549"/><?endif?></span></p>
+<p><b>Figuras 14-14. Uso de uma interface plug-in para
 estender uma aplicação.</b></p>
-
-<p class=MsoNormal>Essa abordagem de adaptação é mais poderosa do que APIs ou
+<p>Essa abordagem de adaptação é mais poderosa do que APIs ou
 plug-ins, já que mais interfaces são expostas, e a abordagem parece centrada na
 arquitetura porque os itens-chave do vocabulário são os componentes do sistema.
 No entanto, normalmente ausente na aplicação comum dessa técnica está um modelo
 arquitetônico explícito. O desenvolvedor é (apenas) confrontado com o
 código-fonte do sistema; Nada em um nível mais alto de granularidade pode ser
 manipulado para alcançar as mudanças desejadas.</p>
-
-<p class=MsoNormal>Sistemas baseados em CORBA, discutidos em<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch04.html"
-title="Chapter&nbsp;4.&nbsp;Designing Architectures"><b>Capítulo 4</b></a>, são
+<p>Sistemas baseados em CORBA, discutidos em<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch04.html" title="Chapter 4. Designing Architectures"><b>Capítulo 4</b></a>, são
 membros dessa categoria, assim como sistemas construídos com o Modelo de Objeto
 de Componente (COM) da Microsoft. Tais sistemas podem ser muito fluidos, mas a
 gestão deles pode ser difícil porque não existe um modelo explícito capaz de
 servir como a abstração fundamental.</p>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+<p><span><!--[if gte vml 1]><v:shape
  id="Imagem_x0020_290" o:spid="_x0000_i1028" type="#_x0000_t75" alt="Modificação de aplicações via abordagem de arquitetura componente/objeto."
  style='width:411.6pt;height:211.8pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap14-ptbr_arquivos/image015.png" o:title="objeto"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=549 height=282
-src="cap14-ptbr_arquivos/image015.png"
-alt="Modificação de aplicações via abordagem de arquitetura componente/objeto."
-v:shapes="Imagem_x0020_290"><![endif]></span></p>
-
-<p class=MsoNormal><b>Figuras 14-15.&nbsp;Modificação de aplicações via
+</v:shape><![endif]--><?if !vml?><img alt="Modificação de aplicações via abordagem de arquitetura componente/objeto." border="0" height="282" src="cap14-ptbr_arquivos/image015.png" v:shapes="Imagem_x0020_290" width="549"/><?endif?></span></p>
+<p><b>Figuras 14-15. Modificação de aplicações via
 abordagem de arquitetura componente/objeto.</b></p>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+<p><span><!--[if gte vml 1]><v:shape
  id="Imagem_x0020_289" o:spid="_x0000_i1027" type="#_x0000_t75" alt="Adaptação de aplicação por meio de uma linguagem de script."
  style='width:411.6pt;height:178.2pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap14-ptbr_arquivos/image016.png" o:title="Adaptação de aplicação por meio de uma linguagem de script"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=549 height=238
-src="cap14-ptbr_arquivos/image016.png"
-alt="Adaptação de aplicação por meio de uma linguagem de script." v:shapes="Imagem_x0020_289"><![endif]></span></p>
-
-<p class=MsoNormal><b>Figuras 14-16.&nbsp;Adaptação de aplicação por meio de
+</v:shape><![endif]--><?if !vml?><img alt="Adaptação de aplicação por meio de uma linguagem de script." border="0" height="238" src="cap14-ptbr_arquivos/image016.png" v:shapes="Imagem_x0020_289" width="549"/><?endif?></span></p>
+<p><b>Figuras 14-16. Adaptação de aplicação por meio de
 uma linguagem de script.</b></p>
-
-<p class=MsoNormal>Linguagens de script. Com essa abordagem, a aplicação
-fornece sua própria linguagem de programação (a &quot;linguagem de
-scripting&quot;) e ambiente de execução que o arquiteto usa para implementar
-complementos. Em essência, isso é um uso do estilo intérprete de<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch04.html"
-title="Chapter&nbsp;4.&nbsp;Designing Architectures"><b>Capítulo 4</b></a>.
+<p>Linguagens de script. Com essa abordagem, a aplicação
+fornece sua própria linguagem de programação (a "linguagem de
+scripting") e ambiente de execução que o arquiteto usa para implementar
+complementos. Em essência, isso é um uso do estilo intérprete de<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch04.html" title="Chapter 4. Designing Architectures"><b>Capítulo 4</b></a>.
 Add-ons, quando executados pelo interpretador, alteram o comportamento da
 aplicação. Linguagens de script geralmente fornecem construções específicas de
 domínio e funções embutidas que facilitam a implementação de complementos,
@@ -1808,24 +1483,17 @@ especialmente para usuários que não têm conhecimento em programação. Lingua
 de fórmulas de planilhas, sistemas macro e sistemas de programação por
 demonstração são essencialmente linguagens de script otimizadas para
 necessidades especializadas. O Microsoft Excel é um exemplo clássico de
-aplicação que oferece esse meio de extensão. A técnica é ilustrada em<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch14.html#application_adaptation_by_means_of_a_scr"
-title="Figure&nbsp;14-16.&nbsp;Application adaptation by means of a scripting language."><b>Figuras
+aplicação que oferece esse meio de extensão. A técnica é ilustrada em<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch14.html#application_adaptation_by_means_of_a_scr" title="Figure 14-16. Application adaptation by means of a scripting language."><b>Figuras
 14-16</b></a>.</p>
-
-<p class=MsoNormal>Interfaces de Eventos Com esta técnica — uma aplicação
-simples do estilo arquitetônico baseado em eventos de<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch04.html"
-title="Chapter&nbsp;4.&nbsp;Designing Architectures"><b>Capítulo 4</b></a>—o
+<p>Interfaces de Eventos Com esta técnica — uma aplicação
+simples do estilo arquitetônico baseado em eventos de<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch04.html" title="Chapter 4. Designing Architectures"><b>Capítulo 4</b></a>—o
 aplicativo original expõe duas interfaces distintas para desenvolvedores
 terceiros. A primeira é uma interface de evento recebida, especifica as
 mensagens que pode receber e sobre as quais pode agir; a segunda, uma interface
 de eventos de saída, que especifica as mensagens que gera. As mensagens são
 trocadas por meio de um mecanismo de eventos. Os add-ons alteram o
 comportamento da aplicação enviando mensagens para ela ou agindo sobre as
-mensagens que recebem dela. Como discutido em<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch05.html"
-title="Chapter&nbsp;5.&nbsp;Connectors"><b>Capítulo 5</b></a>, os mecanismos de
+mensagens que recebem dela. Como discutido em<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch05.html" title="Chapter 5. Connectors"><b>Capítulo 5</b></a>, os mecanismos de
 eventos geralmente fornecem uma funcionalidade de transmissão de mensagens, que
 envia uma mensagem para cada complemento anexado ao mecanismo de eventos. O
 mecanismo de eventos atua como um intermediário, encapsulando e localizando decisões
@@ -1833,49 +1501,35 @@ de ligação e comunicação de programas. Como resultado, essas decisões podem
 alteradas independentemente da aplicação original ou dos componentes
 adicionais. Isso contrasta fortemente com as outras técnicas, nas quais
 programas referenciam diretamente, se vinculam e usam as interfaces uns dos
-outros. A técnica é ilustrada em<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch14.html#an_event_architecture_used_to_support_ex"
-title="Figure&nbsp;14-17.&nbsp;An event architecture used to support extension."><b>Figuras
+outros. A técnica é ilustrada em<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch14.html#an_event_architecture_used_to_support_ex" title="Figure 14-17. An event architecture used to support extension."><b>Figuras
 14-17</b></a>.</p>
-
-<p class=MsoNormal><b>(Forte) Abordagens Baseadas em Arquitetura<o:p></o:p></b></p>
-
-<p class=MsoNormal>Se mudanças em um sistema forem necessárias que envolvam
+<p><b>(Forte) Abordagens Baseadas em Arquitetura</b></p>
+<p>Se mudanças em um sistema forem necessárias que envolvam
 mais do que apenas adicionar um novo módulo, é necessária uma abordagem mais
 rica para a adaptação do que a que as soluções focadas em interfaces acima
 oferecem. O núcleo de qualquer solução baseada em arquitetura, como discutimos,
 é um modelo arquitetônico explícito, fiel à implementação, que pode servir de
 base para o raciocínio sobre mudanças.</p>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+<p><span><!--[if gte vml 1]><v:shape
  id="Imagem_x0020_288" o:spid="_x0000_i1026" type="#_x0000_t75" alt="Uma arquitetura de eventos usada para suportar extensão."
  style='width:411.6pt;height:222.6pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap14-ptbr_arquivos/image017.png" o:title="Uma arquitetura de eventos usada para suportar extensão"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=549 height=297
-src="cap14-ptbr_arquivos/image017.png"
-alt="Uma arquitetura de eventos usada para suportar extensão." v:shapes="Imagem_x0020_288"><![endif]></span></p>
-
-<p class=MsoNormal><b>Figuras 14-17.&nbsp;Uma arquitetura de eventos usada para
+</v:shape><![endif]--><?if !vml?><img alt="Uma arquitetura de eventos usada para suportar extensão." border="0" height="297" src="cap14-ptbr_arquivos/image017.png" v:shapes="Imagem_x0020_288" width="549"/><?endif?></span></p>
+<p><b>Figuras 14-17. Uma arquitetura de eventos usada para
 suportar extensão.</b></p>
-
-<p class=MsoNormal>Simplesmente ter uma arquitetura explícita não é uma solução
+<p>Simplesmente ter uma arquitetura explícita não é uma solução
 mágica, claro. Dependências complexas entre elementos arquitetônicos e
 conectores inflexíveis podem dificultar qualquer problema de adaptação. Uso
-consistente de qualquer um dos estilos arquitetônicos de<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch04.html"
-title="Chapter&nbsp;4.&nbsp;Designing Architectures"><b>Capítulo 4</b></a>pode
+consistente de qualquer um dos estilos arquitetônicos de<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch04.html" title="Chapter 4. Designing Architectures"><b>Capítulo 4</b></a>pode
 eliminar algumas das dificuldades inerentes. No entanto, estilos personalizados
 mal concebidos que combinam estilos mais simples de forma complexa podem anular
 esses benefícios.</p>
-
-<p class=MsoNormal>A questão fundamental é<i>Ligações</i>. Na medida em que um
+<p>A questão fundamental é<i>Ligações</i>. Na medida em que um
 estilo arquitetônico permite a fácil fixação e descolamento de componentes uns
 dos outros, esse estilo facilita a adaptação. A ênfase consistente deste texto
 no uso de conectores decorre dos benefícios que conectores explícitos podem
 oferecer ao suportar tais anexos e descolamentos. A ampla gama de técnicas de
-conectores discutida em<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch05.html"
-title="Chapter&nbsp;5.&nbsp;Connectors"><b>Capítulo 5</b></a>No entanto, revela
+conectores discutida em<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch05.html" title="Chapter 5. Connectors"><b>Capítulo 5</b></a>No entanto, revela
 que nem todos os conectores apoiam igualmente a adaptação. Como uma chamada
 direta de procedimento é um tipo de conector, é obviamente possível que o
 interior de um componente esteja fortemente ligado (via um conector de chamada
@@ -1889,11 +1543,8 @@ componentes. No mínimo, isso significa falta de dependência das interfaces.
 tipos específicos de conectores pode alcançar essa independência, sendo que uma
 das funções do conector é facilitar a comunicação entre dois componentes
 enquanto os isola da dependência.</p>
-
-<p class=MsoNormal>Talvez o melhor exemplo desse tipo de conector e da
-independência fornecida seja o conector baseado em eventos discutido em<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch04.html"
-title="Chapter&nbsp;4.&nbsp;Designing Architectures"><b>Capítulo 4</b></a>em
+<p>Talvez o melhor exemplo desse tipo de conector e da
+independência fornecida seja o conector baseado em eventos discutido em<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch04.html" title="Chapter 4. Designing Architectures"><b>Capítulo 4</b></a>em
 conjunto com a invocação implícita dos estilos arquitetônicos. Os componentes
 enviam eventos para conectores que os encaminham para outros componentes. Os
 eventos são cápsulas de informação; o componente enviador pode não saber quais
@@ -1906,22 +1557,17 @@ encapsulados em MIME por toda uma aplicação distribuída; Como um componente
 receptor interpreta e processa a carga útil encapsulada é uma decisão local
 para esse componente. Garantir que a coleção de componentes e conectores
 coopere para alcançar os objetivos da aplicação é responsabilidade do arquiteto
-do sistema. Para exemplos detalhados desse tipo de arquitetura, veja<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch04.html"
-title="Chapter&nbsp;4.&nbsp;Designing Architectures"><b>Capítulo 4</b></a>,
+do sistema. Para exemplos detalhados desse tipo de arquitetura, veja<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch04.html" title="Chapter 4. Designing Architectures"><b>Capítulo 4</b></a>,
 incluindo a discussão sobre o estilo C2.</p>
-
-<p class=MsoNormal><b>Os Problemas Especiais da Adaptação Em Tempo Real e
-Autônoma<o:p></o:p></b></p>
-
-<p class=MsoNormal>Adaptar um sistema enquanto ele permanece em operação
+<p><b>Os Problemas Especiais da Adaptação Em Tempo Real e
+Autônoma</b></p>
+<p>Adaptar um sistema enquanto ele permanece em operação
 apresenta desafios especiais, complicando o processo de adaptação. Algumas
 situações exemplos em que essa complicação não pode ser evitada foram
 apresentadas no início do capítulo, e incluem aplicações cujo funcionamento
 contínuo é essencial para o sucesso de algum sistema maior, como softwares de
 controle em uma refinaria química em operação contínua.</p>
-
-<p class=MsoNormal>Adaptação autônoma significa que o envolvimento humano no
+<p>Adaptação autônoma significa que o envolvimento humano no
 processo de adaptação está ausente, ou pelo menos muito minimizado. A adaptação
 autônoma pode ser uma adição complicadora à adaptação em tempo real, como
 quando o sistema operacional continuamente está isolado do controle externo,
@@ -1929,29 +1575,25 @@ como na exploração planetária robótica. No entanto, tais circunstâncias
 extremas não são as únicas em que a adaptação autônoma pode ser necessária.
 Pode ser, por exemplo, que os requisitos de resposta rápida a falhas parciais
 do sistema ditem o uso de técnicas de adaptação autônomas.</p>
-
-<p class=MsoNormal>Alguns dos desafios da adaptação improvisada podem ser
+<p>Alguns dos desafios da adaptação improvisada podem ser
 vistos por analogias. Morar em uma casa que está passando por uma grande
 reforma às vezes é necessário e raramente agradável. O desconforto vem da
 tentativa de continuar a vida diária enquanto partes da arquitetura de serviço
 da qual dependemos — encanamento, eletricidade, aquecimento, segurança e assim
 por diante — estão apenas parcial ou intermitentemente disponíveis. A vida
 segue, mas não nos ritmos regulares ou com os confortos habituais.</p>
-
-<p class=MsoNormal>Um exemplo mais vívido e instrutivo é a cirurgia. O paciente
-corresponde ao sistema sendo &quot;adaptado&quot;. É claro que é essencial que,
+<p>Um exemplo mais vívido e instrutivo é a cirurgia. O paciente
+corresponde ao sistema sendo "adaptado". É claro que é essencial que,
 enquanto a adaptação está ocorrendo — o reparo de uma válvula cardíaca, por
 exemplo — o paciente seja mantido vivo. Os vários subsistemas do humano (devem)
 continuar funcionando mesmo com grandes interrupções. As diversas técnicas e
 tecnologias da cirurgia cardíaca, desde anestesia até bypass cardiopulmonar,
 são projetadas para manter o desempenho básico do sistema enquanto possibilitam
 uma grande reestruturação de um componente chave.</p>
-
-<p class=MsoNormal>As principais questões adicionais na adaptação improvisada
+<p>As principais questões adicionais na adaptação improvisada
 são as seguintes:</p>
-
-<ul style='margin-top:0cm' type=disc>
- <li class=MsoNormal style='mso-list:l8 level1 lfo397;tab-stops:list 36.0pt'><i>Estratégia
+<ul style="margin-top:0cm" type="disc">
+<li><i>Estratégia
      de serviço: </i>Enquanto a adaptação está em andamento, o sistema
      continuará com um serviço temporário para substituir totalmente o que está
      sendo alterado? Continuará com um nível de serviço reduzido? Um serviço
@@ -1961,14 +1603,14 @@ são as seguintes:</p>
      pode ser degradado para um nível inferior de funcionalidade (como usar uma
      pia do banheiro para lavar louça enquanto a cozinha é reformada, na
      analogia da reforma residencial).</li>
- <li class=MsoNormal style='mso-list:l8 level1 lfo397;tab-stops:list 36.0pt'><i>Tempo:
+<li><i>Tempo:
      </i>Identificar as ocasiões em que as partes sujeitas do sistema podem ser
      alteradas. Dependendo da estratégia de serviço adotada, pode-se
      identificar a condição sob a qual a adaptação pode prosseguir. A
      substituição de um componente só pode ser permitida, por exemplo, quando
      ele terminou de atender todas as solicitações pendentes e não iniciou
      nenhuma solicitação em outros componentes da aplicação.</li>
- <li class=MsoNormal style='mso-list:l8 level1 lfo397;tab-stops:list 36.0pt'><i>Restauração
+<li><i>Restauração
      ou transferência de estado: </i>Se um componente for substituído, o
      componente substituto precisa saber parte ou toda a informação do estado
      que era mantida por seu antecessor? Os primeiros cálculos feitos pelo novo
@@ -1976,18 +1618,14 @@ são as seguintes:</p>
      e armazenadas, caso em que esse estado teria que ser restaurado no momento
      em que o novo componente é iniciado.</li>
 </ul>
-
-<p class=MsoNormal>Um exemplo pode ajudar a esclarecer esses conceitos. (Ao
+<p>Um exemplo pode ajudar a esclarecer esses conceitos. (Ao
 longo desta seção, assumimos, em consonância com as partes anteriores deste
 capítulo, que a menor unidade de mudança é um componente e que a identidade e
 os limites dos componentes são mantidos na implementação.)</p>
-
-<p class=MsoNormal>Considere o caso de um processador que controla a abertura e
+<p>Considere o caso de um processador que controla a abertura e
 o fechamento de uma válvula em uma refinaria química com base em comandos,
 sensores de temperatura e medidores de fluxo. Tal processador pode ser
-projetado no padrão de sentido-computação-controle discutido em<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch04.html"
-title="Chapter&nbsp;4.&nbsp;Designing Architectures"><b>Capítulo 4</b></a>.
+projetado no padrão de sentido-computação-controle discutido em<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch04.html" title="Chapter 4. Designing Architectures"><b>Capítulo 4</b></a>.
 Pode ser necessário substituir um dos componentes de controle a bordo, devido à
 identificação de um erro em um de seus algoritmos. Uma estratégia plausível de
 adaptação é, em um momento arbitrário, cessar o processamento de quaisquer
@@ -1999,15 +1637,14 @@ funcionará depende, por exemplo, se quaisquer entradas perdidas durante a troca
 foram críticas para a segurança da refinaria, ou se deixar a válvula aberta em
 sua última posição poderia colocar a refinaria em risco antes que o novo
 componente estivesse instalado. Por exemplo, se a válvula ficou na
-&quot;posição totalmente ligada&quot; durante a modernização, e se a
+"posição totalmente ligada" durante a modernização, e se a
 modernização demorou muito para acontecer, alguma reação a jusante na refinaria
 pode ser colocada em risco. Uma estratégia melhor provavelmente envolveria
 bufferizar todas as entradas para o controlador da válvula para que, quando o
 novo componente entrasse em operação, ele garantisse que todos os valores
 recebidos fossem processados e, em vez de deixar a válvula na última
 configuração, colocá-la em uma posição segura.</p>
-
-<p class=MsoNormal>A estratégia de serviço adequada para este exemplo
+<p>A estratégia de serviço adequada para este exemplo
 provavelmente seria determinada em consulta com os engenheiros químicos da
 planta. O tempo que o processador de controle poderia estar ocupado com a
 adaptação poderia ser determinado pelas propriedades dos processos químicos na
@@ -2015,10 +1652,8 @@ refinaria. Se a válvula for altamente crítica, pode ser necessário instalar u
 controlador temporário. O momento da adaptação poderia ser determinado pelas
 propriedades da planta, ou talvez pelo estado do próprio valor (talvez a adaptação
 ocorresse apenas quando a válvula está fechada).</p>
-
-<p class=MsoNormal><b>Determinando as Condições para Efetuar uma Mudança<o:p></o:p></b></p>
-
-<p class=MsoNormal>A determinação da condição precisa sob a qual é apropriado
+<p><b>Determinando as Condições para Efetuar uma Mudança</b></p>
+<p>A determinação da condição precisa sob a qual é apropriado
 substituir um componente pode ser função tanto do sistema quanto da
 arquitetura. O sistema, como ilustrado no exemplo da refinaria, pode ditar que
 a mudança ocorra apenas sob certas condições externas. Alternativamente, a
@@ -2031,8 +1666,7 @@ para o solo pode estar nessa categoria. Os dados meteorológicos são contínuos
 são um fenômeno que muda lentamente (pelo menos em relação ao processamento
 computacional), então simplesmente perder parte dos dados de telemetria
 provavelmente não fará diferença.</p>
-
-<p class=MsoNormal>Algumas aplicações, no entanto, exigirão uma análise muito
+<p>Algumas aplicações, no entanto, exigirão uma análise muito
 mais conservadora. O princípio é que é seguro remover/substituir um componente
 apenas quando essa mudança não afetar negativamente o funcionamento do restante
 da aplicação. Embora identificar com precisão todas essas condições possa ser
@@ -2050,8 +1684,7 @@ componentes completem sua tarefa e retornem o controle a <i>C</i>. Nesse caso, <
 (conceitual) estejam completas. Vários tons de quietude são definidos na barra
 lateral, baseando-se no trabalho dos professores Jeff Kramer e Jeff Magee, que
 foram pioneiros nessa área.</p>
-
-<p class=MsoNormal>Se uma aplicação é implementada com conectores poderosos e
+<p>Se uma aplicação é implementada com conectores poderosos e
 explícitos, como barramentos de mensagens, então determinar se um componente
 está engajado na comunicação é fácil — os conectores podem ser usados para
 fazer essa determinação. Saber se um componente está envolvido em uma transação
@@ -2059,32 +1692,27 @@ multiparte, no entanto, requer uma análise mais profunda e terá que considerar
 as características comportamentais da arquitetura como um todo. Quanto mais
 forte for a noção de quiescência exigida, mais complexa será a determinação de
 quando ela é alcançada.</p>
-
-<p class=MsoNormal><b>Quiescência, segundo Kramer e Magee<o:p></o:p></b></p>
-
-<p class=MsoNormal>Um nó no estado ativo pode iniciar e responder a transações.
+<p><b>Quiescência, segundo Kramer e Magee</b></p>
+<p>Um nó no estado ativo pode iniciar e responder a transações.
 O estado identificado como necessário para a reconfiguração é o estado passivo,
 no qual um nó deve responder a transações, mas ele não está atualmente
 envolvido em uma transação que iniciou, e não iniciará novas transações. Esse
 estado passivo é definido de modo a permitir que nós conectados progridam para
 um estado passivo ao completar transações pendentes. Além disso, contribui para
 a consistência do sistema ao concluir transações.</p>
-
-<p class=MsoNormal>Para consistência durante a mudança, exigimos uma
+<p>Para consistência durante a mudança, exigimos uma
 propriedade mais forte, que o nó não esteja dentro de uma transação e não
 receba nem inicie novas transações, ou seja, todas as transações pendentes
 estão concluídas e nenhuma nova será iniciada. A quiescência de mudança de um
 nó é definida como aquele estado em que o nó é passivo e não há transações
 pendentes às quais ele precise responder. Tal estado depende não apenas do
-próprio nó, mas dos nós conectados. De &quot;Gerenciamento de Mudanças de
-Sistemas Distribuídos&quot; (Kramer e Magee 1988) © 1988 ACM, Inc. Reimpresso
+próprio nó, mas dos nós conectados. De "Gerenciamento de Mudanças de
+Sistemas Distribuídos" (Kramer e Magee 1988) © 1988 ACM, Inc. Reimpresso
 com permissão.</p>
-
-<p class=MsoNormal><b>Gestão do Estado<o:p></o:p></b></p>
-
-<p class=MsoNormal>O estado <i>de um componente </i>é o conjunto de valores que
+<p><b>Gestão do Estado</b></p>
+<p>O estado <i>de um componente </i>é o conjunto de valores que
 ele mantém internamente. Quando um componente <i>A </i>é substituído por um
-componente <i>B</i>, surge a questão de qual<span style='mso-spacerun:yes'> 
+componente <i>B</i>, surge a questão de qual<span> 
 </span>estado <i>B</i> deve ser inicializado ao ser inicializado. A situação
 mais fácil é aquela em que não é necessária transferência ou recriação do
 estado correspondente. Por exemplo, muitos filtros Unix não mantêm estado; a
@@ -2098,10 +1726,8 @@ para um terceiro; Quando o componente substituto entra em operação, sua
 primeira ação é se inicializar usando o terceiro componente. Essa estratégia, é
 claro, pressupõe que os componentes foram projetados para substituição — uma
 condição que nem sempre é verdadeira.</p>
-
-<p class=MsoNormal><b>Dicas Práticas<o:p></o:p></b></p>
-
-<p class=MsoNormal>Embora os princípios e questões discutidos acima se apliquem
+<p><b>Dicas Práticas</b></p>
+<p>Embora os princípios e questões discutidos acima se apliquem
 às arquiteturas em geral, existem algumas práticas e abordagens que
 definitivamente facilitam os problemas práticos de apoiar a adaptação em tempo
 real. Os principais são o uso de conectores explícitos, discretos e de primeira
@@ -2112,13 +1738,11 @@ uma aplicação que está continuamente em mudança. Proxies e caches podem ser
 adicionados e excluídos; novas tecnologias de servidor web implementadas, novos
 navegadores instalados. Tudo funciona porque as interações entre os vários
 componentes são mensagens discretas e o protocolo central (HTTP/1.1) exige que
-as interações sejam livres de contexto (&quot;sem estado&quot; no jargão da
+as interações sejam livres de contexto ("sem estado" no jargão da
 Web) — um servidor não precisa manter um histórico de interações com um cliente
 para saber como responder a uma nova solicitação.</p>
-
-<p class=MsoNormal><b>Mudança Autônoma<o:p></o:p></b></p>
-
-<p class=MsoNormal>Mudança autônoma é adaptação realizada sem controle externo.
+<p><b>Mudança Autônoma</b></p>
+<p>Mudança autônoma é adaptação realizada sem controle externo.
 O caráter distintivo da mudança autônoma não é o desafio de trabalhar sem
 conexão, por exemplo, à Internet, mas sim de realizar o processo de mudança sem
 envolver os humanos. O desejo de evitar envolver humanos é facilmente motivado:
@@ -2130,8 +1754,7 @@ semelhantes precisar ser alterado, mas cada um com pequenas variações, uma
 abordagem autônoma pode funcionar não só mais rápido, mas com mais precisão, já
 que tais tarefas repetitivas muitas vezes são mal realizadas pelas pessoas — as
 tarefas são simplesmente entediantes demais para manter a atenção.</p>
-
-<p class=MsoNormal>As dificuldades envolvidas em alcançar mudanças autônomas
+<p>As dificuldades envolvidas em alcançar mudanças autônomas
 são igualmente claras: todas as atividades discutidas acima devem ser
 completamente realizadas como processos executáveis, desde a observação de
 dados, análise, planejamento, implantação e modificação do sistema em tempo de
@@ -2139,255 +1762,217 @@ execução. Além disso, todos esses processos executáveis, e todas as informa�
 envolvidas em sua execução, devem residir no sistema autônomo. O modelo
 arquitetônico do sistema é predominante nessa informação. Note que, com isso a
 bordo, e mantido fiel à implementação, o sistema continua se autodescrevendo.</p>
-
-<p class=MsoNormal>Na prática, sistemas autoadaptativos hoje são limitados a
+<p>Na prática, sistemas autoadaptativos hoje são limitados a
 situações bastante simplistas para as quais um conjunto de políticas de
 adaptação baseadas em regras pode ser formulado. Como já foi discutido, isso é
 apropriado para sistemas onde os tipos de necessidades de adaptação podem ser
 antecipados e codificados em termos simples. Expandir a gama de sistemas e
 tipos de mudança para os quais soluções autônomas podem ser desenvolvidas é uma
 área de pesquisa ativa.</p>
-
-<p class=MsoNormal><b>&quot;Computação Autonômica&quot;, o Grande Desafio da
-IBM para a Indústria de TI<o:p></o:p></b></p>
-
-<p class=MsoNormal>Segundo a IBM, &quot;Computação autonômica é uma abordagem
+<p><b>"Computação Autonômica", o Grande Desafio da
+IBM para a Indústria de TI</b></p>
+<p>Segundo a IBM, "Computação autonômica é uma abordagem
 para sistemas de computação autogerenciados com o mínimo de interferência
 humana. O termo deriva do sistema nervoso autônomo do corpo, que controla
 funções-chave sem consciência ou envolvimento. A computação autônoma é uma área
 emergente de estudo e um Grande Desafio para toda a comunidade de I/T enfrentar
-de forma séria.&quot;</p>
-
-<p class=MsoNormal>O manifesto inicial de computação autônoma (IBM 2001),
+de forma séria."</p>
+<p>O manifesto inicial de computação autônoma (IBM 2001),
 conforme emitido pela IBM, focou atenção na instalação e gestão da
 infraestrutura de TI, como servidores corporativos e redes, e seu uso em
 processos de negócios. De acordo com este manifesto, existem pelo menos oito
 características-chave dos sistemas autônomos:</p>
-
-<ol style='margin-top:0cm' start=1 type=1>
- <li class=MsoNormal style='mso-list:l159 level1 lfo398;tab-stops:list 36.0pt'>&quot;Para
+<ol start="1" style="margin-top:0cm" type="1">
+<li>"Para
      ser autônomo, um sistema computacional precisa 'se conhecer' — e
      compreender componentes que também possuam uma identidade de
-     sistema.&quot;</li>
- <li class=MsoNormal style='mso-list:l159 level1 lfo398;tab-stops:list 36.0pt'>&quot;Um
+     sistema."</li>
+<li>"Um
      sistema de computação autônoma deve se configurar e reconfigurar sob
-     condições variáveis e imprevisíveis.&quot;</li>
- <li class=MsoNormal style='mso-list:l159 level1 lfo398;tab-stops:list 36.0pt'>&quot;Um
+     condições variáveis e imprevisíveis."</li>
+<li>"Um
      sistema de computação autônoma nunca se contenta com o status quo — ele
-     sempre busca maneiras de otimizar seu funcionamento.&quot;</li>
- <li class=MsoNormal style='mso-list:l159 level1 lfo398;tab-stops:list 36.0pt'>&quot;Um
+     sempre busca maneiras de otimizar seu funcionamento."</li>
+<li>"Um
      sistema de computação autônoma deve realizar algo parecido com cura — ele
      deve ser capaz de se recuperar de eventos rotineiros e extraordinários que
-     possam causar falhas em algumas de suas partes.&quot;</li>
- <li class=MsoNormal style='mso-list:l159 level1 lfo398;tab-stops:list 36.0pt'>&quot;Um
+     possam causar falhas em algumas de suas partes."</li>
+<li>"Um
      mundo virtual não é menos perigoso que o físico, então um sistema de
-     computação autônoma deve ser especialista em autoproteção.&quot;</li>
- <li class=MsoNormal style='mso-list:l159 level1 lfo398;tab-stops:list 36.0pt'>&quot;Um
+     computação autônoma deve ser especialista em autoproteção."</li>
+<li>"Um
      sistema de computação autônoma conhece seu ambiente e o contexto em torno
-     de sua atividade, e age de acordo.&quot;</li>
- <li class=MsoNormal style='mso-list:l159 level1 lfo398;tab-stops:list 36.0pt'>&quot;Um
+     de sua atividade, e age de acordo."</li>
+<li>"Um
      sistema de computação autônoma não pode existir em um ambiente
-     hermético.&quot;</li>
- <li class=MsoNormal style='mso-list:l159 level1 lfo398;tab-stops:list 36.0pt'>&quot;Talvez
+     hermético."</li>
+<li>"Talvez
      o mais crítico para o usuário seja que um sistema de computação autônoma
      antecipará os recursos otimizados necessários enquanto mantém sua
-     complexidade oculta.&quot;</li>
+     complexidade oculta."</li>
 </ol>
-
-<p class=MsoNormal>–IBM 2001</p>
-
-<p class=MsoNormal>Claramente, a visão da IBM para computação autonômica é
+<p>–IBM 2001</p>
+<p>Claramente, a visão da IBM para computação autonômica é
 consistente com a abordagem baseada em arquitetura para adaptação articulada
 neste capítulo. De fato, a primeira característica listada acima é
 essencialmente uma reformulação da exigência de manter um modelo integrado da
 arquitetura de um sistema, conforme discutido no corpo principal do texto.</p>
-
-<p class=MsoNormal><b>Referências</b>: (IBM 2002; Kephart e Xadrez 2003);
+<p><b>Referências</b>: (IBM 2002; Kephart e Xadrez 2003);
 Conferência de Computação Autônoma www.autonomic-conference.org/.</p>
-
-<p class=MsoNormal>ASSUNTO FINAL</p>
-
-<p class=MsoNormal>Não há dúvida de que as aplicações serão adaptadas e
+<p>ASSUNTO FINAL</p>
+<p>Não há dúvida de que as aplicações serão adaptadas e
 alteradas ao longo de sua vida útil. A verdadeira questão é quão caro e difícil
-será efetuar essas mudanças. Embora &quot;projetar para a mudança&quot; e o uso
+será efetuar essas mudanças. Embora "projetar para a mudança" e o uso
 de encapsulamento sejam princípios importantes para auxiliar na mudança,
 mecanismos muito mais poderosos e capazes são necessários para atender às
 necessidades contemporâneas de adaptação. Este capítulo apresentou esses
 mecanismos:</p>
-
-<ul style='margin-top:0cm' type=disc>
- <li class=MsoNormal style='mso-list:l94 level1 lfo399;tab-stops:list 36.0pt'>Uma
+<ul style="margin-top:0cm" type="disc">
+<li>Uma
      estrutura conceitual para governar todo o processo de adaptação.</li>
- <li class=MsoNormal style='mso-list:l94 level1 lfo399;tab-stops:list 36.0pt'>Estilos
+<li>Estilos
      arquitetônicos que auxiliam na acomodação de mudanças em grande escala do
      sistema.</li>
- <li class=MsoNormal style='mso-list:l94 level1 lfo399;tab-stops:list 36.0pt'>Técnicas
+<li>Técnicas
      específicas para auxiliar nas principais tarefas de adaptação:
      monitoramento, análise, planejamento e efeito.</li>
 </ul>
-
-<p class=MsoNormal>Se a arquitetura descritiva de um sistema e sua arquitetura
+<p>Se a arquitetura descritiva de um sistema e sua arquitetura
 prescritiva forem consistentes, então a adaptação pode ser orquestrada em torno
 de mudanças no modelo arquitetônico. Essa abordagem, além de fornecer as
 ferramentas intelectuais para gerenciar a adaptação comum, abre a porta para
 novos tipos de evolução de aplicações, como quando o modelo arquitetônico é
 implantado com a aplicação e os processos de adaptação na máquina de destino
 utilizam o modelo para determinar e realizar mudanças.</p>
-
-<p class=MsoNormal>Este capítulo conclui uma sequência de três capítulos sobre
-o projeto de sistemas para propriedades não funcionais.<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch12.html"
-title="Chapter&nbsp;12.&nbsp;Designing for Non-Functional Properties"><b>Capítulo
-12</b></a>introduziu os conceitos principais e abordou uma variedade de NFPs.<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch13.html"
-title="Chapter&nbsp;13.&nbsp;Security and Trust"><b>Capítulo 13</b></a>aprofundou
+<p>Este capítulo conclui uma sequência de três capítulos sobre
+o projeto de sistemas para propriedades não funcionais.<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch12.html" title="Chapter 12. Designing for Non-Functional Properties"><b>Capítulo
+12</b></a>introduziu os conceitos principais e abordou uma variedade de NFPs.<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch13.html" title="Chapter 13. Security and Trust"><b>Capítulo 13</b></a>aprofundou
 as NFPs de segurança e confiança; este capítulo examinou o PFN da
 adaptabilidade. O próximo capítulo retorna a um tema introduzido logo no
 primeiro capítulo do texto: famílias de programas. Com todos os diversos
 elementos do desenvolvimento baseado em arquitetura apresentados nos capítulos
 intermediários, exploramos em profundidade como o desenvolvimento econômico de
 um conjunto relacionado de aplicações pode ser alcançado.</p>
-
-<p class=MsoNormal><b>O Caso de Negócios<o:p></o:p></b></p>
-
-<p class=MsoNormal>Adaptação é o meio de preservar e aproveitar o investimento
+<p><b>O Caso de Negócios</b></p>
+<p>Adaptação é o meio de preservar e aproveitar o investimento
 afundado em software. Não se adaptar é abandonar o investimento; O desafio é a
 adaptação econômica.</p>
-
-<p class=MsoNormal>Uma abordagem baseada em arquitetura para adaptação oferece:</p>
-
-<ul style='margin-top:0cm' type=disc>
- <li class=MsoNormal style='mso-list:l128 level1 lfo400;tab-stops:list 36.0pt'>Novas
+<p>Uma abordagem baseada em arquitetura para adaptação oferece:</p>
+<ul style="margin-top:0cm" type="disc">
+<li>Novas
      oportunidades para produtos/aplicações.</li>
- <li class=MsoNormal style='mso-list:l128 level1 lfo400;tab-stops:list 36.0pt'>Melhores
+<li>Melhores
      oportunidades para manter produtos implantados.</li>
- <li class=MsoNormal style='mso-list:l128 level1 lfo400;tab-stops:list 36.0pt'>Melhores
+<li>Melhores
      oportunidades para responder a pedidos de aprimoramento de clientes.</li>
- <li class=MsoNormal style='mso-list:l128 level1 lfo400;tab-stops:list 36.0pt'>Menos
+<li>Menos
      tempo de inatividade.</li>
- <li class=MsoNormal style='mso-list:l128 level1 lfo400;tab-stops:list 36.0pt'>Novas
+<li>Novas
      oportunidades para aprimoramento por terceiros, mantendo o controle da
      propriedade intelectual.</li>
 </ul>
-
-<p class=MsoNormal>O conceito por trás da última entrada com tópicos acima é
+<p>O conceito por trás da última entrada com tópicos acima é
 expor partes da arquitetura que permitem que terceiros adicionem valor por meio
 de suas extensões proprietárias, mas sem expor o interior dos componentes, ou
 mesmo permitir que terceiros tomem conhecimento da existência de grandes
 porções da arquitetura primária. Essa estratégia parece ser bem-sucedida, por
 exemplo, em aplicações comerciais de processamento de imagens.</p>
-
-<p class=MsoNormal>Um risco de apoiar a adaptação é o abuso baseado na
+<p>Um risco de apoiar a adaptação é o abuso baseado na
 percepção de facilidade. Ou seja, se o marketing, por exemplo, for levado a
 acreditar que a organização pode apoiar efetivamente a evolução do produto com
 facilidade, então eles podem ser menos propensos a analisar cuidadosamente os
 pedidos de novos clientes ou a agrupar pedidos de mudanças em pacotes
 significativos.</p>
-
-<p class=MsoNormal>PERGUNTAS DE REVISÃO</p>
-
-<ol style='margin-top:0cm' start=1 type=1>
- <li class=MsoNormal style='mso-list:l140 level1 lfo401;tab-stops:list 36.0pt'>Quais
+<p>PERGUNTAS DE REVISÃO</p>
+<ol start="1" style="margin-top:0cm" type="1">
+<li>Quais
      são as causas ou motivações fundamentais para a adaptação de software?</li>
- <li class=MsoNormal style='mso-list:l140 level1 lfo401;tab-stops:list 36.0pt'>Quais
+<li>Quais
      são as principais atividades da adaptação de software?</li>
- <li class=MsoNormal style='mso-list:l140 level1 lfo401;tab-stops:list 36.0pt'>Para
+<li>Para
      cada uma das principais atividades de adaptação, descreva uma técnica que
      auxilie na realização dessa atividade.</li>
- <li class=MsoNormal style='mso-list:l140 level1 lfo401;tab-stops:list 36.0pt'>Como
+<li>Como
      arquiteturas podem ser projetadas para facilitar a tarefa de extensão de
      terceiros?</li>
- <li class=MsoNormal style='mso-list:l140 level1 lfo401;tab-stops:list 36.0pt'>Como
+<li>Como
      funcionam as arquiteturas de plug-in?</li>
- <li class=MsoNormal style='mso-list:l140 level1 lfo401;tab-stops:list 36.0pt'>Por
+<li>Por
      que pode ser necessário recuar para a substituição em tempo de execução de
      um componente?</li>
 </ol>
-
-<p class=MsoNormal>EXERCÍCIOS</p>
-
-<ol style='margin-top:0cm' start=1 type=1>
- <li class=MsoNormal style='mso-list:l57 level1 lfo402;tab-stops:list 36.0pt'>Considere
-     o problema de modificar vários dos projetos de módulos lunares de<a
-     href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch04.html"
-     title="Chapter&nbsp;4.&nbsp;Designing Architectures"><b>Capítulo 4</b></a>para
+<p>EXERCÍCIOS</p>
+<ol start="1" style="margin-top:0cm" type="1">
+<li>Considere
+     o problema de modificar vários dos projetos de módulos lunares de<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch04.html" title="Chapter 4. Designing Architectures"><b>Capítulo 4</b></a>para
      servir como módulo de pouso marciano. As mudanças necessárias seriam
      limitadas a componentes ou conectores estariam envolvidos?</li>
- <li class=MsoNormal style='mso-list:l57 level1 lfo402;tab-stops:list 36.0pt'>Considere
-     o problema de adaptar os projetos de módulos lunares de<a
-     href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch04.html"
-     title="Chapter&nbsp;4.&nbsp;Designing Architectures"><b>Capítulo 4</b></a>para
+<li>Considere
+     o problema de adaptar os projetos de módulos lunares de<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch04.html" title="Chapter 4. Designing Architectures"><b>Capítulo 4</b></a>para
      trabalhar por controle remoto. Ou seja, em vez de o módulo de pouso ter um
      piloto a bordo, a nave é não tripulada e um piloto na Terra deve controlar
      a descida. Que tipo de mudanças seriam necessárias nos componentes? Para
      os conectores?</li>
- <li class=MsoNormal style='mso-list:l57 level1 lfo402;tab-stops:list 36.0pt'>Considere
+<li>Considere
      os desafios enfrentados na adaptação de um veículo de exploração
      planetária, como a missão Cassini a Saturno. Qual seria um estilo
      arquitetônico adequado para apoiar a adaptação do sistema em voo? Você
      teria um kernel que não pode ser atualizado? Por que ou por que não?</li>
- <li class=MsoNormal style='mso-list:l57 level1 lfo402;tab-stops:list 36.0pt'>Qual
+<li>Qual
      o grau de quietud necessário na sua resposta à pergunta 3 ao realizar uma
      atualização? Até que ponto sua resposta depende do tipo de atualização (ou
      seja, do grau de mudança envolvida)?</li>
- <li class=MsoNormal style='mso-list:l57 level1 lfo402;tab-stops:list 36.0pt'>Quais
+<li>Quais
      são as diferenças (se houver) entre arquiteturas de software que suportam
      adaptação dinâmica e arquiteturas tolerantes a falhas? Para quais
      circunstâncias essas abordagens são adequadas?</li>
- <li class=MsoNormal style='mso-list:l57 level1 lfo402;tab-stops:list 36.0pt'>Suponha
+<li>Suponha
      que você tenha otimizado um conector na implementação de um sistema por
      razões de desempenho e depois precise modificar a arquitetura em algum
      momento. Como você abordaria a adaptação desse sistema se a adaptação
      fosse realizada offline? E se a adaptação precisar ser realizada
      dinamicamente?</li>
- <li class=MsoNormal style='mso-list:l57 level1 lfo402;tab-stops:list 36.0pt'>Analisar
-     as arquiteturas robóticas de<a
-     href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch11.html"
-     title="Chapter&nbsp;11.&nbsp;Applied Architectures and Styles"><b>Capítulo
+<li>Analisar
+     as arquiteturas robóticas de<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch11.html" title="Chapter 11. Applied Architectures and Styles"><b>Capítulo
      11</b></a>com relação à sua capacidade de acomodar efetivamente mudanças
      como exigir que o robô (a) realize uma pequena variação em uma tarefa
      existente, e (b) utilize uma nova ferramenta, como um novo braço robótico,
      para realizar uma tarefa totalmente nova.</li>
- <li class=MsoNormal style='mso-list:l57 level1 lfo402;tab-stops:list 36.0pt'>Mudança
+<li>Mudança
      pré-planejada é realmente um exemplo de arquitetura dinâmica? Por que ou
      por que não? Qual deve ser o teste decisivo?</li>
- <li class=MsoNormal style='mso-list:l57 level1 lfo402;tab-stops:list 36.0pt'>(Pergunta
+<li>(Pergunta
      de pesquisa) Qual é o papel da adaptação dinâmica (ou simplesmente da
-     &quot;adaptação&quot;) no contexto das famílias de produtos de software?
+     "adaptação") no contexto das famílias de produtos de software?
      Quando a adaptação de um membro de uma família deve ser considerada a
      criação de um novo produto?</li>
- <li class=MsoNormal style='mso-list:l57 level1 lfo402;tab-stops:list 36.0pt'>(Pergunta
+<li>(Pergunta
      de pesquisa) O design de uma aplicação para facilitar a adaptação entra em
      conflito com a capacidade de garantir que qualquer instância da aplicação
      execute sua tarefa pretendida? Em geral, a facilidade de adaptação entra
      em conflito com a capacidade de análise?</li>
 </ol>
-
-<p class=MsoNormal>LEITURA ADICIONAL</p>
-
-<p class=MsoNormal>Como as mudanças acompanharam o desenvolvimento de software
+<p>LEITURA ADICIONAL</p>
+<p>Como as mudanças acompanharam o desenvolvimento de software
 desde o início da área, não falta literatura discutindo como adaptar software.
-De fato, todo o problema do &quot;Bug do Milênio&quot;/Y2K foi um esforço
+De fato, todo o problema do "Bug do Milênio"/Y2K foi um esforço
 massivo de adaptação de software. Nesse caso, claro, a mudança que estava sendo
 efetuada era extremamente restrita. Infelizmente, para alguns sistemas do Y2K,
 mudanças na arquitetura foram necessárias, já que a falha de dois dígitos fazia
 parte implicitamente do projeto desses sistemas.</p>
-
-<p class=MsoNormal>O livro de Stewart Brand sobre mudanças em arquiteturas
+<p>O livro de Stewart Brand sobre mudanças em arquiteturas
 físicas (Brand 1994) vale muito a pena ser lido extensamente, pois contém
 inúmeras percepções sobre adaptação que têm correspondências na adaptação de
 software. Se nada mais, você vai descobrir por que ama alguns prédios e odeia
 outros.</p>
-
-<p class=MsoNormal>Alguns dos primeiros trabalhos em abordagens arquitetônicas
+<p>Alguns dos primeiros trabalhos em abordagens arquitetônicas
 para adaptação foram realizados no Imperial College por Jeff Kramer e Jeff
 Magee como parte do Regis (Magee, Dulay e Kramer 1994; Ng, Kramer e Magee 1996)
 e projetos cônicos (Kramer e Magee 1990). Trabalhos sucessivos com Darwin
 continuam esse tema (Magee e Kramer 1996).</p>
-
-<p class=MsoNormal>Peyman Oreizy e colegas são responsáveis por muitos dos
+<p>Peyman Oreizy e colegas são responsáveis por muitos dos
 principais insights apresentados neste capítulo, incluindo o modelo conceitual
-original para a gestão de sistemas autoadaptativos (Oreizy, Medvidovi&#263; e
+original para a gestão de sistemas autoadaptativos (Oreizy, Medvidović e
 Taylor 1998; Oreizy et al. 1999) e a caracterização dos estilos arquitetônicos
 que promovem a adaptabilidade apresentada na Seção 14.3.2. O primeiro desses
 dois artigos recebeu um prêmio em 2008, quando foi reconhecido como o artigo
@@ -2395,49 +1980,34 @@ mais influente da Conferência Internacional de Engenharia de Software de 1998.
 Como parte do prêmio, os autores foram convidados a apresentar um novo artigo
 sobre o tema, analisando retrospectivamente o trabalho da última década em
 adaptação de software e propondo desafios para o trabalho ainda a ser feito
-(Oriezy, Medvidovi&#263; e Taylor 2008). Trabalhos recentes adicionais incluem
+(Oriezy, Medvidović e Taylor 2008). Trabalhos recentes adicionais incluem
 abordagens baseadas em sistemas baseados em conhecimento (Georgas e Taylor
 2004; Georgas, van der Hoek e Taylor 2005). Gomaa explorou o uso de padrões
 para facilitar a reconfiguração em (Gomaa e Hussein 2004) e aborda a questão da
 quiescência.</p>
-
-<p class=MsoNormal>Muitas outras referências estão disponíveis nos anais dos
+<p>Muitas outras referências estão disponíveis nos anais dos
 principais workshops da área, que incluem o Workshop sobre Engenharia de
 Software para Sistemas Adaptativos e Autogerenciados e o Workshop sobre
 Arquitetura de Sistemas Confiáveis.</p>
-
-<p class=MsoNormal><o:p>&nbsp;</o:p></p>
-
-<div class=MsoNormal align=center style='text-align:center'>
-
-<hr size=2 width=488 style='width:366.3pt' align=center>
-
+<p></p>
+<div align="center" style="text-align:center">
+<hr align="center" size="2" style="width:366.3pt" width="488"/>
 </div>
-
-<p class=MsoNormal><a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch14.html#CHP-14-FN-1"><b><sup>[18]
+<p><a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch14.html#CHP-14-FN-1"><b><sup>[18]
 </sup></b></a>Estritamente falando, qualquer navegador que suporte JavaScript é
 dinamicamente adaptável. Sempre que o JavaScript é baixado de um site e
 executado no navegador, o usuário está aproveitando a extensibilidade dinâmica.
 A maioria dos navegadores contemporâneos é tão boa nisso que a experiência é
 completamente transparente para o usuário.</p>
-
-<p class=MsoNormal><a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch14.html#CHP-14-FN-2"><b><sup>[19]</sup></b></a>Camadas,
-usadas por Brand e mostradas em<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch14.html#shearing_layers_of_change_open_square_fr"
-title="Figure&nbsp;14-1.&nbsp;Shearing layers of change [from Stewart Brand's How Buildings Learn (Brand 1994)]"><b>Figura
+<p><a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch14.html#CHP-14-FN-2"><b><sup>[19]</sup></b></a>Camadas,
+usadas por Brand e mostradas em<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch14.html#shearing_layers_of_change_open_square_fr" title="Figure 14-1. Shearing layers of change [from Stewart Brand's How Buildings Learn (Brand 1994)]"><b>Figura
 14-1</b></a>não correspondem exatamente às camadas usadas em software. Em
 particular, a justaposição relativa de camadas em um sistema de software, como
-encontrada no estilo em camadas de<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch04.html"
-title="Chapter&nbsp;4.&nbsp;Designing Architectures"><b>Capítulo 4</b></a>,
+encontrada no estilo em camadas de<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch04.html" title="Chapter 4. Designing Architectures"><b>Capítulo 4</b></a>,
 difere da ordem das camadas de cisalhamento. Como mostrado neste diagrama, por
 exemplo, a camada estrutural relativamente imutável é adjacente à pele
 relativamente mutável.</p>
-
-<p class=MsoNormal><o:p>&nbsp;</o:p></p>
-
+<p></p>
 </div>
 </body>
 </html>

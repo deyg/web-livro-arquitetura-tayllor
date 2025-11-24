@@ -1,32 +1,27 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>cap01-ptbr</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
+<meta charset="utf-8"/>
+<title>cap01-ptbr</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="styles.css" rel="stylesheet"/>
 </head>
 <body>
-
 <div class="navbar">
-  <div><a href="#"> </a></div>
-  <div><a href="index.html">Índice</a></div>
-  <div><a href="cap02-ptbr.htm">Próximo →</a></div>
+<div><a href="#"> </a></div>
+<div><a href="index.html">Índice</a></div>
+<div><a href="cap02-ptbr.htm">Próximo →</a></div>
 </div>
-
-
-<div class=WordSection1>
-
-<p class=MsoNormal>Cap�tulo 1.&nbsp;A Grande Ideia</p>
-
-<p class=MsoNormal>O estudo da arquitetura de software � o estudo de como os
+<div class="WordSection1">
+<p>Cap�tulo 1. A Grande Ideia</p>
+<p>O estudo da arquitetura de software � o estudo de como os
 sistemas de software s�o projetados e constru�dos. A arquitetura de um sistema
 � o conjunto das principais decis�es de projeto tomadas durante seu
 desenvolvimento e qualquer evolu��o subsequente. Como disciplina, arquitetura �
 o foco principal adequado da engenharia de software, pois a produ��o de
 produtos de alta qualidade e bem-sucedidos depende dessas decis�es principais.</p>
-
-<p class=MsoNormal>Uma abordagem centrada na arquitetura para o desenvolvimento
+<p>Uma abordagem centrada na arquitetura para o desenvolvimento
 de software d� �nfase ao <i>design, </i>que permeia a atividade desde o in�cio.
 A qualidade do design est� bem relacionada � qualidade do software � seria
 extremamente incomum encontrar um sistema de software de alta qualidade com um
@@ -35,114 +30,96 @@ permitir a cria��o de fam�lias de produtos de software com custos efetivos
 podem dominar um setor de aplica��es por um per�odo prolongado. Boas pr�ticas
 de design podem aproveitar as li��es da experi�ncia e fornecer estrat�gias para
 atender efetivamente a uma ampla gama de necessidades.</p>
-
-<p class=MsoNormal>Este cap�tulo apresenta as ideias centrais da arquitetura de
+<p>Este cap�tulo apresenta as ideias centrais da arquitetura de
 software. Faz isso explorando primeiro a analogia entre a arquitetura dos
 edif�cios e a arquitetura do software. A arquitetura de software, e o poder que
 vem de torn�-la o centro do desenvolvimento de sistemas, s�o ent�o ilustrados
 de tr�s maneiras. Primeiro, s�o exploradas as ideias arquitet�nicas que
-sustentam a World <span class=SpellE>Wide</span> Web � arquitetura de software
-&quot;em grande escala&quot;. Segundo, as ideias s�o exploradas na �rea de
+sustentam a World <span class="SpellE">Wide</span> Web � arquitetura de software
+"em grande escala". Segundo, as ideias s�o exploradas na �rea de
 trabalho � arquitetura de software em pequena escala. Terceiro, explora-se o
 papel central das arquiteturas para viabilizar fam�lias de produtos
 bem-sucedidas, utilizando eletr�nicos de consumo como dom�nio de aplica��o.
 Deliberadamente omitimos a maioria dos detalhes t�cnicos, buscando antes
-incutir um senso de &quot;grande ideia&quot;.</p>
-
-<p class=MsoNormal><b>Resumo <span class=SpellE>de<span style='font-weight:
-normal'><a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch01.html"
-title="Chapter&nbsp;1.&nbsp;The Big Idea"><b>Cap�tulo</b><b> 1</b></a></span></span></b></p>
-
-<ul style='margin-top:0cm' type=disc>
- <li class=MsoNormal style='mso-list:l5 level1 lfo3;tab-stops:list 36.0pt'>1 A
+incutir um senso de "grande ideia".</p>
+<p><b>Resumo <span class="SpellE">de<span style="font-weight:
+normal"><a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch01.html" title="Chapter 1. The Big Idea"><b>Cap�tulo</b><b> 1</b></a></span></span></b></p>
+<ul style="margin-top:0cm" type="disc">
+<li>1 A
      Grande Ideia</li>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <li class=MsoNormal style='mso-list:l5 level2 lfo4;tab-stops:list 72.0pt'>1.1
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>1.1
       O Poder da Analogia: A Arquitetura dos Edif�cios</li>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <ul style='margin-top:0cm' type=disc>
-   <li class=MsoNormal style='mso-list:l5 level3 lfo5;tab-stops:list 108.0pt'>1.1.1
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>1.1.1
        Limita��es da Analogia</li>
-  </ul>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <ul style='margin-top:0cm' type=disc>
-   <li class=MsoNormal style='mso-list:l5 level3 lfo6;tab-stops:list 108.0pt'>1.1.2
+</ul>
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>1.1.2
        Ent�o, qual � a grande ideia?</li>
-  </ul>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <li class=MsoNormal style='mso-list:l5 level2 lfo7;tab-stops:list 72.0pt'>1.2
+</ul>
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>1.2
       O Poder e a Necessidade das Grandes Ideias: A Arquitetura da Web</li>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <li class=MsoNormal style='mso-list:l5 level2 lfo8;tab-stops:list 72.0pt'>1.3
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>1.3
       O Poder da Arquitetura no Pequeno: Arquitetura na �rea de Trabalho</li>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <li class=MsoNormal style='mso-list:l5 level2 lfo9;tab-stops:list 72.0pt'>1.4
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>1.4
       O Poder da Arquitetura nos Neg�cios: Produtividade e Linhas de Produtos</li>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <li class=MsoNormal style='mso-list:l5 level2 lfo10;tab-stops:list 72.0pt'>1.5
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>1.5
       Assunto Final</li>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <li class=MsoNormal style='mso-list:l5 level2 lfo11;tab-stops:list 72.0pt'>1.6
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>1.6
       Perguntas de Revis�o</li>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <li class=MsoNormal style='mso-list:l5 level2 lfo12;tab-stops:list 72.0pt'>1.7
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>1.7
       Exerc�cios</li>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <li class=MsoNormal style='mso-list:l5 level2 lfo13;tab-stops:list 72.0pt'>1.8
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>1.8
       Leitura adicional</li>
- </ul>
 </ul>
-
-<p class=MsoNormal>O PODER DA ANALOGIA: A ARQUITETURA DOS EDIF�CIOS</p>
-
-<p class=MsoNormal>A disciplina da arquitetura, ou seja, o design e constru��o
+</ul>
+<p>O PODER DA ANALOGIA: A ARQUITETURA DOS EDIF�CIOS</p>
+<p>A disciplina da arquitetura, ou seja, o design e constru��o
 de edif�cios, oferece uma base rica de conceitos dos quais a arquitetura de
 software, e mais geralmente, a engenharia de software, se inspirou. A analogia
 entre o design e constru��o de edif�cios e o design e constru��o de softwares �
 forte e facilmente compreendida, j� que todos n�s temos experi�ncia substancial
 em viver dentro e ao redor de edif�cios e em v�-los constru�dos.</p>
-
-<p class=MsoNormal>Livros did�ticos de engenharia de software normalmente usam
+<p>Livros did�ticos de engenharia de software normalmente usam
 essa analogia para motivar as fases do ciclo de vida tradicional do software.
 Em uma concep��o altamente simplificada e idealizada de arquitetura, os
 requisitos para um edif�cio s�o coletados, um projeto � criado para satisfazer
@@ -152,8 +129,7 @@ utilizada. Ent�o, teoricamente, no dom�nio de software, os requisitos s�o
 especificados, um design de alto n�vel � criado, algoritmos detalhados s�o
 desenvolvidos com base nesse design, o c�digo � escrito para implementar os
 algoritmos e, finalmente, o sistema � implantado e utilizado.</p>
-
-<p class=MsoNormal>O resumo idealizado acima de como os edif�cios se formam �
+<p>O resumo idealizado acima de como os edif�cios se formam �
 quase trivial, mas oferece v�rios insights refletidos no dom�nio do software.
 Por exemplo, o processo arquitet�nico tem como foco a satisfa��o das
 necessidades do futuro ocupante. Isso permite a especializa��o da m�o de obra:
@@ -166,8 +142,7 @@ pelos usu�rios finais de um sistema. A programa��o real pode ser terceiriz
 at� mesmo enviada para o exterior. Prot�tipos e maquetes criados em v�rios
 momentos do desenvolvimento permitem que o cliente avalie periodicamente se o
 sistema emergente realmente atender� �s necessidades identificadas.</p>
-
-<p class=MsoNormal>Uma considera��o mais s�ria da arquitetura, no entanto,
+<p>Uma considera��o mais s�ria da arquitetura, no entanto,
 revela percep��es mais profundas. Em primeiro lugar, e talvez antes de tudo,
 est� a pr�pria concep��o de um edif�cio com uma arquitetura, onde essa
 arquitetura � um conceito separado, mas inextricavelmente ligado, � pr�pria
@@ -180,10 +155,8 @@ constru��o. Assim tamb�m, como descreveremos em breve, as principais decis
 de design que caracterizam uma aplica��o de software � isto �, sua arquitetura
 � existem independentemente de, mas ligadas a, o c�digo que ostensivamente
 implementa essa arquitetura.</p>
-
-<p class=MsoNormal><b>Pr�tica <i>e </i>Teoria<o:p></o:p></b></p>
-
-<p class=MsoNormal>No primeiro s�culo d.C., o autor romano Marco Vitruvio
+<p><b>Pr�tica <i>e </i>Teoria</b></p>
+<p>No primeiro s�culo d.C., o autor romano Marco Vitruvio
 Pol�cio, mais conhecido como Vitruvio, produziu um famoso tratado sobre
 arquitetura, intitulado <i>De Architectura</i>. Este manual cont�m in�meras
 advert�ncias, opini�es e observa��es sobre arquitetura e arquitetos que, dois
@@ -191,19 +164,15 @@ mil anos depois, permanecem perspicazes e dignas de considera��o. Ele inicia
 seu tratado em um lugar not�vel, considerando a pr�tica e a teoria da
 arquitetura. Ambos s�o necess�rios para o profissional. Considere suas
 palavras:</p>
-
-<p class=MsoNormal><i>A pr�tica � a contempla��o frequente e cont�nua do modo
+<p><i>A pr�tica � a contempla��o frequente e cont�nua do modo
 de executar qualquer trabalho, ou da mera opera��o das m�os, para a convers�o
 do material da melhor e mais pronta maneira. A teoria � o resultado desse
 racioc�nio que demonstra e explica que o material produzido foi convertido de
-modo a responder ao fim proposto. <span class=SpellE>Vitruvio</span> I, 1, 1<o:p></o:p></i></p>
-
-<p class=MsoNormal>(Todas as cita��es de Vitruvio neste texto s�o de Pol�o)</p>
-
-<p class=MsoNormal>Note que a pr�tica n�o � apenas &quot;fazer&quot;, mas
+modo a responder ao fim proposto. <span class="SpellE">Vitruvio</span> I, 1, 1</i></p>
+<p>(Todas as cita��es de Vitruvio neste texto s�o de Pol�o)</p>
+<p>Note que a pr�tica n�o � apenas "fazer", mas
 envolve contempla��o do que � feito.</p>
-
-<p class=MsoNormal>Uma segunda percep��o � que propriedades das estruturas s�o
+<p>Uma segunda percep��o � que propriedades das estruturas s�o
 induzidas pelo design de suas arquiteturas. Por exemplo, um castelo medieval
 com muros altos e grossos e janelas estreitas ou inexistentes � projetado dessa
 forma para ter excelentes propriedades defensivas (desde que os atacantes
@@ -211,20 +180,17 @@ estejam armados apenas com espadas e flechas). Assim tamb�m, como veremos,
 propriedades de aplica��es de software, como resili�ncia diante de tipos
 espec�ficos de ataques de seguran�a, s�o determinadas pelo design de suas
 arquiteturas.</p>
-
-<p class=MsoNormal><b>For�a, Utilidade e Beleza: As Qualidades Obtidas com a
-Boa Arquitetura<o:p></o:p></b></p>
-
-<p class=MsoNormal>Tudo isso deve possuir for�a, utilidade e beleza. A
+<p><b>For�a, Utilidade e Beleza: As Qualidades Obtidas com a
+Boa Arquitetura</b></p>
+<p>Tudo isso deve possuir for�a, utilidade e beleza. A
 resist�ncia surge ao carregar as funda��es at� um fundo s�lido e ao fazer uma
 escolha adequada dos materiais sem parcim�nia. A utilidade surge de uma
 distribui��o criteriosa das partes, para que seus prop�sitos sejam devidamente
 atendidos, e que cada uma tenha sua situa��o adequada. A beleza � produzida
 pela apar�ncia agrad�vel e bom gosto do todo, e pelas dimens�es de todas as
-partes devidamente proporcionadas entre si. <span class=SpellE>Vitruvio</span>
+partes devidamente proporcionadas entre si. <span class="SpellE">Vitruvio</span>
 I, 3, 2</p>
-
-<p class=MsoNormal>Um terceiro insight � o reconhecimento do papel e car�ter
+<p>Um terceiro insight � o reconhecimento do papel e car�ter
 distintos de um arquiteto, a pessoa respons�vel pela cria��o da arquitetura. A
 disciplina da arquitetura h� muito reconhece que arquitetos exigem uma forma��o
 muito ampla. Embora compet�ncia em aspectos da engenharia seja necess�ria,
@@ -234,20 +200,17 @@ essenciais para criar edif�cios que sejam apreciados, satisfazem seus ocupante
 e funcionem de forma eficaz ao longo das esta��es e dos anos. Da mesma forma, a
 simples habilidade em programa��o n�o � suficiente para a cria��o de aplica��es
 de software complexas que as pessoas possam empregar de forma eficaz.</p>
-
-<p class=MsoNormal><span class=SpellE><b>Vitr�vio</b></span><b> sobre as
-Qualifica��es de um Arquiteto<o:p></o:p></b></p>
-
-<p class=MsoNormal>Um arquiteto deve ser engenhoso e habilidoso na aquisi��o de
+<p><span class="SpellE"><b>Vitr�vio</b></span><b> sobre as
+Qualifica��es de um Arquiteto</b></p>
+<p>Um arquiteto deve ser engenhoso e habilidoso na aquisi��o de
 conhecimento. Deficiente em qualquer uma dessas qualidades, ele n�o pode ser um
 mestre perfeito. Ele deveria ser um bom escritor, um desenhista habilidoso,
 versado em geometria e �ptica, especialista em figuras, familiarizado com a
 hist�ria, informado sobre os princ�pios da filosofia natural e moral, um pouco
 m�sico, n�o ignorante das ci�ncias tanto do direito quanto da f�sica, nem dos
-movimentos, leis e rela��es entre si dos corpos celestes. <span class=SpellE>Vitruvio</span>,
+movimentos, leis e rela��es entre si dos corpos celestes. <span class="SpellE">Vitruvio</span>,
 I, 1, 3</p>
-
-<p class=MsoNormal>Um quarto insight � que o processo n�o � t�o importante
+<p>Um quarto insight � que o processo n�o � t�o importante
 quanto a arquitetura. Isso n�o quer dizer que esse processo seja irrelevante.
 Por outro lado, arquitetos e empresas de constru��o seguem claramente e
 dependem de processos padr�o para orientar suas atividades di�rias e garantir
@@ -258,8 +221,7 @@ surja, atendendo �s necessidades de seus propriet�rios e ocupantes. Os
 arquitetos e engenheiros respons�veis pela estrutura devem manter seu projeto e
 qualidades em destaque; O processo est� presente para servir a esses fins, n�o
 para ser um fim em si mesmo.</p>
-
-<p class=MsoNormal>Uma quinta percep��o � que a arquitetura amadureceu ao longo
+<p>Uma quinta percep��o � que a arquitetura amadureceu ao longo
 dos anos e se tornou uma disciplina: existe um corpo de conhecimento sobre como
 criar uma ampla variedade de edif�cios para atender a muitos tipos de
 necessidades. No entanto, n�o � simplesmente uma disciplina de princ�pios
@@ -267,12 +229,11 @@ b�sicos e processos gen�ricos de desenvolvimento. Se todo edif�cio tivesse
 ser projetado com base em princ�pios fundamentais e as propriedades dos
 materiais precisassem ser redescobertas para cada novo projeto, a maioria de
 n�s estaria molhada e tremendo com o c�u para o telhado.</p>
-
-<p class=MsoNormal>A disciplina da engenharia arquitet�nica capturou as
+<p>A disciplina da engenharia arquitet�nica capturou as
 experi�ncias e li��es de gera��es anteriores, de modo que o processo de
 projetar, por exemplo, uma nova casa suburbana � muito semelhante ao de
 projetar milhares de outras casas. Isso n�o quer dizer que as casas sejam
-id�nticas; ao contr�rio, dentro do conceito amplo de &quot;casa suburbana&quot;
+id�nticas; ao contr�rio, dentro do conceito amplo de "casa suburbana"
 alguns fundamentos s�o estabelecidos e pontos de varia��o permitida s�o
 conhecidos. Quando h� pontos em comum entre duas resid�ncias, grandes
 efici�ncias podem ser alcan�adas por meio da reutiliza��o do conhecimento,
@@ -284,13 +245,12 @@ realmente limpa, o of�cio funciona muito bem. Assim tamb�m, como os cap�tu
 seguintes deste livro demonstrar�o, a arquitetura de software est� amadurecendo
 rapidamente em uma disciplina robusta, aproveitando o conhecimento adquirido
 por meio de uma infinidade de experi�ncias de desenvolvimento de sistemas.</p>
-
-<p class=MsoNormal>Uma forma fundamental pela qual as experi�ncias e li��es de
+<p>Uma forma fundamental pela qual as experi�ncias e li��es de
 gera��es anteriores de arquitetos e moradores de edif�cios foram capturadas �
 resumida na no��o de <i>estilos arquitet�nicos </i>� uma percep��o que tem
-aplica��o poderosa no dom�nio do software. As express�es &quot;villa
-romana&quot;, &quot;catedral g�tica&quot;, &quot;casa em estilo rancho&quot;,
-&quot;chal� su��o&quot; e &quot;arranha-c�u de Nova York&quot; caracterizam
+aplica��o poderosa no dom�nio do software. As express�es "villa
+romana", "catedral g�tica", "casa em estilo rancho",
+"chal� su��o" e "arranha-c�u de Nova York" caracterizam
 tipos de edif�cios que t�m v�rias caracter�sticas em comum. Casas de lote
 estilo ranch, por exemplo, s�o resid�ncias t�rreas com telhados baixos; Chal�s
 su��os geralmente s�o de dois a quatro andares, tradicionalmente feitos de
@@ -299,8 +259,7 @@ Nova York t�m dezenas de andares, estruturas de a�o, fazem excelente uso de
 �reas de constru��o com pequena �rea e oferecem centenas de milhares de metros
 quadrados de �rea de piso. Vilas romanas se adaptam ao clima mediterr�neo, e
 assim por diante.</p>
-
-<p class=MsoNormal>O desenvolvimento de um estilo arquitet�nico ao longo do
+<p>O desenvolvimento de um estilo arquitet�nico ao longo do
 tempo reflete o conhecimento e a experi�ncia adquiridos pelos construtores e
 ocupantes ao tentarem atender a um conjunto comum de requisitos e acomodar as
 limita��es da topografia local, clima, materiais de constru��o dispon�veis,
@@ -314,19 +273,16 @@ no sul da Calif�rnia n�o ser� necessariamente adequada para fornecer casas
 Su��a, ou vice-versa. Mas no sul da Calif�rnia, uma grande variedade de casas
 adequadas para o local pode ser constru�da com sucesso de forma econ�mica por
 arquitetos habilidosos nos idiomas e materiais locais.</p>
-
-<p class=MsoNormal><span class=SpellE><b>Vitruvio</b></span><b> sobre Estilos<o:p></o:p></b></p>
-
-<p class=MsoNormal>[Edif�cios particulares] s�o devidamente projetados, quando
+<p><span class="SpellE"><b>Vitruvio</b></span><b> sobre Estilos</b></p>
+<p>[Edif�cios particulares] s�o devidamente projetados, quando
 se tem em conta o pa�s e o clima em que s�o erguidos. Pois o m�todo de
 constru��o adequado ao Egito seria muito impr�prio na Espanha, e o usado no
 Ponto seria absurdo em Roma: assim, em outras partes do mundo, um estilo
 adequado a um clima seria muito inadequado para outro: pois uma parte do mundo
-est� sob o curso do sol,<span style='mso-spacerun:yes'>� </span>outro est�
-distante dela, e outro, entre os dois, � temperado. <span class=SpellE>Vitruvio</span>,
+est� sob o curso do sol,<span>� </span>outro est�
+distante dela, e outro, entre os dois, � temperado. <span class="SpellE">Vitruvio</span>,
 VI, 1, 1</p>
-
-<p class=MsoNormal>Uma forma de resumir estilos arquitet�nicos � como um
+<p>Uma forma de resumir estilos arquitet�nicos � como um
 conjunto de restri��es � restri��es impostas ao desenvolvimento para provocar
 qualidades desej�veis espec�ficas. Por exemplo, o estilo chal� su��o tem uma
 restri��o de que os telhados t�m inclina��es �ngremes; A qualidade evocada �
@@ -336,36 +292,30 @@ A qualidade � que as casas s�o mais baratas de construir e mais f�ceis de
 consertar do que casas personalizadas. O estilo g�tico limita a construir com
 pedra, vitrais e ab�badas altas caneladas; As qualidades evocadas s�o que os
 edif�cios s�o duradouros, instrutivos e inspiradores.</p>
-
-<p class=MsoNormal>Caracterizados de forma mais construtiva, os estilos
+<p>Caracterizados de forma mais construtiva, os estilos
 oferecem ao arquiteto uma ampla gama de solu��es, t�cnicas e paletas de
 materiais, cores e tamanhos compat�veis. Em vez de gastar muito tempo buscando
 um espa�o ilimitado de alternativas, ao trabalhar dentro de um estilo, um
 arquiteto pode dedicar esse mesmo tempo refinando, personalizando e
 aperfei�oando um design espec�fico.</p>
-
-<p class=MsoNormal>O conceito de estilos arquitet�nicos se estende de forma
+<p>O conceito de estilos arquitet�nicos se estende de forma
 muito poderosa ao dom�nio do software. Como ilustraremos no restante deste
 cap�tulo e depois ao longo do livro, estilos s�o ferramentas essenciais para
 arquitetos dominarem, pois s�o um ponto importante de alavanca intelectual na
 tarefa de criar sistemas de software complexos.</p>
-
-<p class=MsoNormal><b>Limita��es da Analogia<o:p></o:p></b></p>
-
-<p class=MsoNormal>Antes de avan�ar para a considera��o detalhada de
+<p><b>Limita��es da Analogia</b></p>
+<p>Antes de avan�ar para a considera��o detalhada de
 arquiteturas, estilos e seu uso no desenvolvimento de sistemas de software,
 algumas palavras de advert�ncia s�o necess�rias em rela��o ao uso da analogia
 com arquiteturas de edif�cios. Como em qualquer analogia, tem limita��es.</p>
-
-<p class=MsoNormal>Primeiro, sabemos muito sobre edif�cios. Ou seja, desde o
+<p>Primeiro, sabemos muito sobre edif�cios. Ou seja, desde o
 nascimento, todos n�s experimentamos e aprendemos sobre edif�cios. Como
 resultado, temos uma intui��o bem desenvolvida sobre quais tipos de edif�cios
 podem ou n�o ser constru�dos, e o que � apropriado para uma determinada
 necessidade e situa��o. Nossas intui��es para software n�o s�o t�o
 desenvolvidas e, portanto, precisamos ser mais met�dicos e anal�ticos em nossa
 abordagem.</p>
-
-<p class=MsoNormal>Segundo, a natureza essencial do meio de software �
+<p>Segundo, a natureza essencial do meio de software �
 fundamentalmente diferente dos materiais e meios da arquitetura de edif�cios.
 Voc� consegue distinguir grande parte da arquitetura de um edif�cio apenas
 olhando. Com software, o problema � muito mais dif�cil. O software �
@@ -373,18 +323,14 @@ intrinsecamente intang�vel; No fundo, � uma entidade abstrata e s� trabalh
 com v�rias representa��es dela. Isso implica que o software � mais dif�cil de
 medir e analisar, tornando mais dif�cil avaliar as diversas qualidades dos projetos
 e medir o progresso rumo � conclus�o.</p>
-
-<p class=MsoNormal>Terceiro, o software � mais male�vel do que os materiais
+<p>Terceiro, o software � mais male�vel do que os materiais
 f�sicos de constru��o, oferecendo a possibilidade de tipos de mudan�as
 impens�veis em um dom�nio f�sico. A analogia da constru��o �, portanto, uma
 fonte pobre de ideias para lidar com mudan�as, j� que os edif�cios acomodam a
-mudan�a com dificuldade<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch01.html#ftn.CHP-1-FN-1"><b><sup>[1]</sup></b></a></p>
-
-<p class=MsoNormal>Existem problemas adicionais com a analogia:</p>
-
-<ul style='margin-top:0cm' type=disc>
- <li class=MsoNormal style='mso-list:l9 level1 lfo14;tab-stops:list 36.0pt'>N�o
+mudan�a com dificuldade<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch01.html#ftn.CHP-1-FN-1"><b><sup>[1]</sup></b></a></p>
+<p>Existem problemas adicionais com a analogia:</p>
+<ul style="margin-top:0cm" type="disc">
+<li>N�o
      existe uma ind�stria de constru��o por software no mesmo grau que existe
      para edif�cios. A ind�stria da constru��o possui uma estrutura
      substancial, refletindo diversas especializa��es, conjuntos de
@@ -392,7 +338,7 @@ href="https://learning.oreilly.com/library/view/software-architecture-foundation
      normaliza��o e regulamentos. Embora a ind�stria de software tenha alguma
      estrutura, inclusive a vista nas pr�ticas de desenvolvimento offshore, ela
      � muito menos diferenciada do setor da constru��o.</li>
- <li class=MsoNormal style='mso-list:l9 level1 lfo14;tab-stops:list 36.0pt'>A
+<li>A
      disciplina da arquitetura n�o tem nada parecido com a quest�o da
      implanta��o encontrada em software: o software � constru�do em um �nico
      lugar, mas implantado para uso em muitos lugares, frequentemente com
@@ -400,26 +346,23 @@ href="https://learning.oreilly.com/library/view/software-architecture-foundation
      trailers, s�o um pouco semelhantes, mas ainda assim n�o h� uma no��o
      correspondente �s arquiteturas m�veis distribu�das din�micas, como ocorre
      com o software.</li>
- <li class=MsoNormal style='mso-list:l9 level1 lfo14;tab-stops:list 36.0pt'>Software
+<li>Software
      � uma m�quina; edif�cios n�o s�o (apesar da declara��o de Le Corbusier de
-     que, &quot;Uma casa � uma m�quina para se viver nela&quot;). O car�ter
+     que, "Uma casa � uma m�quina para se viver nela"). O car�ter
      din�mico do software � a observa��o que levou ao famoso artigo de Edsger
-     Dijkstra sobre a &quot;<b>declara��o de goto </b>considerada
-     prejudicial&quot; (<span class=SpellE>Dijkstra</span> 1968) � representa
+     Dijkstra sobre a "<b>declara��o de goto </b>considerada
+     prejudicial" (<span class="SpellE">Dijkstra</span> 1968) � representa
      um desafio profundamente dif�cil para os projetistas, para o qual n�o h�
      contraponto no design de edif�cios.</li>
 </ul>
-
-<p class=MsoNormal>Apesar dessas limita��es � e de outras � a analogia entre a
+<p>Apesar dessas limita��es � e de outras � a analogia entre a
 arquitetura dos edif�cios e o software � forte e instrutiva. O foco na
 arquitetura � fundamental no projeto de edif�cios; Esse foco � igualmente
 poderoso para software. Se��es subsequentes deste cap�tulo demonstrar�o isso no
 grande lugar, no pequeno e no cadinho da ind�stria. Antes de considerar esses
 exemplos, entretanto, resumimos nossos principais temas na pr�xima se��o.</p>
-
-<p class=MsoNormal><b>Ent�o, qual � a ideia?<o:p></o:p></b></p>
-
-<p class=MsoNormal>A grande ideia � que a arquitetura de software deve estar no
+<p><b>Ent�o, qual � a ideia?</b></p>
+<p>A grande ideia � que a arquitetura de software deve estar no
 cerne do design e desenvolvimento de sistemas de software. Deve estar em
 primeiro plano, mais do que processo, mais do que an�lise e certamente mais do
 que programa��o. Somente dando aten��o e destaque adequados � arquitetura de um
@@ -429,33 +372,29 @@ qualquer sentido significativo. De fato, veremos que, para qualquer aplica��
 de tamanho ou complexidade significativa, sua arquitetura deve ser considerada
 antecipadamente, assim como a cria��o bem-sucedida de um edif�cio grande exige
 considera��o de sua arquitetura antes da constru��o.</p>
-
-<p class=MsoNormal>Al�m disso, os insights apresentados acima sobre
+<p>Al�m disso, os insights apresentados acima sobre
 arquitetura, arquitetos e, especialmente, estilos arquitet�nicos oferecem uma
 alavanca intelectual substancial na cria��o de sistemas de software, mas exigem
 estudo cuidadoso, boas ferramentas e uso disciplinado para obter seus
 potenciais benef�cios substanciais.</p>
-
-<p class=MsoNormal>Dar preemin�ncia � arquitetura oferece o potencial para
+<p>Dar preemin�ncia � arquitetura oferece o potencial para
 realizar:</p>
-
-<ul style='margin-top:0cm' type=disc>
- <li class=MsoNormal style='mso-list:l0 level1 lfo15;tab-stops:list 36.0pt'>Controle
+<ul style="margin-top:0cm" type="disc">
+<li>Controle
      intelectual</li>
- <li class=MsoNormal style='mso-list:l0 level1 lfo15;tab-stops:list 36.0pt'>Integridade
+<li>Integridade
      conceitual</li>
- <li class=MsoNormal style='mso-list:l0 level1 lfo15;tab-stops:list 36.0pt'>Uma
+<li>Uma
      base adequada e eficaz para a reutiliza��o � de conhecimento, experi�ncia,
      projetos e c�digo</li>
- <li class=MsoNormal style='mso-list:l0 level1 lfo15;tab-stops:list 36.0pt'>Comunica��o
+<li>Comunica��o
      eficaz do projeto</li>
- <li class=MsoNormal style='mso-list:l0 level1 lfo15;tab-stops:list 36.0pt'>Gerenciamento
+<li>Gerenciamento
      de um conjunto de sistemas variantes relacionados</li>
 </ul>
-
-<p class=MsoNormal>Note a frase acima sobre direcionar &quot;aten��o e
+<p>Note a frase acima sobre direcionar "aten��o e
 proemin�ncia para a arquitetura de um sistema de software, <i>ao longo de toda
-a sua vida �til</i>.&quot; Um foco de curto prazo na arquitetura de software
+a sua vida �til</i>." Um foco de curto prazo na arquitetura de software
 n�o trar� benef�cios significativos. Assim como o conceito de arquitetura, ou o
 envolvimento de um arquiteto, em um projeto de constru��o n�o garante que um
 edif�cio ser� bem-sucedido, o mesmo vale para software. Defici�ncias no
@@ -464,8 +403,7 @@ o sistema constru�do se desvie de sua arquitetura pretendida, possivelmente co
 consequ�ncias desastrosas. No entanto, tais defici�ncias podem ser evitadas, e
 discutiremos t�cnicas especificamente destinadas a garantir que o sistema
 implementado seja, e permane�a, fiel � arquitetura pretendida.</p>
-
-<p class=MsoNormal>Por fim, note que ao dizer que deve ser dada aten��o
+<p>Por fim, note que ao dizer que deve ser dada aten��o
 adequada � arquitetura de um sistema de software, n�o estamos defendendo a
 cria��o de algo totalmente novo: todos os sistemas de software t�m uma
 arquitetura. Assim como todo edif�cio tem uma arquitetura e pelo menos um
@@ -477,11 +415,9 @@ disfuncional. Nosso objetivo nas pr�ximas p�ginas � fornecer ao leitor as
 habilidades necess�rias para garantir que as aplica��es tenham arquiteturas
 boas, elegantes e eficazes. As se��es seguintes prosseguem considerando alguns
 exemplos excepcionais da disciplina da arquitetura de software, bem aplicados.</p>
-
-<p class=MsoNormal>O PODER E A NECESSIDADE DAS GRANDES IDEIAS: A ARQUITETURA DA
+<p>O PODER E A NECESSIDADE DAS GRANDES IDEIAS: A ARQUITETURA DA
 WEB</p>
-
-<p class=MsoNormal>Um exemplo prim�rio do poder da arquitetura pode ser visto
+<p>Um exemplo prim�rio do poder da arquitetura pode ser visto
 em uma aplica��o que todos os leitores deste livro conhecem: a World Wide Web.
 Pense por um momento: O que <i>� </i>a Web? Como ele � constru�do? Como
 explicar a Web para uma crian�a? Se voc� tem um neg�cio e quer ter uma presen�a
@@ -489,10 +425,9 @@ de com�rcio eletr�nico baseada na Web, como projetar o software para seu sit
 incluindo determinar como ele ir� interagir com as m�quinas dos seus clientes?
 � <i>a arquitetura </i>que oferece o vocabul�rio e os meios para responder a essas
 perguntas. � o <i>estilo arquitet�nico </i>espec�fico da Web que limita (e,
-assim, ajuda) a produzir um sistema de e-commerce que &quot;funciona bem&quot;
+assim, ajuda) a produzir um sistema de e-commerce que "funciona bem"
 com os outros.</p>
-
-<p class=MsoNormal>Vamos responder algumas das perguntas acima. O que � a Web?
+<p>Vamos responder algumas das perguntas acima. O que � a Web?
 Em uma vis�o, focando na percep��o do usu�rio, a Web � um conjunto din�mico de
 relacionamentos entre cole��es de informa��es. Em outra vis�o, focando em
 aspectos grosseiros da estrutura da Web, a Web � uma cole��o din�mica de
@@ -501,8 +436,7 @@ que interagem atrav�s de redes de computadores. Em outra vis�o, sob a
 perspectiva de um desenvolvedor de aplica��o, trata-se de uma cole��o de programas
 escritos de forma independente que interagem entre si de acordo com regras
 especificadas nos padr�es HTTP, URI, MIME e HTML.</p>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shapetype
+<p><span><!--[if gte vml 1]><v:shapetype
  id="_x0000_t75" coordsize="21600,21600" o:spt="75" o:preferrelative="t"
  path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
  <v:stroke joinstyle="miter"/>
@@ -526,17 +460,11 @@ especificadas nos padr�es HTTP, URI, MIME e HTML.</p>
  alt="Um documento hipertexto." style='width:411.6pt;height:365.4pt;
  visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap01-ptbr_arquivos/image001.png" o:title="Um documento hipertexto"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=549 height=487
-src="cap01-ptbr_arquivos/image001.png" alt="Um documento hipertexto." v:shapes="Imagem_x0020_14"><![endif]></span></p>
-
-<p class=MsoNormal><b>Figura 1-1.&nbsp;Um documento hipertexto.</b></p>
-
-<p class=MsoNormal>Considerando essas perspectivas por sua vez, a vis�o da Web
-como um conjunto de informa��es inter-relacionadas � ilustrada na <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch01.html#a_document_hypertext"
-title="Figure&nbsp;1-1.&nbsp;A document hypertext."><b>Figura 1-1</b></a>.</p>
-
-<p class=MsoNormal>Na figura, documentos rotulados de A a G s�o mostrados como
+</v:shape><![endif]--><?if !vml?><img alt="Um documento hipertexto." border="0" height="487" src="cap01-ptbr_arquivos/image001.png" v:shapes="Imagem_x0020_14" width="549"/><?endif?></span></p>
+<p><b>Figura 1-1. Um documento hipertexto.</b></p>
+<p>Considerando essas perspectivas por sua vez, a vis�o da Web
+como um conjunto de informa��es inter-relacionadas � ilustrada na <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch01.html#a_document_hypertext" title="Figure 1-1. A document hypertext."><b>Figura 1-1</b></a>.</p>
+<p>Na figura, documentos rotulados de A a G s�o mostrados como
 entidades independentes, mas com rela��es expl�citas entre elas. Por exemplo,
 se o documento A for uma biografia do autor C. S. Lewis, ent�o a seta para o
 documento D pode representar uma vis�o de The Kilns, a casa em Oxford onde
@@ -545,34 +473,21 @@ documento C do documento A pode representar uma refer�ncia a uma descri��o
 Oxfordshire, o condado onde The Kilns � encontrado. Os outros documentos
 mostrados podem representar o texto de alguns dos muitos livros que Lewis
 escreveu, como <i>O Le�o, a Bruxa e o Guarda-Roupa</i>. N�s, como usu�rios da
-Web, podemos entender <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch01.html#a_document_hypertext"
-title="Figure&nbsp;1-1.&nbsp;A document hypertext."><b><span
-style='mso-spacerun:yes'>�</span>a mini-Web da Figura 1-1 </b></a>como um
+Web, podemos entender <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch01.html#a_document_hypertext" title="Figure 1-1. A document hypertext."><b><span>�</span>a mini-Web da Figura 1-1 </b></a>como um
 conjunto de documentos inter-relacionados e um navegador web, como Safari ou
 Internet Explorer, como um ve�culo para visualizar os documentos e navegar
-entre eles. Em resumo, essa mini-Web � conhecida como hipertexto <i><span
-style='mso-spacerun:yes'>�</span></i>e a visualiza��o e mudan�a de foco de um
+entre eles. Em resumo, essa mini-Web � conhecida como hipertexto <i><span>�</span></i>e a visualiza��o e mudan�a de foco de um
 documento para outro como navegar, ou navegar, por esse hipertexto.</p>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+<p><span><!--[if gte vml 1]><v:shape
  id="Imagem_x0020_13" o:spid="_x0000_i1031" type="#_x0000_t75" alt="Uma vis�o de m�quina de uma pequena parte da World Wide Web."
  style='width:411.6pt;height:298.8pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap01-ptbr_arquivos/image002.png" o:title="Uma vis�o de m�quina de uma pequena parte da World Wide Web"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=549 height=398
-src="cap01-ptbr_arquivos/image002.png"
-alt="Uma vis�o de m�quina de uma pequena parte da World Wide Web." v:shapes="Imagem_x0020_13"><![endif]></span></p>
-
-<p class=MsoNormal><b>Figura 1-2.&nbsp;Uma vis�o de m�quina de uma pequena
-parte da World <span class=SpellE>Wide</span> Web.</b></p>
-
-<p class=MsoNormal>A vis�o ilustrada na <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch01.html#a_document_hypertext"
-title="Figure&nbsp;1-1.&nbsp;A document hypertext."><b>Figura 1-1</b></a> �
+</v:shape><![endif]--><?if !vml?><img alt="Uma vis�o de m�quina de uma pequena parte da World Wide Web." border="0" height="398" src="cap01-ptbr_arquivos/image002.png" v:shapes="Imagem_x0020_13" width="549"/><?endif?></span></p>
+<p><b>Figura 1-2. Uma vis�o de m�quina de uma pequena
+parte da World <span class="SpellE">Wide</span> Web.</b></p>
+<p>A vis�o ilustrada na <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch01.html#a_document_hypertext" title="Figure 1-1. A document hypertext."><b>Figura 1-1</b></a> �
 aquela em que os dados da Web e as rela��es entre eles s�o mostrados. Em
-contraste, <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch01.html#a_machine_view_of_a_small_part_of_the_wo"
-title="Figure&nbsp;1-2.&nbsp;A machine view of a small part of the World Wide Web."><b>a
+contraste, <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch01.html#a_machine_view_of_a_small_part_of_the_wo" title="Figure 1-2. A machine view of a small part of the World Wide Web."><b>a
 Figura 1-2</b></a> mostra a Web como um conjunto de computadores
 interconectados pela Internet. As m�quinas s�o mostradas aqui como sendo de
 dois tipos: <i>agentes de usu�rio </i>e <i>servidores de origem</i>. Agentes de
@@ -586,20 +501,15 @@ entanto, e n�o apresenta nenhum insight real sobre como a informa��o � o
 pelos agentes de usu�rio ou como a informa��o em um documento est� relacionada
 � informa��o de outro. No entanto, a abstra��o que apresenta � precisa na
 medida em que se aplica, e pode ser �til para explicar alguns conceitos da Web.</p>
-
-<p class=MsoNormal>Uma terceira vis�o da Web � mostrada nas <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch01.html#agents_and_origin_servers_interacting_ac"
-title="Figure&nbsp;1-3.&nbsp;Agents and origin servers interacting according to the HTTP protocol, as users peruse the Web."><b>Figuras
-1-3</b></a>. Nessa vis�o, os agentes de usu�rio e os servidores de origem das <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch01.html#a_machine_view_of_a_small_part_of_the_wo"
-title="Figure&nbsp;1-2.&nbsp;A machine view of a small part of the World Wide Web."><b>Figuras
+<p>Uma terceira vis�o da Web � mostrada nas <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch01.html#agents_and_origin_servers_interacting_ac" title="Figure 1-3. Agents and origin servers interacting according to the HTTP protocol, as users peruse the Web."><b>Figuras
+1-3</b></a>. Nessa vis�o, os agentes de usu�rio e os servidores de origem das <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch01.html#a_machine_view_of_a_small_part_of_the_wo" title="Figure 1-2. A machine view of a small part of the World Wide Web."><b>Figuras
 1-2</b></a> s�o novamente mostrados, mas agora a localiza��o dos documentos A a
 G � mostrada. A figura tamb�m mostra um conjunto de intera��es espec�ficas
 entre dois dos agentes de usu�rio e dois dos servidores de origem,
 correspondendo a um padr�o particular de acesso ao hipertexto de C. S. Lewis.
 Neste exemplo, o Agente de Usu�rio 1 solicita, por meio do m�todo HTTP GET, uma
 c�pia do documento A, uma biografia de Lewis. Essa intera��o � mostrada no
-diagrama pela seta marcada como 1. Uma representa��o, ou &quot;c�pia&quot;, da
+diagrama pela seta marcada como 1. Uma representa��o, ou "c�pia", da
 biografia � retornada, mostrada como a seta marcada como 2. Como a biografia
 cont�m uma refer�ncia de hipertexto (href) para documentar D, um JPEG dos
 Fornos, o Agente de Usu�rio 1 emite outro GET, desta vez para machine.usc.edu,
@@ -607,20 +517,17 @@ para obter a imagem. Esse pedido est� marcado como 3 no diagrama. Uma c�pia 
 imagem � retornada, como mostrado pela seta marcada como 4. Intera��es
 adicionais entre agentes de usu�rio e servidores s�o mostradas no diagrama como
 intera��es 5 e 6.</p>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+<p><span><!--[if gte vml 1]><v:shape
  id="Imagem_x0020_12" o:spid="_x0000_i1030" type="#_x0000_t75" alt="Diagrama&#10;&#10;O conte�do gerado por IA pode estar incorreto."
  style='width:411.6pt;height:528.6pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap01-ptbr_arquivos/image003.png" o:title="Diagrama&#10;&#10;O conte�do gerado por IA pode estar incorreto"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=549 height=705
-src="cap01-ptbr_arquivos/image003.png"
-alt="Diagrama&#10;&#10;O conte�do gerado por IA pode estar incorreto." v:shapes="Imagem_x0020_12"><![endif]></span></p>
+</v:shape><![endif]--><?if !vml?><img alt="Diagrama
 
-<p class=MsoNormal><b>Figuras 1-3.&nbsp;Agentes e servidores de origem
+O conte�do gerado por IA pode estar incorreto." border="0" height="705" src="cap01-ptbr_arquivos/image003.png" v:shapes="Imagem_x0020_12" width="549"/><?endif?></span></p>
+<p><b>Figuras 1-3. Agentes e servidores de origem
 interagindo de acordo com o protocolo HTTP, enquanto os usu�rios exploram a
 Web.</b></p>
-
-<p class=MsoNormal>Esses tr�s diagramas ilustram a Web e fornecem uma indica��o
+<p>Esses tr�s diagramas ilustram a Web e fornecem uma indica��o
 de como ela funciona, mas claramente h� muito, muito mais por tr�s disso. Esses
 diagramas usam um conjunto muito simples e limitado de informa��es para
 representar os bilh�es de p�ginas de informa��es dispon�veis na Web, e um
@@ -629,29 +536,27 @@ m�quinas interagindo em qualquer instante pela Internet. Ent�o, podemos
 realmente dizer que esses diagramas explicam como a Web funciona? Claramente n�o.
 Uma compreens�o muito mais geral da Web pode ser apresentada como um conjunto
 de defini��es e restri��es sobre como esses bilh�es de documentos se
-interrelacionam e como milh�es de m�quinas interagem,<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch01.html#ftn.CHP-1-FN-2"><b><sup>[2]</sup></b></a>
+interrelacionam e como milh�es de m�quinas interagem,<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch01.html#ftn.CHP-1-FN-2"><b><sup>[2]</sup></b></a>
 da seguinte forma:</p>
-
-<ul style='margin-top:0cm' type=disc>
- <li class=MsoNormal style='mso-list:l12 level1 lfo16;tab-stops:list 36.0pt'>A
+<ul style="margin-top:0cm" type="disc">
+<li>A
      Web � um conjunto de <i>recursos</i>, cada um dos quais pode ser
      identificado por um localizador uniforme de recursos, ou URL. Um padr�o
      especifica a sintaxe legal de uma URL.</li>
- <li class=MsoNormal style='mso-list:l12 level1 lfo16;tab-stops:list 36.0pt'>Cada
+<li>Cada
      recurso denota, informalmente, alguma informa��o. A informa��o pode ser,
      por exemplo, um documento, uma imagem, um servi�o que varia no tempo (por
-     exemplo, &quot;o clima de hoje em Los Angeles&quot;), uma cole��o de
+     exemplo, "o clima de hoje em Los Angeles"), uma cole��o de
      outros recursos, e assim por diante.</li>
- <li class=MsoNormal style='mso-list:l12 level1 lfo16;tab-stops:list 36.0pt'>URLs
+<li>URLs
      podem ser usadas para determinar a identidade de uma m�quina na Internet,
      conhecida como <i>servidor de origem</i>, onde o valor do recurso pode ser
      determinado.</li>
- <li class=MsoNormal style='mso-list:l12 level1 lfo16;tab-stops:list 36.0pt'>A
+<li>A
      comunica��o � iniciada por clientes, conhecidos como <i>agentes usu�rios</i>,
      que fazem requisi��es aos servidores. Navegadores web s�o inst�ncias
      comuns de agentes de usu�rio.</li>
- <li class=MsoNormal style='mso-list:l12 level1 lfo16;tab-stops:list 36.0pt'>Os
+<li>Os
      recursos podem ser manipulados por meio de suas <i>representa��es</i>. Por
      exemplo, um recurso pode ser atualizado por um agente de usu�rio enviando
      uma nova representa��o desse recurso para o servidor de origem que cont�m
@@ -659,48 +564,40 @@ da seguinte forma:</p>
      agente de usu�rio que obt�m uma representa��o desse recurso de um servidor
      de origem e exibe essa representa��o em um monitor. HTML � uma linguagem
      de representa��o muito comum usada na Web.</li>
- <li class=MsoNormal style='mso-list:l12 level1 lfo16;tab-stops:list 36.0pt'>Toda
+<li>Toda
      comunica��o entre agentes de usu�rio e servidores de origem deve ser
      realizada de acordo com um protocolo simples e comum (HTTP). Comunicar-se
      de acordo com HTTP exige que as partes implementem algumas opera��es
      primitivas, como GET e POST.</li>
- <li class=MsoNormal style='mso-list:l12 level1 lfo16;tab-stops:list 36.0pt'>Toda
+<li>Toda
      comunica��o entre agentes de usu�rio e servidores de origem deve ser livre
      de contexto. Ou seja, um servidor de origem deve ser capaz de responder
      corretamente � solicita��o de um agente usu�rio com base apenas nas
      informa��es contidas na solicita��o, e n�o exigir a manuten��o de um
      hist�rico de intera��es entre esse agente de usu�rio e o servidor de
-     origem. (Isso �s vezes � conhecido como &quot;intera��es sem
-     estado.&quot;)</li>
+     origem. (Isso �s vezes � conhecido como "intera��es sem
+     estado.")</li>
 </ul>
-
-<p class=MsoNormal>Para ilustrar, no exemplo acima, os documentos de A <span
-class=SpellE>a</span> G s�o recursos; m�quinas machine.uci.edu e
+<p>Para ilustrar, no exemplo acima, os documentos de A <span class="SpellE">a</span> G s�o recursos; m�quinas machine.uci.edu e
 machine.usc.edu rodando o servidor Web Apache s�o exemplos de servidores de
 origem. Agentes de usu�rio podem ser laptops pessoais rodando um navegador web
 como o Internet Explorer. As representa��es incluem uma c�pia do HTML da
-biografia de Lewis e um JPEG da vis�o atual dos The <span class=SpellE>Kilns</span>
+biografia de Lewis e um JPEG da vis�o atual dos The <span class="SpellE">Kilns</span>
 capturada por uma webcam.</p>
-
-<p class=MsoNormal>Descrevendo as regras pelas quais as v�rias partes da Web
-funcionam e interagem � sua <span class=SpellE>arquitetura<i>estilo</i></span>�
+<p>Descrevendo as regras pelas quais as v�rias partes da Web
+funcionam e interagem � sua <span class="SpellE">arquitetura<i>estilo</i></span>�
 fornece a base para entender a Web independentemente de sua configura��o ou
 a��es em qualquer instante espec�fico. Essa descri��o nos permite raciocinar
 efetivamente sobre como a Web funciona e orienta a determina��o do que deve ser
 feito para incorporar novas informa��es ou novas m�quinas na Web. Embora a
-lista acima n�o esteja completa (mais detalhes ser�o fornecidos mais adiante <span
-class=SpellE>em<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch11.html"
-title="Chapter&nbsp;11.&nbsp;Applied Architectures and Styles"><b>Cap�tulo</b><b>
+lista acima n�o esteja completa (mais detalhes ser�o fornecidos mais adiante <span class="SpellE">em<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch11.html" title="Chapter 11. Applied Architectures and Styles"><b>Cap�tulo</b><b>
 11</b></a></span>e em v�rias refer�ncias) �, ainda assim, representativa e
 substancial. Essa abordagem para entender a Web � claramente superior � baseada
 no c�digo � tentando declarar cada detalhe de cada m�quina e cada software
 envolvido na Web em um dado momento.</p>
-
-<p class=MsoNormal>Uma s�rie de observa��es cr�ticas s�o evidentes:</p>
-
-<ul style='margin-top:0cm' type=disc>
- <li class=MsoNormal style='mso-list:l3 level1 lfo17;tab-stops:list 36.0pt'>A
+<p>Uma s�rie de observa��es cr�ticas s�o evidentes:</p>
+<ul style="margin-top:0cm" type="disc">
+<li>A
      arquitetura da Web � totalmente separada do c�digo que implementa seus
      diversos elementos. De fato, para entender a Web, a arquitetura � o <i>�nico
      </i>ponto de refer�ncia eficaz. A arquitetura � o conjunto de decis�es
@@ -708,14 +605,14 @@ envolvido na Web em um dado momento.</p>
      inter-rela��es. Essas decis�es est�o em um n�vel de abstra��o acima do
      c�digo-fonte e, portanto, s�o favor�veis � compreens�o de todo o sistema
      no n�vel da aplica��o.</li>
- <li class=MsoNormal style='mso-list:l3 level1 lfo17;tab-stops:list 36.0pt'>N�o
-     existe um �nico peda�o de c�digo que &quot;implemente a arquitetura&quot;.
-     A Web � &quot;implementada&quot; por servidores Web de diversos designs,
+<li>N�o
+     existe um �nico peda�o de c�digo que "implemente a arquitetura".
+     A Web � "implementada" por servidores Web de diversos designs,
      navegadores de diferentes designs, proxies, roteadores e infraestrutura de
      rede. Apenas olhar para qualquer peda�o de c�digo, ou mesmo todo o c�digo
      em qualquer m�quina, n�o explica a estrutura da Web; na verdade, a
      arquitetura � o �nico guia adequado para entender o todo.</li>
- <li class=MsoNormal style='mso-list:l3 level1 lfo17;tab-stops:list 36.0pt'>Existem
+<li>Existem
      m�ltiplos peda�os equivalentes (em rela��o � arquitetura) de c�digo que
      existem e implementam os v�rios componentes da arquitetura. O estilo
      arquitet�nico da Web restringe o c�digo em alguns aspectos, dizendo como
@@ -725,83 +622,68 @@ envolvido na Web em um dado momento.</p>
      fornecedores, oferecendo uma variedade de vantagens individuais, mas, na medida
      em que os navegadores se relacionam ao restante da Web, eles s�o
      equivalentes.</li>
- <li class=MsoNormal style='mso-list:l3 level1 lfo17;tab-stops:list 36.0pt'>As
+<li>As
      restri��es estil�sticas que constituem a defini��o do estilo da Web n�o
      s�o necessariamente aparentes no c�digo, mas os efeitos das restri��es
      implementadas em todos os componentes s�o evidentes na Web.</li>
 </ul>
-
-<p class=MsoNormal>Essas observa��es s�o profundas e come�am a indicar o papel
+<p>Essas observa��es s�o profundas e come�am a indicar o papel
 da arquitetura na Web. Mas as quest�es mais importantes de todas permanecem:</p>
-
-<ul style='margin-top:0cm' type=disc>
- <li class=MsoNormal style='mso-list:l10 level1 lfo18;tab-stops:list 36.0pt'>Por
+<ul style="margin-top:0cm" type="disc">
+<li>Por
      que essas decis�es espec�ficas foram tomadas?</li>
- <li class=MsoNormal style='mso-list:l10 level1 lfo18;tab-stops:list 36.0pt'>Por
+<li>Por
      que essas decis�es foram importantes e n�o outras?</li>
- <li class=MsoNormal style='mso-list:l10 level1 lfo18;tab-stops:list 36.0pt'>Por
+<li>Por
      que sistemas semelhantes que tomavam decis�es ligeiramente diferentes
      falharam, quando a Web � um sucesso t�o estrondoso?</li>
 </ul>
-
-<p class=MsoNormal>Essas perguntas s� podem ser respondidas ao olhar para a Web
-sob uma perspectiva arquitet�nica, e de fato v�o direto ao cerne da <span
-class=SpellE>arquitetura.<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch11.html"
-title="Chapter&nbsp;11.&nbsp;Applied Architectures and Styles"><b>Cap�tulo</b><b>
+<p>Essas perguntas s� podem ser respondidas ao olhar para a Web
+sob uma perspectiva arquitet�nica, e de fato v�o direto ao cerne da <span class="SpellE">arquitetura.<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch11.html" title="Chapter 11. Applied Architectures and Styles"><b>Cap�tulo</b><b>
 11</b></a></span>discute como os designers da Web miraram em um conjunto
 espec�fico de qualidades � aquelas que tornam a Web t�o bem-sucedida � e depois
 tomaram decis�es espec�ficas para imbuir a Web com essas qualidades. Esse
 cap�tulo discutir� a Web e seu estilo subjacente, REST (REpresentational State
 Transfer), com mais detalhes, e mostrar� como o estilo � baseado e derivado de
 um grande conjunto de estilos mais simples.</p>
-
-<p class=MsoNormal>A mensagem principal aqui � que um dos sistemas de software
+<p>A mensagem principal aqui � que um dos sistemas de software
 mais bem-sucedidos do mundo s� � compreendido adequadamente do ponto de vista
 arquitet�nico. O desenvolvimento da Web, a matura��o do protocolo HTTP/1.1 e a
 implementa��o de seus elementos centrais foram todos impulsionados por
 entendimentos e princ�pios arquitet�nicos. Sem a rocha dessa abstra��o, �
 improv�vel que a Web tivesse sobrevivido al�m dos seus primeiros dois ou tr�s
 anos de exist�ncia.</p>
-
-<p class=MsoNormal>O PODER DA ARQUITETURA NO PEQUENO: ARQUITETURA NA �REA DE
+<p>O PODER DA ARQUITETURA NO PEQUENO: ARQUITETURA NA �REA DE
 TRABALHO</p>
-
-<p class=MsoNormal>N�o � necess�rio olhar para aplica��es grandes e complexas,
+<p>N�o � necess�rio olhar para aplica��es grandes e complexas,
 como a Web, para encontrar arquiteturas interessantes ou aplica��es onde o foco
 em arquiteturas tenha grande retorno.</p>
-
-<p class=MsoNormal>Arquiteturas est�o na base das aplica��es mais simples, e
+<p>Arquiteturas est�o na base das aplica��es mais simples, e
 conceitos arquitet�nicos fornecem o poder conceitual por tr�s, por exemplo, dos
-quase onipresentes programas <span class=SpellE>shell</span> de linha de
+quase onipresentes programas <span class="SpellE">shell</span> de linha de
 comando. Encontrados em praticamente todas as plataformas, incluindo Mac OS X,
 Linux, Windows e as plataformas Unix onde os conceitos se originaram, tais
 scripts permitem ao usu�rio compor rapidamente e facilmente novas aplica��es a
 partir de componentes pr�-existentes chamados filtros (que, por acaso, s�o
 programas execut�veis completos por si s�), apenas seguindo algumas regras
 simples. Por exemplo, o seguinte aplicativo cria uma lista ordenada de todos os
-arquivos no diret�rio nomeados faturas cujos nomes incluem a <span
-class=SpellE>string</span> de caracteres &quot;August&quot;:</p>
-
-<p class=MsoNormal>Faturas LS | <span class=SpellE>grep</span> -e August |
+arquivos no diret�rio nomeados faturas cujos nomes incluem a <span class="SpellE">string</span> de caracteres "August":</p>
+<p>Faturas LS | <span class="SpellE">grep</span> -e August |
 ordenar</p>
-
-<p class=MsoNormal>� primeira vista, isso pode n�o parecer uma aplica��o, j�
+<p>� primeira vista, isso pode n�o parecer uma aplica��o, j�
 que podemos discernir visualmente como a funcionalidade � fornecida a partir de
 pe�as, mas � exatamente isso que �. Para entender como essa aplica��o funciona
 e como ela � constru�da, � preciso entender em geral o que s�o filtros e pipes,
 entender o que os filtros espec�ficos usados na constru��o dessa aplica��o
 fazem e, finalmente, raciocinar sobre como esses filtros espec�ficos s�o
 configurados, usando os pipes, para formar essa aplica��o.</p>
-
-<p class=MsoNormal>Primeiro, um <i>filtro </i>� um programa que recebe um fluxo
+<p>Primeiro, um <i>filtro </i>� um programa que recebe um fluxo
 de caracteres de texto como entrada e produz um fluxo de caracteres como sa�da.
 O processamento de um filtro pode ser controlado por um conjunto de par�metros.
-Um <span class=SpellE><i>pipe</i></span><i> </i>� uma forma de conectar dois
+Um <span class="SpellE"><i>pipe</i></span><i> </i>� uma forma de conectar dois
 filtros, na qual o fluxo de caracteres produzido pelo primeiro filtro �
 direcionado para a entrada do fluxo de caracteres do segundo filtro.</p>
-
-<p class=MsoNormal>Na aplica��o acima, tr�s programas de filtro s�o usados: ls,
+<p>Na aplica��o acima, tr�s programas de filtro s�o usados: ls,
 grep e sort. O filtro de ordena��o examina seu fluxo de entrada, observando
 como o fluxo � dividido em linhas de texto por um caractere de fim de linha, e
 produz em seu fluxo de sa�da essas mesmas linhas de texto, por�m em ordem
@@ -809,40 +691,35 @@ ordenada. Embora a ordena��o possa receber par�metros opcionais para contr
 por exemplo, se as linhas est�o ordenadas em ordem crescente ou descendente, na
 aplica��o acima n�o s�o fornecidos par�metros, ent�o o comportamento padr�o �
 ordenar em ordem crescente.</p>
-
-<p class=MsoNormal>O filtro grep examina seu fluxo de caracteres de entrada
+<p>O filtro grep examina seu fluxo de caracteres de entrada
 para linhas (ou seja, partes do fluxo de caracteres de entrada demarcadas por
 caracteres de fim de linha) que contenham uma substring correspondente a um
 valor de string fornecido como par�metro. Na aplica��o acima, o par�metro -e �
-usado para fornecer o valor da string (&quot;August&quot;) para o qual grep
-deve ser pesquisado.&nbsp;O GREP produz como fluxo de sa�da apenas aquelas
-linhas que cont�m a <span class=SpellE>string</span> de busca designada.</p>
-
-<p class=MsoNormal>O filtro ls n�o processa um fluxo de caracteres recebido; em
+usado para fornecer o valor da string ("August") para o qual grep
+deve ser pesquisado. O GREP produz como fluxo de sa�da apenas aquelas
+linhas que cont�m a <span class="SpellE">string</span> de busca designada.</p>
+<p>O filtro ls n�o processa um fluxo de caracteres recebido; em
 vez disso, comunica-se com o sistema operacional para obter os nomes dos
-arquivos em um diret�rio nomeado (ou &quot;pasta&quot;).&nbsp;O LS ent�o
+arquivos em um diret�rio nomeado (ou "pasta"). O LS ent�o
 produz, como seu fluxo de sa�da, uma sequ�ncia de caracteres que s�o os nomes
 textuais dos arquivos no diret�rio designados pelos par�metros da linha de
 comando para o LS, com cada nome de arquivo seguido por um caractere no final
 da linha.</p>
-
-<p class=MsoNormal>Com essa compreens�o dos filtros como programas que leem e
-produzem fluxos de caracteres, <span class=SpellE>pipes</span> como formas de
+<p>Com essa compreens�o dos filtros como programas que leem e
+produzem fluxos de caracteres, <span class="SpellE">pipes</span> como formas de
 conectar filtros ao rotear os fluxos de caracteres, e o funcionamento de cada
 um dos tr�s filtros usados (listar nomes de arquivos, procurar a presen�a de
-uma <span class=SpellE>substring</span> espec�fica e ordenar), � f�cil entender
-como funciona a aplica��o acima.&nbsp;O LS produz uma lista textual dos
-arquivos encontrados no diret�rio de faturas. Um <span class=SpellE>pipe</span>
+uma <span class="SpellE">substring</span> espec�fica e ordenar), � f�cil entender
+como funciona a aplica��o acima. O LS produz uma lista textual dos
+arquivos encontrados no diret�rio de faturas. Um <span class="SpellE">pipe</span>
 (mostrado na linha de comando como uma barra vertical) direciona essa sa�da
-para a entrada do <span class=SpellE>grep</span>. O <span class=SpellE>grep</span>
-ent�o examina esses nomes para identificar qualquer um contendo a <span
-class=SpellE>substring</span> &quot;August&quot; e produz apenas esses nomes
-como seu fluxo de sa�da. Um segundo <span class=SpellE>pipe</span> direciona
+para a entrada do <span class="SpellE">grep</span>. O <span class="SpellE">grep</span>
+ent�o examina esses nomes para identificar qualquer um contendo a <span class="SpellE">substring</span> "August" e produz apenas esses nomes
+como seu fluxo de sa�da. Um segundo <span class="SpellE">pipe</span> direciona
 esse fluxo de sa�da para ordenar, que ent�o ordena os nomes dos arquivos em
 ordem crescente, produzindo essa listagem ordenada como sua sa�da (e da
 aplica��o).</p>
-
-<p class=MsoNormal>A observa��o cr�tica aqui � que a estrutura dessa aplica��o
+<p>A observa��o cr�tica aqui � que a estrutura dessa aplica��o
 pode ser compreendida com base em pouqu�ssimas regras. Dado o entendimento
 dessa estrutura e o conhecimento do funcionamento dos filtros individuais, a
 fun��o da aplica��o completa pode ser compreendida. O conhecimento dessas
@@ -850,73 +727,48 @@ mesmas regras e do funcionamento de algumas dezenas de programas b�sicos de
 filtros pr�-existentes permite entender centenas de outras aplica��es �teis. Da
 mesma forma, um desenvolvedor pode criar novas aplica��es com base nessas
 mesmas regras e conhecimento dos filtros.</p>
-
-<p class=MsoNormal><b>Programas Comuns de Filtro Unix<o:p></o:p></b></p>
-
-<p class=MsoNormal>Esses programas de filtro Unix comumente usados podem ser
-usados individualmente ou combinados em arquiteturas <span class=SpellE>pipe-and-filter</span>
+<p><b>Programas Comuns de Filtro Unix</b></p>
+<p>Esses programas de filtro Unix comumente usados podem ser
+usados individualmente ou combinados em arquiteturas <span class="SpellE">pipe-and-filter</span>
 para criar muitas aplica��es �teis. Consulte as p�ginas do manual do seu
-sistema para instru��es detalhadas sobre como us�-los (tente &quot;homem <span
-class=SpellE>homem</span>&quot; na janela do terminal).</p>
-
-<p class=MsoNormal><span class=SpellE>ls</span>: Liste os nomes dos arquivos
+sistema para instru��es detalhadas sobre como us�-los (tente "homem <span class="SpellE">homem</span>" na janela do terminal).</p>
+<p><span class="SpellE">ls</span>: Liste os nomes dos arquivos
 dentro de um diret�rio.</p>
-
-<p class=MsoNormal><span class=SpellE>grep</span>: Produzir linhas na sa�da que
+<p><span class="SpellE">grep</span>: Produzir linhas na sa�da que
 correspondam a um padr�o especificado, onde esse padr�o � descrito como uma
 express�o regular.</p>
-
-<p class=MsoNormal>ordenar: Ordenar todas as linhas de entrada de acordo com um
+<p>ordenar: Ordenar todas as linhas de entrada de acordo com um
 conjunto de par�metros (por exemplo, para ordem ascendente ou descendente).</p>
-
-<p class=MsoNormal><span class=SpellE>cat</span>: Concatenar arquivos
+<p><span class="SpellE">cat</span>: Concatenar arquivos
 especificados por par�metros para o fluxo de sa�da.</p>
-
-<p class=MsoNormal><span class=SpellE>sed</span>: Leia o fluxo de entrada,
+<p><span class="SpellE">sed</span>: Leia o fluxo de entrada,
 modifique (edite) de acordo com os par�metros especificados e escreva o
 resultado na sa�da.</p>
-
-<p class=MsoNormal><span class=SpellE>awk</span>: Combinar padr�es no fluxo de
+<p><span class="SpellE">awk</span>: Combinar padr�es no fluxo de
 entrada e realizar opera��es especificadas sobre uma correspond�ncia.</p>
-
-<p class=MsoNormal>cabe�a: Liste as primeiras n linhas da entrada na sa�da.</p>
-
-<p class=MsoNormal>cauda: Liste as �ltimas n linhas da entrada.</p>
-
-<p class=MsoNormal><span class=SpellE>uniq</span>: Copie linhas de entrada
+<p>cabe�a: Liste as primeiras n linhas da entrada na sa�da.</p>
+<p>cauda: Liste as �ltimas n linhas da entrada.</p>
+<p><span class="SpellE">uniq</span>: Copie linhas de entrada
 �nicas para a sa�da.</p>
-
-<p class=MsoNormal>menos: Listar incrementalmente a entrada na sa�da, com
+<p>menos: Listar incrementalmente a entrada na sa�da, com
 controles determinando quanta informa��o listar em um dado momento.</p>
-
-<p class=MsoNormal>LPR: Envie a entrada para a impressora.</p>
-
-<p class=MsoNormal>cortar: Selecione partes de cada linha de entrada e
+<p>LPR: Envie a entrada para a impressora.</p>
+<p>cortar: Selecione partes de cada linha de entrada e
 escreva-as na sa�da.</p>
-
-<p class=MsoNormal>homem: Formate e exiba as p�ginas do manual online para um
+<p>homem: Formate e exiba as p�ginas do manual online para um
 comando espec�fico na sa�da.</p>
-
-<p class=MsoNormal><span class=SpellE>Tee</span>: Copie a entrada para a sa�da,
+<p><span class="SpellE">Tee</span>: Copie a entrada para a sa�da,
 al�m de fazer uma c�pia em zero ou mais arquivos especificados.</p>
-
-<p class=MsoNormal>Um exemplo complexo:</p>
-
-<p class=MsoNormal><span class=SpellE>grep</span> HTTP_USER_AGENT <span
-class=SpellE>httpd_state_log</span> | corte -f 2- |</p>
-
-<p class=MsoNormal><span class=SpellE>grep</span> -v 'via Gateway' | <span
-class=SpellE>grep</span> -v 'via proxy gateway'</p>
-
-<p class=MsoNormal>| preto | uniq -c | preto -<span class=SpellE>nr</span> |
-cabe�a &#8722;5</p>
-
-<p class=MsoNormal>Isso produz os cinco principais navegadores (agentes de
-usu�rio) a partir de um log de estado WWW chamado &quot;<span class=SpellE>httpd_state_log</span>&quot;,
-eliminando todas as <span class=SpellE>strings</span> de agentes de usu�rio
+<p>Um exemplo complexo:</p>
+<p><span class="SpellE">grep</span> HTTP_USER_AGENT <span class="SpellE">httpd_state_log</span> | corte -f 2- |</p>
+<p><span class="SpellE">grep</span> -v 'via Gateway' | <span class="SpellE">grep</span> -v 'via proxy gateway'</p>
+<p>| preto | uniq -c | preto -<span class="SpellE">nr</span> |
+cabe�a −5</p>
+<p>Isso produz os cinco principais navegadores (agentes de
+usu�rio) a partir de um log de estado WWW chamado "<span class="SpellE">httpd_state_log</span>",
+eliminando todas as <span class="SpellE">strings</span> de agentes de usu�rio
 proxy.</p>
-
-<p class=MsoNormal>O conjunto particular de regras em a��o aqui define um
+<p>O conjunto particular de regras em a��o aqui define um
 estilo arquitet�nico conhecido, n�o surpreendentemente, como tubo e filtro.
 Parte da beleza do pipe-and-filter � que, devido � sua simplicidade, os
 usu�rios finais podem desenvolver aplica��es sem nunca terem sido treinados
@@ -926,23 +778,19 @@ fun��es que as v�rias pe�as podem desempenhar, a tarefa criativa de mont
 em um novo design pode avan�ar r�pida e eficazmente. N�o � necess�rio
 treinamento nos detalhes da programa��o; O poder de um conceito arquitet�nico
 simples pode ser compreendido e aplicado por um p�blico amplo.</p>
-
-<p class=MsoNormal>Embora o estilo seja muito simples, note que o uso dele n�o
+<p>Embora o estilo seja muito simples, note que o uso dele n�o
 se limita ao uso dos programas de filtro padr�o encontrados em Unix, Linux e
-outros sistemas operacionais que suportam <span class=SpellE>pipe-and-filter</span>;
+outros sistemas operacionais que suportam <span class="SpellE">pipe-and-filter</span>;
 Um desenvolvedor pode criar um programa que opera lendo e escrevendo um fluxo
 de caracteres e ent�o usar esse filtro/programa em conjunto com outros em uma
-aplica��o baseada em <span class=SpellE>pipe-and-filter</span>. Da mesma forma,
+aplica��o baseada em <span class="SpellE">pipe-and-filter</span>. Da mesma forma,
 o estilo n�o se limita a aplica��es escritas na nota��o de linha de comando,
 embora essa nota��o seja certamente comum.</p>
-
-<p class=MsoNormal>Al�m do tubo e filtro, existe uma grande variedade de outros
+<p>Al�m do tubo e filtro, existe uma grande variedade de outros
 estilos arquitet�nicos simples. A maioria deles ser� familiar para
 desenvolvedores experientes: sistema em camadas, programa principal e
 sub-rotinas, orientado a objetos, invoca��o impl�cita e blackboard. Uma
-discuss�o detalhada aparece <span class=SpellE>em<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch04.html"
-title="Chapter&nbsp;4.&nbsp;Designing Architectures"><b>Cap�tulo</b><b> 4</b></a></span>.
+discuss�o detalhada aparece <span class="SpellE">em<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch04.html" title="Chapter 4. Designing Architectures"><b>Cap�tulo</b><b> 4</b></a></span>.
 Os desenvolvedores podem escolher entre esses estilos, e uma grande variedade
 de outros, dependendo da natureza do problema a ser resolvido e das qualidades
 desejadas na solu��o. Por exemplo, aplica��es pipe-and-filter s�o facilmente
@@ -955,28 +803,21 @@ ela deve primeiro ser serializada em um fluxo textual, transferida pelo
 pipeline e, em seguida, reconstru�da na estrutura de dados do grafo pelo
 pr�ximo filtro. Os pipes garantem compatibilidade sint�tica entre os filtros,
 mas n�o fazem nada para garantir a compatibilidade sem�ntica.</p>
-
-<p class=MsoNormal>O PODER DA ARQUITETURA NOS NEG�CIOS: PRODUTIVIDADE E LINHAS
+<p>O PODER DA ARQUITETURA NOS NEG�CIOS: PRODUTIVIDADE E LINHAS
 DE PRODUTOS</p>
-
-<p class=MsoNormal>A discuss�o sobre a World <span class=SpellE>Wide</span> Web
-<span class=SpellE>em<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch01.html#the_power_and_necessity_of_big_ideas_col"
-title="THE POWER AND NECESSITY OF BIG IDEAS: THE ARCHITECTURE OF THE WEB"><b>Se��o</b><b>
+<p>A discuss�o sobre a World <span class="SpellE">Wide</span> Web
+<span class="SpellE">em<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch01.html#the_power_and_necessity_of_big_ideas_col" title="THE POWER AND NECESSITY OF BIG IDEAS: THE ARCHITECTURE OF THE WEB"><b>Se��o</b><b>
 1.2</b></a></span>ilustrou como a arquitetura � um facilitador fundamental para
 o desenvolvimento de sistemas complexos e em grande escala. A discuss�o sobre o
-estilo de tubo e filtro <span class=SpellE>em<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch01.html#the_power_of_architecture_in_the_small_c"
-title="THE POWER OF ARCHITECTURE IN THE SMALL: ARCHITECTURE ON THE DESKTOP"><b>Se��o</b><b>
+estilo de tubo e filtro <span class="SpellE">em<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch01.html#the_power_of_architecture_in_the_small_c" title="THE POWER OF ARCHITECTURE IN THE SMALL: ARCHITECTURE ON THE DESKTOP"><b>Se��o</b><b>
 1.3</b></a></span>mostrou como conceitos arquitet�nicos podem tornar eficaz o
 desenvolvimento at� mesmo de aplica��es online, fornecendo a alavanca
 necess�ria para explorar o poder de uma biblioteca de componentes reutiliz�veis
 (em particular, filtros Unix). Arquiteturas tamb�m s�o facilitadores cr�ticos
-para o <span class=SpellE>desenvolvimento<i>Fam�lias</i></span><i> de produtos</i>,
+para o <span class="SpellE">desenvolvimento<i>Fam�lias</i></span><i> de produtos</i>,
 um elemento-chave de muitas estrat�gias de neg�cios.</p>
-
-<p class=MsoNormal>Fam�lias de produtos s�o conjuntos de programas
-independentes que possuem uma medida significativa de <span class=SpellE>comumidade</span>
+<p>Fam�lias de produtos s�o conjuntos de programas
+independentes que possuem uma medida significativa de <span class="SpellE">comumidade</span>
 em seus componentes constituintes e estrutura. Os conceitos-chave s�o mostrados
 no exemplo a seguir. Qualquer comprador de eletr�nicos de consumo, como
 televisores, sabe que h� in�meras op��es dispon�veis. Mesmo de um �nico
@@ -990,52 +831,43 @@ tamb�m a uma HDTV de 35 polegadas com DVD player embutido para o mercado
 europeu, onde a TV deve ser capaz de suportar transmiss�es DVB-T, em vez do
 formato ATSC da Am�rica do Norte. Cada uma dessas televis�es intimamente relacionadas
 ter� um milh�o ou mais de linhas de c�digo embutidas dentro delas.</p>
-
-<p class=MsoNormal>O desafio econ�mico do ponto de vista do fabricante �
+<p>O desafio econ�mico do ponto de vista do fabricante �
 produzir a ampla gama de produtos que um mercado mundial de consumidores
 sofisticados exige, ao mesmo tempo em que explora as semelhan�as entre os
 membros de uma fam�lia de produtos. Reutilizar estrutura, comportamentos e
 implementa��es de componentes � cada vez mais importante para o sucesso da
 pr�tica empresarial porque:</p>
-
-<ul style='margin-top:0cm' type=disc>
- <li class=MsoNormal style='mso-list:l7 level1 lfo19;tab-stops:list 36.0pt'>Isso
+<ul style="margin-top:0cm" type="disc">
+<li>Isso
      simplifica a tarefa de desenvolvimento de software: solu��es existentes em
      n�vel de design e implementa��o podem ser aplicadas diretamente ou
      facilmente adaptadas a m�ltiplos produtos dentro de uma fam�lia.</li>
- <li class=MsoNormal style='mso-list:l7 level1 lfo19;tab-stops:list 36.0pt'>Reduz
+<li>Reduz
      o tempo e o custo de desenvolvimento: parte da funcionalidade necess�ria
      para um novo produto j� existir� dentro de produtos anteriores da mesma
      fam�lia.</li>
- <li class=MsoNormal style='mso-list:l7 level1 lfo19;tab-stops:list 36.0pt'>Ele
+<li>Ele
      melhora a confiabilidade geral do sistema: qualquer funcionalidade
      reutilizada de um produto anterior ter� sido usada e testada de forma mais
      extensa do que se desenvolvida do zero.</li>
 </ul>
-
-<p class=MsoNormal>A arquitetura de software fornece as abstra��es cr�ticas que
+<p>A arquitetura de software fornece as abstra��es cr�ticas que
 permitem que varia��o e comunh�o dentro de uma fam�lia de produtos sejam
 gerenciadas simultaneamente. Vamos fornecer um tratamento extenso desse assunto
-<span class=SpellE>em<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch15.html"
-title="Chapter&nbsp;15.&nbsp;Domain-Specific Software Engineering"><b>Cap�tulo</b><b>
+<span class="SpellE">em<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch15.html" title="Chapter 15. Domain-Specific Software Engineering"><b>Cap�tulo</b><b>
 15</b></a></span>. Aqui, discutimos um exemplo representativo que demonstra o
 poder das fam�lias de produtos e os benef�cios obtidos por meio de um foco
 expl�cito e extenso na arquitetura de software.</p>
-
-<p class=MsoNormal>O argumento de neg�cios para explorar arquitetura de
+<p>O argumento de neg�cios para explorar arquitetura de
 software para essa tarefa foi reconhecido por um dos principais fabricantes
 mundiais de eletr�nicos de consumo, a Philips. Desde o final dos anos 1990, a
 Philips tem desenvolvido e aplicado progressivamente sua tecnologia Koala para
 especificar e implementar as arquiteturas de seus televisores de m�dio e alto
 desempenho, e conta com centenas de engenheiros de software explorando esses
 conceitos.</p>
-
-<p class=MsoNormal>A motiva��o para a Koala veio diretamente da natureza e dos
+<p>A motiva��o para a Koala veio diretamente da natureza e dos
 avan�os no dom�nio da eletr�nica de consumo, como mostrado no caso dos
-televisores Philips nas <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch01.html#more_sophisticated_products_carry_with_t"
-title="Figure&nbsp;1-4.&nbsp;More sophisticated products carry with them increased complexity, which in turn implies increased cost and worse time-to-market unless the problem is addressed. (Figure courtesy Royal Phillips N.V.)"><b>Figuras
+televisores Philips nas <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch01.html#more_sophisticated_products_carry_with_t" title="Figure 1-4. More sophisticated products carry with them increased complexity, which in turn implies increased cost and worse time-to-market unless the problem is addressed. (Figure courtesy Royal Phillips N.V.)"><b>Figuras
 1-4</b></a>. Embora as primeiras televis�es suportassem um n�mero muito pequeno
 de fun��es simples, com o tempo elas se tornaram mais poderosas, com hardware
 cada vez mais sofisticados e, eventualmente, capacidades de software. O
@@ -1045,156 +877,114 @@ exatamente o oposto do que os consumidores modernos esperam: a forte
 concorr�ncia for�ou a Philips, assim como seus rivais, a produzir um fluxo
 constante de novos produtos e varia��es dos produtos existentes, enquanto
 continham seus custos.</p>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+<p><span><!--[if gte vml 1]><v:shape
  id="Imagem_x0020_11" o:spid="_x0000_i1029" type="#_x0000_t75" alt="Produtos mais sofisticados trazem consigo maior complexidade, o que por sua vez implica aumento de custo e pior tempo de lan�amento no mercado, a menos que o problema seja resolvido. (Figura cortesia da Royal Phillips N.V.)"
  style='width:384pt;height:289.8pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap01-ptbr_arquivos/image004.png" o:title="Produtos mais sofisticados trazem consigo maior complexidade, o que por sua vez implica aumento de custo e pior tempo de lan�amento no mercado, a menos que o problema seja resolvido. (Figura cortesia da Royal Phillips N.V"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=512 height=386
-src="cap01-ptbr_arquivos/image004.png"
-alt="Produtos mais sofisticados trazem consigo maior complexidade, o que por sua vez implica aumento de custo e pior tempo de lan�amento no mercado, a menos que o problema seja resolvido. (Figura cortesia da Royal Phillips N.V.)"
-v:shapes="Imagem_x0020_11"><![endif]></span></p>
-
-<p class=MsoNormal><b>Figuras 1-4.&nbsp;Produtos mais sofisticados trazem
+</v:shape><![endif]--><?if !vml?><img alt="Produtos mais sofisticados trazem consigo maior complexidade, o que por sua vez implica aumento de custo e pior tempo de lan�amento no mercado, a menos que o problema seja resolvido. (Figura cortesia da Royal Phillips N.V.)" border="0" height="386" src="cap01-ptbr_arquivos/image004.png" v:shapes="Imagem_x0020_11" width="512"/><?endif?></span></p>
+<p><b>Figuras 1-4. Produtos mais sofisticados trazem
 consigo maior complexidade, o que por sua vez implica aumento de custo e pior
 tempo de lan�amento no mercado, a menos que o problema seja resolvido. (Figura
 cortesia da Royal Phillips N.V.)</b></p>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+<p><span><!--[if gte vml 1]><v:shape
  id="Imagem_x0020_10" o:spid="_x0000_i1028" type="#_x0000_t75" alt="As TVs Philips como fam�lia de produtos, variando em tr�s dimens�es. (Figura cortesia da Royal Phillips N.V.)"
  style='width:411.6pt;height:260.4pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap01-ptbr_arquivos/image005.png" o:title="As TVs Philips como fam�lia de produtos, variando em tr�s dimens�es. (Figura cortesia da Royal Phillips N.V"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=549 height=347
-src="cap01-ptbr_arquivos/image005.png"
-alt="As TVs Philips como fam�lia de produtos, variando em tr�s dimens�es. (Figura cortesia da Royal Phillips N.V.)"
-v:shapes="Imagem_x0020_10"><![endif]></span></p>
-
-<p class=MsoNormal><b>Figura 1-5.&nbsp;As TVs Philips como fam�lia de produtos,
+</v:shape><![endif]--><?if !vml?><img alt="As TVs Philips como fam�lia de produtos, variando em tr�s dimens�es. (Figura cortesia da Royal Phillips N.V.)" border="0" height="347" src="cap01-ptbr_arquivos/image005.png" v:shapes="Imagem_x0020_10" width="549"/><?endif?></span></p>
+<p><b>Figura 1-5. As TVs Philips como fam�lia de produtos,
 variando em tr�s dimens�es. (Figura cortesia da Royal Phillips N.V.)</b></p>
-
-<p class=MsoNormal>A Philips resolveu o problema formulando uma fam�lia de
-produtos, como mostrado nas <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch01.html#philips_tvs_as_a_product_family_comma_va"
-title="Figure&nbsp;1-5.&nbsp;Philips TVs as a product family, varying along three dimensions. (Figure courtesy Royal Phillips N.V.)"><b>Figuras
+<p>A Philips resolveu o problema formulando uma fam�lia de
+produtos, como mostrado nas <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch01.html#philips_tvs_as_a_product_family_comma_va" title="Figure 1-5. Philips TVs as a product family, varying along three dimensions. (Figure courtesy Royal Phillips N.V.)"><b>Figuras
 1-5</b></a>, na qual seus muitos tipos diferentes de televisores variavam em
 tr�s dimens�es � pre�o, dispositivo de sa�da e regi�o geogr�fica � enquanto
 compartilhavam seu prop�sito b�sico e grande parte de sua funcionalidade. A
 mesma abordagem foi aplicada a outros produtos Philips, incluindo
 videocassetes, DVD players e equipamentos de �udio.</p>
-
-<p class=MsoNormal>Para dar suporte adequadamente �s suas fam�lias de produtos,
-a Philips precisava ser capaz de resolver duas <span class=SpellE>quest�es-chave:<i>Semelhan�a</i>e<i>variabilidade</i>entre</span>
+<p>Para dar suporte adequadamente �s suas fam�lias de produtos,
+a Philips precisava ser capaz de resolver duas <span class="SpellE">quest�es-chave:<i>Semelhan�a</i>e<i>variabilidade</i>entre</span>
 os produtos. A observa��o principal que os engenheiros da Philips fizeram, e
 que � particularmente relevante para este livro, foi que a no��o de fam�lia de
-produtos se estendia �s crescentes quantidades <span class=SpellE>de<i>software</i>embutidos</span>
-nos diferentes dispositivos. Para explorar essa <span class=SpellE>comumidade</span>
+produtos se estendia �s crescentes quantidades <span class="SpellE">de<i>software</i>embutidos</span>
+nos diferentes dispositivos. Para explorar essa <span class="SpellE">comumidade</span>
 e gerenciar a variabilidade entre as diferentes fam�lias de softwares
-embarcados, a Philips desenvolveu uma metodologia arquitet�nica chamada <span
-class=SpellE>Koala</span>. Um tratamento mais extenso sobre o coala � fornecido
-<span class=SpellE>em<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch06.html"
-title="Chapter&nbsp;6.&nbsp;Modeling"><b>Cap�tulos</b><b> 6</b></a></span>e<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch15.html"
-title="Chapter&nbsp;15.&nbsp;Domain-Specific Software Engineering"><b>15</b></a>;
+embarcados, a Philips desenvolveu uma metodologia arquitet�nica chamada <span class="SpellE">Koala</span>. Um tratamento mais extenso sobre o coala � fornecido
+<span class="SpellE">em<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch06.html" title="Chapter 6. Modeling"><b>Cap�tulos</b><b> 6</b></a></span>e<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch15.html" title="Chapter 15. Domain-Specific Software Engineering"><b>15</b></a>;
 Aqui destacamos apenas suas principais caracter�sticas.</p>
-
-<p class=MsoNormal>A <span class=SpellE>Koala</span> modela e implementa um
+<p>A <span class="SpellE">Koala</span> modela e implementa um
 sistema de software como uma cole��o de componentes interagindo. Cada
 componente exporta um conjunto de servi�os por meio de um conjunto de <i>interfaces
 de fornecimento</i>. Al�m disso, cada componente define explicitamente suas
 depend�ncias em seu ambiente (seja o hardware ou outros componentes de
 software) por meio de um conjunto de <i>interfaces de requerimento</i>. Para
 ilustrar, uma arquitetura de software para uma plataforma de TV Philips
-modelada na nota��o gr�fica da Koala � mostrada na <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch01.html#an_example_software_architecture_for_a_t"
-title="Figure&nbsp;1-6.&nbsp;An example software architecture for a TV set. The architecture consists of five interacting components with various incoming and outgoing interfaces. (Figure courtesy Royal Phillips N.V.)"><b>Figura
+modelada na nota��o gr�fica da Koala � mostrada na <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch01.html#an_example_software_architecture_for_a_t" title="Figure 1-6. An example software architecture for a TV set. The architecture consists of five interacting components with various incoming and outgoing interfaces. (Figure courtesy Royal Phillips N.V.)"><b>Figura
 1-6</b></a>.</p>
-
-<p class=MsoNormal>Essa abordagem permite que um engenheiro construa e analise
+<p>Essa abordagem permite que um engenheiro construa e analise
 uma arquitetura com relativa facilidade: cada componente � essencialmente
-semelhante a um bloco de Lego com &quot;pinos&quot; bem definidos para compor
+semelhante a um bloco de Lego com "pinos" bem definidos para compor
 com outros componentes; para que tais composi��es sejam legais, as <i>interfaces
-dos </i><span style='mso-spacerun:yes'>��</span>respectivos componentes devem
+dos </i><span>��</span>respectivos componentes devem
 corresponder a um conjunto de regras rigorosamente definidas. Al�m disso, um
 conjunto dado de componentes em Koala pode ser tratado como um <i>componente
 composto</i>, que pode ent�o ser usado como uma �nica unidade. Por exemplo, a
-arquitetura mostrada na <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch01.html#an_example_software_architecture_for_a_t"
-title="Figure&nbsp;1-6.&nbsp;An example software architecture for a TV set. The architecture consists of five interacting components with various incoming and outgoing interfaces. (Figure courtesy Royal Phillips N.V.)"><b>Figura
+arquitetura mostrada na <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch01.html#an_example_software_architecture_for_a_t" title="Figure 1-6. An example software architecture for a TV set. The architecture consists of five interacting components with various incoming and outgoing interfaces. (Figure courtesy Royal Phillips N.V.)"><b>Figura
 1-6</b></a> � um componente composto com tr�s <i>fornecimento </i>e dois <i>requerem</i>
 interfaces. Isso permite que componentes de complexidade arbitr�ria se tornem
 ativos reutiliz�veis em arquiteturas Koala (ou seja, em produtos Philips).</p>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+<p><span><!--[if gte vml 1]><v:shape
  id="Imagem_x0020_9" o:spid="_x0000_i1027" type="#_x0000_t75" alt="Um exemplo de arquitetura de software para um televisor. A arquitetura consiste em cinco componentes interativos com v�rias interfaces de entrada e sa�da. (Figura cortesia da Royal Phillips N.V.)"
  style='width:411.6pt;height:266.4pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap01-ptbr_arquivos/image006.png" o:title="Um exemplo de arquitetura de software para um televisor. A arquitetura consiste em cinco componentes interativos com v�rias interfaces de entrada e sa�da. (Figura cortesia da Royal Phillips N.V"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=549 height=355
-src="cap01-ptbr_arquivos/image006.png"
-alt="Um exemplo de arquitetura de software para um televisor. A arquitetura consiste em cinco componentes interativos com v�rias interfaces de entrada e sa�da. (Figura cortesia da Royal Phillips N.V.)"
-v:shapes="Imagem_x0020_9"><![endif]></span></p>
-
-<p class=MsoNormal><b>Figuras 1-6.&nbsp;Um exemplo de arquitetura de software
+</v:shape><![endif]--><?if !vml?><img alt="Um exemplo de arquitetura de software para um televisor. A arquitetura consiste em cinco componentes interativos com v�rias interfaces de entrada e sa�da. (Figura cortesia da Royal Phillips N.V.)" border="0" height="355" src="cap01-ptbr_arquivos/image006.png" v:shapes="Imagem_x0020_9" width="549"/><?endif?></span></p>
+<p><b>Figuras 1-6. Um exemplo de arquitetura de software
 para um televisor. A arquitetura consiste em cinco componentes interativos com
 v�rias interfaces de entrada e sa�da. (Figura cortesia da Royal Phillips N.V.)</b></p>
-
-<p class=MsoNormal>Nossos exemplos anteriores do uso de arquitetura de
-software, da Web e aplica��es <span class=SpellE>pipe-and-filter</span> sugerem
+<p>Nossos exemplos anteriores do uso de arquitetura de
+software, da Web e aplica��es <span class="SpellE">pipe-and-filter</span> sugerem
 que um foco em arquitetura � um foco na reutiliza��o: reutiliza��o de ideias,
 conhecimento, padr�es e experi�ncias j� conhecidas. Por sua vez, as
 arquiteturas de fam�lias de produtos facilitam um n�vel de reutiliza��o de
 ordem superior: reutilizando estrutura, comportamentos, implementa��es e assim
 por diante, em muitos produtos relacionados.</p>
-
-<p class=MsoNormal>Al�m de sua capacidade de explorar pontos em comum dentro de
+<p>Al�m de sua capacidade de explorar pontos em comum dentro de
 uma fam�lia de produtos por meio de ativos reutiliz�veis, a Koala tamb�m
 oferece suporte expl�cito para gerenciar variabilidade entre produtos. Tr�s
 mecanismos separados s�o usados para esse fim.</p>
-
-<ol style='margin-top:0cm' start=1 type=1>
- <li class=MsoNormal style='mso-list:l2 level1 lfo20;tab-stops:list 36.0pt'><i>Interfaces
+<ol start="1" style="margin-top:0cm" type="1">
+<li><i>Interfaces
      de diversidade</i> s�o um mecanismo para parametrizar um componente.
      Interfaces de diversidade permitem que um componente importe propriedades
      espec�ficas de configura��o a partir dos elementos de implementa��o de
      interfaces especializadas do Koala, que s�o externos ao componente e est�o
      contidos na arquitetura que abrange o componente.</li>
- <li class=MsoNormal style='mso-list:l2 level1 lfo20;tab-stops:list 36.0pt'><i>Switches</i>
+<li><i>Switches</i>
      s�o elementos conectadores que permitem que um �nico componente interaja
      com um dos componentes de um conjunto, dependendo do valor de um
      determinado par�metro de tempo de execu��o.</li>
- <li class=MsoNormal style='mso-list:l2 level1 lfo20;tab-stops:list 36.0pt'><i>Interfaces
+<li><i>Interfaces
      opcionais </i>permitem que um componente de um determinado tipo forne�a ou
      exija funcionalidades adicionais que podem ser especializadas para certos,
      mas n�o para todos, os produtos de uma fam�lia.</li>
 </ol>
-
-<p class=MsoNormal>A combina��o do suporte da Koala para compartilhar ativos
+<p>A combina��o do suporte da Koala para compartilhar ativos
 reutiliz�veis de complexidade arbitr�ria e gerenciar diversidade entre produtos
 de uma fam�lia tornou poss�vel que a Philips explore a combina��o de
 componentes de diferentes fam�lias de maneiras inovadoras e interessantes.
-Alguns deles est�o representados nas <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch01.html#an_ever-expanding_range_of_possibilities"
-title="Figure&nbsp;1-7.&nbsp;An ever-expanding range of possibilities opens by combining existing consumer electronics products. This provides an even broader and longer-term motivation for product families. (Figure courtesy Royal Phillips N.V.)"><b>Figuras
+Alguns deles est�o representados nas <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch01.html#an_ever-expanding_range_of_possibilities" title="Figure 1-7. An ever-expanding range of possibilities opens by combining existing consumer electronics products. This provides an even broader and longer-term motivation for product families. (Figure courtesy Royal Phillips N.V.)"><b>Figuras
 1-7</b></a>. As <i>popula��es de produtos</i> resultantes s�o uma extens�o
 adicional dos desafios t�cnicos inerentes �s fam�lias de produtos. Por exemplo,
 a presen�a de varia��o induz requisitos para um gerenciamento extensivo de
 configura��o dos componentes individuais e de arquiteturas inteiras.</p>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+<p><span><!--[if gte vml 1]><v:shape
  id="Imagem_x0020_8" o:spid="_x0000_i1026" type="#_x0000_t75" alt="Uma gama cada vez maior de possibilidades se abre ao combinar produtos eletr�nicos de consumo j� existentes. Isso oferece uma motiva��o ainda mais ampla e de longo prazo para as fam�lias de produtos. (Figura cortesia da Royal Phillips N.V.)"
  style='width:411.6pt;height:303pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap01-ptbr_arquivos/image007.png" o:title="Uma gama cada vez maior de possibilidades se abre ao combinar produtos eletr�nicos de consumo j� existentes. Isso oferece uma motiva��o ainda mais ampla e de longo prazo para as fam�lias de produtos. (Figura cortesia da Royal Phillips N.V"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=549 height=404
-src="cap01-ptbr_arquivos/image007.png"
-alt="Uma gama cada vez maior de possibilidades se abre ao combinar produtos eletr�nicos de consumo j� existentes. Isso oferece uma motiva��o ainda mais ampla e de longo prazo para as fam�lias de produtos. (Figura cortesia da Royal Phillips N.V.)"
-v:shapes="Imagem_x0020_8"><![endif]></span></p>
-
-<p class=MsoNormal><b>Figuras 1-7.&nbsp;Uma gama cada vez maior de
+</v:shape><![endif]--><?if !vml?><img alt="Uma gama cada vez maior de possibilidades se abre ao combinar produtos eletr�nicos de consumo j� existentes. Isso oferece uma motiva��o ainda mais ampla e de longo prazo para as fam�lias de produtos. (Figura cortesia da Royal Phillips N.V.)" border="0" height="404" src="cap01-ptbr_arquivos/image007.png" v:shapes="Imagem_x0020_8" width="549"/><?endif?></span></p>
+<p><b>Figuras 1-7. Uma gama cada vez maior de
 possibilidades se abre ao combinar produtos eletr�nicos de consumo j�
 existentes. Isso oferece uma motiva��o ainda mais ampla e de longo prazo para
 as fam�lias de produtos. (Figura cortesia da Royal Phillips N.V.)</b></p>
-
-<p class=MsoNormal>A <span class=SpellE>Koala</span> ajudou diretamente a
+<p>A <span class="SpellE">Koala</span> ajudou diretamente a
 Philips a superar esses desafios e transform�-los em uma vantagem competitiva.
 Devemos observar que, embora a arquitetura tenha desempenhado um papel central
 nesse processo, fam�lias e popula��es de produtos tamb�m exigem mudan�as mais
@@ -1202,21 +992,20 @@ amplas nos processos e nas pr�ticas organizacionais dos neg�cios. A abordage
 padr�o para desenvolvimento de software, encontrada na maioria das empresas,
 n�o suporta efetivamente fam�lias de produtos. Uma raz�o comum � que uma equipe
 de desenvolvimento frequentemente tem pouco incentivo para gastar seus j�
-escassos recursos e produzir ativos mais amplamente (<span class=SpellE>re</span>)utiliz�veis
+escassos recursos e produzir ativos mais amplamente (<span class="SpellE">re</span>)utiliz�veis
 que beneficiar�o outras equipes e projetos no futuro. Portanto, a introdu��o de
 uma estrat�gia robusta para apoiar fam�lias de produtos tamb�m exige mudan�as
 na forma como as organiza��es de desenvolvimento s�o estruturadas e operam
 internamente, e como elas interagem com outras partes do neg�cio da empresa,
 incluindo marketing, engenharia de hardware e finan�as.</p>
-
-<p class=MsoNormal>Al�m das �bvias economias de custos com o reuso de
+<p>Al�m das �bvias economias de custos com o reuso de
 componentes e da capacidade de criar rapidamente mais uma nova configura��o de
 televis�o, o exemplo da Philips revela outro benef�cio cr�tico da abstra��o da
 arquitetura de software: a Koala � a manifesta��o concreta da experi�ncia
 corporativa, do conhecimento e da vantagem competitiva da empresa. Sem uma
 forma espec�fica de representar esse conhecimento, as empresas ficam confiando
 nas mem�rias de seus funcion�rios e na transmiss�o verbal de experi�ncias passadas
-para reter e transmitir &quot;o caminho da nossa empresa&quot; de resolver
+para reter e transmitir "o caminho da nossa empresa" de resolver
 problemas e criar novos produtos. Com o aumento das tend�ncias de mobilidade
 dos funcion�rios de empresa para empresa, a depend�ncia de uma estrutura social
 para manter esse entendimento � uma pol�tica cada vez mais inst�vel. A
@@ -1225,22 +1014,18 @@ socialmente induzido, mas, com seu suporte t�cnico substancial, a capacidade d
 alcan�ar n�veis de produtividade muito mais altos do que se havia visto at�
 ent�o. Esta � uma observa��o cr�tica e explica��es adicionais sobre ela ser�o
 fornecidas ao longo do restante deste livro.</p>
-
-<p class=MsoNormal>ASSUNTO FINAL</p>
-
-<p class=MsoNormal><span class=SpellE><b>Vitr�vio</b></span><b> sobre o Car�ter
-da Arquitetura<o:p></o:p></b></p>
-
-<p class=MsoNormal>A arquitetura depende da aptid�o (<span class=SpellE>ordinatio</span>)
-e da disposi��o (disposi��o<span class=GramE>),...</span>; <span class=GramE>Tamb�m</span>
-depende da propor��o, uniformidade, consist�ncia e <span class=GramE>economia,...</span>
-<span class=SpellE>Vitruvio</span> I, 2, 1</p>
-
-<p class=MsoNormal>Este cap�tulo come�ou com uma discuss�o extensa sobre uma
+<p>ASSUNTO FINAL</p>
+<p><span class="SpellE"><b>Vitr�vio</b></span><b> sobre o Car�ter
+da Arquitetura</b></p>
+<p>A arquitetura depende da aptid�o (<span class="SpellE">ordinatio</span>)
+e da disposi��o (disposi��o<span class="GramE">),...</span>; <span class="GramE">Tamb�m</span>
+depende da propor��o, uniformidade, consist�ncia e <span class="GramE">economia,...</span>
+<span class="SpellE">Vitruvio</span> I, 2, 1</p>
+<p>Este cap�tulo come�ou com uma discuss�o extensa sobre uma
 analogia de como os edif�cios s�o projetados e constru�dos e como o software �
 projetado e constru�do; a analogia aparecer� novamente nos pr�ximos cap�tulos.
 O papel fundamental da arquitetura foi enfatizado ao longo de todo o cap�tulo,
-mostrando seu papel essencial na World <span class=SpellE>Wide</span> Web e,
+mostrando seu papel essencial na World <span class="SpellE">Wide</span> Web e,
 ent�o, no outro extremo do espectro de tamanho, em aplica��es desktop
 rapidamente compostas. A arquitetura de software tem sido apresentada como o
 conjunto das <i>principais decis�es de design </i>tomadas durante a
@@ -1249,14 +1034,12 @@ decis�es � essencial para a evolu��o bem-sucedida do sistema. Tomar tais
 decis�es determina o curso de uma aplica��o: se ela ser� eficaz, elegante e
 bem-sucedida ou um custoso e propenso a erros para todos que entram em contato
 com ela.</p>
-
-<p class=MsoNormal>O cap�tulo foi conclu�do com uma discuss�o sobre fam�lias de
+<p>O cap�tulo foi conclu�do com uma discuss�o sobre fam�lias de
 produtos. Esse foco final � particularmente apropriado, pois ecoa de perto uma
 li��o do mundo dos edif�cios, ou seja, o papel cr�tico da arquitetura e dos
 arquitetos na transmiss�o de li��es, experi�ncias e elementos reutiliz�veis
 para novos projetos.</p>
-
-<p class=MsoNormal>Em 1979, o livro do arquiteto Christopher Alexander, <i>The
+<p>Em 1979, o livro do arquiteto Christopher Alexander, <i>The
 Timeless Way of Building</i>, mostrou como padr�es de solu��es para
 necessidades arquitet�nicas comuns se desenvolveram ao longo dos anos, e como
 combina��es de padr�es podem ser feitas para gerar estruturas que atendem a
@@ -1266,8 +1049,7 @@ conhecimento no dom�nio do software, permitindo que engenheiros atendam
 eficientemente �s necessidades de novos sistemas, mas tamb�m fornece a
 estrutura para reutilizar componentes funcionais substanciais na produ��o de
 novos membros de uma fam�lia de produtos.</p>
-
-<p class=MsoNormal>A vis�o da engenharia de software centrada na arquitetura �
+<p>A vis�o da engenharia de software centrada na arquitetura �
 muito atraente. Ela antecipa um mundo onde sistemas de software complexos s�o
 projetados, em vez de criados, baseando-se em ampla experi�ncia em projetos
 anteriores para formar a base de novos. Os projetos de sistemas s�o modelados
@@ -1288,8 +1070,7 @@ realidade hoje. No entanto, como este livro mostrar�, as fundamenta��es, t
 e pr�tica atuais da arquitetura de software podem alcan�ar resultados muito
 superiores aos das pr�ticas tradicionais de desenvolvimento, ao mesmo tempo em
 que fornecem uma base rica para alcan�ar a vis�o declarada.</p>
-
-<p class=MsoNormal>Os pr�ximos cap�tulos fornecer�o os detalhes que faltam em
+<p>Os pr�ximos cap�tulos fornecer�o os detalhes que faltam em
 nossa discuss�o. Para aplicar as t�cnicas da arquitetura de software, �
 necess�rio ter fundamentos conceituais adequados, nota��es, t�cnicas de
 an�lise, ferramentas e processos, todos os quais ser�o discutidos. Come�aremos
@@ -1298,142 +1079,111 @@ arquitetura de software para o desenvolvimento remodela radicalmente as outras
 tarefas e processos da engenharia de software. A �nfase estar� em reconhecer
 que as principais decis�es de design s�o tomadas ao longo do ciclo de vida de
 um sistema, e que, ao focar nessas decis�es, capturando o conhecimento que
-representam, o processo de desenvolvimento � <span class=SpellE>aprimorado.<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch03.html"
-title="Chapter&nbsp;3.&nbsp;Basic Concepts"><b>Cap�tulo</b><b> 3</b></a></span>Depois,
+representam, o processo de desenvolvimento � <span class="SpellE">aprimorado.<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch03.html" title="Chapter 3. Basic Concepts"><b>Cap�tulo</b><b> 3</b></a></span>Depois,
 estabelece os conceitos de arquitetura de software em termos precisos, enquanto
 cap�tulos subsequentes mostram como projetar, desenvolver, implantar e adaptar
 sistemas baseados nesses princ�pios.</p>
-
-<p class=MsoNormal>PERGUNTAS DE REVIS�O</p>
-
-<ol style='margin-top:0cm' start=1 type=1>
- <li class=MsoNormal style='mso-list:l4 level1 lfo21;tab-stops:list 36.0pt'>Quais
+<p>PERGUNTAS DE REVIS�O</p>
+<ol start="1" style="margin-top:0cm" type="1">
+<li>Quais
      s�o os principais insights da disciplina da arquitetura de edif�cios que
      s�o aplic�veis � constru��o de sistemas de software?</li>
- <li class=MsoNormal style='mso-list:l4 level1 lfo21;tab-stops:list 36.0pt'>Reconhecer
+<li>Reconhecer
      as limita��es de uma analogia � quando ela n�o se aplica � pode ser t�o
      instrutivo quanto considerar as situa��es em que ela se aplica. Qual o
      problema com a analogia da arquitetura do pr�dio? De que maneiras
      construir software � fundamentalmente diferente de construir uma estrutura
-     f�sica? Fa�a uma busca na web por &quot;analogia de constru��o de software
-     est� quebrada.&quot; Voc� concorda ou discorda das opini�es postadas
+     f�sica? Fa�a uma busca na web por "analogia de constru��o de software
+     est� quebrada." Voc� concorda ou discorda das opini�es postadas
      online?</li>
- <li class=MsoNormal style='mso-list:l4 level1 lfo21;tab-stops:list 36.0pt'>O
+<li>O
      uso da arquitetura de software pela Philips para suportar linhas de
      produtos � voltado para eletr�nicos de consumo, como televisores. Quais
      outras ind�strias ou mercados poderiam se beneficiar das semelhan�as e
      efici�ncias de uma abordagem de linha de produtos de software?</li>
 </ol>
-
-<p class=MsoNormal>EXERC�CIOS</p>
-
-<ol style='margin-top:0cm' start=1 type=1>
- <li class=MsoNormal style='mso-list:l1 level1 lfo22;tab-stops:list 36.0pt'>Arquitetos
+<p>EXERC�CIOS</p>
+<ol start="1" style="margin-top:0cm" type="1">
+<li>Arquitetos
      usam esbo�os desenhados � m�o, prosa e plantas para descrever edif�cios. O
      que isso corresponde no desenvolvimento de software?</li>
- <li class=MsoNormal style='mso-list:l1 level1 lfo22;tab-stops:list 36.0pt'>Quando
+<li>Quando
      um desenvolvedor de software come�a uma nova tarefa de desenvolvimento
      come�ando diretamente a programar, que tipo de atividade de
      desenvolvimento isso corresponderia ao construir?</li>
- <li class=MsoNormal style='mso-list:l1 level1 lfo22;tab-stops:list 36.0pt'>Procure
-     v�rias defini��es de &quot;design de software&quot;. Alguma dessas
+<li>Procure
+     v�rias defini��es de "design de software". Alguma dessas
      defini��es corresponde ao que arquitetos (ou designers industriais) chamam
-     de &quot;design&quot;?</li>
- <li class=MsoNormal style='mso-list:l1 level1 lfo22;tab-stops:list 36.0pt'>O
+     de "design"?</li>
+<li>O
      que corresponde no desenvolvimento de software � preocupa��o de um
      arquiteto de edif�cios com a est�tica?</li>
- <li class=MsoNormal style='mso-list:l1 level1 lfo22;tab-stops:list 36.0pt'>Entreviste
+<li>Entreviste
      um arquiteto e descubra quais s�o seus principais itens de vocabul�rio.
      Pelo seu conhecimento de engenharia de software, quais an�logos esses
      termos t�m em software?</li>
- <li class=MsoNormal style='mso-list:l1 level1 lfo22;tab-stops:list 36.0pt'>X
-     �<span style='mso-spacerun:yes'>� </span>uma analogia melhor para a
+<li>X
+     �<span>� </span>uma analogia melhor para a
      constru��o de software? Por que ou por que n�o? Seja <i>X</i> = (direito,
      medicina, engenharia automotiva, pintura a �leo). Por exemplo, no direito,
      considere o processo pelo qual as leis s�o criadas e aplicadas. Para
      pintura a �leo, considere as obras encomendadas que artistas como
      Michelangelo produziram. Qual processo ele seguiu? Para a medicina,
-     considere se o &quot;produto&quot; da medicina � tang�vel ou n�o, e o que
+     considere se o "produto" da medicina � tang�vel ou n�o, e o que
      isso implica para o conhecimento m�dico.</li>
- <li class=MsoNormal style='mso-list:l1 level1 lfo22;tab-stops:list 36.0pt'>Fa�a
-     uma busca na Web por &quot;arquitetura de software&quot;. Os grandes
+<li>Fa�a
+     uma busca na Web por "arquitetura de software". Os grandes
      sucessos merecem ser reconhecidos? Os termos usados nesses sites s�o
      consistentes com os termos usados neste livro-texto?</li>
- <li class=MsoNormal style='mso-list:l1 level1 lfo22;tab-stops:list 36.0pt'>Escreva
+<li>Escreva
      uma aplica��o pipe-and-filter que imprima uma lista ordenada de cada
      palavra �nica em um arquivo. Ou seja, cada palavra �nica deve aparecer
      apenas uma vez na sa�da.</li>
 </ol>
-
-<p class=MsoNormal>LEITURA ADICIONAL</p>
-
-<p class=MsoNormal>As obras de Vitruvio foram traduzidas para o ingl�s muitas
+<p>LEITURA ADICIONAL</p>
+<p>As obras de Vitruvio foram traduzidas para o ingl�s muitas
 vezes e devem estar facilmente dispon�veis em uma boa biblioteca. Tradu��es
-gratuitas e online tamb�m est�o dispon�veis; veja, por exemplo, o site de Bill <span
-class=SpellE>Thayer</span> (<span class=SpellE>Pollio</span>).</p>
-
-<p class=MsoNormal>Muitos livros excelentes sobre arquitetura j� foram
+gratuitas e online tamb�m est�o dispon�veis; veja, por exemplo, o site de Bill <span class="SpellE">Thayer</span> (<span class="SpellE">Pollio</span>).</p>
+<p>Muitos livros excelentes sobre arquitetura j� foram
 escritos, claro, mas poucos fornecem insights substanciais para desenvolvedores
-de software. Uma exce��o significativa � a de Stewart <span class=SpellE>Brand's<i>Como</i></span><i>
+de software. Uma exce��o significativa � a de Stewart <span class="SpellE">Brand's<i>Como</i></span><i>
 Aprendem Edif�cios</i>(Brand, 1994). Brand relata como uma ampla variedade de
 tipos de edif�cios foi alterada ao longo dos anos desde sua constru��o inicial.
 Uma discuss�o sobre alguns dos princ�pios deste livro e como eles se relacionam
-� arquitetura de software pode ser encontrada <span class=SpellE>em<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch14.html"
-title="Chapter&nbsp;14.&nbsp;Architectural Adaptation"><b>Cap�tulo</b><b> 14</b></a></span>deste
+� arquitetura de software pode ser encontrada <span class="SpellE">em<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch14.html" title="Chapter 14. Architectural Adaptation"><b>Cap�tulo</b><b> 14</b></a></span>deste
 texto. Outro texto de arquitetura que teve impacto substancial no
 desenvolvimento de software � o de Alexander<i>O Caminho Atemporal de Construir</i>(Alexander,
 1979). Esse trabalho influenciou o pensamento sobre padr�es para programa��o
 orientada a objetos e, de forma mais geral, estilos de arquitetura de software.</p>
-
-<p class=MsoNormal>Uma cr�nica interessante da constru��o de um arranha-c�u na
-cidade de Nova York pode ser encontrada em (<span class=SpellE>Sabbagh</span>,
+<p>Uma cr�nica interessante da constru��o de um arranha-c�u na
+cidade de Nova York pode ser encontrada em (<span class="SpellE">Sabbagh</span>,
 1989). Os processos que os projetistas e construtores seguem, e os problemas
 que enfrentam, s�o assustadoramente semelhantes aos do desenvolvimento de
 software em grande escala.</p>
-
-<p class=MsoNormal>Uma discuss�o detalhada sobre a arquitetura da World Wide
+<p>Uma discuss�o detalhada sobre a arquitetura da World Wide
 Web pode ser encontrada em (Fielding e Taylor 2002). Pontos-chave desta obra
-s�o discutidos em detalhes no <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch11.html"
-title="Chapter&nbsp;11.&nbsp;Applied Architectures and Styles"><b>Cap�tulo 11</b></a>.
+s�o discutidos em detalhes no <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch11.html" title="Chapter 11. Applied Architectures and Styles"><b>Cap�tulo 11</b></a>.
 Os padr�es que regem a opera��o da Web est�o dispon�veis nos sites do Internet
 Engineering Task Force (IETF) e do World Wide Web Consortium (W3C):
 http://www.ietf.org e http://www.w3.org, respectivamente. A descri��o da Web
 feita por Tim Berners-Lee de 1994 pode ser encontrada em (Berners-Lee, et al.
 1994).</p>
-
-<p class=MsoNormal>Mais informa��es sobre o <span class=SpellE>Koala</span> e
+<p>Mais informa��es sobre o <span class="SpellE">Koala</span> e
 como ele tem sido usado para apoiar o desenvolvimento de fam�lias de produtos
-est�o dispon�veis em (van <span class=SpellE>Ommering</span> et al. 2000) e
-(van <span class=SpellE>Ommering</span> 2002).</p>
-
-<p class=MsoNormal><o:p>&nbsp;</o:p></p>
-
-<div class=MsoNormal align=center style='text-align:center'>
-
-<hr size=2 width=626 style='width:469.65pt' align=center>
-
+est�o dispon�veis em (van <span class="SpellE">Ommering</span> et al. 2000) e
+(van <span class="SpellE">Ommering</span> 2002).</p>
+<p></p>
+<div align="center" style="text-align:center">
+<hr align="center" size="2" style="width:469.65pt" width="626"/>
 </div>
-
-<p class=MsoNormal><a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch01.html#CHP-1-FN-1"><b><sup>[1]</sup></b></a>Este
-tema ser� explorado com mais detalhes <span class=SpellE>em<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch14.html"
-title="Chapter&nbsp;14.&nbsp;Architectural Adaptation"><b>Cap�tulo</b><b> 14</b></a></span>.
+<p><a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch01.html#CHP-1-FN-1"><b><sup>[1]</sup></b></a>Este
+tema ser� explorado com mais detalhes <span class="SpellE">em<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch14.html" title="Chapter 14. Architectural Adaptation"><b>Cap�tulo</b><b> 14</b></a></span>.
 Veja tamb�m (Brand, 1994).</p>
-
-<p class=MsoNormal><a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch01.html#CHP-1-FN-2"><b><sup>[2]</sup></b></a>Essa
+<p><a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch01.html#CHP-1-FN-2"><b><sup>[2]</sup></b></a>Essa
 caracteriza��o ainda omite muitos detalhes! Uma descri��o mais abrangente
-aparece <span class=SpellE>em<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch11.html"
-title="Chapter&nbsp;11.&nbsp;Applied Architectures and Styles"><b>Cap�tulo</b><b>
+aparece <span class="SpellE">em<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch11.html" title="Chapter 11. Applied Architectures and Styles"><b>Cap�tulo</b><b>
 11</b></a></span></p>
-
-<p class=MsoNormal><o:p>&nbsp;</o:p></p>
-
+<p></p>
 </div>
 </body>
 </html>

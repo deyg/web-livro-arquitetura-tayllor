@@ -1,25 +1,21 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>cap09-ptbr</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
+<meta charset="utf-8"/>
+<title>cap09-ptbr</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="styles.css" rel="stylesheet"/>
 </head>
 <body>
-
 <div class="navbar">
-  <div><a href="cap08-ptbr.htm">← Anterior</a></div>
-  <div><a href="index.html">Índice</a></div>
-  <div><a href="cap10-ptbr.htm">Próximo →</a></div>
+<div><a href="cap08-ptbr.htm">← Anterior</a></div>
+<div><a href="index.html">Índice</a></div>
+<div><a href="cap10-ptbr.htm">Próximo →</a></div>
 </div>
-
-
-<div class=WordSection1>
-
-<p class=MsoNormal>Capítulo 9.&nbsp;Implementação</p>
-
-<p class=MsoNormal>A implementação é a única fase do desenvolvimento de
+<div class="WordSection1">
+<p>Capítulo 9. Implementação</p>
+<p>A implementação é a única fase do desenvolvimento de
 software que não é opcional. Independentemente de quão bem os requisitos tenham
 sido capturados ou de quão cuidadosamente a arquitetura tenha sido projetada e
 revisada, os sistemas de software precisam ser implementados em código para
@@ -28,18 +24,16 @@ importantes de design sobre um sistema, utilizando princípios e conhecimentos
 sólidos de engenharia para aumentar a confiança de que as qualidades do sistema-alvo
 correspondem às expectativas de seus stakeholders. Para imbuir essas qualidades
 no sistema alvo, a implementação <i>deve </i>ser derivada de sua arquitetura.</p>
-
-<p class=MsoNormal>Em termos de implementação, a arquitetura é tanto
+<p>Em termos de implementação, a arquitetura é tanto
 prescritiva quanto restritiva. É prescritivo no sentido de que dá aos
 implementadores orientação sobre o que produzir — como estruturar módulos de
 código, como eles devem ser interconectados e como devem se comportar. É
 restritivo no sentido de que suas diretrizes — especialmente aquelas
 especificadas no estilo arquitetônico — dizem aos desenvolvedores o que eles
-não podem<span style='mso-spacerun:yes'>  </span>fazer: as formas de
+não podem<span>  </span>fazer: as formas de
 comunicação que são proibidas, os tipos de comportamentos ou estados do sistema
 que não são permitidos, e assim por diante.</p>
-
-<p class=MsoNormal>O problema de relacionar arquitetura à implementação é de <i>mapeamento</i>.
+<p>O problema de relacionar arquitetura à implementação é de <i>mapeamento</i>.
 Conceitos definidos no nível da arquitetura devem estar diretamente conectados
 a artefatos no nível da implementação. Essa correspondência não é
 necessariamente um a um. Por exemplo, em geral, um componente ou conector de
@@ -51,8 +45,7 @@ degradação arquitetônica — especificamente, o desvio gradual da implementa�
 de um sistema em relação à sua arquitetura. Isso geralmente torna o software
 mais difícil de entender e manter, e dificulta alcançar ou manter as qualidades
 incorporadas pela arquitetura.</p>
-
-<p class=MsoNormal>Implementar corretamente um sistema para que a arquitetura
+<p>Implementar corretamente um sistema para que a arquitetura
 sobreviva na implementação requer uma compreensão bem formada de como os
 conceitos da arquitetura (e do estilo arquitetônico) se mapeiam em tecnologias
 de implementação como linguagens de programação, ambientes de desenvolvimento,
@@ -64,202 +57,171 @@ anteriormente. Até conceitos que tomamos como garantidos, como programação
 orientada a objetos, podem ter influências arquitetônicas. Neste capítulo,
 discutimos técnicas e tecnologias para criar e manter mapeamentos entre
 arquitetura e implementação.</p>
-
-<p class=MsoNormal>Também apresentamos e focamos em um conceito conhecido como <i>framework
+<p>Também apresentamos e focamos em um conceito conhecido como <i>framework
 de implementação de arquitetura</i>, que é um software que faz a ponte entre
 arquiteturas e tecnologias de implementação. Discutimos como identificar,
 avaliar e criar novos frameworks. Também relacionamos frameworks a outras
 tecnologias semelhantes, como middleware e frameworks de componentes.</p>
-
-<p class=MsoNormal><b>Resumo <span class=SpellE>de<span style='font-weight:
-normal'><a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch09.html"
-title="Chapter&nbsp;9.&nbsp;Implementation"><b>Capítulo</b><b> 9</b></a></span></span></b></p>
-
-<ul style='margin-top:0cm' type=disc>
- <li class=MsoNormal style='mso-list:l52 level1 lfo234;tab-stops:list 36.0pt'>9.
+<p><b>Resumo <span class="SpellE">de<span style="font-weight:
+normal"><a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch09.html" title="Chapter 9. Implementation"><b>Capítulo</b><b> 9</b></a></span></span></b></p>
+<ul style="margin-top:0cm" type="disc">
+<li>9.
      Implementação</li>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <li class=MsoNormal style='mso-list:l52 level2 lfo235;tab-stops:list 72.0pt'>9.1
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>9.1
       Conceitos</li>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <ul style='margin-top:0cm' type=disc>
-   <li class=MsoNormal style='mso-list:l52 level3 lfo236;tab-stops:list 108.0pt'>9.1.1
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>9.1.1
        O Problema do Mapeamento</li>
-  </ul>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <ul style='margin-top:0cm' type=disc>
-   <li class=MsoNormal style='mso-list:l52 level3 lfo237;tab-stops:list 108.0pt'>9.1.2
+</ul>
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>9.1.2
        Frameworks de Implementação de Arquitetura</li>
-  </ul>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <ul style='margin-top:0cm' type=disc>
-   <li class=MsoNormal style='mso-list:l52 level3 lfo238;tab-stops:list 108.0pt'>9.1.3
+</ul>
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>9.1.3
        Avaliação de Estruturas</li>
-  </ul>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <ul style='margin-top:0cm' type=disc>
-   <li class=MsoNormal style='mso-list:l52 level3 lfo239;tab-stops:list 108.0pt'>9.1.4
+</ul>
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>9.1.4
        Middleware, Modelos de Componentes e Frameworks de Aplicações</li>
-  </ul>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <ul style='margin-top:0cm' type=disc>
-   <li class=MsoNormal style='mso-list:l52 level3 lfo240;tab-stops:list 108.0pt'>9.1.5
+</ul>
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>9.1.5
        Construindo uma Nova Estrutura</li>
-  </ul>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <ul style='margin-top:0cm' type=disc>
-   <li class=MsoNormal style='mso-list:l52 level3 lfo241;tab-stops:list 108.0pt'>9.1.6
+</ul>
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>9.1.6
        Concorrência</li>
-  </ul>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <ul style='margin-top:0cm' type=disc>
-   <li class=MsoNormal style='mso-list:l52 level3 lfo242;tab-stops:list 108.0pt'>9.1.7
+</ul>
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>9.1.7
        Tecnologias Generativas</li>
-  </ul>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <ul style='margin-top:0cm' type=disc>
-   <li class=MsoNormal style='mso-list:l52 level3 lfo243;tab-stops:list 108.0pt'>9.1.8
+</ul>
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>9.1.8
        Garantindo a Consistência Arquitetura-Implementação</li>
-  </ul>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <li class=MsoNormal style='mso-list:l52 level2 lfo244;tab-stops:list 72.0pt'>9.2
+</ul>
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>9.2
       Estruturas Existentes</li>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <ul style='margin-top:0cm' type=disc>
-   <li class=MsoNormal style='mso-list:l52 level3 lfo245;tab-stops:list 108.0pt'>9.2.1
-       Estruturas para o Estilo Arquitetônico Pipe-<span class=SpellE>and</span>-Filter</li>
-  </ul>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <ul style='margin-top:0cm' type=disc>
-   <li class=MsoNormal style='mso-list:l52 level3 lfo246;tab-stops:list 108.0pt'>9.2.2
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>9.2.1
+       Estruturas para o Estilo Arquitetônico Pipe-<span class="SpellE">and</span>-Filter</li>
+</ul>
+</ul>
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>9.2.2
        Estruturas para o Estilo Arquitetônico C2</li>
-  </ul>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <li class=MsoNormal style='mso-list:l52 level2 lfo247;tab-stops:list 72.0pt'>9.3
+</ul>
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>9.3
       Exemplos</li>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <ul style='margin-top:0cm' type=disc>
-   <li class=MsoNormal style='mso-list:l52 level3 lfo248;tab-stops:list 108.0pt'>9.3.1
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>9.3.1
        Implementando o módulo lunar no estilo pipe-and-filter usando a
        estrutura java.io</li>
-  </ul>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <ul style='margin-top:0cm' type=disc>
-   <li class=MsoNormal style='mso-list:l52 level3 lfo249;tab-stops:list 108.0pt'>9.3.2
+</ul>
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>9.3.2
        Implementando o módulo lunar no estilo C2 usando a estrutura leve C2</li>
-  </ul>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <li class=MsoNormal style='mso-list:l52 level2 lfo250;tab-stops:list 72.0pt'>9.4
+</ul>
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>9.4
       Fim da Matéria</li>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <li class=MsoNormal style='mso-list:l52 level2 lfo251;tab-stops:list 72.0pt'>9.5
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>9.5
       Perguntas de Revisão</li>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <li class=MsoNormal style='mso-list:l52 level2 lfo252;tab-stops:list 72.0pt'>9.6
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>9.6
       Exercícios</li>
- </ul>
 </ul>
-
-<ul style='margin-top:0cm' type=disc>
- <ul style='margin-top:0cm' type=disc>
-  <li class=MsoNormal style='mso-list:l52 level2 lfo253;tab-stops:list 72.0pt'>9.7
+</ul>
+<ul style="margin-top:0cm" type="disc">
+<ul style="margin-top:0cm" type="disc">
+<li>9.7
       Leitura adicional</li>
- </ul>
 </ul>
-
-<p class=MsoNormal>CONCEITOS</p>
-
-<p class=MsoNormal>Aqui, discutiremos conceitos e questões relacionadas à
+</ul>
+<p>CONCEITOS</p>
+<p>Aqui, discutiremos conceitos e questões relacionadas à
 implementação baseada em arquitetura.</p>
-
-<p class=MsoNormal><b>O Problema do Mapeamento<o:p></o:p></b></p>
-
-<p class=MsoNormal>Implementar uma arquitetura é um problema de mapeamento —
+<p><b>O Problema do Mapeamento</b></p>
+<p>Implementar uma arquitetura é um problema de mapeamento —
 especificamente, mapear decisões de design para construtos de implementação
 específicos que realizam essas decisões. Do ponto de vista da qualidade do
-software, esse mapeamento é uma forma <span class=SpellE>de<i>rastreabilidade</i></span>.
+software, esse mapeamento é uma forma <span class="SpellE">de<i>rastreabilidade</i></span>.
 Em geral, o termo rastreabilidade pode se referir a qualquer mecanismo para
 conectar diferentes artefatos de software; Neste contexto, queremos dizer
 especificamente rastreabilidade da arquitetura à implementação. Escolher como
 criar e manter esse mapeamento é fundamental no desenvolvimento baseado em
 arquitetura. Aqui, discutimos mapeamentos de implementação para vários tipos de
-decisões de design discutidas <span class=SpellE>em<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch06.html"
-title="Chapter&nbsp;6.&nbsp;Modeling"><b>Capítulo</b><b> 6</b></a></span>.</p>
-
-<p class=MsoNormal>Componentes e Conectores. Decisões de projeto sobre
+decisões de design discutidas <span class="SpellE">em<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch06.html" title="Chapter 6. Modeling"><b>Capítulo</b><b> 6</b></a></span>.</p>
+<p>Componentes e Conectores. Decisões de projeto sobre
 componentes e conectores dividem a funcionalidade da aplicação em elementos
 discretos de computação e comunicação. Em geral, ambientes de programação
 fornecem mecanismos como pacotes, bibliotecas ou classes que são usados para
@@ -270,8 +232,7 @@ classes e assim por diante em nível de implementação. Se as implementações 
 forem particionadas de acordo com os limites de componentes e conectores
 especificados na arquitetura, então os limites dos componentes podem se romper
 e causar deriva e erosão arquitetônica.</p>
-
-<p class=MsoNormal>Interfaces. No nível arquitetônico, interfaces podem ser
+<p>Interfaces. No nível arquitetônico, interfaces podem ser
 especificadas de muitas maneiras diferentes. Se as interfaces forem
 especificadas em termos de assinaturas de métodos ou funções semelhantes às da
 linguagem de programação de destino, o mapeamento é um processo direto de
@@ -279,8 +240,7 @@ traduzir as assinaturas de método para código. No entanto, se a definição da
 interface em nível de arquitetura for mais complexa — especificando um
 protocolo ou conjunto de transições de estado — então será necessário um
 esforço maior para criar uma implementação apropriada.</p>
-
-<p class=MsoNormal>Configurações. No nível arquitetônico, configurações são
+<p>Configurações. No nível arquitetônico, configurações são
 frequentemente especificadas como grafos ligados de componentes e conectores.
 Esses grafos especificam e restringem como os componentes e conectores
 interagem por meio de suas interfaces. As mesmas interações e topologias devem
@@ -294,15 +254,13 @@ tempo de execução. Quando esses construtos estão disponíveis, muitas vezes �
 possível que os links em nível de implementação entre componentes e conectores
 sejam especificados independentemente dos próprios componentes e conectores, ou
 até mesmo gerados a partir da descrição da arquitetura.</p>
-
-<p class=MsoNormal>Justificativa de Design. A justificativa de design é um
+<p>Justificativa de Design. A justificativa de design é um
 construto que muitas vezes não tem um mapeamento específico para a
 implementação, já que não é algo que influencia diretamente a funcionalidade da
 aplicação. Frequentemente, a melhor forma de manter a justificativa do design
 durante a implementação é escrevendo-a em comentários do código-fonte ou
 documentação externa.</p>
-
-<p class=MsoNormal>Propriedades Dinâmicas (Comportamento). Dependendo de como
+<p>Propriedades Dinâmicas (Comportamento). Dependendo de como
 são modeladas, especificações comportamentais em nível arquitetônico podem
 facilitar ou facilitar a implementação. Algumas especificações comportamentais
 podem ser traduzidas diretamente em esqueletos de implementação ou até
@@ -312,17 +270,14 @@ nível de linguagem de programação e, portanto, é difícil determinar se uma
 especificação comportamental está realmente implementada corretamente. Algumas
 especificações comportamentais são mais úteis para gerar planos de análise ou
 testes do que para implementações.</p>
-
-<p class=MsoNormal>Propriedades Não Funcionais. Implementar propriedades não
+<p>Propriedades Não Funcionais. Implementar propriedades não
 funcionais é talvez uma das proposições mais difíceis na engenharia de
 software. A melhor forma de conseguir isso é por meio de uma combinação de
 técnicas — documentar justificativas, inspeções, testes, estudos de usuários e
 assim por diante. Essa dificuldade é a razão pela qual refinar propriedades não
 funcionais em decisões de design funcional (quando possível) é tão importante.</p>
-
-<p class=MsoNormal><b>Mapeamento de ida e ida e volta<o:p></o:p></b></p>
-
-<p class=MsoNormal>Arquiteturas e implementações inevitavelmente precisam
+<p><b>Mapeamento de ida e ida e volta</b></p>
+<p>Arquiteturas e implementações inevitavelmente precisam
 coevoluir. Arquiteturas podem evoluir devido a requisitos em mudança ou maior
 compreensão, e essas mudanças devem ser propagadas para a implementação. Da
 mesma forma, descobertas e mudanças feitas durante a implementação afetarão a
@@ -330,8 +285,7 @@ arquitetura. Manter arquitetura e implementação sincronizadas é um desafio,
 envolvendo questões de processo, suporte a ferramentas e cultura
 organizacional. Aspectos do mapeamento que carecem de forte rastreabilidade
 costumam ser os primeiros a divergir.</p>
-
-<p class=MsoNormal>Manter o mapeamento arquitetura-implementação diante das
+<p>Manter o mapeamento arquitetura-implementação diante das
 mudanças depende do processo de mudança. Uma opção é exigir que todas as
 mudanças comecem pela arquitetura — a arquitetura é alterada primeiro, os
 mapeamentos para a implementação são usados, e então a implementação é
@@ -340,17 +294,14 @@ na prática, um mapeamento unidirecional. Outra opção é permitir que mudança
 sejam iniciadas tanto na arquitetura quanto na implementação. Nesse caso, ferramentas
 automatizadas ou processos manuais ainda são usados para atualizar o outro
 artefato. Esse é um mapeamento bidirecional.</p>
-
-<p class=MsoNormal>Mapeamentos bidirecionais são melhores para detectar e
+<p>Mapeamentos bidirecionais são melhores para detectar e
 resolver derivas e erosão arquitetônicas, mas também são mais complexos e caros
 para criar e manter. Isso às vezes é conhecido como problema de ida e volta
 porque as mudanças precisam ser mapeadas da arquitetura para a implementação e
 vice-versa. Diversas estratégias para manter mapeamentos de ida e volta são
 discutidas neste capítulo.</p>
-
-<p class=MsoNormal><b>Frameworks de Implementação de Arquitetura<o:p></o:p></b></p>
-
-<p class=MsoNormal>Ao desenvolver um sistema, uma abordagem ideal seria definir
+<p><b>Frameworks de Implementação de Arquitetura</b></p>
+<p>Ao desenvolver um sistema, uma abordagem ideal seria definir
 primeiro a arquitetura e depois selecionar tecnologias de implementação
 (linguagens de programação, bibliotecas de software, sistemas operacionais,
 etc.) que mais se encaixem nas suas necessidades. Esse ideal é difícil de
@@ -359,41 +310,34 @@ construções em nível de arquitetura. Além disso, a seleção das tecnologias
 implementação geralmente será guiada por fatores extrínsecos ou acidentais, como
 custo, maturidade, suporte à plataforma, cultura organizacional e até
 especificações ou padrões de requisitos impostos externamente ou equivocados.</p>
-
-<p class=MsoNormal>Uma estratégia importante para preencher a lacuna entre
+<p>Uma estratégia importante para preencher a lacuna entre
 conceitos em uma arquitetura e as tecnologias de implementação de um sistema é
-usar (ou desenvolver) um framework de implementação de arquitetura (Malek, <span
-class=SpellE>Mikic-Rakic</span> e <span class=SpellE>Medvidovi&#263;</span>
+usar (ou desenvolver) um framework de implementação de arquitetura (Malek, <span class="SpellE">Mikic-Rakic</span> e <span class="SpellE">Medvidović</span>
 2005).</p>
-
-<p class=MsoNormal><i>Definição. Um framework de implementação de arquitetura é
+<p><i>Definição. Um framework de implementação de arquitetura é
 um software que atua como uma ponte entre um estilo arquitetônico particular e
 um conjunto de tecnologias de implementação. Ele fornece elementos-chave do
 estilo arquitetônico no código, de uma forma que auxilia os desenvolvedores a
-implementar sistemas que se conformem às prescrições e restrições do estilo.<o:p></o:p></i></p>
-
-<p class=MsoNormal>De longe, o exemplo mais comum de framework de arquitetura
+implementar sistemas que se conformem às prescrições e restrições do estilo.</i></p>
+<p>De longe, o exemplo mais comum de framework de arquitetura
 em uso hoje é a biblioteca Standard I/O no UNIX (Universidade da Califórnia
 1986) e sistemas operacionais similares. Embora poucos desenvolvedores possam
-reconhecê-lo como tal, na verdade ele é uma ponte entre o estilo <span
-class=SpellE>pipe-and-filter</span> (que é orientado a fluxo de caracteres e
+reconhecê-lo como tal, na verdade ele é uma ponte entre o estilo <span class="SpellE">pipe-and-filter</span> (que é orientado a fluxo de caracteres e
 concorrente) e linguagens de programação procedurais e não concorrentes, como
 C. Ele fornece conceitos arquitetônicos, como acesso a interfaces por meio de
 fluxos de caracteres legíveis e graváveis, de uma forma que se adapta ao
 ambiente de destino (por exemplo, chamadas de procedimentos). Uma discussão
 mais completa sobre como a biblioteca padrão de E/S serve como estrutura
 arquitetônica aparece mais adiante neste capítulo.</p>
-
-<p class=MsoNormal>Estruturas arquitetônicas são, na prática, tecnologias que
+<p>Estruturas arquitetônicas são, na prática, tecnologias que
 auxiliam os desenvolvedores a se conformarem a um determinado estilo
 arquitetônico. No entanto, a maioria dos frameworks não impede que os
 desenvolvedores sair das limitações do estilo. Por exemplo, só porque um
 programa UNIX importa a biblioteca padrão de E/S não significa que o programa
-funcionará em um estilo <span class=SpellE>pipe-and-filter</span>; ele pode ler
+funcionará em um estilo <span class="SpellE">pipe-and-filter</span>; ele pode ler
 e gravar todos os seus dados a partir de arquivos de disco nomeados e ignorar
 completamente os fluxos padrão de entrada e saída.</p>
-
-<p class=MsoNormal>É possível desenvolver aplicações em quase qualquer estilo
+<p>É possível desenvolver aplicações em quase qualquer estilo
 arquitetônico sem o uso de um framework arquitetônico. No entanto, isso
 geralmente significa entrelaçar os conceitos arquitetônicos ao longo da
 implementação e dificulta o desenvolvimento e a manutenção deles. Nos casos em
@@ -401,8 +345,7 @@ que não existe um framework para uma combinação específica de linguagem de
 programação/sistema operacional, os desenvolvedores geralmente acabam
 implementando um conjunto de bibliotecas e ferramentas de software que
 equivalem a um framework de arquitetura de qualquer forma.</p>
-
-<p class=MsoNormal>Uma pergunta natural a se fazer é: Como as estruturas são
+<p>Uma pergunta natural a se fazer é: Como as estruturas são
 representadas em modelos arquitetônicos? Do ponto de vista arquitetônico,
 estruturas são frequentemente consideradas um substrato subjacente a todos os
 componentes e conectores. Portanto, é incomum ver um framework modelado como um
@@ -411,10 +354,8 @@ frequentemente incluem implementações para componentes e conectores comuns
 (como aqueles definidos pelo estilo — um conector pipe ou um event bus, por exemplo)
 que servem como implementações para componentes e conectores especificados na
 arquitetura.</p>
-
-<p class=MsoNormal><b>Mesmo estilo, frameworks diferentes<o:p></o:p></b></p>
-
-<p class=MsoNormal>Um único estilo arquitetônico pode ser sustentado por vários
+<p><b>Mesmo estilo, frameworks diferentes</b></p>
+<p>Um único estilo arquitetônico pode ser sustentado por vários
 frameworks alternativos diferentes. Isso pode acontecer por vários motivos.
 Primeiro, diferentes linguagens de programação e plataformas de implementação
 geralmente exigem frameworks distintos. Por exemplo, aplicações Java usam
@@ -425,31 +366,25 @@ orientada a objetos quanto a biblioteca procedural stdio para o mesmo
 propósito. Cada um desses frameworks de arquitetura conecta o mesmo estilo
 arquitetônico (pipe-and-filter) para diferentes tecnologias de implementação
 (Java, C++ ou C).</p>
-
-<p class=MsoNormal>Às vezes, múltiplos frameworks para a mesma combinação de
+<p>Às vezes, múltiplos frameworks para a mesma combinação de
 estilo, linguagem de programação e sistema operacional são desenvolvidos.
 Normalmente, esses frameworks se distinguem com base em diferentes qualidades
-ou capacidades. Um bom exemplo é o pacote New I/O (<span class=SpellE>java.nio</span>)
-em Java (Hitchens 2002). Assim como o pacote java.io mais antigo, o <span
-class=SpellE>java.nio</span> permite que programas leiam e escrevam fluxos de
+ou capacidades. Um bom exemplo é o pacote New I/O (<span class="SpellE">java.nio</span>)
+em Java (Hitchens 2002). Assim como o pacote java.io mais antigo, o <span class="SpellE">java.nio</span> permite que programas leiam e escrevam fluxos de
 dados de várias fontes. No entanto, o novo pacote de I/O oferece capacidades
-aprimoradas, como suporte nativo para <span class=SpellE>buffering</span>,
+aprimoradas, como suporte nativo para <span class="SpellE">buffering</span>,
 melhor controle sobre sincronização e a capacidade de usar técnicas rápidas de
 transferência de dados, como mapeamento de memória. Os usuários podem escolher
 a estrutura apropriada para sua aplicação com base nas necessidades de
 qualidade dessas aplicações.</p>
-
-<p class=MsoNormal><b>Avaliação de Estruturas<o:p></o:p></b></p>
-
-<p class=MsoNormal>Frameworks, como qualquer sistema de software, podem variar
+<p><b>Avaliação de Estruturas</b></p>
+<p>Frameworks, como qualquer sistema de software, podem variar
 amplamente em quase qualquer dimensão de qualidade. Por isso, muitas estruturas
 são frequentemente desenvolvidas para suportar o mesmo estilo arquitetônico no
 mesmo ambiente. Avaliar um framework, então, é semelhante a avaliar qualquer
 componente importante de software.</p>
-
-<p class=MsoNormal><b>Suporte à Plataforma<o:p></o:p></b></p>
-
-<p class=MsoNormal>Um framework de arquitetura reúne três elementos-chave: um
+<p><b>Suporte à Plataforma</b></p>
+<p>Um framework de arquitetura reúne três elementos-chave: um
 estilo arquitetônico, uma linguagem de programação e um sistema operacional. Um
 dos critérios mais básicos para avaliar um framework, então, é o suporte à
 plataforma. Uma vez identificado um estilo arquitetônico, a disponibilidade de
@@ -459,10 +394,8 @@ selecionar a plataforma de implementação com base na arquitetura (o que está 
 tornando cada vez mais raro, já que sistemas de software têm mais chances de
 rodar em plataformas já existentes), então a disponibilidade de frameworks de
 arquitetura adequados deve ser um critério para a seleção da plataforma.</p>
-
-<p class=MsoNormal><b>Fidelidade<o:p></o:p></b></p>
-
-<p class=MsoNormal>Uma qualidade particularmente importante em frameworks de
+<p><b>Fidelidade</b></p>
+<p>Uma qualidade particularmente importante em frameworks de
 implementação de arquitetura é a fidelidade, especificamente a fidelidade ao
 estilo arquitetônico alvo. Para ser útil, um framework não precisa fornecer
 suporte direto à implementação para cada decisão de design em seu estilo alvo;
@@ -475,10 +408,8 @@ explicitamente que eles quebrem as restrições. Estruturas mais fiéis geralmen
 são melhores para prevenir ou evitar deriva e erosão arquitetônicas. No
 entanto, isso geralmente tem um custo porque os frameworks são mais
 complicados, maiores ou menos eficientes.</p>
-
-<p class=MsoNormal><b>Suposições de Correspondência<o:p></o:p></b></p>
-
-<p class=MsoNormal>Estilos arquitetônicos induzem certas decisões de design e
+<p><b>Suposições de Correspondência</b></p>
+<p>Estilos arquitetônicos induzem certas decisões de design e
 restrições nas aplicações. Frameworks podem fazer a mesma coisa — idealmente,
 as decisões e restrições induzidas pelo framework são as mesmas que as
 induzidas pelo estilo alvo. No entanto, estilos frequentemente deixam muitos
@@ -489,8 +420,7 @@ framework pode assumir que o sistema será instanciado e configurado apenas pelo
 framework, ou que componentes e conectores individuais não iniciarão seus
 próprios threads de controle, ou que cada componente de software na arquitetura
 pode ser associado a um módulo na linguagem de programação de destino.</p>
-
-<p class=MsoNormal>Problemas podem ocorrer quando as suposições de um framework
+<p>Problemas podem ocorrer quando as suposições de um framework
 entram em conflito com as suposições de outras tecnologias de implementação
 usadas em um projeto. Considere uma framework de arquitetura para uma linguagem
 de programação orientada a objetos. Esse framework pode exigir que cada
@@ -504,8 +434,7 @@ toolkit da interface gráfica e o framework de implementação. Essa situação 
 nem ser um descompasso arquitetônico; é um descompasso de decisões específicas
 de implementação. No entanto, estratégias precisam ser identificadas para
 aliviar essa situação.</p>
-
-<p class=MsoNormal>Assim, ao avaliar um framework de arquitetura, é importante
+<p>Assim, ao avaliar um framework de arquitetura, é importante
 enumerar as suposições que ela faz e compará-las com as suposições feitas por
 outros componentes, kits de ferramentas, bibliotecas e ambientes com os quais a
 aplicação irá interagir. Às vezes, soluções alternativas podem ser
@@ -513,10 +442,8 @@ desenvolvidas, especialmente se o descompasso for um detalhe de implementação
 de baixo nível. No entanto, se o descompasso for arquitetônico, isso pode
 colocar em dúvida a compatibilidade do próprio estilo arquitetônico com a escolha
 das tecnologias de implementação para a aplicação implementada.</p>
-
-<p class=MsoNormal><b>Eficiência<o:p></o:p></b></p>
-
-<p class=MsoNormal>Em geral, frameworks de arquitetura adicionam uma camada de
+<p><b>Eficiência</b></p>
+<p>Em geral, frameworks de arquitetura adicionam uma camada de
 funcionalidade entre a aplicação e o hardware em que ela roda. Um dos
 principais perigos de introduzir novas camadas é a diminuição da eficiência da
 aplicação. Essa preocupação é especialmente importante ao lidar com frameworks
@@ -525,49 +452,42 @@ arquitetura pode mediar toda a comunicação entre componentes de um sistema, po
 exemplo, ou ditar a política de concorrência para toda a aplicação. Quando isso
 acontece, a eficiência deve ser um critério de seleção primário para um
 framework.</p>
-
-<p class=MsoNormal>Antes de se comprometer com um framework, é um exercício
+<p>Antes de se comprometer com um framework, é um exercício
 útil rodar benchmarks no framework com parâmetros derivados da aplicação alvo
 para entender o limite superior do desempenho da aplicação usando o framework.
 Por exemplo, se um framework pode trocar 10.000 mensagens por minuto em um
 aplicativo fictício cujo único propósito é trocar mensagens o mais rápido
 possível, não é realista construir um aplicativo com esse framework que troque
 20.000 mensagens por minuto.</p>
-
-<p class=MsoNormal><b>Outras Considerações<o:p></o:p></b></p>
-
-<p class=MsoNormal>Como mencionado acima, as questões envolvidas na seleção de
+<p><b>Outras Considerações</b></p>
+<p>Como mencionado acima, as questões envolvidas na seleção de
 um framework de arquitetura são muito semelhantes às envolvidas na seleção de
 qualquer componente de software. Pode-se argumentar que, por terem um efeito
 tão presente nas aplicações, eles são o elemento mais crítico de todos a serem
 selecionados. Qualidades como tamanho, custo, facilidade de uso,
 disponibilidade do código-fonte, confiabilidade, robustez, portabilidade e
 muitas outras são todas importantes na escolha de um framework.</p>
-
-<p class=MsoNormal><b>Middleware, Modelos de Componentes e Frameworks de
-Aplicação<o:p></o:p></b></p>
-
-<p class=MsoNormal>Existe um espectro de tecnologias para integrar componentes
+<p><b>Middleware, Modelos de Componentes e Frameworks de
+Aplicação</b></p>
+<p>Existe um espectro de tecnologias para integrar componentes
 de software e fornecer serviços além dos fornecidos por uma determinada
 combinação de linguagem de programação e sistema operacional. Essas tecnologias
 recebem vários nomes diferentes: middleware, modelos de componentes (ou
 frameworks de componentes) e frameworks de aplicação. Vamos nos referir a esses
-sistemas coletivamente como &quot;middleware&quot;. Exemplos populares incluem
+sistemas coletivamente como "middleware". Exemplos populares incluem
 CORBA (Object Management Group 2001), JavaBeans (JavaSoft 1996), COM/DCOM/COM+ (Sessions
 1997), .NET, Java Message Service (JavaSoft 2001), várias tecnologias de Web
 Services, entre outras.</p>
-
-<p class=MsoNormal>Existem muitas semelhanças entre frameworks de arquitetura e
+<p>Existem muitas semelhanças entre frameworks de arquitetura e
 middleware. Ambos oferecem aos desenvolvedores serviços de implementação que
 não estão disponíveis nativamente na linguagem de programação subjacente ou no
 sistema operacional. Por exemplo, o middleware CORBA oferece serviços como
-chamadas remotas de procedimentos (<span class=SpellE>RPCs</span>) e a
+chamadas remotas de procedimentos (<span class="SpellE">RPCs</span>) e a
 capacidade de descobrir dinamicamente as interfaces dos objetos. O modelo de
-componentes do <span class=SpellE>JavaBeans</span> introduz um novo conceito no
+componentes do <span class="SpellE">JavaBeans</span> introduz um novo conceito no
 Java: o grão, um objeto que segue certas diretrizes de interface que tornam
 possível compor grãos com mais facilidade.</p>
-
-<p class=MsoNormal>Frameworks de implementação de arquitetura são uma forma de
+<p>Frameworks de implementação de arquitetura são uma forma de
 middleware. A diferença entre middleware tradicional e frameworks
 arquitetônicos está no foco no estilo arquitetônico. Frameworks de
 implementação de arquitetura são implementados especificamente para apoiar o
@@ -575,20 +495,16 @@ desenvolvimento em um ou mais estilos arquitetônicos. Aqui, o <i>estilo </i>é 
 principal artefato que impulsiona a tecnologia de implementação. Middleware é
 criado com base nos serviços fornecidos, geralmente sem considerar o estilo da
 aplicação em desenvolvimento.</p>
-
-<p class=MsoNormal><b>Como Middleware e Frameworks de Componentes Podem Induzir
-um Estilo<o:p></o:p></b></p>
-
-<p class=MsoNormal>Middleware frequentemente limita aplicações de maneiras
+<p><b>Como Middleware e Frameworks de Componentes Podem Induzir
+um Estilo</b></p>
+<p>Middleware frequentemente limita aplicações de maneiras
 semelhantes a frameworks de arquitetura. Middleware frequentemente influencia
 como a funcionalidade de uma aplicação é dividida em componentes, como esses
 componentes interagem (frequentemente por meio de serviços fornecidos por
 middleware semelhantes a conectores) e também a topologia da aplicação. Essas
 são geralmente preocupações arquitetônicas. Nesse sentido, middleware pode
-induzir uma arquitetura ou estilo arquitetônico em uma aplicação (Di <span
-class=SpellE>Nitto</span> e <span class=SpellE>Rosenblum</span> 1999).</p>
-
-<p class=MsoNormal>CORBA [e tecnologias semelhantes a CORBA, como COM e RMI
+induzir uma arquitetura ou estilo arquitetônico em uma aplicação (Di <span class="SpellE">Nitto</span> e <span class="SpellE">Rosenblum</span> 1999).</p>
+<p>CORBA [e tecnologias semelhantes a CORBA, como COM e RMI
 (Grosso 2001)] são um bom exemplo de como middleware pode influenciar
 arquiteturas de aplicações. O CORBA divide uma aplicação em objetos que podem
 residir em diferentes hosts. Objetos que participam da aplicação expõem seus
@@ -598,9 +514,8 @@ objetos buscam outros objetos por meio de serviços como serviços de nomeação
 serviços de negociação, e então se chamam mutuamente usando um padrão de
 solicitação-resposta, passando apenas parâmetros serializáveis através dos
 limites da interface. Juntas, essas restrições compõem um estilo arquitetônico
-que pode ser chamado de estilo &quot;objetos distribuídos&quot;.</p>
-
-<p class=MsoNormal>Se os stakeholders do sistema escolheram o estilo de objetos
+que pode ser chamado de estilo "objetos distribuídos".</p>
+<p>Se os stakeholders do sistema escolheram o estilo de objetos
 distribuídos para sua aplicação, então middleware semelhante ao CORBA pode
 servir como uma estrutura de arquitetura ideal. No entanto, raramente as coisas
 são tão simples assim. Diante de uma aplicação para design, os arquitetos de
@@ -613,24 +528,20 @@ frequentemente as capacidades de um determinado sistema middleware influenciam
 o processo de tomada de decisão do arquiteto. Arquitetos devem ter especial
 cuidado para evitar que uma tecnologia middleware influencie demais seus
 projetos.</p>
-
-<p class=MsoNormal><b>Resolvendo Incompatibilidades entre Estilos
-Arquitetônicos e Middleware<o:p></o:p></b></p>
-
-<p class=MsoNormal>Dois grandes conflitos podem surgir entre estilos
+<p><b>Resolvendo Incompatibilidades entre Estilos
+Arquitetônicos e Middleware</b></p>
+<p>Dois grandes conflitos podem surgir entre estilos
 arquitetônicos e middleware:</p>
-
-<ol style='margin-top:0cm' start=1 type=1>
- <li class=MsoNormal style='mso-list:l101 level1 lfo254;tab-stops:list 36.0pt'>O
+<ol start="1" style="margin-top:0cm" type="1">
+<li>O
      estilo arquitetônico escolhido para a aplicação não corresponde ao
      induzido pelo middleware escolhido.</li>
- <li class=MsoNormal style='mso-list:l101 level1 lfo254;tab-stops:list 36.0pt'>Os
+<li>Os
      projetistas da aplicação escolheram primeiro um middleware baseado nos
      serviços prestados e permitiram que isso tivesse influência indevida sobre
      o estilo arquitetônico da aplicação.</li>
 </ol>
-
-<p class=MsoNormal>Ao selecionar tecnologias de implementação, é fundamental
+<p>Ao selecionar tecnologias de implementação, é fundamental
 entender que os benefícios de qualidade proporcionados por essa tecnologia
 frequentemente vêm com implicações arquitetônicas, que podem não ser
 compatíveis com o design da sua arquitetura. Por exemplo, o CORBA oferece os
@@ -640,32 +551,26 @@ solicitação e resposta. Isso pode causar certas desvantagens arquitetônicas, 
 aumento da latência e sincronização. Permitir que a escolha do middleware
 influencie a arquitetura é o contrário: é o rabo abanando o cachorro. A
 arquitetura deve influenciar sua escolha de middleware.</p>
-
-<p class=MsoNormal>Quando há um descompasso arquitetônico entre middleware e o
+<p>Quando há um descompasso arquitetônico entre middleware e o
 estilo arquitetônico alvo, várias opções estão disponíveis:</p>
-
-<p class=MsoNormal>Mude o estilo. O estilo arquitetônico pode ser alterado para
+<p>Mude o estilo. O estilo arquitetônico pode ser alterado para
 se adequar melhor ao middleware. Isso deve ser feito apenas quando os
 benefícios de usar o middleware superam os custos de adaptá-lo para funcionar
 com o estilo alvo.</p>
-
-<p class=MsoNormal>Troque o middleware. O middleware pode ser adaptado para se
+<p>Troque o middleware. O middleware pode ser adaptado para se
 adequar melhor ao estilo arquitetônico. Essa estratégia pode ser difícil porque
 os pacotes middleware costumam ser grandes, complexos ou proprietários.</p>
-
-<p class=MsoNormal>Desenvolva código de cola. Frameworks de arquitetura podem
+<p>Desenvolva código de cola. Frameworks de arquitetura podem
 ser construídos sobre middleware, aproveitando as partes do middleware que
 combinam e contornando as partes que não combinam. Dessa forma, nem o estilo
 nem o middleware em si precisam ser adaptados.</p>
-
-<p class=MsoNormal>Ignore serviços de middleware desnecessários. Alguns pacotes
+<p>Ignore serviços de middleware desnecessários. Alguns pacotes
 de middleware ou frameworks de componentes podem fornecer uma série de serviços
 que abrangem muitos aspectos do desenvolvimento de aplicações. No entanto, pode
 ser possível usar um subconjunto desses serviços seletivamente e ignorar os
 serviços que não são compatíveis (ou relevantes para) o estilo arquitetônico
 alvo.</p>
-
-<p class=MsoNormal>Esconda o Middleware. Desenvolvedores usam middleware porque
+<p>Esconda o Middleware. Desenvolvedores usam middleware porque
 ele oferece certos serviços. Se esses serviços não forem necessariamente
 transversais e puderem ser aplicados em pontos específicos da arquitetura,
 então pode ser possível ocultar o middleware dentro de componentes ou
@@ -675,18 +580,15 @@ diferentes, todo o código relacionado ao CORBA pode ser isolado dentro de
 conectores individuais que precisam de comunicação entre hosts. Outros serviços
 CORBA, como busca e descoberta dinâmica de interfaces, podem ser usados
 inteiramente dentro do contexto dos conectores ou simplesmente ignorados.</p>
-
-<p class=MsoNormal><b>Uso de Middleware para Implementar Conectores<o:p></o:p></b></p>
-
-<p class=MsoNormal>Muitos pacotes de middleware fornecem serviços que são
+<p><b>Uso de Middleware para Implementar Conectores</b></p>
+<p>Muitos pacotes de middleware fornecem serviços que são
 efetivamente centrados na comunicação: eles fornecem diferentes mecanismos para
 que componentes heterogêneos se comuniquem. Se melhorar a comunicação em uma
 arquitetura é um objetivo, então usar middleware como base para implementar
 conectores, em vez de toda a aplicação, pode permitir que um sistema evite que
 as suposições do middleware se infiltrem e corrompam as decisões de design da
 arquitetura.</p>
-
-<p class=MsoNormal>Nesse cenário, os arquitetos devem primeiro definir e
+<p>Nesse cenário, os arquitetos devem primeiro definir e
 identificar as capacidades necessárias para um conector, idealmente sem se
 importar com como ele será implementado. Depois, deve ser selecionado
 middleware que possa fornecer todas (ou a maioria) dessas capacidades e também
@@ -695,8 +597,7 @@ fornecidas diretamente pelo middleware, elas devem ser implementadas como parte
 da implementação do conector. O resultado é um conector que atende à necessidade
 arquitetônica, em vez de um que se curva às suposições feitas por
 desenvolvedores de middleware.</p>
-
-<p class=MsoNormal>Por exemplo, pode ser necessário um conector que ofereça
+<p>Por exemplo, pode ser necessário um conector que ofereça
 suporte à passagem de mensagens entre um componente C++ rodando no Linux e um
 componente Java rodando no Windows. Dois pacotes middleware orientados a
 mensagens podem estar disponíveis: um pacote comercial que tem suporte a C++ e
@@ -705,25 +606,21 @@ código aberto que suporta ambas as plataformas, mas apenas componentes em C++.
 Se os orçamentos estiverem apertados, a solução open-source pode ser selecionada,
 e um adaptador Java Native Interface (JNI) (Liang 1999) pode ser escrito para
 permitir que o componente Java se comunique com o middleware.</p>
-
-<p class=MsoNormal><b>Construindo uma Nova Estrutura<o:p></o:p></b></p>
-
-<p class=MsoNormal>Ocasionalmente, circunstâncias motivam o desenvolvimento de
+<p><b>Construindo uma Nova Estrutura</b></p>
+<p>Ocasionalmente, circunstâncias motivam o desenvolvimento de
 uma nova estrutura de implementação de arquitetura. Boas razões para
 desenvolver um novo framework incluem:</p>
-
-<ul style='margin-top:0cm' type=disc>
- <li class=MsoNormal style='mso-list:l41 level1 lfo255;tab-stops:list 36.0pt'>O
+<ul style="margin-top:0cm" type="disc">
+<li>O
      estilo arquitetônico utilizado é inovador.</li>
- <li class=MsoNormal style='mso-list:l41 level1 lfo255;tab-stops:list 36.0pt'>O
+<li>O
      estilo arquitetônico não é inovador, mas está sendo implementado em uma
      plataforma para a qual não existe estrutura.</li>
- <li class=MsoNormal style='mso-list:l41 level1 lfo255;tab-stops:list 36.0pt'>O
+<li>O
      estilo arquitetônico não é inovador e existem estruturas para a plataforma
      alvo, mas as estruturas existentes são inadequadas.</li>
 </ul>
-
-<p class=MsoNormal>Desenvolver uma estrutura de arquitetura é uma tarefa que
+<p>Desenvolver uma estrutura de arquitetura é uma tarefa que
 não deve ser tomada de ânimo leve. Esses frameworks impactarão quase todas as
 partes das aplicações construídas sobre eles e podem ser fator decisivo para o
 sucesso desses aplicativos, portanto, deve ser tomado grande cuidado em seu
@@ -734,22 +631,19 @@ assim por diante. Assim, quase tudo o que dissemos neste livro sobre o
 desenvolvimento de aplicações em geral pode ser aplicado a frameworks de
 arquitetura. No entanto, existem algumas diretrizes adicionais que podem ser
 aplicadas especificamente ao desenvolvimento de estruturas:</p>
-
-<p class=MsoNormal>Tenha um bom entendimento do estilo primeiro. Desenvolver
+<p>Tenha um bom entendimento do estilo primeiro. Desenvolver
 uma estrutura arquitetônica com uma compreensão incompleta do estilo
 arquitetônico alvo é uma receita para o desastre. Não haverá padrão para medir
 o arcabouço de fidelidade ou completude. Um conjunto claro e conciso das regras
 e restrições do estilo arquitetônico deve ser desenvolvido antes do início do
 projeto da estrutura.</p>
-
-<p class=MsoNormal>Limite a estrutura a questões abordadas no estilo
+<p>Limite a estrutura a questões abordadas no estilo
 arquitetônico. Na maior medida possível, um framework de implementação de
 arquitetura deve ser independente de qualquer aplicação alvo específica.
 Incluir recursos específicos da aplicação (que não fazem parte do estilo) em um
 framework limita a reutilização do framework e borra a linha entre o que faz
 parte da aplicação e o que faz parte do framework.</p>
-
-<p class=MsoNormal>Escolha o escopo do framework. Frameworks de arquitetura bem
+<p>Escolha o escopo do framework. Frameworks de arquitetura bem
 implementados são ativos reutilizáveis valiosos para as organizações que os
 desenvolvem. Os desenvolvedores de um novo framework devem decidir como o
 framework será reutilizado no futuro para definir adequadamente suas
@@ -759,24 +653,21 @@ entanto, as aplicações alvo iniciais construídas nesse estilo podem não apro
 isso. Se implementar ou não dinamismo no framework depende de quão provável é
 que o dinamismo seja necessário em um projeto futuro (ou em uma versão futura
 do projeto atual). Isso leva ao seguinte conselho relacionado.</p>
-
-<p class=MsoNormal>Evite engenharia excessiva. Ao construir novos frameworks, é
+<p>Evite engenharia excessiva. Ao construir novos frameworks, é
 tentador incluir todo tipo de funcionalidade inteligente ou útil,
 independentemente de as aplicações alvo realmente usá-las. Isso é especialmente
 verdadeiro porque frameworks frequentemente (e devem ser) desenvolvidos
 separadamente de aplicações específicas. Essas capacidades adicionais podem
 envolver camadas e níveis adicionais de abstração e ter efeitos significativos
 no framework, especialmente em sua usabilidade e desempenho.</p>
-
-<p class=MsoNormal>Limite a sobrecarga para desenvolvedores de aplicações. Cada
+<p>Limite a sobrecarga para desenvolvedores de aplicações. Cada
 framework impõe um ônus adicional aos implementadores de aplicações — incluir
 código padrão nos componentes, implementar um conjunto padrão de comportamentos
 que o framework possa usar, e assim por diante. À medida que os encargos para
 os desenvolvedores de aplicações aumentam, os frameworks se tornam mais pesados
 e menos suportáveis. Limitar suas obrigações adicionais (seja por meio do
 design do framework ou suporte a ferramentas) pode mitigar isso.</p>
-
-<p class=MsoNormal>Desenvolva uma estratégia para recursos tradicionais e
+<p>Desenvolva uma estratégia para recursos tradicionais e
 prontos para uso. Quase qualquer aplicação está obrigada a incluir elementos
 (componentes, conectores, middleware, etc.) que não foram desenvolvidos
 pensando no framework. Sem uma estratégia documentada ou apoiada por
@@ -787,10 +678,8 @@ reinventam rodas diferentes). Desenvolvedores de frameworks devem considerar
 seriamente os tipos de recursos externos que podem ser incorporados nas
 aplicações e estabelecer estratégias para integrar esses recursos e distribuir
 com o framework.</p>
-
-<p class=MsoNormal><b>Simultaneidade<o:p></o:p></b></p>
-
-<p class=MsoNormal>No passado, muitos sistemas intensivos em software podiam
+<p><b>Simultaneidade</b></p>
+<p>No passado, muitos sistemas intensivos em software podiam
 ser projetados para rodar em um único computador com um único processador.
 Hoje, até mesmo computadores individuais possuem processadores multicore ou
 multithread que podem realizar múltiplas tarefas simultaneamente. Além disso,
@@ -803,29 +692,24 @@ geralmente são empregados múltiplos threads ou processos do sistema
 operacional. Em uma rede, diferentes hosts necessariamente executam processos
 independentes que precisam trabalhar juntos e implementar o comportamento do
 sistema como um todo.</p>
-
-<p class=MsoNormal>A maioria dos estilos arquitetônicos tem alguma noção de
+<p>A maioria dos estilos arquitetônicos tem alguma noção de
 concorrência, seja simples sincronização ou multiprocessamento complexo.
 Pipe-and-filter, um dos estilos mais simples, foi desenvolvido para aproveitar
 a concorrência e processar resultados parciais em paralelo; foi uma melhoria em
 relação aos sistemas de processamento em lote que não conseguiam fazer isso.
-Muitos dos estilos arquitetônicos identificados <span class=SpellE>em<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch04.html"
-title="Chapter&nbsp;4.&nbsp;Designing Architectures"><b>Capítulo</b><b> 4</b></a></span>têm
+Muitos dos estilos arquitetônicos identificados <span class="SpellE">em<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch04.html" title="Chapter 4. Designing Architectures"><b>Capítulo</b><b> 4</b></a></span>têm
 disposições específicas para quais elementos podem (ou devem) rodar
 simultaneamente.</p>
-
-<p class=MsoNormal>Muitos frameworks de implementação de arquitetura e pacotes
+<p>Muitos frameworks de implementação de arquitetura e pacotes
 de middleware têm o gerenciamento de concorrência como uma de suas principais
 funcionalidades. Mais adiante neste capítulo, duas implementações de exemplo do
-Lunar Lander tanto nos estilos arquitetônicos <span class=SpellE>pipe-and-filter</span>
+Lunar Lander tanto nos estilos arquitetônicos <span class="SpellE">pipe-and-filter</span>
 quanto C2 são apresentadas. Em ambos os casos, a concorrência é gerenciada
 inteiramente pelo framework ou sistema operacional subjacente. No caso do
-sistema <span class=SpellE>pipe-and-filter</span>, cada filtro executa em um
+sistema <span class="SpellE">pipe-and-filter</span>, cada filtro executa em um
 processo de sistema operacional concorrente; no caso do sistema C2, cada
 componente e conector roda em seu próprio thread de controle.</p>
-
-<p class=MsoNormal>Uma quantidade crescente de pesquisas está sendo direcionada
+<p>Uma quantidade crescente de pesquisas está sendo direcionada
 para novos modelos de programação para apoiar a concorrência. No entanto,
 programas simultâneos ainda são difíceis de escrever. Se o estilo arquitetônico
 possui uma política de concorrência bem adaptada à aplicação alvo, o suporte à
@@ -835,29 +719,23 @@ falhas mais difíceis de reproduzir e rastrear. Encapsular a implementação da
 concorrência em código de framework ou middleware bem testado pode ajudar a
 mitigar os riscos de impasse e condições de corrida (embora não possa
 eliminá-los).</p>
-
-<p class=MsoNormal><b>Tecnologias Generativas<o:p></o:p></b></p>
-
-<p class=MsoNormal>Uma proposta de &quot;solução mágica&quot; que recebeu
+<p><b>Tecnologias Generativas</b></p>
+<p>Uma proposta de "solução mágica" que recebeu
 bastante atenção ao longo dos anos é a ideia de que implementações de sistemas
 de software podem ser muito mais eficientes e eficazes ao gerar (partes de)
 essas implementações diretamente a partir de seus projetos. De fato, esse é o
-foco da iniciativa de Arquitetura Orientada por Modelos do <span class=SpellE>Object</span>
-Management <span class=SpellE>Group</span> (OMG) (<span class=SpellE>Mukerji</span>
-e Miller 2003), descrita <span class=SpellE>em<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch16.html"
-title="Chapter&nbsp;16.&nbsp;Standards"><b>Capítulo</b><b> 16</b></a></span>,
+foco da iniciativa de Arquitetura Orientada por Modelos do <span class="SpellE">Object</span>
+Management <span class="SpellE">Group</span> (OMG) (<span class="SpellE">Mukerji</span>
+e Miller 2003), descrita <span class="SpellE">em<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch16.html" title="Chapter 16. Standards"><b>Capítulo</b><b> 16</b></a></span>,
 assim como muitas tecnologias generativas que foram desenvolvidas ao longo dos
 anos.</p>
-
-<p class=MsoNormal>Como a geração pode derivar implementações (parciais)
+<p>Como a geração pode derivar implementações (parciais)
 diretamente de projetos, a geração é uma estratégia atraente para manter o
 mapeamento da arquitetura para o código. No entanto, geralmente não é uma
 solução abrangente (ou fácil) de implementar corretamente. Algumas estratégias
 generativas que podem ser empregadas no desenvolvimento centrado na arquitetura
 são descritas no texto a seguir.</p>
-
-<p class=MsoNormal>Geração de implementações completas de sistemas ou
+<p>Geração de implementações completas de sistemas ou
 elementos. Dada uma especificação arquitetônica suficiente, incluindo
 especificações estruturais, de interface e comportamentais completas, é
 possível gerar uma implementação completa para um componente, conector ou até
@@ -868,8 +746,7 @@ porém, isso é extremamente difícil, devido à grande quantidade de detalhes
 necessários para gerar implementações — as especificações comportamentais de um
 componente, por exemplo, geralmente têm a mesma complexidade que o código que
 implementa o componente.</p>
-
-<p class=MsoNormal>Geração de esqueletos ou interfaces. Também é possível gerar
+<p>Geração de esqueletos ou interfaces. Também é possível gerar
 implementações parciais de elementos ou sistemas a partir de modelos
 arquitetônicos. Por exemplo, se as interfaces forem bem descritas, é possível
 gerar esqueletos de código para cada serviço ou método na interface, permitindo
@@ -877,19 +754,15 @@ que os implementadores preencham o comportamento. Da mesma forma, se
 especificações comportamentais parciais estiverem disponíveis (na forma de
 cartas de estado, por exemplo), autômatos de estados finitos podem ser gerados
 em código, deixando o comportamento para cada estado a cargo dos programadores.</p>
-
-<p class=MsoNormal>Geração de Composições. Em situações em que já existe uma
+<p>Geração de Composições. Em situações em que já existe uma
 biblioteca de implementações reutilizáveis de componentes e conectores e
 sistemas são simplesmente compostos a partir dessa biblioteca, modelos
 arquitetônicos podem ser usados para gerar as configurações e o código de
 colagem necessários para conectar os elementos em um sistema completo. Essa
 estratégia é geralmente mais eficaz no contexto da engenharia de software
-específica de domínio (<span class=SpellE>veja<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch15.html"
-title="Chapter&nbsp;15.&nbsp;Domain-Specific Software Engineering"><b>Capítulo</b><b>
+específica de domínio (<span class="SpellE">veja<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch15.html" title="Chapter 15. Domain-Specific Software Engineering"><b>Capítulo</b><b>
 15</b></a></span>).</p>
-
-<p class=MsoNormal>Em qualquer esforço generativo, o problema do round-tripping
+<p>Em qualquer esforço generativo, o problema do round-tripping
 torna-se primordial. No contexto da geração, abordagens unidirecionais permitem
 que um artefato seja gerado a partir de outro – por exemplo, para que o código
 seja gerado a partir de modelos arquitetônicos. Abordagens de ida e volta
@@ -904,17 +777,14 @@ de ida e volta sejam preferíveis a abordagens unidirecionais, geralmente são
 difíceis de implementar corretamente, especialmente quando ferramentas de
 modelagem arquitetônica e desenvolvimento de código não estão bem integradas
 (como frequentemente acontece).</p>
-
-<p class=MsoNormal><b>Garantindo a Consistência entre Arquitetura e
-Implementação<o:p></o:p></b></p>
-
-<p class=MsoNormal>Mesmo com o uso de uma estrutura arquitetônica, raramente é
+<p><b>Garantindo a Consistência entre Arquitetura e
+Implementação</b></p>
+<p>Mesmo com o uso de uma estrutura arquitetônica, raramente é
 óbvio se uma implementação realmente está em conformidade com sua arquitetura
 prescrita. Determinar se esse é o caso geralmente requer uma combinação de
 técnicas, incluindo inspeção e revisão manuais. Existem várias estratégias que
 podem facilitar essa tarefa.</p>
-
-<p class=MsoNormal>Crie e mantenha links de rastreabilidade. A existência de
+<p>Crie e mantenha links de rastreabilidade. A existência de
 links, ou mapeamentos explícitos, de elementos arquitetônicos para elementos de
 implementação pode ajudar os desenvolvedores a determinar se cada elemento
 arquitetônico possui uma implementação correspondente e vice-versa. Ter esses
@@ -925,8 +795,7 @@ usada para determinar se algum link quebrou devido a mudanças no modelo ou na
 implementação. Essa estratégia funciona bem para artefatos concretos, mas
 mapear diferentes níveis de abstração ou elementos que não possuem uma ligação
 direta entre arquitetura e implementação pode ser complicado.</p>
-
-<p class=MsoNormal>Inclua o modelo arquitetônico. Um modelo arquitetônico pode
+<p>Inclua o modelo arquitetônico. Um modelo arquitetônico pode
 conter informações que podem ser usadas diretamente na implementação de um
 sistema. Por exemplo, uma descrição da estrutura de um sistema em um modelo
 (indicando como os componentes devem ser instanciados e conectados) pode ser
@@ -937,8 +806,7 @@ pode ser feito durante a construção ou durante a inicialização do sistema. E
 ambos os casos, uma forma de correspondência
 arquitetura-implementação-correspondência é garantida, pois a estrutura da
 aplicação implementada é derivada diretamente do modelo arquitetônico.</p>
-
-<p class=MsoNormal>Gerar implementação a partir da arquitetura. Dependendo da
+<p>Gerar implementação a partir da arquitetura. Dependendo da
 forma e do conteúdo de um modelo arquitetônico, pode ser possível gerar partes
 de uma implementação diretamente a partir do modelo usando ferramentas
 automatizadas. Se o conjunto de componentes em um sistema for especificado e o
@@ -947,47 +815,37 @@ componentes para um framework de implementação da arquitetura alvo. Se
 informações comportamentais também estiverem disponíveis no modelo, pode ser
 possível gerar algumas ou todas as implementações desses componentes a partir
 do modelo.</p>
-
-<p class=MsoNormal>ESTRUTURAS EXISTENTES</p>
-
-<p class=MsoNormal>Esta seção apresenta exemplos de frameworks de implementação
+<p>ESTRUTURAS EXISTENTES</p>
+<p>Esta seção apresenta exemplos de frameworks de implementação
 de arquitetura que foram implementados para vários estilos arquitetônicos,
 mostra como eles satisfazem nossa definição de framework e avalia seus pontos
 fortes e fracos.</p>
-
-<p class=MsoNormal><b>Estruturas para o Estilo Arquitetônico Pipe-<span
-class=SpellE>and</span>-Filter<o:p></o:p></b></p>
-
-<p class=MsoNormal>Muitos programadores usaram um framework de arquitetura sem
+<p><b>Estruturas para o Estilo Arquitetônico Pipe-<span class="SpellE">and</span>-Filter</b></p>
+<p>Muitos programadores usaram um framework de arquitetura sem
 necessariamente estar cientes dele, especificamente um framework de arquitetura
-para o estilo <span class=SpellE>pipe-and-filter</span>. Quase toda linguagem
+para o estilo <span class="SpellE">pipe-and-filter</span>. Quase toda linguagem
 de programação implementada em todos os principais sistemas operacionais vem
 acompanhada de uma biblioteca ou módulo que serve como estrutura de arquitetura
-para o estilo <span class=SpellE>pipe-and-filter</span>.</p>
-
-<p class=MsoNormal><b>O Framework Padrão de E/S<o:p></o:p></b></p>
-
-<p class=MsoNormal>A linguagem de programação C é single-threaded, utiliza
+para o estilo <span class="SpellE">pipe-and-filter</span>.</p>
+<p><b>O Framework Padrão de E/S</b></p>
+<p>A linguagem de programação C é single-threaded, utiliza
 fluxo de controle de chamada e retorno para procedimentos e funções, e
 geralmente armazena e recupera todos os dados da memória por endereço. Como,
 então, a linguagem C é tornada compatível com o estilo pipe-and-filter, onde
 filtros podem rodar em paralelo, geralmente são ativados quando dados ficam
 disponíveis, e onde filtros recuperam e enviam dados por meio de fluxos de
 bytes? A resposta é um framework de arquitetura chamado biblioteca padrão de
-entrada-saída (I/O), também conhecida pelo nome abreviado, <span class=SpellE>stdio</span>.</p>
-
-<p class=MsoNormal>Lembre-se de que um framework de arquitetura serve como uma
+entrada-saída (I/O), também conhecida pelo nome abreviado, <span class="SpellE">stdio</span>.</p>
+<p>Lembre-se de que um framework de arquitetura serve como uma
 ponte entre as necessidades de um estilo arquitetônico e os serviços fornecidos
 pela linguagem de programação e pelo sistema operacional. Aqui, a linguagem de
 programação C fornece serviços genéricos: construtos de controle, a capacidade
 de ler e escrever na memória, e assim por diante. O sistema operacional, por
 outro lado, oferece uma série de serviços úteis: concorrência no nível do
-processo<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch09.html#ftn.CHP-9-FN-1"><b><sup>[10]</sup></b></a>bem
+processo<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch09.html#ftn.CHP-9-FN-1"><b><sup>[10]</sup></b></a>bem
 como pelo menos dois fluxos de dados distintos para cada processo
-(&quot;entrada padrão&quot; e &quot;saída padrão&quot;).</p>
-
-<p class=MsoNormal>A biblioteca stdio fornece aos programas C acesso aos fluxos
+("entrada padrão" e "saída padrão").</p>
+<p>A biblioteca stdio fornece aos programas C acesso aos fluxos
 padrão de entrada/saída fornecidos pelo sistema operacional por meio de uma API
 procedural que trata os fluxos da mesma forma que arquivos em um dispositivo de
 armazenamento de acesso sequencial, como um disco rígido. Rotinas de baixo
@@ -1002,56 +860,48 @@ escritos em um fluxo de saída, e o próximo filtro no pipeline não estiver
 pronto para consumir esses bytes, então o stdio pode fazer a operação de
 escrita bloquear (fazer o chamador esperar) até que o receptor esteja pronto,
 ou pode armazenar os dados em buffer e permitir que o chamador continue.</p>
-
-<p class=MsoNormal>Certamente essa não é a única forma de implementar tal
+<p>Certamente essa não é a única forma de implementar tal
 estrutura. Por exemplo, pode-se imaginar uma estrutura onde bytes chegando à
 entrada padrão acionavam o início da execução do programa, em vez do sistema
 operacional invocar o principal método do programa. Com esse entendimento,
-agora podemos avaliar o framework <span class=SpellE>stdio</span> em termos das
+agora podemos avaliar o framework <span class="SpellE">stdio</span> em termos das
 qualidades que discutimos anteriormente.</p>
-
-<p class=MsoNormal>Suporte de Plataforma. A interface stdio é construída
+<p>Suporte de Plataforma. A interface stdio é construída
 especificamente para a linguagem de programação C, e sua implementação vem com
 todas as implementações da linguagem. Bibliotecas semelhantes podem existir em
 outras linguagens diferentes. Implementações do framework em plataformas com
 pouco ou nenhum suporte ao sistema operacional para fluxos como mecanismo de
 comunicação entre processos podem ser mais complicadas ou podem não suportar
-aplicações <span class=SpellE>pipe-and-filter</span>.</p>
-
-<p class=MsoNormal>Fidelidade. O suporte da biblioteca <span class=SpellE>stdio</span>
-para <span class=SpellE>streams</span> é bom, mas um programa que o usa não
+aplicações <span class="SpellE">pipe-and-filter</span>.</p>
+<p>Fidelidade. O suporte da biblioteca <span class="SpellE">stdio</span>
+para <span class="SpellE">streams</span> é bom, mas um programa que o usa não
 está limitado a funcionar como filtro. Os programas são livres para ignorar
 tanto os fluxos padrão de entrada quanto de saída, e fazer entrada/saída por
 outros mecanismos (por exemplo, interação direta com o teclado ou usando
 bibliotecas de interface gráfica para saída de dados).</p>
-
-<p class=MsoNormal>Coincidindo com as Suposições. As suposições padrão da
-biblioteca <span class=SpellE>stdio</span> em relação a sistemas <span
-class=SpellE>pipe-and-filter</span> são que cada filtro será um processo de
+<p>Coincidindo com as Suposições. As suposições padrão da
+biblioteca <span class="SpellE">stdio</span> em relação a sistemas <span class="SpellE">pipe-and-filter</span> são que cada filtro será um processo de
 sistema operacional separado e os fluxos fornecidos pelo sistema operacional
 (entrada padrão e saída padrão) serão usados para comunicação. Se o aplicativo
-quiser usar <span class=SpellE>pipe-and-filter</span> de forma diferente (por
+quiser usar <span class="SpellE">pipe-and-filter</span> de forma diferente (por
 exemplo, com filtros como partes de um aplicativo C rodando em um único
 processo, ou talvez usando um arquivo de disco como armazenamento
 intermediário), então o aplicativo precisa ser modificado de certa forma. Como
-a biblioteca <span class=SpellE>stdio</span> oferece interfaces praticamente
+a biblioteca <span class="SpellE">stdio</span> oferece interfaces praticamente
 idênticas para leitura e gravação em diferentes tipos de fluxos (fluxos de
-arquivos, fluxos em memória, fluxos <span class=SpellE>interprocessos</span> e
-assim por diante), isso amplia os tipos de aplicações <span class=SpellE>pipe-and-filter</span>
+arquivos, fluxos em memória, fluxos <span class="SpellE">interprocessos</span> e
+assim por diante), isso amplia os tipos de aplicações <span class="SpellE">pipe-and-filter</span>
 que podem ser construídas com ela.</p>
-
-<p class=MsoNormal>Eficiência. Se os filtros rodam simultaneamente (um dos
-principais benefícios de eficiência do <span class=SpellE>pipe-and-filter</span>
+<p>Eficiência. Se os filtros rodam simultaneamente (um dos
+principais benefícios de eficiência do <span class="SpellE">pipe-and-filter</span>
 em relação às arquiteturas sequenciais em lote) depende em grande parte de como
 o sistema operacional subjacente agenda o processo. Para sistemas operacionais
 de processo único, a saída precisa ser armazenada em memória compartilhada ou
 armazenamento secundário à medida que cada filtro roda sequencialmente. Em
-grande parte, a própria biblioteca <span class=SpellE>stdio</span> não tem
+grande parte, a própria biblioteca <span class="SpellE">stdio</span> não tem
 controle sobre como isso é tratado.</p>
-
-<p class=MsoNormal><b>O Marco java.io<o:p></o:p></b></p>
-
-<p class=MsoNormal>A linguagem de programação Java é multithread, orientada a
+<p><b>O Marco java.io</b></p>
+<p>A linguagem de programação Java é multithread, orientada a
 objetos, utiliza chamadas de método call-return para transferência de controle
 e agrupa código e dados dentro dos objetos. As classes de objeto usadas para
 construir aplicações pipe-and-filter em Java são encontradas no pacote java.io.
@@ -1062,65 +912,51 @@ bytes, e OutputStream, que permite que os chamadores escrevam uma sequência de
 bytes. Cada um deles fornece um pequeno conjunto de métodos para ler e escrever
 bytes simples ou grupos de bytes, além de alguns métodos auxiliares para rebobinar
 dentro de um fluxo durante leitura e escrita de limpeza.</p>
-
-<p class=MsoNormal>Essas classes base de baixo nível definem funcionalidade
+<p>Essas classes base de baixo nível definem funcionalidade
 mínima para fluxos de bytes legíveis e graváveis. Essas classes não são usadas
 diretamente; em vez disso, são usadas subclasses. Em java.io, são fornecidos
 dois tipos de subclasses. Um conjunto fornece acesso a fontes e sumidouros de
-dados concretos: arquivos, sockets de rede, <span class=SpellE>arrays</span> de
+dados concretos: arquivos, sockets de rede, <span class="SpellE">arrays</span> de
 bytes em memória, e assim por diante. Além disso, três objetos distintos são
-fornecidos pelo ambiente de <span class=SpellE>runtime</span>: System.in, <span
-class=SpellE>System.out</span> e <span class=SpellE>System.err</span>, que são
+fornecidos pelo ambiente de <span class="SpellE">runtime</span>: System.in, <span class="SpellE">System.out</span> e <span class="SpellE">System.err</span>, que são
 usados para ler e escrever nos fluxos padrão de entrada, saída e erro do
-processo do sistema operacional, e são usados para criar aplicações de <span
-class=SpellE>pipe-and-filter</span> <span class=SpellE>multiprocesso</span>.
+processo do sistema operacional, e são usados para criar aplicações de <span class="SpellE">pipe-and-filter</span> <span class="SpellE">multiprocesso</span>.
 Outro conjunto de subclasses adiciona funcionalidades aos fluxos básicos de
-entrada e saída ao envolver esses fluxos de baixo nível. Por exemplo, <span
-class=SpellE>BufferedInputStream</span> e <span class=SpellE>BufferedOutputStream</span>
-adicionam buffers para melhorar o desempenho.&nbsp;<span class=SpellE>DataInputStream</span>
-e <span class=SpellE>DataOutputStream</span> adicionam métodos adicionais de
+entrada e saída ao envolver esses fluxos de baixo nível. Por exemplo, <span class="SpellE">BufferedInputStream</span> e <span class="SpellE">BufferedOutputStream</span>
+adicionam buffers para melhorar o desempenho. <span class="SpellE">DataInputStream</span>
+e <span class="SpellE">DataOutputStream</span> adicionam métodos adicionais de
 interface a fluxos encapsulados que permitem a leitura e escrita de tipos
-básicos de dados Java (inteiros, <span class=SpellE>floats</span>, etc.). Com
-isso em mente, agora podemos avaliar java.io e compará-lo com a biblioteca <span
-class=SpellE>stdio</span>.</p>
-
-<p class=MsoNormal>Suporte de Plataforma. A biblioteca java.io faz parte do
+básicos de dados Java (inteiros, <span class="SpellE">floats</span>, etc.). Com
+isso em mente, agora podemos avaliar java.io e compará-lo com a biblioteca <span class="SpellE">stdio</span>.</p>
+<p>Suporte de Plataforma. A biblioteca java.io faz parte do
 conjunto padrão de pacotes Java e, portanto, está disponível em qualquer
 plataforma que possa rodar Java. Recursos específicos da plataforma, como o
 acesso aos fluxos padrão de entrada e saída do sistema operacional, são
 abstraídos.</p>
-
-<p class=MsoNormal>Fidelidade. O suporte da biblioteca para fluxos é
-abrangente, mas, assim como no <span class=SpellE>stdio</span>, programas que
+<p>Fidelidade. O suporte da biblioteca para fluxos é
+abrangente, mas, assim como no <span class="SpellE">stdio</span>, programas que
 usam essa biblioteca não precisam funcionar como filtro. Por outro lado,
-arquiteturas <span class=SpellE>pipe-and-filter</span> rodando dentro de um
+arquiteturas <span class="SpellE">pipe-and-filter</span> rodando dentro de um
 único programa são mais fáceis de construir com java.io devido à existência de
-fluxos que leem e gravam na memória, e classes de <span class=SpellE>pipe</span>
+fluxos que leem e gravam na memória, e classes de <span class="SpellE">pipe</span>
 em processo que permitem a conexão de fluxos em processo.</p>
-
-<p class=MsoNormal>Coincidindo com as Suposições. A biblioteca java.io
-corresponde bem às suposições do estilo <span class=SpellE>pipe-and-filter</span>.
-Estruturas <span class=SpellE>pipe-and-filter</span> em processo podem ser
-construídas com relativa facilidade devido ao suporte inato do Java para <span
-class=SpellE>threading</span> e à capacidade de executar múltiplos filtros
+<p>Coincidindo com as Suposições. A biblioteca java.io
+corresponde bem às suposições do estilo <span class="SpellE">pipe-and-filter</span>.
+Estruturas <span class="SpellE">pipe-and-filter</span> em processo podem ser
+construídas com relativa facilidade devido ao suporte inato do Java para <span class="SpellE">threading</span> e à capacidade de executar múltiplos filtros
 internos simultaneamente.</p>
-
-<p class=MsoNormal>Eficiência. O Java oferece aos programadores controle
+<p>Eficiência. O Java oferece aos programadores controle
 detalhado sobre mecanismos de eficiência: buffers podem ser usados envolvendo
-um fluxo em um fluxo <span class=SpellE>bufferizado</span>, e threads podem ser
+um fluxo em um fluxo <span class="SpellE">bufferizado</span>, e threads podem ser
 explicitamente alocados para separar operações de E/S separadas de operações
 computacionalmente intensivas (o que pode aumentar o desempenho em máquinas
 multiprocessador). No entanto, com maior cooperação do sistema operacional, muitas
 vezes é possível alcançar uma eficiência ainda maior. Isso motivou a construção
-do pacote <span class=SpellE>java.nio</span> (New I/O), que pode aproveitar
+do pacote <span class="SpellE">java.nio</span> (New I/O), que pode aproveitar
 mecanismos mais rápidos.</p>
-
-<p class=MsoNormal><b>Estruturas para o Estilo Arquitetônico C2<o:p></o:p></b></p>
-
-<p class=MsoNormal>Construção de aplicações no estilo arquitetônico C2 [(Taylor
-et al. 1996) (<span class=SpellE>veja<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch04.html"
-title="Chapter&nbsp;4.&nbsp;Designing Architectures"><b>Capítulo</b><b> 4</b></a></span>)]
+<p><b>Estruturas para o Estilo Arquitetônico C2</b></p>
+<p>Construção de aplicações no estilo arquitetônico C2 [(Taylor
+et al. 1996) (<span class="SpellE">veja<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch04.html" title="Chapter 4. Designing Architectures"><b>Capítulo</b><b> 4</b></a></span>)]
 difere significativamente da programação tradicional por chamadas de
 procedimentos e orientada a objetos. Ele impõe regras rigorosas sobre como as
 aplicações são construídas internamente e como os componentes dentro de uma
@@ -1128,8 +964,7 @@ aplicação se comunicam. Ele governa tanto as transferências de controle quant
 os dados dentro de uma aplicação, e faz suposições sobre concorrência e
 threading. Por causa dessas diferenças, os frameworks são essenciais para o
 desenvolvimento eficaz do C2.</p>
-
-<p class=MsoNormal>Os serviços fornecidos por uma estrutura C2 surgem das
+<p>Os serviços fornecidos por uma estrutura C2 surgem das
 várias restrições do estilo arquitetônico C2. Por exemplo, o C2 exige que a
 funcionalidade da aplicação seja dividida em componentes discretos (para
 computação) e conectores (para comunicação). Portanto, frameworks C2 oferecem
@@ -1141,22 +976,18 @@ restrição devem fornecer um conceito de mensagem assíncrona e devem alocar (a
 partir do sistema operacional) ou simular (por meio de uma técnica como o
 escalonamento round-robin das atividades de uma única thread) múltiplas threads
 de controle.</p>
-
-<p class=MsoNormal>Frameworks C2 foram desenvolvidos para muitas combinações de
+<p>Frameworks C2 foram desenvolvidos para muitas combinações de
 plataforma/linguagem. Frameworks C2 foram desenvolvidos para C++, Ada, Java e
 outras linguagens rodando Windows, UNIX, a Máquina Virtual Java e assim por
 diante. Vários frameworks Java C2 diferentes foram desenvolvidos, cada um com
 características distintas. Vamos comparar e contrastar um framework básico
 chamado Lightweight C2 Framework e um framework maior, porém mais configurável,
-chamado <span class=SpellE>Flexible</span> C2 Framework.</p>
-
-<p class=MsoNormal><b>A Estrutura C2 Leve<o:p></o:p></b></p>
-
-<p class=MsoNormal>O primeiro framework C2 implementado em Java é conhecido
+chamado <span class="SpellE">Flexible</span> C2 Framework.</p>
+<p><b>A Estrutura C2 Leve</b></p>
+<p>O primeiro framework C2 implementado em Java é conhecido
 como framework Lightweight C2, implementado em apenas dezesseis classes (cerca
 de 3000 linhas) de código Java.</p>
-
-<p class=MsoNormal>A Figura 1 mostra um conjunto selecionado de classes do
+<p>A Figura 1 mostra um conjunto selecionado de classes do
 Lightweight C2 Framework, bem como suas relações, como um diagrama de classes
 UML. Para implementar uma aplicação usando esse framework, os desenvolvedores
 criam implementações de componentes e conectores como subclasses das classes
@@ -1167,39 +998,32 @@ si usando apenas mensagens, que são instâncias das classes Request e
 Notification. O desenvolvedor então cria um programa principal que utiliza a
 interface da classe Architecture para instanciar e conectar os diversos
 componentes e conectores.</p>
-
-<p class=MsoNormal><a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch09.html#selected_classes_and_relationships_from"
-title="Figure&nbsp;9-1.&nbsp;Selected classes and relationships from the Lightweight C2 Framework."><b>A
+<p><a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch09.html#selected_classes_and_relationships_from" title="Figure 9-1. Selected classes and relationships from the Lightweight C2 Framework."><b>A
 Figura 9-1</b></a> mostra algumas das principais escolhas de design feitas
 pelos autores do framework. Os componentes e conectores C2 são implementados
 como classes Java que estendem classes base abstratas (Component e Connector)
 fornecidas pelo framework. As mensagens são codificadas como objetos com um
 nome de string e um mapa de propriedades string-para-objeto contendo o conteúdo
 da mensagem.</p>
-
-<p class=MsoNormal>Certos aspectos do framework — como <span class=SpellE>threading</span>
+<p>Certos aspectos do framework — como <span class="SpellE">threading</span>
 e fila de mensagens — ficam a cargo de componentes e conectores individuais.
-Duas políticas de <span class=SpellE>threading</span> estão disponíveis para os
+Duas políticas de <span class="SpellE">threading</span> estão disponíveis para os
 implementadores: Se os desenvolvedores de aplicações estenderem as classes base
-<span class=SpellE>Component</span> e <span class=SpellE>Connector</span>, uma
+<span class="SpellE">Component</span> e <span class="SpellE">Connector</span>, uma
 única thread de aplicação atenderá toda a aplicação. Desenvolvedores que usam
 essa estratégia devem ter cuidado para não bloquear esse tópico e não travar
-suas aplicações sem querer. Se os desenvolvedores estendem as classes base <span
-class=SpellE>ComponentThread</span> e <span class=SpellE>ConnectorThread</span>,
+suas aplicações sem querer. Se os desenvolvedores estendem as classes base <span class="SpellE">ComponentThread</span> e <span class="SpellE">ConnectorThread</span>,
 então cada componente ou conector recebe um thread independente de controle.
 Isso consome mais recursos, mas também reduz a possibilidade de impasse
-inadvertido. A fila de mensagens é gerenciada por meio de objetos <span
-class=SpellE>Port</span>, que são objetos capazes de receber mensagens
-recebidas para um componente ou conector. Note que <span class=SpellE>ports</span>
+inadvertido. A fila de mensagens é gerenciada por meio de objetos <span class="SpellE">Port</span>, que são objetos capazes de receber mensagens
+recebidas para um componente ou conector. Note que <span class="SpellE">ports</span>
 são um conceito introduzido inteiramente por essa estrutura — eles não fazem
 parte do estilo C2 em si. O framework oferece apenas um tipo de porta: uma fila
 de primeiro a entrar primeiro a sair (FIFO). Com as portas FIFO, as mensagens
 são processadas na ordem de recebida; nenhuma mensagem recebe prioridade sobre
 qualquer outra. Os desenvolvedores são livres para implementar suas próprias
 portas não FIFO, desde que essas portas estendam a classe abstrata de Port.</p>
-
-<p class=MsoNormal>Também é interessante notar que nem toda restrição do estilo
+<p>Também é interessante notar que nem toda restrição do estilo
 C2 está refletida no framework. Por exemplo, nada no framework impõe a regra de
 que componentes e conectores devem agir como se rodassem em espaços de memória
 separados. Em uma aplicação de processo único, se um componente ou conector
@@ -1211,8 +1035,7 @@ processo, então aplicar essa restrição em um framework seria proibitivamente
 caro. Isso representa uma situação em que fidelidade é trocada por eficiência e
 onde uma estrutura é usada para auxiliar, mas não para impor, implementações
 que estejam de acordo com o estilo alvo.</p>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shapetype
+<p><span><!--[if gte vml 1]><v:shapetype
  id="_x0000_t75" coordsize="21600,21600" o:spt="75" o:preferrelative="t"
  path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
  <v:stroke joinstyle="miter"/>
@@ -1236,22 +1059,14 @@ que estejam de acordo com o estilo alvo.</p>
  alt="Classes e relacionamentos selecionados do Framework Lightweight C2."
  style='width:411.6pt;height:496.8pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap09-ptbr_arquivos/image001.png" o:title="Classes e relacionamentos selecionados do Framework Lightweight C2"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=549 height=662
-src="cap09-ptbr_arquivos/image001.png"
-alt="Classes e relacionamentos selecionados do Framework Lightweight C2."
-v:shapes="Imagem_x0020_194"><![endif]></span></p>
-
-<p class=MsoNormal><b>Figura 9-1.&nbsp;Classes e relacionamentos selecionados
-do Framework <span class=SpellE>Lightweight</span> C2.</b></p>
-
-<p class=MsoNormal><b>A Estrutura Flexível C2<o:p></o:p></b></p>
-
-<p class=MsoNormal>A Estrutura Flexível C2 foi desenvolvida posteriormente e
+</v:shape><![endif]--><?if !vml?><img alt="Classes e relacionamentos selecionados do Framework Lightweight C2." border="0" height="662" src="cap09-ptbr_arquivos/image001.png" v:shapes="Imagem_x0020_194" width="549"/><?endif?></span></p>
+<p><b>Figura 9-1. Classes e relacionamentos selecionados
+do Framework <span class="SpellE">Lightweight</span> C2.</b></p>
+<p><b>A Estrutura Flexível C2</b></p>
+<p>A Estrutura Flexível C2 foi desenvolvida posteriormente e
 incorpora mais aspectos do estilo arquitetônico diretamente na estrutura.
 Assim, é maior, com setenta e três classes (aproximadamente 8.500 linhas de
-código).&nbsp;<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch09.html#selected_flexible_c2_framework_classes_a"
-title="Figure&nbsp;9-2.&nbsp;Selected Flexible C2 Framework classes and their relationships."><b>A
+código). <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch09.html#selected_flexible_c2_framework_classes_a" title="Figure 9-2. Selected Flexible C2 Framework classes and their relationships."><b>A
 Figura 9-2</b></a> mostra um conjunto semelhante de classes selecionadas no
 framework Flexible C2. Desenvolvedores de aplicações que usam esse framework
 seguem um curso de ação semelhante ao que utilizam o Lightweight C2 Framework.
@@ -1259,51 +1074,37 @@ Eles implementam primeiro componentes de aplicação e conectores como classes
 que implementam as interfaces Component e Connector. Essas classes trocam dados
 por meio de objetos que implementam a interface Message. Eles então escrevem
 uma classe principal que instancia, conecta e inicia esses componentes e
-conectores usando a interface <span class=SpellE>ArchitectureControler</span>.</p>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+conectores usando a interface <span class="SpellE">ArchitectureControler</span>.</p>
+<p><span><!--[if gte vml 1]><v:shape
  id="Imagem_x0020_193" o:spid="_x0000_i1038" type="#_x0000_t75" alt="Selecionei classes selecionadas do Flexible C2 Framework e suas relações."
  style='width:411.6pt;height:593.4pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap09-ptbr_arquivos/image002.png" o:title="Selecionei classes selecionadas do Flexible C2 Framework e suas relações"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=549 height=791
-src="cap09-ptbr_arquivos/image002.png"
-alt="Selecionei classes selecionadas do Flexible C2 Framework e suas relações."
-v:shapes="Imagem_x0020_193"><![endif]></span></p>
-
-<p class=MsoNormal><b>Figura 9-2.&nbsp;Selecionei classes selecionadas do
+</v:shape><![endif]--><?if !vml?><img alt="Selecionei classes selecionadas do Flexible C2 Framework e suas relações." border="0" height="791" src="cap09-ptbr_arquivos/image002.png" v:shapes="Imagem_x0020_193" width="549"/><?endif?></span></p>
+<p><b>Figura 9-2. Selecionei classes selecionadas do
 Flexible C2 Framework e suas relações.</b></p>
-
-<p class=MsoNormal>Uma diferença óbvia entre os dois frameworks é o uso
-generalizado de interfaces Java no <span class=SpellE>Flexible</span> C2
+<p>Uma diferença óbvia entre os dois frameworks é o uso
+generalizado de interfaces Java no <span class="SpellE">Flexible</span> C2
 Framework para representar conceitos fundamentais em vez de classes base
 abstratas. Como linguagem de programação, o Java permite apenas uma única
 herança entre classes de objetos. No entanto, uma única classe pode implementar
 múltiplas interfaces. O uso de interfaces Java em vez de classes base abstratas
-torna o <span class=SpellE>Flexible</span> C2 Framework um pouco mais fácil de
-adaptar a diferentes contextos do que o <span class=SpellE>Lightweight</span> C2
+torna o <span class="SpellE">Flexible</span> C2 Framework um pouco mais fácil de
+adaptar a diferentes contextos do que o <span class="SpellE">Lightweight</span> C2
 Framework. Componentes, conectores e mensagens criados por desenvolvedores
 podem estender qualquer outra classe base, desde que implementem a interface
 apropriada. Algum código padrão é necessário para implementar cada interface, e
-assim o framework fornece classes base abstratas (não mostradas na <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch09.html#selected_flexible_c2_framework_classes_a"
-title="Figure&nbsp;9-2.&nbsp;Selected Flexible C2 Framework classes and their relationships."><b>Figura
+assim o framework fornece classes base abstratas (não mostradas na <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch09.html#selected_flexible_c2_framework_classes_a" title="Figure 9-2. Selected Flexible C2 Framework classes and their relationships."><b>Figura
 9-2</b></a>) para cada interface na situação comum em que classes
 desenvolvedoras não são obrigadas a estender uma classe base externa.</p>
-
-<p class=MsoNormal>Outra diferença óbvia está na implementação das políticas de
-<span class=SpellE>threading</span> e fila de mensagens da aplicação. No <span
-class=SpellE>Lightweight</span> C2 Framework, essas políticas eram distribuídas
-por toda a aplicação em componentes individuais, conectores e portas. No <span
-class=SpellE>Flexible</span> C2 Framework, essas preocupações são centralizadas
-por meio de classes chamadas <span class=SpellE>MessageHandlers</span>, que
-definem políticas de fila, e <span class=SpellE>ArchitectureEngines</span>, que
-definem políticas de <span class=SpellE>threading</span>. Isso permite que os
+<p>Outra diferença óbvia está na implementação das políticas de
+<span class="SpellE">threading</span> e fila de mensagens da aplicação. No <span class="SpellE">Lightweight</span> C2 Framework, essas políticas eram distribuídas
+por toda a aplicação em componentes individuais, conectores e portas. No <span class="SpellE">Flexible</span> C2 Framework, essas preocupações são centralizadas
+por meio de classes chamadas <span class="SpellE">MessageHandlers</span>, que
+definem políticas de fila, e <span class="SpellE">ArchitectureEngines</span>, que
+definem políticas de <span class="SpellE">threading</span>. Isso permite que os
 desenvolvedores definam e selecionem essas políticas em uma base de aplicação
 ampla.</p>
-
-<p class=MsoNormal><a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch09.html#the_implementation_of_pluggable_message"
-title="Figure&nbsp;9-3.&nbsp;The implementation of pluggable message queuing and threading policies in the Flexible C2 Framework."><b>A
+<p><a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch09.html#the_implementation_of_pluggable_message" title="Figure 9-3. The implementation of pluggable message queuing and threading policies in the Flexible C2 Framework."><b>A
 Figura 9-3</b></a> mostra como políticas de enfileiramento e threading podem
 ser conectadas a uma aplicação. As interfaces, MessageHandler e
 ArchitectureEngine, definem APIs internas comuns a todas as políticas de
@@ -1312,397 +1113,341 @@ AbstractArchitectureEngine implementam funções padrão comuns a todas as
 políticas de fila e threading. Por fim, o framework fornece várias políticas
 alternativas de enfileiramento concreto e threading que podem ser selecionadas
 para uma aplicação. As políticas disponíveis de fila incluem:</p>
-
-<p class=MsoNormal>Uma Fila-Por-Interface. Cada interface (no estilo C2,
+<p>Uma Fila-Por-Interface. Cada interface (no estilo C2,
 interfaces superior ou inferior) tem sua própria fila de mensagens.</p>
-
-<p class=MsoNormal>Uma Fila-por-Aplicação. Todas as mensagens da aplicação são
+<p>Uma Fila-por-Aplicação. Todas as mensagens da aplicação são
 armazenadas em uma única fila.</p>
-
-<p class=MsoNormal>As políticas de <span class=SpellE>threading</span>
+<p>As políticas de <span class="SpellE">threading</span>
 disponíveis incluem:</p>
-
-<p class=MsoNormal>Um fio por tijolo. Cada <span class=SpellE>brick</span>
+<p>Um fio por tijolo. Cada <span class="SpellE">brick</span>
 (componente ou conector) na arquitetura recebe seu próprio thread de controle
 para processar suas mensagens.</p>
-
-<p class=MsoNormal><b>Pool de </b>Fios. A aplicação recebe um conjunto
+<p><b>Pool de </b>Fios. A aplicação recebe um conjunto
 constante de threads que são compartilhados entre todos os componentes. Quando
 um brick tem uma mensagem aguardando, uma thread é enviada para o brick para
 processar a mensagem. Quando o processamento de mensagens é concluído, a thread
 retorna ao pool.</p>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+<p><span><!--[if gte vml 1]><v:shape
  id="Imagem_x0020_192" o:spid="_x0000_i1037" type="#_x0000_t75" alt="A implementação de políticas de fila e threading de mensagens plugáveis no Flexible C2 Framework."
  style='width:411.6pt;height:379.8pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap09-ptbr_arquivos/image003.png" o:title="A implementação de políticas de fila e threading de mensagens plugáveis no Flexible C2 Framework"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=549 height=506
-src="cap09-ptbr_arquivos/image003.png"
-alt="A implementação de políticas de fila e threading de mensagens plugáveis no Flexible C2 Framework."
-v:shapes="Imagem_x0020_192"><![endif]></span></p>
-
-<p class=MsoNormal><b>Figura 9-3.&nbsp;A implementação de políticas de fila e
-threading de mensagens plugáveis no <span class=SpellE>Flexible</span> C2
+</v:shape><![endif]--><?if !vml?><img alt="A implementação de políticas de fila e threading de mensagens plugáveis no Flexible C2 Framework." border="0" height="506" src="cap09-ptbr_arquivos/image003.png" v:shapes="Imagem_x0020_192" width="549"/><?endif?></span></p>
+<p><b>Figura 9-3. A implementação de políticas de fila e
+threading de mensagens plugáveis no <span class="SpellE">Flexible</span> C2
 Framework.</b></p>
-
-<p class=MsoNormal>Motor <span class=SpellE>Steppable</span>. Um caso especial
+<p>Motor <span class="SpellE">Steppable</span>. Um caso especial
 da política de pool de threads, a aplicação recebe uma thread controlada por
 uma interface gráfica. Quando o usuário pressiona um botão de 'passo', a thread
 é despachada para processar uma única mensagem. Dessa forma, as aplicações podem
 ser depuradas com mais facilidade.</p>
-
-<p class=MsoNormal>Todas essas políticas são permitidas dentro do estilo C2,
+<p>Todas essas políticas são permitidas dentro do estilo C2,
 mas afetam dramaticamente como as aplicações são desenvolvidas e a quantidade
 de componentes que os desenvolvedores precisam considerar ao escrever código.
-Por exemplo, seria relativamente difícil mudar uma aplicação <span
-class=SpellE>Lightweight</span> C2 Framework de uma thread por tijolo para uma
-política de <span class=SpellE>threading</span> passo, pois isso exigiria
-alterações no código de cada componente e conector. No <span class=SpellE>Flexible</span>
+Por exemplo, seria relativamente difícil mudar uma aplicação <span class="SpellE">Lightweight</span> C2 Framework de uma thread por tijolo para uma
+política de <span class="SpellE">threading</span> passo, pois isso exigiria
+alterações no código de cada componente e conector. No <span class="SpellE">Flexible</span>
 C2 Framework, essa alteração pode ser feita em uma única linha de código na
 classe principal da aplicação. Ainda assim, políticas centralizadas e uniformes
 podem dificultar a implementação de aplicações em que diferentes componentes
 individuais e conectores se comportam de forma diferente em relação à
-enfileiramento e <span class=SpellE>threading</span>.</p>
-
-<p class=MsoNormal>Ambos os frameworks C2 abordam subconjuntos semelhantes das
+enfileiramento e <span class="SpellE">threading</span>.</p>
+<p>Ambos os frameworks C2 abordam subconjuntos semelhantes das
 restrições do estilo C2 — por exemplo, nenhum aborda explicitamente o requisito
 de que componentes e conectores não possam se comunicar por meio de memória
 compartilhada. Como explicado acima, esse requisito é simplesmente caro demais
 para implementar em Java.</p>
-
-<p class=MsoNormal><b>Comparando os frameworks C2 Leves e Flexíveis<o:p></o:p></b></p>
-
-<p class=MsoNormal>Como ambos os frameworks C2 abordam o mesmo estilo
+<p><b>Comparando os frameworks C2 Leves e Flexíveis</b></p>
+<p>Como ambos os frameworks C2 abordam o mesmo estilo
 arquitetônico e a mesma plataforma, eles podem ser comparados diretamente ao
 longo de várias dimensões. A primeira é a dimensão técnica — examinar como cada
 estrutura suporta (ou não suporta) cada uma das restrições do estilo
-arquitetônico C2, como mostrado <span class=SpellE>em<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch09.html#technical_support_of_c2_architectural_st"
-title="Table&nbsp;9-1.&nbsp;Technical Support of C2 Architectural Style."><b>Tabela</b><b>
+arquitetônico C2, como mostrado <span class="SpellE">em<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch09.html#technical_support_of_c2_architectural_st" title="Table 9-1. Technical Support of C2 Architectural Style."><b>Tabela</b><b>
 9-1</b></a></span>. Outra forma de comparar os frameworks é usar a rubrica que
-estabelecemos anteriormente, como mostrado <span class=SpellE>em<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch09.html#comparison_rubric_for_frameworks"
-title="Table&nbsp;9-2.&nbsp;Comparison Rubric for Frameworks."><b>Tabela</b><b>
+estabelecemos anteriormente, como mostrado <span class="SpellE">em<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch09.html#comparison_rubric_for_frameworks" title="Table 9-2. Comparison Rubric for Frameworks."><b>Tabela</b><b>
 9-2</b></a></span>.</p>
-
-<p class=MsoNormal><b>Mesa 9-1.&nbsp;Suporte técnico ao estilo arquitetônico
+<p><b>Mesa 9-1. Suporte técnico ao estilo arquitetônico
 C2.</b></p>
-
-<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
- summary="Suporte técnico ao estilo arquitetônico C2." style='background:white;
- border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
- mso-yfti-tbllook:1184;mso-padding-alt:10.5pt 10.5pt 10.5pt 10.5pt'>
- <thead>
-  <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
-   <td style='border:none;background:#EEF2F6;padding:10.5pt 10.5pt 10.5pt 10.5pt'>
-   <p class=MsoNormal><span style='color:black;mso-color-alt:windowtext'>Restrição
+<table border="1" cellpadding="0" cellspacing="0" summary="Suporte técnico ao estilo arquitetônico C2.">
+<thead>
+<tr>
+<td style="border:none;background:#EEF2F6;padding:10.5pt 10.5pt 10.5pt 10.5pt">
+<p><span>Restrição
    do Estilo C2</span></p>
-   </td>
-   <td style='border:none;background:#EEF2F6;padding:10.5pt 10.5pt 10.5pt 10.5pt'>
-   <p class=MsoNormal><span style='color:black;mso-color-alt:windowtext'>Suporte
+</td>
+<td style="border:none;background:#EEF2F6;padding:10.5pt 10.5pt 10.5pt 10.5pt">
+<p><span>Suporte
    a Framework Leve</span></p>
-   </td>
-   <td style='border:none;background:#EEF2F6;padding:10.5pt 10.5pt 10.5pt 10.5pt'>
-   <p class=MsoNormal><span style='color:black;mso-color-alt:windowtext'>Suporte
+</td>
+<td style="border:none;background:#EEF2F6;padding:10.5pt 10.5pt 10.5pt 10.5pt">
+<p><span>Suporte
    a Estruturas Flexíveis</span></p>
-   </td>
-  </tr>
- </thead>
- <tr style='mso-yfti-irow:1'>
-  <td valign=top style='border:none;padding:10.5pt 10.5pt 10.5pt 10.5pt'>
-  <p class=MsoNormal><span style='color:black;mso-color-alt:windowtext'>A
+</td>
+</tr>
+</thead>
+<tr>
+<td style="border:none;padding:10.5pt 10.5pt 10.5pt 10.5pt" valign="top">
+<p><span>A
   funcionalidade da aplicação deve ser dividida em componentes e conectores.</span></p>
-  </td>
-  <td valign=top style='border:none;padding:10.5pt 10.5pt 10.5pt 10.5pt'>
-  <p class=MsoNormal><span style='color:black;mso-color-alt:windowtext'>Classes
+</td>
+<td style="border:none;padding:10.5pt 10.5pt 10.5pt 10.5pt" valign="top">
+<p><span>Classes
   base abstratas são estendidas por desenvolvedores de aplicações para criar
   componentes ou conectores; toda a funcionalidade da aplicação deve ser
   implementada dentro ou chamada por essas classes base estendidas.</span></p>
-  </td>
-  <td valign=top style='border:none;padding:10.5pt 10.5pt 10.5pt 10.5pt'>
-  <p class=MsoNormal><span style='color:black;mso-color-alt:windowtext'>Interfaces
+</td>
+<td style="border:none;padding:10.5pt 10.5pt 10.5pt 10.5pt" valign="top">
+<p><span>Interfaces
   definem os requisitos para componentes e conectores; o código boilerplate é
   fornecido em classes base abstratas que implementam essas interfaces. Toda a
   funcionalidade da aplicação deve ser implementada dentro ou chamada por essas
   classes base estendidas.</span></p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:2'>
-  <td valign=top style='border:none;background:#EEF2F6;padding:10.5pt 10.5pt 10.5pt 10.5pt'>
-  <p class=MsoNormal><span style='color:black;mso-color-alt:windowtext'>Todos
+</td>
+</tr>
+<tr>
+<td style="border:none;background:#EEF2F6;padding:10.5pt 10.5pt 10.5pt 10.5pt" valign="top">
+<p><span>Todos
   os componentes e conectores se comunicam por meio de duas interfaces:
   superior e inferior.</span></p>
-  </td>
-  <td valign=top style='border:none;background:#EEF2F6;padding:10.5pt 10.5pt 10.5pt 10.5pt'>
-  <p class=MsoNormal><span style='color:black;mso-color-alt:windowtext'>A
-  classe base abstrata fornece os métodos <span class=GramE>sendRequest(</span>)
-  e <span class=GramE>sendNotification(</span>) para emitir mensagens superior
-  e inferior, respectivamente, e <span class=GramE>handleNotification(</span>)
-  e <span class=GramE>handleRequest(</span>) para receber mensagens superior e
+</td>
+<td style="border:none;background:#EEF2F6;padding:10.5pt 10.5pt 10.5pt 10.5pt" valign="top">
+<p><span>A
+  classe base abstrata fornece os métodos <span class="GramE">sendRequest(</span>)
+  e <span class="GramE">sendNotification(</span>) para emitir mensagens superior
+  e inferior, respectivamente, e <span class="GramE">handleNotification(</span>)
+  e <span class="GramE">handleRequest(</span>) para receber mensagens superior e
   inferior.</span></p>
-  </td>
-  <td valign=top style='border:none;background:#EEF2F6;padding:10.5pt 10.5pt 10.5pt 10.5pt'>
-  <p class=MsoNormal><span style='color:black;mso-color-alt:windowtext'>A
+</td>
+<td style="border:none;background:#EEF2F6;padding:10.5pt 10.5pt 10.5pt 10.5pt" valign="top">
+<p><span>A
   classe base fornece um método sendToAll() que recebe interface (top ou
   bottom) como parâmetro, e o método handle() que é chamado quando uma mensagem
   é recebida em qualquer interface. As mensagens são marcadas com a interface
   pela qual chegaram.</span></p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:3'>
-  <td valign=top style='border:none;padding:10.5pt 10.5pt 10.5pt 10.5pt'>
-  <p class=MsoNormal><span style='color:black;mso-color-alt:windowtext'>Componentes
+</td>
+</tr>
+<tr>
+<td style="border:none;padding:10.5pt 10.5pt 10.5pt 10.5pt" valign="top">
+<p><span>Componentes
   e conectores devem operar como se funcionassem em seus próprios fios de
   controle.</span></p>
-  </td>
-  <td valign=top style='border:none;padding:10.5pt 10.5pt 10.5pt 10.5pt'>
-  <p class=MsoNormal><span style='color:black;mso-color-alt:windowtext'>Threads
+</td>
+<td style="border:none;padding:10.5pt 10.5pt 10.5pt 10.5pt" valign="top">
+<p><span>Threads
   são criados por classes base de componentes e conectores.</span></p>
-  </td>
-  <td valign=top style='border:none;padding:10.5pt 10.5pt 10.5pt 10.5pt'>
-  <p class=MsoNormal><span style='color:black;mso-color-alt:windowtext'>As
+</td>
+<td style="border:none;padding:10.5pt 10.5pt 10.5pt 10.5pt" valign="top">
+<p><span>As
   threads são controladas por um objeto central de política de threading
   chamado ArchitectureEngine. Diferentes engines podem fornecer políticas
-  alternativas de <span class=SpellE>threading</span>.</span></p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:4'>
-  <td valign=top style='border:none;background:#EEF2F6;padding:10.5pt 10.5pt 10.5pt 10.5pt'>
-  <p class=MsoNormal><span style='color:black;mso-color-alt:windowtext'>Mensagens
+  alternativas de <span class="SpellE">threading</span>.</span></p>
+</td>
+</tr>
+<tr>
+<td style="border:none;background:#EEF2F6;padding:10.5pt 10.5pt 10.5pt 10.5pt" valign="top">
+<p><span>Mensagens
   enviadas para a interface superior de um componente ou conector devem ser
   recebidas na parte inferior do(s) componente(s) ou conector(es) conectado(s)
   e vice-versa.</span></p>
-  </td>
-  <td valign=top style='border:none;background:#EEF2F6;padding:10.5pt 10.5pt 10.5pt 10.5pt'>
-  <p class=MsoNormal><span style='color:black;mso-color-alt:windowtext'>Os
-  métodos <span class=SpellE><span class=GramE>sendRequest</span></span><span
-  class=GramE>(</span>) e <span class=SpellE><span class=GramE>sendNotification</span></span><span
-  class=GramE>(</span>) procuram componentes e conectores conectados e
+</td>
+<td style="border:none;background:#EEF2F6;padding:10.5pt 10.5pt 10.5pt 10.5pt" valign="top">
+<p><span>Os
+  métodos <span class="SpellE"><span class="GramE">sendRequest</span></span><span class="GramE">(</span>) e <span class="SpellE"><span class="GramE">sendNotification</span></span><span class="GramE">(</span>) procuram componentes e conectores conectados e
   enfileiram diretamente mensagens em filas pertencentes a esses elementos.</span></p>
-  </td>
-  <td valign=top style='border:none;background:#EEF2F6;padding:10.5pt 10.5pt 10.5pt 10.5pt'>
-  <p class=MsoNormal><span style='color:black;mso-color-alt:windowtext'>A
-  política de enfileiramento de mensagens é centralizada em um objeto chamado <span
-  class=SpellE>MessageHandler</span>. Os <span class=SpellE>MessageHandlers</span>
+</td>
+<td style="border:none;background:#EEF2F6;padding:10.5pt 10.5pt 10.5pt 10.5pt" valign="top">
+<p><span>A
+  política de enfileiramento de mensagens é centralizada em um objeto chamado <span class="SpellE">MessageHandler</span>. Os <span class="SpellE">MessageHandlers</span>
   garantem que as mensagens sejam depositadas em filas apropriadas para
   processamento.</span></p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:5'>
-  <td valign=top style='border:none;padding:10.5pt 10.5pt 10.5pt 10.5pt'>
-  <p class=MsoNormal><span style='color:black;mso-color-alt:windowtext'>Componentes
+</td>
+</tr>
+<tr>
+<td style="border:none;padding:10.5pt 10.5pt 10.5pt 10.5pt" valign="top">
+<p><span>Componentes
   e conectores devem operar como se não compartilhassem memória; todas as
   mensagens trocadas devem ser serializáveis.</span></p>
-  </td>
-  <td valign=top style='border:none;padding:10.5pt 10.5pt 10.5pt 10.5pt'>
-  <p class=MsoNormal><span style='color:black;mso-color-alt:windowtext'>Objetos
+</td>
+<td style="border:none;padding:10.5pt 10.5pt 10.5pt 10.5pt" valign="top">
+<p><span>Objetos
   mensagem são estruturados como conjuntos de propriedades de pares nome-valor,
   onde tanto nomes quanto valores são cadeias de caracteres.</span></p>
-  </td>
-  <td valign=top style='border:none;padding:10.5pt 10.5pt 10.5pt 10.5pt'>
-  <p class=MsoNormal><span style='color:black;mso-color-alt:windowtext'>Todas
-  as mensagens devem implementar a interface <span class=SpellE>java.io.Serializable</span>,
+</td>
+<td style="border:none;padding:10.5pt 10.5pt 10.5pt 10.5pt" valign="top">
+<p><span>Todas
+  as mensagens devem implementar a interface <span class="SpellE">java.io.Serializable</span>,
   mas não estão restritas a nenhum formato específico. Também é fornecida uma
   implementação de mensagens de conjunto de pares nome-valor.</span></p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:6'>
-  <td valign=top style='border:none;background:#EEF2F6;padding:10.5pt 10.5pt 10.5pt 10.5pt'>
-  <p class=MsoNormal><span style='color:black;mso-color-alt:windowtext'>Os
+</td>
+</tr>
+<tr>
+<td style="border:none;background:#EEF2F6;padding:10.5pt 10.5pt 10.5pt 10.5pt" valign="top">
+<p><span>Os
   componentes podem ser conectados a no máximo um conector de cada lado;
   Conectores podem ser conectados a zero ou mais componentes ou conectores em
   cada lado.</span></p>
-  </td>
-  <td valign=top style='border:none;background:#EEF2F6;padding:10.5pt 10.5pt 10.5pt 10.5pt'>
-  <p class=MsoNormal><span style='color:black;mso-color-alt:windowtext'>Conectar
+</td>
+<td style="border:none;background:#EEF2F6;padding:10.5pt 10.5pt 10.5pt 10.5pt" valign="top">
+<p><span>Conectar
   um componente a mais de um conector de qualquer lado resultará na desfeita da
   conexão anterior antes que a nova seja criada.</span></p>
-  </td>
-  <td valign=top style='border:none;background:#EEF2F6;padding:10.5pt 10.5pt 10.5pt 10.5pt'>
-  <p class=MsoNormal><span style='color:black;mso-color-alt:windowtext'>Sem
+</td>
+<td style="border:none;background:#EEF2F6;padding:10.5pt 10.5pt 10.5pt 10.5pt" valign="top">
+<p><span>Sem
   apoio explícito; Assume-se que os desenvolvedores verificam essa restrição.</span></p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:7;mso-yfti-lastrow:yes'>
-  <td valign=top style='border:none;padding:10.5pt 10.5pt 10.5pt 10.5pt'>
-  <p class=MsoNormal><span style='color:black;mso-color-alt:windowtext'>Os
+</td>
+</tr>
+<tr>
+<td style="border:none;padding:10.5pt 10.5pt 10.5pt 10.5pt" valign="top">
+<p><span>Os
   componentes podem fazer suposições sobre os serviços fornecidos acima, mas
   não suposições sobre os serviços fornecidos abaixo.</span></p>
-  </td>
-  <td valign=top style='border:none;padding:10.5pt 10.5pt 10.5pt 10.5pt'>
-  <p class=MsoNormal><span style='color:black;mso-color-alt:windowtext'>Sem
+</td>
+<td style="border:none;padding:10.5pt 10.5pt 10.5pt 10.5pt" valign="top">
+<p><span>Sem
   apoio explícito; Assume-se que os desenvolvedores construam componentes de
   uma forma que obedeça a essa restrição.</span></p>
-  </td>
-  <td valign=top style='border:none;padding:10.5pt 10.5pt 10.5pt 10.5pt'>
-  <p class=MsoNormal><span style='color:black;mso-color-alt:windowtext'>Sem
+</td>
+<td style="border:none;padding:10.5pt 10.5pt 10.5pt 10.5pt" valign="top">
+<p><span>Sem
   apoio explícito; Assume-se que os desenvolvedores construam componentes de
   uma forma que obedeça a essa restrição.</span></p>
-  </td>
- </tr>
+</td>
+</tr>
 </table>
-
-<p class=MsoNormal><b>Mesa 9-2.&nbsp;Critério de Comparação para Frameworks.</b></p>
-
-<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
- summary="Critério de Comparação para Frameworks." style='background:white;
- border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
- mso-yfti-tbllook:1184;mso-padding-alt:10.5pt 10.5pt 10.5pt 10.5pt'>
- <thead>
-  <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
-   <td style='border:none;background:#EEF2F6;padding:10.5pt 10.5pt 10.5pt 10.5pt'>
-   <p class=MsoNormal><span style='color:black;mso-color-alt:windowtext'>Preocupação</span></p>
-   </td>
-   <td style='border:none;background:#EEF2F6;padding:10.5pt 10.5pt 10.5pt 10.5pt'>
-   <p class=MsoNormal><span style='color:black;mso-color-alt:windowtext'>Estrutura
+<p><b>Mesa 9-2. Critério de Comparação para Frameworks.</b></p>
+<table border="1" cellpadding="0" cellspacing="0" summary="Critério de Comparação para Frameworks.">
+<thead>
+<tr>
+<td style="border:none;background:#EEF2F6;padding:10.5pt 10.5pt 10.5pt 10.5pt">
+<p><span>Preocupação</span></p>
+</td>
+<td style="border:none;background:#EEF2F6;padding:10.5pt 10.5pt 10.5pt 10.5pt">
+<p><span>Estrutura
    Leve</span></p>
-   </td>
-   <td style='border:none;background:#EEF2F6;padding:10.5pt 10.5pt 10.5pt 10.5pt'>
-   <p class=MsoNormal><span style='color:black;mso-color-alt:windowtext'>Estrutura
+</td>
+<td style="border:none;background:#EEF2F6;padding:10.5pt 10.5pt 10.5pt 10.5pt">
+<p><span>Estrutura
    Flexível</span></p>
-   </td>
-  </tr>
- </thead>
- <tr style='mso-yfti-irow:1'>
-  <td valign=top style='border:none;padding:10.5pt 10.5pt 10.5pt 10.5pt'>
-  <p class=MsoNormal><span style='color:black;mso-color-alt:windowtext'>Suporte
+</td>
+</tr>
+</thead>
+<tr>
+<td style="border:none;padding:10.5pt 10.5pt 10.5pt 10.5pt" valign="top">
+<p><span>Suporte
   à plataforma</span></p>
-  </td>
-  <td valign=top style='border:none;padding:10.5pt 10.5pt 10.5pt 10.5pt'>
-  <p class=MsoNormal><span style='color:black;mso-color-alt:windowtext'>Java
+</td>
+<td style="border:none;padding:10.5pt 10.5pt 10.5pt 10.5pt" valign="top">
+<p><span>Java
   Virtual Machine em múltiplas plataformas.</span></p>
-  </td>
-  <td valign=top style='border:none;padding:10.5pt 10.5pt 10.5pt 10.5pt'>
-  <p class=MsoNormal><span style='color:black;mso-color-alt:windowtext'>Java
+</td>
+<td style="border:none;padding:10.5pt 10.5pt 10.5pt 10.5pt" valign="top">
+<p><span>Java
   Virtual Machine em múltiplas plataformas.</span></p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:2'>
-  <td valign=top style='border:none;background:#EEF2F6;padding:10.5pt 10.5pt 10.5pt 10.5pt'>
-  <p class=MsoNormal><span style='color:black;mso-color-alt:windowtext'>Fidelidade</span></p>
-  </td>
-  <td valign=top style='border:none;background:#EEF2F6;padding:10.5pt 10.5pt 10.5pt 10.5pt'>
-  <p class=MsoNormal><span style='color:black;mso-color-alt:windowtext'>Auxilia
+</td>
+</tr>
+<tr>
+<td style="border:none;background:#EEF2F6;padding:10.5pt 10.5pt 10.5pt 10.5pt" valign="top">
+<p><span>Fidelidade</span></p>
+</td>
+<td style="border:none;background:#EEF2F6;padding:10.5pt 10.5pt 10.5pt 10.5pt" valign="top">
+<p><span>Auxilia
   desenvolvedores a lidar com muitas restrições do estilo C2, mas não as aplica
   ativamente.</span></p>
-  </td>
-  <td valign=top style='border:none;background:#EEF2F6;padding:10.5pt 10.5pt 10.5pt 10.5pt'>
-  <p class=MsoNormal><span style='color:black;mso-color-alt:windowtext'>Auxilia
+</td>
+<td style="border:none;background:#EEF2F6;padding:10.5pt 10.5pt 10.5pt 10.5pt" valign="top">
+<p><span>Auxilia
   desenvolvedores a lidar com muitas restrições do estilo C2, mas não as aplica
   ativamente.</span></p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:3'>
-  <td valign=top style='border:none;padding:10.5pt 10.5pt 10.5pt 10.5pt'>
-  <p class=MsoNormal><span style='color:black;mso-color-alt:windowtext'>Suposições
+</td>
+</tr>
+<tr>
+<td style="border:none;padding:10.5pt 10.5pt 10.5pt 10.5pt" valign="top">
+<p><span>Suposições
   de correspondência</span></p>
-  </td>
-  <td valign=top style='border:none;padding:10.5pt 10.5pt 10.5pt 10.5pt'>
-  <p class=MsoNormal><span style='color:black;mso-color-alt:windowtext'>As
+</td>
+<td style="border:none;padding:10.5pt 10.5pt 10.5pt 10.5pt" valign="top">
+<p><span>As
   classes principais de componentes e conectores devem herdar das classes base
   abstratas fornecidas; toda comunicação deve ser feita por mensagens que
-  consistam em nomes de <span class=SpellE>string</span> e propriedades de
+  consistam em nomes de <span class="SpellE">string</span> e propriedades de
   pares nome-valor.</span></p>
-  </td>
-  <td valign=top style='border:none;padding:10.5pt 10.5pt 10.5pt 10.5pt'>
-  <p class=MsoNormal><span style='color:black;mso-color-alt:windowtext'>As
+</td>
+<td style="border:none;padding:10.5pt 10.5pt 10.5pt 10.5pt" valign="top">
+<p><span>As
   classes principais de componente e conector devem ser implementadas a partir
   das interfaces Java fornecidas; toda comunicação deve ser feita por
-  mensagens, que podem estar em qualquer FOMAT <span class=SpellE>serializável</span>.</span></p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:4;mso-yfti-lastrow:yes'>
-  <td valign=top style='border:none;background:#EEF2F6;padding:10.5pt 10.5pt 10.5pt 10.5pt'>
-  <p class=MsoNormal><span style='color:black;mso-color-alt:windowtext'>Eficiência</span></p>
-  </td>
-  <td valign=top style='border:none;background:#EEF2F6;padding:10.5pt 10.5pt 10.5pt 10.5pt'>
-  <p class=MsoNormal><span style='color:black;mso-color-alt:windowtext'>A
+  mensagens, que podem estar em qualquer FOMAT <span class="SpellE">serializável</span>.</span></p>
+</td>
+</tr>
+<tr>
+<td style="border:none;background:#EEF2F6;padding:10.5pt 10.5pt 10.5pt 10.5pt" valign="top">
+<p><span>Eficiência</span></p>
+</td>
+<td style="border:none;background:#EEF2F6;padding:10.5pt 10.5pt 10.5pt 10.5pt" valign="top">
+<p><span>A
   estrutura é pequena e leve; pode usar apenas um único thread de controle, se
   desejado, mas isso pode causar um impasse da aplicação.</span></p>
-  </td>
-  <td valign=top style='border:none;background:#EEF2F6;padding:10.5pt 10.5pt 10.5pt 10.5pt'>
-  <p class=MsoNormal><span style='color:black;mso-color-alt:windowtext'>O
+</td>
+<td style="border:none;background:#EEF2F6;padding:10.5pt 10.5pt 10.5pt 10.5pt" valign="top">
+<p><span>O
   framework é maior, mas mais flexível; Pode selecionar entre várias políticas
   de fila e threading para ajustar a eficiência de cada aplicação.</span></p>
-  </td>
- </tr>
+</td>
+</tr>
 </table>
-
-<p class=MsoNormal>EXEMPLOS</p>
-
-<p class=MsoNormal>Introduzimos muitas alternativas arquitetônicas para a
-aplicação do módulo <span class=SpellE>lunar;<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch04.html"
-title="Chapter&nbsp;4.&nbsp;Designing Architectures"><b>Capítulo</b><b> 4</b></a></span>apresenta
+<p>EXEMPLOS</p>
+<p>Introduzimos muitas alternativas arquitetônicas para a
+aplicação do módulo <span class="SpellE">lunar;<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch04.html" title="Chapter 4. Designing Architectures"><b>Capítulo</b><b> 4</b></a></span>apresenta
 um catálogo de estilos arquitetônicos, com Lunar Lander projetado para se
 encaixar nas restrições de cada estilo. Aqui, vamos examinar como frameworks de
 arquitetura podem ser usados para auxiliar na construção de implementações
-funcionais do Lunar Lander em dois desses estilos: <span class=SpellE>pipe-and-filter</span>
+funcionais do Lunar Lander em dois desses estilos: <span class="SpellE">pipe-and-filter</span>
 e C2.</p>
-
-<p class=MsoNormal>Note que as seções a seguir incluirão exemplos de código
+<p>Note que as seções a seguir incluirão exemplos de código
 mostrando implementações reais do Lunar Lander. Certas boas práticas de
 programação, como o uso de constantes de string externalizadas, verificação
 abrangente de exceções e valor nulo, e assim por diante, serão deixadas de fora
 por simplicidade. Implementações reais devem levar essas práticas em
 consideração, pois elas se aplicam igualmente ao desenvolver software baseado
 em arquitetura.</p>
-
-<p class=MsoNormal><b>Implementando o módulo lunar no estilo <span
-class=SpellE>pipe-and-filter</span> usando a estrutura java.io<o:p></o:p></b></p>
-
-<p class=MsoNormal>Lembre-se da introdução de uma arquitetura de módulo lunar
-estilo tubo e filtro <span class=SpellE>de<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch04.html"
-title="Chapter&nbsp;4.&nbsp;Designing Architectures"><b>Capítulo</b><b> 4</b></a></span>,
-como mostrado em<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch09.html#lunar_lander_in_the_pipe-and-filter_arch"
-title="Figure&nbsp;9-4.&nbsp;Lunar Lander in the pipe-and-filter architectural style."><b>Figura
+<p><b>Implementando o módulo lunar no estilo <span class="SpellE">pipe-and-filter</span> usando a estrutura java.io</b></p>
+<p>Lembre-se da introdução de uma arquitetura de módulo lunar
+estilo tubo e filtro <span class="SpellE">de<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch04.html" title="Chapter 4. Designing Architectures"><b>Capítulo</b><b> 4</b></a></span>,
+como mostrado em<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch09.html#lunar_lander_in_the_pipe-and-filter_arch" title="Figure 9-4. Lunar Lander in the pipe-and-filter architectural style."><b>Figura
 9-4</b></a>. Aqui, o Lunar Lander é dividido em três componentes: o primeiro
 recebe a taxa de queima do usuário, o segundo calcula novos valores, e o
 terceiro devolve esses valores ao usuário. A comunicação entre os componentes é
 unidirecional e ocorre por meio de fluxos de caracteres, conforme exigido pelo
 estilo.</p>
-
-<p class=MsoNormal>Assumindo que queremos implementar essa aplicação em Java,
+<p>Assumindo que queremos implementar essa aplicação em Java,
 temos duas escolhas óbvias para frameworks de arquitetura: o pacote java.io e o
-pacote <span class=SpellE>java.nio</span>. Como a quantidade de dados
+pacote <span class="SpellE">java.nio</span>. Como a quantidade de dados
 transferidos é pequena e queremos uma implementação simples, implementaremos o
 sistema usando java.io. A próxima escolha que devemos fazer é implementar o
-sistema como um sistema em processo ou <span class=SpellE>multiprocesso</span>.</p>
-
-<p class=MsoNormal>Em andamento. Em um sistema em processo, cada componente
+sistema como um sistema em processo ou <span class="SpellE">multiprocesso</span>.</p>
+<p>Em andamento. Em um sistema em processo, cada componente
 será implementado por uma ou mais classes Java. Esses se comunicarão por meio
 de fluxos internos, aproveitando classes de fluxo interno fornecidas pelo
 framework java.io. A configuração da aplicação precisará ser criada em um
 método principal de aplicação que escrevemos.</p>
-
-<p class=MsoNormal><span class=SpellE>Multiprocesso</span>. Em um sistema <span
-class=SpellE>multiprocesso</span>, cada componente será implementado por uma ou
+<p><span class="SpellE">Multiprocesso</span>. Em um sistema <span class="SpellE">multiprocesso</span>, cada componente será implementado por uma ou
 mais classes Java que compõem uma pequena aplicação. Eles se comunicarão por
-meio dos fluxos fornecidos pelo sistema operacional System.in e <span
-class=SpellE>System.out</span>, e o sistema operacional também fornecerá os
+meio dos fluxos fornecidos pelo sistema operacional System.in e <span class="SpellE">System.out</span>, e o sistema operacional também fornecerá os
 conectores de tubos. A configuração da aplicação será feita na linha de
 comando.</p>
-
-<p class=MsoNormal>Para simplificar, implementaremos a aplicação como um
+<p>Para simplificar, implementaremos a aplicação como um
 sistema multiprocesso, o que nos poupa de ter que escrever código adicional,
 criar nossos próprios pipelines e realizar tarefas como buffering de dados e
 threading. Os serviços internos do sistema operacional fornecerão buffers entre
 os filtros, bem como concorrência em nível de processo.</p>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+<p><span><!--[if gte vml 1]><v:shape
  id="Imagem_x0020_191" o:spid="_x0000_i1036" type="#_x0000_t75" alt="Lunar Lander no estilo arquitetônico de tubo e filtro."
  style='width:411.6pt;height:68.4pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap09-ptbr_arquivos/image004.png" o:title="Lunar Lander no estilo arquitetônico de tubo e filtro"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=549 height=91
-src="cap09-ptbr_arquivos/image004.png"
-alt="Lunar Lander no estilo arquitetônico de tubo e filtro." v:shapes="Imagem_x0020_191"><![endif]></span></p>
-
-<p class=MsoNormal><b>Figura 9-4.&nbsp;Lunar Lander no estilo arquitetônico de
+</v:shape><![endif]--><?if !vml?><img alt="Lunar Lander no estilo arquitetônico de tubo e filtro." border="0" height="91" src="cap09-ptbr_arquivos/image004.png" v:shapes="Imagem_x0020_191" width="549"/><?endif?></span></p>
+<p><b>Figura 9-4. Lunar Lander no estilo arquitetônico de
 tubo e filtro.</b></p>
-
-<p class=MsoNormal>A primeira tarefa na implementação da aplicação Lunar Lander
+<p>A primeira tarefa na implementação da aplicação Lunar Lander
 é implementar os três filtros representados na arquitetura proposta. Como os
 filtros são componíveis de forma independente, isso pode ser feito em qualquer
 ordem, embora a ordem de implementação tenha consequências práticas. Por
@@ -1710,39 +1455,31 @@ exemplo, em uma aplicação grande, você pode querer implementar stubs e
 esqueletos para fins de teste, e se você implementa a aplicação da esquerda
 para a direita ou da direita para a esquerda tem implicações sobre os tipos de
 stubs e esqueletos que você deve implementar. Para nossa implementação, vamos
-trabalhar da esquerda para a direita, começando pelo filtro <span class=SpellE>GetBurnRate</span>.</p>
-
-<p class=MsoNormal>Lembre-se de que, em uma aplicação pipe-and-filter, todos os
+trabalhar da esquerda para a direita, começando pelo filtro <span class="SpellE">GetBurnRate</span>.</p>
+<p>Lembre-se de que, em uma aplicação pipe-and-filter, todos os
 dados viajam da esquerda para a direita em fluxos de caracteres. Se as
 aplicações precisam comunicar dados estruturados, essa estrutura deve ser
 codificada nos fluxos de caracteres. Além disso, em uma aplicação estritamente
 pipe-and-filter, toda a entrada do usuário vem do fluxo de entrada do sistema
 no filtro mais à esquerda, e toda a saída para o console do usuário vem do
 fluxo de saída do sistema no filtro mais à direita.</p>
-
-<p class=MsoNormal>Nessa aplicação, precisamos enviar dados estruturados pelo
+<p>Nessa aplicação, precisamos enviar dados estruturados pelo
 pipeline. Usaremos um esquema de codificação simples: as mensagens serão
 separadas por caracteres de nova linha, e cada mensagem será precedida por um
 caractere de controle indicando o tipo de mensagem. Vamos começar as mensagens
 de saída do usuário com um sinal de libra (#) e mensagens de dados com um sinal
 de porcentagem (%). Não há nada particularmente especial nesses personagens;
 elas são escolhidas arbitrariamente para este exemplo.</p>
-
-<p class=MsoNormal><a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch09.html#the_getburnrate_filter_for_lunar_lander"
-title="Figure&nbsp;9-5.&nbsp;The GetBurnRate filter for Lunar Lander."><b>A
+<p><a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch09.html#the_getburnrate_filter_for_lunar_lander" title="Figure 9-5. The GetBurnRate filter for Lunar Lander."><b>A
 Figura 9-5</b></a> mostra a implementação do filtro GetBurnRate para o módulo
 lunar. Esse componente representa efetivamente a interface do usuário da
 aplicação. Primeiro, ele abre um BufferedReader na classe System.in fornecida
 pelo sistema, que a máquina virtual Java conecta ao fluxo de entrada do sistema
-operacional.&nbsp;BufferedReader é uma classe fornecida pelo pacote java.io
+operacional. BufferedReader é uma classe fornecida pelo pacote java.io
 para leitura de dados estruturados, como linhas e inteiros de um fluxo de
 caracteres. Em seguida, ele entra em um ciclo, pedindo continuamente ao usuário
 uma nova taxa de queima, lendo o valor e enviando para o próximo filtro.</p>
-
-<p class=MsoNormal><a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch09.html#the_calcnewvalues_filter_for_lunar_lande"
-title="Figure&nbsp;9-6.&nbsp;The CalcNewValues filter for Lunar Lander."><b>A
+<p><a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch09.html#the_calcnewvalues_filter_for_lunar_lande" title="Figure 9-6. The CalcNewValues filter for Lunar Lander."><b>A
 Figura 9-6</b></a> mostra a implementação do filtro CalcNewValues para Lunar
 Lander. Este é o mais complexo dos três filtros; ele deve ler a nova taxa de
 queima do filtro GetBurnRate, armazenar e atualizar o estado da aplicação, e
@@ -1756,32 +1493,23 @@ acionam um cálculo. Quando uma nova taxa de queima é lida, o filtro atualiza
 seus valores internos de estado — a altitude atual, velocidade, combustível e
 tempo — e envia esses novos valores para o próximo filtro. Ele continua até a
 altitude chegar a zero (ou menos), momento em que determina se o módulo caiu ou
-pousou com sucesso — de qualquer forma, o jogo <span class=SpellE>acaba</span>.</p>
-
-<p class=MsoNormal>O mesmo esquema de caracteres de controle é usado nesse
+pousou com sucesso — de qualquer forma, o jogo <span class="SpellE">acaba</span>.</p>
+<p>O mesmo esquema de caracteres de controle é usado nesse
 filtro: as mensagens do usuário são precedidas por sinais de libra e as
 mensagens de dados são precedidas por sinais percentuais. As mensagens de dados
 são ainda codificadas com um segundo caractere indicando o tipo de dado:
 altitude, combustível, velocidade ou tempo. Como já deve ser óbvio neste ponto,
 garantir que os vários filtros tenham suposições correspondentes sobre o
 esquema de codificação é fundamental para construir uma aplicação funcional. O
-esquema de codificação é, na prática, o contrato de interface para a aplicação <span
-class=SpellE>pipe-and-filter</span>.</p>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+esquema de codificação é, na prática, o contrato de interface para a aplicação <span class="SpellE">pipe-and-filter</span>.</p>
+<p><span><!--[if gte vml 1]><v:shape
  id="Imagem_x0020_190" o:spid="_x0000_i1035" type="#_x0000_t75" alt="O filtro GetBurnRate para módulo lunar."
  style='width:358.8pt;height:610.8pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap09-ptbr_arquivos/image005.png" o:title="O filtro GetBurnRate para módulo lunar"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=478 height=814
-src="cap09-ptbr_arquivos/image005.png"
-alt="O filtro GetBurnRate para módulo lunar." v:shapes="Imagem_x0020_190"><![endif]></span></p>
-
-<p class=MsoNormal><b>Figura 9-5.&nbsp;O filtro <span class=SpellE>GetBurnRate</span>
+</v:shape><![endif]--><?if !vml?><img alt="O filtro GetBurnRate para módulo lunar." border="0" height="814" src="cap09-ptbr_arquivos/image005.png" v:shapes="Imagem_x0020_190" width="478"/><?endif?></span></p>
+<p><b>Figura 9-5. O filtro <span class="SpellE">GetBurnRate</span>
 para módulo lunar.</b></p>
-
-<p class=MsoNormal><a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch09.html#the_displayvalues_filter_for_lunar_lande"
-title="Figure&nbsp;9-7.&nbsp;The DisplayValues filter for Lunar Lander."><b>A
+<p><a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch09.html#the_displayvalues_filter_for_lunar_lande" title="Figure 9-7. The DisplayValues filter for Lunar Lander."><b>A
 Figura 9-7</b></a> mostra a implementação do filtro DisplayValues para o módulo
 lunar. As semelhanças estruturais com os outros dois filtros são novamente
 evidentes aqui — o filtro lê linhas da entrada do sistema e as grava na saída
@@ -1792,41 +1520,30 @@ para saída. Aqui, caracteres de controle são analisados na entrada, mas nenhum
 de caracteres de controle é escrito no fluxo de saída; A aplicação assume que é
 o filtro final na aplicação e que os dados de saída são destinados a serem
 exibidos em um console, e não como entrada para outro filtro de aplicação.</p>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+<p><span><!--[if gte vml 1]><v:shape
  id="Imagem_x0020_189" o:spid="_x0000_i1034" type="#_x0000_t75" alt="O filtro CalcNewValues para módulo lunar."
  style='width:204pt;height:700.8pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap09-ptbr_arquivos/image006.png" o:title="O filtro CalcNewValues para módulo lunar"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=272 height=934
-src="cap09-ptbr_arquivos/image007.jpg"
-alt="O filtro CalcNewValues para módulo lunar." v:shapes="Imagem_x0020_189"><![endif]></span></p>
-
-<p class=MsoNormal><b>Figura 9-6.&nbsp;O filtro <span class=SpellE>CalcNewValues</span>
+</v:shape><![endif]--><?if !vml?><img alt="O filtro CalcNewValues para módulo lunar." border="0" height="934" src="cap09-ptbr_arquivos/image007.jpg" v:shapes="Imagem_x0020_189" width="272"/><?endif?></span></p>
+<p><b>Figura 9-6. O filtro <span class="SpellE">CalcNewValues</span>
 para módulo lunar.</b></p>
-
-<p class=MsoNormal>Juntos, esses três filtros compõem a aplicação Lunar Lander.
+<p>Juntos, esses três filtros compõem a aplicação Lunar Lander.
 Uma tarefa permanece: determinar como instanciar e conectar a aplicação. Isso é
 feito facilmente na linha de comando:</p>
-
-<p class=MsoNormal><span class=SpellE>java</span> <span class=SpellE>GetBurnRate</span>
-| <span class=SpellE>java</span> <span class=SpellE>CalcNewValues</span> | <span
-class=SpellE>java</span> <span class=SpellE>DisplayValues</span></p>
-
-<p class=MsoNormal>Essa linha de comando invoca os três filtros como processos
-separados. (A necessidade da invocação do <span class=SpellE>java</span> em
+<p><span class="SpellE">java</span> <span class="SpellE">GetBurnRate</span>
+| <span class="SpellE">java</span> <span class="SpellE">CalcNewValues</span> | <span class="SpellE">java</span> <span class="SpellE">DisplayValues</span></p>
+<p>Essa linha de comando invoca os três filtros como processos
+separados. (A necessidade da invocação do <span class="SpellE">java</span> em
 cada processo é um artefato de como a Máquina Virtual Java funciona: cada
 processo é uma instância da máquina virtual que executa a classe passada como o
 primeiro parâmetro para o comando Java.) A entrada do console é enviada para o
-fluxo de entrada do sistema do filtro mais à esquerda (<span class=SpellE>GetBurnRate</span>).
-A saída do <span class=SpellE>GetBurnRate</span> é canalizada para a entrada do
-<span class=SpellE>CalcNewValues</span>. A saída do <span class=SpellE>CalcNewValues</span>
-também é canalizada para a entrada do <span class=SpellE>DisplayValues</span>,
+fluxo de entrada do sistema do filtro mais à esquerda (<span class="SpellE">GetBurnRate</span>).
+A saída do <span class="SpellE">GetBurnRate</span> é canalizada para a entrada do
+<span class="SpellE">CalcNewValues</span>. A saída do <span class="SpellE">CalcNewValues</span>
+também é canalizada para a entrada do <span class="SpellE">DisplayValues</span>,
 e a saída para o console vem do fluxo de saída do sistema desse filtro.</p>
-
-<p class=MsoNormal><b>Reflexões sobre a implementação do módulo lunar Pipe-<span
-class=SpellE>and</span>-Filter<o:p></o:p></b></p>
-
-<p class=MsoNormal>A estrutura de arquitetura (java.io) nesta implementação do
+<p><b>Reflexões sobre a implementação do módulo lunar Pipe-<span class="SpellE">and</span>-Filter</b></p>
+<p>A estrutura de arquitetura (java.io) nesta implementação do
 Lunar Lander oferece vários serviços úteis para a aplicação. Inclui várias
 classes para leitura e gravação nos fluxos de entrada e saída do sistema (como
 BufferedReader). Essas classes permitem que dados sejam lidos e gravados em
@@ -1834,19 +1551,14 @@ fluxos de caracteres, como os fluxos de entrada e saída do sistema, de
 diferentes maneiras: como caracteres individuais, linhas, inteiros e assim por
 diante. Isso permite que a implementação foque mais na funcionalidade da
 aplicação e menos nas restrições do estilo arquitetônico.</p>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+<p><span><!--[if gte vml 1]><v:shape
  id="Imagem_x0020_188" o:spid="_x0000_i1033" type="#_x0000_t75" alt="O filtro DisplayValues para módulo lunar."
  style='width:282.6pt;height:700.2pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap09-ptbr_arquivos/image008.png" o:title="O filtro DisplayValues para módulo lunar"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=377 height=934
-src="cap09-ptbr_arquivos/image009.jpg"
-alt="O filtro DisplayValues para módulo lunar." v:shapes="Imagem_x0020_188"><![endif]></span></p>
-
-<p class=MsoNormal><b>Figura 9-7.&nbsp;O filtro <span class=SpellE>DisplayValues</span>
+</v:shape><![endif]--><?if !vml?><img alt="O filtro DisplayValues para módulo lunar." border="0" height="934" src="cap09-ptbr_arquivos/image009.jpg" v:shapes="Imagem_x0020_188" width="377"/><?endif?></span></p>
+<p><b>Figura 9-7. O filtro <span class="SpellE">DisplayValues</span>
 para módulo lunar.</b></p>
-
-<p class=MsoNormal>O próprio sistema operacional fornece os conectores de
+<p>O próprio sistema operacional fornece os conectores de
 tubos, bem como a política de concorrência para a arquitetura. As
 implementações de filtros nesse sistema estão intimamente alinhadas com as
 propriedades do framework subjacente e do sistema operacional, embora isso não
@@ -1863,8 +1575,7 @@ próximo filtro. Se isso não fosse verdade, as mensagens de saída apareciam
 tardias e a aplicação operava de forma quebrada ou confusa. Essas possíveis
 suposições inadequadas são sutis, mas os desenvolvedores devem estar cientes
 delas para determinar se uma aplicação funcionará ou não como desejado.</p>
-
-<p class=MsoNormal>A atividade de implementação é frequentemente o momento em
+<p>A atividade de implementação é frequentemente o momento em
 que arquiteturas subespecificadas ou deficientes se tornam evidentes. Por
 exemplo, a arquitetura (admitidamente simples) do Lunar Lander com tubo e
 filtro especifica quais dados devem passar de filtro em filtro, mas não o
@@ -1877,14 +1588,10 @@ entre formatos de dados XML e orientados a linha seria facilmente detectado
 durante a integração do sistema, mas bugs mais sutis podem ser ainda mais
 perigosos. Por exemplo, no caso do Mars Climate Orbiter, um descompasso de
 interface entre unidades métricas e imperiais foi uma causa substancial para a
-perda do <span class=SpellE>orbitador</span>.</p>
-
-<p class=MsoNormal><b>Implementando o módulo lunar no estilo C2 usando a
-estrutura leve C2<o:p></o:p></b></p>
-
-<p class=MsoNormal>Uma arquitetura de módulo lunar no estilo C2 mostrada na <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch09.html#lunar_lander_in_the_c2_architectural_sty"
-title="Figure&nbsp;9-8.&nbsp;Lunar Lander in the C2 architectural style."><b>Figura
+perda do <span class="SpellE">orbitador</span>.</p>
+<p><b>Implementando o módulo lunar no estilo C2 usando a
+estrutura leve C2</b></p>
+<p>Uma arquitetura de módulo lunar no estilo C2 mostrada na <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch09.html#lunar_lander_in_the_c2_architectural_sty" title="Figure 9-8. Lunar Lander in the C2 architectural style."><b>Figura
 9-8</b></a> é diferente da versão de módulo lunar com tubo e filtro. Primeiro,
 a funcionalidade do aplicativo é dividida de forma diferente. Aqui, um
 componente de estado do jogo mantém todo o estado do jogo e transmite
@@ -1893,7 +1600,7 @@ estado do jogo, calcula um novo estado e atualiza o componente do estado do
 jogo com esse estado. O componente GUI é responsável por ler novos valores de
 taxa de queima do usuário e mantê-lo informado sobre o estado atual do jogo. A
 mudança mais significativa em relação à versão pipe-and-filter é a adição de um
-componente de clock, que emite eventos de &quot;tick&quot; ou mensagens em
+componente de clock, que emite eventos de "tick" ou mensagens em
 intervalos periódicos. Isso muda substancialmente o caráter do jogo; em vez de
 esperar indefinidamente por um novo valor de taxa de queima do usuário, como na
 versão pipe-and-filter, esta versão do Lunar Lander é jogada em tempo real.
@@ -1902,25 +1609,19 @@ novos valores de taxa de queima são inseridos. Aqui, o usuário pode atualizar 
 taxa de queima atual quantas vezes desejar entre os ticks. Quando o relógio
 avança, o valor atual da taxa de queima é usado para calcular o novo estado do
 jogo.</p>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+<p><span><!--[if gte vml 1]><v:shape
  id="Imagem_x0020_187" o:spid="_x0000_i1032" type="#_x0000_t75" alt="Lunar Lander no estilo arquitetônico C2."
  style='width:411.6pt;height:222pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap09-ptbr_arquivos/image010.png" o:title="Lunar Lander no estilo arquitetônico C2"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=549 height=296
-src="cap09-ptbr_arquivos/image010.png"
-alt="Lunar Lander no estilo arquitetônico C2." v:shapes="Imagem_x0020_187"><![endif]></span></p>
-
-<p class=MsoNormal><b>Figura 9-8.&nbsp;Lunar Lander no estilo arquitetônico C2.</b></p>
-
-<p class=MsoNormal>Existem muitos frameworks C2 para diferentes linguagens de
+</v:shape><![endif]--><?if !vml?><img alt="Lunar Lander no estilo arquitetônico C2." border="0" height="296" src="cap09-ptbr_arquivos/image010.png" v:shapes="Imagem_x0020_187" width="549"/><?endif?></span></p>
+<p><b>Figura 9-8. Lunar Lander no estilo arquitetônico C2.</b></p>
+<p>Existem muitos frameworks C2 para diferentes linguagens de
 programação e plataformas. Assumindo que queremos implementar o sistema em
-Java, ainda precisamos escolher entre frameworks como o <span class=SpellE>Lightweight</span>
-C2 Framework e o <span class=SpellE>Flexible</span> C2 Framework. Como resulta
+Java, ainda precisamos escolher entre frameworks como o <span class="SpellE">Lightweight</span>
+C2 Framework e o <span class="SpellE">Flexible</span> C2 Framework. Como resulta
 em um código componente um pouco mais simples, usaremos o Framework C2 Leve
 para essa implementação.</p>
-
-<p class=MsoNormal>Como no exemplo do pipe e filtro, podemos implementar esses
+<p>Como no exemplo do pipe e filtro, podemos implementar esses
 componentes em qualquer ordem, mas a ordem escolhida tem consequências
 práticas. Devido às regras de independência do substrato (isto é, de camadas)
 em C2, componentes inferiores podem fazer suposições sobre os serviços
@@ -1930,13 +1631,9 @@ representações tradicionais em camadas ou máquinas virtuais, onde as camadas 
 dependem das camadas inferiores.) Isso significa que os componentes mais altos
 não têm dependências, e que os componentes inferiores são progressivamente mais
 dependentes. Adotaremos uma estratégia de implementação de menos dependente
-primeiro,<a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch09.html#ftn.CHP-9-FN-2"><b><sup>[11]</sup></b></a>
+primeiro,<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch09.html#ftn.CHP-9-FN-2"><b><sup>[11]</sup></b></a>
 que significa que os componentes mais altos são implementados primeiro.</p>
-
-<p class=MsoNormal>O código do componente GameState é mostrado na <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch09.html#the_gamestate_component_in_c2"
-title="Figure&nbsp;9-9.&nbsp;The GameState component in C2."><b>Figura 9-9</b></a>.
+<p>O código do componente GameState é mostrado na <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch09.html#the_gamestate_component_in_c2" title="Figure 9-9. The GameState component in C2."><b>Figura 9-9</b></a>.
 A primeira linha de código importa o pacote c2.framework, que pertence ao
 Lightweight C2 Framework. A declaração de classe mostra que a classe GameState
 estende a classe base ComponentThread. Essa classe base é estendida por todas
@@ -1945,38 +1642,30 @@ padrão em sistemas do estilo C2). Essa classe base fornece o código necessári
 para que o componente receba e envie solicitações e notificações, bem como o
 código de threading e sincronização necessário para coordenar com os outros
 componentes e conectores.</p>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+<p><span><!--[if gte vml 1]><v:shape
  id="Imagem_x0020_186" o:spid="_x0000_i1031" type="#_x0000_t75" alt="O componente GameState no C2."
  style='width:222.6pt;height:700.2pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap09-ptbr_arquivos/image011.png" o:title="O componente GameState no C2"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=297 height=934
-src="cap09-ptbr_arquivos/image012.jpg" alt="O componente GameState no C2."
-v:shapes="Imagem_x0020_186"><![endif]></span></p>
-
-<p class=MsoNormal><b>Figura 9-9.&nbsp;O componente <span class=SpellE>GameState</span>
+</v:shape><![endif]--><?if !vml?><img alt="O componente GameState no C2." border="0" height="934" src="cap09-ptbr_arquivos/image012.jpg" v:shapes="Imagem_x0020_186" width="297"/><?endif?></span></p>
+<p><b>Figura 9-9. O componente <span class="SpellE">GameState</span>
 no C2.</b></p>
-
-<p class=MsoNormal>O primeiro método, GameState(), é um construtor simples de
+<p>O primeiro método, GameState(), é um construtor simples de
 boilerplate. Esse framework C2 exige que cada componente e conector receba um
 nome (neste caso, gameState), assim como a classe que irá implementar as portas
 (ou seja, filas de mensagens) usadas para trocar mensagens com conectores
 conectados. Para simplificar, todos os componentes e conectores dessa
 arquitetura usarão portas FIFO (first-in, first-out) — ou seja, filas comuns.</p>
-
-<p class=MsoNormal>O próximo bloco de código declara um conjunto de variáveis
+<p>O próximo bloco de código declara um conjunto de variáveis
 membros que representam o estado do jogo, incluindo velocidade, altitude,
 combustível restante, taxa de queima atual, se o módulo de pouso pousou com
 segurança, e assim por diante. Essas informações serão lidas e atualizadas
 conforme o jogo for jogado.</p>
-
-<p class=MsoNormal>Cada componente e conector no <span class=SpellE>Lightweight</span>
+<p>Cada componente e conector no <span class="SpellE">Lightweight</span>
 C2 Framework tem duas responsabilidades principais: lidar com requisições
 (mensagens que viajam para cima na arquitetura e chegam na porta inferior) e
 lidar com notificações (mensagens que viajam para baixo na arquitetura e chegam
 à porta superior).</p>
-
-<p class=MsoNormal>O próximo método, handleRequest(), é chamado automaticamente
+<p>O próximo método, handleRequest(), é chamado automaticamente
 pelo framework quando uma solicitação chega para esse componente. Lembre-se de
 que, no Lightweight C2 Framework, todas as requisições e notificações têm a
 mesma estrutura: um nome de string de caracteres, além de um conjunto de
@@ -1993,28 +1682,22 @@ um novo objeto de Solicitação ou Notificação é criado, recebe um nome e é
 preenchido com propriedades. Esse objeto pode ser passado para um método send()
 presente na classe base abstrata, neste caso, ComponentThread. O framework
 roteia a mensagem de forma adequada.</p>
-
-<p class=MsoNormal>O método handleNotification() para esse componente está
+<p>O método handleNotification() para esse componente está
 vazio; Este componente não gerencia notificações. Como estamos cientes, do
 ponto de vista arquitetônico, de que nenhum componente será conectado acima
 desta, sabemos que ela não receberá nenhum.</p>
-
-<p class=MsoNormal>Esse componente é totalmente reativo. Ele permanece inativo
+<p>Esse componente é totalmente reativo. Ele permanece inativo
 até que uma solicitação chegue em sua porta inferior. Se a solicitação for de
-um tipo reconhecido (<span class=SpellE>updateGameState</span> ou <span
-class=SpellE>getGameState</span>), então o componente reage, atualizando seu
+um tipo reconhecido (<span class="SpellE">updateGameState</span> ou <span class="SpellE">getGameState</span>), então o componente reage, atualizando seu
 estado interno e enviando uma notificação de novo estado, ou simplesmente
 enviando o estado atual do jogo. Este é um padrão relativamente típico de
 interação para componentes de estado em sistemas do estilo C2. Também vale
 notar que esse componente atua inteiramente como um armazenamento de dados — a
 validação e o processamento de dados são feitos em outros componentes
-(principalmente o componente <span class=SpellE>GameLogic</span>). Manter essa
+(principalmente o componente <span class="SpellE">GameLogic</span>). Manter essa
 separação permite que arquitetos troquem mais facilmente diferentes estruturas
 de dados ou componentes de lógica de jogos.</p>
-
-<p class=MsoNormal>O código do componente Clock é mostrado na <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch09.html#the_clock_component_in_c2"
-title="Figure&nbsp;9-10.&nbsp;The Clock component in C2."><b>Figura 9-10</b></a>.
+<p>O código do componente Clock é mostrado na <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch09.html#the_clock_component_in_c2" title="Figure 9-10. The Clock component in C2."><b>Figura 9-10</b></a>.
 A estrutura básica desse componente é semelhante à do componente GameState —
 esse componente também estende o ComponentThread e inclui o mesmo construtor
 boilerplate. Diferente do componente GameState, porém, o Clock não lida com
@@ -2024,29 +1707,23 @@ thread de clock no método start() do componente. O método start() é outro
 método distinto no Framework Lightweight C2; ele é chamado automaticamente pelo
 framework quando a aplicação inicia. Nessa implementação, a thread de clock
 cria e emite uma nova notificação de tick a cada cinco segundos (5000
-milissegundos). O uso de <span class=GramE>uma thread</span> de clock separada
+milissegundos). O uso de <span class="GramE">uma thread</span> de clock separada
 é necessário porque a thread interna do componente (fornecida pela classe base
 ComponentThread) é usada apenas para lidar com notificações e solicitações —
 tentar cooptá-la para enviar ticks interferiria no comportamento de manuseio de
 mensagens do componente.</p>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+<p><span><!--[if gte vml 1]><v:shape
  id="Imagem_x0020_185" o:spid="_x0000_i1030" type="#_x0000_t75" alt="O componente Clock em C2."
  style='width:357.6pt;height:550.8pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap09-ptbr_arquivos/image013.png" o:title="O componente Clock em C2"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=477 height=734
-src="cap09-ptbr_arquivos/image013.png" alt="O componente Clock em C2." v:shapes="Imagem_x0020_185"><![endif]></span></p>
-
-<p class=MsoNormal><b>Figuras 9-10.&nbsp;O componente <span class=SpellE>Clock</span>
+</v:shape><![endif]--><?if !vml?><img alt="O componente Clock em C2." border="0" height="734" src="cap09-ptbr_arquivos/image013.png" v:shapes="Imagem_x0020_185" width="477"/><?endif?></span></p>
+<p><b>Figuras 9-10. O componente <span class="SpellE">Clock</span>
 em C2.</b></p>
-
-<p class=MsoNormal>O código do componente GameLogic é mostrado na <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch09.html#the_gamelogic_component_in_c2"
-title="Figure&nbsp;9-11.&nbsp;The GameLogic component in C2."><b>Figura 9-11</b></a>.
+<p>O código do componente GameLogic é mostrado na <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch09.html#the_gamelogic_component_in_c2" title="Figure 9-11. The GameLogic component in C2."><b>Figura 9-11</b></a>.
 Este componente é o mais complexo dos componentes do módulo C2 do módulo lunar.
 Estruturalmente, é muito semelhante ao componente GameState. Em vez de
 responder a solicitações dos componentes inferiores, no entanto, ele reage às
-notificações vindas dos componentes superiores.&nbsp;O GameLogic responde a
+notificações vindas dos componentes superiores. O GameLogic responde a
 dois tipos de notificações. A primeira é uma notificação gameState do
 componente GameState. Sempre que o componente GameLogic é notificado de que o
 estado do jogo mudou, ele atualiza os valores internos de estado que são usados
@@ -2061,8 +1738,7 @@ programação procedural ou orientada a objetos é por que o componente GameLogi
 não simplesmente consulta o componente GameState para obter dados quando
 necessário. A resposta está no estilo arquitetônico — em C2, tais consultas
 síncronas de componente a componente não são permitidas.</p>
-
-<p class=MsoNormal>A segunda notificação tratada pelo componente GameLogic é um
+<p>A segunda notificação tratada pelo componente GameLogic é um
 tique-taque do clock do componente Clock. Lembre-se de que essa versão do Lunar
 Lander não é impulsionada pela entrada do usuário sobre novas taxas de queima,
 mas pelo tique-taque do relógio em tempo real. Quando ocorre um tique-taque de
@@ -2071,29 +1747,20 @@ para calcular o próximo estado — queimando alguma quantidade de combustível,
 descendo (ou ascendendo) uma certa distância, e assim por diante. Esse estado é
 então enviado para o componente GameState em uma solicitação updateGameState,
 que vimos tratada por esse componente acima.</p>
-
-<p class=MsoNormal>Um detalhe adicional na implementação do <span class=SpellE>GameLogic</span>
-é o método start(). Ao iniciar, o componente <span class=SpellE>GameLogic</span>
-envia uma solicitação assíncrona para cima para o componente <span
-class=SpellE>GameState</span> para o estado inicial do jogo. Sem isso, o
-cálculo que ocorre no primeiro movimento do <span class=SpellE>clock</span>
+<p>Um detalhe adicional na implementação do <span class="SpellE">GameLogic</span>
+é o método start(). Ao iniciar, o componente <span class="SpellE">GameLogic</span>
+envia uma solicitação assíncrona para cima para o componente <span class="SpellE">GameState</span> para o estado inicial do jogo. Sem isso, o
+cálculo que ocorre no primeiro movimento do <span class="SpellE">clock</span>
 pode ser baseado em valores incorretos (ou seja, totalmente zero) inicializados
-no componente <span class=SpellE>GameLogic</span>.</p>
-
-<p class=MsoNormal>Efetivamente, o comportamento do componente <span
-class=SpellE>GameLogic</span> pode ser resumido pelo <span class=SpellE>statechart</span>
-na <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch09.html#statechart_describing_the_behavior_of_th"
-title="Figure&nbsp;9-12.&nbsp;Statechart describing the behavior of the GameLogic component in C2."><b>Figura
+no componente <span class="SpellE">GameLogic</span>.</p>
+<p>Efetivamente, o comportamento do componente <span class="SpellE">GameLogic</span> pode ser resumido pelo <span class="SpellE">statechart</span>
+na <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch09.html#statechart_describing_the_behavior_of_th" title="Figure 9-12. Statechart describing the behavior of the GameLogic component in C2."><b>Figura
 9-12</b></a>. O componente inicia e envia uma solicitação getGameState para
 cima. Depois, ele fica em repouso esperando notificações. Quando uma
 notificação GameState é recebida, o estado interno do componente é atualizado.
 Quando uma notificação clockTick é recebida, um novo estado do jogo é calculado
 e um pedido para atualizar o estado do jogo é enviado para cima.</p>
-
-<p class=MsoNormal>O código do componente GUI do módulo lunar está mostrado na <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch09.html#the_gui_component_in_c2"
-title="Figure&nbsp;9-13.&nbsp;The GUI component in C2."><b>Figura 9-13</b></a>.
+<p>O código do componente GUI do módulo lunar está mostrado na <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch09.html#the_gui_component_in_c2" title="Figure 9-13. The GUI component in C2."><b>Figura 9-13</b></a>.
 Esse componente cuida de toda a interação com o usuário. Essa implementação em
 particular utiliza rotinas simples de entrada e saída baseadas em console (ou
 seja, em texto). O componente de interface gráfica tem duas responsabilidades
@@ -2105,46 +1772,30 @@ interferência com a thread de processamento de mensagens que pertence ao
 componente. Segundo, o componente GUI escuta notificações de gameState. Ao
 receber um estado atualizado do jogo, o componente formata e escreve o estado no
 console.</p>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+<p><span><!--[if gte vml 1]><v:shape
  id="Imagem_x0020_184" o:spid="_x0000_i1029" type="#_x0000_t75" alt="O componente GameLogic no C2."
  style='width:209.4pt;height:700.2pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap09-ptbr_arquivos/image014.png" o:title="O componente GameLogic no C2"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=279 height=934
-src="cap09-ptbr_arquivos/image015.jpg" alt="O componente GameLogic no C2."
-v:shapes="Imagem_x0020_184"><![endif]></span></p>
-
-<p class=MsoNormal><b>Figura 9-11.&nbsp;O componente <span class=SpellE>GameLogic</span>
+</v:shape><![endif]--><?if !vml?><img alt="O componente GameLogic no C2." border="0" height="934" src="cap09-ptbr_arquivos/image015.jpg" v:shapes="Imagem_x0020_184" width="279"/><?endif?></span></p>
+<p><b>Figura 9-11. O componente <span class="SpellE">GameLogic</span>
 no C2.</b></p>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+<p><span><!--[if gte vml 1]><v:shape
  id="Imagem_x0020_183" o:spid="_x0000_i1028" type="#_x0000_t75" alt="Statechart descrevendo o comportamento do componente GameLogic em C2."
  style='width:365.4pt;height:340.8pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap09-ptbr_arquivos/image016.png" o:title="Statechart descrevendo o comportamento do componente GameLogic em C2"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=487 height=454
-src="cap09-ptbr_arquivos/image016.png"
-alt="Statechart descrevendo o comportamento do componente GameLogic em C2."
-v:shapes="Imagem_x0020_183"><![endif]></span></p>
-
-<p class=MsoNormal><b>Figuras 9-12.&nbsp;Statechart descrevendo o comportamento
-do componente <span class=SpellE>GameLogic</span> em C2.</b></p>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+</v:shape><![endif]--><?if !vml?><img alt="Statechart descrevendo o comportamento do componente GameLogic em C2." border="0" height="454" src="cap09-ptbr_arquivos/image016.png" v:shapes="Imagem_x0020_183" width="487"/><?endif?></span></p>
+<p><b>Figuras 9-12. Statechart descrevendo o comportamento
+do componente <span class="SpellE">GameLogic</span> em C2.</b></p>
+<p><span><!--[if gte vml 1]><v:shape
  id="Imagem_x0020_182" o:spid="_x0000_i1027" type="#_x0000_t75" alt="O componente de interface gráfica no C2."
  style='width:175.8pt;height:700.8pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap09-ptbr_arquivos/image017.png" o:title="O componente de interface gráfica no C2"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=234 height=934
-src="cap09-ptbr_arquivos/image018.jpg"
-alt="O componente de interface gráfica no C2." v:shapes="Imagem_x0020_182"><![endif]></span></p>
-
-<p class=MsoNormal><b>Figura 9-13.&nbsp;O componente de interface gráfica no
+</v:shape><![endif]--><?if !vml?><img alt="O componente de interface gráfica no C2." border="0" height="934" src="cap09-ptbr_arquivos/image018.jpg" v:shapes="Imagem_x0020_182" width="234"/><?endif?></span></p>
+<p><b>Figura 9-13. O componente de interface gráfica no
 C2.</b></p>
-
-<p class=MsoNormal>Agora que todos os componentes foram codificados, eles
+<p>Agora que todos os componentes foram codificados, eles
 precisam ser instanciados e conectados. Isso é feito por meio de um programa
-principal de <span class=SpellE>bootstrap</span> mostrado nas <a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch09.html#the_lunar_lander_main_program_in_c2"
-title="Figure&nbsp;9-14.&nbsp;The Lunar Lander main program in C2."><b>Figuras
+principal de <span class="SpellE">bootstrap</span> mostrado nas <a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch09.html#the_lunar_lander_main_program_in_c2" title="Figure 9-14. The Lunar Lander main program in C2."><b>Figuras
 9-14</b></a>. No exemplo do pipe e filtro, conseguimos usar o shell da linha de
 comando para instanciar e conectar os componentes. Para uma aplicação C2,
 devemos escrever esse programa bootstrapping nós mesmos, recorrendo aos
@@ -2154,25 +1805,18 @@ Arquitetura, o objeto do framework C2 que representa uma estrutura
 arquitetônica. Em seguida, instâncias de cada um dos componentes são criadas,
 junto com um único conector chamado barramento. Os componentes e conectores são
 adicionados à Arquitetura, e então os links entre eles (chamados de Soldaduras
-na linguagem C2) são criados. Com tudo conectado, é chamado o método <span
-class=GramE>start(</span>) da Arquitetura, que cria threads internas, chama o
-método individual <span class=GramE>start(</span>) de cada componente e
+na linguagem C2) são criados. Com tudo conectado, é chamado o método <span class="GramE">start(</span>) da Arquitetura, que cria threads internas, chama o
+método individual <span class="GramE">start(</span>) de cada componente e
 conector, e executa outras tarefas necessárias para iniciar a aplicação.</p>
-
-<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+<p><span><!--[if gte vml 1]><v:shape
  id="Imagem_x0020_181" o:spid="_x0000_i1026" type="#_x0000_t75" alt="O programa principal do Lunar Lander em C2."
  style='width:371.4pt;height:550.8pt;visibility:visible;mso-wrap-style:square'>
  <v:imagedata src="cap09-ptbr_arquivos/image019.png" o:title="O programa principal do Lunar Lander em C2"/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=495 height=734
-src="cap09-ptbr_arquivos/image019.png"
-alt="O programa principal do Lunar Lander em C2." v:shapes="Imagem_x0020_181"><![endif]></span></p>
-
-<p class=MsoNormal><b>Figuras 9-14.&nbsp;O programa principal do Lunar Lander
+</v:shape><![endif]--><?if !vml?><img alt="O programa principal do Lunar Lander em C2." border="0" height="734" src="cap09-ptbr_arquivos/image019.png" v:shapes="Imagem_x0020_181" width="495"/><?endif?></span></p>
+<p><b>Figuras 9-14. O programa principal do Lunar Lander
 em C2.</b></p>
-
-<p class=MsoNormal>ASSUNTO FINAL</p>
-
-<p class=MsoNormal>É imperativo que, na medida do possível, as decisões de
+<p>ASSUNTO FINAL</p>
+<p>É imperativo que, na medida do possível, as decisões de
 design na arquitetura sejam refletidas no sistema implementado. Conflitos ou
 descompassos são marcas registradas do desvio arquitetônico e da erosão. Às
 vezes, essas divergências são óbvias e conhecidas pelas partes interessadas do
@@ -2185,8 +1829,7 @@ modelos arquitetônicos para corresponder. De certa forma, é mais prejudicial
 ter informações conflitantes na arquitetura e na implementação do que ter uma
 arquitetura subespecificada, já que pelo menos uma arquitetura subespecificada
 não enganará as partes interessadas.</p>
-
-<p class=MsoNormal>Manter um mapeamento consistente entre arquitetura e
+<p>Manter um mapeamento consistente entre arquitetura e
 implementação quase nunca é fácil, e várias técnicas podem ser usadas para
 isso. Os mapeamentos mais fortes são possíveis quando modelos arquitetônicos se
 tornam <i>parte da </i>implementação do sistema e estão intimamente conectados
@@ -2200,135 +1843,116 @@ convencerão de que sua arquitetura é adequadamente refletida em sua
 implementação. Sem dúvida, isso envolverá um espectro combinado de estratégias,
 desde revisão por pares até links de rastreabilidade entre documentos e o uso
 de frameworks de implementação de arquitetura.</p>
-
-<p class=MsoNormal>Nos capítulos anteriores, focávamos em atividades de design
+<p>Nos capítulos anteriores, focávamos em atividades de design
 — design arquitetônico, modelagem, visualização e análise. Neste capítulo,
 discutimos como passar do design para a implementação. Uma vez implementado o
 sistema, ele deve ser implantado para seus usuários. Esse é o foco do próximo
 capítulo. Como veremos, manter modelos arquitetônicos com mapeamentos fortes
 para implementações também é útil em atividades pós-implementação.</p>
-
-<p class=MsoNormal><b>O Caso de Negócios<o:p></o:p></b></p>
-
-<p class=MsoNormal>Em geral, um bom projeto deve resultar em um bom sistema. A
+<p><b>O Caso de Negócios</b></p>
+<p>Em geral, um bom projeto deve resultar em um bom sistema. A
 maneira de maximizar suas chances de obter um bom sistema a partir de um bom
 projeto é usar práticas cuidadosas para mapear sua arquitetura ao seu código.
 Um pequeno investimento em uma boa estrutura de arquitetura reutilizável pode
 trazer consistência ao longo de um projeto e ao longo de sua vida útil.</p>
-
-<p class=MsoNormal>As tecnologias de geração são especialmente poderosas para
+<p>As tecnologias de geração são especialmente poderosas para
 reduzir custos e minimizar o desvio e a erosão arquitetônicas. Embora possa não
 ser uma solução milagrosa, gerar até mesmo implementações parciais a partir da
 arquitetura é sempre muito superior a fazer a conexão manualmente,
 especialmente se a engenharia de software de ida e volta estiver em vigor. Cada
 linha de código escrita por um <i>programa</i>, e não por um <i>programador, </i>é
 dinheiro no banco da conta.</p>
-
-<p class=MsoNormal>Os custos de manutenção são os mais altos em qualquer
+<p>Os custos de manutenção são os mais altos em qualquer
 projeto bem-sucedido de engenharia de software (mais de 50%). Esses custos são
 agravados por código espaguete, mudanças post hoc que (muitas vezes sem saber)
 violam os princípios de design estabelecidos no início do projeto e pela falta
 de compreensão clara do sistema. Quando os princípios de design são violados,
 as qualidades de software antecipadas e imbuídas pelo design podem não se
 manifestar no sistema final implementado.</p>
-
-<p class=MsoNormal>Bons mapeamentos entre arquitetura e implementação ajudam a
+<p>Bons mapeamentos entre arquitetura e implementação ajudam a
 mitigar riscos, especialmente aqueles causados pela rotatividade de pessoal. A
 rotatividade é inevitável em qualquer esforço de desenvolvimento, e uma
 arquitetura bem definida com uma implementação correspondente melhorará
 dramaticamente a capacidade do novo pessoal de ser eficaz em um projeto antigo.</p>
-
-<p class=MsoNormal>PERGUNTAS DE REVISÃO</p>
-
-<ol style='margin-top:0cm' start=1 type=1>
- <li class=MsoNormal style='mso-list:l45 level1 lfo256;tab-stops:list 36.0pt'>Quais
+<p>PERGUNTAS DE REVISÃO</p>
+<ol start="1" style="margin-top:0cm" type="1">
+<li>Quais
      são algumas preocupações arquitetônicas que podem ser mapeadas para
      sistemas implementados? Quais estratégias podem ser usadas para mapear
      essas preocupações?</li>
- <li class=MsoNormal style='mso-list:l45 level1 lfo256;tab-stops:list 36.0pt'>Qual
+<li>Qual
      é a diferença entre mapeamento de ida e volta e ida e volta?</li>
- <li class=MsoNormal style='mso-list:l45 level1 lfo256;tab-stops:list 36.0pt'>O
+<li>O
      que é um framework de arquitetura-implementação? Como um framework de
      arquitetura-implementação difere de middleware?</li>
- <li class=MsoNormal style='mso-list:l45 level1 lfo256;tab-stops:list 36.0pt'>Qual
+<li>Qual
      é a relação entre um framework de implementação de arquitetura e um estilo
      arquitetônico?</li>
- <li class=MsoNormal style='mso-list:l45 level1 lfo256;tab-stops:list 36.0pt'>Quando
+<li>Quando
      múltiplas estruturas podem ser desenvolvidas para um único estilo
      arquitetônico?</li>
- <li class=MsoNormal style='mso-list:l45 level1 lfo256;tab-stops:list 36.0pt'>Quais
+<li>Quais
      são alguns critérios que podem ser usados para avaliar frameworks de
      implementação de arquitetura?</li>
- <li class=MsoNormal style='mso-list:l45 level1 lfo256;tab-stops:list 36.0pt'>Como
+<li>Como
      middleware e frameworks de componentes induzem estilos arquitetônicos?</li>
- <li class=MsoNormal style='mso-list:l45 level1 lfo256;tab-stops:list 36.0pt'>Quais
+<li>Quais
      são algumas estratégias para resolver descompassos entre estilos
      arquitetônicos e middleware?</li>
- <li class=MsoNormal style='mso-list:l45 level1 lfo256;tab-stops:list 36.0pt'>Quando
+<li>Quando
      um novo framework de arquitetura-implementação deve ser desenvolvido?
      Quais critérios ou estratégias devem ser usados no desenvolvimento do novo
      framework?</li>
- <li class=MsoNormal style='mso-list:l45 level1 lfo256;tab-stops:list 36.0pt'>Quais
+<li>Quais
      tipos de abordagens generativas podem ajudar a transitar da arquitetura
      para a implementação?</li>
- <li class=MsoNormal style='mso-list:l45 level1 lfo256;tab-stops:list 36.0pt'>Enumere
+<li>Enumere
      alguns frameworks de implementação de arquitetura existentes.</li>
- <li class=MsoNormal style='mso-list:l45 level1 lfo256;tab-stops:list 36.0pt'>Como
-     o pacote padrão de I/O é uma estrutura de arquitetura para sistemas <span
-     class=SpellE>pipe-and-filter</span>? Como ele suporta as várias regras e
-     restrições do estilo <span class=SpellE>pipe-and-filter</span>?</li>
+<li>Como
+     o pacote padrão de I/O é uma estrutura de arquitetura para sistemas <span class="SpellE">pipe-and-filter</span>? Como ele suporta as várias regras e
+     restrições do estilo <span class="SpellE">pipe-and-filter</span>?</li>
 </ol>
-
-<p class=MsoNormal>EXERCÍCIOS</p>
-
-<ol style='margin-top:0cm' start=1 type=1>
- <li class=MsoNormal style='mso-list:l27 level1 lfo257;tab-stops:list 36.0pt'>Rode
+<p>EXERCÍCIOS</p>
+<ol start="1" style="margin-top:0cm" type="1">
+<li>Rode
      as aplicações implementadas do Lunar Lander neste capítulo por um
      depurador e examine como controle e dados são trocados pelo framework.</li>
- <li class=MsoNormal style='mso-list:l27 level1 lfo257;tab-stops:list 36.0pt'>O
+<li>O
      capítulo compara e contrasta o Framework C2 Leve e o Framework C2 Flexível
      em termos tanto da estrutura quanto de como suportam as regras do estilo
      C2. Faça a mesma comparação para os pacotes java.io e java.nio em relação
-     ao estilo <span class=SpellE>pipe-and-filter</span>.</li>
- <li class=MsoNormal style='mso-list:l27 level1 lfo257;tab-stops:list 36.0pt'>Escolha
+     ao estilo <span class="SpellE">pipe-and-filter</span>.</li>
+<li>Escolha
      um framework de implementação de arquitetura e uma aplicação simples, e
      implemente essa aplicação sobre o framework. Reflita sobre como você
      manteve as restrições do estilo arquitetônico na sua implementação e como
      o framework auxiliou (ou dificultou) isso.</li>
- <li class=MsoNormal style='mso-list:l27 level1 lfo257;tab-stops:list 36.0pt'>Escolha
-     um dos estilos arquitetônicos simples <span class=SpellE>em<a
-     href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch04.html"
-     title="Chapter&nbsp;4.&nbsp;Designing Architectures"><b>Capítulo</b><b> 4</b></a></span>e
+<li>Escolha
+     um dos estilos arquitetônicos simples <span class="SpellE">em<a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch04.html" title="Chapter 4. Designing Architectures"><b>Capítulo</b><b> 4</b></a></span>e
      construa uma estrutura arquitetura-implementação para a combinação de
      plataforma/sistema operacional que você prefere. Enumere as regras do
      estilo e como seu framework suporta ou não essas regras.</li>
- <li class=MsoNormal style='mso-list:l27 level1 lfo257;tab-stops:list 36.0pt'>Construa
+<li>Construa
      uma estrutura arquitetônica conforme sugerido no Exercício 4 e depois use
      sua estrutura para o Exercício 3.</li>
- <li class=MsoNormal style='mso-list:l27 level1 lfo257;tab-stops:list 36.0pt'>Aprenda
-     sobre uma ou mais tecnologias de middleware, como CORBA, COM, RMI, <span
-     class=SpellE>JavaBeans</span>, entre outras. Identifique as regras de
+<li>Aprenda
+     sobre uma ou mais tecnologias de middleware, como CORBA, COM, RMI, <span class="SpellE">JavaBeans</span>, entre outras. Identifique as regras de
      estilo arquitetônico impostas pela plataforma middleware. Encontre um
      aplicativo de exemplo construído sobre o middleware e veja se ele obedece
      ou não às regras de estilo.</li>
 </ol>
-
-<p class=MsoNormal>LEITURA ADICIONAL</p>
-
-<p class=MsoNormal>Este capítulo analisa os frameworks de implementação de
+<p>LEITURA ADICIONAL</p>
+<p>Este capítulo analisa os frameworks de implementação de
 arquitetura como método primário de mapear decisões de design arquitetônico
 para artefatos de implementação. Surpreendentemente, pouco foi escrito sobre
-tais estruturas caracterizadas dessa forma; Sam Malek et al. (Malek, <span
-class=SpellE>Mikic-Rakic</span> e <span class=SpellE>Medvidovi</span>' 2005) é
+tais estruturas caracterizadas dessa forma; Sam Malek et al. (Malek, <span class="SpellE">Mikic-Rakic</span> e <span class="SpellE">Medvidovi</span>' 2005) é
 uma exceção notável. No entanto, existem muitos sistemas de software que se
 assemelham muito a frameworks de implementação de arquitetura, sem o foco
-explícito em estilos. Alguns deles, como o framework padrão de I/O em C (<span
-class=SpellE>Kernighan</span> e Ritchie 1988) e os pacotes Java I/O (Harold
+explícito em estilos. Alguns deles, como o framework padrão de I/O em C (<span class="SpellE">Kernighan</span> e Ritchie 1988) e os pacotes Java I/O (Harold
 2006) e New I/O (Hitchens 2002), são frameworks de implementação de arquitetura
 disfarçados, fornecendo os serviços de um framework sem serem explicitamente
 identificados como tal.</p>
-
-<p class=MsoNormal>Middlewares como CORBA (Object Management Group 2001), COM e
+<p>Middlewares como CORBA (Object Management Group 2001), COM e
 suas variantes (Sessions 1997), JavaBeans (JavaSoft 1996), Java RMI (Grosso
 2001), implementações do Java Message Service (JavaSoft 2001) e outros sistemas
 de passagem de mensagens como MQSeries (IBM 2003) e MSMQ (Houston 1998) são
@@ -2336,24 +1960,17 @@ frequentemente usados como frameworks de implementação de arquitetura. No
 entanto, Elisabetta Di Nitto e David Rosenblum (Di Nitto e Rosenblum 1999)
 destacaram de forma perspicaz o fato de que middleware <i>induz </i>um estilo
 arquitetônico em aplicações que o utilizam.</p>
-
-<p class=MsoNormal>Uma tendência recente que está crescendo em popularidade é o
+<p>Uma tendência recente que está crescendo em popularidade é o
 uso extensivo de técnicas generativas, particularmente sob o nome de
 Arquitetura Orientada por Modelos (Mukerji e Miller 2003), que podem gerar
 implementações total ou parciais por meio de modelos. Abordagens generativas já
 foram identificadas como balas de prata antes, e o tempo dirá se a Arquitetura
 Orientada por Modelos corresponde à sua promessa inicial.</p>
-
-<p class=MsoNormal><o:p>&nbsp;</o:p></p>
-
-<div class=MsoNormal align=center style='text-align:center'>
-
-<hr size=2 width=507 style='width:380.0pt' align=center>
-
+<p></p>
+<div align="center" style="text-align:center">
+<hr align="center" size="2" style="width:380.0pt" width="507"/>
 </div>
-
-<p class=MsoNormal><a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch09.html#CHP-9-FN-1"><b><sup>[10]
+<p><a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch09.html#CHP-9-FN-1"><b><sup>[10]
 </sup></b></a>Quando implementações do C estão disponíveis em um sistema
 operacional que suporta concorrência de processos, como UNIX ou Windows, o
 escalonador de processos do sistema operacional geralmente será usado para
@@ -2362,16 +1979,11 @@ suportado em sistemas operacionais de processo único como o DOS: nesse caso, os
 filtros rodam inteiramente em sequência e a saída de cada filtro é armazenada
 em um arquivo temporário no disco rígido. Isso transforma efetivamente todas as
 aplicações pipe-and-filter em aplicações sequenciais em lote.</p>
-
-<p class=MsoNormal><a
-href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch09.html#CHP-9-FN-2"><b><sup>[11]
-</sup></b></a>Isso é normalmente chamado de estratégia de implementação <span
-class=SpellE>bottom-up</span>, mas essa terminologia pode ser confusa em
+<p><a href="https://learning.oreilly.com/library/view/software-architecture-foundations/9780470167748/ch09.html#CHP-9-FN-2"><b><sup>[11]
+</sup></b></a>Isso é normalmente chamado de estratégia de implementação <span class="SpellE">bottom-up</span>, mas essa terminologia pode ser confusa em
 arquiteturas C2, onde os componentes menos dependentes são representados no
 topo da visualização gráfica canônica.</p>
-
-<p class=MsoNormal><o:p>&nbsp;</o:p></p>
-
+<p></p>
 </div>
 </body>
 </html>
